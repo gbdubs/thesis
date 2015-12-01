@@ -46,6 +46,23 @@ void destroyNode(Node* node){
 /* * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * */
+/*                 WEIGHT                */
+/* * * * * * * * * * * * * * * * * * * * */
+
+int weight(Node* node){
+	int leftWeight = 0;
+	if (node->left != NULL){
+		leftWeight = weight(node->left);
+	}
+	int rightWeight = 0;
+	if (node->right != NULL){
+		rightWeight = weight(node->right);
+	}
+	return leftWeight + rightWeight + 1;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * */
 /*                 HEIGHT                */
 /* * * * * * * * * * * * * * * * * * * * */
 
@@ -227,4 +244,25 @@ void insertIntoPowerTrees(Data* data, int power){
 }
 
 
+/* * * * * * * * * * * * * * * * * * * * */
+/*                RESULTS                */
+/* * * * * * * * * * * * * * * * * * * * */
+
+void printResults(){
+	printf("Tree Sizes: ");
+	
+	int index = 0;
+	while (roots[index] != NULL){
+		printf("%d\t", weight(roots[index]));
+		index++;
+	}
+}
+
+int maxPower(){
+	int index = 0;
+	while (roots[index] != NULL){
+		index++;
+	}
+	return index + 1;
+}
 
