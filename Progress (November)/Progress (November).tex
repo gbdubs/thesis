@@ -1,0 +1,21 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{systeme,mathtools, amsmath, listings}
+\begin{document}
+\lstset{language=Python}
+
+\title{Cardinality Analysis and First Proof Ideas}
+\author{Grady Ward}
+
+\maketitle
+
+When attempting to prove that a function is a bijection, cardinality analysis can prove empirically that it is, regardless of the internal mechanisms of the functions or its operating domain and range. We will use this type of analysis to construct proof for a bijection of our paths function on small graphs. The Paths function can be thought of as a function which operates between two sets: the set of all graphs, and the set of all possible Paths matrices.  
+
+Since I have not yet defined paths matrices I will here.  Previously discussed was how the paths function is operated on an individual vertex within a graph, and returns a vertex invariant which is a 1xP vector which reflects the state of that vertex and its surroundings.  Compiling these vectors for each one of our vertices assembles us V vectors of size P.  Since vectors are inherently comparable, we can sort them.  Then appending them together creates a matrix of size VxP, where the paths function for each vertex is placed in a given position regardless of its original positioning within the adjacency matrix.
+
+Thus, we are defining our second set to be the set of all such possible paths matrices.  It should be clear that the function Paths, mapping from a graph to such a mathematical object, is injective, as the cardinality of the domain could not be smaller than the cardinality of the range.  However, the question remains: is it a bijection? Why is this important?
+
+If we were able to prove that the relationship between the Paths matrices and the set of all graphs was linked by a bijective function, we could prove that if two graphs agree on their corresponding Paths's matrix, then they are the same graph. This is valuable because paths matrices can be directly compared and sorted, while graphs cannot immediately be compared in polynomial time (which is what this article is attempting to redress).
+
+So how to we go about calculating the cardinality of both sets?  Luckily, the cardinality of the first set is well established.  The series A000088 in the online encyclopedia of integer sequences gives us the number of non-isomorphic graphs up to N=28.  Now to calculate the number of distinguishable paths matrices of a given order.
+
+\end{document}
