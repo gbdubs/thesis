@@ -13,7 +13,7 @@ typedef struct DataItem {
 	long** paths;
 } Data;
 
-int compare(Data* a, Data* b);
+int compareData(Data* a, Data* b);
 Data* createData(int** graph);
 void destroyData(Data* data);
 
@@ -22,7 +22,7 @@ void destroyData(Data* data);
 /* * * * * * * * * * * * * * * * * * * * */
 int** multiply(int** a, int** b);
 long** multiplyL(long** a, long** b);
-int** multiplyLI(long** a, int** b);
+long** multiplyLI(long** a, int** b);
 long** multiplyIL(int** a, long** b);
 long** multiply2L(int** a, int** b);
 

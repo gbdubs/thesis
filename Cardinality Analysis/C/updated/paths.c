@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 #include "structures.h"
 #include "paths.h"
 
@@ -5,10 +9,10 @@
 /*         MATRIX MULTIPLICATION         */
 /* * * * * * * * * * * * * * * * * * * * */
 int** multiply(int** a, int** b){
-	int aHeight = matrixHeight(a);
-	int aWidth = matrixWidth(a);
-	int bHeight = matrixHeight(b);
-	int bWidth = matrixWidth(b);
+	int aHeight = heightMatrix(a);
+	int aWidth = widthMatrix(a);
+	int bHeight = heightMatrix(b);
+	int bWidth = widthMatrix(b);
 
 	// Matrix multiplication requires that we have
 	// a dimension match here.
@@ -32,10 +36,10 @@ int** multiply(int** a, int** b){
 }
 
 long** multiplyL(long** a, long** b){
-	int aHeight = matrixHeightL(a);
-	int aWidth = matrixWidthL(a);
-	int bHeight = matrixHeightL(b);
-	int bWidth = matrixWidthL(b);
+	int aHeight = heightMatrixL(a);
+	int aWidth = widthMatrixL(a);
+	int bHeight = heightMatrixL(b);
+	int bWidth = widthMatrixL(b);
 
 	// Matrix multiplication requires that we have
 	// a dimension match here.
@@ -58,10 +62,10 @@ long** multiplyL(long** a, long** b){
 }
 
 long** multiplyLI(long** a, int** b){
-	int aHeight = matrixHeightL(a);
-	int aWidth = matrixWidthL(a);
-	int bHeight = matrixHeight(b);
-	int bWidth = matrixWidth(b);
+	int aHeight = heightMatrixL(a);
+	int aWidth = widthMatrixL(a);
+	int bHeight = heightMatrix(b);
+	int bWidth = widthMatrix(b);
 
 	// Matrix multiplication requires that we have
 	// a dimension match here.
@@ -85,10 +89,10 @@ long** multiplyLI(long** a, int** b){
 }
 
 long** multiplyIL(int** a, long** b){
-	int aHeight = matrixHeight(a);
-	int aWidth = matrixWidth(a);
-	int bHeight = matrixHeightL(b);
-	int bWidth = matrixWidthL(b);
+	int aHeight = heightMatrix(a);
+	int aWidth = widthMatrix(a);
+	int bHeight = heightMatrixL(b);
+	int bWidth = widthMatrixL(b);
 
 	// Matrix multiplication requires that we have
 	// a dimension match here.
@@ -112,10 +116,10 @@ long** multiplyIL(int** a, long** b){
 }
 
 long** multiply2L(int** a, int** b){
-	int aHeight = matrixHeight(a);
-	int aWidth = matrixWidth(a);
-	int bHeight = matrixHeight(b);
-	int bWidth = matrixWidth(b);
+	int aHeight = heightMatrix(a);
+	int aWidth = widthMatrix(a);
+	int bHeight = heightMatrix(b);
+	int bWidth = widthMatrix(b);
 
 	// Matrix multiplication requires that we have
 	// a dimension match here.
@@ -143,12 +147,12 @@ long** multiply2L(int** a, int** b){
 /* * * * * * * * * * * * * * * * * * * * */
 
 
-int compare(Data* a, data* b){
-	return(createMatrixL(a->paths, b->paths));
+int compareData(Data* a, Data* b){
+	return(compareMatricesL(a->paths, b->paths));
 }
 
 Data* createData(int** graph){
-	int v = matrixWidth(graph);
+	int v = widthMatrix(graph);
 
 	Data* d = malloc(sizeof(Data));
 
@@ -187,13 +191,13 @@ void updatePathsOneValue(Data* data){
 
 	long** newRunning = multiplyLI(running, graph);
 
-	destroyMatrix(running);
+	destroyMatrixL(running);
 	data->running = newRunning;
 
-	int v = matrixHeightL(paths);
-	int previousPower = matrixWidthL(paths);
+	int v = heightMatrixL(paths);
+	int previousPower = widthMatrixL(paths);
 
-	long** newPaths = createMatrix(v, previousPower+1);
+	long** newPaths = createMatrixL(v, previousPower+1);
 	for (int i = 0; i < v; i++){
 		for (int j = 0; j < previousPower; i++){
 			newPaths[i][j] = paths[i][j];
@@ -203,12 +207,12 @@ void updatePathsOneValue(Data* data){
 
 	sortPaths(newRunning);
 	
-	destroyMatrix(paths);
+	destroyMatrixL(paths);
 	data->paths = newPaths;
 }
 
 Data* duplicatePathsOneValue(Data* data){
-	Data d = {NULL, NULL, NULL};
+	Data* d = malloc(sizeof(Data));
 
 	int** graph = data->graph;
 	long** paths = data->paths;
@@ -216,10 +220,10 @@ Data* duplicatePathsOneValue(Data* data){
 
 	long** newRunning = multiplyLI(running, graph);
 
-	int v = matrixHeightL(paths);
-	int previousPower = matrixWidthL(paths);
+	int v = heightMatrixL(paths);
+	int previousPower = widthMatrixL(paths);
 
-	long** newPaths = createMatrix(v, previousPower+1);
+	long** newPaths = createMatrixL(v, previousPower+1);
 	for (int i = 0; i < v; i++){
 		for (int j = 0; j < previousPower; i++){
 			newPaths[i][j] = paths[i][j];
@@ -244,18 +248,18 @@ Data* duplicatePathsOneValue(Data* data){
 /* * * * * * * * * * * * * * * * * * * * */
 
 void sortPaths(long** paths){
-	int h = matrixHeightL(paths);
+	int h = heightMatrixL(paths);
 	int madeSwap = 0;
 	// SHITTY BUBBLE SORT, BUT HEY, N <= 11.
 	while (madeSwap){
 		madeSwap = 0;
 		for (int i = 0; i < h-1; i++){
-		int row1 = i;
-		int row2 = i+1;
-		if (compareMatrixRowsL(paths, row1, row2) == -1){
-			swapMatrixRowsL(paths, row1, row2);
-			madeSwap = 1;
+			int row1 = i;
+			int row2 = i+1;
+			if (compareMatrixRowL(paths, row1, row2) == -1){
+				swapMatrixRowL(paths, row1, row2);
+				madeSwap = 1;
+			}
 		}
 	}
 }
-

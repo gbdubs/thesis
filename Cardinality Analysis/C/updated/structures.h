@@ -52,5 +52,8 @@ void destroyMatrixL(long** a);
 
 int compareMatricesL(long** a, long** b);
 
+int compareMatrixRowL(long** a, int row1, int row2);
+
+void swapMatrixRowL(long** a, int row1, int row2);
 
 #endif

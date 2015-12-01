@@ -1,4 +1,9 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 #include "paths.h"
+#include "utilities.h"
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*             NODE STRUCTURE            */
@@ -8,10 +13,10 @@ typedef struct PathsTreeNode{
 	Data* data;
 	int height;
 	int power;
+	int alreadyAdvanced;
 	struct PathsTreeNode* right;
 	struct PathsTreeNode* left;
 	struct PathsTreeNode* parent;
-
 } Node;
 
 Node* createNode(Data* data, int power){
@@ -34,11 +39,11 @@ void destroyNode(Node* node){
 /*            ROOTS STRUCTURE            */
 /* * * * * * * * * * * * * * * * * * * * */
 
-int nRoots = 50;
-
-Node roots[nRoots];
-
-
+/* * * * * * * * * * * * * * * * * * * * */
+/*       EDIT HERE TO ALLOW ANY P        */
+				Node* roots[50];
+/*                                       */
+/* * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*                 HEIGHT                */
@@ -81,14 +86,16 @@ int getBalanceFactor(Node *node){
 }
 
 void rotateTreeLeft(Node *p){
+	int power = p->power;
+
 	Node *q = p->right;
 	Node *b = q->left;
 	Node *a = p->parent;
 
 	q->left = p;
 	p->parent = q;
-	if (p == root){
-		root = q;
+	if (p == roots[power]){
+		roots[power] = q;
 		p->parent = NULL;
 	} else {
 		q->parent = a;
@@ -109,14 +116,16 @@ void rotateTreeLeft(Node *p){
 }
 
 void rotateTreeRight(Node *q){
+	int power = q->power;
+
 	Node *p = q->left;
 	Node *b = p->right;
 	Node *a = q->parent;
 
 	p->right = q;
 	q->parent = p;
-	if (q == root){
-		root = p;
+	if (q == roots[power]){
+		roots[power] = p;
 		p->parent = NULL;
 	} else {
 		p->parent = a;
@@ -137,6 +146,9 @@ void rotateTreeRight(Node *q){
 }
 
 int considerARotation(Node *node){
+	if (node == NULL){
+		return 0;
+	}
 	int bf = getBalanceFactor(node);
 	if (bf > 1){
 		if (getBalanceFactor(node->left) < 0){
@@ -151,16 +163,20 @@ int considerARotation(Node *node){
 		rotateTreeLeft(node);
 		return 1;
 	}
-	return 0;
+	return considerARotation(node->parent);
 }
 
-Data* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
+/* * * * * * * * * * * * * * * * * * * * */
+/*              INSERTIONS               */
+/* * * * * * * * * * * * * * * * * * * * */
+
+Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 	int comparison = compareData(subRoot->data, toInsert->data);
 	if (comparison == -1){
 		if (subRoot->left == NULL){
 			subRoot->left = toInsert;
 			toInsert->parent = subRoot;
-			return 1;
+			return NULL;
 		} else {
 			return insertIntoSubTreeSet(subRoot->left, toInsert);
 		}
@@ -169,39 +185,45 @@ Data* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 		if (subRoot->right == NULL){
 			subRoot->right = toInsert;
 			toInsert->parent = subRoot;
-			return 1;
+			return NULL;
 		} else {
 			return insertIntoSubTreeSet(subRoot->right, toInsert);
 		}
 	}
-	return 0;
+	return subRoot;
 }
 
-
-
-void insertIntoTrees(Data* data, int power){
-	Node *node = createNode(data);
+void insertIntoPowerTrees(Data* data, int power){
+	Node *node = createNode(data, power);
 	
-	if (root == NULL){
-		root = node;
-		return 1;
+	if (roots[power] == NULL){
+		roots[power] = node;
+		return;
 	} 
 		
-	Data* otherData = insertIntoSubTreeSet(root, node);
+	Node* otherNode = insertIntoSubTreeSet(roots[power], node);
 
 
-	if (result == 1){
-		Node *temp = node;
-		while (temp != NULL){
-			adjustTreeHeight(temp);
-			if (considerARotation(temp) != 0){
-				return result;
-			}
-			temp = temp->parent;
+
+
+	// If the returned value is null, then we inserted without colliding.
+	// Count yourself lucky, and rebalance the tree if necessary.
+	if (otherNode == NULL){
+		adjustTreeHeight(node);
+		considerARotation(node);
+	} else {
+		// Nothing inserted into the tree, so don't rebalance or adjust heights.
+		if (otherNode->alreadyAdvanced == 0){
+			// We haven't advanced the collided node!  Mark it collided, and advance it
+			otherNode->alreadyAdvanced = 1;
+			Data* newData = duplicatePathsOneValue(otherNode->data);
+			insertIntoPowerTrees(newData, power+1);
 		}
+		// Advance the inserting node.
+		Data* newData = duplicatePathsOneValue(data);
+		insertIntoPowerTrees(newData, power+1);
 	}
 
-	return result;
 }
 
 
