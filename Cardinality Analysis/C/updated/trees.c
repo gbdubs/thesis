@@ -235,6 +235,8 @@ int considerARotation(Node *node){
 
 Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 	int comparison = compareData(subRoot->data, toInsert->data);
+	printf("Comparing nodes %d and %d with result %d\n", subRoot->id, toInsert->id, comparison);
+
 	if (comparison == -1){
 		if (subRoot->left == NULL){
 			subRoot->left = toInsert;
@@ -253,6 +255,7 @@ Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 			return insertIntoSubTreeSet(subRoot->right, toInsert);
 		}
 	}
+	printf("FOUND A DUPLICATE!!!\n");
 	return subRoot;
 }
 
@@ -277,7 +280,9 @@ void insertIntoPowerTrees(Data* data, int power){
 		if (otherNode->alreadyAdvanced == 0){
 			// We haven't advanced the collided node!  Mark it collided, and advance it
 			otherNode->alreadyAdvanced = 1;
+			printf("\totherNodeMarked\n");
 			Data* newData = duplicatePathsOneValue(otherNode->data);
+			printf("\totherNodeUpdated\n");
 			insertIntoPowerTrees(newData, power+1);
 		}
 		// Advance the inserting node.

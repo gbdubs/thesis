@@ -228,6 +228,8 @@ void verifyMatrixMemorySafeL(){
 }
 
 int compareMatricesL(long** a, long** b){
+	printf("COMPARING MATRICES ");
+
 	int aWidth = widthMatrixL(a);
 	int bWidth = widthMatrixL(b);
 
@@ -248,10 +250,13 @@ int compareMatricesL(long** a, long** b){
 		return -1;
 	}
 
-	int l = aWidth;
+
+	int h = aHeight;
+
+	printf(" SHOULD GET HERE. W=%d, H=%d\n", w, h);
 
 	for (int i = 0; i < w; i++){
-		for (int j = 0; j < l; j++){
+		for (int j = 0; j < h; j++){
 			if (a[i][j] > b[i][j]){
 				return 1;
 			} else if (a[i][j] < b[i][j]){

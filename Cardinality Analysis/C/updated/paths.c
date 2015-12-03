@@ -148,7 +148,9 @@ long** multiply2L(int** a, int** b){
 
 
 int compareData(Data* a, Data* b){
-	return(compareMatricesL(a->paths, b->paths));
+	int result = compareMatricesL(a->paths, b->paths);
+	printf("COMPARED DATA AND RESULT WAS %d\n", result);
+	return result;
 }
 
 Data* createData(int** graph){
@@ -220,12 +222,15 @@ Data* duplicatePathsOneValue(Data* data){
 
 	long** newRunning = multiplyLI(running, graph);
 
-	int v = heightMatrixL(paths);
-	int previousPower = widthMatrixL(paths);
+	int v = widthMatrixL(paths);
+	int previousPower = heightMatrixL(paths);
 
 	long** newPaths = createMatrixL(v, previousPower+1);
+
+	printf("\tcreated structures ok %d, %d\n",v, previousPower+1);
 	for (int i = 0; i < v; i++){
-		for (int j = 0; j < previousPower; i++){
+		for (int j = 0; j < previousPower; j++){
+			printf("\t\tI=%d J=%d\n", i,j);
 			newPaths[i][j] = paths[i][j];
 		}
 		newPaths[i][previousPower] = running[i][i];
