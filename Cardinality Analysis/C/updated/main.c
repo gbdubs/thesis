@@ -2,6 +2,7 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
+#include "utilities.h"
 #include "structures.h"
 #include "graph6.h"
 #include "paths.h"
@@ -30,13 +31,13 @@ int calculatePower(int v, int e){
 		printf("FILE NOT FOUND [%s]\n", getFilePath(v, e));
 		return -1; 
 	} else {
-		printf("FILE CREATED\n");
+		// printf("FILE CREATED\n");
 	}
 	
 	int loopCount = 0;
 	while (fscanf(nautyFile, "%s", inputBuffer) == 1){
 		// Prints an updating statement
-		if (loopCount % 1 == 0){ printf("Processed %d graphs\n", loopCount); }
+		// if (loopCount % 1000 == 0){ printf("Processed %d graphs\n", loopCount); }
 		
 		// Retrieves the graph, calculates its paths function, sorts the vectors, and inserts it into the tree.
 		// printf("Got Data: [%s]!!\n", inputBuffer);
@@ -56,16 +57,33 @@ int calculatePower(int v, int e){
 	
 	int maxP = maxPower();
 	
-	printf("MAX POWER!!! %d\n", maxP); 
+	//printf("MAX POWER!!! %d\n", maxP); 
 	
 	fclose(nautyFile);
 	
 	return maxP;
 }
 
-int main(){
-	calculatePower(5,5);
+
+// ERRORS
+// 2, 1
+
+
+int main(int argc, char *argv[]){
+	if( argc != 3 ) {
+      	printf("Incorrect number of arguments supplied, only input the number of vertices, and the number of edges.\n");
+    }
+
+    int v = atoi(argv[1]);
+    int e = atoi(argv[2]);
+
+    e = min(e, (v*(v-1))/2 - e + 1);
+
+    printf("%d\n",calculatePower(v, e));
 }
+
+
+
 
 void verifyPaths(){
 
