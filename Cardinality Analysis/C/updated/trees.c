@@ -81,7 +81,7 @@ void printAllData(Node* node){
 		printAllData(node->left);
 	}
 	if (node->right != NULL){
-		printAllData(node->left);
+		printAllData(node->right);
 	}
 }
 
@@ -212,6 +212,7 @@ int considerARotation(Node *node){
 		return 0;
 	}
 	int bf = getBalanceFactor(node);
+	printf("CONSIDERING A ROTATION, [%d h=%d] BF = %d\n", node->id, node->height, bf);
 	if (bf > 1){
 		if (getBalanceFactor(node->left) < 0){
 			rotateTreeLeft(node->left);
@@ -256,8 +257,9 @@ Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 }
 
 void insertIntoPowerTrees(Data* data, int power){
+	printf("CREATING NODE\n");
 	Node *node = createNode(data, power);
-	
+	printNode(node, 0);
 	if (roots[power] == NULL){
 		roots[power] = node;
 		return;
@@ -265,13 +267,10 @@ void insertIntoPowerTrees(Data* data, int power){
 		
 	Node* otherNode = insertIntoSubTreeSet(roots[power], node);
 
-
-
-
 	// If the returned value is null, then we inserted without colliding.
 	// Count yourself lucky, and rebalance the tree if necessary.
 	if (otherNode == NULL){
-		adjustTreeHeight(node);
+		adjustTreeHeight(node->parent);
 		considerARotation(node);
 	} else {
 		// Nothing inserted into the tree, so don't rebalance or adjust heights.

@@ -153,7 +153,7 @@ int compareData(Data* a, Data* b){
 
 Data* createData(int** graph){
 	int v = widthMatrix(graph);
-
+	printf("\t%d\n", v);
 	Data* d = malloc(sizeof(Data));
 
 	long** running = multiply2L(graph, graph);
@@ -161,7 +161,7 @@ Data* createData(int** graph){
 	long** paths = createMatrixL(v, 1);
 
 	for (int i = 0; i < v; i++){
-		paths[i][1] = running[i][i];
+		paths[i][0] = running[i][i];
 	}
 
 	sortPaths(paths);
@@ -258,7 +258,7 @@ void sortPaths(long** paths){
 			int row1 = i;
 			int row2 = i+1;
 			int comparison = compareMatrixRowL(paths, row1, row2);
-			printf("comparing rows %d and %d yielded %d\n",row1, row2, comparison);
+			//printf("comparing rows %d and %d yielded %d\n",row1, row2, comparison);
 			if (comparison == -1){
 				swapMatrixRowL(paths, row1, row2);
 				madeSwap = 1;

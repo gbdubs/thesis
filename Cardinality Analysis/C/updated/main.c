@@ -38,11 +38,17 @@ void calculatePower(int v, int e){
 	int loopCount = 0;
 	while (fscanf(nautyFile, "%s", inputBuffer) == 1){
 		// Prints an updating statement
-		if (loopCount % 1000 == 0){ printf("Processed %d graphs", loopCount); printResults(); printf("\n"); }
+		if (loopCount % 1 == 0){ printf("Processed %d graphs\n", loopCount); }
 		
 		// Retrieves the graph, calculates its paths function, sorts the vectors, and inserts it into the tree.
-		insertIntoPowerTrees(createData(retrieveGraph(inputBuffer)),0);
-		
+		printf("Got Data: [%s]!!\n", inputBuffer);
+		int** graph = retrieveGraph(inputBuffer);
+		printf("Graph retrieved!!\n");
+		Data* data = createData(graph);
+		printf("Data created!!\n");
+		insertIntoPowerTrees(data,0);
+		printf("Data Inserted!!\n");
+
 		loopCount++;
 	}
 
@@ -60,7 +66,7 @@ void calculatePower(int v, int e){
 }
 
 int main(){
-	calculatePower(4,3);
+	calculatePower(5,4);
 }
 
 
