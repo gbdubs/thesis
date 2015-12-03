@@ -4,16 +4,20 @@
 #include <stdlib.h>
 #include "paths.h"
 #include "utilities.h"
+#include "structures.h"
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*             NODE STRUCTURE            */
 /* * * * * * * * * * * * * * * * * * * * */
+
+int nodeId = 0;
 
 typedef struct PathsTreeNode{
 	Data* data;
 	int height;
 	int power;
 	int alreadyAdvanced;
+	int id;
 	struct PathsTreeNode* right;
 	struct PathsTreeNode* left;
 	struct PathsTreeNode* parent;
@@ -27,6 +31,7 @@ Node* createNode(Data* data, int power){
 	node->right = NULL;
 	node->left = NULL;
 	node->parent = NULL;
+	node->id = nodeId++;
 	return node;
 }
 
@@ -44,6 +49,46 @@ void destroyNode(Node* node){
 				Node* roots[50];
 /*                                       */
 /* * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*                PRINTING               */
+/* * * * * * * * * * * * * * * * * * * * */
+
+void printTab(int j){
+	for (int i = j; i > 0; i--){
+		printf("\t");
+	}
+}
+
+void printNode(Node* node, int i){
+	if (node->left != NULL){
+		printNode(node->left, i+1);
+	}
+	printTab(i); printf("NODE [%d]\n", node->id);
+	if (node->right != NULL){
+		printNode(node->right, i+1);
+	}
+}
+
+void printAllData(Node* node){
+	printf("NODE [%d] {\n", node->id);
+	printf("GRAPH: \n");
+	printMatrix(node->data->graph);
+	printf("PATHS: \n");
+	printMatrixL(node->data->paths);
+	printf("}\n");
+	if (node->left != NULL){
+		printAllData(node->left);
+	}
+	if (node->right != NULL){
+		printAllData(node->left);
+	}
+}
+
+void printTree(int i){
+	printNode(roots[i], 0);
+	printAllData(roots[i]);
+}
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*                 WEIGHT                */
@@ -256,6 +301,18 @@ void printResults(){
 		printf("%d\t", weight(roots[index]));
 		index++;
 	}
+	printf("\n");
+}
+
+void printTrees(){
+	printf("Trees: ");
+	
+	int index = 0;
+	while (roots[index] != NULL){
+		printf("=============== TREE #%d ==============\n", index);
+		printTree(index++);
+	}
+	printf("\n");
 }
 
 int maxPower(){

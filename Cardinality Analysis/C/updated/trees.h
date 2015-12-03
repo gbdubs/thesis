@@ -15,6 +15,8 @@ void insertIntoPowerTrees(Data* data, int power);
 
 void printResults();
 
+void printTrees();
+
 int maxPower();
 
 #endif

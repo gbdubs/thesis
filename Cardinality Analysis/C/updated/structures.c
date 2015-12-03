@@ -93,7 +93,7 @@ int heightMatrix(int** a){
 
 void printMatrixRow(int* a, int m){
 	printf("[");
-	for (int i = 0; i < m; i++){
+	for (int i = 0; i < m-1; i++){
 		printf("%d,\t",a[i]);
 	}
 	printf("%d]\n", a[m-1]);
@@ -169,27 +169,29 @@ int compareMatrices(int** a, int** b){
 /* * * * * * * * * * * * * * * * * * * * */
 
 long** createMatrixL(int n, int m){
-	long* values = malloc((2+n*m)*sizeof(long));
-	values[0] = n;
-	values[1] = m;
-	long** rows = malloc(n * sizeof(long*));
+	long* values = calloc((3+n*m),sizeof(long));
+	long** rows = calloc(n , sizeof(long*));
 	for (int i = 0; i < n; i++){
-		rows[i] = &values[(i*m)+2];
+		rows[i] = &values[(i*m)+3];
 	}
+	rows[0][-2] = (long) n;
+	rows[0][-1] = (long) m;
 	return rows;
 }
 
 int widthMatrixL(long** a){
-	return a[0][-2];
+	int result = (int) a[0][-2];
+	return result;
 }
 
 int heightMatrixL(long** a){
-	return a[0][-1];
+	int result = (int) a[0][-1];
+	return result;
 }
 
 void printMatrixRowL(long* a, int m){
 	printf("[");
-	for (int i = 0; i < m; i++){
+	for (int i = 0; i < m-1; i++){
 		printf("%ld,\t",a[i]);
 	}
 	printf("%ld]\n", a[m-1]);
@@ -261,8 +263,8 @@ int compareMatricesL(long** a, long** b){
 }
 
 int compareMatrixRowL(long** a, int row1, int row2){
-	int w = widthMatrixL(a);
-	for (int j = 0; j < w; j++){
+	int h = heightMatrixL(a);
+	for (int j = 0; j < h; j++){
 		if (a[row1][j] > a[row2][j]){
 			return 1;
 		} else if (a[row1][j] < a[row2][j]){
@@ -273,8 +275,8 @@ int compareMatrixRowL(long** a, int row1, int row2){
 }
 
 void swapMatrixRowL(long** a, int row1, int row2){
-	int w = widthMatrixL(a);
-	for (int i = 0; i < w; i++){
+	int h = heightMatrixL(a);
+	for (int i = 0; i < h; i++){
 		long temp = a[row1][i];
 		a[row1][i] = a[row2][i];
 		a[row2][i] = temp;	

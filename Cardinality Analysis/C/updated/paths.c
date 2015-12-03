@@ -164,7 +164,7 @@ Data* createData(int** graph){
 		paths[i][1] = running[i][i];
 	}
 
-	sortPaths(running);
+	sortPaths(paths);
 
 	d->graph = graph;
 	d->running = running;
@@ -205,7 +205,7 @@ void updatePathsOneValue(Data* data){
 		newPaths[i][previousPower] = running[i][i];
 	}
 
-	sortPaths(newRunning);
+	sortPaths(newPaths);
 	
 	destroyMatrixL(paths);
 	data->paths = newPaths;
@@ -230,8 +230,8 @@ Data* duplicatePathsOneValue(Data* data){
 		}
 		newPaths[i][previousPower] = running[i][i];
 	}
-	
-	sortPaths(newRunning);
+
+	sortPaths(newPaths);
 
 	d->graph = graph;
 	d->paths = newPaths;
@@ -248,15 +248,18 @@ Data* duplicatePathsOneValue(Data* data){
 /* * * * * * * * * * * * * * * * * * * * */
 
 void sortPaths(long** paths){
-	int h = heightMatrixL(paths);
-	int madeSwap = 0;
+	int w = widthMatrixL(paths);
+	int madeSwap = 1;
+	printf("Attempting to sort at all\n");
 	// SHITTY BUBBLE SORT, BUT HEY, N <= 11.
-	while (madeSwap){
+	while (madeSwap > 0){
 		madeSwap = 0;
-		for (int i = 0; i < h-1; i++){
+		for (int i = 0; i < w-1; i++){
 			int row1 = i;
 			int row2 = i+1;
-			if (compareMatrixRowL(paths, row1, row2) == -1){
+			int comparison = compareMatrixRowL(paths, row1, row2);
+			printf("comparing rows %d and %d yielded %d\n",row1, row2, comparison);
+			if (comparison == -1){
 				swapMatrixRowL(paths, row1, row2);
 				madeSwap = 1;
 			}
