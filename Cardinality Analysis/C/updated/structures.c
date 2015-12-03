@@ -96,7 +96,7 @@ void printMatrixRow(int* a, int m){
 	for (int i = 0; i < m-1; i++){
 		printf("%d,\t",a[i]);
 	}
-	printf("%d]\n", a[m-1]);
+	printf("%d],\n", a[m-1]);
 }
 
 void printMatrix(int** a){
@@ -194,7 +194,7 @@ void printMatrixRowL(long* a, int m){
 	for (int i = 0; i < m-1; i++){
 		printf("%ld,\t",a[i]);
 	}
-	printf("%ld]\n", a[m-1]);
+	printf("%ld],\n", a[m-1]);
 }
 
 void printMatrixL(long** a){
@@ -228,7 +228,6 @@ void verifyMatrixMemorySafeL(){
 }
 
 int compareMatricesL(long** a, long** b){
-	printf("COMPARING MATRICES ");
 
 	int aWidth = widthMatrixL(a);
 	int bWidth = widthMatrixL(b);
@@ -252,8 +251,6 @@ int compareMatricesL(long** a, long** b){
 
 
 	int h = aHeight;
-
-	printf(" SHOULD GET HERE. W=%d, H=%d\n", w, h);
 
 	for (int i = 0; i < w; i++){
 		for (int j = 0; j < h; j++){
@@ -286,4 +283,16 @@ void swapMatrixRowL(long** a, int row1, int row2){
 		a[row1][i] = a[row2][i];
 		a[row2][i] = temp;	
 	}
+}
+
+long** duplicateMatrixL(long** m){
+	int w = widthMatrixL(m);
+	int h = heightMatrixL(m);
+	long** n = createMatrixL(w, h);
+	for(int i = 0; i < w; i++){
+		for (int j = 0; j < h; j++){
+			n[i][j] = m[i][j];
+		}
+	}
+	return n;
 }

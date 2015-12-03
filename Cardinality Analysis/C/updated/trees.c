@@ -212,7 +212,7 @@ int considerARotation(Node *node){
 		return 0;
 	}
 	int bf = getBalanceFactor(node);
-	printf("CONSIDERING A ROTATION, [%d h=%d] BF = %d\n", node->id, node->height, bf);
+	// printf("CONSIDERING A ROTATION, [%d h=%d] BF = %d\n", node->id, node->height, bf);
 	if (bf > 1){
 		if (getBalanceFactor(node->left) < 0){
 			rotateTreeLeft(node->left);
@@ -235,7 +235,7 @@ int considerARotation(Node *node){
 
 Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 	int comparison = compareData(subRoot->data, toInsert->data);
-	printf("Comparing nodes %d and %d with result %d\n", subRoot->id, toInsert->id, comparison);
+	// printf("Comparing nodes %d and %d with result %d\n", subRoot->id, toInsert->id, comparison);
 
 	if (comparison == -1){
 		if (subRoot->left == NULL){
@@ -255,14 +255,14 @@ Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 			return insertIntoSubTreeSet(subRoot->right, toInsert);
 		}
 	}
-	printf("FOUND A DUPLICATE!!!\n");
+	// Found a duplicate
 	return subRoot;
 }
 
 void insertIntoPowerTrees(Data* data, int power){
-	printf("CREATING NODE\n");
+	
 	Node *node = createNode(data, power);
-	printNode(node, 0);
+	
 	if (roots[power] == NULL){
 		roots[power] = node;
 		return;
@@ -280,9 +280,9 @@ void insertIntoPowerTrees(Data* data, int power){
 		if (otherNode->alreadyAdvanced == 0){
 			// We haven't advanced the collided node!  Mark it collided, and advance it
 			otherNode->alreadyAdvanced = 1;
-			printf("\totherNodeMarked\n");
+			
 			Data* newData = duplicatePathsOneValue(otherNode->data);
-			printf("\totherNodeUpdated\n");
+			
 			insertIntoPowerTrees(newData, power+1);
 		}
 		// Advance the inserting node.

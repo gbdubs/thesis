@@ -56,4 +56,6 @@ int compareMatrixRowL(long** a, int row1, int row2);
 
 void swapMatrixRowL(long** a, int row1, int row2);
 
+long** duplicateMatrixL(long** m);
+
 #endif

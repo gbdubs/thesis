@@ -11,21 +11,12 @@ typedef struct DataItem {
 	int** graph;
 	long** running;
 	long** paths;
+	long** sortedPaths;
 } Data;
 
 int compareData(Data* a, Data* b);
 Data* createData(int** graph);
 void destroyData(Data* data);
-
-/* * * * * * * * * * * * * * * * * * * * */
-/*         MATRIX MULTIPLICATION         */
-/* * * * * * * * * * * * * * * * * * * * */
-int** multiply(int** a, int** b);
-long** multiplyL(long** a, long** b);
-long** multiplyLI(long** a, int** b);
-long** multiplyIL(int** a, long** b);
-long** multiply2L(int** a, int** b);
-
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*           PATHS CALCULATION           */

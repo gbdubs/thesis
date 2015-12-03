@@ -21,52 +21,56 @@ char* getFilePath(int v, int e){
 	return result;
 }
 
-void calculatePower(int v, int e){
+int calculatePower(int v, int e){
 	
 	FILE *nautyFile;
 	nautyFile = fopen(getFilePath(v,e), "r");
 	char inputBuffer[11];
 	if (nautyFile == NULL){
 		printf("FILE NOT FOUND [%s]\n", getFilePath(v, e));
-		return; 
+		return -1; 
 	} else {
 		printf("FILE CREATED\n");
 	}
 	
-
-
 	int loopCount = 0;
 	while (fscanf(nautyFile, "%s", inputBuffer) == 1){
 		// Prints an updating statement
 		if (loopCount % 1 == 0){ printf("Processed %d graphs\n", loopCount); }
 		
 		// Retrieves the graph, calculates its paths function, sorts the vectors, and inserts it into the tree.
-		printf("Got Data: [%s]!!\n", inputBuffer);
+		// printf("Got Data: [%s]!!\n", inputBuffer);
 		int** graph = retrieveGraph(inputBuffer);
-		printf("Graph retrieved!!\n");
+		// printf("Graph retrieved!!\n");
 		Data* data = createData(graph);
-		printf("Data created!!\n");
+		// printf("Data created!!\n");
 		insertIntoPowerTrees(data,0);
-		printf("Data Inserted!!\n");
+		// printf("Data Inserted!!\n");
 
 		loopCount++;
 	}
 
 
-	printResults();
-	printTrees();
+	//printResults();
+	//printTrees();
 	
 	int maxP = maxPower();
 	
-	for (int i = 0; i < 10; i++){
-		printf("MAX POWER!!! %d\n", maxP); 
-	}
+	printf("MAX POWER!!! %d\n", maxP); 
 	
 	fclose(nautyFile);
+	
+	return maxP;
 }
 
 int main(){
-	calculatePower(5,4);
+	calculatePower(5,5);
+}
+
+void verifyPaths(){
+
+
+
 }
 
 
