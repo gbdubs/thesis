@@ -37,7 +37,7 @@ int calculatePower(int v, int e){
 	int loopCount = 0;
 	while (fscanf(nautyFile, "%s", inputBuffer) == 1){
 		// Prints an updating statement
-		if (loopCount % 1000 == 0){ printf("Processed %d graphs\n", loopCount); }
+		// if (loopCount % 1000 == 0){ printf("Processed %d graphs\n", loopCount); }
 
 		// Retrieves the graph, calculates its paths function, sorts the vectors, and inserts it into the tree.
 		//  printf("Got Data: [%s]!!\n", inputBuffer);
@@ -53,9 +53,10 @@ int calculatePower(int v, int e){
 	}
 
 
-	//printResults();
-	//printTrees();
-	
+	printResults();
+	printTrees();
+
+
 	int maxP = maxPower();
 	
 	//printf("MAX POWER!!! %d\n", maxP); 
@@ -78,9 +79,10 @@ int main(int argc, char *argv[]){
     int v = atoi(argv[1]);
     int e = atoi(argv[2]);
 
+    int eOrig = e;
     e = min(e, (v*(v-1))/2 - e);
 
-    printf("%d\n",calculatePower(v, e));
+    printf("(%d,%d) -> %d\n", v , eOrig, calculatePower(v, e));
 }
 
 

@@ -47,7 +47,7 @@ void destroyNode(Node* node){
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*       EDIT HERE TO ALLOW ANY P        */
-				Node* roots[50];
+				Node* roots[100];
 /*                                       */
 /* * * * * * * * * * * * * * * * * * * * */
 
@@ -77,10 +77,10 @@ void printAllData(Node* node){
 	if (node->right != NULL) printf("\tRIGHT [%d]\n", node->right->id);
 	if (node->parent != NULL) printf("\tPARENT [%d]\n", node->parent->id);
 	//printf("POWER [%d]\n", node->power);
-	//printf("GRAPH: \n");
-	//printMatrix(node->data->graph);
-	//printf("PATHS: \n");
-	//printMatrixL(node->data->paths);
+	printf("GRAPH: \n");
+	printMatrix(node->data->graph);
+	printf("PATHS: \n");
+	printMatrixL(node->data->paths);
 	printf("}\n");
 	if (node->left != NULL){
 		printAllData(node->left);
@@ -284,18 +284,31 @@ Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 			return insertIntoSubTreeSet(subRoot->right, toInsert);
 		}
 	}
+
+	if (toInsert->power > 80){
+		printMatrix(toInsert->data->graph);
+		printMatrix(subRoot->data->graph);
+	}
+
+
 	// Found a duplicate
 	return subRoot;
 }
 
 void insertIntoPowerTrees(Data* data, int power){
-	if (power > 10){
-		printf("POWER!!! %d!!!\n", power);
+	if (power > 50){
+		printf("Large Power Detected!!! [%d]\n", power);
+		printTrees();
+	}
+
+	if (power > 100){
+		printf("TOO LARGE POWER DETECTED!!! [%d]\n", power);
+		exit(1);
 	}
 
 	Node *node = createNode(data, power);
 
-	//printf("--Initializing insert with node [%d]--\n", node->id);
+	// printf("--Initializing insert with node [%d]--\n", node->id);
 
 	if (roots[power] == NULL){
 		roots[power] = node;
