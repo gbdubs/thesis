@@ -36,11 +36,6 @@ Node* createNode(Data* data, int power){
 	return node;
 }
 
-void destroyNode(Node* node){
-	destroyData(node->data);
-	free(node);
-}
-
 /* * * * * * * * * * * * * * * * * * * * */
 /*            ROOTS STRUCTURE            */
 /* * * * * * * * * * * * * * * * * * * * */
@@ -54,6 +49,8 @@ void destroyNode(Node* node){
 /* * * * * * * * * * * * * * * * * * * * */
 /*                PRINTING               */
 /* * * * * * * * * * * * * * * * * * * * */
+
+int weight(Node*);
 
 void printTab(int j){
 	for (int i = j; i > 0; i--){
@@ -93,6 +90,36 @@ void printAllData(Node* node){
 void printTree(int i){
 	printNode(roots[i], 0);
 	printAllData(roots[i]);
+}
+
+void printResults(){
+	printf("Tree Sizes: ");
+	
+	int index = 0;
+	while (roots[index] != NULL){
+		printf("%d\t", weight(roots[index]));
+		index++;
+	}
+	printf("\n");
+}
+
+void printTrees(){
+	printf("Trees: ");
+	
+	int index = 0;
+	while (roots[index] != NULL){
+		printf("=============== TREE #%d ==============\n", index);
+		printTree(index++);
+	}
+	printf("\n");
+}
+
+int maxPower(){
+	int index = 0;
+	while (roots[index] != NULL){
+		index++;
+	}
+	return index + 1;
 }
 
 /* * * * * * * * * * * * * * * * * * * * */
@@ -151,18 +178,12 @@ int getBalanceFactor(Node *node){
 }
 
 void rotateTreeLeft(Node *p){
-	// printf("perfomring a rotation on node [%d]\n", p->id);
 	int power = p->power;
 
 	Node *q = p->right;
 	Node *b = q->left;
 	Node *a = p->parent;
 	
-	// if ((p == roots[power]) != (a == NULL)){
-		// printf("CONTRADITICTION!!!!\n");
-		// printTrees();
-	// }
-
 	q->left = p;
 	p->parent = q;
 	
@@ -177,29 +198,22 @@ void rotateTreeLeft(Node *p){
 			a->right = q;
 		}
 	}
+
 	p->right = b;
 	if (b != NULL){
 		b->parent = p;
 	}
-
-	// printf("pointer reassignments successful\n");
 
 	adjustTreeHeight(p);
 	adjustTreeHeight(q);
 }
 
 void rotateTreeRight(Node *q){
-	// printf("perfomring a rotation on node [%d]\n", q->id);
 	int power = q->power;
 
 	Node *p = q->left;
 	Node *b = p->right;
 	Node *a = q->parent;
-
-	// if ((q == roots[power]) != (a == NULL)){
-		// printf("CONTRADITICTION!!!!\n");
-		// printTrees();
-	// }
 
 	p->right = q;
 	q->parent = p;
@@ -224,20 +238,13 @@ void rotateTreeRight(Node *q){
 
 	adjustTreeHeight(q);
 	adjustTreeHeight(p);
-
-	// printNode(p, 1);
 }
 
 int considerARotation(Node *node){
-	if (node == NULL){
-		return 0;
-	}
+	if (node == NULL){ return 0; }
 
 	int bf = getBalanceFactor(node);
-	// printf("CONSIDERING A ROTATION, [%d h=%d] BF = %d\n", node->id, node->height, bf);
-	// if (node->parent != NULL) printf(" -- Parent = [%d]\n", node->parent->id);
 	if (bf > 1){
-		
 		if (getBalanceFactor(node->left) < 0){
 			rotateTreeLeft(node->left);
 		}
@@ -245,12 +252,9 @@ int considerARotation(Node *node){
 		return 1;
 	} else if (bf < -1){
 		if (getBalanceFactor(node->right) > 0){
-			// printf("double\n");
 			rotateTreeRight(node->right);
-			// printf("rotated right\n");
 		}
 		rotateTreeLeft(node);
-		// printf("rotated left");
 		return 1;
 	}
 	return considerARotation(node->parent);
@@ -262,10 +266,7 @@ int considerARotation(Node *node){
 
 Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 	int comparison = compareData(subRoot->data, toInsert->data);
-	// printf("Comparing nodes %d and %d with result %d in tree %d\n", subRoot->id, toInsert->id, comparison, toInsert->power);
-
-	int doPrint = (subRoot->id == 126 && toInsert->id == 178);
-
+	
 	if (comparison == -1){
 		if (subRoot->left == NULL){
 			subRoot->left = toInsert;
@@ -285,30 +286,12 @@ Node* insertIntoSubTreeSet(Node *subRoot, Node *toInsert){
 		}
 	}
 
-	if (toInsert->power > 80){
-		printMatrix(toInsert->data->graph);
-		printMatrix(subRoot->data->graph);
-	}
-
-
 	// Found a duplicate
 	return subRoot;
 }
 
 void insertIntoPowerTrees(Data* data, int power){
-	if (power > 50){
-		printf("Large Power Detected!!! [%d]\n", power);
-		printTrees();
-	}
-
-	if (power > 100){
-		printf("TOO LARGE POWER DETECTED!!! [%d]\n", power);
-		exit(1);
-	}
-
 	Node *node = createNode(data, power);
-
-	// printf("--Initializing insert with node [%d]--\n", node->id);
 
 	if (roots[power] == NULL){
 		roots[power] = node;
@@ -323,18 +306,14 @@ void insertIntoPowerTrees(Data* data, int power){
 		adjustTreeHeight(node->parent);
 		considerARotation(node);
 	} else {
-		// printf("FOUND COLLISION\n");
 		// Nothing inserted into the tree, so don't rebalance or adjust heights.
 		if (otherNode->alreadyAdvanced == 0){
-			// printf("OTHER ONE NEEDED INSERTING\n");
 			// We haven't advanced the collided node!  Mark it collided, and advance it
 			otherNode->alreadyAdvanced = 1;
 			
 			Data* newData = duplicatePathsOneValue(otherNode->data);
 			
 			insertIntoPowerTrees(newData, power+1);
-		} else {
-			// printf("OTHER DIDNT NEED INSERTION\n");
 		}
 		// Advance the inserting node.
 		Data* newData = duplicatePathsOneValue(data);
@@ -343,39 +322,3 @@ void insertIntoPowerTrees(Data* data, int power){
 	}
 
 }
-
-
-/* * * * * * * * * * * * * * * * * * * * */
-/*                RESULTS                */
-/* * * * * * * * * * * * * * * * * * * * */
-
-void printResults(){
-	printf("Tree Sizes: ");
-	
-	int index = 0;
-	while (roots[index] != NULL){
-		printf("%d\t", weight(roots[index]));
-		index++;
-	}
-	printf("\n");
-}
-
-void printTrees(){
-	printf("Trees: ");
-	
-	int index = 0;
-	while (roots[index] != NULL){
-		printf("=============== TREE #%d ==============\n", index);
-		printTree(index++);
-	}
-	printf("\n");
-}
-
-int maxPower(){
-	int index = 0;
-	while (roots[index] != NULL){
-		index++;
-	}
-	return index + 1;
-}
-

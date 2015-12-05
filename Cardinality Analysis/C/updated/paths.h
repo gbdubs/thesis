@@ -16,13 +16,11 @@ typedef struct DataItem {
 
 int compareData(Data* a, Data* b);
 Data* createData(int** graph);
-void destroyData(Data* data);
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*           PATHS CALCULATION           */
 /* * * * * * * * * * * * * * * * * * * * */
 
-void updatePathsOneValue(Data* data);
 Data* duplicatePathsOneValue(Data* data);
 void sortPaths(long** paths);
 

@@ -5,68 +5,7 @@
 
 #include "structures.h"
 
-/* * * * * * * * * * * * * * * * * * * * */
-/*           ARRAY UTILITIES             */
-/* * * * * * * * * * * * * * * * * * * * */
 
-int* createArray(int n){
-	int* values = malloc((1+n)*sizeof(int));
-	values[0] = n;
-	return &values[1];
-}
-
-
-int lengthArray(int* a){
-	return a[-1];
-}
-
-
-void destroyArray(int* a){
-	free(&a[-1]);
-}
-
-int compareArrays(int* a, int* b){
-	int aLength = lengthArray(a);
-	int bLength = lengthArray(b);
-
-	if (aLength > bLength){
-		return 1;
-	} else if (aLength < bLength){
-		return -1;
-	}
-
-	for (int i = 0; i < aLength; i++){
-		if (a[i] > b[i]){
-			return 1;
-		} else if (a[i] < b[i]){
-			return -1;
-		}
-	}
-
-	return 0;
-}
-
-
-void printArray(int* a){
-	int length = lengthArray(a);
-	printf("[");
-	for (int i = 0; i < length-1; i++){
-		printf("%d, ",a[i]);
-	}
-	printf("%d]\n", a[length-1]);
-}
-
-
-void veryifyArrayMemorySafe(){
-	int size = 1500;
-	while(1){
-		int* a = createArray(size);
-		for(int i = 0; i < size; i++){
-			a[i] = i;
-		}
-		destroyArray(a);
-	}
-}
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*          MATRIX UTILITIES             */
@@ -107,26 +46,6 @@ void printMatrix(int** a){
 		printMatrixRow(a[i], m);
 	}
 	printf("]\n");
-}
-
-void destroyMatrix(int** a){
-	free(a);
-	free(&a[0][-2]);
-}
-
-void verifyMatrixMemorySafe(){
-	int n = 15;
-	int m = 20;
-	int k = 1;
-	while(k){
-		int** a = createMatrix(n, m);
-		for(int i = 0; i < n; i++){
-			for(int j = 0; j < m; j++){
-				a[i][j] = i+j;
-			}
-		}
-		destroyMatrix(a);
-	}
 }
 
 int compareMatrices(int** a, int** b){
@@ -207,69 +126,33 @@ void printMatrixL(long** a){
 	printf("]\n");
 }
 
-void destroyMatrixL(long** a){
-	free(a);
-	free(&a[0][-2]);
-}
-
-void verifyMatrixMemorySafeL(){
-	int n = 15;
-	int m = 20;
-	int k = 1;
-	while(k){
-		long** a = createMatrixL(n, m);
-		for(int i = 0; i < n; i++){
-			for(int j = 0; j < m; j++){
-				a[i][j] = i+j;
-			}
-		}
-		destroyMatrixL(a);
-	}
-}
-
 int compareMatricesL(long** a, long** b){
 
 	int aWidth = widthMatrixL(a);
 	int bWidth = widthMatrixL(b);
+	int aHeight = heightMatrixL(a);
+	int bHeight = heightMatrixL(b);
 
-	if (aWidth > bWidth){
+	if (aWidth > bWidth || aHeight > bHeight){
 		return 1;
-	} else if (aWidth < bWidth){
+	} else if (aWidth < bWidth || aHeight < bHeight){
 		return -1;
 	}
 
 	int w = aWidth;
 
-	int aHeight = heightMatrixL(a);
-	int bHeight = heightMatrixL(b);
-
-	if (aHeight > bHeight){
-		return 1;
-	} else if (aHeight < bHeight){
-		return -1;
-	}
-
-
-	int h = aHeight;
-
 	for (int i = 0; i < w; i++){
-		for (int j = 0; j < h; j++){
-			if (a[i][j] > b[i][j]){
-				return 1;
-			} else if (a[i][j] < b[i][j]){
-				return -1;
-			}
-		}
+		int rowComparison = compareMatrixRowL(a, i, b, i);
 	}
 	return 0;
 }
 
-int compareMatrixRowL(long** a, int row1, int row2){
+int compareMatrixRowL(long** a, int row1, long** b, int row2){
 	int h = heightMatrixL(a);
 	for (int j = 0; j < h; j++){
-		if (a[row1][j] > a[row2][j]){
+		if (a[row1][j] > b[row2][j]){
 			return 1;
-		} else if (a[row1][j] < a[row2][j]){
+		} else if (a[row1][j] < b[row2][j]){
 			return -1;
 		}
 	}

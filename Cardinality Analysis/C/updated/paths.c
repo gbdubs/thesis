@@ -6,77 +6,19 @@
 #include "paths.h"
 
 /* * * * * * * * * * * * * * * * * * * * */
-/*         MATRIX MULTIPLICATION         */
+/*              Prototypes               */
 /* * * * * * * * * * * * * * * * * * * * */
+long** multiply2L(int** a, int** b);
+long** multiplyLI(long** a, int** b);
 
-long** multiplyLI(long** a, int** b){
-	int aHeight = heightMatrixL(a);
-	int aWidth = widthMatrixL(a);
-	int bHeight = heightMatrix(b);
-	int bWidth = widthMatrix(b);
-
-	// Matrix multiplication requires that we have
-	// a dimension match here.
-
-	if (aWidth != bHeight){
-		return NULL;
-	}
-
-	long** result = createMatrixL(aHeight, bWidth);
-
-	for (int i = 0; i < aHeight; i++){
-		for (int j = 0; j < bWidth; j++){
-			long total = 0;
-			for (int k = 0; k < aWidth; k++){
-				total += a[i][k] * b[k][j];
-			}
-			result[i][j] = total;
-		}
-	}
-	return result;
-}
-
-long** multiply2L(int** a, int** b){
-	int aHeight = heightMatrix(a);
-	int aWidth = widthMatrix(a);
-	int bHeight = heightMatrix(b);
-	int bWidth = widthMatrix(b);
-
-	// Matrix multiplication requires that we have
-	// a dimension match here.
-
-	if (aWidth != bHeight){
-		return NULL;
-	}
-	
-	long** result = createMatrixL(aHeight, bWidth);
-
-	for (int i = 0; i < aHeight; i++){
-		for (int j = 0; j < bWidth; j++){
-			long total = 0;
-			for (int k = 0; k < aWidth; k++){
-				total += a[i][k] * b[k][j];
-			}
-			result[i][j] = total;
-		}
-	}
-	return result;
-}
 
 /* * * * * * * * * * * * * * * * * * * * */
 /*              DATA ITEM                */
 /* * * * * * * * * * * * * * * * * * * * */
 
-
-int compareData(Data* a, Data* b){
-	int result = compareMatricesL(a->sortedPaths, b->sortedPaths);
-	// printf("COMPARED DATA AND RESULT WAS %d\n", result);
-	return result;
-}
-
 Data* createData(int** graph){
 	int v = widthMatrix(graph);
-	
+
 	Data* d = malloc(sizeof(Data));
 
 	long** running = multiply2L(graph, graph);
@@ -99,11 +41,8 @@ Data* createData(int** graph){
 	return d;
 }
 
-void destroyData(Data* data){
-	destroyMatrix(data->graph);
-	destroyMatrixL(data->running);
-	destroyMatrixL(data->paths);
-	free(data);
+int compareData(Data* a, Data* b){
+	return compareMatricesL(a->sortedPaths, b->sortedPaths);
 }
 
 /* * * * * * * * * * * * * * * * * * * * */
@@ -147,21 +86,73 @@ Data* duplicatePathsOneValue(Data* data){
 /*          SORTING CALCULATION          */
 /* * * * * * * * * * * * * * * * * * * * */
 
+// Bubble Sort on Row Vectors. Shitty, but since N <= 11, I wouldn't 
+// worry about it too much at least you know it is right, right?
 void sortPaths(long** paths){
 	int w = widthMatrixL(paths);
 	int madeSwap = 1;
-	// SHITTY BUBBLE SORT, BUT HEY, N <= 11.
 	while (madeSwap > 0){
 		madeSwap = 0;
 		for (int i = 0; i < w-1; i++){
 			int row1 = i;
 			int row2 = i+1;
-			int comparison = compareMatrixRowL(paths, row1, row2);
-			// printf("comparing rows %d and %d yielded %d\n",row1, row2, comparison);
+			int comparison = compareMatrixRowL(paths, row1, paths, row2);
 			if (comparison == -1){
 				swapMatrixRowL(paths, row1, row2);
 				madeSwap = 1;
 			}
 		}
 	}
+}
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*         MATRIX MULTIPLICATION         */
+/* * * * * * * * * * * * * * * * * * * * */
+
+long** multiplyLI(long** a, int** b){
+	int aHeight = heightMatrixL(a);
+	int aWidth = widthMatrixL(a);
+	int bHeight = heightMatrix(b);
+	int bWidth = widthMatrix(b);
+
+	if (aWidth != bHeight){
+		return NULL; // Verifies Dimension Match
+	}
+
+	long** result = createMatrixL(aHeight, bWidth);
+
+	for (int i = 0; i < aHeight; i++){
+		for (int j = 0; j < bWidth; j++){
+			long total = 0;
+			for (int k = 0; k < aWidth; k++){
+				total += a[i][k] * b[k][j];
+			}
+			result[i][j] = total;
+		}
+	}
+	return result;
+}
+
+long** multiply2L(int** a, int** b){
+	int aHeight = heightMatrix(a);
+	int aWidth = widthMatrix(a);
+	int bHeight = heightMatrix(b);
+	int bWidth = widthMatrix(b);
+
+	if (aWidth != bHeight){
+		return NULL; // Verifies Dimension Match
+	}
+	
+	long** result = createMatrixL(aHeight, bWidth);
+
+	for (int i = 0; i < aHeight; i++){
+		for (int j = 0; j < bWidth; j++){
+			long total = 0;
+			for (int k = 0; k < aWidth; k++){
+				total += a[i][k] * b[k][j];
+			}
+			result[i][j] = total;
+		}
+	}
+	return result;
 }
