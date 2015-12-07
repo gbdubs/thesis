@@ -62,4 +62,54 @@ void destroyArray(int* a);
 
 void printArray(int* a);
 
+/* * * * * * * * * * * * * * * * * * * * */
+/*        INTEGER LIST UTILITIES         */
+/* * * * * * * * * * * * * * * * * * * * */
+
+typedef struct ArrayListI{
+	int* values;
+	int size;
+	int maxSize;
+} ListI;
+
+ListI* createListI();
+
+void insertListI(ListI* list, int j);
+
+void printListI(ListI* li);
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*          LONG LIST UTILITIES          */
+/* * * * * * * * * * * * * * * * * * * * */
+
+typedef struct ArrayListL{
+	long* values;
+	int size;
+	int maxSize;
+} ListL;
+
+ListL* createListL();
+
+int indexOfL(ListL* list, long l);
+
+void insertListL(ListL* list, long l);
+
+void printListL(ListL* li);
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*          VOID LIST UTILITIES          */
+/* * * * * * * * * * * * * * * * * * * * */
+
+typedef struct ArrayListV{
+	void** values;
+	int size;
+	int maxSize;
+} ListV;
+
+ListV* createListV();
+
+void insertListV(ListV* list, void* v);
+
+void printListV(ListV* li);
+
 #endif

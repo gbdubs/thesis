@@ -6,7 +6,6 @@
 #include "structures.h"
 
 
-
 /* * * * * * * * * * * * * * * * * * * * */
 /*          MATRIX UTILITIES             */
 /* * * * * * * * * * * * * * * * * * * * */
@@ -275,3 +274,127 @@ void printArray(int* a){
 	}
 	printf("%d]\n", a[length-1]);
 }
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*        INTEGER LIST UTILITIES         */
+/* * * * * * * * * * * * * * * * * * * * */
+
+ListI* createListI(){
+	int n = 2;
+	int* values = malloc(n*sizeof(int));
+	values[0] = 0;
+	values[1] = 0;
+	ListI* l = malloc(sizeof(ListI));
+	l->values = values;
+	l->size = 0;
+	l->maxSize = n;
+	return l;
+}
+
+void insertListI(ListI* list, int j){
+	list->values[list->size] = j;
+	list->size++;
+	if (list->size == list->maxSize){
+		int* newValues = malloc(list->size*2*sizeof(int));
+		for(int i = 0; i < list->size; i++){
+			newValues[i] = list->values[i];
+			newValues[i + list->maxSize] = 0;
+		}
+		list->values = newValues;
+		list->maxSize = list->size * 2;
+	}
+}
+
+void printListI(ListI* li){
+	printf("[");
+	for (int i = 0; i < li->size; i++){
+		printf("%d ", li->values[i]);
+	}
+	printf("]\n");
+}
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*          LONG LIST UTILITIES          */
+/* * * * * * * * * * * * * * * * * * * * */
+
+ListL* createListL(){
+	int n = 2;
+	long* values = malloc(n*sizeof(long));
+	values[0] = (long) 0;
+	values[1] = (long) 0;
+	ListL* l = malloc(sizeof(ListL));
+	l->values = values;
+	l->size = 0;
+	l->maxSize = n;
+	return l;
+}
+
+void insertListL(ListL* list, long l){
+	list->values[list->size] = l;
+	list->size++;
+	if (list->size == list->maxSize){
+		long* newValues = malloc(list->size*2*sizeof(long));
+		for(int i = 0; i < list->size; i++){
+			newValues[i] = list->values[i];
+			newValues[i + list->maxSize] = (long) 0;
+		}
+		list->values = newValues;
+		list->maxSize = list->size * 2;
+	}
+}
+
+int indexOfL(ListL* list, long value){
+	for (int i = 0; i < list->size; i++){
+		if (list->values[i] == value){
+			return i;
+		}
+	}
+	return -1;
+}
+
+void printListL(ListL* li){
+	printf("[");
+	for (int i = 0; i < li->size; i++){
+		printf("%ld ", li->values[i]);
+	}
+	printf("]\n");
+}
+
+/* * * * * * * * * * * * * * * * * * * * */
+/*          VOID LIST UTILITIES          */
+/* * * * * * * * * * * * * * * * * * * * */
+
+ListV* createListV(){
+	int n = 2;
+	void** values = malloc(n*sizeof(void*));
+	values[0] = NULL;
+	values[1] = NULL;
+	ListV* l = malloc(sizeof(ListV));
+	l->values = values;
+	l->size = 0;
+	l->maxSize = n;
+	return l;
+}
+
+void insertListV(ListV* list, void* v){
+	list->values[list->size] = v;
+	list->size++;
+	if (list->size == list->maxSize){
+		void** newValues = malloc(list->size*2*sizeof(void*));
+		for(int i = 0; i < list->size; i++){
+			newValues[i] = list->values[i];
+			newValues[i + list->maxSize] = NULL;
+		}
+		list->values = newValues;
+		list->maxSize = list->size * 2;
+	}
+}
+
+void printListV(ListV* li){
+	printf("[");
+	for (int i = 0; i < li->size; i++){
+		printf("%p ", li->values[i]);
+	}
+	printf("]\n");
+}
+

@@ -3,173 +3,112 @@
 #include <math.h>
 #include <stdlib.h>
 #include "structures.h"
+#include "graph6.h"
+#include "graph.h"
+#include "trie.h"
 
-typedef struct OrderMap {
-	int oldOrder;
-	int newValue;
-	int graphIndex;
-	int newOrder;
-} OM;
 
-OM* createOM(int oo, int nv, int gi, int no){
-	OM* om = malloc(sizeof(OM));
-	om->oldOrder = oo;
-	om-> newValue = nv;
-	om->graphIndex = gi;
-	om->newOrder = no;
-	return om;
+// Assigns all trie nodes a universal ID for debugging + printing purposes.
+int globalTrieId = 0;
+
+/*
+ * Creates a trie node with the given graph (note that this is inherently
+ * a leaf node (though it may later be transformed internal if there is a
+ * collision)).
+ */
+Node* createNode(Graph* g){
+	Node* n = malloc(sizeof(Node));
+	n->graph = g;
+	n->values = createListL();
+	n->ptrs = createListV();
+	n->id = globalTrieId++;
+	return n;
 }
 
-int compareOrderMapElements(OM* o, OM* m){
-	if (o->oldOrder < m->oldOrder){
-		return 1;
-	}
-	if (o->oldOrder > m->oldOrder){
-		return -1;
-	}
-
-	if (o->newValue < m->newValue){
-		return 1;
-	}
-	if (o->newValue > m->newValue){
-		return -1;
-	}
-	return 0;
+Node* createRoot(){
+	return createNode(NULL);
 }
 
-void printOMs(OM* oms[], int n){
-	printf("OO [");
-	for (int i = 0; i < n; i++){
-		printf("%d ", oms[i]->oldOrder);
-	}
-	printf("]\n");
-	printf("NV [");
-	for (int i = 0; i < n; i++){
-		printf("%d ", oms[i]->newValue);
-	}
-	printf("]\n");
-	printf("GI [");
-	for (int i = 0; i < n; i++){
-		printf("%d ", oms[i]->graphIndex);
-	}
-	printf("]\n");
-	printf("NO [");
-	for (int i = 0; i < n; i++){
-		printf("%d ", oms[i]->newOrder);
-	}
-	printf("]\n\n");
-}
 
-void sortOrderMap(OM* oms[], int n){
-	int madeSwap = 1;
-	while (madeSwap == 1){
-		madeSwap = 0;
-		for (int i = 0; i < n-1; i++){
-			int comparison = compareOrderMapElements(oms[i], oms[i+1]);
-			if (comparison == -1){
-				OM* temp = oms[i];
-				oms[i] = oms[i+1];
-				oms[i+1] = temp;
-				madeSwap = 1;
-			}
-		}
-	}
-	oms[0]->newOrder = 0;
-	for (int i = 1; i < n; i++){
-		int comparison = compareOrderMapElements(oms[i], oms[i-1]);
-		if (comparison == 0){
-			oms[i]->newOrder = oms[i-1]->newOrder;
-		} else {
-			oms[i]->newOrder = i;
-		}
-	}
-}
-
-typedef struct GraphGenerator {
-	int** graph;
-	long** running;
-	int* order;
-	int nextOrder;
-} Graph;
-
-int size(Graph* g){
-	return xMatrix(g->graph);
-}
-
-void advanceGraph(Graph* g){
-	int v = size(g);
-
-	long** old = g->running;
-	g->running = multiplyLI(g->running, g->graph);
-	destroyMatrixL(old);
-	g->nextOrder = 0;
-
-	OM** oms = malloc(v * sizeof(OM*));
-	for (int i = 0; i < v; i++){
-		OM* om = createOM(g->order[i], g->running[i][i], i, 0);
-		oms[i] = om;
-	}
-	sortOrderMap(oms, v);
-	for (int i = 0; i < v; i++){
-		g->order[oms[i]->graphIndex] = oms[i]->newOrder;
-	}
-}
-
-int getOrder(int* order, int request){
-	int length = lengthArray(order);
-
-	int lessThan = 0;
-	for(int offset = 0; offset < 0100; offset++){
-		int lookingFor = request - offset;
-		int numToGet = offset + 1;
-		for (int i = 0; i < length; i++){
-			if (order[i] == lookingFor){
-				numToGet--;
-				if (numToGet == 0){
-					return i;
-				}
-			}
-		}
+/*
+ * The meat of this file, the insertion function, follows a pretty classic
+ * Trie implementation, with the Lifecycle
+ *   - Trie Node is Created with A Graph In It
+ *   - If Graph is inserted into node with graph, both graphs are reinserted
+ *     into the node, but the graph of the node is now set to NULL.  
+ * This means that we have the minimal number of nodes nescessary to ensure
+ * that we can differentate between each of the graphs in the trie.
+ */
+void insert(Node* root, Graph* g){
+	if (root->graph != NULL){
+		Graph* temp = root->graph;
+		root->graph = NULL;
+		insert(root, temp);
 	}
 	
-	return -1;
+	long generated = getNextValue(g);
+
+	int nextIndex = indexOfL(root->values, generated);
+
+	if (nextIndex == -1){
+		insertListL(root->values, generated);
+		Node* n = createNode(g);
+		insertListV(root->ptrs, n);
+	} else {
+		Node* nextNode = (Node*) root->ptrs->values[nextIndex];
+		insert(nextNode, g);
+	}
 }
 
-Graph* createGraph(int** graph){
-	Graph* g = malloc(sizeof(Graph));
-	g->graph = graph;
-	g->running = intToLongMatrix(graph);
-	g->nextOrder = 0;
-	g->order = createArray(size(g));
-	for(int i = 0; i < size(g); i++){
-		g->order[i] = 0;
+
+/*
+ * Finds the height of the Trie rooted at the passed in value.
+ */
+int height(Node *n){
+	if (n == NULL){
+		return -1;
 	}
-	advanceGraph(g);
-	return g;
+	int maxHeight = -1;
+	for (int i = 0; i < n->values->size; i++){
+		int otherHeight = height((Node*) n->ptrs->values[i]);
+		if (maxHeight < otherHeight){
+			maxHeight = otherHeight;
+		}
+	}
+	return maxHeight + 1;
 }
 
-long getNextValue(Graph* g){
-	int index = getOrder(g->order, g->nextOrder);
-	long result = g->running[index][index];
-	g->nextOrder++;
-	if (g->nextOrder >= xMatrix(g->graph)){
-		g->nextOrder = 0;
-		advanceGraph(g);
+
+/*
+ * Finds the weight of the Trie rooted at the passed in value.
+ */
+int weight(Node *n){
+	if (n == NULL){
+		return 0;
 	}
-	return result;
+	int totalWeight = 1;
+	for (int i = 0; i < n->values->size; i++){
+		int otherWeight = weight((Node*) n->ptrs->values[i]);
+		totalWeight += otherWeight;
+	}
+	return totalWeight;
 }
 
-int main(){
-	int** g = createMatrix(7, 7);
-	for (int i = 0; i < 49; i++){
-		g[i/7][i%7] = rand() % 2 * (i/7 != i%7);
-		g[i%7][i/7] = g[i/7][i%7];
+
+void printTabs(int n){
+	for (int i = 0; i < n; i++){
+		printf("\t");
 	}
-	printMatrix(g);
+}
 
-	Graph* graph = createGraph(g);
 
-	for (int i = 0; i < 70; i++){
-		printf("%ld\n",getNextValue(graph));
+void printTrie(Node* n, int tabs){
+	printTabs(tabs);
+	printf("TRIE NODE [%d]\n",n->id);
+	for (int i = 0; i < n->ptrs->size; i++){
+		Node* child = (Node*) n->ptrs->values[i];
+		printTabs(tabs+1);
+		printf("[%ld] -->\n", n->values->values[i]);
+		printTrie(child, tabs+1);
 	}
 }
