@@ -21,6 +21,20 @@ char* getFilePath(int v, int e){
 	return result;
 }
 
+const int secondaryRootLength = 36;
+const char* secondaryDataRoot = "/home/u/fall12/gward/Desktop/graphs";
+
+char* getSecondaryFilePath(int v, int e){
+	int formatLength = 6;
+	int vLength = (v > 10) + 1;
+	int eLength = (e > 10) + 1;
+	int totalLength = secondaryRootLength + formatLength + vLength + eLength;
+	char* result = malloc(totalLength*sizeof(char));
+	const char* format = "%s/%d-%d.txt";
+	sprintf(result, format, secondaryDataRoot, v, e);
+	return result;
+}
+
 int calculatePower(int v, int e){
 	
 	Node* root = createRoot();
@@ -29,8 +43,11 @@ int calculatePower(int v, int e){
 	nautyFile = fopen(getFilePath(v,e), "r");
 	char inputBuffer[11];
 	if (nautyFile == NULL){
-		printf("FILE NOT FOUND [%s]\n", getFilePath(v, e));
-		return -1; 
+		nautyFile = fopen(getSecondaryFilePath(v,e), "r");
+		if (nautyFile == NULL){
+			printf("FILE NOT FOUND [%s]\n", getFilePath(v, e));
+			return -1;
+		} 
 	}
 	
 	int loopCount = 0;
