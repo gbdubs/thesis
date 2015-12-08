@@ -10,9 +10,7 @@
 
 
 
-In searching for a polynomial time-complexity solution to the graph isomorphism problem, many researchers have focused on, \emph{vertex invariants}, numerical properties calculated over a vertex of a graph that can be deterministically calculated, regardless of how the graph is represented or labeled. This article will aim to describe the descriptive power and information density of the \(Paths(p, v)\) function, a vertex invariant that counts the number of closed paths of length \(p\) through a vertex \(v\). The \(Paths\) function, in order to be applied to the graph isomorphism problem, is treated as an algebraic graph invariant, with the application of sorting to the results of individual vertex \(Paths\) results.
-
-Though
+In searching for a polynomial time-complexity solution to the graph isomorphism problem, many researchers have focused on, \emph{vertex invariants}, numerical properties calculated over a vertex of a graph that can be deterministically calculated, regardless of how the graph is represented or labeled. This article will aim to describe the descriptive power and information density of the \(Paths(p, v)\) function, a vertex invariant that counts the number of closed paths of length \(p\) through a vertex \(v\).
 
 
 
@@ -32,9 +30,9 @@ Though
 
 First, lets establish a shared understanding of the classes of graphs we are focusing on.  We will be examining \(undirected\) graphs that do not contain multi-edges nor loops.  Any graph under these three constraints can be represented as a symmetric adjacency matrix, with zeros along the diagonal, and ones or zeroes in the remaining locations denoting an edge or disjoint vertices respectively. We will regularly reference this matrix as \(A\) with no additional annotation.
 
-The vertex invariant we are going to examine (\(Paths(p, v)\)) is the number of closed paths of a length \(p\) that contain the vertex \(v\). A path is a sequence of vertices such that each vertex shares an edge with the next one. A Path can be notated by the sequence of the vertices that are visited (e.g. ABCDE or BACAB). A Path is \emph{closed} if the first and last vertex in their traversal sequence are the same. Note that though \(ABCDE\) and \(EDCBA\) describe the same edges, they are distinct paths: even though an undirected graph doesn't have directional edges, paths maintain the order of the edges they traverse.
+The vertex invariant we are going to examine (\(Paths(p, v)\)) is the number of closed paths of a length \(p\) that contain the vertex \(v\). A path is a sequence of vertices such that each vertex shares an edge with the next one. Paths can be notated by the sequence of the vertices that are visited (e.g. ABCDE or BACAB). Paths can be \emph{closed} if the first and last vertex in their traversal sequence are the same. Note that though \(ABCDE\) and \(EDCBA\) describe the same edges, they are distinct paths.  Even though an undirected graph doesn't have directional edges, paths maintain the order of the edges they traverse.
 
-For this article, when we describe a path as a geometric polygon (such as a triangle, quadrilateral, pentagon, etc.), we will define to be a closed path such that the vertices of the path are non-repeating (aside from the first and last, as we assume that it is closed). Thus, \(ABABA\) does not form a quadrilateral, even though it is a closed path of length four. Note that this path could equally well be described as \(BABAB\), as closed paths are inherently cyclic, and do not demand a starting vertex.  Additionally, we will assume that unlike a path, a polygon's directionality does not matter (thus the polygon ABCA is the same as the polygon ACBA). 
+For this article, when we describe a path as a geometric polygon (such as a triangle, quadrilateral, pentagon, etc.), we will define to be a closed path such that the vertices of the path are non-repeating (aside from the first and last, as we assume that it is closed). Thus, \(ABABA\) does not form a quadrilateral, even though it is a closed path of length four. Note that this path could equally well be described as \(BABAB\), as closed paths are inherently cyclic, and do not demand a starting vertex.  Additionally, we will assume that unlike paths, polygons directionality does not matter (thus the polygon ABCA is the same as the polygon ACBA). 
 
 
 

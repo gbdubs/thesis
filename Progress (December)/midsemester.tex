@@ -41,6 +41,101 @@ Since \(Paths(p, v)\) is a function that operates over a vertex, we will be exam
 
 Finally, two Graphs are said to be Co-Paths if they produce the same \(Paths\) object.  Since the Paths function is invariant to labeling and positioning, all isomorphic graphs are Co-Paths. However, a broader question is implied by this implication: does the reverse hold? Does Co-Paths determine isomorphism?  The answer turns out to be no, but the line of inquiry that leads to this result is worth examining, and leads us to a broader understanding and appreciation for the discriminatory power of the \(Paths\) function with respect to isomorphic graphs.
 
+\section{Theoretical Work this Semester}
+\subsection {Establishing Intuition: Paths and Polygon Functions}
+
+The \(Paths(p, v)\) function has a very convenient geometric interpretation for small values of \(p\). This interpretation relies on the \(Polygon\) Function: \(Polygon(p, v) = \) \emph{Number of distinct Polygons of size p that contain v as a vertex}.
+
+For small values of \(p\), we can express \(Polygon(p, v)\) in terms of \(Paths(p, v)\):
+
+\begin{itemize}
+    \item{Both invariants are uniform for all vertices for \(p = 0\) and \(p = 1\), as every vertex is trivially on a path to itself (so a path of size zero travels through it) and we have specified that there are no loops in the graph, thus there cannot be any edges that connect two of the same vertex.  Thus for all \(v\), \(Paths(0, v) = Polygon(0, v) = 1\) and \(Paths(1, v) =  Polygon(1, v) = 0\).}
+    \item{For \(p = 2\), we know that \(Paths(2, v)\) is equivalent to the number of nodes that \(v\) shares an edge with. This number is called the degree of the node, and is often referred to as the "base invariant". We also know that this must equal \(Polygon(2, v)\), as a closed path of length two in a graph without loops must contain two distinct vertices.}
+    \item{For \(p = 3\) we know that the only way to have a closed path of length three on the type of graph that we have described is to have three different edges (and three different vertices) form a triangle.  Thus, we know that \(p = 3\) is related to the number of triangles that a vertex is a part of.  However, since we are counting all possible combinatorial possibilities when we are describing our \(Paths(p, v)\) function, we need to take orientation into account.  That means that the path \(ABCA\) is fundamentally distinct from the counter directional path that visits the same nodes in the reverse order: \(ACBA\).  Though for \(p < 3, Paths(p, v) = Polygon(p, v)\), we know that for \(p = 3, \frac{Paths(3, v)}{2} = Polygon(3, v)\).}
+     \item{The interpretation for \(p = 4\) is less intuitive, but some simple examination yields that it is the number of quadrilaterals that contain \(v\) when one subtracts off the possibility of repeating vertices.  Unlike \(p \leq 3\) and below, calculating \(Polygon(4, v)\) simply using values of \(Paths(x, v)\) is not possible unless you have the degrees of adjacent nodes to \(v\) (information not directly encoded into the paths function).  Using external information you could calculate the number of quadrilaterals that \(v\) is a part of.  Here we see the beginning of a divergence, of a differentiation between the polygon driven interpretation of \(Paths(p, v)\), and the more "combinatorial" reality.}
+\end{itemize}
+
+Examination beyond \(p = 4\) yields a similar picture: at each point in time, you need additional information (an increasing amount of it, too) in order to successfully calculate \(Polygons(p, v)\), even given unrestricted access to \(Paths(p, v\) for all p and v. A critical reader will have already come to the conclusion of this section, rooted in complexity theory.  If our graph is of size \(V\), we know that the calculation of \(Polygon(V, v)\) is the same for all \(v\) in the graph, as each vertex must be included exactly once on a closed path of length \(V\). This type of path is also called a \emph{Hamiltonian Cycle}, and its computation is known to be in NP-Complete.  If we hope that \(Paths\) offers easily computable access to lots of information about our graph, its divergence from \(Polygon(p, v)\) and \(Paths(p, v)\) is critical, as it thankfully does not imply that computing values of \(Paths\) is in the same complexity class as known intractable problems.
+
+\subsection{Information of Paths and the Chromatic Polynomial}
+
+One of the most discriminatory polynomial time algorithms for ruling out graph isomorphism is the Chromatic Polynomial of the graph's adjacency matrix A.  It is a well proven result that shuffling the order of the vertices in the representation of a given graph as an Adjacency Matrix does not change the eigenvalues of the matrix (thus the eigenvalues, as a multiset, form a graph invariant), and thus the chromatic polynomial is a graph invariant. In practice, it is a highly discriminating graph invariant, as a very small proportion of graphs are "cospectral" (having the same chromatic polynomial) and not isomorphic.
+
+In seeking out a relationship between the chromatic polynomial and the \(Paths\) function, it helps to remember the helpful property of  eigenvalues:
+\[E(A) = \{\lambda_1,\lambda_2,\lambda_3, \dots, \lambda_V\} \rightarrow E(A^P) = \{\lambda_1^P,\lambda_2^P,\lambda_3^P, \dots, \lambda_V^P\} \]
+Additionally, since we know that our original matrix A is diagonalizable, positive, and symmetric, we know that all of the eigenvalues are real and non-negative. Finally, we know that the sum of the diagonal of any matrix is the sum of its eigenvectors. Thus, using the \(Paths\) function to determine the entries of the diagonal, we know that for any adjacency matrix A,
+\[\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_V = \sum_{i = 0}^{V}{Paths(1, i)}\]
+Or more generally (leveraging our knowledge about the eigenvalues of \(A^P\):
+\[ \sum_{i = 0}^V{\lambda_i^P} =  \sum_{i = 0}^{V}{Paths(P, i)}\]
+This means that we can create V nonparallel (as not divisible in the ring \(R[x]\)) equations, each containing \(\lambda_1\) to \(\lambda_V\) as distinct variables.  Additionally, since we have the guarantee that our eigenvalues are all non-negative, we know that we can assuredly solve any given equation in terms of one of the \(\lambda\)'s.  If we then use these substitutions, and substitute out all but one of the variables, what we will get is a continuous function whose zeros are well defined and positive. 
+
+Given the equation, each one of the zeros is an eigenvalue, assign that to a particular eigenvalue, and reduce our equations using that assumed value.  This kind of procedure is necessary because our system of equations has variables whose relationships are inherently non-distinct.  In other words, we cannot make any differentiation between \(lambda_1\) and \(lambda_2\) based on the relationships of the equations, but if we are given a choice for either, it will lead to a valid conclusion.  This is by virtue of the fact that our substitutions are "condition-less", and we don't need to worry about any domains of substitution.
+
+From a physical perspective, these equations can be described as surfaces in V dimensions, whose intersection we are interested in isolating for. Graphing the equation \(x^3 + y^3 + z^3 = \kappa_3\) yields an interesting quasi planar sheet which becomes highly regular at large scales.  The equation \(x^2 + y^2 + z^2 = \kappa_2\) describes a sphere with the radius \(\sqrt{\kappa_2}\), and the equation \(x + y + z = \kappa_1\) describes a plane. Each of these functions is axis symmetric, so their intersections are also axis symmetric.  The intersection of all of the equations yields a set of points (or none), which represent the potential values for our lambda's, which are axis invariant.
+
+Thus, given the function \(Paths(p, v)\), we could calculate the eigenvalues of the matrix A using \(Paths(p, v)\) restricted to \(1 <= p <= V\). This is superb, as it shows that the \(Paths\) function encodes at least as much information as the chromatic polynomial, and that any graphs which produce the same \(Paths\) function up to (p == V) are cospectral. A quick verification of the base non-isomorphic cospectral graphs (the butterfly and the box) show that they produce \emph{different} values of the paths function, showing that the \(Paths\) function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time.
+
+\subsection{Reconstruction With Fixed \(Paths\) Values}
+
+If we are given full access to the \(Paths\) function, could we create a graph that would produce that function?  Note that this question is fundamentally distinct from the one which asks if we could reconstruct the \emph{only} graph that could generate that Graph Function.  That is a separate question, equivalent to the question of if \(GI = P\) but is not the focus of this section.
+
+The answer to this question, fortunately, is yes.  Over the next few paragraphs, I am going to detail a method of constructing such a graph by first constructing constituent integer-valued equations which describe the interrelationships between edges, then transform the integer edge equations into equally specific boolean sentences, which by their definition will always hold as true.  The final step is then to transform each of these sentences into CNF (Codd Normal Form), and use a satisfiability solver to find a solution to them.
+
+Before we begin, lets examine three important points:
+\begin{itemize}
+  \item{Our reconstruction algorithm is going to run in exponential time, and that is okay.  We have already demonstrated that our invariant, the paths function, is calculable in polynomial time.  The fact that we can reconstruct a valid graph from the paths function is about beginning to establish the invertible nature of the paths function, and the time it takes to perform an inverse of our primary operation tells us nothing about the computational complexity of that operation.}
+  \item{The equations in this section for all but the most trivial of graphs take up an enormous amount of space, and as such, it is not recommended that this reconstruction technique be used in practice.  Realistically, a brute force search would likely yield better solutions (if one were trying to find a graph fitting the paths function), but the reader should try to convince themselves that this kind of problem would terminate, and would yield a valid solution, given a valid paths function.}
+  \item{}
+
+\end{itemize}
+
+We know that the diagonals of \(A^p\) yield the path function.  We also know that A is comprised of \((v * (v - 1)) / 2\) boolean variables, and all entries of \(A^p\) must be some combination of the variables in the original adjacency matrix. We will refer to these variables as the \(x_i\)'s. Generally, we will arrange them in the pattern shown in the graph below, and will number them starting at 1.
+
+The \(x_i\)'s also have the helpful property that \(\forall k \geq 1,\, x_i^k = x_i \). This stems from the fact that each one of the \(x_i\)'s is either zero or one, the two solutions to the aforementioned equation.  This allows us to reduce any polynomial degree in our resulting equations down to one.
+
+I have been discussing these "equations" quite a bit; lets formally define them.  We assume that we are given the \(Paths\) function for a graph, and we will call \(Paths(p, v) = k_{p, v}\) to simplify our work. In each equation, we will set the paths function for a specific \(v\) and \(p\) equal to the symbolic representation of the exponentiated adjacency matrix (which will solely be in terms expressed by the \(x_i\)'s).  We will refer to this specific equation as Equation p.v for \(v\) in the range \([1, V]\) and \(p\) in the range \([1, \inf)\).  For each \(v\) and \(p\) in their respective ranges, our equation p.v is:
+
+\[k_{p, v} = A^p[v,v]\]
+
+Some example Equations are shown below for a five node graph (2.1, 3.1, 4.1). Note the rapid expansion in the number and complexity of the terms.  Also note that we don't need any polynomials over one variable, so we have collapsed them. 
+
+\[k_{2,1} = x_1 + x_2 + x_3 + x_4\]
+
+\[k_{3,1} = 2x_1x_2x_5 + 2x_1x_3x_6 + 2x_1x_4x_7 + 2x_2x_3x_8 + 2x_2x_4x_9 + 2x_3x_4x_{10}\]
+
+\begin{equation}\begin{aligned} k_{4,1} = x_1 + x_2 + x_3 + x_4 + 2x_1x_2 + 2x_1x_3 + 2x_1x_4 + 2x_2x_3 + x_1x_5 + 2x_2x_4 + x_1x_6 + x_2x_5 \\ + 2x_3x_4 + x_1x_7 + x_3x_6 + x_2x_8 + x_2x_9 + x_3x_8 + x_4x_7 + x_3x_{10} + x_4x_9 + x_4x_{10} \\ + 2x_2x_3x_5x_6 + 2x_1x_2x_6x_8 + 2x_1x_3x_5x_8 + 2x_2x_4x_5x_7 + 2x_1x_2x_7x_9 + 2x_1x_4x_5x_9 \\+ 2x_3x_4x_6x_7 + 2x_1x_3x_7x_{10} + 2x_1x_4x_6x_{10} + 2x_2x_3x_9x_{10} + 2x_2x_4x_8x_{10} + 2x_3x_4x_8x_9 \end{aligned}\end{equation}
+
+An interesting aspect of these equations actually has a cool natural cause.  Notice that in equation 2.1 and equation 4.1, both have linear terms of four variables.  (Those happen to be the four variables in the row that we chose, row 1, but if we chose row 4, we would have gotten the variables in that row). A nice property that arises out of these linear variables is that if we were to solve for the variable \(x_1\) from equation 4.1, we would get an expression with the following denominator: \[2x_2 + 2x_3 + 2x_4 + x_5 + x_6 + x_7 + 2x_2x_6x_8 + 2x_3x_5x_8 + 2x_2x_7x_9 + 2x_4x_5x_9 + 2x_3x_7x_{10} + 2x_4x_6x_{10} + 1\]
+This is of particular interest, because we know that each one of the terms in this statement has to be positive, as \(\forall i \in v,  x_i \in \{0, 1\}\).  Thus, there is no possible valid input of \(x_i\)'s which results in this denominator being zero, and our substitution is thus universally valid.  That is really important because it means that we might be able to do the same thing for other variables, and potentially come up with a system of equations that fully describes the interactions of the vertices within our graph.
+
+Lets explore this notion further.  Lets say that we have an equation that describes the interactions of the binary relations in such a way that we can express the equality for of the variable \(x_i\) solely in terms of the other variables such that \[x_i = \frac{N}{D + z}\] Where \(z \geq 1\) and \(N\) and \(D\) can be any number of positive expressions that are comprised of terms of the addition and multiplication of variables in the set \(\{x_1, \dots,  x_{i-1},x_{i+1}, \dots, x_{(v(v-1))/2}\}\).  Since we know that \(x_i \in {0,1}\), we know that any positive term comprised of the multiplication and addition of these variables must be greater than or equal to zero.  Thus, we know the denominator of the equation for \(x_i\) must be greater than or equal to one (\(D + z \geq 1\). This is a helpful result, as it means that our substitution is valid, and we know that the equality holds, because our division of both sides by \(D + z\) does not risk dividing by zero.  We will call this a \emph{valid substitution} for \(x_i\) over the equation for which it is generated (e.g. 2.5). 
+
+It turns out that there is a clever way to use a \emph{valid substitution} to construct a graph which would generate the paths functions that generated the equations which generated the valid substitutions.  Since we know that the denominator of a valid substitution is non-zero, we know the substitution is valid.  We also happen to know that the variable we are solving for is either equal to zero or one.  Thus, if the numerator (\(N\)) of our substitution is equal to zero, then we know that \(x_i\) is equal to zero.  Otherwise, we know that \(x_i\) must be equal to one (for all other values are not in its domain). If we allow ourselves to do an informal conversion to predicate logic, we can transform an equation of the form:
+ \[x_i = \frac{N}{D + z}\] 
+ \[(x_i = 0) \; \text{iff} \; (N = 0)\]
+ \[\neg(x_i) \; \text{iff} \; (N = 0)\]
+ \[x_i  \leftrightarrow  \neg(N = 0)\]
+ Expressing that \(N\), a summation of terms over the \(x_i\)'s, is equal to zero, is actually quite a simple construct. We imagine that each of the terms in N has a positive, integer valued weight that corresponds to its coefficient. If \(N\) contains any integer valued negatives (which it does in real applications), we will call this the \(target\).  Given this (and the terms and their weights as corresponding lists), we can generate a simple procedure for generating a boolean statement that contains the same information as our equation \(N = 0\).
+
+\begin{lstlisting}[frame=single]
+exactlyKTrue(clauses, weights, target):
+	if (target == 0) then
+		return negatedConjuction(clauses)
+	clause = clauses.pop()
+	weight = weights.pop()
+	caseF = exactlyKTrue(clauses, weights, target)
+	newTarget = target - weight
+	caseT = exactlyKTrue(clauses, weights, newTarget)
+	return (clause & caseT) | (!clause & caseF))
+\end{lstlisting}
+
+Though this code doesn't totally cover all edge cases, it should convince the reader that there is an appropriate transform between \(N\) and a boolean expression of the \(x_i\)'s which maintains domain validity across substitutions.
+
+\subsection{A Missed Opportunity to Save Time}
+
+After toying around with valid substitutions for a long time, I realized that if we add a fully connected node to our graph, every substitution becomes a valid one (a fact that can be immediately verified with an algebraic solver tool and some spare memory).  Though this makes the majority of the code I wrote for the previous subsection unnecessary, it would be disingenuous to not include it in a writeup of the work that I tried to produce this semester, as this was a line of inquiry that I honestly believed would hold some water after the beginning of the semester.  
+
+Knowing that we can now not worry about the substitutability of these functions might be valuable, but we immediately run into another question about whether or not the aggregate of these substitutions yields us a single point solution (simply as each is linear in their own terms), and after understanding (through cardinality analysis) that we will never be able to prove uniqueness algebraically (as uniqueness doesn't exist), I have somewhat abandoned the idea of algebraic manipulation of the graph within the context of substitutions and systems of equations.  Cardinality analysis has yielded us not only counterexamples, but a methodology of approaching this problem that has proven to quickly shed light on large sets and relationships within this problem, and I intend to spend more time next semester working with this tool, in preference over algebraic graph theory. 
 
 \section{Cardinality Analysis}
 
@@ -66,7 +161,7 @@ All computations beyond this point were done in this way: a set of files were ge
 
 Of growing importance in scientific computing is the role of GPUs in large and distributed computation.  With a twofold agenda (education and performance), I set out to utilize GPU arrays in the computation of \(Paths\) by using established protocols for matrix multiplication in OpenCL.  The result was successful in outperforming a traditional implementation in C by a factor of four, but unfortunately was not fully parallelizable.  I am hoping to work next semester to consider broader applications of the GPU to actual \(Paths\) computation, collection, and comparison, in a way that takes advantage of the massive parralellizability of this problem, while trying to find creative ways to get around the highly limiting nature of the memory access procedures that differentiate GPU programming from CPU multithreading. 
 
-\subsection{C Calculations}
+\subsection{C Trie Calculations}
 
 Now, most of my work on this project has been theoretical, but this piece in particular has been of great algorithmic and pragmatic interest and education.  After somewhat abandoning the GPU as the method by which to speed up these calculations, I decided to try to use custom C to maximize my memory efficiency and attempt to do the minimal amount of computation necessary to be successful. What resulted is probably the best piece of code that I have ever written, and it reflects many facets of my education in computer science here at Brandeis: stream processing, advanced data structures, intentional bit manipulation, and memory allocation and reuse.
 
@@ -88,6 +183,19 @@ These computations also provided us with a sketch of what I will call a 'power c
 
 \section{The Power Function}
 
+Central to my most recent endeavors in C has been the question: If we take the subset of all non-isomorphic graphs with V vertices and E edges, what is the minimum degree of exponentiation of \(A\) (P), such that all of the paths objects generated by this set of graphs are unique?
+
+This question obviously doesn't have an answer (or at least not a readily computable one) for certain values such as V=10 and E=17, but for smaller values it is not only established that such a threshold must exist, we already have the computational machinery to explore it.
+
+To answer this question, I simply recorded the height of the trie created by the cardinality analysis presented in the coding section.  This height H doesn't describe P directly, but if we take the ceiling of H/V, we get P. We will call the examination of the raw values for H the "granular" approach, and the examination of P as computed by H/V as the "rounded" approach. An interesting comparison can be shown below for graphs of eight vertices. For the purposes of simplicity, the discrete values for P are shown expanded by a factor of V, so that they can be directly compared with H. Note the symmetry, but the noticeable decline in computational power required for graphs with similar number of edges to their complements...
+\begin{figure}[h]
+\caption{Example Power Paths Function for \(V=8\)}
+\centering
+\includegraphics[scale=0.31]{powerfnexample}
+\end{figure}
+
+
+
 \section{Future Lines of Inquiry}
 
 A thesis is apparently like a Hydra, every time that we answer one question, fifteen more appear.  This independent work has given me a fantastic opportunity to pursue interesting questions that I have discovered as I explore, and given me a taste for academic research and inquiry. Below are some of the questions that are still unanswered moving into next semester, alongside plans for their address and hopeful resolution and analysis. Though I understand that I will not be able to tackle every question that I have, I think that I am well on my way to crafting a thesis which explores this graph invariant robustly, and attempts to marry some graph theory with some thoughtful programming through the exploration of an interesting problem, that hopefully can be shown to be of some kind of practical signifigance.
@@ -104,6 +212,7 @@ A thesis is apparently like a Hydra, every time that we answer one question, fif
 \item When I reach a point that my data is able to draw a picture without holes, email the Cornell professor who originally proposed this invariant, and discuss it with him.
 \item Closely examine the relation that sets of Co-Paths graphs appear to have (properties of the sets, not of the graphs themselves, which will be a separate analysis). We have to realize that these sets are bound to be linked through some sorts of inverse, concatenation and union operations, and that they may be linked in ways that are more profound that we can yet imagine.
 \item Set upper bound worst case approximations for the number of bits that are necessary to calculate, store and compare the Paths Object for a given value of V, E and P. Invert this function to create a calculator for the maximum size we could create for a given chunk of allocated memory.
+\item A question that I asked several months ago has suddenly (with the discovery of co-paths graphs) become significantly more important: what are the information density bounds on the Paths Function? Clearly this is a topic that will broadly be the focus of the next semester of research and development, but we can refocus work on this topic while maintaining lines of inquiry that tap into broader questions about the nature of \(Paths\), and its place (if any) within the Graph Isomorphism Problem.
 \end{enumerate}
 
 \end{document}
