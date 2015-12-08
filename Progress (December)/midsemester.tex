@@ -44,15 +44,39 @@ Finally, two Graphs are said to be Co-Paths if they produce the same \(Paths\) o
 
 \section{Cardinality Analysis}
 
-An obvious choice 
+An obvious choice in attempting to verify a bijection is the analysis of the cardinality of the target and domain spaces.  If a function maps all inputs to a space of equal size as its own, it must be a bijection.  Thus, in pursuing to quantify the relationship between the \(Paths\) object and the isomorphism relationship, I set about examining the cardinality of two sets: the set of all non-isomorphic graphs, and the set of all achievable \(Paths\) objects.
+
+Note that this line of inquiry is what allowed us to rule out that the two relationships are the same. If we were able to prove that the relationship between the \(Paths\) objects and the set of all graphs was linked by a bijective function, we would have proven that if two graphs agree on their corresponding Paths's matrix, then they are the same graph. This would have been valuable because \(Paths\) objects can be directly compared and sorted, while graphs cannot immediately be compared in polynomial time by any currently understood algorithm.
+
+How to we go about calculating the cardinality of both sets?  Luckily, the cardinality of the first set is well established.  The series A000088 in the online encyclopedia of integer sequences gives us the number of non-isomorphic graphs up to N=28.  Now to calculate the number of distinguishable paths matrices of a given order, I turned to programming, with various degrees of success. Below are the various results of these computations, and a brief overview of their implementation and success rates.
 
 \subsection{Brute Force - Java}
 
+Start with what you know.  As early as October, I had written a simple function in Java that computed the number of unique paths vectors by doing raw calculation of paths Matrices, sorting using a simple row comparison, and a tree set to do comparison of paths objects.  Attempting to approach this problem from the most naive standpoint first, I didn't make any smart or deductive assumptions about the number of graphs that are non-isomorphic, but instead chose to process every single adjacency matrix of a given size.  Though the number of graphs of a given size is exponentially defined, the number of potential representations of those graphs has an even steeper exponential growth rate. 
+
+The final result of this line of inquiry appeared to corroborate the strength of the paths function, at an exorbitant computational cost.  Running on a Macbook Air with a 1.7 gHz processor and 8 GB of RAM, this calculation took 28 hours to complete, and only described the cases with eight or fewer vertices. Far from ideal.  For \(V <= 8\), this analysis calculated that the number of valid paths objects of the same size exactly matched the A000088 sequence.  Going forward with more advanced computations, we knew already that we would not find non-isomorphic co-paths graphs with fewer than nine vertices.
+
 \subsection{NAUTY Package}
+
+Thankfully, the generation of non-isomorphic graphs is well studied, and practical algorithms have been developed for their systematic enumeration.  One of the best is the \emph{geng} graph generator that is offered as part of the \emph{NAUTY} package, written in C.  Though computation of these graphs is still exponentially asymptotic, it is orders of magnitude faster than brute force calculations.  The NAUTY package saves its graphs in a format called Graph6, which allowed us to efficiently store all possible graphs of a given cardinality and vertex count in a line delimited file, to split up the tasks of generating and processing the graphs.
+
+All computations beyond this point were done in this way: a set of files were generated of the form [NVERTICES]-[NEDGES].txt, which stored the Graph6 format of the adjacency matrix for all non-isomorphic graphs matching those computational descriptions.
 
 \subsection{GPU Calculations}
 
+Of growing importance in scientific computing is the role of GPUs in large and distributed computation.  With a twofold agenda (education and performance), I set out to utilize GPU arrays in the computation of \(Paths\) by using established protocols for matrix multiplication in OpenCL.  The result was successful in outperforming a traditional implementation in C by a factor of four, but unfortunately was not fully parallelizable.  I am hoping to work next semester to consider broader applications of the GPU to actual \(Paths\) computation, collection, and comparison, in a way that takes advantage of the massive parralellizability of this problem, while trying to find creative ways to get around the highly limiting nature of the memory access procedures that differentiate GPU programming from CPU multithreading. 
+
 \subsection{C Calculations}
+
+Now, most of my work on this project has been theoretical, but this piece in particular has been of great algorithmic and pragmatic interest and education.  After somewhat abandoning the GPU as the method by which to speed up these calculations, I decided to try to use custom C to maximize my memory efficiency and attempt to do the minimal amount of computation necessary to be successful. What resulted is probably the best piece of code that I have ever written, and it reflects many facets of my education in computer science here at Brandeis: stream processing, advanced data structures, intentional bit manipulation, and memory allocation and reuse.
+
+The program maintains a Trie, where the input to the Trie is the Paths object's sorted vector elements in increasing levels of power. This is far from revolutionary.  What was incredibly powerful about this technique was the way in which I used stream processing to delay computation and comparison of Graphs.
+
+When inserted into the Trie, a new graph element would only compute the first level of its exponentiated form (i.e. \(A^2\)).  It would store this value (a running matrix with its current exponentiated power of \(A\)) alongside the graph within a structure which also included an elaborate (but low memory) mechanism to allow individual number output of the next number to be used in insertion into the trie (or the next level of the trie). This second part is particularly non-trivial because we have to consider past sorting decisions in making present sorting decisions, and have to store the results of those decisions in a fashion that is memory efficient and computationally easy to manipulate. My code here is particularly thoughtful, and uses a quadratic runtime (in the number of vertices) in exchange for a cubic amount of space.
+
+Finally, when a new graph is inserted into an existing trie node, if there already exists a graph within that node, the original inhabitant is kicked out, and both are re-inserted into that node.  This means that we only exponentiate the matrix (an \(O(n^3)\) operation) the minimal number of times necessary to differentiate between graphs.  On average, this means that rather than exponentiating a matrix \(V\) times in the naive version, we average \(0.2V\) matrix exponentiations, a five fold speed increase in multiplication alone. The number of comparisons in this methodology can also prove to be minimal, and using a trie structure over a comparable tree led to an enormous speed up in efficiency, wile still having a depth that is guaranteed to be a linear factor of the result (which is generally a linear function of the input, but not for all cases). 
+
+The result of this work, in addition to the pre-computation of non-isomorphic graphs through the NAUTY package was a program which could perform the same task as the Java function in under 2 seconds, and could expand upon the performance to \(V=10\) with all computations under 20 seconds.  This aspect of the project is a great point of personal pride and growth, and demonstrates the value of a careful consideration of algorithms and data structures in scientific computation. 
 
 \section{Theoretical Analysis}
 
