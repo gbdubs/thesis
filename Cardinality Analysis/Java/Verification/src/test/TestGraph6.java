@@ -1,6 +1,9 @@
+package test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import Verification.Graph6;
 
 
 public class TestGraph6 {

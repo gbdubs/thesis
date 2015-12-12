@@ -1,4 +1,8 @@
+package test;
 import org.junit.Test;
+
+import Verification.DimensionMismatchException;
+import Verification.Verifier;
 import static org.junit.Assert.*;
 
 public class TestVerifier {
