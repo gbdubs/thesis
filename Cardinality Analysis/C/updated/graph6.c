@@ -51,3 +51,8 @@ int** retrieveGraph(char s[]){
 	}
 	return graph;
 }
+
+int main(){
+	char* desc = "F?qcW";
+	printMatrix(retrieveGraph(desc));
+}
