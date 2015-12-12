@@ -1,0 +1,49 @@
+==========================================
+==== Began Recording All Similarities ====
+==========================================
+
+----- SIMILAR PAIR! ------
+I?qafbE|_
+ICOfDpwpw
+--------------------------
+
+----- SIMILAR PAIR! ------
+I?qacimVo
+ICOedPyjo
+--------------------------
+
+----- SIMILAR PAIR! ------
+I?ovDb[^?
+ICQf@\[]_
+--------------------------
+
+----- SIMILAR PAIR! ------
+I?otU`tZ_
+ICQeeTwNG
+--------------------------
+
+----- SIMILAR PAIR! ------
+I?ovEa{^?
+ICQeV`wFg
+--------------------------
+
+----- SIMILAR PAIR! ------
+I?otQji\O
+ICQTddkZG
+--------------------------
+
+----- SIMILAR PAIR! ------
+ICR`vGyu?
+ICR`tjWY_
+--------------------------
+
+----- SIMILAR PAIR! ------
+ICR`uiwY_
+ICdedhkY_
+--------------------------
+
+Number of Similar Graphs: 16
+
+==========================================
+== Finished Recording All Similarities ===
+==========================================

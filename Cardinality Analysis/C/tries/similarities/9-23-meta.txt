@@ -2,17 +2,7 @@
 ==== Began Recording All Similarities ====
 ==========================================
 
------ SIMILAR PAIR! ------
-I?qadbE\_
-ICOedPwbo
---------------------------
-
------ SIMILAR PAIR! ------
-I?qa`iTu_
-ICOedPYjO
---------------------------
-
-Number of Similar Graphs: 4
+Number of Similar Graphs: 0
 
 ==========================================
 == Finished Recording All Similarities ===

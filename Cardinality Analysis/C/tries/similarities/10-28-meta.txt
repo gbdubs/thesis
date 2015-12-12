@@ -3,16 +3,11 @@
 ==========================================
 
 ----- SIMILAR PAIR! ------
-I?qadbE\_
-ICOedPwbo
+I?r@`aiUg
+I?r@`aiXg
 --------------------------
 
------ SIMILAR PAIR! ------
-I?qa`iTu_
-ICOedPYjO
---------------------------
-
-Number of Similar Graphs: 4
+Number of Similar Graphs: 2
 
 ==========================================
 == Finished Recording All Similarities ===
