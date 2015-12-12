@@ -1,8 +1,10 @@
 package Verification;
 
+import data.Data;
+
 public class Verifier {
 
-	private static final int MAX_BIT_LENGTH = 64 * 10 * 10;
+	private static final int MAX_BIT_LENGTH = 6400 * 10 * 10;
 	
 	public static int testEqualPaths(String gA, String gB) throws DimensionMismatchException{
 		Matrix A = new Matrix(Graph6.retrieveGraph(gA));
@@ -17,16 +19,28 @@ public class Verifier {
 			return p;
 		}
 		
-		while (A.nBits() < MAX_BIT_LENGTH){
+		while (runningA.nBits() < MAX_BIT_LENGTH){
 			if (!Matrix.sortedDiagonalEquals(runningA, runningB)){
 				return p;
 			}
 			runningA = runningA.multiply(A);
 			runningB = runningB.multiply(B);
+			System.err.println("POWER = "+p+", BITS = "+runningA.nBits());
 			p++;
 		}
 		
 		return -1;
 	}
 	
+	
+	public static void main(String[] args){
+		try {
+			int result = testEqualPaths(Data.v10e17[0], Data.v10e17[1]);
+			System.out.println(result);
+		} catch (DimensionMismatchException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 }
