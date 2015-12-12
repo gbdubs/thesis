@@ -10,6 +10,7 @@
 /* * * * * * * * * * * * * * * * * * * * */
 
 typedef struct TrieNode {
+	struct TrieNode* parent;
 	Graph* graph;
 	ListL* values;
 	ListV* ptrs;

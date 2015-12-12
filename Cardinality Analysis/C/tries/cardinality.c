@@ -6,6 +6,7 @@
 #include "graph6.h"
 #include "graph.h"
 #include "trie.h"
+#include "simrecorder.h"
 
 const int rootLength = 44;
 const char* dataRoot = "/Users/Grady/Desktop/Thesis/data/smallgraphs";
@@ -37,6 +38,8 @@ char* getSecondaryFilePath(int v, int e){
 
 int calculatePower(int v, int e){
 	
+	
+
 	Node* root = createRoot();
 
 	FILE *nautyFile;
@@ -65,7 +68,7 @@ int calculatePower(int v, int e){
 
 	int maxP = height(root);
 	
-	fclose(nautyFile);
+	fclose(nautyFile);	
 	
 	return maxP;
 }
@@ -79,6 +82,8 @@ int main(int argc, char *argv[]){
     int v = atoi(argv[1]);
     int e = atoi(argv[2]);
 
+	beginRecording(v, e);
+
     // Replaces e with maxE - V if it can save us computational power
     int maxE = (v*(v-1))/2;
     int eOrig = e;
@@ -86,5 +91,9 @@ int main(int argc, char *argv[]){
     	e = maxE - e;
     }
 
-    printf("(%d,%d) -> %d\n", v , eOrig, calculatePower(v, e));
+    int p = calculatePower(v, e);
+
+    finishRecording();
+
+    printf("(%d,%d) -> %d\n", v , eOrig, p);
 }

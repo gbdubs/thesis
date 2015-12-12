@@ -1,0 +1,19 @@
+==========================================
+==== Began Recording All Similarities ====
+==========================================
+
+----- SIMILAR PAIR! ------
+I?qadXYYo
+I?qadXYeo
+--------------------------
+
+----- SIMILAR PAIR! ------
+I?qaayiZO
+I?qaayifO
+--------------------------
+
+Number of Similar Graphs: 4
+
+==========================================
+== Finished Recording All Similarities ===
+==========================================
