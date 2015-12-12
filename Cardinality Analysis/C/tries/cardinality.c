@@ -37,8 +37,6 @@ char* getSecondaryFilePath(int v, int e){
 }
 
 int calculatePower(int v, int e){
-	
-	
 
 	Node* root = createRoot();
 
@@ -83,13 +81,6 @@ int main(int argc, char *argv[]){
     int e = atoi(argv[2]);
 
 	beginRecording(v, e);
-
-    // Replaces e with maxE - V if it can save us computational power
-    int maxE = (v*(v-1))/2;
-    int eOrig = e;
-    if (maxE - e < e){
-    	e = maxE - e;
-    }
 
     int p = calculatePower(v, e);
 
