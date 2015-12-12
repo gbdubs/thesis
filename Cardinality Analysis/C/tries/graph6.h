@@ -6,6 +6,8 @@
 /* * * * * * * * * * * * * * * * * * * * */
 /*        GRAPH6 GRAPH CONVERTER         */
 /* * * * * * * * * * * * * * * * * * * * */
-int** retrieveGraph(char s[]);
+int** decodeGraph(char s[]);
+
+char* encodeGraph(int** graph);
 
 #endif

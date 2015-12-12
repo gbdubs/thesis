@@ -54,7 +54,7 @@ int calculatePower(int v, int e){
 	while (fscanf(nautyFile, "%s", inputBuffer) == 1){
 
 		// Retrieves the graph, calculates its paths function, sorts the vectors, and inserts it into the tree.
-		int** graph = retrieveGraph(inputBuffer);
+		int** graph = decodeGraph(inputBuffer);
 		
 		Graph* g = createGraph(graph);
 
