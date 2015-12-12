@@ -1,5 +1,8 @@
 package data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Data {
 
 	public static String[] v10e16 = {
@@ -69,7 +72,7 @@ public class Data {
 		"ICOfDpxxw",
 		"I?ovCxxn_",
 		"ICQebriNo",
-		"I?qbbq\n_",
+		"I?qbbq\\n_",
 		"ICQeRrqNo",
 		"I?otRjTz_",
 		"ICQTbZqzO",
@@ -81,4 +84,17 @@ public class Data {
 		"ICXedrMn?"
 	};
 
+	public static Map<String, String[]> all;
+	
+	static {
+		all = new HashMap<String, String[]>();
+		all.put("v10e16", v10e16);
+		all.put("v10e17", v10e17);
+		all.put("v10e18", v10e18);
+		all.put("v10e19", v10e19);
+		all.put("v10e20", v10e20);
+		all.put("v10e21", v10e21);
+		all.put("v10e22", v10e22);
+	}
+	
 }

@@ -1,0 +1,43 @@
+
+EQUIVALENCY SETS FOR v10e16: 
+[ICOeeOwFG, I?qa``kWo]
+
+EQUIVALENCY SETS FOR v10e17: 
+[I?r@`aiXg, I?r@`aiUg]
+
+EQUIVALENCY SETS FOR v10e18: 
+[I?qadbE\_, ICOedPwbo]
+[I?qa`iTu_, ICOedPYjO]
+
+EQUIVALENCY SETS FOR v10e19: 
+[I?qadXYeo, I?qadXYYo]
+[I?qaayiZO, I?qaayifO]
+
+EQUIVALENCY SETS FOR v10e20: 
+[I?qafbE|_, ICOfDpwpw]
+[I?qacimVo, ICOedPyjo]
+[I?ovDb[^?, ICQf@\[]_]
+[ICQeeTwNG, I?otU`tZ_]
+[I?ovEa{^?, ICQeV`wFg]
+[I?otQji\O, ICQTddkZG]
+[ICR`vGyu?, ICR`tjWY_]
+[ICR`uiwY_, ICdedhkY_]
+
+EQUIVALENCY SETS FOR v10e21: 
+[I?qacymVo, I?qabYmVo]
+[I?q`tVo}_, I?qdV`k}G]
+[I?qrfRWVO, I?qrfRWr_]
+[ICR`vGy}?, ICR`thi}?]
+[ICQrThix_, ICQrThiZO]
+[ICpdf_][o, ICpdf_]lO]
+[ICR`thiZO, ICpdepkr_]
+
+EQUIVALENCY SETS FOR v10e22: 
+[I?qffPs~?, I?ovFa{~?]
+[ICOfDpxxw, I?qbDpxxw]
+[I?ovCxxn_, ICQebriNo]
+[I?qbbq\n_, ICQeRrqNo]
+[ICQTbZqzO, I?otRjTz_]
+[ICQfMhwMw, ICp`f`m}_]
+[ICpbdh]n?, ICpdbi{V_]
+[ICpdbj[N_, ICXedrMn?]
