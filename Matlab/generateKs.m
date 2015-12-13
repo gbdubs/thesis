@@ -1,4 +1,4 @@
-function [ output_args ] = generateKs( graph , runUntil)
+function [ output_args ] = generateKs( graph , runUntil )
     n = length(graph);
 
     longGraph = zeros(n, n, 'uint64');

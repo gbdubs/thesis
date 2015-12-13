@@ -1,5 +1,7 @@
 package Verification;
 
+import java.util.Arrays;
+
 public class Graph6 {
 
 	/*
@@ -48,5 +50,9 @@ public class Graph6 {
 			index++;
 		}
 		return graph;
+	}
+	
+	public static void main(String[] args){
+		System.out.println(Arrays.deepToString(retrieveGraph("HCfvvzz")));
 	}
 }
