@@ -13,13 +13,11 @@ function [ output_args ] = graph6( s )
 		
 	while count < e 
 		c = s(index:index) - 63;
-        disp(c);
 		toAdd = zeros(1, toAddSize);
 		for i = toAddSize:-1:1
             toAdd(i) = bitand(c, 1);
 			c = bitshift(c, -1);
         end
-        disp(toAdd);
 		for i = 1:toAddSize
 			if x == y
 				graph(x,y) = 0;
