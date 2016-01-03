@@ -1,6 +1,6 @@
 function visualizeGraphPaths( A , name , recurse )
     if ~exist('recurse','var') || isempty(recurse)
-        recurse = false;
+        recurse=;
     end
 
     fig = figure('position', [0,0, 1200, 1000]);
@@ -38,8 +38,8 @@ function visualizeGraphPaths( A , name , recurse )
     g = graph(A);
     plot(ax1, g);
     % Overal title, at the top of the file.
-    txt = text(ax1.XLim(2)+.4,ax1.YLim(2)+.4,name);
-    set(txt,'fontweight','bold','FontSize', 40,'HorizontalAlignment', 'center');
+    txt = text(2,2.4,name);
+    set(txt,'fontweight','bold','FontSize', 40);
 
     ax2 = subplot(2,2,2);
     colormap(ax2, hsv);
@@ -70,16 +70,6 @@ function visualizeGraphPaths( A , name , recurse )
 
     path = strcat('visualization/',name,'.png');
     print(path,'-dpng');
-    
-    for i = 1 : size(A, 1)
-        idx = setdiff(1:v, i);
-        tempGraph = A(idx, idx);
-        score = scoreEquivalencyClasses(findQuaziEquivalenceClasses(tempGraph));
-        if (score > 70 && recurse)
-            visualizeGraphPaths( tempGraph , [name, '-',num2str(i)] , false );
-        end
-    end
-    
     close all;
 end
 
