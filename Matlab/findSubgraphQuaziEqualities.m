@@ -1,4 +1,4 @@
-function [ output_args ] = findSimilarities( A, B )
+function [ output_args ] = findSubgraphQuaziEqualities( A, B )
 
     v = size(A, 1);
 
