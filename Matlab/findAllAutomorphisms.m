@@ -2,9 +2,9 @@ function [ output_args ] = findAllAutomorphisms( G )
 
 allAutomorphisms = {};
 
-    function [ automorphism ] = generateAutomorphismGiven(qecA, qecB, automorph, a, b)
+    function [ automorphism ] = generateAutomorphismGiven(qecA, qecB, automorph, aaa, bbb)
         if (nargin == 5)
-            subdivideEquivalenceClassesBasedOnNewLink(a,b);
+            subdivideEquivalenceClassesBasedOnNewLink(aaa,bbb);
         end
         
         function [ result ] = automorphismIsIncomplete()
@@ -110,12 +110,10 @@ allAutomorphisms = {};
                         if (nBees >= 2)
                             for newBee = 1 : nBees-1
                                 modAutomorph = automorph;
-                                modAutomorph(a) = newBee;
+                                modAutomorph(a) = bMat(newBee);
                                 modQecA = qecA;
                                 modQecB = qecB;
-                                
-                                generateAutomorphismGiven(modQecA, modQecB, modAutomorph, a, b)
-                                
+                                generateAutomorphismGiven(modQecA, modQecB, modAutomorph, a, bMat(newBee))
                             end
                         end
                         automorph(a) = b;
