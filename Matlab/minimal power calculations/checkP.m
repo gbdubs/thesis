@@ -1,5 +1,3 @@
-
-
 function [ output_args ] = checkP( A , p)
     v = size(A,1);
     n = size(A,3);
@@ -17,4 +15,3 @@ function [ output_args ] = checkP( A , p)
     end
     output_args = 0;
 end
-
