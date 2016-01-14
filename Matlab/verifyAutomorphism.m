@@ -1,7 +1,10 @@
 function [ output_args ] = verifyAutomorphism( G, aut )
 
 n = size(G, 1);
-
+d = size(aut, 1);
+if (d == 1)
+    aut = vertcat(1:n, aut);
+end
 aut = transpose(sortrows(transpose(aut), 1));
 
 translated = zeros(size(G));
