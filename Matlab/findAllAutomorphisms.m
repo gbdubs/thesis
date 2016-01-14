@@ -1,133 +1,155 @@
 function [ output_args ] = findAllAutomorphisms( G )
-% Very much a WIP. Not a final product.
 
-    function [ result ] = isomorphismIsIncomplete()
-        result = 0;
-        for index = 1 : size(isomorphism, 2)
-            if (isomorphism(index) == 0)
-                result = 1;
-            end
+allAutomorphisms = {};
+
+    function [ automorphism ] = generateAutomorphismGiven(qecA, qecB, automorph, a, b)
+        if (nargin == 5)
+            subdivideEquivalenceClassesBasedOnNewLink(a,b);
         end
-    end
-
-    function [ result ] = qecSizeError()
-        nA = size(qecA, 2);
-        nB = size(qecB, 2);
-        if (nA ~= nB)
+        
+        function [ result ] = automorphismIsIncomplete()
             result = 0;
-            return;
+            for index = 1 : size(automorph, 2)
+                if (automorph(index) == 0)
+                    result = 1;
+                end
+            end
         end
-        
-        cellszA = cell2mat(cellfun(@size, qecA, 'uni', false));
-        cellszB = cell2mat(cellfun(@size, qecA, 'uni', false));
-        diff = cellszA - cellszB;
-        result = all(diff(:) ~= 0);
-    end
 
-    function subdivideEquivalenceClassesBasedOnNewLink(a, b)
-        function subdivideEquivalenceClassBasedOnNewLink(index)
-            aClass = cell2mat(qecA(index));
-            adjacentA = [];
-            nonAdjacentA = [];
-            for i = 1 : size(aClass, 2)
-                if (G(a, aClass(i)))
-                    adjacentA = horzcat(adjacentA, aClass(i));
-                else
-                    nonAdjacentA = horzcat(nonAdjacentA, aClass(i));
-                end
+        function [ result ] = qecSizeError()
+            nA = size(qecA, 2);
+            nB = size(qecB, 2);
+            if (nA ~= nB)
+                result = 0;
+                return;
             end
-            if (size(adjacentA, 2) > 0 && size(nonAdjacentA, 2) > 0)
-                qecA(index) = {adjacentA};
-                qecA = horzcat(qecA, {nonAdjacentA});   
-            end
-            
-            bClass = cell2mat(qecB(index));
-            adjacentB = [];
-            nonAdjacentB = [];
-            for i = 1 : size(bClass, 2)
-                if (G(b, bClass(i)))
-                    adjacentB = horzcat(adjacentB, bClass(i));
-                else
-                    nonAdjacentB = horzcat(nonAdjacentB, bClass(i));
-                end
-            end
-            if (size(adjacentB, 2) > 0 && size(nonAdjacentB, 2) > 0)
-                qecB(index) = {adjacentB};
-                qecB = horzcat(qecB, {nonAdjacentB});   
-            end
-        end
-        
-        
-        
-        idx = 1;
-        while (idx <= size(qecA, 2))
-            matA = cell2mat(qecA(idx));
-            matB = cell2mat(qecB(idx));
-            if (sum(find(a==matA))>0)
-                matA = matA(matA ~= a);
-                matB = matB(matB ~= b);
-                qecA(idx) = {matA};
-                qecB(idx) = {matB};
-            end
-            subdivideEquivalenceClassBasedOnNewLink(idx);
-            idx = idx + 1;
-        end
-    end
 
-    function assignAllKnowns()
-        idx = 1;
-        while (idx <= size(qecA, 2))
-            aMat = cell2mat(qecA(idx));
-            bMat = cell2mat(qecB(idx));
-            if (size(aMat, 1) > 0)
-                a = aMat(1);
-                b = bMat(1);
-                if (size(aMat, 2) == 1 && isomorphism(a) == 0)
-                    isomorphism(a) = b;
-                    subdivideEquivalenceClassesBasedOnNewLink(a,b);
-                    idx = 0;
-                end
-            end
-            idx = idx + 1;
+            cellszA = cell2mat(cellfun(@size, qecA, 'uni', false));
+            cellszB = cell2mat(cellfun(@size, qecA, 'uni', false));
+            diff = cellszA - cellszB;
+            result = all(diff(:) ~= 0);
         end
-    end
 
-    function makeRandomAssignment()
-        idx = 1;
-        while (idx <= size(qecA, 2))
-            aMat = cell2mat(qecA(idx));
-            bMat = cell2mat(qecB(idx));
-            if (size(aMat, 1) > 0)
-                a = aMat(1);
-                b = bMat(size(bMat, 2));
-                if (isomorphism(a) == 0)
-                    isomorphism(a) = b;
-                    subdivideEquivalenceClassesBasedOnNewLink(a,b);
-                    return;
+        function subdivideEquivalenceClassesBasedOnNewLink(a, b)
+            function subdivideEquivalenceClassBasedOnNewLink(index)
+                aClass = cell2mat(qecA(index));
+                adjacentA = [];
+                nonAdjacentA = [];
+                for i = 1 : size(aClass, 2)
+                    if (G(a, aClass(i)))
+                        adjacentA = horzcat(adjacentA, aClass(i));
+                    else
+                        nonAdjacentA = horzcat(nonAdjacentA, aClass(i));
+                    end
+                end
+                if (size(adjacentA, 2) > 0 && size(nonAdjacentA, 2) > 0)
+                    qecA(index) = {adjacentA};
+                    qecA = horzcat(qecA, {nonAdjacentA});   
+                end
+
+                bClass = cell2mat(qecB(index));
+                adjacentB = [];
+                nonAdjacentB = [];
+                for i = 1 : size(bClass, 2)
+                    if (G(b, bClass(i)))
+                        adjacentB = horzcat(adjacentB, bClass(i));
+                    else
+                        nonAdjacentB = horzcat(nonAdjacentB, bClass(i));
+                    end
+                end
+                if (size(adjacentB, 2) > 0 && size(nonAdjacentB, 2) > 0)
+                    qecB(index) = {adjacentB};
+                    qecB = horzcat(qecB, {nonAdjacentB});   
                 end
             end
-            idx = idx + 1;
+
+            idx = 1;
+            while (idx <= size(qecA, 2))
+                matA = cell2mat(qecA(idx));
+                matB = cell2mat(qecB(idx));
+                if (sum(find(a==matA))>0)
+                    matA = matA(matA ~= a);
+                    matB = matB(matB ~= b);
+                    qecA(idx) = {matA};
+                    qecB(idx) = {matB};
+                end
+                subdivideEquivalenceClassBasedOnNewLink(idx);
+                idx = idx + 1;
+            end
         end
-    end
+
+        function assignAllKnowns()
+            idx = 1;
+            while (idx <= size(qecA, 2))
+                aMat = cell2mat(qecA(idx));
+                bMat = cell2mat(qecB(idx));
+                if (size(aMat, 1) > 0)
+                    a = aMat(1);
+                    b = bMat(1);
+                    if (size(aMat, 2) == 1 && automorph(a) == 0)
+                        automorph(a) = b;
+                        subdivideEquivalenceClassesBasedOnNewLink(a,b);
+                        idx = 0;
+                    end
+                end
+                idx = idx + 1;
+            end
+        end
+
+        function makeRandomAssignment()
+            idx = 1;
+            while (idx <= size(qecA, 2))
+                aMat = cell2mat(qecA(idx));
+                bMat = cell2mat(qecB(idx));
+                if (size(aMat, 1) > 0)
+                    a = aMat(1);
+                    nBees = size(bMat, 2);
+                    
+                    b = bMat(nBees);
+                    if (automorph(a) == 0)
+                        if (nBees >= 2)
+                            for newBee = 1 : nBees-1
+                                modAutomorph = automorph;
+                                modAutomorph(a) = newBee;
+                                modQecA = qecA;
+                                modQecB = qecB;
+                                
+                                generateAutomorphismGiven(modQecA, modQecB, modAutomorph, a, b)
+                                
+                            end
+                        end
+                        automorph(a) = b;
+                        subdivideEquivalenceClassesBasedOnNewLink(a,b);
+                        return;
+                    end
+                end
+                idx = idx + 1;
+            end
+        end
+
+        while (automorphismIsIncomplete())
+            if (qecSizeError())
+                automorphism = NULL;
+                return;
+            end
+            assignAllKnowns();
+            makeRandomAssignment();
+        end
         
+        allAutomorphisms = horzcat(allAutomorphisms, {automorph});
+        
+    end
 
 n = size(G, 1);
 
-qecA = findQuaziEquivalenceClasses(G);
-qecB = findQuaziEquivalenceClasses(G);
+QECA = findQuaziEquivalenceClasses(G);
+QECB = findQuaziEquivalenceClasses(G);
 
-isomorphism = zeros(1, n);
+AUTOM = zeros(1, n);
 
-while (isomorphismIsIncomplete())
-    if (qecSizeError())
-        output_args = NULL;
-        return;
-    end
-    assignAllKnowns();
-    makeRandomAssignment();
-end
+generateAutomorphismGiven(QECA, QECB, AUTOM);
 
-output_args = isomorphism;
+output_args = allAutomorphisms;
 
 end
 
