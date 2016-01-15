@@ -1,23 +1,18 @@
-function [ output_args ] = verifyPathsDefinesAutomorphismGroups( G )
+function [ output_args ] = verifyPathsDefinesAutomorphismGroups( G , shouldDisp )
+    if (nargs == 1)
+        shouldDisp = 0;
+    end
 
     automorphs = findAllAutomorphisms(G);
-
-    disp 'FOUND AUTOMORPHISMS';
-
     autoGroups = deduceAutomorphismGroupsFromAutomorphisms(automorphs);
-
-    disp 'FOUND AUTO-GROUPS';
-
     pathsGroups = findQuaziEquivalenceClasses(G);
 
-    disp 'FOUND PATHS-GROUPS';
-
-    cellz = cell(1, size(G, 2));
+    pathCells = cell(1, size(G, 2));
 
     for i = 1 : size(pathsGroups, 2);
         mat = cell2mat(pathsGroups(i));
         for j = 1 : size(mat, 2)
-            cellz(mat(j)) = pathsGroups(i);
+            pathCells(mat(j)) = pathsGroups(i);
         end
     end
 
@@ -25,14 +20,18 @@ function [ output_args ] = verifyPathsDefinesAutomorphismGroups( G )
     
     for i = 1 : size(G, 2)
         a = transpose(sort(cell2mat(autoGroups(i))));
-        p = sort(cell2mat(cellz(i)));
+        p = sort(cell2mat(pathCells(i)));
 
         d = a - p;
         if (all(d))
-            disp(strcat('NOT OKAY!!! : A -->', mat2str(a), '    P --> ', mat2str(p)));
+            if shouldDisp
+                disp(strcat('NOT OKAY!!! : A -->', mat2str(a), '    P --> ', mat2str(p)));
+            end
             output_args = -1;
-        else 
-            disp(strcat('OK :  A -->', mat2str(a), '    P --> ', mat2str(p)));
+        else
+            if shouldDisp
+                disp(strcat('OK :  A -->', mat2str(a), '    P --> ', mat2str(p)));
+            end
         end
     end
 end
