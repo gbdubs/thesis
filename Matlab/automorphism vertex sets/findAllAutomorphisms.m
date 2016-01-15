@@ -20,7 +20,7 @@ allAutomorphisms = {};
             nA = size(qecA, 2);
             nB = size(qecB, 2);
             if (nA ~= nB)
-                result = 0;
+                result = 1;
                 return;
             end
 
@@ -74,6 +74,9 @@ allAutomorphisms = {};
                     qecB(idx) = {matB};
                 end
                 subdivideEquivalenceClassBasedOnNewLink(idx);
+                if qecSizeError()
+                    return
+                end
                 idx = idx + 1;
             end
         end
@@ -127,7 +130,6 @@ allAutomorphisms = {};
 
         while (automorphismIsIncomplete())
             if (qecSizeError())
-                automorphism = NULL;
                 return;
             end
             assignAllKnowns();

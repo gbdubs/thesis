@@ -1,5 +1,5 @@
 function [ output_args ] = verifyPathsDefinesAutomorphismGroups( G , shouldDisp )
-    if (nargs == 1)
+    if (nargin == 1)
         shouldDisp = 0;
     end
 
