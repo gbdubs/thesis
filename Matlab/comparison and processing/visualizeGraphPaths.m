@@ -10,27 +10,25 @@ function visualizeGraphPaths( A , name , recurse )
     
     v = size(A, 1);
     
-    % Finds and displays the equivalency classes for the graph.
+    % Finds and displays the paths equivalency classes for the graph.
     equivClasses = findQuaziEquivalenceClasses(A);
     ax = axes('position',[0,0,1,1],'visible','off');
     subplot(2,2,3,ax);
-    tx = text(0,1,['Equivalency Classes   (', num2str(scoreEquivalencyClasses(equivClasses)),')']);
+    tx = text(0,1,'Paths Equivalence Classes');
     set(tx, 'FontSize', 25);
     for i = 1 : size(equivClasses, 2)
         txt = text(0,(v-i)/v, mat2str(cell2mat(equivClasses(1, i))));
         set(txt, 'FontSize', 20);
     end
     
-    % Finds the equivalencyClassScores for all one off subgraphs.
+    % Finds and displays the true equivalency classes for the graph.
+    equivClasses = deduceAutomorphismGroupsFromAutomorphisms(findAllAutomorphisms(A));
     ax = axes('position',[0,0,1,1],'visible','off');
     subplot(2,2,4,ax);
-    tx = text(0,1,'Removal Equivalency Scores');
+    tx = text(0,1,'True Equivalence Classes');
     set(tx, 'FontSize', 25);
-    for i = 1 : size(A, 1)
-        idx = setdiff(1:v, i);
-        tempGraph = A(idx, idx);
-        score = scoreEquivalencyClasses(findQuaziEquivalenceClasses(tempGraph));
-        txt = text(0,(v-i)/v, ['Removing ', num2str(i),'  :  ',num2str(score)]);
+    for i = 1 : size(equivClasses, 2)
+        txt = text(0,(v-i)/v, mat2str(cell2mat(equivClasses(1, i))));
         set(txt, 'FontSize', 20);
     end
     
