@@ -3,9 +3,18 @@
 
 *Started in August 2015, Defense in May 2016*
 
-*Advised by Jim Storrer at Brandeis University*
+*Advised by Jim Storer at Brandeis University*
 
-### TL;DR?
+### TL;DR
+
+Studying the paths invariant within graph isomorphism, which describes the number 
+of closed paths which pass through agiven vertex.  This invaraiant behaves in ways 
+which are powerful yet non-complete, reflecting how the paths property mirrors 
+the graph structure that they mirror. This problem has a load of intuitve appeal 
+which keep this author simultaneously perplexed and fascinated, as I try to parse
+appart what is accurate theory, and what is specious intuition.
+
+### Introduction
 
 Determining whether or not two graphs are the same is an interesting problem in that
 it is neither proven to be in P nor in NP-Complete. Many polynomial time discrimination
@@ -18,6 +27,14 @@ of size <= 9 can be fully determined by the paths invariant, and that the paths 
 is more discriminating than some high powered invariants.  More interesting though, is the
 study of the places where it fails to differentiate two non-isomorphic graphs in V=10: trying to
 understand these *co-paths* graphs is my current focus.
+
+Additionally, there are some interesting properties of the paths invariant that are
+notable or not-immediately apparent.  For example, I noticed that if two vertices are
+going to have different paths vectors, then they will be differentiated before 
+P = N-1 (if N is odd) or P = N-2 (if N is even).  We can begin to find explanations
+for this phenomenon, and end up with a cool proof that works at a theoretical level.
+
+The goal of the project is to have 
 
 ### On Copyright and Fair Use
 
