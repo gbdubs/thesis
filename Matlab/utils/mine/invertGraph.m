@@ -1,16 +1,8 @@
-function [ output_args ] = invertGraph( graph )
-    n = length(graph);
-    for i = 1 : n
-        for j = i + 1 : n
-            original = graph(i,j);
-            new = 1;
-            if (original == 1);
-                new = 0;
-            end
-            graph(i,j) = new;
-            graph(j,i) = new;
-        end
-    end
-    output_args = graph;
-end
+function [ inverted ] = invertGraph( A )
+% Input  : Adjacency Matrix of Graph
+% Output : Adjacency Matrix of Inverted Graph.
 
+    v = size(A, 1);
+    inverted = ~A;
+    inverted((0:(v-1)) * (v+1) + 1) = 0;
+end

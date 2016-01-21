@@ -1,5 +1,8 @@
 function [ pairs ] = generatePairsFromClasses( automorphismClasses )
-    
+% Input  : Automorphism classes in QEC form.
+% Output : [n x 2] matrix of pairs where a pair exists for every one of the
+%          automorphism pairs as proposed by the QEC form.
+
     function [ nPairs ] = calculateNPairs ( classes )
         nPairs = 0;
         for c = 1 : size(classes, 2)

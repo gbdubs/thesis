@@ -1,4 +1,7 @@
 function [ output_args ] = graph6( s )
+% Input  : A String in graph6 format
+% Output : A Double square matrix representing the described graph.
+
     v = s(1:1) - 63;
     e = (v * (v-1)) / 2; 
 
