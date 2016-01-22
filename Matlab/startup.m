@@ -6,7 +6,7 @@ automorphData;
 disp 'Loaded data for the automorphism vertex group failure cases.';
 for i = 1 : 8
     loadData(i);
-    disp(['Loaded data for all graphs with v = ', i, '.']);
+    disp(['Loaded data for all graphs with v = ', num2str(i), '.']);
 end
 clear i;
 clear ans;

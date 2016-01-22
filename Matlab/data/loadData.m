@@ -16,13 +16,25 @@ function [ result ] = loadData( v, e , shouldAssign)
         result = running;
         return;
     end
-
-    relativePath = ['../data/smallgraphs/',num2str(v), '-', num2str(e),'.txt'];
+    
+    % Allows processing on both the small set, and the larger set on the
+    % vertica IMacs.
+    relativePath = ['../../graphs/',num2str(v), '-', num2str(e),'.txt'];
+    if exist(relativePath, 'file') ~= 2
+        relativePath = ['../data/smallgraphs/',num2str(v), '-', num2str(e),'.txt'];
+    end
+    
+    if exist(relativePath, 'file') ~= 2
+        disp(['The File You Are Looking For Does Not Exist: [', relativePath, ']']);
+        return;
+    end
     
     result = [];
     
     fid = fopen(relativePath);
 
+    
+    
     tline = fgets(fid);
     while ischar(tline)
         result = vertcat(result, tline);
@@ -30,8 +42,6 @@ function [ result ] = loadData( v, e , shouldAssign)
     end
 
     fclose(fid);
-    
-    
     
     if shouldAssign
         varName = ['data_',num2str(v), '_', num2str(e)];
