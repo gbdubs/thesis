@@ -1,8 +1,8 @@
 % Tested Augmentation Hypothesis One on The Folowing Sets:
-% ALL PASS: data_4, data_6,
-
+% ALL PASS: data_4, data_5, data_6,
 % ALL FAIL: pathsNotAutoClasses
-data = pathsNotAutoClasses;
+
+data = data_5;
 errors = 0;
 successes = 0;
 
