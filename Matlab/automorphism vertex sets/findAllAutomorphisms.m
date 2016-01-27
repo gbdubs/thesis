@@ -2,6 +2,16 @@ function [ output_args ] = findAllAutomorphisms( G )
 
 allAutomorphisms = {};
 
+if (sum(sum(G)) == 0 || sum(sum(G)) == (size(G, 1) * (size(G, 1) - 1)))
+    for loopvar = 0 : size(G, 1) - 1
+        automorph = 1 : size(G, 1);
+        automorph = mod(automorph + loopvar, size(G, 1));
+        allAutomorphisms = horzcat(allAutomorphisms, {automorph});
+    end
+    output_args = allAutomorphisms;
+    return;
+end
+
     function [ automorphism ] = generateAutomorphismGiven(qecA, qecB, automorph, aaa, bbb)
         if (nargin == 5)
             subdivideEquivalenceClassesBasedOnNewLink(aaa,bbb);
@@ -83,7 +93,7 @@ allAutomorphisms = {};
 
         function assignAllKnowns()
             idx = 1;
-            while (idx <= size(qecA, 2))
+            while (idx <= size(qecA, 2) && idx <= size(qecB, 2))
                 aMat = cell2mat(qecA(idx));
                 bMat = cell2mat(qecB(idx));
                 if (size(aMat, 1) > 0)
