@@ -1,0 +1,9 @@
+for v in {1..15}
+do
+  maxe=$[$v - 1]
+  echo $e
+  for e in $(seq 0 $maxe)
+  do
+    ./geng -d$e"D"$e $v > reggraphs/R-$v-$e.txt
+  done
+done
