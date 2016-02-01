@@ -9,5 +9,7 @@ function [ output_args ] = funky( A , k )
         c = b + repmat((sum(b, 2))/i, 1, n) .* eye(n);
         a = c;
     end
+    
+    output_args = a;
 end
 

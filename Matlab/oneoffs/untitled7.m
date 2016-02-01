@@ -1,4 +1,4 @@
-for runVar = 9 : 9
+for runVar = 1 : 8
     data = eval(['data_',num2str(runVar)]);
     v = runVar;
 
