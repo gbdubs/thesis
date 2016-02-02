@@ -1,8 +1,0 @@
-for v in {1..9}
-do
-  maxe=$[$v * ($v - 1) / 2]
-  for e in $(seq 0 $maxe)
-  do
-    ./geng $v $e > $v-$e.txt
-  done
-done

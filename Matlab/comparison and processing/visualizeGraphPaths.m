@@ -66,7 +66,7 @@ function visualizeGraphPaths( A , name , recurse )
 
     set(gca,'XTick',1:v-1,'XTickLabel',2:v, 'YTick',1:v, 'YTickLabel',labels, 'TickLength',[0 0]);
 
-    path = strcat('visualization/',name,'.png');
+    path = strcat('visualization/output/',name,'.png');
     print(path,'-dpng');
     
     for i = 1 : size(A, 1)
