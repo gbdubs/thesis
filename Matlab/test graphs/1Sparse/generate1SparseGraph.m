@@ -4,9 +4,14 @@ function [ output_args ] = generate1SparseGraph( n )
     % Using Parameterized Matching", by Mendivelso, Kim, Elnikety, He, Hwang,
     % and Pinzon.
 
-    % Graph has n vertices and 3n edges.
-
-   
+    % Graph has n vertices and 3n/2 edges (the paper describes this part 
+    % incorrectly and a reasonable reader will identify that a graph with
+    % universal degree 3 will have 3n/2 edges). This places the additional
+    % constraint that n CANNOT BE EVEN. (Think about it...)
+    
+    if (mod(n, 2) == 1)
+        n = n + 1;
+    end
 
     function addConnection(a, b)
         if (nConnections(a) >= 3)

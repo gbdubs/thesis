@@ -32,8 +32,6 @@ function [ result ] = loadData( v, e , shouldAssign)
     result = [];
     
     fid = fopen(relativePath);
-
-    
     
     tline = fgets(fid);
     while ischar(tline)
