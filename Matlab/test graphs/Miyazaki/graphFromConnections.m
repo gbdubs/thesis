@@ -4,4 +4,3 @@ function [ A ] = graphFromConnections( connections )
     A(sub2ind(size(A), connections(:, 1), connections(:, 2))) = 1;
     A(sub2ind(size(A), connections(:, 2), connections(:, 1))) = 1;
 end
-
