@@ -1,8 +1,8 @@
-function [ allConnections, nextPlugs ] = miyazakiB( connections, plugs )
+function [ allConnections, nextPlugs ] = miyazakiC( connections, plugs )
     
-    newConnections = [1, 2; 1, 6; 1, 8; 2, 4; 3, 4; 4, 10; 5, 7; 5, 9; 6, 9; 7, 8; 9, 10];
-    backPlugs = [3, 6];
-    nextPlugs = [2, 5, 8, 10];
+    newConnections = [1, 2; 1, 7; 2, 5; 2, 6; 3, 4; 3, 10; 4, 6; 4, 8; 7, 8; 7, 9; 9, 10];
+    backPlugs = [1, 3, 6, 9];
+    nextPlugs = [5, 8];
     
     starter = max(max(connections));
     
