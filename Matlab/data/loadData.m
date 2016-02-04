@@ -37,7 +37,7 @@ function [ result ] = loadData( v, e , shouldAssign)
     
     tline = fgets(fid);
     while ischar(tline)
-        result = vertcat(result, tline);
+        result = vertcat(result, strtrim(tline));
         tline = fgets(fid);
     end
 
