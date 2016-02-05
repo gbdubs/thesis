@@ -3,10 +3,10 @@ function [ output_args ] = findAllAutomorphisms( G )
 allAutomorphisms = {};
 
 if (sum(sum(G)) == 0 || sum(sum(G)) == (size(G, 1) * (size(G, 1) - 1)))
-    for loopvar = 0 : size(G, 1) - 1
-        automorph = 1 : size(G, 1);
-        automorph = mod(automorph + loopvar, size(G, 1));
-        allAutomorphisms = horzcat(allAutomorphisms, {automorph});
+    allPerms = perms(1:size(G, 1));
+    allAutomorphisms = cell(1, size(allPerms, 1));
+    for loopVar = 1 : size(allPerms, 1)
+        allAutomorphisms(loopVar) = {allPerms(loopVar, :)};
     end
     output_args = allAutomorphisms;
     return;
