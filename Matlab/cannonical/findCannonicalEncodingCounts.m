@@ -11,12 +11,13 @@ function [ m ] = findCannonicalEncodingCounts( v )
 
     max = 2 ^ ( v * (v-1) / 2) - 1;
     threshold = 0;
-    delta = .01;
-    
+    delta = .001;
+    started = cputime;
     
     for i = 0 : max
+        
         if (i / max > threshold)
-            disp (['Completed ',num2str(i),' of ',num2str(max),' graphs.']);
+            estimateTimeRemaining(started, i, max);
             threshold = threshold + delta;
         end
         
