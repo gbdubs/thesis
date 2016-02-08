@@ -37,7 +37,7 @@ classdef numWaysToWrite
         function [ set ] = getSet(obj, v, e)
             temp1 = obj.bins(v);
             temp2 = [temp1{:}];
-            set = cell2mat(temp2(e));
+            set = cell2mat(temp2(e+1));
         end
         
         function [ probabilityDist ] = getProbDist(obj, v, e)

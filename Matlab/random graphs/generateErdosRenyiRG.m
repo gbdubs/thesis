@@ -3,7 +3,7 @@ function [ A ] = generateErdosRenyiRG( V, E )
     edges = randperm(V * (V-1) / 2) <= E;
     x = 2;
     y = 1;
-    for i = 1 : size(edges)
+    for i = 1 : size(edges, 2)
         b = edges(i);
         A(x, y) = b;
         A(y, x) = b;
