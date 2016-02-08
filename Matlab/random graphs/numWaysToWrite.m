@@ -15,7 +15,7 @@ classdef numWaysToWrite
                 for i = 1 : size(allGraphs,1)
                     allGraphs(i) = {[]};
                 end
-                load(['data/mappings/',num2str(v),'.mat']);
+                load(['data/numwaystowrite/',num2str(v),'.mat']);
                 map = eval(['map',num2str(v)]);
                 graphs = map.keys;
                 for j = 1 : size(graphs, 2)
