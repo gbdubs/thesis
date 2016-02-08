@@ -22,7 +22,7 @@ function [ m ] = findCannonicalEncodingCounts( v )
         end
         
         A = readGraphFromBitstring(v, i);
-        [B, perm] = cannonicalV1(A);
+        [B, perm] = cannonicalV2(A);
         encoded = graph6Encode(B);
         incrementCount(encoded);
     end
