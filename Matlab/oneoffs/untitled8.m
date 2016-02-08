@@ -52,6 +52,7 @@ disp(['Mean : ', num2str(sum(a.*b) / sum(a))]);
 % Counts
 %     2     2     2     8     2     2     6    18     2    14     8    36    46     8
 % Average Graph: 210.0513
+% Probability Range for a graph: [.000030518, .0220] (720x more likely)
  
 % MAP 7
 % Values
@@ -59,7 +60,10 @@ disp(['Mean : ', num2str(sum(a.*b) / sum(a))]);
 % Counts
 %       2     2     6     6     2     4    28     6    24     4    20     2    70     2    74    38   248   354   152
 % Average Graph: 2008.7663
+% Probability Range for a graph: [.00000047684, .0024] (5040x more likely)
 
 % averageGraphs = [1, 2, 3, 4, 5, 6, 7; 1, 1, 2, 5.8182, 30.1176, 210.0513, 2008.7663];
 % logavggraphs = [0         0    0.6931    1.7610    3.4051    5.3474    7.6053];
 % divbyfact = [1.0000    0.5000    0.3333    0.2424    0.2510    0.2917    0.3986];
+
+% 
