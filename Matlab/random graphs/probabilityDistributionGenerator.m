@@ -1,5 +1,8 @@
-classdef numWaysToWrite
-    % The number of ways to write a given graph6 cannonical string
+classdef probabilityDistributionGenerator
+    % Generates Probability Distributions for Comparisons.
+    %  -> Erdos Renyi (All edges with equal probability)
+    %  -> Random Matrix (Exact, calculated off of all matrices)
+    %  -> Idealized (Equal Representation for Graph Objects)
     
     properties
         bins
@@ -7,7 +10,7 @@ classdef numWaysToWrite
     end
     
     methods
-        function obj = numWaysToWrite(maxSupported)
+        function obj = probabilityDistributionGenerator(maxSupported)
             obj.bins = cell(maxSupported, 1);
             obj.overall = containers.Map('KeyType','char','ValueType','int32');
             for v = 1 : maxSupported
@@ -29,7 +32,7 @@ classdef numWaysToWrite
             end
         end
         
-        function [ result ] = getSize(obj, s)
+        function [ result ] = getNumberOfDistinctMatrices(obj, s)
             s = graph6Encode(cannonicalV2(graph6(s)));
             result = double(obj.overall(s));
         end
@@ -40,13 +43,13 @@ classdef numWaysToWrite
             set = cell2mat(temp2(e+1));
         end
         
-        function [ probabilityDist ] = getProbDist(obj, v, e)
+        function [ probabilityDist ] = getPDNumberOfMatrices(obj, v, e)
             set = obj.getSet(v, e);
             probabilityDist = containers.Map('KeyType','char','ValueType','double');
             total = 0;
             for i = 1 : size(set, 1)
                 s = set(i,:);
-                nways = obj.getSize(s);
+                nways = obj.getNumberOfDistinctMatrices(s);
                 probabilityDist(s) = double(nways);
                 total = total + nways;
             end
@@ -54,6 +57,19 @@ classdef numWaysToWrite
                 s = set(i,:);
                 probabilityDist(s) = probabilityDist(s) / total;                
             end
+        end
+        
+        function [ probabilityDist ] = getPDIdeal(obj, v, e)
+            set = obj.getSet(v, e);
+            probabilityDist = containers.Map('KeyType','char','ValueType','double');
+            for i = 1 : size(set, 1)
+                s = set(i,:);
+                probabilityDist(s) = 1 / double(size(set, 1));
+            end
+        end
+        
+        function [ probabilityDist ] = getPDErdosRenyi(~, v, e, n)
+            probabilityDist = generateErdosRenyi(v, e, n);
         end
     end
 end
