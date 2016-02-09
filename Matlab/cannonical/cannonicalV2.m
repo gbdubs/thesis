@@ -1,6 +1,6 @@
 function [ B , finalPerm ] = cannonicalV2( A )
 
-    qecp = findQuaziEquivalenceClassesPlusFast(A);
+    qecp = findQuaziEquivalenceClassesPlus(A);
     
     qecp = cannonicalSortCells(qecp);
     

@@ -1,6 +1,6 @@
-function [ output_args ] = findQuaziEquivalenceClassesPlusFast( G )
+function [ output_args ] = findQuaziEquivalenceClassesPlus( G )
 
-    qec = findQuaziEquivalenceClassesFast(G);
+    qec = findQuaziEquivalenceClasses(G);
     pathsPlus = cell(size(qec));
     
     for i = 1 : size(qec, 2)
