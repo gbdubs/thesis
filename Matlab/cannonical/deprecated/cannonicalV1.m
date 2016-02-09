@@ -2,7 +2,7 @@ function [ B , finalPerm ] = cannonicalV1( A )
 
     qecp = findQuaziEquivalenceClassesPlus(A);
     
-    qecp = cannonicalSortCells(qecp);
+    qecp = cannonicalSortQECs(A, qecp);
     
     allPerms = cell(size(qecp));
     for i = 1 : size(qecp, 2)
