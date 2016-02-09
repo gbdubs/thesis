@@ -11,7 +11,7 @@ function [ probabilities ] = generateErdosRenyi( v, e, n )
     end
     t = cputime;
     for i = 1 : n
-        considerTimeEstimation(t, i, n, 100);
+        % considerTimeEstimation(t, i, n, 100);
         A = generateErdosRenyiRG(v, e);
         B = cannonicalV2(A);
         encoded = graph6Encode(B);

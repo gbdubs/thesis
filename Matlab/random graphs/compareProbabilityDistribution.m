@@ -33,7 +33,7 @@ function [result] = compareProbabilityDistribution( expected, actual , nTrials, 
     end
     
     result = sortrows(result);
-    disp(result);
+    % disp(result);
     
     attempts = size(result, 1);
     allFailed = sum(result(:, 2));
