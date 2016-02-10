@@ -13,7 +13,7 @@ function [ output_args ] = graph6Encode( A )
 
     charNum = 1;
 
-    while (i <= v && j <= v && charNum <= nChars)
+    while (i <= v && j <= v && charNum <= nChars && ~(i == v && j == v))
         running = 0;
         for bitCount = 1 : 6
             if (i == j)
