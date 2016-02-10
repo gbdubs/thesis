@@ -1,12 +1,12 @@
-function [ newCells ] = cannonicalSortQECs( A, cellz )
+function [ newCells ] = cannonicalSortQECs( A, qec )
 
-    nClasses = size(cellz, 2);
+    nClasses = size(qec, 2);
 
     interesting = zeros(nClasses, nClasses);
     
     for i = 1 : nClasses
         for j = i+1 : nClasses
-            subgraph = A(cell2mat(cellz(i)), cell2mat(cellz(j)));
+            subgraph = A(cell2mat(qec(i)), cell2mat(qec(j)));
             nEdges = sum(sum(subgraph));
             max = size(subgraph, 1) * size(subgraph, 2);
             interestingPair = nEdges > 0 && nEdges < max;
@@ -18,16 +18,20 @@ function [ newCells ] = cannonicalSortQECs( A, cellz )
     order = 1;
     index = 1;
     while size(order, 2) < size(interesting, 2)
+        if (numel(order) < index)
+            order = horzcat(order, min(setdiff(1:nClasses, order)));
+        end
         examining = order(index);
         interested = setdiff(find(interesting(examining,:)), order);
         order = horzcat(order, interested);
         index = index + 1;
     end
+    order = horzcat(order, setdiff(1:size(interesting,2), order));
     
-    newCells = cell(size(cellz));
+    newCells = cell(size(qec));
 
     for i = 1 : size(order, 2)
-        newCells(i) = cellz(order(i));
+        newCells(i) = qec(order(i));
     end
         
 end

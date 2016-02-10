@@ -1,4 +1,4 @@
 function [ B ] = cannonical( A )
-    B = cannonicalV2(A);
+    B = cannonicalV3(A);
 end
 
