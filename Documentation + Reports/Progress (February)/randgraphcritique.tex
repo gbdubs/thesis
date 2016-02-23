@@ -1,5 +1,5 @@
  \documentclass[a4paper,12pt]{article}
-\usepackage{mathtools, amsmath, listings,graphicx}
+\usepackage{mathtools, amsmath, listings,graphicx, svg}
 \graphicspath{ {images/} }
 \begin{document}
 \lstset{language=Python}
@@ -47,15 +47,16 @@ The focus of this article is the quantification of the disconnects between these
 
 \subsection*{Proportion of Graphs with No Trivial Automorphisms}
 
-The number of graphs (\(N_{Graphs}\))of a given size is still not available as a closed form, but has been computed to 19 vertices (OEIS A000088).
-The number of valid binary matrices that represent undirected non-looped graphs is trivially expressed as \(N_{Matrices} = 2^{.5(N^2 - N)}\).
-Dividing these two sequences of numbers gives us the average number of matrix representations per graph for each size of graph \(N\).
+The number of graphs (\(N_{Graphs}\))of a given size is still not available as a closed form, but has been computed to 19 vertices (OEIS A000088) (Column (1)).
+The number of valid binary matrices that represent undirected non-looped graphs is trivially expressed as \(N_{Matrices} = 2^{.5(N^2 - N)}\) (Column (2)).
+Dividing these two sequences of numbers gives us the average number of matrix representations per graph for each size of graph \(N\) (Column (3)).
 Clearly, this average must fall between 1, and the maximum number of matrix representations for a single graph, which is simply \(N!\).
-If we divide the average by the maximum, we see that it asymptotically is climbing to 1.
+If we divide the average by the maximum, we see that it asymptotically is climbing to 1 (Column (4)).
 
-This means that the average graph gets more and more ways to represent it as the graph gets larger.
-A crude way of interpreting this data is that 'random' graph generators are closer to an algebraic concept of random as the size of the graph increases.
-For small graphs, \(N \in [4, 10]\), the fit of 'random' graph generators to graphs as objects is at its poorest.
+This means that 'random' graph generators are closer to an algebraic concept of random as the size of the graph increases, 
+as the average graph grows to asymptotically be equivalent in number of representations to the maximum.
+The simplest interpretation of the data in column four is the 
+For small graphs, \(N \in [2, 8]\), the fit of 'random' graph generators to graphs as objects is at its poorest.
 
 \begin{tabular}{ r | r | r || r ||| r}
   \(N\) & (1) \(N_{Graphs}\) & (2) \(N_{Matrices}\) & (3) \(Avg(Mats(G))\) & (4) = (3) / \(N!\) \\
@@ -82,6 +83,11 @@ For small graphs, \(N \in [4, 10]\), the fit of 'random' graph generators to gra
   19 & \(2.5 * 10^{34}\) & \(3.0 * 10^{51}\) & \(1.2 * 10^{17}\) & 0.99869 \\
   \hline  
 \end{tabular}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=.45]{accuracy-of-assumption}
+\end{figure}
 
 
 \end{document}
