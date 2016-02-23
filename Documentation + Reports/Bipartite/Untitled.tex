@@ -1,0 +1,55 @@
+\documentclass{article} 
+\begin{document} 
+
+\textbf{Claim:} 
+
+The problem of Bipartite Isomorphism is GI-complete.
+
+\textbf{Proof:}
+
+
+It is a well established result that the classes of connected graphs and the classes of regular
+graphs are GI-complete.  We can conclude without much difficulty that the class of connected
+regular graphs are also GI-Complete. We will be demonstrating that the hardest case of
+regular connected isomorphism can be solved in polynomial time relative to the problem of
+Bipartite Graph Isomorphism.
+
+The hardest problems in GI-RC are ones where each of the nodes of the graph are
+half-connected.  Since it is generally agreed upon that information sparse graphs are easier
+to solve for, and we know that if we have two graphs G and H, we can find their isomorphisms
+by inverting them (G') and (H'), thus we can always reduce the number of edges in the graph
+to half of the maximum or fewer. Thus, the hardest such problem is one that has exactly half
+the number of possible edges.  Since we are assuming a regular, connected graph, this
+determines the number of edges in the graph if we know the vertices. Assume we have a graph 
+\(G\), with \(\#(V) = N\) vertices, then the number of edges is simple: 
+\[\#(E) = M = \frac{V^2 - V}{4}\]
+
+Since we are assuming that our graph is regular connected and that each vertex is connected to half
+of the other vertices in the graph, we have imposed the constraint that the diameter of the graph
+is exactly two. This can be proven easily. Imagine that the diameter of the graph is 3 or more.
+That means there exist two nodes such that the shortest path between them is of size 3 or more.
+Call these hypothetical nodes \(a\) and \(b\).  If we examine the adjacent sets \(A = \{x \in V \| adj(a, x)\}\), and
+\(B = \{x \in V \| adj(b, x)\}\), we know that the size of each must be exactly the degree of \(a\) and
+\(b\), which as the shared degree of the graph (as discussed above) must be \(\frac{V-1}{2}\).
+The sets A and B must be disjoint (otherwise there would exist a path of length 2 between \(a\)
+and \(b\).  However, if \(A\) and \(B\) are disjoint, that means that the size of the vertex set V
+is exactly: 
+\[V = N \geq \#(A) + \#(B) + \#(a) + \#(b)\]
+
+
+
+Now imagine that we have a magical algorithm, \(A(G)\) which can solve GI in polynomial
+time given that the graph is a bipartite graph.  We will use this hypothetical algorithm to show
+that the class of bipartite graphs is GI complete, ans we can use \(A(G)\) to solve GI for the
+set of all connected regular graphs (referred to from here on out as CR Graphs.
+
+
+
+You are given the problem of determining whether or not two CR graphs are isomorphic.
+This algorithm will do so in polynomial time, given \(A(G)\).  Lets call these two graphs 
+Y and Z.  Select a vertex at random from Y and call it y.  Select a vertex random from Z
+and call it z.  Note that we will be holding y constant while we rotate through z.  Obviously,
+if \(y \arrow z\) at any point during our algorithm, then we can return and say that we have
+found an isomorphism between Y and Z.
+
+\end{document}
