@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+ \documentclass[a4paper,12pt]{article}
 \usepackage{mathtools, amsmath, listings,graphicx}
 \graphicspath{ {images/} }
 \begin{document}
@@ -45,8 +45,43 @@ In graph theory, labeling and representation are rarely factors that impact our 
 Thus, we ought question the validity of these models, which heavily bias for some graphs over others by ignoring isomorphism.
 The focus of this article is the quantification of the disconnects between these 'random' models, and random graphs as algebraic objects.
 
-\subsection{Computation of the Paths Function}
+\subsection*{Proportion of Graphs with No Trivial Automorphisms}
 
+The number of graphs (\(N_{Graphs}\))of a given size is still not available as a closed form, but has been computed to 19 vertices (OEIS A000088).
+The number of valid binary matrices that represent undirected non-looped graphs is trivially expressed as \(N_{Matrices} = 2^{.5(N^2 - N)}\).
+Dividing these two sequences of numbers gives us the average number of matrix representations per graph for each size of graph \(N\).
+Clearly, this average must fall between 1, and the maximum number of matrix representations for a single graph, which is simply \(N!\).
+If we divide the average by the maximum, we see that it asymptotically is climbing to 1.
+
+This means that the average graph gets more and more ways to represent it as the graph gets larger.
+A crude way of interpreting this data is that 'random' graph generators are closer to an algebraic concept of random as the size of the graph increases.
+For small graphs, \(N \in [4, 10]\), the fit of 'random' graph generators to graphs as objects is at its poorest.
+
+\begin{tabular}{ r | r | r || r ||| r}
+  \(N\) & (1) \(N_{Graphs}\) & (2) \(N_{Matrices}\) & (3) \(Avg(Mats(G))\) & (4) = (3) / \(N!\) \\
+  \hline			
+  0 & \(1\) & \(1\) & \(1.000\) & 1.00000 \\
+  1 & \(1\) & \(1\) & \(1.000\) & 1.00000 \\
+  2 & \(2\) & \(2\) & \(1.000\) & 0.50000 \\
+  3 & \(4\) & \(8\) & \(2.000\) & 0.33333 \\
+  4 & \(11\) & \(64\) & \(5.800\) & 0.24242 \\
+  5 & \(34\) & \(1028\) & \(30.12\) & 0.25098 \\
+  6 & \(156\) & \(3.2 * 10^4\) & \(210.0\) & 0.29174 \\
+  7 & \(1044\) & \(2.1 * 10^6\) & \(2009\) & 0.39856 \\
+  8 & \(1.2 * 10^{4}\) & \(2.7 * 10^{8}\) & \(2.2 * 10^{3}\) & 0.53925 \\
+  9 & \(2.7 * 10^{5}\) & \(6.9 * 10^{10}\) & \(2.5 * 10^{5}\) & 0.68946 \\
+  10 & \(1.2 * 10^{7}\) & \(3.5 * 10^{13}\) & \(2.9 * 10^{6}\) & 0.80764 \\
+  11 & \(1.0 * 10^{9}\) & \(3.6 * 10^{16}\) & \(3.5 * 10^{7}\) & 0.88577 \\
+  12 & \(1.7 * 10^{11}\) & \(7.4 * 10^{19}\) & \(4.5 * 10^{8}\) & 0.93308 \\
+  13 & \(5.1 * 10^{13}\) & \(3.0 * 10^{23}\) & \(6.0 * 10^{9}\) & 0.96106 \\
+  14 & \(2.9 * 10^{16}\) & \(2.5 * 10^{27}\) & \(8.5 * 10^{10}\) & 0.97749 \\
+  15 & \(3.1 *10^{19}\) & \(4.0 * 10^{31}\) & \(1.3 * 10^{12}\) & 0.98708 \\
+  16 & \(6.4 * 10^{22}\) & \(1.3 * 10^{36}\) & \(2.1 * 10^{13}\) & 0.99264 \\
+  17 & \(2.5 * 10^{26}\) & \(8.7 * 10^{40}\) & \(3.5 * 10^{14}\) & 0.99584 \\
+  18 & \(1.8 * 10^{30}\) & \(1.1 * 10^{46}\) & \(6.4 * 10^{15}\) & 0.99766 \\
+  19 & \(2.5 * 10^{34}\) & \(3.0 * 10^{51}\) & \(1.2 * 10^{17}\) & 0.99869 \\
+  \hline  
+\end{tabular}
 
 
 \end{document}

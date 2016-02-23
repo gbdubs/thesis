@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  23 FEB 2016 09:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  23 FEB 2016 10:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -254,26 +254,29 @@ e
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 ) [1
 
-{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./randgraphc
-ritique.aux) ) 
+{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+(./randgraphcritique.aux) ) 
 Here is how much of TeX's memory you used:
- 3862 strings out of 494185
- 55902 string characters out of 6156889
- 141597 words of memory out of 5000000
- 7145 multiletter control sequences out of 15000+600000
+ 3861 strings out of 494185
+ 55896 string characters out of 6156889
+ 152597 words of memory out of 5000000
+ 7144 multiletter control sequences out of 15000+600000
  9626 words of font info for 35 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 37i,6n,40p,276b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.
-pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/local/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on randgraphcritique.pdf (2 pages, 70209 bytes).
+ 37i,8n,40p,276b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmmi12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/lo
+cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on randgraphcritique.pdf (3 pages, 101655 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
