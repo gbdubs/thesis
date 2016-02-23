@@ -4,4 +4,3 @@ function [ result ] = findDistributionOfMaximalDifferentiatingPower( graphset )
         result(i) = findMaximalPathsDifferentiatingPower(graph6(graphset(i,:)), 100);
     end 
 end
-

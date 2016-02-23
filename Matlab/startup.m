@@ -9,9 +9,7 @@ for i = 1 : 8
     loadData(i);
     disp(['Loaded data for all graphs with v = ', num2str(i), '.']);
 end
-% for i = 8 : 12
-%    loadDataRegular(i);
-%    disp(['Loaded data for all regular graphs with v = ', num2str(i), '.']);
-% end
+disp 'Loaded all cannonical representations of graphs of degree 8 and smaller.';
+load('/Users/Grady/Desktop/Thesis/Matlab/cannonical/data/graphsEightAndSmaller.mat')
 clear i;
 clear ans;
