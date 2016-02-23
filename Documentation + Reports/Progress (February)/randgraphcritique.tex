@@ -12,30 +12,41 @@
 
 \section*{Existing Models of Random Graphs}
 
-The two dominant models/generators for random, undirected graphs were both defined by Erdos and Reyni in TODO.
-The first is a model which selects an adjacency matrix at random from the set of all binary matrices, and produces a
-graph from that matrix. The second is a generator which constructs its edges with a fixed probability. Both models 
-have been studied at length, and they have been proven to be asymptotically alike. Though these models both make
-some intuitive sense, we should carefully examine why they have become dominant in the study of graphs.
+The two dominant models for 'random', undirected graphs were both defined by Erdos and Reyni in TODO.
+The first is a model which selects an adjacency matrix at random from the set of all square binary matrices.
+The second constructs each edge with an independent and fixed probability. 
+Both models have been studied at length, and they have been proven asymptotically alike. 
+Though these models make intuitive sense, we ought examine why they have domainated the study of 'random' graphs.
 
-For the first model, selecting a random adjacency matrix from that set, it is clear to see that abstracting across
-all matrices allows us to understand properties of the graph as a whole; i.e. we know the probability of a given number of
-edges occurring, and we can use existing modes of proof about the probability of an integer in a range having a given
-property, as this model treats every adjacency matrix as a bit-string, on which common proof techniques can be performed.
-This random graph generator has continued to be relevant in the field because it links matrix/integer theory to graph theory.
+In the random matrix model it is clear to see that properties of 'random' matrices can be applied to 'random' graphs.
+Additionally, we can use some existing proofs and proof techniques in integer theory to advance 'random' graph theory by treating the matrix as a bitstring. 
+This random graph generator has been useful because it links random matrix/integer theory to 'random' graph theory.
 
-In the second model, the one with a fixed and independent probability of a given edge, has the advantage that it allows
-us to easily calculate many properties of the graph that are of interest to graph theoreticians.
+In the independently random edge model, we can easily calculate many properties of the graph that are of interest to graph theoreticians.
 For example, the probability distribution of the number of triangles in a graph is a simple summation of products.
-Additionally, this model represents many 'real-world' problems that do not require much imagination to dream up.
-This model of random graphs has been impactful because it allows graph theoreticians to concretely discuss many of the 
-properties that they are interested in.
+Additionally, this model succinctly describes many 'real-world' problems that do not require much imagination to dream up.
+This model of random graphs has been impactful because it allows graph theoreticians to concretely discuss many of the properties that they are interested in, and connects graph theory to its applications.
 
-In short, both models have stuck precisely because they marry a model that can be explained in a sentence 
-with the tools to easily discuss the properties that such 'random' graphs have.
+In short, both models have stuck precisely because they marry an intuitive model with the tools to easily discuss the properties that their 'random' graphs have.
 
-\subsection{Definitions}
+\subsection*{Disconnect from Algebra}
+
+Neither model for 'random' graph generation treats graphs as algebraic objects.
+It was shown by TODO in TODO that the number of matrices which represent a graph \(G\) is
+\[| Matrices(G) | = \frac{N!}{| Aut(G) |}\]
+where \(Aut(G)\) is the automorphism group of \(G\).
+Thus, in perfectly symmetric graphs (such as \(K_i\)), there is only one way to represent \(G\).
+In contrast, many other graphs only posess a trivial automorphism, and thus can be represented by \(N!\) matrices.
+Thus, in the proposed 'random' generators, the odds of picking out one algebraic object can be a factor of \(N!\) larger than picking out another. 
+
+This should make the reader question how 'random' graph generators fit into our colloquial understanding of randomness.
+Common understandings of 'random selection from a set' implies uniform probability of selecting elements.
+In graph theory, labeling and representation are rarely factors that impact our calculations, thus our default mode of understanding is found in most papers: 'irrespective of isomorphisms'.
+Thus, we ought question the validity of these models, which heavily bias for some graphs over others by ignoring isomorphism.
+The focus of this article is the quantification of the disconnects between these 'random' models, and random graphs as algebraic objects.
 
 \subsection{Computation of the Paths Function}
+
+
 
 \end{document}
