@@ -21,16 +21,60 @@
 
 \tableofcontents
 
+\chapter*{Introduction}
+We can't choose what interests us, but we do get to choose what we pursue.
+When I asked Professor Storer to supervise me on a thesis on the Graph Isomorphism problem, he was hesitant.
+He only acquiesced when I persuaded him that my future was secure with a fantastic job, and that my primary objective was the pursuit (and possible rediscovery) of questions that occurred naturally to me.
+In many respects, his skepticism proved well founded.
+This work has been incredibly challenging, both in that the body of existing work on GI is so large, and in that finding niches of it that are promising and not yet fully explored is difficult.
+Over the past year I have poured my time and energy into this project, and have found it unbelievably energizing to do so.
+I have been thrilled to find interesting properties in problems surrounding GI, and have had an equal number of frustrations in finding that my results had been previously discovered.
+I would like to thank Professor Storer for the initial bout of skepticism about this project, as it shaped this project and experience for the better.
+It has kept me on track to focus on my real goal for the semester, which was to explore and learn about the process of exploring.
+I have learned advanced techniques in manual calculation, proof techniques in abstract algebra, and research and documentation techniques.
+My skill set has been broadened by a project which has deeply challenged me and always kept me on my toes.
+
+
 \chapter{Definitions and Syntax}
 
+
+
+This document is an example of \texttt{thebibliography} environment using 
+in bibliography management. Three items are cited: \textit{The \LaTeX\ Companion} 
+book \cite{latexcompanion}, the Einstein journal paper \cite{einstein}, and the 
+Donald Knuth's website \cite{knuthwebsite}. The \LaTeX\ related items are
+\cite{latexcompanion,knuthwebsite}. 
+
 \section{Graphs}
+This report is concerned with undirected, unlabeled graphs with no self-loops or multi-edges.
+Such a graph can be represented by its adjacency matrix, a symmetric binary matrix with zeros along the diagonal.
+We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of a graph.
+When we use $A$, it will not refer to any specific adjacency matrix, as a given graph can usually be represented by many matrices.
+We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$, each of size $N$ and $M$ respectively. 
+It will frequently be used without comment that $M \in [0, \frac{1}{2}(N)(N-1)]$.
+
 \subsection{Representations, Labeling, Matrices}
+An important distinction that is frequently overlooked in the study of graphs is that of representation and labeling.
+Many graphs can be represented by many adjacency matrices, but this does not change the fundamental structure of the graph.
+Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should factor into our algorithms.
+Throughout this report that when we discuss a set of graphs, or an algorithm over graphs, we will treat graphs as objects which denote structure, and will in every way be blind to their representation.
+This is not merely a semantic choice, it has important implications (particularly around ideas of random graph generation).
 
 \section{Graph Isomorphism and Automorphism}
+Within the context of this report, two graphs $G$ and $H$ are isomorphic if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
+Thus, an isomorphism preserves all adjacencies and all non-adjacencies.
+It may be possible for multiple isomorphisms to exist between two graphs, but we are only concerned with the existence of such a mapping.
+We will use the notation $Iso(G, H)$ to be shorthand for the existence of such a mapping as described.
+
+An automorphism is a mapping of the set $V(G)$ to $V(G)$ which preserves adjacency and non-adjacency as discussed with isomorphism.
+If an automorphism $M$ maps every element of $V(G)$ to itself, the automorphism is called the 'trivial' automorphism.
+Though it will be taken as granted, the set of all automorphisms of a graph G forms a group.
+This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the 'followed by' operation.
+The number of automorphisms of a graph turns out to be important, and the automorphism group
+
 \subsection{Graph Invariants}
 \subsection{Vertex Invariants}
 \subsection{Discriminatory Power}
-\subsection{Automorphism Groups}
 
 \section{Cycles Invariant}
 \subsection{Running Time}
@@ -159,6 +203,29 @@
 \section{Modes of Discovery}
 \section{Freedom to Pursue Interest}
 \section{Acknowledgments}
+
+
+
+
+
+\begin{thebibliography}{9}
+\bibitem{latexcompanion} 
+Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+\textit{The \LaTeX\ Companion}. 
+Addison-Wesley, Reading, Massachusetts, 1993.
+ 
+\bibitem{einstein} 
+Albert Einstein. 
+\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+[\textit{On the electrodynamics of moving bodies}]. 
+Annalen der Physik, 322(10):891?921, 1905.
+ 
+\bibitem{knuthwebsite} 
+Knuth: Computers and Typesetting,
+\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\end{thebibliography}
+ 
+
 
 
 \end{document}

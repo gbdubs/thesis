@@ -1,96 +1,95 @@
-\contentsline {chapter}{\numberline {1}Definitions and Syntax}{4}
-\contentsline {section}{\numberline {1.1}Graphs}{4}
-\contentsline {subsection}{\numberline {1.1.1}Representations, Labeling, Matrices}{4}
-\contentsline {section}{\numberline {1.2}Graph Isomorphism and Automorphism}{4}
-\contentsline {subsection}{\numberline {1.2.1}Graph Invariants}{4}
-\contentsline {subsection}{\numberline {1.2.2}Vertex Invariants}{4}
-\contentsline {subsection}{\numberline {1.2.3}Discriminatory Power}{4}
-\contentsline {subsection}{\numberline {1.2.4}Automorphism Groups}{4}
-\contentsline {section}{\numberline {1.3}Cycles Invariant}{4}
-\contentsline {subsection}{\numberline {1.3.1}Running Time}{4}
-\contentsline {subsection}{\numberline {1.3.2}Dealing with Large Numbers}{4}
-\contentsline {subsection}{\numberline {1.3.3}Asymptotic Bit Growth}{4}
-\contentsline {section}{\numberline {1.4}Reconstructability, Determined, Representation}{4}
-\contentsline {chapter}{\numberline {2}Cycles as a Graph Invariant}{5}
-\contentsline {section}{\numberline {2.1}Basic Cycles-Reconstructable Properties}{6}
-\contentsline {subsection}{\numberline {2.1.1}Vertices, Edges, Degree Sequence}{6}
-\contentsline {subsection}{\numberline {2.1.2}Chromatic Polynomial}{6}
-\contentsline {section}{\numberline {2.2}Other Forms of Reconstructability}{6}
-\contentsline {subsection}{\numberline {2.2.1}EA Reconstructability}{6}
-\contentsline {subsection}{\numberline {2.2.2}Deck Reconstructability}{6}
-\contentsline {section}{\numberline {2.3}Placing Cycles within a Time/Power Tradeoff}{6}
-\contentsline {section}{\numberline {2.4}Discrimination on Tough Graph Classes}{6}
-\contentsline {subsection}{\numberline {2.4.1}Background}{6}
-\contentsline {subsection}{\numberline {2.4.2}1-Sparse Graphs}{6}
-\contentsline {subsection}{\numberline {2.4.3}2-Dense Graphs}{6}
-\contentsline {subsection}{\numberline {2.4.4}Miyizaki Graphs}{6}
-\contentsline {section}{\numberline {2.5}Imperfection, Co-Cycles Graphs}{6}
-\contentsline {subsection}{\numberline {2.5.1}Discovering Co-Cycles Graphs}{6}
-\contentsline {subsection}{\numberline {2.5.2}Constructing Co-Cycles Graphs}{6}
-\contentsline {subsection}{\numberline {2.5.3}As a Proposed Dataset for Invariant Analysis}{6}
-\contentsline {section}{\numberline {2.6}Discriminatory Agreement By N and M}{6}
-\contentsline {subsection}{\numberline {2.6.1}Expectations Borne out of Graph Counts}{6}
-\contentsline {subsection}{\numberline {2.6.2}An Unexpected Dip}{6}
-\contentsline {chapter}{\numberline {3}Cycles as a Vertex Invariant}{7}
-\contentsline {section}{\numberline {3.1}Quantifying how Discrimination Varies with P}{7}
-\contentsline {subsection}{\numberline {3.1.1}Limitations of Cycles' Discriminatory Power}{7}
-\contentsline {subsection}{\numberline {3.1.2}Observational Data}{7}
-\contentsline {subsection}{\numberline {3.1.3}Theoretical Explanation: Path vs Cycle Graphs}{7}
-\contentsline {section}{\numberline {3.2}Automorphism 'Quazi-Equivalence Classes'}{7}
-\contentsline {subsection}{\numberline {3.2.1}Background}{7}
-\contentsline {subsection}{\numberline {3.2.2}Vertex Similarity is Transitive}{7}
-\contentsline {subsection}{\numberline {3.2.3}Internal Structure of QEC's}{7}
-\contentsline {section}{\numberline {3.3}Improving upon QECs}{7}
-\contentsline {subsection}{\numberline {3.3.1}Appending a Flag, Somewhat Predictable}{7}
-\contentsline {subsection}{\numberline {3.3.2}Theoretical Justification for Flagging}{7}
-\contentsline {subsection}{\numberline {3.3.3}Analytical Support for Flagging}{7}
-\contentsline {section}{\numberline {3.4}Limitations to Augmentation}{7}
-\contentsline {subsection}{\numberline {3.4.1}A Second Augmentation Hypothesis}{7}
-\contentsline {chapter}{\numberline {4}Cycles and the Reconstruction Conjecture}{8}
-\contentsline {section}{\numberline {4.1}Reconstruction Conjecture}{8}
-\contentsline {subsection}{\numberline {4.1.1}Background}{8}
-\contentsline {subsection}{\numberline {4.1.2}Manual Verification}{8}
-\contentsline {subsection}{\numberline {4.1.3}Novel Manual Verification}{8}
-\contentsline {section}{\numberline {4.2}Cycles of a Deck}{8}
-\contentsline {subsection}{\numberline {4.2.1}The Triangle Identity}{8}
-\contentsline {subsection}{\numberline {4.2.2}Further Identities}{8}
-\contentsline {subsection}{\numberline {4.2.3}Translation to Satisfiability}{8}
-\contentsline {section}{\numberline {4.3}If the Reconstruction Conjecture is True}{8}
-\contentsline {subsection}{\numberline {4.3.1}Natural Use of Induction}{8}
-\contentsline {subsection}{\numberline {4.3.2}Using Cycles to Reduce Induction}{8}
-\contentsline {subsection}{\numberline {4.3.3}Using Triangle Identity to Limit Isomorphism Tests}{8}
-\contentsline {subsection}{\numberline {4.3.4}An Asymptotically Fast Algorithm}{8}
-\contentsline {subsection}{\numberline {4.3.5}Further Lines of Exploration}{8}
-\contentsline {chapter}{\numberline {5}Canonical Labeling Using Cycles}{9}
-\contentsline {section}{\numberline {5.1}Background}{9}
-\contentsline {section}{\numberline {5.2}A Consistent Algorithm}{9}
-\contentsline {section}{\numberline {5.3}Time Growth Comparisons to Faster Algorithms}{9}
-\contentsline {chapter}{\numberline {6}Random Graph Generators and Automorphisms}{10}
-\contentsline {section}{\numberline {6.1}On the Number of Graphs of a given Size}{11}
-\contentsline {subsection}{\numberline {6.1.1}Proposed Closed Forms}{11}
-\contentsline {section}{\numberline {6.2}Graphs as Singular Objects and their Multiple Representations}{11}
-\contentsline {subsection}{\numberline {6.2.1}Representations per Graph}{11}
-\contentsline {subsection}{\numberline {6.2.2}Distribution of Representations}{11}
-\contentsline {section}{\numberline {6.3}Dominant Random Graph Models}{11}
-\contentsline {subsection}{\numberline {6.3.1}Erdos-Reyni Models}{11}
-\contentsline {subsection}{\numberline {6.3.2}Use and Dominance of Erdos Reyni-Models}{11}
-\contentsline {section}{\numberline {6.4}Measuring Flaws of Random Graph Models}{11}
-\contentsline {subsection}{\numberline {6.4.1}Averaging Model}{11}
-\contentsline {subsection}{\numberline {6.4.2}Variance Model}{11}
-\contentsline {subsection}{\numberline {6.4.3}Kurtosis Model}{11}
-\contentsline {subsection}{\numberline {6.4.4}Probability Ratio Model}{11}
-\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{11}
-\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{11}
-\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{11}
-\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{11}
-\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{11}
-\contentsline {subsection}{\numberline {6.6.1}Distributional Goals}{11}
-\contentsline {subsection}{\numberline {6.6.2}Cloning Model}{11}
-\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{11}
-\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{11}
-\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{11}
-\contentsline {chapter}{\numberline {7}Reflections}{12}
-\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{12}
-\contentsline {section}{\numberline {7.2}Modes of Discovery}{12}
-\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{12}
-\contentsline {section}{\numberline {7.4}Acknowledgments}{12}
+\contentsline {chapter}{\numberline {1}Definitions and Syntax}{5}
+\contentsline {section}{\numberline {1.1}Graphs}{5}
+\contentsline {subsection}{\numberline {1.1.1}Representations, Labeling, Matrices}{5}
+\contentsline {section}{\numberline {1.2}Graph Isomorphism and Automorphism}{6}
+\contentsline {subsection}{\numberline {1.2.1}Graph Invariants}{6}
+\contentsline {subsection}{\numberline {1.2.2}Vertex Invariants}{6}
+\contentsline {subsection}{\numberline {1.2.3}Discriminatory Power}{6}
+\contentsline {section}{\numberline {1.3}Cycles Invariant}{6}
+\contentsline {subsection}{\numberline {1.3.1}Running Time}{6}
+\contentsline {subsection}{\numberline {1.3.2}Dealing with Large Numbers}{6}
+\contentsline {subsection}{\numberline {1.3.3}Asymptotic Bit Growth}{6}
+\contentsline {section}{\numberline {1.4}Reconstructability, Determined, Representation}{6}
+\contentsline {chapter}{\numberline {2}Cycles as a Graph Invariant}{7}
+\contentsline {section}{\numberline {2.1}Basic Cycles-Reconstructable Properties}{8}
+\contentsline {subsection}{\numberline {2.1.1}Vertices, Edges, Degree Sequence}{8}
+\contentsline {subsection}{\numberline {2.1.2}Chromatic Polynomial}{8}
+\contentsline {section}{\numberline {2.2}Other Forms of Reconstructability}{8}
+\contentsline {subsection}{\numberline {2.2.1}EA Reconstructability}{8}
+\contentsline {subsection}{\numberline {2.2.2}Deck Reconstructability}{8}
+\contentsline {section}{\numberline {2.3}Placing Cycles within a Time/Power Tradeoff}{8}
+\contentsline {section}{\numberline {2.4}Discrimination on Tough Graph Classes}{8}
+\contentsline {subsection}{\numberline {2.4.1}Background}{8}
+\contentsline {subsection}{\numberline {2.4.2}1-Sparse Graphs}{8}
+\contentsline {subsection}{\numberline {2.4.3}2-Dense Graphs}{8}
+\contentsline {subsection}{\numberline {2.4.4}Miyizaki Graphs}{8}
+\contentsline {section}{\numberline {2.5}Imperfection, Co-Cycles Graphs}{8}
+\contentsline {subsection}{\numberline {2.5.1}Discovering Co-Cycles Graphs}{8}
+\contentsline {subsection}{\numberline {2.5.2}Constructing Co-Cycles Graphs}{8}
+\contentsline {subsection}{\numberline {2.5.3}As a Proposed Dataset for Invariant Analysis}{8}
+\contentsline {section}{\numberline {2.6}Discriminatory Agreement By N and M}{8}
+\contentsline {subsection}{\numberline {2.6.1}Expectations Borne out of Graph Counts}{8}
+\contentsline {subsection}{\numberline {2.6.2}An Unexpected Dip}{8}
+\contentsline {chapter}{\numberline {3}Cycles as a Vertex Invariant}{9}
+\contentsline {section}{\numberline {3.1}Quantifying how Discrimination Varies with P}{9}
+\contentsline {subsection}{\numberline {3.1.1}Limitations of Cycles' Discriminatory Power}{9}
+\contentsline {subsection}{\numberline {3.1.2}Observational Data}{9}
+\contentsline {subsection}{\numberline {3.1.3}Theoretical Explanation: Path vs Cycle Graphs}{9}
+\contentsline {section}{\numberline {3.2}Automorphism 'Quazi-Equivalence Classes'}{9}
+\contentsline {subsection}{\numberline {3.2.1}Background}{9}
+\contentsline {subsection}{\numberline {3.2.2}Vertex Similarity is Transitive}{9}
+\contentsline {subsection}{\numberline {3.2.3}Internal Structure of QEC's}{9}
+\contentsline {section}{\numberline {3.3}Improving upon QECs}{9}
+\contentsline {subsection}{\numberline {3.3.1}Appending a Flag, Somewhat Predictable}{9}
+\contentsline {subsection}{\numberline {3.3.2}Theoretical Justification for Flagging}{9}
+\contentsline {subsection}{\numberline {3.3.3}Analytical Support for Flagging}{9}
+\contentsline {section}{\numberline {3.4}Limitations to Augmentation}{9}
+\contentsline {subsection}{\numberline {3.4.1}A Second Augmentation Hypothesis}{9}
+\contentsline {chapter}{\numberline {4}Cycles and the Reconstruction Conjecture}{10}
+\contentsline {section}{\numberline {4.1}Reconstruction Conjecture}{10}
+\contentsline {subsection}{\numberline {4.1.1}Background}{10}
+\contentsline {subsection}{\numberline {4.1.2}Manual Verification}{10}
+\contentsline {subsection}{\numberline {4.1.3}Novel Manual Verification}{10}
+\contentsline {section}{\numberline {4.2}Cycles of a Deck}{10}
+\contentsline {subsection}{\numberline {4.2.1}The Triangle Identity}{10}
+\contentsline {subsection}{\numberline {4.2.2}Further Identities}{10}
+\contentsline {subsection}{\numberline {4.2.3}Translation to Satisfiability}{10}
+\contentsline {section}{\numberline {4.3}If the Reconstruction Conjecture is True}{10}
+\contentsline {subsection}{\numberline {4.3.1}Natural Use of Induction}{10}
+\contentsline {subsection}{\numberline {4.3.2}Using Cycles to Reduce Induction}{10}
+\contentsline {subsection}{\numberline {4.3.3}Using Triangle Identity to Limit Isomorphism Tests}{10}
+\contentsline {subsection}{\numberline {4.3.4}An Asymptotically Fast Algorithm}{10}
+\contentsline {subsection}{\numberline {4.3.5}Further Lines of Exploration}{10}
+\contentsline {chapter}{\numberline {5}Canonical Labeling Using Cycles}{11}
+\contentsline {section}{\numberline {5.1}Background}{11}
+\contentsline {section}{\numberline {5.2}A Consistent Algorithm}{11}
+\contentsline {section}{\numberline {5.3}Time Growth Comparisons to Faster Algorithms}{11}
+\contentsline {chapter}{\numberline {6}Random Graph Generators and Automorphisms}{12}
+\contentsline {section}{\numberline {6.1}On the Number of Graphs of a given Size}{13}
+\contentsline {subsection}{\numberline {6.1.1}Proposed Closed Forms}{13}
+\contentsline {section}{\numberline {6.2}Graphs as Singular Objects and their Multiple Representations}{13}
+\contentsline {subsection}{\numberline {6.2.1}Representations per Graph}{13}
+\contentsline {subsection}{\numberline {6.2.2}Distribution of Representations}{13}
+\contentsline {section}{\numberline {6.3}Dominant Random Graph Models}{13}
+\contentsline {subsection}{\numberline {6.3.1}Erdos-Reyni Models}{13}
+\contentsline {subsection}{\numberline {6.3.2}Use and Dominance of Erdos Reyni-Models}{13}
+\contentsline {section}{\numberline {6.4}Measuring Flaws of Random Graph Models}{13}
+\contentsline {subsection}{\numberline {6.4.1}Averaging Model}{13}
+\contentsline {subsection}{\numberline {6.4.2}Variance Model}{13}
+\contentsline {subsection}{\numberline {6.4.3}Kurtosis Model}{13}
+\contentsline {subsection}{\numberline {6.4.4}Probability Ratio Model}{13}
+\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{13}
+\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{13}
+\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{13}
+\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{13}
+\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{13}
+\contentsline {subsection}{\numberline {6.6.1}Distributional Goals}{13}
+\contentsline {subsection}{\numberline {6.6.2}Cloning Model}{13}
+\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{13}
+\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{13}
+\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{13}
+\contentsline {chapter}{\numberline {7}Reflections}{14}
+\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{14}
+\contentsline {section}{\numberline {7.2}Modes of Discovery}{14}
+\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{14}
+\contentsline {section}{\numberline {7.4}Acknowledgments}{14}

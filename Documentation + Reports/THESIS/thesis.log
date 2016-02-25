@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  25 FEB 2016 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  25 FEB 2016 13:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -155,71 +155,83 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `thesis.toc'.
 
- [3]
-Chapter 1.
-[4
+ [3] [4
 
 ]
-Chapter 2.
+Chapter 1.
 [5
+
+] [6]
+Chapter 2.
+[7
 
 ]
 Overfull \vbox (29.52827pt too high) has occurred while \output is active []
 
 
-[6]
+[8]
 Chapter 3.
-[7
+[9
 
 ]
 Chapter 4.
-[8
+[10
 
 ]
 Chapter 5.
 
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 119--119
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 162--162
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
-[9
+[11
 
 ]
 Chapter 6.
 
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 142--142
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 185--185
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
-[10
+[12
 
 ]
 Overfull \vbox (219.58736pt too high) has occurred while \output is active []
 
 
-[11]
+[13]
 Chapter 7.
-[12
+[14
+
+] [15
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 1522 strings out of 494185
- 21678 string characters out of 6156889
- 83064 words of memory out of 5000000
- 4843 multiletter control sequences out of 15000+600000
- 10359 words of font info for 36 fonts, out of 8000000 for 9000
+ 1532 strings out of 494185
+ 21793 string characters out of 6156889
+ 83073 words of memory out of 5000000
+ 4850 multiletter control sequences out of 15000+600000
+ 11225 words of font info for 39 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 37i,5n,23p,234b,149s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,5n,23p,251b,161s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb
 x12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.
-pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (13 pages, 131270 bytes).
+pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/l
+ocal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmti12.pfb></opt/local/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmti8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb>
+Output written on thesis.pdf (16 pages, 213349 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
