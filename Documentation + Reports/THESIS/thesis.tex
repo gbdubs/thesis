@@ -168,9 +168,33 @@ TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted 
 
 
 \chapter{Cycles as a Graph Invariant}
+Cycles is a powerful graph invariant.
+In this chapter we will discuss properties of cycles that are reconstructable from cycles.
+We will then show how Cycles is reconstructible from some other graph invariants, which leads us to the conclusion that Cycles is necessarily an incomplete invariant.
+We will then discuss manual calculations that prove the example of Co-Cycles graphs, and the establishment of small datasets of co-cycles graphs as matrix by which to measure graph invariants.
+Finally, we will examine the performance of the cycles invariant on different classes of graphs which typically show resistance to classification and differentiation via graph invariants.
 
 \section{Basic Cycles-Reconstructable Properties}
+
 \subsection{Vertices, Edges, Degree Sequence}
+From the cycles graph invariant, we can easily deduce the number of vertices (the size of the resulting matrix's first dimension), and the number of edges (the sum of the second column of this matrix, divided by two).
+We can also deduce the degree sequence, as simply observing the second column of each vertex invariant vector, and sorting the result.
+
+\subsection{Triangles, Higher Order Polygons}
+Within the context of a graph, a polygon differs from a cycle in that a cycle is allowed to repeat both edges and vertices, while polygons do not allow repetitions of vertices or edges.
+
+The number of triangles is also easily computed.  Since triangles necessarily contain three distinct vertices (in a graph with no self-loops), we know that any cycle of length three on a graph will be a triangle.
+Thus, the number of triangles which pass through each vertex is simply the third column of the paths invariant matrix, and summing them and dividing by three yields the total number of triangles in the graph.
+
+Things are not so simple for larger polygons.  If we think very critically, we can deduce the number of of valid quadrilaterals, by considering the degree sequence of each of the nodes adjacenct to a specific node.
+We can formalize this notion as follows.
+TODO
+Note that this logic requires us to take in an additional piece of information to augment the data that we get from the cycles invariant.
+Similarly, figuring out higher order polygons can be done, but it requires an awareness of the adjacent values of cycles.
+More generally, the larger the 'neighbors-paths' supplemental information we require, the further we stray toward giving away the information that fully determines the graph.
+
+However, this is a powerful observation, and fits into a conception of a 'neighbors aware mechanism'. A formal discussion of such mechanism sis discussed in TODO.
+
 \subsection{Chromatic Polynomial}
 
 \section{Other Forms of Reconstructability}
@@ -193,7 +217,6 @@ TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted 
 \section{Discriminatory Agreement By N and M}
 \subsection{Expectations Borne out of Graph Counts}
 \subsection{An Unexpected Dip}
-
 
 
 
@@ -221,7 +244,7 @@ TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted 
 \chapter{Cycles and the Reconstruction Conjecture}
 
 \section{Reconstruction Conjecture}
-\subsection{Background}
+
 \subsection{Manual Verification}
 \subsection{Novel Manual Verification}
 
