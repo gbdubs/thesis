@@ -23,110 +23,122 @@
 
 \chapter*{Introduction}
 We can't choose what interests us, but we do get to choose what we pursue.
-When I asked Professor Storer to supervise me on a thesis on the Graph Isomorphism problem, he was hesitant.
-He only acquiesced when I persuaded him that my future was secure with a fantastic job, and that my primary objective was the pursuit (and possible rediscovery) of questions that occurred naturally to me.
+When I asked Professor Storer to supervise me on a thesis on the graph isomorphism problem, he was hesitant.
+He only acquiesced when I persuaded him that my future was secure with a fantastic job, and that my primary objective was the pursuit (and possible rediscovery) of questions that were of nothing but personal interest to me.
 In many respects, his skepticism proved well founded.
 This work has been incredibly challenging, both in that the body of existing work on GI is so large, and in that finding niches of it that are promising and not yet fully explored is difficult.
 Over the past year I have poured my time and energy into this project, and have found it unbelievably energizing to do so.
 I have been thrilled to find interesting properties in problems surrounding GI, and have had an equal number of frustrations in finding that my results had been previously discovered.
 I would like to thank Professor Storer for the initial bout of skepticism about this project, as it shaped this project and experience for the better.
-It has kept me on track to focus on my real goal for the semester, which was to explore and learn about the process of exploring.
-I have learned advanced techniques in manual calculation, proof techniques in abstract algebra, and research and documentation techniques.
+It has kept me on track to focus on my real goal for the semester, which was to grow.
+I have learned advanced techniques in GPU calculation, proof techniques in abstract algebra, and research and documentation techniques.
 My skill set has been broadened by a project which has deeply challenged me and always kept me on my toes.
 
 
 \chapter{Definitions and Syntax}
 
 
-
-This document is an example of \texttt{thebibliography} environment using 
-in bibliography management. Three items are cited: \textit{The \LaTeX\ Companion} 
-book \cite{latexcompanion}, the Einstein journal paper \cite{einstein}, and the 
-Donald Knuth's website \cite{knuthwebsite}. The \LaTeX\ related items are
-\cite{latexcompanion,knuthwebsite}. 
-
 \section{Graphs}
 This report describes undirected, unlabeled graphs with no self-loops or multi-edges.
-Such a graph can be represented by its adjacency matrix, a symmetric, square, binary matrix with zeros along the diagonal.
+Such a graph can be represented by its adjacency matrix: a square, symmetric, binary matrix with zeros along the diagonal.
 We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of the graph.
 When we use $A$, it will not refer to any specific adjacency matrix, as a given graph can usually be represented by many matrices.
 
-We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$, each of size $N$ and $M$ respectively. 
-It will frequently be used without comment that $M \in [0, \frac{1}{2}(N)(N-1)]$.
-Edges are denoted as a tuple of vertices, where $(v_1, v_2) = (v_2, v_1)$.
+We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$.
+A graph has $N$ vertices and $M$ edges. 
+It will frequently be used without further comment that $M \in [0, \frac{1}{2}(N)(N-1)]$.
+Edges are denoted as a tuple of symmetric vertices, where $(v_1, v_2) = (v_2, v_1)$.
 
 A graph's complement (or inverse) is a new graph with the same set of vertices, but where adjacency and non-adjacency are inverted.
-In formal terms, the graph $H$ is $G$'s inverse if $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$.
+In formal terms, the graph $H$ is $G$'s inverse if $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$ and $V(G) = V(H)$.
 
 \subsection{Representations, Labeling, Matrices}
-An important distinction that is too frequently overlooked in the study of graphs is that of representation and labeling.
-Many graphs can be represented by many adjacency matrices, but this does not change the fundamental structure of the graph.
+An important distinction that is too frequently overlooked is that of representation and labeling of graphs.
+Most graphs can be represented by multiple adjacency matrices, but changes to representation do not change the fundamental structure of the graph.
 Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should factor into our algorithms.
 Throughout this report that when we discuss a set of graphs, or an algorithm over graphs, we will treat graphs as objects which denote structure, and will in every way be blind to their representation.
+Thus when we refer to a graph, we are referring to all of its representations.
+When we intend to discuss a graph within some reality of its representation (for example, when determining whether two given adjacency matrices refer to the same graph) we will use the term 'graph instance'.
 This is not merely a semantic choice, it has important implications (particularly around ideas of random graph models).
 
 \section{Graph Isomorphism and Automorphism}
-Within the context of this report, two graphs $G$ and $H$ are isomorphic if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
-Thus, an isomorphism preserves all adjacencies and all non-adjacencies, and provs that the structure of the two graphs is the same.
-It may be possible for multiple isomorphisms to exist between two graphs, but we are only concerned with the existence of such a mapping.
+Within the context of this report, two graph instances $G$ and $H$ are isomorphic if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
+If an isomorphism exists between two graph instances, then the two instances represent the same graph; they have the same structure.
+An isomorphism preserves all adjacencies and all non-adjacencies, and the existence of an isomorphism between instances proves that they are the same graph.
+It may be possible for multiple isomorphisms to exist between two graph instances, but we are only concerned with the existence of such a mapping.
 We will use the notation $Iso(G, H)$ to be shorthand for a boolean predicate describing the existence of such a mapping.
 
-An automorphism is a mapping of the set $V(G)$ to $V(G)$ which preserves adjacency and non-adjacency as discussed with isomorphism.
+An automorphism is a mapping of the set of verties onto itself ($V(G)$ to $V(G)$) which preserves adjacency and non-adjacency.
 If an automorphism $M$ maps every element of $V(G)$ to itself, the automorphism is called the 'trivial' automorphism.
 Though it will be taken as granted, the set of all automorphisms of a graph G forms a group.
+This group has at least one memeber (the identity element is the identity isomorphism), but may have as many as $N!$ elements.
 This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the 'followed by' operation.
-The number of automorphisms of a graph turns out to be important, and is for all graphs, $|Aut(G)| \in [1, N!]$.
+The number of automorphisms of a graph turns out to be important, and the range is bounded by: $|Aut(G)| \in [1, N!]$.
 
 \subsection{Graph Invariants}
-A Graph Invariant is a property of a graph which remains the same irrespective of representation or labeling.
-More specifically, an algorithm is a graph invariant only if it results in a numerical or trivially comparable result which is stable across isomorphic matrices.
+A Graph Invariant is a numerical or comparable property of a graph which remains the same irrespective of the representation or labeling of the graph.
+More specifically, an algorithm is a graph invariant only if it produces output which is stable across isomorphic matrices.
 A graph invariant $I(G)$ can allow us to conclude that two graphs $(G_1, G_2)$ are \emph{not} the same graph if $I(G_1) \neq I(G_2)$.
-However, it is distinctly limited, in that the converse does not hold.
+However, it is distinctly limited, in that the converse does not hold i.e. it is possible for non-isomorphic graph instances to share a value for a graph invariant.
 
 \subsection{Discriminatory Power}
-This introduces a notion of discriminatory power.
-A graph invariant is described as highly discriminating if it can, with hihg probability, distinguish two non-isomorphic graphs as non-isomorphic.
-For example, a graph invariant that is nnot highly discriminatory is the vertex count of a graph.
-Two graphs are certainly not isomorphic if they differ in ther vertex count.
-However, many graphs which are not isomorphic have the same vertex count.
+This serves as a justification for a quantifiable notion of discriminatory power.
+A graph invariant is described as highly discriminating if it can, with high probability, distinguish two non-isomorphic graphs as non-isomorphic.
+For example, an example of a graph invariant that is not highly discriminatory is the vertex count of a graph.
+Two graphs are certainly not isomorphic if they differ in ther vertex count, however, many graphs which are not isomorphic have the same vertex count.
 In contrast, the chromatic polynomial of a graph is a highly discriminatory graph invariant, as the odds of having two non-isomorphic graphs agree on their chromatic polynomial is compatively small.
 
-To formalize this notion, we will discuss discriminatory power within a specific probabilistic meaning.
-A graph invariant $I$ is highly discriminating at a level $\alpha$ for $N$ and $M$ if selecting two graphs $G$ and $H$ at random from the set of all grphs with $N$ vertices and $M$ edges:
+To formalize this notion, we will discuss discriminatory power with a specific probabilistic meaning.
+A graph invariant $I$ discriminates at a level $\alpha$ for $N$ vertices and $M$ edges if selecting two graphs $G$ and $H$ at random from the set of all grphs with $N$ vertices and $M$ edges:
 $$P(I(G) = I(H) ^ \not Iso(G, H)) \leq \alpha$$
-What we will find is that we can frequently discuss alpha as a function of $M$ and $N$. 
+What we will find is that we can frequently discuss alpha as a function of $M$ and $N$.
+Later in this report we will discuss how $\alpha$ fits in to a natural definition of a false positive an uncertain test without a false negative rate ($\beta = 0$).
+
+\subsection{Vertex Similarity}
+Two vertices are said to be similar if there exists a mapping in the automorphism group of $G$ such that the mapping maps one vetex to the other.
+Similarity is a transitive property.
+The vertex set $V(G)$ can be divided up into between 1 and N similar vertex sets, such that all of the vertices in each set are similar, and no pair of sets contains similar vertices.
+The theory of these similar vertex sets (or SVSs) will be discussed in detail in chapter 4. 
 
 \subsection{Vertex Invariants}
-Two vertices are said to be similar if there exists an automrphism in the automorphism group of $G$ such that the mapping maps one vetex to the other.
-Note that this is a transitive property.
-We describe vertex inariants as numerical properties that we can calculate over a specific vertex within a graph which attempts to identify potentially similar vertex pairs.
-Like a graph invariant, vertex invariants can only ellimanate te possibility for vertex similarity, it is not sufficent to prove it. 
+Vertex inariants are numerical properties that we can calculate over a specific vertex within a graph which attempts to identify potentially similar vertex pairs.
+Similar vertices within a graph will agree on all vertex invariants.
+However, like a graph invariant, vertex invariants can only ellimanate te possibility for vertex similarity, they are not sufficient to prove similarity.
 
-Powerful vertex invariants make the computation of Graph Isomorphism between two graphs markdly easier. 
-whereas a graph invariant can tell us about whether or not individual graphs might be alike, it does nothin to suggest a hypothetical mapping between the vertices of the two graphs. 
-A vertex invariant, in contrast, identifies potentially similar vertices not only within a graph, but also between two graphs.
-A "perfect" vertex invariant is one for which the only vertices that agree on the value of the invariant are those where anautoorphism actually does exist.
+Powerful vertex invariants make the computation of graph isomorphism between two graphs markdly easier. 
+Whereas a graph invariant can tell us about whether or not graph instances as a whole might be alike, it does nothin to suggest a proposed mapping between the vertices of the two graph instances.
+In contrast, a vertex invariant identifies potentially similar vertices not only within a graph, but also between two graphs.
+A `perfect' vertex invariant is one for which agreement on the value of the invariant is equivalent to establishing the existence of an automorphism that maps one vertex to the other.
 
-A question discussed later in this report will be about the theoretical existence fo perfect vertex invariants, and a couple of examples that might provide such an idealized invariant.
+A question discussed later in this report will be about the theoretical implications of a hypothetical perfect vertex, and a couple of lines of inquiry that might provide such an idealized invariant.
 
 \section{Cycles Invariant}
 The focus of this report is an invariant which can function as an invariant over graphs or their vertices.
-It is called the 'Cycles' invariant, but is sometimes referred to as the 'Paths' Invariant, for reasons that I will describe.
+It is called the 'Cycles' invariant, but is sometimes referred to as the 'Paths' Invariant in cases where cycle has other connotations.
+In either case, we will consistently capitalize to distinguish the invariant from the other denotations.
+
 Cycles as a vertex invariant describes a vector of length $P$, where the $p$th entry is the number of closed cycles of length $p$ which pass through the vertex being described.
 Cycles are allowed to repeat vertices and edges, and can pass back through their place of origin.
-If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of $$Paths(G, i, p) = A^p(i,i)$$
-The vector generated by this computation is a way of describing the local graph around the vertex $i$.
+We are counting cycles which are directional, so $ABCA$ and $ACBA$ are distinct cycles. 
+
+If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of $$Paths(G, v_i, p) = A^p(i,i)$$
+for each of the values of $p$, forming a vector of length $P$.
+
+The vector generated by this computation is a way of describing the local graph around the vertex $v_i$.
+We can consider many ways in which paths reflects a 'reverberation' about the local neighborhood of a vertex, and provides a noisy invariant, which is useful for distinguishing purposes. 
 It will be discussed why later, but we will prove that $P$ will always be strictly less than $N$, and that further values of computation are not useful.
 
-
-Extending the idea to a graph invariant requires no imagination. 
-We simply calculate the paths vertex invariant for every one of the vertices of the graph, and are given back $N$  vectors of size $P$.
-We then sort the resultant vectors lexicographically, and use the matrix that is generated by that sort as a comparable object which we treat as an invariant.
+Extending this vertex invariant to a graph invariant requires no imagination. 
+We simply calculate the paths vertex invariant for every one of the vertices of the graph, and are given back $N$ vectors of length $P$.
+We then sort the resultant vectors lexicographically, and arrange them in a $NxP$ matrix.
+This matrix is a comparable object which is invariant to changes in labeling or representation of $G$.
 
 \subsection{Invertibility}
 Note that if two graphs agree on the paths invariant, their complements (or inverses) also agree on the paths function.
-TODO !!! PATHS + INVERSE(PATHS) != PATHS(K)
+This is easily observed through the knowledge that two graphs are isomorphic if and only if their complement graphs are isomorphic.
 
+WAIT COPATHS GRAPHS THIS COULD BE FUCKING HUGE
+TODO !!! PATHS + INVERSE(PATHS) != PATHS(K)
 IS THIS FUCKING TRUE?!?!
 
 \subsection{Running Time}
@@ -154,7 +166,7 @@ Thus, when we discuss the cycles invariant within the context of theory, we need
 Otherwise, the polynomial aspect of this computation could be misleading away from a gross inefficency in space that masks the the true tosts and limiting factors of the computation.
 
 Proving that the number of bits that the paths function takes is actually not too difficult.
-TODO
+TODO Waiting on invertability
 
 \section{Reconstructability, Determined, Representation}
 Many of the graph theoretic discussions of the cycles invariant will describe it with respect to other invariants. We have some language to assist these comparisons.
