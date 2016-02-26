@@ -46,43 +46,125 @@ Donald Knuth's website \cite{knuthwebsite}. The \LaTeX\ related items are
 \cite{latexcompanion,knuthwebsite}. 
 
 \section{Graphs}
-This report is concerned with undirected, unlabeled graphs with no self-loops or multi-edges.
-Such a graph can be represented by its adjacency matrix, a symmetric binary matrix with zeros along the diagonal.
-We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of a graph.
+This report describes undirected, unlabeled graphs with no self-loops or multi-edges.
+Such a graph can be represented by its adjacency matrix, a symmetric, square, binary matrix with zeros along the diagonal.
+We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of the graph.
 When we use $A$, it will not refer to any specific adjacency matrix, as a given graph can usually be represented by many matrices.
+
 We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$, each of size $N$ and $M$ respectively. 
 It will frequently be used without comment that $M \in [0, \frac{1}{2}(N)(N-1)]$.
+Edges are denoted as a tuple of vertices, where $(v_1, v_2) = (v_2, v_1)$.
+
+A graph's complement (or inverse) is a new graph with the same set of vertices, but where adjacency and non-adjacency are inverted.
+In formal terms, the graph $H$ is $G$'s inverse if $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$.
 
 \subsection{Representations, Labeling, Matrices}
-An important distinction that is frequently overlooked in the study of graphs is that of representation and labeling.
+An important distinction that is too frequently overlooked in the study of graphs is that of representation and labeling.
 Many graphs can be represented by many adjacency matrices, but this does not change the fundamental structure of the graph.
 Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should factor into our algorithms.
 Throughout this report that when we discuss a set of graphs, or an algorithm over graphs, we will treat graphs as objects which denote structure, and will in every way be blind to their representation.
-This is not merely a semantic choice, it has important implications (particularly around ideas of random graph generation).
+This is not merely a semantic choice, it has important implications (particularly around ideas of random graph models).
 
 \section{Graph Isomorphism and Automorphism}
 Within the context of this report, two graphs $G$ and $H$ are isomorphic if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
-Thus, an isomorphism preserves all adjacencies and all non-adjacencies.
+Thus, an isomorphism preserves all adjacencies and all non-adjacencies, and provs that the structure of the two graphs is the same.
 It may be possible for multiple isomorphisms to exist between two graphs, but we are only concerned with the existence of such a mapping.
-We will use the notation $Iso(G, H)$ to be shorthand for the existence of such a mapping as described.
+We will use the notation $Iso(G, H)$ to be shorthand for a boolean predicate describing the existence of such a mapping.
 
 An automorphism is a mapping of the set $V(G)$ to $V(G)$ which preserves adjacency and non-adjacency as discussed with isomorphism.
 If an automorphism $M$ maps every element of $V(G)$ to itself, the automorphism is called the 'trivial' automorphism.
 Though it will be taken as granted, the set of all automorphisms of a graph G forms a group.
 This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the 'followed by' operation.
-The number of automorphisms of a graph turns out to be important, and the automorphism group
+The number of automorphisms of a graph turns out to be important, and is for all graphs, $|Aut(G)| \in [1, N!]$.
 
 \subsection{Graph Invariants}
-\subsection{Vertex Invariants}
+A Graph Invariant is a property of a graph which remains the same irrespective of representation or labeling.
+More specifically, an algorithm is a graph invariant only if it results in a numerical or trivially comparable result which is stable across isomorphic matrices.
+A graph invariant $I(G)$ can allow us to conclude that two graphs $(G_1, G_2)$ are \emph{not} the same graph if $I(G_1) \neq I(G_2)$.
+However, it is distinctly limited, in that the converse does not hold.
+
 \subsection{Discriminatory Power}
+This introduces a notion of discriminatory power.
+A graph invariant is described as highly discriminating if it can, with hihg probability, distinguish two non-isomorphic graphs as non-isomorphic.
+For example, a graph invariant that is nnot highly discriminatory is the vertex count of a graph.
+Two graphs are certainly not isomorphic if they differ in ther vertex count.
+However, many graphs which are not isomorphic have the same vertex count.
+In contrast, the chromatic polynomial of a graph is a highly discriminatory graph invariant, as the odds of having two non-isomorphic graphs agree on their chromatic polynomial is compatively small.
+
+To formalize this notion, we will discuss discriminatory power within a specific probabilistic meaning.
+A graph invariant $I$ is highly discriminating at a level $\alpha$ for $N$ and $M$ if selecting two graphs $G$ and $H$ at random from the set of all grphs with $N$ vertices and $M$ edges:
+$$P(I(G) = I(H) ^ \not Iso(G, H)) \leq \alpha$$
+What we will find is that we can frequently discuss alpha as a function of $M$ and $N$. 
+
+\subsection{Vertex Invariants}
+Two vertices are said to be similar if there exists an automrphism in the automorphism group of $G$ such that the mapping maps one vetex to the other.
+Note that this is a transitive property.
+We describe vertex inariants as numerical properties that we can calculate over a specific vertex within a graph which attempts to identify potentially similar vertex pairs.
+Like a graph invariant, vertex invariants can only ellimanate te possibility for vertex similarity, it is not sufficent to prove it. 
+
+Powerful vertex invariants make the computation of Graph Isomorphism between two graphs markdly easier. 
+whereas a graph invariant can tell us about whether or not individual graphs might be alike, it does nothin to suggest a hypothetical mapping between the vertices of the two graphs. 
+A vertex invariant, in contrast, identifies potentially similar vertices not only within a graph, but also between two graphs.
+A "perfect" vertex invariant is one for which the only vertices that agree on the value of the invariant are those where anautoorphism actually does exist.
+
+A question discussed later in this report will be about the theoretical existence fo perfect vertex invariants, and a couple of examples that might provide such an idealized invariant.
 
 \section{Cycles Invariant}
+The focus of this report is an invariant which can function as an invariant over graphs or their vertices.
+It is called the 'Cycles' invariant, but is sometimes referred to as the 'Paths' Invariant, for reasons that I will describe.
+Cycles as a vertex invariant describes a vector of length $P$, where the $p$th entry is the number of closed cycles of length $p$ which pass through the vertex being described.
+Cycles are allowed to repeat vertices and edges, and can pass back through their place of origin.
+If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of $$Paths(G, i, p) = A^p(i,i)$$
+The vector generated by this computation is a way of describing the local graph around the vertex $i$.
+It will be discussed why later, but we will prove that $P$ will always be strictly less than $N$, and that further values of computation are not useful.
+
+
+Extending the idea to a graph invariant requires no imagination. 
+We simply calculate the paths vertex invariant for every one of the vertices of the graph, and are given back $N$  vectors of size $P$.
+We then sort the resultant vectors lexicographically, and use the matrix that is generated by that sort as a comparable object which we treat as an invariant.
+
+\subsection{Invertibility}
+Note that if two graphs agree on the paths invariant, their complements (or inverses) also agree on the paths function.
+TODO !!! PATHS + INVERSE(PATHS) != PATHS(K)
+
+IS THIS FUCKING TRUE?!?!
+
 \subsection{Running Time}
+The running time of the paths invariant is the same whether we treat it as a vertex invariant or as a graph invariant.
+The one difference is whether or not we sort the resulting vectors.
+It is imperative to calculate $A^P$ even if we are only interested in calculating it for a single vertex.
+Matrix multiplication can generally be accomplished in sub-cubic time, but for the sake of simplicity and comprehensibility within this paper we will assuem that it is an algorithm that runs in $O(N^3)$  time.
+This means that the computation of any paths invariant can be accomplished in $O(n^4)$ time.
+Though this sounds like a lot of time, generally, this is a quick computation.
+This is made asymptotically better by the fact that efficient algorithms for matrix multiplication are well studied and optimized for a variety of contexts.
+In a modern context, matrix multiplication can be done efficiently by GPU arrays, and there are quick ways to do multiplication on sparse matrices.
+
 \subsection{Dealing with Large Numbers}
+One element of the Cycles invariant that we will consistently need to be cognizant of is the fact that our numbers will grow very quickly, particularly for large values of N.
+In the worst case, the largest value in the Paths invariant will occur when we have a fully connected graph of size N.
+The largest value will be TODO as can be quickly shown via TODO.
+
+We can avoid most of the problems associated with this by simply performing regular modulo operations by a large value of $2^K$.
+This preserves thee properties of addition and composition that we are looking for, but does us th favor of maintaining reasonable sized bit arrays.
+If we break every number into two parts, one divisible by a large power, we can see that any means TODO.
+
 \subsection{Asymptotic Bit Growth}
+Though the above simplification can certainly allow us to do our computations in a way that is likely to avoid collisions, if we are discussing properties of the invariant as a whole, it is not acceptable to ignore the possibility of collisions.
+Thus, when we discuss the cycles invariant within the context of theory, we need to prove that computation of it can be done in linear space.
+Otherwise, the polynomial aspect of this computation could be misleading away from a gross inefficency in space that masks the the true tosts and limiting factors of the computation.
+
+Proving that the number of bits that the paths function takes is actually not too difficult.
+TODO
 
 \section{Reconstructability, Determined, Representation}
+Many of the graph theoretic discussions of the cycles invariant will describe it with respect to other invariants. We have some language to assist these comparisons.
+We will say that a property of a graph is 'reconstructable' from Cycles if we can calculate the property if we are given the Cycles invariant for the graph.
+Similarly, a property is determined by Cycles if a set value of cycles allows only zero or one value for the property in question.
+Reconstruct-ability and determinability differ only in that reconstruct-ability describes a procedure for the conversion, while determinability only claims a valid mapping, and doesn't suggest a mechansim for its computation.
 
+Finally, we will talk about the number of distinct matrices that describe isomorphic graphs as being the 'number of representations' of the graph, or $Reps(G)$.
+
+TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted rows/columns of A^I???
 
 
 \chapter{Cycles as a Graph Invariant}
