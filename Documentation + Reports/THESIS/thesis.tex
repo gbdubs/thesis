@@ -40,77 +40,77 @@ My skill set has been broadened by a project which has deeply challenged me and 
 
 \section{Graphs}
 This report describes undirected, unlabeled graphs with no self-loops or multi-edges.
-Such a graph can be represented by its adjacency matrix: a square, symmetric, binary matrix with zeros along the diagonal.
+Such graphs are represented by an \emph{adjacency matrix}: a square, symmetric, binary matrix with zeros along the diagonal.
 We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of the graph.
-When we use $A$, it will not refer to any specific adjacency matrix, as a given graph can usually be represented by many matrices.
+When we use $A$, it will not refer to a specific adjacency matrix, as most graphs can be represented by many matrices.
 
 We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$.
-A graph has $N$ vertices and $M$ edges. 
-It will frequently be used without further comment that $M \in [0, \frac{1}{2}(N)(N-1)]$.
-Edges are denoted as a tuple of symmetric vertices, where $(v_1, v_2) = (v_2, v_1)$.
+Graphs have $N$ vertices and $M$ edges, and it is frequently used without clarification that $M \in [0, \frac{1}{2}(N)(N-1)]$.
+When discussing specific edges, tuples are symmetric: $(v_1, v_2) = (v_2, v_1)$.
 
-A graph's complement (or inverse) is a new graph with the same set of vertices, but where adjacency and non-adjacency are inverted.
-In formal terms, the graph $H$ is $G$'s inverse if $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$ and $V(G) = V(H)$.
+A graph's \emph{complement} is a new graph over the same set of vertices, but where adjacency and non-adjacency are inverted.
+In formal terms, the graph $H$ is $G$'s inverse if $V(H) = V(G)$ and $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$.
 
 \subsection{Representations, Labeling, Matrices}
-An important distinction that is too frequently overlooked is that of representation and labeling of graphs.
-Most graphs can be represented by multiple adjacency matrices, but changes to representation do not change the fundamental structure of the graph.
+An important distinction in this report is on the \emph{representation} of graphs.
+Most graphs can be represented by distinct adjacency matrices, but changes to representation do not change the fundamental structure of the graph that the matrices represent.
 Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should factor into our algorithms.
 Throughout this report that when we discuss a set of graphs, or an algorithm over graphs, we will treat graphs as objects which denote structure, and will in every way be blind to their representation.
 Thus when we refer to a graph, we are referring to all of its representations.
-When we intend to discuss a graph within some reality of its representation (for example, when determining whether two given adjacency matrices refer to the same graph) we will use the term 'graph instance'.
-This is not merely a semantic choice, it has important implications (particularly around ideas of random graph models).
+When we intend to discuss a graph within some physical reality of its representation (for example, when determining whether two given adjacency matrices refer to the same graph) we will use the term \emph{graph instance}.
+This is not a semantic choice, it has important implications (particularly around ideas of random graph models).
 
 \section{Graph Isomorphism and Automorphism}
-Within the context of this report, two graph instances $G$ and $H$ are isomorphic if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
+Two graph instances $G$ and $H$ are \emph{isomorphic} if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$.
 If an isomorphism exists between two graph instances, then the two instances represent the same graph; they have the same structure.
 An isomorphism preserves all adjacencies and all non-adjacencies, and the existence of an isomorphism between instances proves that they are the same graph.
-It may be possible for multiple isomorphisms to exist between two graph instances, but we are only concerned with the existence of such a mapping.
+It may be possible for multiple isomorphisms to exist between two graph instances, but we are generally only concerned with the existence of such a mapping.
 We will use the notation $Iso(G, H)$ to be shorthand for a boolean predicate describing the existence of such a mapping.
 
-An automorphism is a mapping of the set of verties onto itself ($V(G)$ to $V(G)$) which preserves adjacency and non-adjacency.
-If an automorphism $M$ maps every element of $V(G)$ to itself, the automorphism is called the 'trivial' automorphism.
-Though it will be taken as granted, the set of all automorphisms of a graph G forms a group.
-This group has at least one memeber (the identity element is the identity isomorphism), but may have as many as $N!$ elements.
-This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the 'followed by' operation.
-The number of automorphisms of a graph turns out to be important, and the range is bounded by: $|Aut(G)| \in [1, N!]$.
+The question of whether or not graph isomorphism as a descision problem (GI) can be computed in polynomial time is an open question in theoretical computer science.
+The problem is known to be solveable in quasi-polynomial time, though no convincing arguments have placed it in NP-complete nor in P.
+
+An \emph{automorphism} is a mapping of the set of vertices of a graph onto itself ($V(G)$ to $V(G)$) which preserves adjacency and non-adjacency.
+If an automorphism $M$ maps every element of $V(G)$ to itself, the automorphism is called the \emph{trivial automorphism}.
+Though it will be taken as granted, the set of all valid automorphisms for a graph G forms a group.
+This group has at least one element (the identity element is the identity isomorphism), but may have as many as $N!$ elements.
+This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the \emph{followed by} operation.
 
 \subsection{Graph Invariants}
-A Graph Invariant is a numerical or comparable property of a graph which remains the same irrespective of the representation or labeling of the graph.
-More specifically, an algorithm is a graph invariant only if it produces output which is stable across isomorphic matrices.
+A \emph{graph invariant} is an ordered property of a graph which remains the same irrespective of the representation or labeling of the graph.
+More specifically, an algorithm or property is a graph invariant only if it produces output which is stable across all instances of the same graph.
 A graph invariant $I(G)$ can allow us to conclude that two graphs $(G_1, G_2)$ are \emph{not} the same graph if $I(G_1) \neq I(G_2)$.
-However, it is distinctly limited, in that the converse does not hold i.e. it is possible for non-isomorphic graph instances to share a value for a graph invariant.
+However, it is distinctly limited, in that the converse does not hold (i.e. it is possible for non-isomorphic graph instances to share a value for a graph invariant).
 
 \subsection{Discriminatory Power}
-This serves as a justification for a quantifiable notion of discriminatory power.
-A graph invariant is described as highly discriminating if it can, with high probability, distinguish two non-isomorphic graphs as non-isomorphic.
-For example, an example of a graph invariant that is not highly discriminatory is the vertex count of a graph.
-Two graphs are certainly not isomorphic if they differ in ther vertex count, however, many graphs which are not isomorphic have the same vertex count.
-In contrast, the chromatic polynomial of a graph is a highly discriminatory graph invariant, as the odds of having two non-isomorphic graphs agree on their chromatic polynomial is compatively small.
+A graph invariant is \emph{discriminating} if it can, with a certain probability, distinguish two non-isomorphic graphs as non-isomorphic.
+For example, an example of a graph invariant that is not very discriminatory is the vertex count of a graph.
+Two graphs are certainly not isomorphic if they differ in their vertex count, however, many graphs which are not isomorphic have the same vertex count.
+In contrast, the chromatic polynomial of a graph is a highly discriminatory graph invariant, as the odds of having two non-isomorphic graph instances agree on their chromatic polynomial is relatively low.
 
 To formalize this notion, we will discuss discriminatory power with a specific probabilistic meaning.
-A graph invariant $I$ discriminates at a level $\alpha$ for $N$ vertices and $M$ edges if selecting two graphs $G$ and $H$ at random from the set of all grphs with $N$ vertices and $M$ edges:
-$$P(I(G) = I(H) ^ \not Iso(G, H)) \leq \alpha$$
+A graph invariant $I$ discriminates at a level $\alpha$ for $N$ vertices and $M$ edges if selecting two graphs $G$ and $H$ at random from the set of all graphs with $N$ vertices and $M$ edges:
+$$P(I(G) = I(H) \wedge \neg Iso(G, H)) \leq \alpha$$
 What we will find is that we can frequently discuss alpha as a function of $M$ and $N$.
 Later in this report we will discuss how $\alpha$ fits in to a natural definition of a false positive an uncertain test without a false negative rate ($\beta = 0$).
 
 \subsection{Vertex Similarity}
-Two vertices are said to be similar if there exists a mapping in the automorphism group of $G$ such that the mapping maps one vetex to the other.
+Two vertices are \emph{similar} if there exists a mapping in the automorphism group $Aut(G)$ such that the mapping maps one vertex to the other.
 Similarity is a transitive property.
 The vertex set $V(G)$ can be divided up into between 1 and N similar vertex sets, such that all of the vertices in each set are similar, and no pair of sets contains similar vertices.
-The theory of these similar vertex sets (or SVSs) will be discussed in detail in chapter 4. 
+A discussion of these \emph{similar vertex sets} (or SVSs) will be the primary focus of chapter four.
 
 \subsection{Vertex Invariants}
-Vertex inariants are numerical properties that we can calculate over a specific vertex within a graph which attempts to identify potentially similar vertex pairs.
+\emph{Vertex invariants} are numerical properties that we can calculate over a specific vertex within a graph which attempts to identify potentially similar vertex pairs.
 Similar vertices within a graph will agree on all vertex invariants.
-However, like a graph invariant, vertex invariants can only ellimanate te possibility for vertex similarity, they are not sufficient to prove similarity.
+However, like graph invariants, vertex invariants can only eliminate the possibility for vertex similarity, they are not sufficient to prove similarity.
 
-Powerful vertex invariants make the computation of graph isomorphism between two graphs markdly easier. 
-Whereas a graph invariant can tell us about whether or not graph instances as a whole might be alike, it does nothin to suggest a proposed mapping between the vertices of the two graph instances.
+Vertex invariants make the computation of graph isomorphism between two graphs markedly easier. 
+Whereas a graph invariant can tell us about whether or not graph instances as a whole might be alike, it does nothing to suggest a proposed mapping between the vertices of the two graph instances.
 In contrast, a vertex invariant identifies potentially similar vertices not only within a graph, but also between two graphs.
-A `perfect' vertex invariant is one for which agreement on the value of the invariant is equivalent to establishing the existence of an automorphism that maps one vertex to the other.
+A \emph{perfect} vertex invariant is one for which agreement on the value of the invariant is equivalent to establishing the existence of an automorphism that maps one vertex to the other.
 
-A question discussed later in this report will be about the theoretical implications of a hypothetical perfect vertex, and a couple of lines of inquiry that might provide such an idealized invariant.
+A question discussed later in this report will be about the theoretical implications of a hypothetical perfectly discriminatory vertex invariant, and a couple of ideas that might suggest idealized invariants.
 
 \section{Cycles Invariant}
 The focus of this report is an invariant which can function as an invariant over graphs or their vertices.
@@ -176,7 +176,7 @@ Reconstruct-ability and determinability differ only in that reconstruct-ability 
 
 Finally, we will talk about the number of distinct matrices that describe isomorphic graphs as being the 'number of representations' of the graph, or $Reps(G)$.
 
-TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted rows/columns of A^I???
+TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted rows/columns of AI???
 
 
 \chapter{Cycles as a Graph Invariant}
