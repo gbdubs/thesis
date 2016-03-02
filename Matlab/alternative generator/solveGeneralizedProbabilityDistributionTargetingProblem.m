@@ -1,17 +1,29 @@
 function [ projection ] = solveGeneralizedProbabilityDistributionTargetingProblem( weights, weightTarget )
 
+    if (numel(weights) == 1 || numel(unique(weights)) == 1)
+        projection = ones(size(weights)) / numel(weights);
+        return;
+    end
+
+
     if (numel(unique(weights)) ~= numel(weights))
         [weightCounts, uniqueWeights] = hist(weights, unique(weights));
-        uniqueProj = solveNonUniqueCountCase(uniqueWeights, weightCounts, weightTarget);
-        
-        projection = zeros(size(weights));
-        for i = 1 : numel(uniqueWeights)
-            projection(weights == uniqueWeights(i)) = uniqueProj(i) / weightCounts(i);
+        if (numel(uniqueWeights) < 3)
+            projection = ones(size(weights)) / numel(weights);
+        else 
+            uniqueProj = solveNonUniqueCountCase(uniqueWeights', weightCounts, weightTarget);
+
+            projection = zeros(size(weights));
+            for i = 1 : numel(uniqueWeights)
+                projection(weights == uniqueWeights(i)) = uniqueProj(i) / weightCounts(i);
+            end
         end
-        % projection = makeReasonable(projection);
+        % Turn this off if you want to pass the tests!
+        projection = makeReasonable(projection);
     else
         projection = solveUniqueCase(weights, weightTarget);
-        % projection = makeReasonable(projection);
+        % Turn this off if you want to pass the tests!
+        projection = makeReasonable(projection);
     end
     
     
@@ -49,7 +61,7 @@ function [ projection ] = solveGeneralizedProbabilityDistributionTargetingProble
     end
 
 
-    function [ projection ] = solveNonUniqueCountCase(weights, counts, weightTarget)
+    function [ projection ] = solveNonUniqueCountCase(weights, counts, weightTarget) 
         
         nonZeroWeights = find(weights ~= 0);
         replacementIndex = nonZeroWeights(end);
@@ -68,6 +80,7 @@ function [ projection ] = solveGeneralizedProbabilityDistributionTargetingProble
         nonZeroWeights = find(weights ~= 0);
         weight1 = weights(nonZeroWeights(1));
         partnerWeights = find(weights ~= 0 & weights ~= weight1);
+        
         weight2 = weights(partnerWeights(1));
 
         p1 = (weightTarget - weight2) / (weight1 - weight2);
