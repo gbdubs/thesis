@@ -1,4 +1,4 @@
-function [ rhsSymmetricConnections, lhsSymmetricConnections, bothSymmetricConnections  ] = connectionGenerator( maxV )
+function [ rhsSymmetricConnections, lhsSymmetricConnections, bothSymmetricConnections  ] = forcefullyCalculateBipartiteSymmetricConnections( maxV )
     
     bothSymmetricConnections = cell(maxV, maxV);
     lhsSymmetricConnections = cell(maxV, maxV);
@@ -7,14 +7,15 @@ function [ rhsSymmetricConnections, lhsSymmetricConnections, bothSymmetricConnec
     function [ c ] = generateConns(d1, d2, seed)
         z = zeros(1, d1 * d2);
         t = uint32(dec2bin(seed)) - 48;
-        z(find(t)) = 1;
+        z(d1*d2 - size(t, 2) + 1:end) = t;
         c = reshape(z, d1, d2); 
     end
     
-
     for i = 1 : maxV
         for j = 1 : maxV
-            disp(['i ', num2str(i), ' j ', num2str(j)]);
+            disp(['========== i ', num2str(i), ' j ', num2str(j),' ===========']);
+            started = cputime;
+            
             RHSSymmetricConnections = {};
             LHSSymmetricConnections = {};
             SymmetricConnections = {};
@@ -22,6 +23,10 @@ function [ rhsSymmetricConnections, lhsSymmetricConnections, bothSymmetricConnec
             maxest = 2^(i*j);
 
             for seed = 0 : maxest - 1
+                if cputime - started > 1
+                    considerTimeEstimation(started, seed, maxest-1, 10);
+                end
+                
                 conns = generateConns(i, j, seed);
                 rhs = testForRHSAutomorphisms(conns);
                 lhs = testForLHSAutomorphisms(conns);
@@ -52,9 +57,7 @@ function [ rhsSymmetricConnections, lhsSymmetricConnections, bothSymmetricConnec
             rhsSymmetricConnections(i, j) = {rhsAsMat};
             lhsSymmetricConnections(i, j) = {lhsAsMat};
             bothSymmetricConnections(i, j) = {bothAsMat};
-            
         end
     end
-    
 end
 
