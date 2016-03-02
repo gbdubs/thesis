@@ -1,6 +1,6 @@
 function [ projection ] = solveGeneralizedProbabilityDistributionTargetingProblem( weights, weightTarget )
 
-    if (numel(weights) == 1 || numel(unique(weights)) == 1)
+    if (numel(unique(weights(weights ~= 0))) < 3)
         projection = ones(size(weights)) / numel(weights);
         return;
     end

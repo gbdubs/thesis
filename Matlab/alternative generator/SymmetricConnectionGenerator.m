@@ -10,12 +10,23 @@ classdef SymmetricConnectionGenerator
     end
     
     methods(Static)
-        function [ conns ] = getInternal(dim1, dim2, cellMatrix)
-            if dim1 > 4 || dim2 > 4 || dim1 < 1 || dim2 < 1
+        function [ index ] = getProbabilityDistValue(dist)
+            lower = 0;
+            index = 1;
+            result = rand();
+            while result > lower + dist(index)
+                lower = lower + dist(index);
+                index = index + 1;
+            end
+        end
+        
+        function [ conns ] = getInternal(dim1, dim2, cellMatrix, distMatrix)
+            if dim1 > 4 || dim2 > 4 || dim1 < 2 || dim2 < 2
                 conns = zeros(0);
             else
                 allConns = cell2mat(cellMatrix(dim1, dim2));
-                idx = ceil(rand() * size(allConns, 1));
+                probDist = cell2mat(distMatrix(dim1, dim2));
+                idx = SymmetricConnectionGenerator.getProbabilityDistValue(probDist);
                 temp = allConns(idx, :, :);
                 conns = reshape(temp, dim1, dim2);
             end
@@ -32,7 +43,7 @@ classdef SymmetricConnectionGenerator
     
     methods
         function [ obj ] = SymmetricConnectionGenerator(p)
-            load 'alternative generator/bipartiteSymmetricalConnectionData.mat'
+            load 'alternative generator/bipartiteSymmetricalConnectionData.mat';
             obj.rhsSC = rhsSymmetricConnections;
             obj.lhsSC = lhsSymmetricConnections;
             obj.bothSC = bothSymmetricConnections;
@@ -45,22 +56,22 @@ classdef SymmetricConnectionGenerator
                 for d2 = 2 : 4
                     obj.rhsProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.rhsSC(d1, d2)), d1 * d2 * p)};
                     obj.lhsProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.lhsSC(d1, d2)), d1 * d2 * p)};
-                    obj.bothProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.rhsSC(d1, d2)), d1 * d2 * p)};
+                    obj.bothProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.bothSC(d1, d2)), d1 * d2 * p)};
                 end
             end
         end
         
         
         function [ conns ] = getLeftSymmetricRandomConnections(obj, dim1, dim2)
-            conns = getInternal(dim1, dim2, obj.lhsSC);
+            conns = SymmetricConnectionGenerator.getInternal(dim1, dim2, obj.lhsSC, obj.lhsProbDist);
         end 
         
         function [ conns ] = getRightSymmetricRandomConnections(obj, dim1, dim2)
-            conns = SymmetricConnectionGenerator.getInternal(dim1, dim2, obj.rhsSC);
+            conns = SymmetricConnectionGenerator.getInternal(dim1, dim2, obj.rhsSC, obj.rhsProbDist);
         end 
         
         function [ conns ] = getBothSymmetricRandomConnections(obj, dim1, dim2)
-            conns = getInternal(dim1, dim2, obj.bothSC);
+            conns = SymmetricConnectionGenerator.getInternal(dim1, dim2, obj.bothSC, obj.bothProbDist);
         end 
     end
 end

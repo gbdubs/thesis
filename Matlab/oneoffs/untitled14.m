@@ -12,10 +12,7 @@ for i = 1 : 10000
         disp('size mismatch');
     end
     
-    
     expectation = dot(vec, probs) - target;
-    
-    
     
     if (abs(expectation) > 1 / 1000)
         disp('FAILURE');
