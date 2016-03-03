@@ -21,7 +21,7 @@ classdef SymmetricConnectionGenerator
         end
         
         function [ conns ] = getInternal(dim1, dim2, cellMatrix, distMatrix)
-            if dim1 > 4 || dim2 > 4 || dim1 < 2 || dim2 < 2
+            if dim1 > 4 || dim2 > 4 || dim1 < 1 || dim2 < 1
                 conns = zeros(0);
             else
                 allConns = cell2mat(cellMatrix(dim1, dim2));
@@ -57,10 +57,12 @@ classdef SymmetricConnectionGenerator
             obj.lhsProbDist = cell(4, 4);
             obj.bothProbDist = cell(4, 4);
             
-            for d1 = 2 : 4
-                for d2 = 2 : 4
-                    obj.rhsProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.rhsSC(d1, d2)), d1 * d2 * p)};
-                    obj.lhsProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.lhsSC(d1, d2)), d1 * d2 * p)};
+            for d1 = 1 : 4
+                for d2 = 1 : 4
+                    if (d1 ~= 1 && d2 ~= 1)
+                        obj.rhsProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.rhsSC(d1, d2)), d1 * d2 * p)};
+                        obj.lhsProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.lhsSC(d1, d2)), d1 * d2 * p)};
+                    end
                     obj.bothProbDist(d1, d2) = {SymmetricConnectionGenerator.getProbDist(cell2mat(obj.bothSC(d1, d2)), d1 * d2 * p)};
                 end
             end

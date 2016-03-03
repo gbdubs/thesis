@@ -12,6 +12,7 @@ function visualizeGraphPaths( A , name , recurse )
     
     % Finds and displays the paths equivalency classes for the graph.
     equivClasses = findQuaziEquivalenceClasses(A);
+    equivClasses = sortEquivClasses(equivClasses);
     ax = axes('position',[0,0,1,1],'visible','off');
     subplot(2,2,3,ax);
     tx = text(0,1,'Paths Equivalence Classes');
@@ -22,7 +23,8 @@ function visualizeGraphPaths( A , name , recurse )
     end
     
     % Finds and displays the true equivalency classes for the graph.
-    equivClasses = deduceAutomorphismGroupsFromAutomorphisms(findAllAutomorphisms(A));
+    equivClasses = condenseDeductionAGFA(deduceAutomorphismGroupsFromAutomorphisms(findAllAutomorphisms(A)));
+    equivClasses = sortEquivClasses(equivClasses);
     ax = axes('position',[0,0,1,1],'visible','off');
     subplot(2,2,4,ax);
     tx = text(0,1,'True Equivalence Classes');
