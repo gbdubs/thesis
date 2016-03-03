@@ -33,11 +33,16 @@ classdef SymmetricConnectionGenerator
         end
         
         function [ probDist ] = getProbDist( matOfPossibilities , target )
-            weights = zeros(size(matOfPossibilities, 1),1);
+            weights = zeros(1,size(matOfPossibilities, 1));
             for i = 1 : numel(weights)
                 weights(i) = sum(sum(sum(matOfPossibilities(i,:,:))));
             end
             probDist = solveGeneralizedProbabilityDistributionTargetingProblem(weights, target);
+            if abs(sum(probDist) - 1) > .00001
+                warning('Invalid distribution generated: Probability');
+            elseif abs(dot(probDist, weights) - target > .001)
+                warning('Invalid distribution generated: Weighting');
+            end
         end
     end
     
