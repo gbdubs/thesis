@@ -1,6 +1,6 @@
 %Tests that the SCG's RCG Probability distribution tools work.
 n = 10000;
-p = rand();
+p = rand() * .4 + .3;
 d1 = 3;
 d2 = 4;
 expectation = p * d1 * d2;
