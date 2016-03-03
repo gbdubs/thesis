@@ -5,6 +5,7 @@ function [ ecs ] = sortEquivClasses( ecs )
         madeSwap = 0;
         for i = 1 : numel(ecs)-1
             if compare(i, i+1) == 1
+                madeSwap = 1;
                 swap(i, i+1);
             end
         end
