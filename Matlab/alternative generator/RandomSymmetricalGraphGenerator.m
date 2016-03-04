@@ -3,21 +3,34 @@ classdef RandomSymmetricalGraphGenerator
     properties
         ssgg;
         scg;
+        pBothSymmetric;
+        pRHSSymmetric;
+        pLHSSymmetric;
     end
     
     methods
         function [ obj ] = RandomSymmetricalGraphGenerator(p)
             obj.ssgg = SymmetricSmallGraphGenerator(p);
             obj.scg = SymmetricConnectionGenerator(p);
+            obj.pBothSymmetric = .8;
+            obj.pRHSSymmetric = .1;
+            obj.pLHSSymmetric = .1;
+        end
+        
+        function [ obj ] = setSymmetryProbabilities(obj, pBoth, pRHS, pLHS)
+            obj.pBothSymmetric = pBoth;
+            obj.pRHSSymmetric = pRHS;
+            obj.pLHSSymmetric = pLHS;
         end
         
         function [ conns ] = decideSymmetricRandomConnections(obj, d1, d2)
             if d1 == 1 || d2 == 1
                 conns = obj.scg.getBothSymmetricRandomConnections(d1, d2);
             else
-                if rand() < .8
+                r = rand();
+                if r < obj.pBothSymmetric
                     conns = obj.scg.getBothSymmetricRandomConnections(d1, d2);
-                elseif rand() < .5
+                elseif r < obj.pBothSymmetric + obj.pRHSSymmetric
                     conns = obj.scg.getRightSymmetricRandomConnections(d1, d2);
                 else
                     conns = obj.scg.getLeftSymmetricRandomConnections(d1, d2);
@@ -57,9 +70,7 @@ classdef RandomSymmetricalGraphGenerator
                 end
                 x = x + d1;
             end
-        
         end
-        
     end
 end
 
