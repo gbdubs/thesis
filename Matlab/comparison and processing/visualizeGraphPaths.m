@@ -40,9 +40,9 @@ function visualizeGraphPaths( A , name , recurse )
     g = graph(A);
     plot(ax1, g);
     % Overal title, at the top of the file.
-    txt = text(ax1.XLim(2)+.4,ax1.YLim(2)+.4,[name, '[', encoding, ']']);
-    set(txt,'fontweight','bold','FontSize', 40,'HorizontalAlignment', 'center');
-
+    txt = text(ax1.XLim(2)+.4,ax1.YLim(2)+.4,sprintf('%s [%s]',name,encoding));
+    set(txt,'fontweight','bold','FontSize', 40,'HorizontalAlignment', 'center','Interpreter','none');
+    
     ax2 = subplot(2,2,2);
     colormap(ax2, hsv);
 
