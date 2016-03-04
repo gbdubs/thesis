@@ -1,5 +1,8 @@
-function estimateTimeRemaining( startTime, nDone, nTotal )
-    
+function estimateTimeRemaining( startTime, nDone, nTotal, message)
+    if nargin < 4
+        message = '';
+    end
+
     function [ explanation ] = explainTime(secs)
         if (secs > 60)
             mins = floor(secs / 60);
@@ -30,7 +33,7 @@ function estimateTimeRemaining( startTime, nDone, nTotal )
     pointOfCompletion = datetime('now');
     pointOfCompletion.Second = pointOfCompletion.Second + estimateCpuRemaining;
     
-    disp(['Completed ',num2str(nDone),' of ',num2str(nTotal),'.']);
+    disp(['Completed ',num2str(nDone),' of ',num2str(nTotal),': ', message]);
     disp(['Running for ', explainTime(ceil(elapsed)),'.']);
     disp(['Estimated Time Remaining ', explainTime(secsRemaining),'.']);
     disp(['Estimated Time of Completion: ', datestr(pointOfCompletion)]);

@@ -11,10 +11,13 @@ for trial = 1 : nTrials
     copaths = findCoPaths(uniqueGraphs);
     
     if numel(copaths) > 0
-        for i = 1 : size(uniqueGraphs, 3)
-            A = graph6(uniqueGraphs(i,:));
-            title = ['CPAS Trial ', num2str(trial),' - ',num2str(i)];
-            visualizeGraphPaths(A, title, 0); 
+        for i = 1 : numel(copaths)
+            indexes = cell2mat(copaths(i));
+            for j = 1 : numel(indexes)
+                A = graph6(uniqueGraphs(indexes(j),:));
+                title = ['CPAS Trial ', num2str(trial),'.',num2str(i), '.', num2str(j)];
+                visualizeGraphPaths(A, title, 0); 
+            end
         end
     end
 end

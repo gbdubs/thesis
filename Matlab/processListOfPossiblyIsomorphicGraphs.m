@@ -9,7 +9,7 @@ function [ uniqueGraphs, counts ] = processListOfPossiblyIsomorphicGraphs( graph
     t = cputime;
     
     for i = 1 : nGraphs
-        considerTimeEstimation(t, i, nGraphs, 10);
+        considerTimeEstimation(t, i, nGraphs, 10, 'Possible Isomorphism!');
         
         A = graph6(graphs(i,:));
         B = cannonical(A);
