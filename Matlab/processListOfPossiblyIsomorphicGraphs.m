@@ -1,6 +1,6 @@
 function [ uniqueGraphs, counts ] = processListOfPossiblyIsomorphicGraphs( graphs )
 
-    [~, n, nGraphs] = size(graphs);
+    [nGraphs, nchars] = size(graphs);
     
     map =  containers.Map('KeyType','char','ValueType','uint8');
     
@@ -11,7 +11,7 @@ function [ uniqueGraphs, counts ] = processListOfPossiblyIsomorphicGraphs( graph
     for i = 1 : nGraphs
         considerTimeEstimation(t, i, nGraphs, 10);
         
-        A = graphs(:,:,i);
+        A = graph6(graphs(i,:));
         B = cannonical(A);
         encoded = graph6Encode(B);
         nChars = max(nChars, size(encoded, 2));
@@ -22,14 +22,14 @@ function [ uniqueGraphs, counts ] = processListOfPossiblyIsomorphicGraphs( graph
         end
     end
         
-    uniqueGraphs = char(zeros(n, n, size(map.keys, 2)));
+    uniqueGraphs = char(zeros(map.Count, nchars));
     counts = zeros(1, size(map.keys, 2));
     
     i = 1;
+    mks = map.keys;
     for k = 1 : numel(map.keys)
-        mks = map.keys;
         key = cell2mat(mks(k));
-        uniqueGraphs(:,:,i) = graph6(key);
+        uniqueGraphs(i,:) = key;
         counts(i) = map(key);
         i = i + 1;
     end

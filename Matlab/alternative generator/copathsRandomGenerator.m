@@ -10,6 +10,7 @@ classdef copathsRandomGenerator
     methods
         function [ obj ] = copathsRandomGenerator( p )
             obj.RSGG = RandomSymmetricalGraphGenerator( p );
+            obj.RSGG.requireConnected = 1;
             obj.RSGG.setSymmetryProbabilities(1.0, 0, 0);
             obj.p1G1E = 1;
             obj.p2G1E = 0;
@@ -29,15 +30,16 @@ classdef copathsRandomGenerator
         
         function [ resultSet ] = generate (obj, n, nAttempts )
             G = obj.RSGG.generate(n);
+            nchars = size(graph6Encode(G),2);
             while ~all(sum(G) > 0)
                 G = obj.RSGG.generate(n);
             end
             qecs = findQuaziEquivalenceClasses(G);
             
-            resultSet = zeros(n, n, nAttempts);
+            resultSet = char(zeros(nAttempts, nchars));
             
             for i = 1 : nAttempts
-                resultSet(:,:,i) = obj.augmentSwitch(G, qecs);
+                resultSet(i,:) = graph6Encode(obj.augmentSwitch(G, qecs));
             end
         end
     end
@@ -45,30 +47,49 @@ classdef copathsRandomGenerator
     methods(Static)
         
         function [ A ] = augmentWithInGroupEdge(G, qecs)
+            A = G;
             group1 = copathsRandomGenerator.getRandTwoPlusGroupFromQECs(qecs, []);
-            edge = copathsRandomGenerator.generateRandomSomeEdgesFromGroups(cell2mat(qecs(group1)), cell2mat(qecs(group1)), 1);
-            A = augmentGraphWithEdges(G, edge);
+            if (group1 ~= -1)
+                edge = copathsRandomGenerator.generateRandomSomeEdgesFromGroups(cell2mat(qecs(group1)), cell2mat(qecs(group1)), 1);
+                A = augmentGraphWithEdges(G, edge);
+            end
         end
         
         function [ A ] = augmentWithBetweenGroupsOneEdge(G, qecs)
+            A = G;
             group1 = copathsRandomGenerator.getRandTwoPlusGroupFromQECs(qecs, []);
+            if (group1 ~= -1)
             group2 = copathsRandomGenerator.getRandTwoPlusGroupFromQECs(qecs, group1);
-            edge = copathsRandomGenerator.generateRandomSomeEdgesFromGroups(cell2mat(qecs(group1)), cell2mat(qecs(group2)), 1);
-            A = augmentGraphWithEdges(G, edge);
+                if (group2 ~= -1)
+                    edge = copathsRandomGenerator.generateRandomSomeEdgesFromGroups(cell2mat(qecs(group1)), cell2mat(qecs(group2)), 1);
+                    A = augmentGraphWithEdges(G, edge);
+                end
+            end
         end
         
         function [ A ] = augmentWithBetweenGroupsTwoEdges(G, qecs)
+            A = G;
             group1 = copathsRandomGenerator.getRandTwoPlusGroupFromQECs(qecs, []);
+            if (group1 ~= -1)
             group2 = copathsRandomGenerator.getRandTwoPlusGroupFromQECs(qecs, group1);
-            edge = copathsRandomGenerator.generateRandomSomeEdgesFromGroups(cell2mat(qecs(group1)), cell2mat(qecs(group2)), 2);
-            A = augmentGraphWithEdges(G, edge);
+                if (group2 ~= -1)
+                    edge = copathsRandomGenerator.generateRandomSomeEdgesFromGroups(cell2mat(qecs(group1)), cell2mat(qecs(group2)), 2);
+                    A = augmentGraphWithEdges(G, edge);
+                end
+            end
         end
         
         function [ groupNo ] = getRandTwoPlusGroupFromQECs(qecs, exclude)
+            tries = 0;
             validIndices = setdiff(1 : numel(qecs), exclude);
             groupNo = validIndices(ceil(numel(validIndices) * rand()));
             while numel(cell2mat(qecs(groupNo))) == 1
-                 groupNo = validIndices(ceil(numel(validIndices) * rand()));
+                tries = tries + 1;
+                if (tries >= 1000)
+                    groupNo = -1;
+                    return;
+                end
+                groupNo = validIndices(ceil(numel(validIndices) * rand()));
             end
         end
         

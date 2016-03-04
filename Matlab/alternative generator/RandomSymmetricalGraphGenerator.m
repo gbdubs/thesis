@@ -6,6 +6,8 @@ classdef RandomSymmetricalGraphGenerator
         pBothSymmetric;
         pRHSSymmetric;
         pLHSSymmetric;
+        pSmallGraphs;
+        requireConnected
     end
     
     methods
@@ -15,12 +17,24 @@ classdef RandomSymmetricalGraphGenerator
             obj.pBothSymmetric = .8;
             obj.pRHSSymmetric = .1;
             obj.pLHSSymmetric = .1;
+            obj.pSmallGraphs = [.1, .30, .20, .40];
+            obj.requireConnected = 0;
         end
         
         function [ obj ] = setSymmetryProbabilities(obj, pBoth, pRHS, pLHS)
             obj.pBothSymmetric = pBoth;
             obj.pRHSSymmetric = pRHS;
             obj.pLHSSymmetric = pLHS;
+        end
+        
+        function [ index ] = getProbabilityDistValue(~, dist)
+            lower = 0;
+            index = 1;
+            result = rand();
+            while result > lower + dist(index)
+                lower = lower + dist(index);
+                index = index + 1;
+            end
         end
         
         function [ conns ] = decideSymmetricRandomConnections(obj, d1, d2)
@@ -44,7 +58,7 @@ classdef RandomSymmetricalGraphGenerator
             while nVerticesSoFar < n
                 proposedNewNumberOfVertices = n+1;
                 while nVerticesSoFar + proposedNewNumberOfVertices > n
-                    proposedNewNumberOfVertices = ceil(rand() * 4);
+                    proposedNewNumberOfVertices = obj.getProbabilityDistValue(obj.pSmallGraphs);
                 end
                 nVerticesSoFar = nVerticesSoFar + proposedNewNumberOfVertices;
                 allSmallGraphs = horzcat(allSmallGraphs, {obj.ssgg.generate(proposedNewNumberOfVertices)});
@@ -54,6 +68,8 @@ classdef RandomSymmetricalGraphGenerator
 
             nGraphs = numel(allSmallGraphs);
             x = 0;
+            connectedTo1 = zeros(1, nGraphs);
+            connectedTo1(1) = 1;
             for i = 1 : nGraphs
                 d1 = size(cell2mat(allSmallGraphs(i)), 1);
                 xRange = x+1 : x+d1;
@@ -63,12 +79,19 @@ classdef RandomSymmetricalGraphGenerator
                     d2 = size(cell2mat(allSmallGraphs(j)), 1);
                     yRange = y+1 : y+d2;
                     conns = obj.decideSymmetricRandomConnections(d1, d2);
-                    
+                    if sum(sum(conns)) > 0
+                        connectedTo1(i) = connectedTo1(i) || connectedTo1(j);
+                        connectedTo1(j) = connectedTo1(i) || connectedTo1(j);
+                    end
                     A(xRange, yRange) = conns;
                     A(yRange, xRange) = conns';
                     y = y + d2;
                 end
                 x = x + d1;
+            end
+            
+            if (obj.requireConnected == 1 && ~all(connectedTo1))
+                A = obj.generate(n);
             end
         end
     end
