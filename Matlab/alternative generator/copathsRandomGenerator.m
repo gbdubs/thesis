@@ -82,6 +82,10 @@ classdef copathsRandomGenerator
         function [ groupNo ] = getRandTwoPlusGroupFromQECs(qecs, exclude)
             tries = 0;
             validIndices = setdiff(1 : numel(qecs), exclude);
+            if (numel(validIndices) == 0)
+                groupNo = exclude(ceil(rand() * numel(exclude)));
+                return;
+            end
             groupNo = validIndices(ceil(numel(validIndices) * rand()));
             while numel(cell2mat(qecs(groupNo))) == 1
                 tries = tries + 1;
@@ -98,7 +102,7 @@ classdef copathsRandomGenerator
             index = 1;
             while index <= n
                 g1 = group1(ceil(numel(group1) * rand()));
-                g2 = group2(ceil(numel(group1) * rand()));
+                g2 = group2(ceil(numel(group2) * rand()));
                 if (g1 ~= g2)
                     e1 = min(g1, g2);
                     e2 = max(g1, g2);
