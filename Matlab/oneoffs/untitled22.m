@@ -2,12 +2,12 @@ nTrials = 1000;
 
 crg = copathsRandomGenerator(.4);
 crg.p1G1E = 0;
-crg.p2G1E = 1;
-crg.p2G2E = 0;
+crg.p2G1E = 0;
+crg.p2G2E = 1;
 
 t = cputime;
 for trial = 1 : nTrials
-    considerTimeEstimation(t, trial, nTrials, nTrials);
+    considerTimeEstimation(t, trial, nTrials, 100);
     
     graphs = crg.generate(10, 100);
     [uniqueGraphs, counts] = processListOfPossiblyIsomorphicGraphs(graphs);
