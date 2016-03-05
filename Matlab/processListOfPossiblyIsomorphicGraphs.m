@@ -13,12 +13,14 @@ function [ uniqueGraphs, counts ] = processListOfPossiblyIsomorphicGraphs( graph
         
         A = graph6(graphs(i,:));
         B = cannonical(A);
-        encoded = graph6Encode(B);
-        nChars = max(nChars, size(encoded, 2));
-        if map.isKey(encoded)
-            map(encoded) = map(encoded) + 1;
-        else
-            map(encoded) = 1;
+        if (B ~= -1)
+            encoded = graph6Encode(B);
+            nChars = max(nChars, size(encoded, 2));
+            if map.isKey(encoded)
+                map(encoded) = map(encoded) + 1;
+            else
+                map(encoded) = 1;
+            end
         end
     end
         
