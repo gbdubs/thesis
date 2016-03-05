@@ -27,11 +27,12 @@ function [ output_args ] = findQuaziEquivalenceClassesPlus( G )
                 end
             end
             if numel(lessThanClass) > 0
-                if numel(lessThanClass) > 0
+                if numel(greaterThanClass) > 0
                     qec = horzcat(qec(1:i-1), {lessThanClass}, {equalClass}, {greaterThanClass}, qec(i+1:end));
                 else 
                     qec = horzcat(qec(1:i-1), {lessThanClass}, {equalClass}, qec(i+1:end));
                 end
+                i = i - 1;
             elseif numel(greaterThanClass) > 0
                 qec = horzcat(qec(1:i-1), {equalClass}, {greaterThanClass}, qec(i+1:end));
             end

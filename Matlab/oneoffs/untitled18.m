@@ -15,7 +15,7 @@ for trial = 1 : nTrials
             indexes = cell2mat(copaths(i));
             for j = 1 : numel(indexes)
                 A = graph6(uniqueGraphs(indexes(j),:));
-                title = ['CPAS Trial ', num2str(trial),'.',num2str(i), '.', num2str(j)];
+                title = ['CPGTrial ', num2str(trial),'.',num2str(i), '.', num2str(j)];
                 visualizeGraphPaths(A, title, 0); 
             end
         end
