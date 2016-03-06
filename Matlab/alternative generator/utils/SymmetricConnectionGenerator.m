@@ -48,7 +48,7 @@ classdef SymmetricConnectionGenerator
     
     methods
         function [ obj ] = SymmetricConnectionGenerator(p)
-            load 'alternative generator/bipartiteSymmetricalConnectionData.mat';
+            load 'alternative generator/data/bipartiteSymmetricalConnectionData.mat';
             obj.rhsSC = rhsSymmetricConnections;
             obj.lhsSC = lhsSymmetricConnections;
             obj.bothSC = bothSymmetricConnections;
