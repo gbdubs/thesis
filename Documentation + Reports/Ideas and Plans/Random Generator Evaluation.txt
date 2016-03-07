@@ -1,0 +1,41 @@
+A random graph generator should
+= Produce a low (or generally, specific) number of collisions 
+METRIC      =  Distribution of Counts of Specific Graphs (1, 100000), (2, 1000), (3, 10), etc.
+IDEAL       =  Non-uniform Sampling with replacement (use dist. of graphs with e edges). UNSURE OF DISTRIBUTION HERE
+COMPARISON  =  Probability of seeing a distribution this different or more different.
+COMP STAT   =  [0, 1].  1 is Better.
+
+
+= Produce CoPaths graphs with a specific probability
+METRIC      =  Number of Copaths graphs in a given set.
+IDEAL       =  Number of Copaths graphs of a given size * Prob of getting each (given P) / total probability
+COMPARISON  =  Difference.
+COMP STAT   =  [-1, 1].  0 is Best.
+
+
+= Produce Regular graphs with a specific probability
+METRIC      =  Number of Regular graphs in a given set.
+IDEAL       =  Number of Regular graphs of a given size * Prob of getting each (given P) / total probability
+COMPARISON  =  Difference.
+COMP STAT   =  [-1, 1].  0 is Best.
+
+
+= Be able to produce any given graph.
+METRIC      =  Number of Distinct Graphs generated in a sample size on par with the number of graphs.
+IDEAL       =  Probability Distribution Given by geometric/factorial fuction.
+COMPARISON  =  P Statistic generated (i.e. probability of getting that result or wierder)
+COMP STAT   =  [0, 1].  0 is best.
+
+
+= Produce graphs with a number of automorphisms that is close to ideal (Sum the # of representations?)
+METRIC      =  Distribution of number of automorphisms of a graph. Mean, Median, Mode, StdDev, Kertosis, etc?
+IDEAL       =  ???
+COMPARISON  =  ???
+COMP STAT   =  ???
+
+
+= Produce graphs which have an edge distribution defined correctly by p (or e, depending) 
+METRIC      =  Distribution of number of edges in each graph
+IDEAL       =  Independent random trials of binomial distribution
+COMPARISON  =  Difference.  F Stat
+COMP STAT   =  [0, \infty), 0 is better.

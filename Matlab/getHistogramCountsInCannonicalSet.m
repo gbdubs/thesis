@@ -1,6 +1,6 @@
-function [ uniqueGraphs, frequencyCounts, ffValues, ffCounts ] = getHistogramCountsInCannonicalSet( v )
+function [ uniqueGraphs, frequencyCounts, ffValues, ffCounts ] = getHistogramCountsInCannonicalSet( graphSet )
     
-    [uniqueGraphs, ~, frequencyDist] = unique(v, 'rows');
+    [uniqueGraphs, ~, frequencyDist] = unique(graphSet, 'rows');
     
     [frequencyCounts, ~] = hist(frequencyDist, unique(frequencyDist));
     
