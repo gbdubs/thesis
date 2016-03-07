@@ -1,5 +1,9 @@
-function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs )
+function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , saveName)
     
+    if nargin < 4
+        saveName = 0;
+    end
+
     function [ A ] = randGraph(v, p)
         k = 1 - sqrt(1 - p);
         r = rand(v, v);
@@ -14,5 +18,9 @@ function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs )
         graphSet(i,:) = graph6Encode(randGraph(v, p));
     end
 
+    if saveName
+        save(['alternative generator/data/',saveName], 'graphSet');
+    end
+    
 end
 

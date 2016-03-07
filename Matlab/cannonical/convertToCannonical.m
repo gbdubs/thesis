@@ -23,6 +23,8 @@ function convertToCannonical(FOLDER_NAME, VARIABLE_NAME)
                     end
                 end
             end
+        elseif ~strcmp(file.name, '.') && ~strcmp(file.name, '..')
+            convertToCannonical([FOLDER_NAME, '/', file.name], VARIABLE_NAME);
         end
     end
 end
