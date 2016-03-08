@@ -8,13 +8,14 @@
 % NA   = Number of automorhpisms each graph has
 % NAB  = Bins in the histogram of the number of automorphisms
 % NAC  = Counts in the histogram of the number of automorphisms
+% REG  = Number of regular graphs in the graph set.
 
 clear('graphSet');
 clear('nCoPathsGraphs', 'coPathsGraphs');
 clear('uniqueGraphs', 'frequencyCounts', 'ffValues', 'ffCounts');
 
 P = .4;
-ALG = 'V3';
+ALG = 'Standard';
 SIZE = '10K';
 
 dataPath = ['alternative generator/data p=',num2str(P),'/',ALG,'/CANNON_',ALG,'-',SIZE];
@@ -62,4 +63,12 @@ if ~exist(NAname, 'var')
     clear('nAutomorphisms', 'nAutCounts', 'nAutBins');
 end
 
-clear('ALG', 'P', 'SIZE', 'dataPath', 'graphSet', 'ans','CPGname', 'NCPGname', 'GSname', 'UGname', 'FFVname', 'FFCname', 'FCname', 'NAname', 'NACname', 'NABname');
+
+REGname = ['REG_',ALG,SIZE];
+if ~exist(REGname, 'var')
+    eval([REGname,' = countNumberOfRegularGraphs( graphSet );']);
+    save(dataPath, 'graphSet', GSname, UGname, FCname, FFVname, FFCname, CPGname, NCPGname, NAname, NACname, NABname, REGname);
+end
+
+
+clear('ALG', 'P', 'SIZE', 'dataPath', 'graphSet', 'ans','CPGname', 'NCPGname', 'GSname', 'UGname', 'FFVname', 'FFCname', 'FCname', 'NAname', 'NACname', 'NABname', 'REGname');
