@@ -1,17 +1,20 @@
-% CPG  = Set of Co-paths Graphs in Set of Graphs. 
-% FC   = The number of each unique graph.
+% CPG  = Set of Co-paths Graphs in Set of Graphs
+% FC   = The number of each unique graph
 % FCC  = Frequency Count (how many graphs were seen 1 time, 2 times, etc.)
 % FFV  = Frequency Count Values (the 1 time, 2 time part)
 % GS   = Graph Set (the actual set of graphs)
 % NCPG = Number of co-paths graphs within the set
-% UG   = Each Unique Graph as a graph6 encoded string.
+% UG   = Each Unique Graph as a graph6 encoded string
+% NA   = Number of automorhpisms each graph has
+% NAB  = Bins in the histogram of the number of automorphisms
+% NAC  = Counts in the histogram of the number of automorphisms
 
 clear('graphSet');
 clear('nCoPathsGraphs', 'coPathsGraphs');
 clear('uniqueGraphs', 'frequencyCounts', 'ffValues', 'ffCounts');
 
 P = .4;
-ALG = 'Standard';
+ALG = 'V3';
 SIZE = '10K';
 
 dataPath = ['alternative generator/data p=',num2str(P),'/',ALG,'/CANNON_',ALG,'-',SIZE];
@@ -48,4 +51,15 @@ if ~exist(NCPGname, 'var')
     clear('nCoPathsGraphs', 'coPathsGraphs');
 end
 
-clear('ALG', 'P', 'SIZE', 'dataPath', 'graphSet', 'ans','CPGname', 'NCPGname', 'GSname', 'UGname', 'FFVname', 'FFCname', 'FCname');
+
+NAname = ['NA_',ALG,SIZE]; NACname = ['NAC_',ALG,SIZE]; NABname = ['NAB_',ALG,SIZE];
+if ~exist(NAname, 'var')
+    [ nAutomorphisms, nAutCounts, nAutBins ] = findAutomorphismsDistributionInCannonicalSet( graphSet );
+    eval([NAname,' = nAutomorphisms;']);
+    eval([NACname,' = nAutCounts;']);
+    eval([NABname,' = nAutBins;']);
+    save(dataPath, 'graphSet', GSname, UGname, FCname, FFVname, FFCname, CPGname, NCPGname, NAname, NACname, NABname);
+    clear('nAutomorphisms', 'nAutCounts', 'nAutBins');
+end
+
+clear('ALG', 'P', 'SIZE', 'dataPath', 'graphSet', 'ans','CPGname', 'NCPGname', 'GSname', 'UGname', 'FFVname', 'FFCname', 'FCname', 'NAname', 'NACname', 'NABname');

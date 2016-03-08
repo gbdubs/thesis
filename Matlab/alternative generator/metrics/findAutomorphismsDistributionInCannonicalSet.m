@@ -1,9 +1,11 @@
 function [ nAutomorphisms, nAutCounts, nAutBins ] = findAutomorphismsDistributionInCannonicalSet( graphSet )
     
+    progressbar;
     nGraphs = size(graphSet, 1);
     nAutomorphisms = zeros(nGraphs, 1);
     
     for i = 1 : nGraphs
+        progressbar(i / nGraphs);
         nAutomorphisms(i) = findNAutomorphisms(graph6(graphSet(i,:)));
     end
 

@@ -21,17 +21,18 @@ function [ nAuts ] = findNAutomorphisms( A )
     end
 
     qecs = findQuaziEquivalenceClasses(A);
+    qecs = sortEquivClasses(qecs);
     
     allPerms = generatePermsFromQECs(qecs);
+    perm = allPerms(1,:);
+    B = A(perm, perm);
     
     nAuts = 0;
     
-    progressbar;
     s = size(allPerms, 1);
     for k = 1 : s
-        progressbar(k / s);
         perm = allPerms(k,:);
-        equal = 1 - any(any(A - A(perm, perm)));
+        equal = 1 - any(any(B - A(perm, perm)));
         nAuts = nAuts + equal;
     end
     
