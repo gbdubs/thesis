@@ -1,4 +1,4 @@
-CLEAR ALL;
+clear all;
 addpath(genpath('.'));
 disp 'Added all subdirectories of this directory to the path.';
 copathsData;

@@ -19,7 +19,7 @@ function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , saveName)
     end
 
     if saveName
-        save(['alternative generator/data/',saveName], 'graphSet');
+        save(['alternative generator/',saveName], 'graphSet');
     end
     
 end

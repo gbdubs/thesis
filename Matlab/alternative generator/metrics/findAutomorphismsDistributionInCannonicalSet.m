@@ -6,7 +6,7 @@ function [ nAutomorphisms, nAutCounts, nAutBins ] = findAutomorphismsDistributio
     
     for i = 1 : nGraphs
         progressbar(i / nGraphs);
-        nAutomorphisms(i) = findNAutomorphisms(graph6(graphSet(i,:)));
+        nAutomorphisms(i) = findNumberOfAutomorphisms(graph6(graphSet(i,:)));
     end
 
     [nAutCounts, nAutBins] = hist(nAutomorphisms, unique(nAutomorphisms));
