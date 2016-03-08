@@ -1,3 +1,10 @@
+% CPG  = Set of Co-paths Graphs in Set of Graphs. 
+% FC   = The number of each unique graph.
+% FCC  = Frequency Count (how many graphs were seen 1 time, 2 times, etc.)
+% FFV  = Frequency Count Values (the 1 time, 2 time part)
+% GS   = Graph Set (the actual set of graphs)
+% NCPG = Number of co-paths graphs within the set
+% UG   = Each Unique Graph as a graph6 encoded string.
 
 clear('graphSet');
 clear('nCoPathsGraphs', 'coPathsGraphs');

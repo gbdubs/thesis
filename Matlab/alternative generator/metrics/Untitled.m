@@ -1,0 +1,7 @@
+function [ ] = getNumberOfWaysToWriteGraphSet( graphSet )
+    
+    
+
+
+    
+end
