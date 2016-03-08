@@ -1,4 +1,4 @@
-clear all;
+CLEAR ALL;
 addpath(genpath('.'));
 disp 'Added all subdirectories of this directory to the path.';
 copathsData;
@@ -12,4 +12,4 @@ end
 disp 'Loaded all cannonical representations of graphs of degree 8 and smaller.';
 load('/Users/Grady/Desktop/Thesis/Matlab/cannonical/data/graphsEightAndSmaller.mat')
 clear i;
-clear ans;
+clear('ans');
