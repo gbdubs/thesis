@@ -1,13 +1,16 @@
-function [ graphSet ] = createIdealizedDataset( v , p, nGraphs, saveName)
+function [ graphSet ] = IdealRandomGenerator( v , p, nGraphs, shouldSave)
     if nargin < 4
-        saveName = 0;
+        shouldSave = 1;
     end
 
     graphSet = char(zeros(nGraphs, size(graph6Encode(zeros(v, v)),2)));
 
     PATH_TO_GRAPHS = '/home/u/fall12/gward/Desktop/graphs';
-
-    maxE = (v * (v-1))/2;
+    if ~exist(PATH_TO_GRAPHS, 'dir')
+        PATH_TO_GRAPHS = '/Users/Grady/Desktop/Thesis/data/smallgraphs';
+    end
+    
+    maxE = (v*(v-1))/2;
     
     fileIndices = sort(binornd(maxE, p, nGraphs, 1));
     [fileCounts, fileNumbers] = hist(fileIndices, unique(fileIndices));
@@ -27,8 +30,9 @@ function [ graphSet ] = createIdealizedDataset( v , p, nGraphs, saveName)
         end
     end
     
-    if saveName
-        save(['alternative generator/',saveName], 'graphSet');
+    if shouldSave
+        thePath = pathToRandomGraphData(v, p, 'Ideal', nGraphs, 0);
+        save(thePath, 'graphSet');
     end
 
 end

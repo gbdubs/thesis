@@ -1,7 +1,7 @@
-function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , saveName)
+function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , shouldSave)
     
     if nargin < 4
-        saveName = 0;
+        shouldSave = 1;
     end
 
     function [ A ] = randGraph(v, p)
@@ -18,9 +18,9 @@ function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , saveName)
         graphSet(i,:) = graph6Encode(randGraph(v, p));
     end
 
-    if saveName
-        save(['alternative generator/',saveName], 'graphSet');
+    if shouldSave
+        thePath = pathToRandomGraphData(v, p,'Standard', nGraphs, 0);
+        save(thePath, 'graphSet');
     end
-    
 end
 
