@@ -13,10 +13,11 @@ function [ output_args ] = calculateAllMetrics( )
         ng = cell2mat(cannonized(i, 4));
         alreadyCalculated = findCalculatedMetrics(n,p,alg,ng);
         
-        toCalculate = setdiff(allmetrics, alreadyCalculated);
+        toCalculate = setdiff(allMetrics, alreadyCalculated);
         
         for j = 1 : numel(toCalculate)
             metric = cell2mat(toCalculate(j));
+            disp(randomGraphDataVariableName(metric, n, p, alg, ng));
             calculateMetric(metric, n, p, alg, ng);
         end
     end

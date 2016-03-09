@@ -11,7 +11,7 @@ function saveRandomGraphResultData( data, VAR, N, P, ALG, NGRAPHS)
     
     eval([variableName,' = data;']);
     
-    filePath = [variableFolder, '/', NGRAPHS];
+    filePath = [variableFolder, '/', num2str(NGRAPHS)];
     
     save(filePath, variableName);
 
