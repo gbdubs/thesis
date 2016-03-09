@@ -1,8 +1,17 @@
 function [ graphSet ] = IdealRandomGenerator( v , p, nGraphs, shouldSave)
+
     if nargin < 4
         shouldSave = 1;
     end
-
+    
+    if shouldSave
+        thePath = pathToRandomGraphData(v, p, 'Ideal', nGraphs, 0);
+        if exist(thePath, 'file')
+            load(thePath);
+            return
+        end
+    end
+    
     graphSet = char(zeros(nGraphs, size(graph6Encode(zeros(v, v)),2)));
 
     PATH_TO_GRAPHS = '/home/u/fall12/gward/Desktop/graphs';

@@ -1,9 +1,15 @@
-function [ pathToData ] = pathToRandomGraphData( N, P, ALG, nGraphs, stepNumber )
-    
+function [ pathToData ] = pathToRandomGraphData( N, P, ALG, nGraphs, stepNumber, makeNewDir)
+
+    if nargin < 6
+        makeNewDir = 1;
+    end
+
     BASE = 'alternative generator/data';
 
-    createNewExperimentSetup(BASE, N, P, ALG);
-
+    if makeNewDir
+        createNewExperimentSetup(BASE, N, P, ALG);
+    end
+    
     if nargin < 5
         stepNumber = 0;
     end
@@ -21,8 +27,17 @@ function [ pathToData ] = pathToRandomGraphData( N, P, ALG, nGraphs, stepNumber 
     N = ['/n=', num2str(N)];
     P = ['/p=', num2str(P)];
     ALG = ['/alg=', ALG];
-    nGraphs = ['/',num2str(nGraphs),'.mat'];
     
+    if nGraphs > 0
+        if strfind(nGraphs, '.mat')
+            nGraphs = ['/',num2str(nGraphs)];
+        else
+            nGraphs = ['/',num2str(nGraphs),'.mat'];
+        end
+    else
+        nGraphs = '';
+    end
+        
     pathToData = [BASE, N, P, ALG, stepNumber, nGraphs];
     
 end

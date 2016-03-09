@@ -6,6 +6,7 @@ function createNewExperimentSetup(ROOT_PATH, N, P, ALG )
     p4 = [p3, '/raw'];
     p5 = [p3, '/cannon'];
     p6 = [p3, '/results'];
+    p7 = [p3, '/variables.mat'];
     
     if ~exist(p1, 'dir')
         mkdir(p1);
@@ -29,6 +30,10 @@ function createNewExperimentSetup(ROOT_PATH, N, P, ALG )
     
     if ~exist(p6, 'dir')
         mkdir(p6);
+    end
+    
+    if ~exist(p7, 'file')
+        save(p7, 'ALG', 'P', 'N');
     end
 end
 

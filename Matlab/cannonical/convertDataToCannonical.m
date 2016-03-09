@@ -1,8 +1,9 @@
 function [ result ] = convertDataToCannonical( data )
-    t = cputime;
+    progressbar;
     result = char(zeros(size(data)));
-    for i = 1 : size(data, 1)
-        considerTimeEstimation(t, i, size(data, 1), 1000);
+    s = size(data, 1);
+    for i = 1 : s
+        progressbar(i/s);
         A = graph6(data(i,:));
         B = cannonical(A);
         E = graph6Encode(B);
