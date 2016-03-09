@@ -4,6 +4,14 @@ function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , shouldSave)
         shouldSave = 1;
     end
 
+    if shouldSave
+        thePath = pathToRandomGraphData(v, p, 'Standard', nGraphs, 0);
+        if exist(thePath, 'file')
+            load(thePath);
+            return
+        end
+    end
+    
     function [ A ] = randGraph(v, p)
         k = 1 - sqrt(1 - p);
         r = rand(v, v);
