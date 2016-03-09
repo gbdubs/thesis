@@ -44,7 +44,8 @@ function [ result ] = getListOfRandomGraphFileNames(stepNumber)
         for j = 1 : numel(temp)
             fileName = temp(j).name;
             if numel(fileName) > 2
-                result(idx, :) = [{N}, {P}, {ALG}, {fileName}];
+                nGraphs = str2num(strrep(fileName,'.mat',''));
+                result(idx, :) = [{N}, {P}, {ALG}, {nGraphs}];
                 idx = idx + 1;
             end
         end
