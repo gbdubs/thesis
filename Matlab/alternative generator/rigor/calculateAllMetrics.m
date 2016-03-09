@@ -1,4 +1,4 @@
-function [ output_args ] = calculateAllMetrics( )
+function calculateAllMetrics( )
 
     cannonized = getListOfRandomGraphFileNames(1);
 
@@ -7,6 +7,8 @@ function [ output_args ] = calculateAllMetrics( )
     nDataSets = size(cannonized, 1);
     
     for i = 1 : nDataSets
+        disp(['Scanning for work... ', num2str(i), '/', num2str(nDataSets)]);
+        disp(cannonized(i,:));
         n = cell2mat(cannonized(i, 1));
         p = cell2mat(cannonized(i, 2));
         alg = cell2mat(cannonized(i, 3));
@@ -15,10 +17,12 @@ function [ output_args ] = calculateAllMetrics( )
         
         toCalculate = setdiff(allMetrics, alreadyCalculated);
         
-        for j = 1 : numel(toCalculate)
-            metric = cell2mat(toCalculate(j));
+        while numel(toCalculate) > 0
+            metric = cell2mat(toCalculate(1));
             disp(randomGraphDataVariableName(metric, n, p, alg, ng));
             calculateMetric(metric, n, p, alg, ng);
+            alreadyCalculated = findCalculatedMetrics(n,p,alg,ng);
+            toCalculate = setdiff(allMetrics, alreadyCalculated);
         end
     end
 end

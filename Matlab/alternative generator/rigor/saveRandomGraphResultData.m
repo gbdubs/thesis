@@ -1,13 +1,13 @@
-function saveRandomGraphResultData( data, VAR, N, P, ALG, NGRAPHS)
+function saveRandomGraphResultData( data, METRIC, N, P, ALG, NGRAPHS)
 
     pathToResults = pathToRandomGraphData(N, P, ALG, -1, 2, 1);
-    variableFolder = [pathToResults, '/', VAR];
+    variableFolder = [pathToResults, '/', METRIC];
     
     if ~exist(variableFolder, 'dir')
         mkdir(variableFolder);
     end
     
-    variableName = randomGraphDataVariableName(VAR, N, P, ALG, NGRAPHS);
+    variableName = randomGraphDataVariableName(METRIC, N, P, ALG, NGRAPHS);
     
     eval([variableName,' = data;']);
     
