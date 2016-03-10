@@ -13,7 +13,7 @@ function [ graphSet ] = StandardRandomGenerator( v, p, nGraphs , shouldSave)
     end
     
     function [ A ] = randGraph(v, p)
-        k = 1 - sqrt(1 - p);
+        k = 1 - sqrt(p);
         r = rand(v, v);
         t = (r > k) & (ones(v, v) - eye(v, v));
         A = t & t';

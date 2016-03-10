@@ -1,10 +1,12 @@
-function [ allPaths ] = clearStep( n, p, alg, step, metric )
+function clearStep( n, p, alg, step, metric )
 
     function [ o ] = applyRestriction ( i, rest )
-        o = i{~cellfun(@isempty,strfind(i, rest))};
+        t = strfind( i, rest );
+        r = cellfun(@isempty,t);
+        o = i(~r);
     end
 
-    allPaths = genpath('alternative generator/data')';
+    allPaths = strsplit(genpath('alternative generator/data'),':')';
 
     if n ~= -1
         allPaths = applyRestriction(allPaths, ['n=',num2str(n)]);
@@ -22,13 +24,20 @@ function [ allPaths ] = clearStep( n, p, alg, step, metric )
         allPaths = applyRestriction(allPaths, ['/', step]);
     end
     
-    if step ~= -1
+    if metric ~= -1
         allPaths = applyRestriction(allPaths, ['/', metric]);
     end
-
-
-
-
-
+    
+    if numel(allPaths) > 5
+        progressbar;
+    end
+    
+    for i = 1 : numel(allPaths)
+        progressbar(i / numel(allPaths));
+        dirName = cell2mat(allPaths(i));
+        if exist(dirName, 'dir')
+            rmdir(dirName, 's');
+        end
+    end
 end
 
