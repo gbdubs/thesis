@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{report}
-\usepackage{graphicx}
+\usepackage{graphicx, amsmath}
 \begin{document}
 \begin{titlepage}
 	\centering
@@ -276,12 +276,132 @@ However, this is a powerful observation, and fits into a conception of a 'neighb
 
 \chapter{Canonical Labeling Using Cycles}
 \section{Background}
+A canonical labeling of a graph is a labeling of edges in a way that is consistent across all isomorphic graph instances of the same graph.
+Given two graphs and their canonical labelings, graph isomorphism is then a simple quadratic check to make sure that alike-labeled vertices preserve all adjacencies and non-adjacencies. 
+Thus, any canonical labeling algorithm is in $GI$, the time complexity class of the graph isomorphism problem.
+
+Many parts of my coding projects required the use of a canonical labeler.
+Sometimes this was because I wanted to check for isomorphisms on a broad set of graphs, a problem that is possible to complete quickly given the lexicographical nature of canonical labels.
+Though there exist good algorithms for determining canonical labeling, I wanted to create my own, both as an exercise in implementation, and in algorithm design.
+The result of this process is an algorithm which is relatively slow, but whose time growth is small relative to faster algorithms.
+
 \section{A Consistent Algorithm}
+The algorithm has a simple interpretation. 
+It divides all of the vertices of the graphs into disjoint covering sets based on the value of the cycles vertex invariant.
+For each of these sets with more than one vertex, a second round of `augmented paths' is performed to further divide sets, if possible.
+It sorts each of these classes by its size, then by its paths values.
+Each of these sorts is performed in a consistent way, which is irrespective of the original labeling of the graph.
+
+Once the order of the sets is sorted, we consider every possible permutation of the values within each of the sets so that every possible ordering of vertexes is possible, with the constraint that each set element remains in the higher level order established by the sets themselves.
+We traverse through these permutations and select the matrix which is lexicographically the `smallest'.
+A clever optimization allows us to not generate any permutations which are automatically `larger' than the thus far `smallest' matrix.
+
+I wrote and optimized the algorithm for Matlab (as that is the slowest of my use cases), but then worked on implementing it in C and Javascript.
+All three versions of this code are available in my online repository documenting my thesis work.
+The Matlab code provides detailed explanations of each piece of the code, why I implemented it that way, and the thoughts that went into it.
+
 \section{Time Growth Comparisons to Faster Algorithms}
+Any discussion of a homegrown algorithm would be either incomplete or intentionally salacious without a discussion of how it compares to out of the box algorithms.
+For these benchmarks, I established two datasets, one of 10000 randomly generated graphs of size ten to fifty using an Erdos-Renyi model, and one using a graph model which is more likely to produce highly automorphic graphs (discussed in detail in chapter 6).
+For both of these models we used a probability of $p=0.5$, as these are typically the graphs that are hardest to discriminate against.
+
+To give perspective to my own time results, I used an established and well optimized piece of code, the canonical labeler from the NAUTY package.
+A summary of the results is shown below, alongside equations which estimate their overall running time with the above parameters.
+From these figures it is clear that the NAUTY package outperforms my canonical labeler, but that my labeler appears to have a lower growth rate.
+I would imagine that this difference can be attributed to the large lengths my labeler goes to to minimize the number of permutations that are checked.
+NAUTY's algorithm uses simpler heuristics (such as X and X) to eliminate permutations, while mine uses significantly more power to make likely better informed choices.
 
 
 
 \chapter{Random Graph Generators and Automorphisms}
+
+\section{Random Graph Models}
+
+
+The field of random graph theory was kicked into motion with two independently generated papers in 1959, defining two models of generating and analyzing random graphs.
+A emph{random graph model} is any system of generating graphs through chance, with various constraints that describe the desired properties of the output.
+These two papers began a movement in graph theory that allowed theoreticians and algorithm designers new tools to examine notions of efficiency, particularly on NP-Hard or NP-Complete graph problems.
+Random graphs served as a new lens through which theory could pivot away from the worst case, instead handling common and general cases of problems that were either proven to be impossible in the worst case, or suspected to be so. 
+In this chapter, we will discuss multiple models of random graph generation, examine the strengths and flaws of each, and propose an alternative mechanisms by which graphs can be generated for more theoretical applications and algorithms.
+
+\subsection{The Erd\"os-R\'enyi Model(s)}
+
+In their seminal paper on Random Graph Theory, Paul Erd\"os and Alfred R\'enyi proposed two different models for random graph generation.
+The first of these models will be outlined in this section, and will be referred to as the Erd\"os-R\'enyi Model.
+The second was laid out in the same 1959 paper, but was also discovered by an independent contemporaneous mathematician, Edgar Gilbert.
+For the sake of clarity, we will refer to the contemporaneously discovered model as the Gilbert Model, and the one that is about to be outlined as the Erd\"os-R\'enyi Model.
+
+The model $G(N, M$) is defined as choosing a graph G with uniform probability from the set of all graph instances with $N$ edges and $M$ vertices.
+The size of this set is $\binom{E_{max}}{M}$, where $E_{max} = \frac{1}{2}(N^2 - N)$ represents the maximum number of vertices possible in a graph over $N$ vertices.
+Though the probability of getting any graph instance with $N$ and $M$ edges out of this model is uniform, the probability of getting any graph with those constraints is not.
+Since the number of representations of a graph fluctuates along with other properties of the graph, this random generator has the flaw that certain graphs are more heavily weighted than others.
+This is a flaw that we will discuss at length in discussion of the Gilbert Model.
+
+In the study of random graphs, the Erd\"os-R\'enyi model has not been as popular as the Gilbert model because it is more cumbersome to deal with, and has fewer concrete applications.
+Though many papers have utilized this model (namely CITE and CITE), the majority of theory is better suited to the combinatorial and probabilistic methods that are made useful by the Gilbert model.
+Though knowing the number of edges in a graph gives us some information about the graph, it turns out that the probability of a given edge, and the guarantee of its independence, is significantly more malleable to theoretic goals.
+
+\subsection{The Gilbert Model}
+
+The second model, which we will call the Gilbert model, comes from the mathematician Edgar Gilbert (as well as Erd\"os and R\'enyi) and is denoted $G(n, p)$.
+In the Gilbert model, $n$ specifies $N$, the number of vertices in the graph, and every pair of vertices is connected by an edge with a fixed and independent probability $p$.
+The Gilbert model is both intuitively pleasing, justified by real world use, and has convenient properties for proof.
+
+The Gilbert Model is an effective model for real world applications where graphs are thought of as occurring naturally without oversight or intervention.
+If we think about the configuration of the a network generated by actors acting randomly, the Gilbert model is appropriate.
+For example, consider a cocktail party among strangers, where the odds that any two people have a conversation in a given evening are likely independent and uniform.
+Or, consider the reproduction of coral, where fertilization of one coral by another is reasonably random through the fluid dynamics that carry, combine and disemminate their pollen.
+Gilbert's model gives us the language to describe graphs that pop up in wide-ranging uses, and a model to express the assumptions we frequently make about graphs in practical applications.
+
+Additionally, the Gilbert Model allows us to make bold proof-based claims about random graphs through established combinatorial and probabilistic methods.
+For example, if we try to estimate the number of edges within the a Gilbert graph, we simply are asking the binomial question with $n$ and $p$, and we have a readily available probability distribution to answer our questions.
+A more interesting example arises when we ask about the number of triangles expected in a large graph.
+If our graph is sufficently large enough, the existence of one triangle does not impact the potential existence of another.
+We can express the number of triangles as a simple combinatorial problem: multiply the total number of triangles possible $\binom{N}{3}$ by the probability of all three edges existing $(p^3)$.
+This shows how combinatorics gives us tools to deal with Gilbert random graphs, and to make theoretical statements about expectations of the properties of these graphs.
+
+Finally, the Gilbert model has a revelatory connection to matrix representation.
+Consider the model with a fixed probability of $p=0.5$ and some fixed $N$.
+We will show that this random generator has a uniform probability of selecting any matrix from the set of all valid graph instances of size $N$.
+
+Consider the range of integers $[0, K^2 - 1]$.
+If we assume numbers are left-padded with infinite zeros, the $b$th bit of a randomly selected integer from this range has an equal probability of being a 1 or a 0, as exactly half of these numbers have each bit set.
+This is trivially true through the fact that there are $K^2$ integers in this range, and $K^2$ different bit strings.
+Since each bit string is only achievable with exact probability $(0.5)^K$, each integer is generated with the same, uniform probability.
+We will reshape the bit-string into representing each one of the edge variables, and we let $K = E_{max} = \frac{1}{2}(V^2 - V)$.
+This establishes a connection between the Gilbert model and a randomly selected matrix from the set of matrices which represent our definition of valid graphs. 
+This connection is intuitively pleasing, but further investigation should also show that its implies skewed results for some algorithms which rely on it.
+
+\section{Disconnect from Graphs as Algebraic Objects}
+
+Though it is the foundation for most probabilistic random graph theory, the Gilbert model is has a different meaning than we typically think when discussing `random' generators of other kinds.
+When we consider most other discussions of `uniform randomness', we state the assumption that the result element was selected from its set with a uniform probability.
+Moreover, we generally assume that each object within that pool was represented the same number of times.
+When I say `a randomly generated integer from the range', we are all agreeing on assumptions of what integers fall within this range, as well as how many times each is in our pool for selection (namely, once). 
+Whereas, when I say `a randomly selected word from a book', there is the possibility that common words are more likely to occur, or it could mean that I found the unique set of words in the book, and I am selecting from that.
+
+This is where random graph theory and colloquial understandings of randomness miss one another.
+Throughout this work I have gone to great lengths to distinguish between graphs (an entity that has a given structure), and graph instances (a given representation of that structure).
+Most graphs have many distinct graph instances; many different ways of representing themselves, but this number varies as a function of the properties of the graph.
+
+The problem with the two models outlined above is that they select a random \emph{graph instance} with a uniform probability, but this does not translate to our understanding of graphs as algebraic objects, which denote structure irrespective of representation.
+Thus, a model which chooses graph instances with uniform probability does not choose graphs with uniform probability, just as selecting a word at random off of the page of a book is not equivalent to selecting a word from all of the words in the book with uniform probability.
+
+Consider an illustrative example with two graphs, G and H, on N vertices and M edges.
+Graph G has only the trivial automorphism, and Graph H has an automorphism group with 20 elements.
+It was shown by XXX in CITE that the number of distinct matrix representations (and thus distinct labelings) of a graph is equal to $\frac{N!}{|Aut(G)|}$.
+Thus, the number of graph instances that represent graph G is $N!$, while the number of graph instances that represent graph H is $\frac{N!}{20}$.
+Since graph instances are really just a way about talking about the number of matrices which represent the graph, this means that in the set of all valid undirected, non-looped graph matrices, there are 20 times as many which represent G as represent H.
+This is critical because the two models of selecting random graphs select a matrix with a certain number of ones (some number of edges) with equal probability.
+Even when the probability is not $p=0.5$ as it was in the illustrated case, it is clear that this is true.
+This means that the probability of selecting a matrix which represents graph G is twenty times more likely than selecting a matrix which represents graph H under either `random' graph generator.
+
+Though this seems like a semantic difference, as I will show over the next several sections, it has critical implications for the algorithms that use it to model random graphs.
+
+\subsection{Specifically Disadvantaging One Type of Graph}
+
+Consider a random graph generator which constructs any given graph with uniform probability (not graph instance, mind you).
+If we consider one of the established random graph g
 
 \section{On the Number of Graphs of a given Size}
 The number of non-isomorphic graphs of a given size is an open question.

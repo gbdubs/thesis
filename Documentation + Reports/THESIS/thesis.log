@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  29 FEB 2016 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  10 MAR 2016 09:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -57,7 +57,64 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(./thesis.aux)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen105
+))
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks16
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks17
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -72,19 +129,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
- (/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+
+(/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count89
-\scratchdimen=\dimen105
-\scratchbox=\box26
-\nofMPsegments=\count90
-\nofMParguments=\count91
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count92
-\MPscratchDim=\dimen106
-\MPnumerator=\count93
-\makeMPintoPDFobject=\count94
-\everyMPtoPDFconversion=\toks16
+\scratchcounter=\count101
+\scratchdimen=\dimen114
+\scratchbox=\box28
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen115
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks21
 ) (/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -142,14 +200,7 @@ Package pdftex.def Info: brandeis-seal.png used on input line 6.
 [1
 
 {/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map} <./brandeis-seal.p
-ng>] (./thesis.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
- [1
+ng>] (./thesis.toc [1
 
 ] [2])
 \tf@toc=\write3
@@ -186,59 +237,57 @@ Chapter 4.
 
 ]
 Chapter 5.
-
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 280--280
-[]\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
- []
-
 [15
 
 ]
-Chapter 6.
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 303--303
+[]\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
+ []
 
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 303--303
+[16]
+Chapter 6.
+[17
+
+] [18] [19]
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 420--420
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
-[16
-
-]
-Overfull \vbox (219.58736pt too high) has occurred while \output is active []
-
-
-[17]
+[20] [21]
 Chapter 7.
-[18
+[22
 
-] [19
+] [23
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 1532 strings out of 494185
- 21793 string characters out of 6156889
- 83073 words of memory out of 5000000
- 4850 multiletter control sequences out of 15000+600000
- 11225 words of font info for 39 fonts, out of 8000000 for 9000
+ 2134 strings out of 494185
+ 28595 string characters out of 6156889
+ 93373 words of memory out of 5000000
+ 5434 multiletter control sequences out of 15000+600000
+ 11899 words of font info for 42 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 37i,8n,23p,258b,183s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,23p,296b,183s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb
 x12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.
-pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/l
-ocal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmti12.pfb></opt/local/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmti8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (20 pages, 232566 bytes).
+pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/
+local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmti12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmti8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mtt10.pfb>
+Output written on thesis.pdf (24 pages, 267311 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

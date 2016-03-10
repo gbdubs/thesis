@@ -65,33 +65,37 @@
 \contentsline {chapter}{\numberline {5}Canonical Labeling Using Cycles}{15}
 \contentsline {section}{\numberline {5.1}Background}{15}
 \contentsline {section}{\numberline {5.2}A Consistent Algorithm}{15}
-\contentsline {section}{\numberline {5.3}Time Growth Comparisons to Faster Algorithms}{15}
-\contentsline {chapter}{\numberline {6}Random Graph Generators and Automorphisms}{16}
-\contentsline {section}{\numberline {6.1}On the Number of Graphs of a given Size}{17}
-\contentsline {subsection}{\numberline {6.1.1}Proposed Closed Forms}{17}
-\contentsline {section}{\numberline {6.2}Graphs as Singular Objects and their Multiple Representations}{17}
-\contentsline {subsection}{\numberline {6.2.1}Representations per Graph}{17}
-\contentsline {subsection}{\numberline {6.2.2}Distribution of Representations}{17}
-\contentsline {section}{\numberline {6.3}Dominant Random Graph Models}{17}
-\contentsline {subsection}{\numberline {6.3.1}Erdos-Reyni Models}{17}
-\contentsline {subsection}{\numberline {6.3.2}Use and Dominance of Erdos Reyni-Models}{17}
-\contentsline {section}{\numberline {6.4}Measuring Flaws of Random Graph Models}{17}
-\contentsline {subsection}{\numberline {6.4.1}Averaging Model}{17}
-\contentsline {subsection}{\numberline {6.4.2}Variance Model}{17}
-\contentsline {subsection}{\numberline {6.4.3}Kurtosis Model}{17}
-\contentsline {subsection}{\numberline {6.4.4}Probability Ratio Model}{17}
-\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{17}
-\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{17}
-\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{17}
-\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{17}
-\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{17}
-\contentsline {subsection}{\numberline {6.6.1}Distributional Goals}{17}
-\contentsline {subsection}{\numberline {6.6.2}Cloning Model}{17}
-\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{17}
-\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{17}
-\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{17}
-\contentsline {chapter}{\numberline {7}Reflections}{18}
-\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{18}
-\contentsline {section}{\numberline {7.2}Modes of Discovery}{18}
-\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{18}
-\contentsline {section}{\numberline {7.4}Acknowledgments}{18}
+\contentsline {section}{\numberline {5.3}Time Growth Comparisons to Faster Algorithms}{16}
+\contentsline {chapter}{\numberline {6}Random Graph Generators and Automorphisms}{17}
+\contentsline {section}{\numberline {6.1}Random Graph Models}{17}
+\contentsline {subsection}{\numberline {6.1.1}The Erd\"os-R\'enyi Model(s)}{17}
+\contentsline {subsection}{\numberline {6.1.2}The Gilbert Model}{18}
+\contentsline {subsection}{\numberline {6.1.3}Disconnect from Graphs as Algebraic Objects}{19}
+\contentsline {section}{\numberline {6.2}On the Number of Graphs of a given Size}{20}
+\contentsline {subsection}{\numberline {6.2.1}Proposed Closed Forms}{21}
+\contentsline {section}{\numberline {6.3}Graphs as Singular Objects and their Multiple Representations}{21}
+\contentsline {subsection}{\numberline {6.3.1}Representations per Graph}{21}
+\contentsline {subsection}{\numberline {6.3.2}Distribution of Representations}{21}
+\contentsline {section}{\numberline {6.4}Dominant Random Graph Models}{21}
+\contentsline {subsection}{\numberline {6.4.1}Erdos-Reyni Models}{21}
+\contentsline {subsection}{\numberline {6.4.2}Use and Dominance of Erdos Reyni-Models}{21}
+\contentsline {section}{\numberline {6.5}Measuring Flaws of Random Graph Models}{21}
+\contentsline {subsection}{\numberline {6.5.1}Averaging Model}{21}
+\contentsline {subsection}{\numberline {6.5.2}Variance Model}{21}
+\contentsline {subsection}{\numberline {6.5.3}Kurtosis Model}{21}
+\contentsline {subsection}{\numberline {6.5.4}Probability Ratio Model}{21}
+\contentsline {section}{\numberline {6.6}Flaws in Proofs of Average Case Random Graphs}{21}
+\contentsline {subsection}{\numberline {6.6.1}Selection of Certain Classes of Graphs}{21}
+\contentsline {subsection}{\numberline {6.6.2}Examples Uses in Proofs}{21}
+\contentsline {subsection}{\numberline {6.6.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{21}
+\contentsline {section}{\numberline {6.7}Alternative Ideas for Random Graph Modeling and Creation}{21}
+\contentsline {subsection}{\numberline {6.7.1}Distributional Goals}{21}
+\contentsline {subsection}{\numberline {6.7.2}Cloning Model}{21}
+\contentsline {section}{\numberline {6.8}Inherent Limitations on Models by Computational Theory}{21}
+\contentsline {subsection}{\numberline {6.8.1}Uncertainty in Set Size}{21}
+\contentsline {subsection}{\numberline {6.8.2}Computational Verification Limits}{21}
+\contentsline {chapter}{\numberline {7}Reflections}{22}
+\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{22}
+\contentsline {section}{\numberline {7.2}Modes of Discovery}{22}
+\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{22}
+\contentsline {section}{\numberline {7.4}Acknowledgments}{22}
