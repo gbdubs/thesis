@@ -20,9 +20,8 @@ function calculateAllMetrics( )
         while numel(toCalculate) > 0
             metric = cell2mat(toCalculate(1));
             disp(randomGraphDataVariableName(metric, n, p, alg, ng));
-            calculateMetric(metric, n, p, alg, ng);
-            alreadyCalculated = findCalculatedMetrics(n,p,alg,ng);
-            toCalculate = setdiff(allMetrics, alreadyCalculated);
+            justCalculated = calculateMetric(metric, n, p, alg, ng);
+            toCalculate = setdiff(toCalculate, justCalculated);
         end
     end
 end

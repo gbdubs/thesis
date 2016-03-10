@@ -10,7 +10,12 @@ function [ PCONN, ANCC, NCCV, ADIAM, DIAMV ] = PCONN_ANCC_NCCV_ADIAM_DIAMV( grap
     
     for i = 1 : nGraphs
         A = graph6(graphSet(i,:));
-        data(i,:) = [diameter(A), numConnectedComponents(A)];
+        nCC = numConnectedComponents(A);
+        d = -1;
+        if nCC == 1
+            d = graphDiameter(A);
+        end
+        data(i,:) = [d, nCC];
     end
     
     PCONN = sum(data(:,2) == 1)/nGraphs;
