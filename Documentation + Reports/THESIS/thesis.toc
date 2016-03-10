@@ -70,30 +70,31 @@
 \contentsline {section}{\numberline {6.1}Random Graph Models}{17}
 \contentsline {subsection}{\numberline {6.1.1}The Erd\"os-R\'enyi Model(s)}{17}
 \contentsline {subsection}{\numberline {6.1.2}The Gilbert Model}{18}
-\contentsline {subsection}{\numberline {6.1.3}Disconnect from Graphs as Algebraic Objects}{19}
-\contentsline {section}{\numberline {6.2}On the Number of Graphs of a given Size}{20}
-\contentsline {subsection}{\numberline {6.2.1}Proposed Closed Forms}{21}
-\contentsline {section}{\numberline {6.3}Graphs as Singular Objects and their Multiple Representations}{21}
-\contentsline {subsection}{\numberline {6.3.1}Representations per Graph}{21}
-\contentsline {subsection}{\numberline {6.3.2}Distribution of Representations}{21}
-\contentsline {section}{\numberline {6.4}Dominant Random Graph Models}{21}
-\contentsline {subsection}{\numberline {6.4.1}Erdos-Reyni Models}{21}
-\contentsline {subsection}{\numberline {6.4.2}Use and Dominance of Erdos Reyni-Models}{21}
-\contentsline {section}{\numberline {6.5}Measuring Flaws of Random Graph Models}{21}
-\contentsline {subsection}{\numberline {6.5.1}Averaging Model}{21}
-\contentsline {subsection}{\numberline {6.5.2}Variance Model}{21}
-\contentsline {subsection}{\numberline {6.5.3}Kurtosis Model}{21}
-\contentsline {subsection}{\numberline {6.5.4}Probability Ratio Model}{21}
-\contentsline {section}{\numberline {6.6}Flaws in Proofs of Average Case Random Graphs}{21}
-\contentsline {subsection}{\numberline {6.6.1}Selection of Certain Classes of Graphs}{21}
-\contentsline {subsection}{\numberline {6.6.2}Examples Uses in Proofs}{21}
-\contentsline {subsection}{\numberline {6.6.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{21}
-\contentsline {section}{\numberline {6.7}Alternative Ideas for Random Graph Modeling and Creation}{21}
-\contentsline {subsection}{\numberline {6.7.1}Distributional Goals}{21}
-\contentsline {subsection}{\numberline {6.7.2}Cloning Model}{21}
-\contentsline {section}{\numberline {6.8}Inherent Limitations on Models by Computational Theory}{21}
-\contentsline {subsection}{\numberline {6.8.1}Uncertainty in Set Size}{21}
-\contentsline {subsection}{\numberline {6.8.2}Computational Verification Limits}{21}
+\contentsline {section}{\numberline {6.2}Disconnect from Graphs as Algebraic Objects}{19}
+\contentsline {subsection}{\numberline {6.2.1}Specifically Disadvantaging One Type of Graph}{20}
+\contentsline {section}{\numberline {6.3}On the Number of Graphs of a given Size}{20}
+\contentsline {subsection}{\numberline {6.3.1}Proposed Closed Forms}{21}
+\contentsline {section}{\numberline {6.4}Graphs as Singular Objects and their Multiple Representations}{21}
+\contentsline {subsection}{\numberline {6.4.1}Representations per Graph}{21}
+\contentsline {subsection}{\numberline {6.4.2}Distribution of Representations}{21}
+\contentsline {section}{\numberline {6.5}Dominant Random Graph Models}{21}
+\contentsline {subsection}{\numberline {6.5.1}Erdos-Reyni Models}{21}
+\contentsline {subsection}{\numberline {6.5.2}Use and Dominance of Erdos Reyni-Models}{21}
+\contentsline {section}{\numberline {6.6}Measuring Flaws of Random Graph Models}{21}
+\contentsline {subsection}{\numberline {6.6.1}Averaging Model}{21}
+\contentsline {subsection}{\numberline {6.6.2}Variance Model}{21}
+\contentsline {subsection}{\numberline {6.6.3}Kurtosis Model}{21}
+\contentsline {subsection}{\numberline {6.6.4}Probability Ratio Model}{21}
+\contentsline {section}{\numberline {6.7}Flaws in Proofs of Average Case Random Graphs}{21}
+\contentsline {subsection}{\numberline {6.7.1}Selection of Certain Classes of Graphs}{21}
+\contentsline {subsection}{\numberline {6.7.2}Examples Uses in Proofs}{21}
+\contentsline {subsection}{\numberline {6.7.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{21}
+\contentsline {section}{\numberline {6.8}Alternative Ideas for Random Graph Modeling and Creation}{21}
+\contentsline {subsection}{\numberline {6.8.1}Distributional Goals}{21}
+\contentsline {subsection}{\numberline {6.8.2}Cloning Model}{21}
+\contentsline {section}{\numberline {6.9}Inherent Limitations on Models by Computational Theory}{21}
+\contentsline {subsection}{\numberline {6.9.1}Uncertainty in Set Size}{21}
+\contentsline {subsection}{\numberline {6.9.2}Computational Verification Limits}{21}
 \contentsline {chapter}{\numberline {7}Reflections}{22}
 \contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{22}
 \contentsline {section}{\numberline {7.2}Modes of Discovery}{22}

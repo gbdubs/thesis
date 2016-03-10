@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  10 MAR 2016 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  10 MAR 2016 10:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -213,12 +213,12 @@ Chapter 1.
 [5
 
 ] [6] [7]
-Overfull \hbox (5.18558pt too wide) in paragraph at lines 140--143
+Overfull \hbox (5.18558pt too wide) in paragraph at lines 145--148
 []\OT1/cmr/m/n/10.95 WAIT CO-PATHS GRAPHS THIS COULD BE FUCK-ING HUGE TODO
  []
 
 
-Overfull \hbox (12.72403pt too wide) in paragraph at lines 140--143
+Overfull \hbox (12.72403pt too wide) in paragraph at lines 145--148
 \OT1/cmr/m/n/10.95 !!! PATHS + IN-VERSE(PATHS) != PATHS(K) IS THIS FUCK-ING TRU
 E?!?! 
  []
@@ -240,7 +240,7 @@ Chapter 5.
 [15
 
 ]
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 303--303
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 308--308
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
@@ -249,7 +249,7 @@ Chapter 6.
 [17
 
 ] [18] [19]
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 420--420
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 430--430
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
@@ -284,7 +284,7 @@ ic/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
 sfonts/cm/cmti12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmti8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb>
-Output written on thesis.pdf (24 pages, 267311 bytes).
+Output written on thesis.pdf (24 pages, 268133 bytes).
 PDF statistics:
  147 PDF objects out of 1000 (max. 8388607)
  102 compressed objects within 2 object streams
