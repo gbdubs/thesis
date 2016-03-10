@@ -1,5 +1,8 @@
 function [ nRegular, nEdges ] = NR_NE( graphSet )
     
+    % NR = Number of Regular Graphs in Dataset
+    % NE = Average number of edges
+
     function [ isRegular ] = regular ( A ) 
         temp = sum(A);
         temp = temp - mean(temp);

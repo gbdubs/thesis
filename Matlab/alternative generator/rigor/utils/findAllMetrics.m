@@ -5,7 +5,8 @@ function [ allMetrics ] = findAllMetrics( )
     files = dir('alternative generator/metrics/')';
     
     for file = files
-        if numel(strfind(file.name, '._')) == 0
+        firstchar = file.name(1);
+        if numel(strfind(file.name, '._')) == 0 && firstchar ~= '.'
             fileName = strrep(file.name, '.m', '');
             fileName = strrep(fileName, '.', '');
             if numel(fileName) > 0

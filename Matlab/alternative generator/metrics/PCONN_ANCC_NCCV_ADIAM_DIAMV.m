@@ -1,4 +1,5 @@
 function [ PCONN, ANCC, NCCV, ADIAM, DIAMV ] = PCONN_ANCC_NCCV_ADIAM_DIAMV( graphSet )
+    
     % PCONN = Probability of fully connected graph
     % ANCC  = Average Number of connected components
     % NCCV  = Number of connected components Variance
