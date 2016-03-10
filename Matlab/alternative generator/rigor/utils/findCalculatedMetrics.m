@@ -7,7 +7,7 @@ function [ calculatedMetrics ] = findCalculatedMetrics( N, P, ALG, nGraphs )
     
     for i = 1 : numel(allMetrics);
         METRIC = cell2mat(allMetrics(i));
-        metricFile = [pathToResults, '/', METRIC, '/', num2str(nGraphs), '.mat'];
+        metricFile = [pwd,'/',pathToResults, '/', METRIC, '/', num2str(nGraphs), '.mat'];
         if exist(metricFile, 'file')
             calculatedMetrics = horzcat(calculatedMetrics, {METRIC});
         end

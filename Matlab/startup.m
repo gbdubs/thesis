@@ -3,6 +3,9 @@ clear all;
 addpath(genpath('.'));
 disp 'Added all subdirectories of this directory to the path.';
 
+rmpath(genpath('./alternative generator/data'));
+disp 'Removed all data subdirectories.';
+
 copathsData;
 disp 'Loaded data for the v=10 co-paths graphs.';
 
