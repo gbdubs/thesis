@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  10 MAR 2016 10:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 MAR 2016 19:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,10 +6,10 @@ entering extended mode
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 44 languages loaded.
-(/opt/local/share/texmf-texlive/tex/latex/base/report.cls
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/opt/local/share/texmf-texlive/tex/latex/base/size11.clo
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,65 +25,56 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
-
-(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count88
+\calc@Bcount=\count89
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count90
+\calc@Cskip=\skip45
 )
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-Package graphics Info: Driver file: pdftex.def on input line 94.
-
-(/opt/local/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count88
-))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
-)
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -92,15 +83,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen107
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks16
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks17
 \eqnshift@=\dimen108
 \alignsep@=\dimen109
@@ -109,12 +100,80 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen112
 \lineht@=\dimen113
 \@envbody=\toks18
-\multlinegap=\skip44
-\multlinetaggap=\skip45
+\multlinegap=\skip47
+\multlinetaggap=\skip48
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-) (./thesis.aux)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count103
+\l_MT_multwidth_dim=\dimen114
+\origjot=\skip49
+\l_MT_shortvdotswithinadjustabove_dim=\dimen115
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen116
+\l_MT_above_intertext_sep=\dimen117
+\l_MT_below_intertext_sep=\dimen118
+\l_MT_above_shortintertext_sep=\dimen119
+\l_MT_below_shortintertext_sep=\dimen120
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count104
+\lst@gtempboxa=\box28
+\lst@token=\toks20
+\lst@length=\count105
+\lst@currlwidth=\dimen121
+\lst@column=\count106
+\lst@pos=\count107
+\lst@lostspace=\dimen122
+\lst@width=\dimen123
+\lst@newlines=\count108
+\lst@lineno=\count109
+\lst@maxwidth=\dimen124
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count110
+\lst@skipnumbers=\count111
+\lst@framebox=\box29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count112
+))
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+)
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -129,29 +188,30 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
+\c@lstlisting=\count113
 
-(/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen115
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks21
-) (/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+\scratchcounter=\count114
+\scratchdimen=\dimen127
+\scratchbox=\box30
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen128
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks22
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -160,22 +220,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -187,7 +247,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -199,8 +259,8 @@ Package pdftex.def Info: brandeis-seal.png used on input line 6.
 
 [1
 
-{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map} <./brandeis-seal.p
-ng>] (./thesis.toc [1
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./brand
+eis-seal.png>] (./thesis.toc [1
 
 ] [2])
 \tf@toc=\write3
@@ -212,82 +272,123 @@ ng>] (./thesis.toc [1
 Chapter 1.
 [5
 
-] [6] [7]
-Overfull \hbox (5.18558pt too wide) in paragraph at lines 145--148
+] [6] [7] [8]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ” in font cmr10!
+
+Overfull \hbox (0.61409pt too wide) in paragraph at lines 144--145
+\OT1/cmr/m/n/10.95 within the ad-ja-cency ma-trix. Thus, cal-cu-lat-ing a spe-c
+ific value of $\OML/cmm/m/it/10.95 Paths\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
+ p; v\OT1/cmr/m/n/10.95 )$
+ []
+
+
+Overfull \hbox (5.18558pt too wide) in paragraph at lines 158--161
 []\OT1/cmr/m/n/10.95 WAIT CO-PATHS GRAPHS THIS COULD BE FUCK-ING HUGE TODO
  []
 
 
-Overfull \hbox (12.72403pt too wide) in paragraph at lines 145--148
+Overfull \hbox (12.72403pt too wide) in paragraph at lines 158--161
 \OT1/cmr/m/n/10.95 !!! PATHS + IN-VERSE(PATHS) != PATHS(K) IS THIS FUCK-ING TRU
 E?!?! 
  []
 
-[8] [9] [10]
+[9] [10] [11]
 Chapter 2.
-[11
+[12
 
-] [12]
+] [13] [14]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 275.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 275.
+
+[15]
+Overfull \hbox (68.24347pt too wide) detected at line 312
+[] []
+ []
+
+
+Overfull \hbox (69.64935pt too wide) detected at line 318
+\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it
+/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \
+OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/
+n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]
+x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
+ 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[
+]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 2
+\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 1
+ []
+
+[16] [17]
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 356--357
+[][][][][][][][][][][][][][][][][] 
+ []
+
+[18] [19]
 Chapter 3.
-[13
+[20
 
 ]
 Chapter 4.
-[14
+[21
 
 ]
 Chapter 5.
-[15
+[22
 
 ]
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 308--308
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 476--476
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
-[16]
+[23]
 Chapter 6.
-[17
+[24
 
-] [18] [19]
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 430--430
+] [25] [26] [27]
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 602--602
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
-[20] [21]
+[28] [29]
 Chapter 7.
-[22
+[30
 
-] [23
+] [31
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 2134 strings out of 494185
- 28595 string characters out of 6156889
- 93373 words of memory out of 5000000
- 5434 multiletter control sequences out of 15000+600000
+ 3879 strings out of 493089
+ 56152 string characters out of 6134842
+ 132462 words of memory out of 5000000
+ 7322 multiletter control sequences out of 15000+600000
  11899 words of font info for 42 fonts, out of 8000000 for 9000
- 430 hyphenation exceptions out of 8191
- 38i,8n,23p,296b,183s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.
-pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/
-local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmti12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmti8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb>
-Output written on thesis.pdf (24 pages, 268133 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 37i,8n,32p,1479b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on thesis.pdf (32 pages, 297548 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 173 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
