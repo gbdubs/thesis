@@ -1,5 +1,8 @@
 clear all;
 
+load('data/cannonicalMemoization.mat');
+global cannonicalMemoization
+
 addpath(genpath('.'));
 disp 'Added all subdirectories of this directory to the path.';
 
