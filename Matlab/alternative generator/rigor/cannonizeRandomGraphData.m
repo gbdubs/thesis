@@ -1,9 +1,24 @@
 function cannonizeRandomGraphData ()
     
     function [ isEqual ] = equalCellRows(cr1, cr2)
+        
+        function [ generalCompare ] = genCompare(v1, v2)
+            if numel(v1) > numel(v2)
+                generalCompare = 1;
+            elseif numel(v1) < numel(v2)
+                generalCompare = -1;
+            elseif v1 > v2
+                generalCompare = 1;
+            elseif v1 < v2
+                generalCompare = -1;
+            else
+                generalCompare = 0;
+            end 
+        end
+        
         isEqual = 1;
         for index = 1 : numel(cr1)
-            if cell2mat(cr1(index)) ~= cell2mat(cr2(index))
+            if genCompare(cell2mat(cr1(index)), cell2mat(cr2(index))) ~= 0
                 isEqual = 0;
                 return;
             end

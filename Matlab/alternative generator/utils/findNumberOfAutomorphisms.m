@@ -1,5 +1,25 @@
 function [ nAuts ] = findNumberOfAutomorphisms( A )
 
+    N = size(A, 1);
+    
+    if N <= 1
+        nAuts = 1;
+        return;
+    end
+    
+    degreeSequence = sum(A);
+    disconnected = find(degreeSequence == 0);
+    fullyConnected = find(degreeSequence == N-1);
+    allOthers = setdiff(setdiff(1:N, disconnected), fullyConnected);
+    
+    if numel(allOthers) < N
+        smallerCase = A(allOthers, allOthers);
+        disconnfactor = factorial(numel(disconnected));
+        fullconnfactor = factorial(numel(fullyConnected));
+        nAuts = findNumberOfAutomorphisms(smallerCase) * disconnfactor * fullconnfactor;
+        return;
+    end
+
     function [ allPerms ] = generatePermsFromQECs(qecs)
         
         function [ resultingPerms ] = combinePerms ( aPerms, bPerms )
