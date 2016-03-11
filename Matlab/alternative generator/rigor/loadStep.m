@@ -1,45 +1,62 @@
-function [ temp ] = loadStep( n, p, alg, metric, nGraphs)
+function [ result, ns, ps ] = loadStep( n, p, alg, metric, nGraphs, shouldAssign)
 
-    temp = [];
-    load('alternative generator/data/allPaths.mat');
+    if nargin < 6
+        shouldAssign = 1;
+    end
 
-    if n ~= -1
-        allPaths = applyPathRestriction(allPaths, ['n=',num2str(n)]);
-    end
+    result = [];
+    ns = [];
+    ps = [];
     
-    if p ~= -1
-        allPaths = applyPathRestriction(allPaths, ['p=',num2str(p)]);
-    end
+    if numel(n) == 1 && numel(p) == 1
     
-    if alg ~= -1
-        allPaths = applyPathRestriction(allPaths, ['alg=',alg]);
-    end
-    
-    
-    allPaths = applyPathRestriction(allPaths, '/results');
-    
-    
-    if metric ~= -1
-        allPaths = applyPathRestriction(allPaths, ['/', metric]);
-    end
-    
-    if numel(allPaths) > 5
-        progressbar;
-    end
-    
-    for i = 1 : numel(allPaths)
-        if numel(allPaths) > 5
-            progressbar(i / numel(allPaths));
+        load('alternative generator/data/allPaths.mat');
+
+        allPaths = applyPathRestriction(allPaths, '/results');
+
+        if alg ~= -1
+            allPaths = applyPathRestriction(allPaths, ['alg=',alg]);
         end
-        fileName = [pwd, '/', cell2mat(allPaths(i)), '/', num2str(nGraphs), '.mat'];
-        if exist(fileName, 'file')
-            before = who;
-            load(fileName);
-            after = who;
-            varNames = setdiff(after, before);
-            varName = cell2mat(varNames(1));
-            eval(['temp = ',varName,';']);
-            assignin('base', varName, temp);
+
+        if metric ~= -1
+            allPaths = applyPathRestriction(allPaths, ['/', metric]);
+        end
+    
+        if n ~= -1
+            allPaths = applyPathRestriction(allPaths, ['n=',num2str(n),'/']);
+        end
+
+        if p ~= -1
+            allPaths = applyPathRestriction(allPaths, ['p=',num2str(p),'/']);
+        end
+
+        for i = 1 : numel(allPaths)
+            fileName = [pwd, '/', cell2mat(allPaths(i)), '/', num2str(nGraphs), '.mat'];
+            if exist(fileName, 'file')
+                before = who;
+                load(fileName);
+                after = who;
+                varNames = setdiff(after, before);
+                varName = cell2mat(varNames(1));
+                eval(['result = ',varName,';']);
+                if shouldAssign
+                    assignin('base', varName, result);
+                end
+            end
+        end
+    else
+        ns = n;
+        ps = p;
+        
+        result = zeros(numel(n), numel(p));
+        
+        for i = 1 : numel(ns)
+            n = ns(i);
+            for j = 1 : numel(ps)
+                p = ps(j);
+                [temp, ~, ~] = loadStep(n,p,alg,metric,nGraphs, 0);
+                result(i, j) = temp;
+            end
         end
     end
 end
