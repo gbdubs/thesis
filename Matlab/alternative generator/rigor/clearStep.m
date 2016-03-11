@@ -1,31 +1,25 @@
 function clearStep( n, p, alg, step, metric )
 
-    function [ o ] = applyRestriction ( i, rest )
-        t = strfind( i, rest );
-        r = cellfun(@isempty,t);
-        o = i(~r);
-    end
-
-    allPaths = strsplit(genpath('alternative generator/data'),':')';
+    load('alternative generator/data/allPaths.mat');
 
     if n ~= -1
-        allPaths = applyRestriction(allPaths, ['n=',num2str(n)]);
+        allPaths = applyPathRestriction(allPaths, ['n=',num2str(n)]);
     end
     
     if p ~= -1
-        allPaths = applyRestriction(allPaths, ['p=',num2str(p)]);
+        allPaths = applyPathRestriction(allPaths, ['p=',num2str(p)]);
     end
     
     if alg ~= -1
-        allPaths = applyRestriction(allPaths, ['alg=',alg]);
+        allPaths = applyPathRestriction(allPaths, ['alg=',alg]);
     end
     
     if step ~= -1
-        allPaths = applyRestriction(allPaths, ['/', step]);
+        allPaths = applyPathRestriction(allPaths, ['/', step]);
     end
     
     if metric ~= -1
-        allPaths = applyRestriction(allPaths, ['/', metric]);
+        allPaths = applyPathRestriction(allPaths, ['/', metric]);
     end
     
     if numel(allPaths) > 5
