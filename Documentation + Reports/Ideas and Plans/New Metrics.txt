@@ -1,0 +1,20 @@
+new properties
+- N Triangles
+- Girth - smallest cycle
+- Wiener Index --> sum of lengths of shortest paths between all pairs of vertices in the graph (connected only)
+- Algebraic Connectivity : The algebraic connectivity of a graph G is the second-smallest eigenvalue of the Laplacian matrix of G
+- Strength of a Graph - https://en.wikipedia.org/wiki/Strength_of_a_graph
+- Average Eccentricty of a graph (longest path from a node to any other)
+- Radius = minimum eccentricity
+
+possible properties
+- Between Centrality : number of shortest paths from all vertices to all others that pass through that node
+
+- chromatic number
+
+- Cheeger Constant https://en.wikipedia.org/wiki/Cheeger_constant_(graph_theory)
+
+- Clique number (size of largest clique)
+- K edge connected (i.e. you can remove K edges and it will still be connected)
+- Book thickness (all can be done in a book, how many pages you need?) (NP HARD!)
+- Hosoya Index (Looks tricky...)
