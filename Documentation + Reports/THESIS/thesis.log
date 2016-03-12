@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2016 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2016 14:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -183,27 +183,28 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/genmisc/nth.sty
+Package: nth 2002/02/27
+)
 \myboxA=\box30
 \myboxB=\box31
 \mylenA=\skip50
-
-(./thesis.aux)
+ (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 \c@lstlisting=\count113
-
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
@@ -268,7 +269,7 @@ e
 <brandeis-seal.png, id=1, 74.25743pt x 74.25743pt>
 File: brandeis-seal.png Graphic file (type png)
  <use brandeis-seal.png>
-Package pdftex.def Info: brandeis-seal.png used on input line 27.
+Package pdftex.def Info: brandeis-seal.png used on input line 32.
 (pdftex.def)             Requested size: 53.9978pt x 54.0001pt.
 
 [1
@@ -298,46 +299,32 @@ Chapter 1.
 [5
 
 ] [6] [7] [8]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ” in font cmr10!
-
-Overfull \hbox (0.61409pt too wide) in paragraph at lines 165--166
+Overfull \hbox (16.78204pt too wide) in paragraph at lines 173--176
 \OT1/cmr/m/n/10.95 within the ad-ja-cency ma-trix. Thus, cal-cu-lat-ing a spe-c
-ific value of $\OML/cmm/m/it/10.95 Paths\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
- p; v\OT1/cmr/m/n/10.95 )$
+ific value of $\OML/cmm/m/it/10.95 Cycles\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
+5 A; p; v\OT1/cmr/m/n/10.95 )$
  []
 
-
-Overfull \hbox (5.18558pt too wide) in paragraph at lines 179--182
-[]\OT1/cmr/m/n/10.95 WAIT CO-PATHS GRAPHS THIS COULD BE FUCK-ING HUGE TODO
- []
-
-
-Overfull \hbox (12.72403pt too wide) in paragraph at lines 179--182
-\OT1/cmr/m/n/10.95 !!! PATHS + IN-VERSE(PATHS) != PATHS(K) IS THIS FUCK-ING TRU
-E?!?! 
- []
-
-[9] [10] [11]
+[9] [10] [11] [12] [13]
 Chapter 2.
-[12
+[14
 
-] [13] [14]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 296.
+] [15] [16]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 363.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 296.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 363.
 
-[15]
-Overfull \hbox (68.24347pt too wide) detected at line 333
+[17]
+Overfull \hbox (68.24347pt too wide) detected at line 400
 [] []
  []
 
 
-Overfull \hbox (69.64935pt too wide) detected at line 339
+Overfull \hbox (69.64935pt too wide) detected at line 406
 \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it
 /10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \
 OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/
@@ -348,57 +335,57 @@ x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
 \OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 1
  []
 
-[16] [17]
-Overfull \hbox (14.4939pt too wide) in paragraph at lines 377--378
+[18] [19]
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 444--445
 [][][][][][][][][][][][][][][][][] 
  []
 
-[18] [19]
+[20] [21]
 Chapter 3.
-[20
-
-]
-Chapter 4.
-[21
-
-]
-Chapter 5.
 [22
 
 ]
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 497--497
+Chapter 4.
+[23
+
+]
+Chapter 5.
+[24
+
+]
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 562--562
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
-[23]
+[25]
 Chapter 6.
-[24
+[26
 
-] [25] [26] [27] [28] [29]
-Overfull \hbox (16.50629pt too wide) in paragraph at lines 665--665
+] [27] [28] [29] [30] [31]
+Overfull \hbox (16.50629pt too wide) in paragraph at lines 733--733
 []\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
  []
 
-[30] [31] [32]
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 738--738
+[32] [33] [34]
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 806--806
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
-[33] [34]
+[35] [36]
 Chapter 7.
-[35
+[37
 
-] [36
+] [38
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4165 strings out of 493089
- 59355 string characters out of 6134842
- 132875 words of memory out of 5000000
- 7591 multiletter control sequences out of 15000+600000
+ 4198 strings out of 493089
+ 59928 string characters out of 6134842
+ 133421 words of memory out of 5000000
+ 7620 multiletter control sequences out of 15000+600000
  13134 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,32p,1479b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,32p,508b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
@@ -416,10 +403,10 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (37 pages, 320659 bytes).
+Output written on thesis.pdf (39 pages, 329925 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 201 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
