@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 MAR 2016 08:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 MAR 2016 18:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -349,16 +349,16 @@ Overfull \hbox (13.7763pt too wide) in paragraph at lines 476--476
 Chapter 6.
 [24
 
-] [25] [26] [27] [28] [29]
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 669--669
+] [25] [26] [27] [28] [29] [30] [31]
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 692--692
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
-[30] [31]
+[32]
 Chapter 7.
-[32
+[33
 
-] [33
+] [34
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
@@ -386,10 +386,10 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (34 pages, 315074 bytes).
+Output written on thesis.pdf (35 pages, 317561 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 186 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
