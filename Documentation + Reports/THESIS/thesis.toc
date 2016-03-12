@@ -77,22 +77,24 @@
 \contentsline {subsection}{\numberline {6.3.1}Theoretical Average Case Comparison}{28}
 \contentsline {subsection}{\numberline {6.3.2}Practical Average Case Comparison}{29}
 \contentsline {subsection}{\numberline {6.3.3}Should We Never Use the Gilbert Model?}{29}
-\contentsline {section}{\numberline {6.4}Measuring Flaws of Random Graph Models}{30}
-\contentsline {subsection}{\numberline {6.4.1}Graph Set Metrics}{31}
-\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{32}
-\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{32}
-\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{32}
-\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{32}
-\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{32}
-\contentsline {subsection}{\numberline {6.6.1}Distributional Goals}{32}
-\contentsline {subsection}{\numberline {6.6.2}Cloning Model}{32}
-\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{32}
-\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{32}
-\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{32}
-\contentsline {section}{\numberline {6.8}On the Number of Graphs of a given Size}{32}
-\contentsline {subsection}{\numberline {6.8.1}Proposed Closed Forms}{32}
-\contentsline {chapter}{\numberline {7}Reflections}{33}
-\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{33}
-\contentsline {section}{\numberline {7.2}Modes of Discovery}{33}
-\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{33}
-\contentsline {section}{\numberline {7.4}Acknowledgments}{33}
+\contentsline {section}{\numberline {6.4}Measuring and Comparing Random Graph Models}{30}
+\contentsline {subsection}{\numberline {6.4.1}An Ideal Random Graph Model}{30}
+\contentsline {subsection}{\numberline {6.4.2}Establishing a Methodology for Random Graph Generator Evaluation}{31}
+\contentsline {subsection}{\numberline {6.4.3}Graph Set Metrics}{32}
+\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{34}
+\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{34}
+\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{34}
+\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{34}
+\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{34}
+\contentsline {subsection}{\numberline {6.6.1}Distributional Goals}{34}
+\contentsline {subsection}{\numberline {6.6.2}Cloning Model}{34}
+\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{34}
+\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{34}
+\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{34}
+\contentsline {section}{\numberline {6.8}On the Number of Graphs of a given Size}{34}
+\contentsline {subsection}{\numberline {6.8.1}Proposed Closed Forms}{34}
+\contentsline {chapter}{\numberline {7}Reflections}{35}
+\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{35}
+\contentsline {section}{\numberline {7.2}Modes of Discovery}{35}
+\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{35}
+\contentsline {section}{\numberline {7.4}Acknowledgments}{35}
