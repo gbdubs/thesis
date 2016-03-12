@@ -1,0 +1,8 @@
+Outstanding Questions:
+
+INVERTABILITY
+
+If two graphs are co-paths, are their inverses necessarily copaths?
+
+GET THIS ARTICLE BY MCKAY
+Isomorph-Free Exhaustive Generation
