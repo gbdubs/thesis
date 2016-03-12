@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2016 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAR 2016 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -299,7 +299,7 @@ Chapter 1.
 [5
 
 ] [6] [7] [8]
-Overfull \hbox (16.78204pt too wide) in paragraph at lines 173--176
+Overfull \hbox (16.78204pt too wide) in paragraph at lines 188--191
 \OT1/cmr/m/n/10.95 within the ad-ja-cency ma-trix. Thus, cal-cu-lat-ing a spe-c
 ific value of $\OML/cmm/m/it/10.95 Cycles\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
 5 A; p; v\OT1/cmr/m/n/10.95 )$
@@ -310,21 +310,21 @@ Chapter 2.
 [14
 
 ] [15] [16]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 363.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 379.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 363.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 379.
 
 [17]
-Overfull \hbox (68.24347pt too wide) detected at line 400
+Overfull \hbox (68.24347pt too wide) detected at line 416
 [] []
  []
 
 
-Overfull \hbox (69.64935pt too wide) detected at line 406
+Overfull \hbox (69.64935pt too wide) detected at line 422
 \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it
 /10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \
 OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/
@@ -336,7 +336,7 @@ x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
  []
 
 [18] [19]
-Overfull \hbox (14.4939pt too wide) in paragraph at lines 444--445
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 460--461
 [][][][][][][][][][][][][][][][][] 
  []
 
@@ -353,7 +353,7 @@ Chapter 5.
 [24
 
 ]
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 562--562
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 578--578
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
@@ -362,12 +362,12 @@ Chapter 6.
 [26
 
 ] [27] [28] [29] [30] [31]
-Overfull \hbox (16.50629pt too wide) in paragraph at lines 733--733
+Overfull \hbox (16.50629pt too wide) in paragraph at lines 749--749
 []\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
  []
 
 [32] [33] [34]
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 806--806
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 822--822
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
@@ -379,10 +379,10 @@ Chapter 7.
 
 ] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4198 strings out of 493089
- 59928 string characters out of 6134842
+ 4199 strings out of 493089
+ 59937 string characters out of 6134842
  133421 words of memory out of 5000000
- 7620 multiletter control sequences out of 15000+600000
+ 7621 multiletter control sequences out of 15000+600000
  13134 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,32p,508b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -403,7 +403,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (39 pages, 329925 bytes).
+Output written on thesis.pdf (39 pages, 331407 bytes).
 PDF statistics:
  201 PDF objects out of 1000 (max. 8388607)
  140 compressed objects within 2 object streams
