@@ -1,13 +1,29 @@
+restoredefaultpath;
 clear all;
 
 load('data/cannonicalMemoization.mat');
-global cannonicalMemoization
+global cannonicalMemoization;
+disp('Loaded cannonicalMemoziation Data.');
 
-addpath(genpath('.'));
-disp 'Added all subdirectories of this directory to the path.';
+for file = dir('.')'
+    if file.isdir
+        if ~strcmp(file.name,'alternative generator') && numel(file.name) > 2
+            disp(['    loading ', file.name]);
+            addpath(genpath(file.name));
+        end
+    end
+end
 
-rmpath(genpath('./alternative generator/data'));
-disp 'Removed all data subdirectories.';
+for file = dir('alternative generator')';
+    if file.isdir
+        if ~strcmp(file.name,'data') && numel(file.name) > 2
+            disp(['    loading ', file.name]);
+            addpath(genpath(['alternative generator','/',file.name]));
+        end
+    end
+end
+
+disp 'Added all subdirectories of this directory to the path, except for the alternative generator data.';
 
 copathsData;
 disp 'Loaded data for the v=10 co-paths graphs.';
@@ -15,6 +31,6 @@ disp 'Loaded data for the v=10 co-paths graphs.';
 load('cannonical/data/graphsEightAndSmaller.mat');
 disp 'Loaded all cannonical representations of graphs of degree 8 and smaller.';
 
-clear i;
+clear i file;
 
 clear('ans');

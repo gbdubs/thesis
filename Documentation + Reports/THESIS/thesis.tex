@@ -490,14 +490,20 @@ NAUTY's algorithm uses simpler heuristics (such as X and X) to eliminate permuta
 
 \section{Random Graph Models}
 
-
 The field of random graph theory was started with two independent papers in 1959, each defining models for generating and analyzing random graphs.
-A \emph{random graph model} is any system of generating graphs through chance, with various constraints that describe the desired properties of the resulting graphs.
-These two papers began a trend in graph theory that allowed theoreticians and algorithm designers to think about efficiency differently, particularly on NP-Hard or NP-Complete graph problems.
+A \emph{random graph model} is any system of generating graphs with the influence of chance, with various constraints that describe the desired properties of the resulting graphs.
+These two papers began a trend in graph theory that allowed theoreticians and algorithm designers to think about efficiency differently, particularly on NP-Hard and NP-Complete graph algorithms.
 
 Random graphs served as a new lens through which theory could pivot away from the worst case, instead handling common and general cases of problems that were either proven to be impossible in the worst case, or suspected to be so. 
 A few examples from the years following showed that random graph theory lent a new life to the challenging problems of CITE, CITE and CITE.
 In this chapter, we will discuss multiple models of random graph generation, examine the strengths and flaws of each, and propose an alternative mechanisms by which graphs can be generated for more theoretical applications and algorithms.
+
+It is important to recongize that there has been an increase in interest in alternative random graph models in the last ten years.
+The majority of these papers focus on exponential random graph models, which are centered around the study of network structure with local and global patterns of connection.
+For example, the internet (if sites are viewed as vertices and links as edges), has an exponential in-degree distribution (many more people link to cnn.com than gradybward.com).
+Another set of random graph models tries to model social networks, which are categorized by cliques (groups of friends), with alternative connections that symbolize non-group friendships.
+For either of these models, algorithmic theory is inadequate if it treats all graphs as equally likely, or if it treats all graph instances as equally likely.
+Though this section is not focused on these models, it does adapt some of the characteristics and heuristics of this pursuit to a different goal, of establishing a random graph model for testing algorithms over the set of all graphs.
 
 In this pursuit, we will question what we mean when we say `random' graphs, and make explicit the assumptions, aims and valid applications of any one of our models. 
 
@@ -548,6 +554,30 @@ Since each bit string is only achievable with exact probability $(0.5)^K$, each 
 We will reshape the bit-string into representing each one of the edge variables, and we let $K = E_{max} = \frac{1}{2}(V^2 - V)$.
 This establishes a connection between the Gilbert model and a randomly selected matrix from the set of matrices which represent our definition of valid graphs. 
 This connection is intuitively pleasing, but further investigation should also show that its implies skewed results for some algorithms which rely on it.
+
+\subsection{Isomorphism Under the Gilbert Model}
+
+One of the first places that theoreticians turned their attention toward after the start of the study of random graphs was the problem of Graph Isomorphism.
+The dominant lens of that study was the discussion of naming a class of graphs, and having the following proof structure:
+\begin{itemize}
+\item{The class of graphs is closed under isomorphism (i.e. all graph instances are in the class of graphs)}
+\item{The class of graphs includes a large proportion of all graph \emph{instances}}
+\item{Any two graph instances in the class of graphs can be determined isomorphic or not in polynomial time}
+\end{itemize}
+This approach was undertaken by a large number of theoreticians in the 1960s and 1970s.
+A secondary component of these papers became the discussion of alternative algorithms which could solve the cases that were not solved for by the large model of the paper.
+It seemed (to paraphrase from Erdos), that graph theoreticians were going to chip away at the problem of graph isomorphism until there was nothing left to chip away.
+Yet, as it went forward, the increasingly restricted set of graphs for which no fast algorithm was known did not vanish.
+Instead, theoreticians (pardon the projection) were surprised to find that Graph Isomorphism was a hydra that they couldn't vanquish through these means.
+No matter the number of large classes of graphs they covered, no matter the diminishing proportion of graphs that were left uncovered, they couldn't find a way to solve all cases.
+
+Hindsight is clear, and we can see that the theoreticians' realization was really a self-reflexive commentary on the work that we are going to be doing in this section.
+What they had discovered is that the easy cases in isomorphism are exponentially (in fact, factorially) more common under a Gilbert model than they are if we treat them as algebraic objects.
+Thus, even as they shrunk the probability of seeing one of these highly automorphic graphs under a gilbert model, they did little to increase the overall number of graphs that their algorithms covered.
+
+
+
+
 
 \section{Disconnect from Graphs as Algebraic Objects}
 
