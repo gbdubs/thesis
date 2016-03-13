@@ -1,9 +1,9 @@
 function [ comparison ] = cannonicalCompareMatrices(m1, m2)
-    if (isequal(m1, m2))
+    diff = m1 - m2;
+    temp = find(diff,1);
+    if numel(temp) == 0
         comparison = 0;
     else
-        diff = m1 - m2;
-        temp = diff(diff ~= 0);
-        comparison = sign(temp(1));
+        comparison = sign(diff(temp));
     end
 end

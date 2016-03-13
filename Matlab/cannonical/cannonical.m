@@ -10,6 +10,7 @@ function [ B ] = cannonical( A )
     end
     
     B = cannonicalV4(A);
+    
     cannonicalMemoization(eA) = graph6Encode(B);
 
 end

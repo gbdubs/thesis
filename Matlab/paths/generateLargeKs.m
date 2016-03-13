@@ -8,12 +8,9 @@ function [ largePaths ] = generateLargeKs( A , P )
     
     B = B + A;
     B = B * A;
-    t = cputime;
+    
     for p = 1 : P
-        % considerTimeEstimation(t, p, P, 100);
-        for i = 1 : n
-            largePaths(i, p) = B(i,i);
-        end
+        largePaths(:,p) = diag(B);
         C = B * A;
         B = C - floor(C / 2^32) * 2^32;
     end

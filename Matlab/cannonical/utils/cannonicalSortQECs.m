@@ -5,8 +5,9 @@ function [ newCells ] = cannonicalSortQECs( A, qec )
     interesting = zeros(nClasses, nClasses);
     
     for i = 1 : nClasses
+        m1 = cell2mat(qec(i));
         for j = i+1 : nClasses
-            subgraph = A(cell2mat(qec(i)), cell2mat(qec(j)));
+            subgraph = A(m1, cell2mat(qec(j)));
             nEdges = sum(sum(subgraph));
             max = size(subgraph, 1) * size(subgraph, 2);
             interestingPair = nEdges > 0 && nEdges < max;
