@@ -1,0 +1,117 @@
+\begin{thebibliography}{10}
+
+\bibitem{isosubgraphs}
+Jin Akiyama.
+\newblock The graphs with all induced subgraphs isomorphic.
+\newblock {\em THE BULLETIN OF THE MALAYSIAN MATHEMATICAL SOCIETY}, 2, 1979.
+
+\bibitem{randomgraphisomorphism}
+Laslo Babai, Paul Erdos, and Stanley~M Selkow.
+\newblock Random graph isomorphism.
+\newblock {\em SIAM Computing}, 9(3), 1980.
+
+\bibitem{scalefreergs}
+B.~Bollobas.
+\newblock Mathematical results on scale-free random graphs.
+\newblock {\em Handbook of Graphs and Networks}, 2003.
+
+\bibitem{oeisbig}
+Keith~M. Briggs.
+\newblock Number of unlabeled undirected graphs up to 75 vertices.
+
+\bibitem{Cameron}
+Peter~J Cameron.
+\newblock Automorphisms of graphs.
+\newblock Queen Mary, University of London, apr 2001.
+
+\bibitem{understandingexprgm}
+Sourav Chatterjee and Persi Diaconis.
+\newblock Estimating and understanding exponential random graph models.
+\newblock {\em The Annals of Statistics}, 41(5):2428?2461, 2013.
+
+\bibitem{eigenspaces}
+Dragos Cvetkovic, Peter Rowlinson, and Slobodan Simic.
+\newblock A study of the eigenspaces of graphs.
+\newblock {\em Linear Algebra and its Applications}, 1992.
+
+\bibitem{improved}
+Tomek Czajka and Gopal Pandurangan.
+\newblock Improved random graph isomorphism.
+\newblock {\em Department of Computer Science, Perdue}, 2015.
+
+\bibitem{erdosreyni}
+P.~Erdos and A.~Reyni.
+\newblock On random graphs i.
+\newblock {\em Publicationes Mathematicae}, 6, 1959.
+
+\bibitem{spectralmatching}
+Marcelo Fiori and Guillermo Sapiro.
+\newblock On spectral properties for graph matching and graph isomorphism
+  problems.
+\newblock {\em ARXIV}, 2014.
+
+\bibitem{socialnetworks2002}
+D.~J.~Watts M.~E. J.~Newman and S.~H. Strogatz.
+\newblock Random graph models of social networks.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, feb 2002.
+\newblock http://www.jstor.org/stable/3057594.
+
+\bibitem{smallgraphs}
+Brendan~D McKay.
+\newblock Small graphs are reconstructible.
+\newblock {\em Australasian Journal of Combinatorics}, 15, 1997.
+
+\bibitem{nydl2001}
+Václav Nýdl.
+\newblock Graph reconstruction from subgraphs.
+\newblock {\em DISCRETE MATHEMATICS}, may 2001.
+
+\bibitem{OEIS}
+Online~Encyclopedia of~Integer~Sequences.
+\newblock Number of graphs on n unlabeled nodes.
+
+\bibitem{algstats}
+Sonja Petrovic, Alessandro Rinaldo, and Stephen~E. Fienberg.
+\newblock Algebraic statistics for a directed random graph model with
+  reciprocation.
+\newblock {\em Contemporary Mathematics}, 516, 2010.
+
+\bibitem{newspecsergs}
+Tom A.~B. Snijders, Philippa~E. Pattison, Garry~L. Robins, and Mark~S.
+  Handcock.
+\newblock New specifications for exponential random graph models.
+\newblock {\em Center for Statistics and the Social Sciences}, apr 2004.
+
+\bibitem{snijders2002}
+Tom~AB Snijders.
+\newblock Markov chain monte carlo estimation of exponential random graph
+  models, 2002.
+
+\bibitem{complexnetworks}
+Remco van~der Hofstad.
+\newblock {\em Random Graphs and Complex Networks}, volume~1.
+\newblock Eindhoven University of Technology, feb 2016.
+
+\bibitem{exprandgraphframework}
+Marijte~A.J. van Duijn, Krista~J. Gile, and Mark~S. Handcock.
+\newblock A framework for the comparison of maximum pseudo likelihood and
+  maximum likelihood estimation of exponential family random graph models.
+\newblock {\em Social Networks}, 2009.
+
+\bibitem{whirlwind}
+A~whirlwind tour of~random graphs.
+\newblock Fan chung.
+\newblock {\em UCSD}, 2008.
+
+\bibitem{virginiawilliams2015}
+Virginia Williams.
+\newblock Algorithms for fixed subgraph isomorphism.
+\newblock CS267 Lecture 1, jan 2015.
+
+\bibitem{katonazsolt2006}
+Katona Zsolt.
+\newblock {\em Random Graph Models}.
+\newblock PhD thesis, Eotvos Lorand University, Hungary, 2006.
+
+\end{thebibliography}
