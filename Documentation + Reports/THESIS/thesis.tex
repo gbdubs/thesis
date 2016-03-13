@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{report}
-\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth}
+\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth, cite}
 \makeatletter
 \newsavebox\myboxA
 \newsavebox\myboxB
@@ -27,6 +27,10 @@
 \newcommand{\ts}{\textsuperscript}
 
 \begin{document}
+
+% Adds all of the citations to the Paper, regardless of if they are used.
+\nocite{*}
+
 \begin{titlepage}
 	\centering
 	\includegraphics[width=0.15\textwidth]{brandeis-seal}\par\vspace{1cm}
@@ -746,7 +750,7 @@ $$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in GAlg}  O(T(g)) }{|GAlg|}$$
 $$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in GAlg}  |Aut(g)|}{|GAlg)|}$$
 $$\xoverline{T}_{Ideal} = \text{Average Number of Automorphisms over Graphs}$$
 
-Some sample numbers to give you the scale of these disparities is given below CITE.
+Some sample numbers to give you the scale of these disparities is given below \cite{erdosreyni}.
 
 The takeaway here is that specifically disadvantaging a class of graphs (namely highly automorphic graphs) warps our analysis of running time in a substantive way, not only for fringe algorithms, but for well studied algorithms too.
 We can show this through the theoretical proof as shown above, but we can also show it through data describing actual algorithm performance.
@@ -888,9 +892,9 @@ The first twenty two terms of this sequence have been calculated, and are availa
 
 
 
-
-\bibliography{bibliography}{}
 \bibliographystyle{plain}
+\bibliography{bibliography}
+
 \end{document}
  
 
