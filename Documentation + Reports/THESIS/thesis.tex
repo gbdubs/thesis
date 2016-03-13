@@ -1,5 +1,31 @@
 \documentclass[11pt,a4paper]{report}
-\usepackage{mathtools, amsmath, listings, graphicx}
+\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth}
+\makeatletter
+\newsavebox\myboxA
+\newsavebox\myboxB
+\newlength\mylenA
+
+\newcommand*\xoverline[2][0.75]{%
+    \sbox{\myboxA}{$\m@th#2$}%
+    \setbox\myboxB\null% Phantom box
+    \ht\myboxB=\ht\myboxA%
+    \dp\myboxB=\dp\myboxA%
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
+    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+    \addtolength\mylenA{-\the\wd\myboxB}%
+    \ifdim\wd\myboxB<\wd\myboxA%
+       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+    \else
+        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+    \fi}
+\makeatother
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ts}{\textsuperscript}
+
 \begin{document}
 \begin{titlepage}
 	\centering
@@ -33,11 +59,12 @@ Over the past year I have poured my time and energy into this project, and have 
 I have been thrilled to find interesting properties in problems surrounding GI, and have had an equal number of frustrations in finding that my results had been previously discovered.
 
 I would like to thank Professor Storer for the initial bout of skepticism about this project, as it shaped this project and experience for the better.
+But I would also really like to thank him for the amount of advice and freedom that he has supported me with on this project.
 It has kept me on track to focus on my real goal for the semester, which was to learn and grow.
-I have learned advanced techniques in GPU calculation, proof techniques in abstract algebra, and research and documentation techniques.
+I have learned advanced techniques in GPU calculation, proof techniques in abstract algebra, and now some research and documentation techniques.
 My skill set has been broadened by a project which has deeply challenged me and always kept me on my toes.
 
-I would like to thank my advisor, the department, and my friends and family for all of the different kinds of support and encouragement that have brought me to successful completion of this project.
+I would like to thank my advisors, the department, and my friends and family for all of the different kinds of support and encouragement that have brought me to successful completion of this project.
 
 \chapter{Definitions and Syntax}
 
@@ -49,20 +76,39 @@ We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of 
 When we use $A$, it will not refer to a specific adjacency matrix, as most graphs can be represented by many matrices.
 
 We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$.
-Graphs have $N$ vertices and $M$ edges, and it is frequently used without clarification that $M \in [0, \frac{1}{2}(N)(N-1)]$.
+Graphs have $N$ vertices and $M$ edges where $N \in [0, \infty)$ and $M \in [0, E_{max}]$ where ${E_{max}} = \frac{1}{2}(N)(N-1)$.
 When discussing specific edges, tuples are symmetric: $(v_1, v_2) = (v_2, v_1)$.
 
 A graph's \emph{complement} is a new graph over the same set of vertices, but where adjacency and non-adjacency are inverted.
 In formal terms, the graph $H$ is $G$'s inverse if $V(H) = V(G)$ and $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$.
 
-\subsection{Representations, Labeling, Matrices}
+The complete graph over $N$ vertices is $K_N$. 
+The cycle graph over $N$ vertices is $C_N$.
+The star graph is $N$ vertices is $S_N$.
+
+\section{Labeling and Representing Graphs}
+
+A labeling of a graph is a bijection which maps each vertex of $V(G)$ to an integer in the range $[1, N]$.
+For every possible labeling of a graph, there is a natural adjacency matrix which represents it, namely the matrix where the $i$\ts{th} labeled vertex is represented by the $i$\ts{th} column and row of the matrix.
+The number of distinct labelings of a graph and the number of distinct matrices which represent that graph are equivalent.
+A graph can have as many as $V!$ labelings, or can have as few as $1$ (consider $K_N$).
+
 An important distinction in this report is on the \emph{representation} of graphs.
-Most graphs can be represented by distinct adjacency matrices, but changes to representation do not change the fundamental structure of the graph that the matrices represent.
-Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should factor into our algorithms.
-Throughout this report that when we discuss a set of graphs, or an algorithm over graphs, we will treat graphs as objects which denote structure, and will in every way be blind to their representation.
-Thus when we refer to a graph, we are referring to all of its representations.
-When we intend to discuss a graph within some physical reality of its representation (for example, when determining whether two given adjacency matrices refer to the same graph) we will use the term \emph{graph instance}.
-This is not a semantic choice, it has important implications (particularly around ideas of random graph models).
+Most graphs can be represented by several distinct adjacency matrices, but a change to representation does not change the fundamental structure of the graph that the matrices represent.
+Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should change the results of our algorithms.
+When we discuss a set of graphs, or an algorithm over graphs, we will be treating graphs as objects which denote structure, and will in every way be blind to their representation.
+When we refer to a graph, we are referring to all of its representations.
+When we intend to discuss a graph within some physical reality of its representation (for example, when determining whether two given adjacency matrices refer to the same graph) we will use the term \emph{graph instance} to denote that difference.
+This is an `algebraic' understanding of the structure of graphs, not a semantic choice. 
+It will have important implications throughout this report, particularly around ideas of random graph models.
+
+When we are discussing the set of all graphs as algebraic objects, we will use the notation $G_{Alg}$.
+When we are discussing the set of all graph instances, we will use the notation $G_{Inst}$.
+To start thinking critically about this distinction, always remember that:
+$$|G_{Alg}| <<< |G_{Inst}| = 2^{E_{max}}$$
+but since the number of representations of a given graph is limited by its number of labelings that:
+$$|G_{Alg}| * N! > | G_{Inst} | =  2^{E_{max}}$$
+
 
 \section{Graph Isomorphism and Automorphism}
 Two graph instances $G$ and $H$ are \emph{isomorphic} if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
@@ -81,7 +127,7 @@ Though it will be taken as granted, the set of all valid automorphisms for a gra
 This group has at least one element (the identity element as the identity isomorphism), but may have as many as $N!$ elements CITE.
 This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the \emph{followed by} operation.
 
-\subsection{Graph Invariants}
+\section{Graph Invariants}
 A \emph{graph invariant} is an ordered property calculated over a graph which remains the same irrespective of the representation or labeling of the graph.
 More specifically, an algorithm or property is a graph invariant only if it produces output which is stable across all instances of the same graph, and comparable in polynomial time.
 A graph invariant $Inv(G)$ can allow us to conclude that two graph instances $(G_1, G_2)$ are \emph{not} isomorphic if $Inv(G_1) \neq Inv(G_2)$.
@@ -99,11 +145,17 @@ $$P(Inv(G) = Inv(H) \wedge \neg Iso(G, H)) \, \leq \, \alpha$$
 What we will find is that we can frequently discuss alpha as a function of $M$ and $N$.
 Later in this report we will discuss how $\alpha$ fits in to a natural definition of a false positive an uncertain test without a false negative rate ($\beta = 0$).
 
+\section{Vertex Invariants}
+
 \subsection{Vertex Similarity}
 Two vertices are \emph{similar} if there exists a mapping in the automorphism group $Aut(G)$ such that the mapping maps one vertex to the other.
 Similarity is a transitive and commutative property.
 The vertex set $V(G)$ can be divided up into between 1 and N similar vertex sets, such that all of the vertices in each set are similar, and no two sets contains similar vertices.
 A discussion of these \emph{similar vertex sets} (or SVSs) will be the primary focus of chapter four.
+
+A graph (or subset of the vertices of a graph) is called \emph{perfectly similar} or \emph{perfectly automorphic} if, for every pair of vertices, there exists an automorphic mapping which maps one of the vertices to the other.
+This is not suggesting that every mapping of the graph is an automorphism (as is only the case in $K_n$ and $\xoverline{K_n}$), but rather that any initial choice of pairing within a mapping is valid, even if it limits all further choices.
+For example, $C_n$ is a perfectly similar graph, as is Peterson's graph CITE.
 
 \subsection{Vertex Invariants}
 \emph{Vertex invariants} are numerical properties that we  calculate over a specific vertex within a graph which identifies potentially similar vertex pairs.
@@ -112,87 +164,139 @@ However, like graph invariants, vertex invariants can only eliminate the possibi
 
 Vertex invariants make the computation of graph isomorphism between two graphs markedly easier. 
 Whereas a graph invariant can tell us about whether or not graph instances as a whole might be alike, it does nothing to suggest a proposed mapping between the vertices of the two graph instances.
-In contrast, a vertex invariant identifies potentially similar vertices not only within a graph, but also between two graphs.
+In contrast, a vertex invariant identifies potentially similar vertices not only within a graph, but also between graph instances.
 A \emph{perfect} vertex invariant is one for which agreement on the value of the invariant is equivalent to establishing the existence of an automorphism that maps one vertex to the other.
 
-A question discussed later in this report will be about the theoretical implications of a hypothetical perfectly discriminatory vertex invariant, and a couple of ideas that might suggest idealized invariants.
+A question discussed later in this report will be about the theoretical implications of a hypothetical perfectly discriminatory vertex invariant, and a couple of proposed invariants that haven't been found to be imperfect.
 
 \section{Cycles Invariant}
 The focus of this report is an invariant which can function as an invariant over graphs or their vertices.
-It is called the 'Cycles' invariant, but is sometimes referred to as the 'Paths' Invariant in cases where cycle has other connotations.
-In either case, we will consistently capitalize to distinguish the invariant from the other denotations.
+It is called the `Cycles' invariant, but is sometimes referred to as the `Paths' Invariant in cases where cycle has other connotations.
+In either case, we will consistently capitalize to distinguish the invariant from its other denotations.
+
+Cycles are allowed to repeat vertices and edges, and can pass back through their place of origin.
+We are counting cycles which are directional, so $ABCA$ and $ACBA$ are distinct cycles.
+
+Note that cycles (as a function and vertex invariant) is a property of a graph instance, only through sorting can we make it into a graph invariant.
+
+\subsection{Cycles as a Function}
+
+The $Cycles(A, p, v)$ invariant counts the number of closed paths of length $p$ that pass through a given vertex, $v$. 
+This information can be easily computed using $A$. 
+Just as the entries of $A^1$ represent the existence of paths of length 1 between two vertices (edges), the entries of $A^p$ represent the number of paths of length $p$ between any two vertices (by examining the row and column corresponding to two vertices).
+Thus, to find the number of closed paths of length $p$ that contain a given vertex $v$, we simply need to calculate: 
+$$Cycles(A, p, v) = A^p[v, v]$$
+Where $v$ is being used interchangeably here with its represented position within the adjacency matrix. 
+Thus, calculating a specific value of $Cycles(A, p, v)$ can occur in the time it takes to exponentiate $A$ to the power $p$.
+
+Though it is a well known result that matrix multiplication can be done in faster than $O(n^3)$ time, we will be using the na\"{i}ve TODO assumption that matrix multiplication runs in $O(n^3)$ in order to make the computational complexity calculations more accessible.  
+Under that simplifying assumption, it is clear that calculating $Cycles(A, p, v)$ will occur in $O(pv^3)$ time, but we can request as many values of $v$ and $p_i < p$ `for free' after a single calculation for $A$ and $p$.
+
+\subsection{Cycles as a Vertex Invariant}
 
 Cycles as a vertex invariant describes a vector of length $P$, where the $p$th entry is the number of closed cycles of length $p$ which pass through the vertex being described.
-Cycles are allowed to repeat vertices and edges, and can pass back through their place of origin.
-We are counting cycles which are directional, so $ABCA$ and $ACBA$ are distinct cycles. 
 
-If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of $$Paths(G, v_i, p) = A^p(i,i)$$
+If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of 
+$$Cycles(A, v_i) = [c_1, c_2, ... c_n] , c_p = Cycles(A, v_i, p) = A^p[i,i]$$
 for each of the values of $p$, forming a vector of length $P$.
 
 The vector generated by this computation is a way of describing the local graph around the vertex $v_i$.
-We can consider many ways in which paths reflects a 'reverberation' about the local neighborhood of a vertex, and provides a noisy invariant, which is useful for distinguishing purposes. 
+We can consider many ways in which Cycles reflects a 'reverberation' about the local neighborhood of a vertex, and provides a noisy invariant, which is useful for distinguishing purposes. 
 It will be discussed why later, but we will prove that $P$ will always be strictly less than $N$, and that further values of computation are not useful.
 
-Extending this vertex invariant to a graph invariant requires no imagination. 
-We simply calculate the paths vertex invariant for every one of the vertices of the graph, and are given back $N$ vectors of length $P$.
+\subsection{Cycles as a Graph Invariant}
+
+Extending this vertex invariant to be a graph invariant requires little imagination. 
+We simply calculate the Cycles vertex invariant for every one of the vertices of the graph, and are given back $N$ vectors of length $P$.
 We then sort the resultant vectors lexicographically, and arrange them in a $NxP$ matrix.
 This matrix is a comparable object which is invariant to changes in labeling or representation of $G$.
 
-DEPRECATED
+Thus, paths as a graph invariant takes fewer inputs: Cycles(A, P).
 
-The \(Paths(p, v)\) function counts the number of closed paths that pass through a given vertex, \(v\). 
-This information can be easily computed using \(A\). Just as the entries of \(A^1\) represent the existence of paths of length 1 between two vertices (edges), the entries of \(A^p\) represent the number of paths of length \(p\) between any two vertices (by examining the row and column corresponding to two vertices). Thus, to find the number of closed paths of length \(p\) that contain a given vertex \(v\), we simply need to calculate: \[Paths(p, v) = A^p[v, v]\]Where \(v\) is being used interchangeably here with its represented position within the adjacency matrix. Thus, calculating a specific value of \(Paths(p, v)\) can occur in the time it takes to exponentiate \(A\) to the power \(p\).  Though it is a well known result that matrix multiplication can be done in faster than \(O(n^3)\) time, we will be using the naÔve assumption that matrix multiplication runs in \(O(n^3)\) in order to make the computational complexity calculations more accessible.  Under that assumption, it is clear that calculating \(Paths(p, v)\) will occur in \(O(pv^3)\) time.  Thus, as long as we request a polynomial number of values from \(Paths(p, v)\), any algorithm derived from \(Paths\) is in P. Thus we can consider this invariant one in the traditional vein of looking for polynomial invariants with the broad aim of solving and approximating GI in polynomial time, though we have already established that it does not uniquely determine isomorphism.
+Since vectors are comparable in linear time, we can sort them in log-quadratic time.
+This does not change the asymptotic nature of our running time.
 
-END DEPRECATED 
-
-\subsection{Expansion to a Paths Object}
-
-Since \(Paths(p, v)\) is a function that operates over a vertex, we will be examining a slightly modified version of the function which operates over a graph: \(Paths(P, G)\).  \(Paths(P, G)\) produces a graph invariant that is related to its vertex invariant function by a simple translation.  \(Paths(p, v)\) is calculated for all \(v\in G, p \leq P\), resulting in \(v\) vectors, each of which has \(P\) elements, representing the paths function when calculated at that node for each successive value of \(p\). Since vectors are comparable in linear time, we can sort them in log-quadratic time, and return back a list of these vectors as a graph invariant, one that is computable in polynomial time and invariant to changes in vertex relabeling or adjacency matrix ordering. A skeptical reader should convince themselves that this holds true, even when two of the vectors to be sorted are identical, the resulting \(Paths\) object is valid and deterministically constructed from the graph.  The specific running time of calculating and comparing the \(Paths\) functions and object is not the primary aim of this report, but there are clever methodologies that I have used to reduce the running time beyond these naive estimates, primarily for advancements in computational limits, not its theoretical pursuit.
-
-
+Cycles(A, P) is invariant to changes in vertex relabeling or adjacency matrix ordering.
+A skeptical reader should convince themselves that this holds true, even when two of the vectors to be sorted are identical, the resulting $Paths$ object is valid and deterministically constructed from the graph.
+The specific running time of calculating and comparing the $Cycles$ functions and object is not the primary aim of this report, but there are clever methodologies that I have used to reduce the running time beyond these na\"{i}ve estimates, primarily for advancements in computational limits, by using delayed evaluation and multi-threaded comparison.
 
 \subsection{Invertibility}
 Note that if two graphs agree on the paths invariant, their complements (or inverses) also agree on the paths function.
-This is easily observed through the knowledge that two graphs are isomorphic if and only if their complement graphs are isomorphic.
+This is because TODO.
 
-WAIT COPATHS GRAPHS THIS COULD BE FUCKING HUGE
-TODO !!! PATHS + INVERSE(PATHS) != PATHS(K)
-IS THIS FUCKING TRUE?!?!
-
-\subsection{Running Time}
+\subsection{Time Complexity}
 The running time of the paths invariant is the same whether we treat it as a vertex invariant or as a graph invariant.
 The one difference is whether or not we sort the resulting vectors.
 It is imperative to calculate $A^P$ even if we are only interested in calculating it for a single vertex.
-Matrix multiplication can generally be accomplished in sub-cubic time, but for the sake of simplicity and comprehensibility within this paper we will assuem that it is an algorithm that runs in $O(N^3)$  time.
-This means that the computation of any paths invariant can be accomplished in $O(n^4)$ time.
+Matrix multiplication can generally be accomplished in sub-cubic time CITE, but for the sake of simplicity and comprehensibility within this paper we will assume that it is an algorithm that runs in $O(N^3)$  time.
+This means that the computation of any paths invariant can be accomplished in $O(N^4)$ time.
 Though this sounds like a lot of time, generally, this is a quick computation.
 This is made asymptotically better by the fact that efficient algorithms for matrix multiplication are well studied and optimized for a variety of contexts.
 In a modern context, matrix multiplication can be done efficiently by GPU arrays, and there are quick ways to do multiplication on sparse matrices.
 
-\subsection{Dealing with Large Numbers}
+\subsection{Operating over Large Numbers}
 One element of the Cycles invariant that we will consistently need to be cognizant of is the fact that our numbers will grow very quickly, particularly for large values of N.
-In the worst case, the largest value in the Paths invariant will occur when we have a fully connected graph of size N.
-The largest value will be TODO as can be quickly shown via TODO.
+This complicates the calculation of cycles for values as small as $N=10$ CITE.
+Overflows occur when the summed value of the elements in the dot product add to a number greater than $2^32$.
+We can avoid this overflow if we guarantee that each of the $N$ pieces of the summation are less than or equal to $2^{\floor{32 - \log_2(N)}}$.
+Since we arrive at each element in this dot-product-summation via the product of two elements that were previously somewhere in our running matrix, we can avoid an overflow in a computation step if we have:
 
-We can avoid most of the problems associated with this by simply performing regular modulo operations by a large value of $2^K$.
-This preserves thee properties of addition and composition that we are looking for, but does us th favor of maintaining reasonable sized bit arrays.
-If we break every number into two parts, one divisible by a large power, we can see that any means TODO.
+$$ \forall_{i, j \in [1, N]} A[i, j] <= \sqrt{2^{\floor{32 - \log_2(N)}}} = 2^{\floor{16 - 0.5\log_2(N)}}$$
 
-\subsection{Asymptotic Bit Growth}
-Though the above simplification can certainly allow us to do our computations in a way that is likely to avoid collisions, if we are discussing properties of the invariant as a whole, it is not acceptable to ignore the possibility of collisions.
-Thus, when we discuss the cycles invariant within the context of theory, we need to prove that computation of it can be done in linear space.
-Otherwise, the polynomial aspect of this computation could be misleading away from a gross inefficency in space that masks the the true tosts and limiting factors of the computation.
+We can make sure that this equality holds if we establish $K = \floor{16 - 0.5\log_2(N)}$ and make the incorporation of modulo into our formula for the Cycles function explicit:
 
-Proving that the number of bits that the paths function takes is actually not too difficult.
-TODO Waiting on invertability
+$$ Cycles(A, v_i, p) = \begin{cases} 
+      A[i,i] & p = 1 \\
+      (Cycles(A, v_i, p-1) * A) \; \% \; 2^K  & p > 1
+\end{cases}$$
 
-\section{Reconstructability, Determined, Representation}
+This preserves the properties of addition and composition that we are looking for, and maintains reasonably sized bit arrays.
+If we examine this methodology, we see that this operation is stable (if A and B map to the same value, they still will in this system) and that the odds of `collisions' (where values of A and B differ in the old system, and are the same in the new system) are unlikely.
+
+The first claim is verified through the fact that if we break any integer $z_i$ into the portion of it divisible by $2^K$ ($x_i$), and the piece that is the remainder ($y_i$), then our properties of multiplication and addition hold under the modulo transformation (denoted $T_K(z_i)$) is stable/consistent:
+
+$$z_i =  x_i(2^K) + y_i , \;\;\;T_K(z_i) = y_i$$
+
+$$z_i + z_j = (x_i + x_j)(2^K) + (y_i + y_j)$$
+$$T_K(z_i + z_j) = 0 + T_K(y_i + y_j)$$
+
+$$z_i * z_j = (x_i*x_j)2^{2K} + (x_i*y_j + x_j*y_i)2^K + (y_i * y_j)$$
+$$T_K(z_i * z_j) = 0 + 0 + T_K(y_i * y_j)$$
+
+The second claim is verified through a thought experiment about how cycles varies over multiple values of $p$.
+If we are attempting to distinguish between to cycles vectors, the most obvious comparison would be the degree of the vertices (the second element of a cycles vector).
+If two vertices don't agree on this value, we have distinguished them successfully, and any future point of overlap (or collision) is irrelevant. 
+If they agree on this value, then we know that each will have some minimum number of paths for any even value of p (as we know enough about their local neighborhood to assume the star graph as a minimum). 
+If they later agree on a value for the cycles function, we know that CITE.
+
+\subsection{Space Complexity}
+Though the above simplification can certainly allow us to do our computations in a way that is likely to avoid collisions, if we are discussing properties of the invariant as a whole, our analysis ignores the nature of collisions.
+Thus, if we are attempting to draw conclusions about the algorithm from a theoretical perspective, we need to assume that we are fully calculating the cycles invariant without the use of the modulo trick.
+This means that we need to prove that computation of it can be done in polynomial space.
+Otherwise, the polynomial aspect of this computation could be misleading away from a gross inefficiency in space that masks the the true costs and limitation of the computation.
+For example, there is a cute algorithm [CITE] that I designed, which solves the boolean satisfiability problem (an NPC-problem) in linear time, using only addition, multiplication and bitwise operations, but uses exponential space to do it. 
+The flaw in this kind of algorithm is that it exploits a simplification that we make in algorithmic theory: we don't consider the time complexity on a bit-by-bit basis.
+With large enough numbers, algebraic operations are not constant, they are linear functions of the number of their bits.
+Infinitely sized registers are an abstraction of well designed systems, but cannot exist.
+Thus it is important for us to verify that the calculation of the cycles invariant uses a polynomial amount of space.
+
+In the worst case, the largest value in the Cycles invariant will occur when we have a fully connected graph of size N.
+In a fully connected graph, any sequence of vertices that does not put the same vertex adjacent to itself is a valid cycle.
+Thus, for a length $l$, there are exactly $(N-1)^l$ valid paths, of which exactly $(N-1)^{(l-1)}$ of which start and end at the same location (and thus are cycles).
+
+If we assume that the maximum length cycle we are interested in is of length N-1 (as is discussed in another chapter), then the number bits required to express an individual number within the Cycles matrix is at maximum:
+$$ O(Bits(N)) = \log_2 (N-1)^{N-1} = (N - 1) \log_2 (N-1) = O(N \log N)$$
+Thus the total number of bits required to fully represent a Cycles matrix is bounded by $O(N^3logN)$, a large upper bound, but certainly sub-exponential.
+
+\section{Reconstructability, Determination, Representation}
 Many of the graph theoretic discussions of the cycles invariant will describe it with respect to other invariants. We have some language to assist these comparisons.
-We will say that a property of a graph is 'reconstructable' from Cycles if we can calculate the property if we are given the Cycles invariant for the graph.
-Similarly, a property is determined by Cycles if a set value of cycles allows only zero or one value for the property in question.
-Reconstruct-ability and determinability differ only in that reconstruct-ability describes a procedure for the conversion, while determinability only claims a valid mapping, and doesn't suggest a mechansim for its computation.
+We will say that a property of a graph is `reconstructable' from Cycles if we can construct a valid value for the property if we are given the Cycles invariant of the graph.
+Similarly, a property is determined by Cycles if a set value of the invariant allows only zero or one values for the property in question.
+Reconstructability and determinability differ only in that reconstructability describes a procedure for the conversion, but doesn't guarantee a unique result, while determinability demands that a value for Cycles uniquely determines the property in question, but doesn't require us to show a technique by which to perform the determination.
 
-Finally, we will talk about the number of distinct matrices that describe isomorphic graphs as being the 'number of representations' of the graph, or $Reps(G)$.
+Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{Reps}(G)$.
+
+We will also frequently discuss two sets
 
 TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted rows/columns of AI???
 
@@ -226,42 +330,42 @@ More generally, the larger the 'neighbors-paths' supplemental information we req
 However, this is a powerful observation, and fits into a conception of a 'neighbors aware mechanism'. A formal discussion of such mechanism sis discussed in TODO.
 
 \subsection{Chromatic Polynomial}
-One of the most discriminatory polynomial time algorithms for ruling out graph isomorphism is the \emph{Chromatic Polynomial} of the graph's adjacency matrix \(A\).
+One of the most discriminatory polynomial time algorithms for ruling out graph isomorphism is the \emph{Chromatic Polynomial} of the graph's adjacency matrix $A$.
 It is a well proven result that shuffling the order of the vertices in the representation of a given graph as an adjacency matrix does not change the eigenvalues of the matrix (thus the eigenvalues, as a multiset, form a powerfully discriminatory graph invariant), and thus the chromatic polynomial (as it encodes all information from this multiset) is also a graph invariant.
 In practice, it is a highly discerning as a graph invariant, as a very small proportion of graphs are "cospectral" (having the same chromatic polynomial) and not isomorphic.
 However, there are not well established procedures to use the results of eigenvalue calculations to attempt to explicitly construct an isomorphism, rather, it is powerful in ruling out hypothetical isomorphisms. 
 
-In seeking out a relationship between the chromatic polynomial and the \(Paths\) function, it helps to remember the helpful property of  eigenvalues:
-\[E(A) = \{\lambda_1,\lambda_2,\lambda_3, \dots, \lambda_V\} \rightarrow E(A^P) = \{\lambda_1^P,\lambda_2^P,\lambda_3^P, \dots, \lambda_V^P\} \]
+In seeking out a relationship between the chromatic polynomial and the $Paths$ function, it helps to remember the helpful property of  eigenvalues:
+$$E(A) = \{\lambda_1,\lambda_2,\lambda_3, \dots, \lambda_V\} \rightarrow E(A^P) = \{\lambda_1^P,\lambda_2^P,\lambda_3^P, \dots, \lambda_V^P\} $$
 Additionally, since we know that our original matrix A is diagonalizable, positive, and symmetric, we know that all of the eigenvalues are real and non-negative. 
 Finally, we know that the sum of the diagonal of any matrix is the sum of its eigenvectors. 
-Thus, using the \(Paths\) function to determine the entries of the diagonal, we know that for any adjacency matrix A,
-\[\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_V = \sum_{i = 0}^{V}{Paths(1, i)}\]
-Or more generally (leveraging our knowledge about the eigenvalues of \(A^P\):
-\[ \sum_{i = 0}^V{\lambda_i^P} =  \sum_{i = 0}^{V}{Paths(P, i)}\]
-This means that we can create V nonparallel (as not divisible in the ring \(R[x]\)) equations, each containing \(\lambda_1\) to \(\lambda_V\) as variables.
-Additionally, since we have the guarantee that our eigenvalues are all non-negative, we know that we can assuredly solve any given equation in terms of one of the \(\lambda\)'s.
+Thus, using the $Paths$ function to determine the entries of the diagonal, we know that for any adjacency matrix A,
+$$\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_V = \sum_{i = 0}^{V}{Paths(1, i)}$$
+Or more generally (leveraging our knowledge about the eigenvalues of $A^P$:
+$$ \sum_{i = 0}^V{\lambda_i^P} =  \sum_{i = 0}^{V}{Paths(P, i)}$$
+This means that we can create V nonparallel (as not divisible in the ring $R[x]$) equations, each containing $\lambda_1$ to $\lambda_V$ as variables.
+Additionally, since we have the guarantee that our eigenvalues are all non-negative, we know that we can assuredly solve any given equation in terms of one of the $\lambda$'s.
 If we then use these substitutions, and substitute out all but one of the variables, what we will get is a continuous function whose zeros are well defined and positive. 
 
 Given the aggregated substitution, each one of the zeros is an eigenvalue, assign a selected value to any unassigned eigenvalue, and reduce our equations using that assumed value (think of a let statment).
 This kind of procedure is necessary because our system of equations has variables whose relationships are inherently non-distinct.
-In other words, we cannot make any differentiation between \(\lambda_1\) and \(\lambda_2\) based on the relationships of the equations, but if we make a choice for either, it will lead to a valid conclusion.
+In other words, we cannot make any differentiation between $\lambda_1$ and $\lambda_2$ based on the relationships of the equations, but if we make a choice for either, it will lead to a valid conclusion.
 This is by virtue of the fact that our substitutions are without condition, and we don't need to worry about any domains of substitution.
 
 From a physical perspective, these equations can be described as surfaces in V dimensions, whose intersection we are interested in isolating for. 
-Graphing the equation \(x^3 + y^3 + z^3 = \kappa_3\) yields an interesting quasi planar sheet which becomes highly regular at large scales.  
-The equation \(x^2 + y^2 + z^2 = \kappa_2\) describes a sphere with the radius \(\sqrt{\kappa_2}\), and the equation \(x + y + z = \kappa_1\) describes a plane. 
+Graphing the equation $x^3 + y^3 + z^3 = \kappa_3$ yields an interesting quasi planar sheet which becomes highly regular at large scales.  
+The equation $x^2 + y^2 + z^2 = \kappa_2$ describes a sphere with the radius $\sqrt{\kappa_2}$, and the equation $x + y + z = \kappa_1$ describes a plane. 
 Each of these functions is axis symmetric, so their intersections are also axis symmetric.  
 The intersection of all of the equations yields a set of points (or none), which represent the potential values for our lambda's, which are axis invariant. 
 We can generalize this to any number of requisite dimensions using the principle of equation and variable symmetry that these equations necessarily produce.
 
-Thus, given the function \(Paths(p, v)\), we could calculate the eigenvalues of the matrix A using \(Paths(p, v)\) restricted to \(1 <= p <= V\). 
-This is superb, as it shows that the \(Paths\) function encodes at least as much information as the chromatic polynomial, and that any graphs which produce the same \(Paths\) function up to (p = V) are cospectral. 
-A quick verification of the base non-isomorphic cospectral graphs (the butterfly and the box) show that they produce \emph{different} values of the paths function, showing that the \(Paths\) function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time. 
-Also helpful: while cospectral tests might rule out isomorphisms instead of providing a mechanism for their potential generation, the Paths function suggests the isomorphism that it believes to exist with a natural sorting and comparison of the vectors within the \(Paths\) object.
+Thus, given the function $Paths(p, v)$, we could calculate the eigenvalues of the matrix A using $Paths(p, v)$ restricted to $1 <= p <= V$. 
+This is superb, as it shows that the $Paths$ function encodes at least as much information as the chromatic polynomial, and that any graphs which produce the same $Paths$ function up to (p = V) are cospectral. 
+A quick verification of the base non-isomorphic cospectral graphs (the butterfly and the box) show that they produce \emph{different} values of the paths function, showing that the $Paths$ function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time. 
+Also helpful: while cospectral tests might rule out isomorphisms instead of providing a mechanism for their potential generation, the Paths function suggests the isomorphism that it believes to exist with a natural sorting and comparison of the vectors within the $Paths$ object.
 
 \subsection{Reconstructing a Valid Graph from Paths}
-If we are given full access to the \(Paths\) function, could we create a graph that would produce that function?
+If we are given full access to the $Paths$ function, could we create a graph that would produce that function?
 Note that this question is fundamentally distinct from the one which asks if we could reconstruct the \emph{only} graph that could generate that Graph Function.
 That is a separate question, equivalent to the question of if GI = P, but the question posed is signifigantly more general, and does not decide or influence the question of computational complexity of GI.
 
@@ -274,76 +378,76 @@ Before we begin, lets examine three important points:
 \begin{itemize}
   \item{
   	Our reconstruction algorithm is going to run in exponential time, and \emph{that is okay}.  
-  	We have already demonstrated that our invariant, the \(Paths\) function, is calculable in polynomial time.  
-  	The fact that we can reconstruct a valid graph from the paths function is about exploring or debunking the invertible nature of the \(Paths\) object, 
+  	We have already demonstrated that our invariant, the $Paths$ function, is calculable in polynomial time.  
+  	The fact that we can reconstruct a valid graph from the paths function is about exploring or debunking the invertible nature of the $Paths$ object, 
   	and the time it takes to perform an inverse of our operation tells us nothing about the computational complexity of that operation.
   }
   \item{
-  	The equations in this section for all but the most trivial of graphs take up an \(enormous\) amount of space, and as such, it is not recommended that this reconstruction technique be used in practice.  
+  	The equations in this section for all but the most trivial of graphs take up an $enormous$ amount of space, and as such, it is not recommended that this reconstruction technique be used in practice.  
   	Realistically, a brute force search would likely yield faster running-solutions (if one were trying to find a graph fitting the paths function), but the reader should try to convince themselves that this approach would terminate, 
-  	and would yield a valid solution, given a valid \(Paths\) object.
+  	and would yield a valid solution, given a valid $Paths$ object.
   }
 \end{itemize}
 
-We know that the diagonals of \(A^p\) yield the \(Paths\) function.
-We also know that A is comprised of \((v * (v - 1)) / 2\) boolean variables, and all entries of \(A^p\) must be some combination of the variables in the original adjacency matrix. 
-We will refer to these variables as the \(x_i\)'s. Generally, we will arrange them in the row primary pattern, and will number them starting at 1.
+We know that the diagonals of $A^p$ yield the $Paths$ function.
+We also know that A is comprised of $(v * (v - 1)) / 2$ boolean variables, and all entries of $A^p$ must be some combination of the variables in the original adjacency matrix. 
+We will refer to these variables as the $x_i$'s. Generally, we will arrange them in the row primary pattern, and will number them starting at 1.
 
-The \(x_i\)'s also have the helpful property that \(\forall k \geq 1,\, x_i^k = x_i \). 
-This stems from the fact that each one of the \(x_i\)'s is either zero or one, the two solutions to this identity.  
+The $x_i$'s also have the helpful property that $\forall k \geq 1,\, x_i^k = x_i $. 
+This stems from the fact that each one of the $x_i$'s is either zero or one, the two solutions to this identity.  
 This allows us to reduce any polynomial degree in our resulting equations down to one, though multivariate linear terms may remain.
 
 I have been discussing these `equations' quite a bit; lets formally define them.  
-We assume that we are given the \(Paths\) function for a graph, and we will call \(Paths(p, v) = k_{p, v}\) to simplify our work. 
-In each equation, we will set the paths function for a specific \(v\) and \(p\) equal to the symbolic representation of the exponentiated adjacency matrix (which will solely be in terms expressed by the \(x_i\)'s).
-We will refer to this specific equation as Equation p.v for \(v\) in the range \([1, V]\) and \(p\) in the range \([1, \infty)\).
-For each \(v\) and \(p\) in their respective ranges, our equation p.v is:
+We assume that we are given the $Paths$ function for a graph, and we will call $Paths(p, v) = k_{p, v}$ to simplify our work. 
+In each equation, we will set the paths function for a specific $v$ and $p$ equal to the symbolic representation of the exponentiated adjacency matrix (which will solely be in terms expressed by the $x_i$'s).
+We will refer to this specific equation as Equation p.v for $v$ in the range $[1, V]$ and $p$ in the range $[1, \infty)$.
+For each $v$ and $p$ in their respective ranges, our equation p.v is:
 
-\[k_{p, v} = A^p[v,v]\]
+$$k_{p, v} = A^p[v,v]$$
 
 Some example Equations are shown below for a five node graph (2.1, 3.1, 4.1). 
 Note the rapid expansion in the number and complexity of the terms.  
 Also note that we don't need any polynomials over one variable, so we have collapsed them down to their reduced terms.
 
-\[k_{2,1} = x_1 + x_2 + x_3 + x_4\]
+$$k_{2,1} = x_1 + x_2 + x_3 + x_4$$
 
-\[k_{3,1} = 2x_1x_2x_5 + 2x_1x_3x_6 + 2x_1x_4x_7 + 2x_2x_3x_8 + 2x_2x_4x_9 + 2x_3x_4x_{10}\]
+$$k_{3,1} = 2x_1x_2x_5 + 2x_1x_3x_6 + 2x_1x_4x_7 + 2x_2x_3x_8 + 2x_2x_4x_9 + 2x_3x_4x_{10}$$
 
 \begin{equation}\begin{aligned} k_{4,1} = x_1 + x_2 + x_3 + x_4 + 2x_1x_2 + 2x_1x_3 + 2x_1x_4 + 2x_2x_3 + x_1x_5 + 2x_2x_4 + x_1x_6 + x_2x_5 \\ + 2x_3x_4 + x_1x_7 + x_3x_6 + x_2x_8 + x_2x_9 + x_3x_8 + x_4x_7 + x_3x_{10} + x_4x_9 + x_4x_{10} \\ + 2x_2x_3x_5x_6 + 2x_1x_2x_6x_8 + 2x_1x_3x_5x_8 + 2x_2x_4x_5x_7 + 2x_1x_2x_7x_9 + 2x_1x_4x_5x_9 \\+ 2x_3x_4x_6x_7 + 2x_1x_3x_7x_{10} + 2x_1x_4x_6x_{10} + 2x_2x_3x_9x_{10} + 2x_2x_4x_8x_{10} + 2x_3x_4x_8x_9 \end{aligned}\end{equation}
 
 An interesting aspect of these equations actually has a cool natural cause.  
 Notice that in equation 2.1 and equation 4.1, both have linear terms of four variables.  
 (Those happen to be the four variables in the row that we chose, row 1, but if we chose row 4, we would have gotten the variables in that row). 
-A nice property that arises out of these linear variables is that if we were to solve for the variable \(x_1\) from equation 4.1, we would get an expression with the following denominator: 
-\[2x_2 + 2x_3 + 2x_4 + x_5 + x_6 + x_7 + 2x_2x_6x_8 + 2x_3x_5x_8 + 2x_2x_7x_9 + 2x_4x_5x_9 + 2x_3x_7x_{10} + 2x_4x_6x_{10} + 1\]
-This is of particular interest, because we know that each one of the terms in this statement has to be positive, as \(\forall i \in v,  x_i \in \{0, 1\}\).  
-Thus, there is no possible valid input of \(x_i\)'s which results in this denominator being zero, and our substitution is thus universally valid.  
+A nice property that arises out of these linear variables is that if we were to solve for the variable $x_1$ from equation 4.1, we would get an expression with the following denominator: 
+$$2x_2 + 2x_3 + 2x_4 + x_5 + x_6 + x_7 + 2x_2x_6x_8 + 2x_3x_5x_8 + 2x_2x_7x_9 + 2x_4x_5x_9 + 2x_3x_7x_{10} + 2x_4x_6x_{10} + 1$$
+This is of particular interest, because we know that each one of the terms in this statement has to be positive, as $\forall i \in v,  x_i \in \{0, 1\}$.  
+Thus, there is no possible valid input of $x_i$'s which results in this denominator being zero, and our substitution is thus universally valid.  
 That is really important because it means that we might be able to do the same thing for other variables, and potentially come up with a system of equations that fully describes the interactions of the vertices within our graph. 
-Thus such a system could uniquely determine each of the \(x_i\)'s, the graph could be determined by \(Paths\), but what what we find instead is that \(a\) reconstruction exists, but it is also possible that the reconstruction is not unique.
+Thus such a system could uniquely determine each of the $x_i$'s, the graph could be determined by $Paths$, but what what we find instead is that $a$ reconstruction exists, but it is also possible that the reconstruction is not unique.
 
 Lets explore this notion further.  
 Lets say that we have an equation that describes the interactions of the binary relations in such a way that we can express the equality for of the variable 
-\(x_i\) solely in terms of the other variables such that \[x_i = \frac{N}{D + z}\] Where \(z\) is an integer, \(z \geq 1\), and \(N\) and \(D\) 
+$x_i$ solely in terms of the other variables such that $$x_i = \frac{N}{D + z}$$ Where $z$ is an integer, $z \geq 1$, and $N$ and $D$ 
 can be any number of positive expressions that are comprised of terms of the addition and multiplication of variables in the set 
-\(\{x_1, \dots,  x_{i-1},x_{i+1}, \dots, x_{(v(v-1))/2}\}\).  Since we know that \(x_i \in {0,1}\), we know that any positive term comprised of the multiplication and addition of these variables must be greater than or equal to zero.  
-Thus, we know the denominator of the equation for \(x_i\) must be greater than or equal to one (\(D + z \geq 1\)). 
-This is a helpful result, as it means that our substitution is valid, and we know that the equality holds, because our division of both sides by \(D + z\) 
-does not risk dividing by zero.  We will call this a \emph{valid substitution} for \(x_i\) over the equation for which it is generated (e.g. Equation 2.5). 
+$\{x_1, \dots,  x_{i-1},x_{i+1}, \dots, x_{(v(v-1))/2}\}$.  Since we know that $x_i \in {0,1}$, we know that any positive term comprised of the multiplication and addition of these variables must be greater than or equal to zero.  
+Thus, we know the denominator of the equation for $x_i$ must be greater than or equal to one ($D + z \geq 1$). 
+This is a helpful result, as it means that our substitution is valid, and we know that the equality holds, because our division of both sides by $D + z$ 
+does not risk dividing by zero.  We will call this a \emph{valid substitution} for $x_i$ over the equation for which it is generated (e.g. Equation 2.5). 
 
 It turns out that there is a clever way to use a \emph{valid substitution} to construct a graph which would generate the paths functions that generated the equations which generated the valid substitutions.
 Since we know that the denominator of a valid substitution is non-zero, we know the substitution is valid.  
 We also happen to know that the variable we are solving for is either equal to zero or one.  
-Thus, if the numerator (\(N\)) of our substitution is equal to zero, then we know that \(x_i\) is equal to zero.  
-Otherwise, we know that \(x_i\) must be equal to one (for all other values are not in its domain). 
+Thus, if the numerator ($N$) of our substitution is equal to zero, then we know that $x_i$ is equal to zero.  
+Otherwise, we know that $x_i$ must be equal to one (for all other values are not in its domain). 
 If we allow ourselves to do an informal conversion to predicate logic, we can transform an equation of the form:
- \[x_i = \frac{N}{D + z}\] 
- \[(x_i = 0) \; \text{iff} \; (N = 0)\]
- \[\neg(x_i) \; \text{iff} \; (N = 0)\]
- \[x_i  \leftrightarrow  \neg(N = 0)\]
-Expressing that \(N\), a summation of terms over the \(x_i\)'s, is equal to zero, is actually quite a simple construct. 
+ $$x_i = \frac{N}{D + z}$$ 
+ $$(x_i = 0) \; \text{iff} \; (N = 0)$$
+ $$\neg(x_i) \; \text{iff} \; (N = 0)$$
+ $$x_i  \leftrightarrow  \neg(N = 0)$$
+Expressing that $N$, a summation of terms over the $x_i$'s, is equal to zero, is actually quite a simple construct. 
 We imagine that each of the terms in N has a positive, integer valued weight that corresponds to its coefficient. 
-If \(N\) contains any integer valued negatives (which it does in real applications), we will call this the \(target\).
-Given this (and the terms and their weights as corresponding lists), we can generate a simple procedure for generating a boolean statement that encodes the information that our equation does when \(N\) is set to zero.
+If $N$ contains any integer valued negatives (which it does in real applications), we will call this the $target$.
+Given this (and the terms and their weights as corresponding lists), we can generate a simple procedure for generating a boolean statement that encodes the information that our equation does when $N$ is set to zero.
 
 \begin{lstlisting}[frame=single]
 exactlyKTrue(clauses, weights, target):
@@ -357,8 +461,7 @@ exactlyKTrue(clauses, weights, target):
 	return (clause & caseT) | (!clause & caseF))
 \end{lstlisting}
 
-Though this code doesn't totally cover all edge cases, it should convince the reader that there is an appropriate transform between \(N\) and a boolean expression of the \(x_i\)'s which maintains domain validity across substitutions.
-
+Though this code doesn't totally cover all edge cases, it should convince the reader that there is an appropriate transform between $N$ and a boolean expression of the $x_i$'s which maintains domain validity across substitutions.
 
 \section{Other Forms of Reconstructability}
 \subsection{EA Reconstructability}
@@ -378,8 +481,7 @@ An invariant is `worse' the more time it takes to compute.
 
 [COMPUTATIONAL RESULTS HERE] 
 
-
-\section{Discrimination  on Tough Graph Classes}
+\section{Discrimination on Tough Graph Classes}
 \subsection{Background}
 Any algorithm or methodology we create needs to be verified in the same terms that precursors have used to verify themselves.
 One way to do this is to examine the performance of tasks (such as canonical labeling and isomorphism testing) on the same classes of graphs that established renditions of those algorithms have used to push their performance.
@@ -620,30 +722,39 @@ We will show how theoretical and practical analysis of performance changes drama
 
 \subsection{Theoretical Average Case Comparison}
 
-Consider an incredibly smart canonical labeling algorithm.
-This algorithm has two abstract components, one which correctly places vertexes into Similar Vertex Sets, and another which finds a canonical labeling given an accurate SVS partition.
-If we take the first part of this algorithm as given, and assume that it can be computed in polynomial time (a reasonable assumption, as discussed in the section on SVS), then the running time of the algorithm is contingent upon the number of matrices we need to test for consistency against some canonical property.
-One common property for canonization is selecting the adjacency matrix which is the lexicographically smallest representation of the graph.
-If we assume that the second half of the algorithm dominates the running time of the overall algorithm (which is a reasonable assumption), we can express the running time of the overall algorithm in terms of $O(|Aut(G)|)$, as this is the number of matrices we will need to evaluate on a canonical property.
+Consider a standard canonical labeling algorithm.
+This algorithm has two abstract components, one which correctly places vertexes into Similar Vertex Sets (SVS), and another which finds a canonical labeling given an accurate SVS partition [CITE].
+If we take the first part of this algorithm as given, and assume that it can be computed in polynomial time (a reasonable assumption, as discussed in the section on SVS), then the running time of the algorithm is contingent upon the number of matrices we need to evaluate against some canonical property.
+One common property for canonization is selecting the adjacency matrix which is the lexicographically smallest (or largest) representation of the graph.
+It is reasonable to assume that the second half of the algorithm dominates the running time of the overall algorithm, as it is the piece that is inherently exponential based on the number of representations of the matrix.
+Thus,  we can express the running time of the overall algorithm in terms of $O(|Aut(G)|)$, as this is the number of possible labelings we will have to examine to find our canonical one.
 
-This is important because the number of matrix representations for a given graph $G$ is $\frac{N!}{|Aut(G)|}$.
-Thus, if we are considering the average running time of this canonization algorithm over the set of all graph instances (i.e. using the standard models for random graph generation), we come to the key conclusion:
-$$T_{Average}^{Gilbert} = \frac{ \sum^{Graphs}_{g} O(T(g)) * N_{Representations}(g)}{|All Matrix Representations|}$$
-$$T_{Average}^{Gilbert} = \frac{ \sum^{Graphs}_{g} |Aut(g)| * \frac{N!}{|Aut(g)|}}{|All Matrix Representations|}$$
-$$T_{Average}^{Gilbert} = \frac{ \sum^{Graphs}_{g} N!}{2^{.5(N^2 - N)}}$$
-$$T_{Average}^{Gilbert} = \frac{ |Graphs(N)| * N!}{2^{.5(N^2 - N)}} \sim 1$$
+The selection of this simplified algorithm for analysis is not an accident: we have chosen it because the number of matrix representations ($M_{rep}(G)$) for a given graph $G$ is $\frac{N!}{|Aut(G)|}$.
+Thus, if we are considering the average running time of this canonization algorithm ($\xoverline{T}_{Gilbert}$) over the set of all graph instances ($GInst = G(A)$ for $A \in \{\{0,1\}^{N \times N}\}$) (i.e. using the standard models for random graph generation), we come to different conclusions if we consider the set of possible graphs $GInst$, versus if we consider the set of all graphs as algebraic structural objects ($GAlg$).
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GInst} O(T(g))}{|GInst|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GAlg} O(T(g)) * M_{Reps}(g)}{|GInst|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GAlg}  |Aut(g)| * \frac{N!}{|Aut(g)|}}{|GInst|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GAlg}  N!}{2^{.5(N^2 - N)}}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ |GAlg| * N!}{2^{.5(N^2 - N)}}$$
+
+This property might not look like it tells us much, but we can actually approximate what it looks like for different values of N, since we have the frist nineteen values of this sequence from OEIS sequence A000088 CITE.
+This data is shown below.
+CITE
 
 However, if we attempted to select a graph from the set of all graphs of that size, we would find that: 
-$$T_{Average}^{Ideal} = \frac{ \sum^{Graphs}_{g} O(T(g)) }{|All Possible Graphs|}$$
-$$T_{Average}^{Ideal} = \frac{ \sum^{Graphs}_{g} |Aut(g)|}{|Graphs(N)|}$$
-$$T_{Average}^{Ideal} = \text{Average Number of Automorphisms over Graphs} >> 1$$
+$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in GAlg}  O(T(g)) }{|GAlg|}$$
+$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in GAlg}  |Aut(g)|}{|GAlg)|}$$
+$$\xoverline{T}_{Ideal} = \text{Average Number of Automorphisms over Graphs}$$
 
 Some sample numbers to give you the scale of these disparities is given below CITE.
 
-The takeaway here is that specifically disadvantaging a class of graphs (namely highly automorphic graphs) warps our analysis of running time in a substantive way.
+The takeaway here is that specifically disadvantaging a class of graphs (namely highly automorphic graphs) warps our analysis of running time in a substantive way, not only for fringe algorithms, but for well studied algorithms too.
 We can show this through the theoretical proof as shown above, but we can also show it through data describing actual algorithm performance.
 
 \subsection{Practical Average Case Comparison}
+
+The NAUTY package, written in CITE by CITE, is one of the quickest algorithms for canonical labeling CITE.
+Though its performance is weaker on some graphs (like the Miyazaki, for example), in general, its canonical labeling algorithm is widely regarded and frequently used.
 
 I ran the NAUTY canonization algorithm on batches of graphs with different numbers of vertices.
 To generate the first sets of batches, I randomly selected graphs using the Gilbert model with probability 1/2, and varying values of N.
@@ -671,36 +782,78 @@ In graph theory, we hold a meaningful distinction between graphs and graph insta
 It is thus inappropriate to use a model which ignores this distinction, and ignores it in such a way as to specifically disadvantage certain classes of graphs.
 This allows theoretical graph algorithms to underweight what we consider `hard' cases, and overweight what we would generally consider `easy' cases.
 
-\section{Measuring Flaws of Random Graph Models}
+\section{Measuring and Comparing Random Graph Models}
 
-Our mandate suddenly becomes: `yeah, well what can we do that is better?'
+Our mandate suddenly becomes: `well, what can we do which is better?'
+Establishing an intuition to answer this question requires us first to understand what we would think of as `ideal', and see if we can approach that model.
 
+\subsection{An Ideal Random Graph Model}
+To allow our comparisons to be explicit, we will use the same nomenclature to describe an idealized generator as we do with the Gilbert model, so that they are directly comparable.
+Thus, our ideal random graph model will take two input parameters, N and p, where p describes the probability of getting any given edge existing.
+Note that this explicitly breaks from the idea of edge independence that is assumed in the Gilbert model.
+Rather, we are assuming that the probability of any given edge existing is p if we have no knowledge about the rest of the graph.
+We will define our `Ideal' generator as one which first selects a number of edges M from the binomial distribution with $E_{Max}$ trials and trial success probability $p$.
+After selecting M as an observation from this random distribution, we will select a graph from the set of all graphs of N vertices and M edges with uniform probability.
+To accomplish this task, we will enumerate all graphs of that size, and select from that fully defined set.
+
+The flaw in this scheme is obvious.
 Our `Ideal' generator is only possible so long as you can enumerate all graphs of a given size.
-There are 24637809253125004524383007491432768 non-isomorphic graphs over 19 Vertices, this is not a sustainable generation scheme.
-If we cannot use an ideal graph generator, are we doomed to stick with the Gilbert model?
-Or, could we create a model that is better than the Gilbert model (closer to our ideal)?
+There are 24637809253125004524383007491432768 non-isomorphic graphs over 19 vertices, so this is not remotley sustainable methodology for a random generator.
+If we cannot rely on an ideal graph generator, are we doomed to stick with the Gilbert model?
+Or, could we create a model that is better than the Gilbert model (closer to our ideal), while being computationally reasonable?
+
+\subsection{Establishing a Methodology for Random Graph Generator Evaluation}
 
 Answering these questions required some really deliberate thought.
-I knew lots about what I didn't want to do.
-I didn't want to write generators and then use data to support them.
-I didn't want to focus in on a single way of looking at the quality of the graphs that I generated.
-I didn't want to allow my own intellect and lack of creativity be a limiting step on the way to a better generator.
+I knew lots about what I didn't want to do:
+\begin{itemize}
+\item{I didn't want to write generators and then use data to support them.}
+\item{I didn't want to focus in on singular ways of looking at the quality of the graphs that I generated.}
+\item{I didn't want to allow my own intellect and lack of creativity be a limiting step on the way to a better generator.}
 The process that I decided on attempted to address all of these concerns, and was designed to avoid the pitfalls of bad computer science: overfitting, statistic selection, and rigidity.
+\end{itemize}
 
-I decided on twenty seven statistics of sets of randomly generated graphs.
-Each of the statistics I decided on was because I subjectively valued it as a property that I would hope a random graph generator would have.
-Each of the set metrics is described below, and they vary in computational complexity and broad descriptiveness. 
-I set up a (pardon if I say it) BEAUTIFUL (and quazi-distributed) system for calculating these statistics over arbitrary datasets.
-I created an idealized random generator and a Gilbert random generator, and tested this computational system over the initial results from each.
+I decided on twenty XXX statistics, each of which is calculated over a sets of graphs.
+These statistics are inherently heuristic, but each attempts to campture some property of the graphs that are generated, or some property of how the set looks as a whole.
+Each of the statistics I decided on is meant to describe some property of a set of graphs, but it does not establish an `idealized' value for that statistic.
+Though for several of these metrics we know how to express the ideal/expected probability, that is not always the case.
+These metrics serve as a way for us to identify and name ways that random graph generators fail us, and challenge us to do better, to compare a proposed solution to an ideal or standard solution in quantifiable and concrete terms.
 
-Most importantly, I set up these metrics, this system, and the baseline Gilbert-Ideal metric values before I wrote a line of code which randomly generated graphs.
-This is really important to me.
+The set metrics is described in the next section, and they vary in computational complexity and broad descriptiveness.
+I set up a (pardon the brag) BEAUTIFUL system for calculating these statistics over arbitrary datasets.
+I created an idealized random generator (as described above), and a Gilbert random generator, and verified the accuracy of the results produced through this computational system over the initial results from each.
+
+Most importantly, I set up these metrics, this system, and the baseline Gilbert/Ideal metric values before I wrote a line of code which randomly generated graphs.
+This is really important to me, because it frees the results of this work from the publication and statistic selection bias that plagues research everywhere.
+
+\subsection{Graph Set Metrics}
+Below are the metrics that I compared across graph sets generated by different random graph generation procedures.
+Though I calculated some more statistics for personal use and discovery, the ones included below are the `single result' statistics.
+Others were distributional properties that were not easily captured and compared (except through distributional goodness of fit tests, which only give us an idea of alikeness, not of directed difference).
+The reliance on singular metrics as a means of comparison allows us to evaluate systems of random graph generation automatically, and come up with similarity tests that are divorced from our intuition and hypotheses.
+
+Described below are each of the metrics that are calculated over every set of random graphs that were generated.
+Each is labeled a statistic (implying a singular value used to judge the generator) or a distribution (connoting that it was not used in the systematized evaluation of generators).
+Each is listed under its acronym, which can be found throughout my code and tests CITE. 
+
+\begin{itemize}
+\item{ADIAM - Statistic - Average Graph Diameter (i.e. Take the diameter of each graph, and average over all graphs in the set)}
+\item{ADSM - Statistic - Average Degree Sequence Mean (i.e. take the mean of degree sequence of each graph, and average that across all graphs) }
+\item{ADSMD - Statistic - Average Degree Sequence Median (i.e. take the median of the degree sequence of each graph, then average that across all graphs) }
+\item{ADSMN - Statistic - Average Degree Sequence Minimum (i.e. take the degree of the least connected node in each graph, then average that across all graphs) }
+\item{ADSMX - Statistic - Average Degree Sequence Maximum (i.e. take the degree of the most connected node in each graph, then average that across all graphs) }
+\item{ADSV - Statistic - Average Degree Sequence Variance (i.e. take the variance of the degree sequence of the graph, then average across all graphs) }
+\item{ANA - Statistic - Average Number of Automorphisms (i.e. find the number of automorphisms for each graph, then average that across the set) }
+\item{ANCC - Statistic - Average Number of Connected Components (i.e. take the number of connected components of each graph in the set, then average across all of them) }
+\item{NCCV - Statistic - Variance in the Number of Connected Components (i.e. take the number of connected components of each graph in the set, then take the variance of the set) }
+\item{DIAMV - Statistic - Variance in the Diameter of Graphs (i.e. calculate the diameter of each graph, and calculate the variance of the set as a whole) }
+\item{PCONN - Statistic - Probability of Connectivity (i.e. take the number of fully connected graphs, and divide by the total number of graphs in the set)}
+\item{NCP - Statistic - Number of Co-Paths graphs (Same as Co-cycles graphs, this only applies to graphs of size 10 and larger, counts the number of co-paths graphs (which tend to be highly automorphic) in the overall set of graphs)}
+\item{NE - Statistic - Number of Edges (i.e. the average number of edges in the graph set. This should be the same across generators, as we are specifying $p$, and asking for a large sample size)}
+\item{NR - Statistic - Number of Regular Graphs (i.e. the number of regular graphs in the graphset)}
+\end{itemize}
 
 
-\subsection{Averaging Model}
-\subsection{Variance Model}
-\subsection{Kurtosis Model}
-\subsection{Probability Ratio Model}
 
 \section{Flaws in Proofs of Average Case Random Graphs}
 \subsection{Selection of Certain Classes of Graphs}
@@ -708,8 +861,12 @@ This is really important to me.
 \subsection{Average Case Runtime Under Erdos-Reyni and Worst Case}
 
 \section{Alternative Ideas for Random Graph Modeling and Creation}
-\subsection{Distributional Goals}
+
 \subsection{Cloning Model}
+One of the thoughts that I first had was on the way that co-paths graphs tended to be highly automorphic, and the way that internal structure of each set within the SVSes was almost always fully automorphic.
+Remember that a fully automorphic graph (or in this case, subset of vertices) means that within its self contained structure, there exists an automorphism which maps any one vertex to any other (not implying that all proposed mappings are automorphisms, but only that a mapping exists that pairs any pair of vertices within the set.
+To try to create a model that is likely to produce this kind of internally consistent behavior, I broke the task of generating a graph down into two subtasks.
+First, it creates K disjoint graphs, each of which is fully automorphic, and with the total number of vertices over all of these smaller graphs equalling the target number of vertices the generator is looking to produce.
 
 \section{Inherent Limitations on Models by Computational Theory}
 \subsection{Uncertainty in Set Size}
