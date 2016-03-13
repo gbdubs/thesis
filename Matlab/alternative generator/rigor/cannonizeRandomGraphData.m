@@ -27,9 +27,11 @@ function cannonizeRandomGraphData ()
 
     allRaw = getListOfRandomGraphFileNames(0);
     allCannon = getListOfRandomGraphFileNames(1);
+    j = 1;
+    didWork = 0;
     
     for i = 1 : size(allRaw, 1)
-        if i > size(allCannon, 1) || ~(equalCellRows(allRaw(i,:), allCannon(i,:)))
+        if j > size(allCannon, 1) || ~(equalCellRows(allRaw(i,:), allCannon(j,:)))
             n = cell2mat(allRaw(i,1));
             p = cell2mat(allRaw(i,2));
             alg = cell2mat(allRaw(i,3));
@@ -44,11 +46,15 @@ function cannonizeRandomGraphData ()
             graphSet = convertDataToCannonical(graphSet);
             
             save(outputPath, 'graphSet');
-            
-            cannonizeRandomGraphData();
-            
-            return;
-        end 
+            didWork = 1;
+        else
+            j = j + 1;
+        end
+    end
+    
+    if didWork
+        disp('========= DOING A SECOND PASS!!! ==========');
+        cannonizeRandomGraphData();
     end
 end
 

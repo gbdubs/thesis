@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  13 MAR 2016 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  13 MAR 2016 15:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -380,37 +380,51 @@ Chapter 7.
 (./thesis.bbl [39
 
 ]
+Underfull \hbox (badness 1052) in paragraph at lines 54--59
+[]\OT1/cmr/m/n/10.95 D. J. Watts M. E. J. New-man and S. H. Stro-gatz.  Ran-dom
+
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 54--59
+\OT1/cmr/m/n/10.95 graph mod-els of so-cial net-works.  \OT1/cmr/m/it/10.95 Pro
+-ceed-ings of the Na-tional
+ []
+
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
- [40
+[40
 
-]) [41] (./thesis.aux) ) 
+]) [41] (./thesis.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4296 strings out of 494185
- 60867 string characters out of 6156889
+ 4303 strings out of 494185
+ 60990 string characters out of 6156889
  131748 words of memory out of 5000000
- 7545 multiletter control sequences out of 15000+600000
+ 7552 multiletter control sequences out of 15000+600000
  12614 words of font info for 46 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  38i,8n,32p,508b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmbx10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-csc10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/
-local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmti12.pfb>
-Output written on thesis.pdf (42 pages, 320195 bytes).
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
+cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/local/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.p
+fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on thesis.pdf (42 pages, 321469 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  140 compressed objects within 2 object streams
