@@ -10,6 +10,24 @@ function [ result, ns, ps ] = loadStep( n, p, alg, metric, nGraphs, shouldAssign
     
     if numel(n) == 1 && numel(p) == 1
     
+        if n ~= -1 && p ~= -1 && numel(alg)>1 && nGraphs ~= -1
+            pathName = pathToRandomGraphResultData(n,p,alg,nGraphs,metric);
+            if exist(pathName, 'file')
+                before = who;
+                load(pathName);
+                after = who;
+                varNames = setdiff(after, before);
+                varName = cell2mat(varNames(1));
+                eval(['result = ',varName,';']);
+                if shouldAssign
+                    assignin('base', varName, result);
+                end
+            else
+                disp (['FILE DIDN"T EXIST: [',pathName,']']);
+            end
+            return;
+        end
+        
         load('alternative generator/data/allPaths.mat');
 
         allPaths = applyPathRestriction(allPaths, '/results');
