@@ -12,11 +12,23 @@ function [ pValues, metricValues ] = collectDataAcrossPs(n, alg, metric, updateA
     allPaths = applyPathRestriction(allPaths, ['/alg=',alg,'/results/',metric]);
     allPaths = applyPathRestriction(allPaths, ['/n=',num2str(n)]);
     
-    pValues = zeros(numel(allPaths), 1);
-    metricValues = zeros(numel(allPaths), 1);
+    allFilePaths = [];
     
-    for i = 1 : numel(allPaths);
-        thePath = cell2mat(allPaths(i));
+    for i = 1 : numel(allPaths)
+        files = dir(cell2mat(allPaths(i)))';
+        for file = files
+            if ~file.isdir
+                filePath = {[cell2mat(allPaths(i)),'/',file.name]};
+                allFilePaths = vertcat(allFilePaths, filePath);
+            end
+        end
+    end
+    
+    pValues = zeros(numel(allFilePaths), 1);
+    metricValues = zeros(numel(allFilePaths), 1);
+    
+    for i = 1 : numel(allFilePaths);
+        thePath = cell2mat(allFilePaths(i));
         theStart = strfind(thePath,'/p=') + 3;
         theEnd = strfind(thePath, '/alg=') - 1;
         p = str2double(thePath(theStart:theEnd));
