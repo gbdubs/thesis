@@ -4,6 +4,8 @@ clear all;
 load('data/cannonicalMemoization.mat');
 global cannonicalMemoization;
 disp('Loaded cannonicalMemoziation Data.');
+global allMetricMapping;
+allMetricMapping = containers.Map;
 
 for file = dir('.')'
     if file.isdir

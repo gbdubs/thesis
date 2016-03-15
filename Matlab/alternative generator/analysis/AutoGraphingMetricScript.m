@@ -3,7 +3,7 @@ close all;
 minV = 4;
 maxV = 10;
 
-metric = 'NCCV';
+metric = 'PDL';
 
 doLog = 0;
 

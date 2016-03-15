@@ -5,6 +5,9 @@ function [ PTRIL, ANTRI, ANQUAD ] = PTRIL_ANTRI_ANQUAD( graphSet )
 
 nGraphs = size(graphSet, 1);
 N = size(graph6(graphSet(1,:)),1);
+while N <= 2
+    N = size(graph6(graphSet(ceil(size(graphSet, 1) * rand),:)), 1);
+end
 
 nTriangleless = 0;
 nTrianglesInAllGraphs = 0;

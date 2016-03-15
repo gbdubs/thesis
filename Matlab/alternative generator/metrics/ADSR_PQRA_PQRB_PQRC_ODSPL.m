@@ -7,6 +7,9 @@ function [ ADSR, PQRA, PQRB, PQRC, ODSPL ] = ADSR_PQRA_PQRB_PQRC_ODSPL( graphSet
 
     nGraphs = size(graphSet, 1);
     N = size(graph6(graphSet(1,:)), 1);
+    while N <= 2
+        N = size(graph6(graphSet(ceil(size(graphSet, 1) * rand),:)), 1);
+    end
     sqrtN = sqrt(N);
 
     function [ isQRA ] = isItQRA(DSR)
