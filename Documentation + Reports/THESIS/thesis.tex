@@ -818,7 +818,7 @@ The process that I decided on attempted to address all of these concerns, and wa
 \end{itemize}
 
 I decided on twenty XXX statistics, each of which is calculated over a sets of graphs.
-These statistics are inherently heuristic, but each attempts to campture some property of the graphs that are generated, or some property of how the set looks as a whole.
+These statistics are inherently heuristic, but each attempts to capture some property of the graphs that are generated, or some property of how the set looks as a whole.
 Each of the statistics I decided on is meant to describe some property of a set of graphs, but it does not establish an `idealized' value for that statistic.
 Though for several of these metrics we know how to express the ideal/expected probability, that is not always the case.
 These metrics serve as a way for us to identify and name ways that random graph generators fail us, and challenge us to do better, to compare a proposed solution to an ideal or standard solution in quantifiable and concrete terms.
@@ -840,23 +840,57 @@ Described below are each of the metrics that are calculated over every set of ra
 Each is labeled a statistic (implying a singular value used to judge the generator) or a distribution (connoting that it was not used in the systematized evaluation of generators).
 Each is listed under its acronym, which can be found throughout my code and tests CITE. 
 
+\subsection{Graph Set Metric Reference, Coding and Description}
+
 \begin{itemize}
-\item{ADIAM - Statistic - Average Graph Diameter (i.e. Take the diameter of each graph, and average over all graphs in the set)}
-\item{ADSM - Statistic - Average Degree Sequence Mean (i.e. take the mean of degree sequence of each graph, and average that across all graphs) }
-\item{ADSMD - Statistic - Average Degree Sequence Median (i.e. take the median of the degree sequence of each graph, then average that across all graphs) }
-\item{ADSMN - Statistic - Average Degree Sequence Minimum (i.e. take the degree of the least connected node in each graph, then average that across all graphs) }
-\item{ADSMX - Statistic - Average Degree Sequence Maximum (i.e. take the degree of the most connected node in each graph, then average that across all graphs) }
-\item{ADSV - Statistic - Average Degree Sequence Variance (i.e. take the variance of the degree sequence of the graph, then average across all graphs) }
-\item{ANA - Statistic - Average Number of Automorphisms (i.e. find the number of automorphisms for each graph, then average that across the set) }
-\item{ANCC - Statistic - Average Number of Connected Components (i.e. take the number of connected components of each graph in the set, then average across all of them) }
-\item{NCCV - Statistic - Variance in the Number of Connected Components (i.e. take the number of connected components of each graph in the set, then take the variance of the set) }
-\item{DIAMV - Statistic - Variance in the Diameter of Graphs (i.e. calculate the diameter of each graph, and calculate the variance of the set as a whole) }
-\item{PCONN - Statistic - Probability of Connectivity (i.e. take the number of fully connected graphs, and divide by the total number of graphs in the set)}
-\item{NCP - Statistic - Number of Co-Paths graphs (Same as Co-cycles graphs, this only applies to graphs of size 10 and larger, counts the number of co-paths graphs (which tend to be highly automorphic) in the overall set of graphs)}
-\item{NE - Statistic - Number of Edges (i.e. the average number of edges in the graph set. This should be the same across generators, as we are specifying $p$, and asking for a large sample size)}
-\item{NR - Statistic - Number of Regular Graphs (i.e. the number of regular graphs in the graphset)}
+
+\item{ADIAM - Set Statistic - Average Graph Diameter - Take the diameter of each graph, and average over all graphs in the set}
+\item{ADSM - Set Statistic - Average Degree Sequence Mean - take the mean of degree sequence of each graph, and average that across all graphs}
+\item{ADSMD - Set Statistic - Average Degree Sequence Median - take the median of the degree sequence of each graph, then average that across all graphs}
+\item{ADSMN - Set Statistic - Average Degree Sequence Minimum - take the degree of the least connected node in each graph, then average that across all graphs}
+\item{ADSMX - Set Statistic - Average Degree Sequence Maximum - take the degree of the most connected node in each graph, then average that across all graphs}
+\item{ADSR - Set Statistic - Average Degree Sequence Range  (i.e. Find the difference in degree between the most and least connected node, and average over all graphs in the set}
+\item{ADSV - Set Statistic - Average Degree Sequence Variance - take the variance of the degree sequence of the graph, then average across all graphs}
+\item{ALNA - Set Statistic - Average of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then average across the logged results}
+\item{ANA - Set Statistic - Average Number of Automorphisms - find the number of automorphisms for each graph, then average that across the set}
+\item{ANCC - Set Statistic - Average Number of Connected Components - take the number of connected components of each graph in the set, then average across all of them}
+\item{ANQUAD - Set Statistic - Average Number of Quadrilaterals - The Average number of non-trivial (non-edge repeating) quadrilaterals across all graph instances within the graph set.}
+\item{ANR - Set Statistic - Average Number of Repeats - The average graph, when selected from the set in question, will have this expected number of equivalent instances in the set}
+\item{ANTRI - Set Statistic - Average Number of Triangles - The Average number of triangles across all graph instances within the graph set.}
+\item{CP - Subset - Co-Cycles Graphs - The intersection between the set of all $V=10$ co-cycles graphs and the given set}
+\item{DIAMV - Set Statistic - Variance in the Diameter of Graphs - calculate the diameter of each graph, and calculate the variance of the set as a whole}
+\item{DSMDV - Set Statistic - Degree Sequence Median Variance - Take the median degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSMNV - Set Statistic - Degree Sequence Minimum Variance - Take the minimum degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSMV - Set Statistic - Degree Sequence Mean Variance - Take the mean degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSMXV - Set Statistic - Degree Sequence Maximum Variance - Take the maximum degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSVV - Set Statistic - Degree Sequence Variance Variance - Take the variance of the degree sequence of each graph, and calculate the variance over all graphs in the set}
+\item{FC - Set Property - Frequency Count - The number of isomorphic graph instances associated with each one of the graphs in the set}
+\item{FFC - Set Distribution Counts - Frequency Count Counts - The counts that correspond to FFVs, the frequency with which graphs show up in our random set}
+\item{FFV - Set Distribution Bins - Frequency Count Bins - The discrete values for which there exist graphs in our set that poses that number of instances in the set, this is really just a bin count for FC}
+\item{MLNA - Set Statistic - Median of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then find the median across the logged results}
+\item{MNR - Set Statistic - Maximum Number of Repeats - The graph in the set that was selected the most times was selected this many times}
+\item{NA - Graph Statistic - Number of Automorphisms - Counts the number of automorphisms that a graph has by finding the number of unique matrices that describe a graph}
+\item{NAB - Set Distribution Bins - Number of Automorphisms Bins - The unique values of NA, to provide histogram alongside NAC}
+\item{NAC - Set Distribution Counts - Number of Automorphisms Counts - The counts of the NAB, as in a histogram}
+\item{NCCV - Set Statistic - Variance in the Number of Connected Components - take the number of connected components of each graph in the set, then take the variance of the set}
+\item{NCP - Set Statistic - Number of Co-Paths graphs - Same as Co-cycles graphs, this only applies to graphs of size 10 and larger, counts the number of co-paths graphs (which tend to be highly automorphic) in the overall set of graphs}
+\item{NE - Set Statistic - Number of Edges - the average number of edges in the graph set. This should be the same across generators, as we are specifying $p$, and asking for a large sample size}
+\item{NR - Set Statistic - Number of Regular Graphs - the number of regular graphs in the graphset}
+\item{NUG - Set Statistic - Number of Unique Graphs - The proportion of graphs within the set that are only generated once}
+\item{ODSPL - Set Statistic - Overall Degree Sequence Poisson Distribution Lambda  - Find the set of all of the degrees of all of the graph, then fit a poisson distribution to this distribution. Report the lambda that defines this poisson distribution}
+\item{PCONN - Set Statistic - Probability of Connectivity - take the number of fully connected graphs, and divide by the total number of graphs in the set}
+\item{PDL - Set Statistic - Poisson Distribution Lambda - Take the distribution of the number of times that each graph is represented by an instance within a graph set, and set this distribution fit to a poisson distribution, reporting its lambda}
+\item{PQRA - Set Statistic - Percentage Quazi-Regular A - Percentage of graphs where the degree sequence range is less than or equal to 1}
+\item{PQRB - Set Statistic - Percentage Quazi-Regular B - Percentage of graphs where the degree sequence range is less than or equal to 2}
+\item{PQRC - Set Statistic - Percentage Quazi-Regular C - Percentage of graphs where the degree sequence range is less than or equal to $sqrt(N)$}
+\item{PTRIL - Set Statistic - Probability Triangle-less - the Probability that a graph instance selected randomly from the graph set is triangle-less.}
+\item{SQNR - Set Statistic - Sum of Squared Number of Repeats - A measure of how dispersed the distribution is, calculated as $FFC \dot (FFV^2) / nGraphs$}
+\item{UG - Set Property - Unique Graphs - The canonical form of all of the graph set's graphs, with duplicates removed (if they existed)}
+\item{VLNA - Set Statistic - Variance of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then find the variance of the logged results}
+
 \end{itemize}
 
+\subsection{Quantifiably Comparing Graph Set Metric }
 
 
 \section{Flaws in Proofs of Average Case Random Graphs}

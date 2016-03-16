@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_1) (preloaded format=pdflatex 2015.8.4)  13 MAR 2016 15:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  16 MAR 2016 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -370,14 +370,27 @@ Overfull \hbox (16.50629pt too wide) in paragraph at lines 789--789
 []\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
  []
 
-[34] [35] [36]
-Overfull \hbox (16.7597pt too wide) in paragraph at lines 862--862
+[34] [35]
+Overfull \hbox (8.43755pt too wide) in paragraph at lines 857--858
+\OT1/cmr/m/n/10.95 Av-er-age num-ber of non-trivial (non-edge re-peat-ing) quad
+ri-lat-er-als across
+ []
+
+[36] [37] [38]
+Overfull \hbox (12.43272pt too wide) in paragraph at lines 887--888
+\OT1/cmr/m/n/10.95 of how dis-persed the dis-tri-bu-tion is, cal-cu-lated as $\
+OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$ 
+
+ []
+
+
+Overfull \hbox (16.7597pt too wide) in paragraph at lines 895--895
 []\OT1/cmr/bx/n/14.4 Flaws in Proofs of Av-er-age Case Ran-dom Graphs 
  []
 
-[37] [38]
+[39] [40]
 Chapter 7.
-(./thesis.bbl [39
+(./thesis.bbl [41
 
 ]
 Underfull \hbox (badness 1052) in paragraph at lines 54--59
@@ -395,39 +408,36 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[40
+[42
 
-]) [41] (./thesis.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+]) [43] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
  4303 strings out of 494185
- 60990 string characters out of 6156889
- 131748 words of memory out of 5000000
+ 60990 string characters out of 6156888
+ 131776 words of memory out of 5000000
  7552 multiletter control sequences out of 15000+600000
  12614 words of font info for 46 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  38i,8n,32p,508b,890s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/local/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.p
-fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (42 pages, 321469 bytes).
+</opt/local/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+csc10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/
+local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmti12.pfb>
+Output written on thesis.pdf (44 pages, 325701 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
