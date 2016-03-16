@@ -5,9 +5,10 @@ maxV = 10;
 
 
 metrics = [
-    {'MLNA'}
-    {'ALNA'}
-    {'VLNA'}
+%     {'NCP'}
+%     {'MLNA'}
+%     {'ALNA'}
+%     {'VLNA'}
 %     {'ADSM'}
 %     {'DSMV'}
 %     {'ADSMD'}
@@ -20,6 +21,7 @@ metrics = [
 %     {'DSVV'}
 %     {'ADSR'}
 %     {'PQRA'}
+     {'ANCC'}
 %     {'PQRB'}
 %     {'PQRC'}
 %     {'ODSPL'}
@@ -31,12 +33,12 @@ metrics = [
 %     {'ANCC'}
 %     {'NCCV'}
 %     {'PTRIL'}
-%     {'ANTRI'}
-%     {'ANQUAD'}
-%     {'SQNR'}
+     {'ANTRI'}
+     {'ANQUAD'}
+     {'SQNR'}
 ]';
 
-doLog = 0;
+doLog = 1;
 
 for metric = metrics
     metricName = cell2mat(metric);

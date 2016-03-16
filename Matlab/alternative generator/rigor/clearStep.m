@@ -1,4 +1,7 @@
-function clearStep( n, p, alg, step, metric )
+function clearStep( n, p, alg, step, metric , checkNumber)
+    if nargin < 6
+        checkNumber = -1;
+    end
 
     load('alternative generator/data/allPaths.mat');
 
@@ -22,16 +25,27 @@ function clearStep( n, p, alg, step, metric )
         allPaths = applyPathRestriction(allPaths, ['/', metric]);
     end
     
-    if numel(allPaths) > 5
-        progressbar;
-    end
     
-    for i = 1 : numel(allPaths)
-        progressbar(i / numel(allPaths));
-        dirName = cell2mat(allPaths(i));
-        if exist(dirName, 'dir')
-            rmdir(dirName, 's');
+    
+    expectedCheckNum = numel(allPaths);
+    
+    if checkNumber > 0
+        if expectedCheckNum == checkNumber
+            if numel(allPaths) > 5
+                progressbar;
+            end
+            for i = 1 : numel(allPaths)
+                progressbar(i / numel(allPaths));
+                dirName = cell2mat(allPaths(i));
+                if exist(dirName, 'dir')
+                    rmdir(dirName, 's');
+                end
+            end
+        else
+            disp([num2str(expectedCheckNum),': Checksum did not match input argument']);
         end
+    else
+        disp([num2str(expectedCheckNum),' different directories to be deleted. If correct, rerun with this check number']);
     end
 end
 
