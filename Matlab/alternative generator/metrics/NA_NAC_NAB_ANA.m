@@ -9,9 +9,18 @@ function [ nAutomorphisms, nAutCounts, nAutBins, avgNAut ] = NA_NAC_NAB_ANA( gra
     nGraphs = size(graphSet, 1);
     nAutomorphisms = zeros(nGraphs, 1);
     
+    global nAutomorphismMemoization;
+    
     for i = 1 : nGraphs
         progressbar(i / nGraphs);
-        nAutomorphisms(i) = findNumberOfAutomorphisms(graph6(graphSet(i,:)));
+        EA = graphSet(i,:);
+        if nAutomorphismMemoization.isKey(EA)
+            nAutomorphisms(i) = nAutomorphismMemoization(EA);
+        else
+            A = graph6(EA);
+            nAutomorphisms(i) = findNumberOfAutomorphisms(A);
+            nAutomorphismMemoization(EA) = nAutomorphisms(i);
+        end
     end
 
     [nAutCounts, nAutBins] = hist(nAutomorphisms, unique(nAutomorphisms));
