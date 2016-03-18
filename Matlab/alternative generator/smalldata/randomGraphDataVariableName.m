@@ -1,4 +1,7 @@
-function [ varName ] = randomGraphDataVariableName( VAR, N, P, ALG, NGRAPHS )
+function [ varName ] = randomGraphDataVariableName( METRIC, N, P, ALG, NGRAPHS, RUN)
     P = round(P * 100);
-    varName = [VAR, '_', ALG, '_', num2str(N), '_', num2str(P), '_', num2str(NGRAPHS)];
+    varName = [METRIC, '_', ALG, '_', num2str(N), '_', num2str(P), '_', num2str(NGRAPHS)];
+    if nargin == 6
+        varName = [varName, '_', num2str(RUN)];
+    end
 end

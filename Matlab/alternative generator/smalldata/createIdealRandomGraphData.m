@@ -1,4 +1,4 @@
-function createIdealRandomGraphData( n, p, nGraphs )
+function createIdealRandomGraphData(v, p, nGraphs, runNumber)
     
     graphSet = char(zeros(nGraphs, size(graph6Encode(zeros(v, v)),2)));
 
@@ -27,7 +27,7 @@ function createIdealRandomGraphData( n, p, nGraphs )
         end
     end
     
-    saveRandomGraphDataResult(graphSet, n, p, 'Ideal', 'RAW', nGraphs);
+    saveRandomGraphDataResult(graphSet, v, p, 'Ideal', 'RAW', nGraphs, runNumber);
 
 end
 
