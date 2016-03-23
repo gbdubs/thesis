@@ -1,4 +1,4 @@
-function [ graphSet ] = createStandardRandomGraphData( v, p, nGraphs )
+function [ graphSet ] = createStandardRandomGraphData( v, p, nGraphs, runNo)
         
     function [ A ] = randGraph(v, p)
         k = 1 - sqrt(p);
@@ -14,7 +14,7 @@ function [ graphSet ] = createStandardRandomGraphData( v, p, nGraphs )
         graphSet(i,:) = graph6Encode(randGraph(v, p));
     end
 
-    saveRandomGraphDataResult(graphSet,v,p,'Standard','RAW',nGraphs);
+    saveRandomGraphDataResult(graphSet,v,p,'Standard','RAW',nGraphs, runNo);
     
 end
 
