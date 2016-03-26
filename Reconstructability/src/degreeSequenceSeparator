@@ -1,0 +1,7 @@
+
+
+typedef struct DegreeSequenceSeparationMechanism{
+	char* myStr;
+	int size;
+	struct ListOfStrings* next;
+} DSSM;

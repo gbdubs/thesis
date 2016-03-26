@@ -1,0 +1,20 @@
+#include "graph6.h"
+#include "structures.h"
+
+int* getDegreeSequence(char s[])
+	int** graph = decodeGraph(s);
+	int size = xMatrix(graph);
+	int* result = createArray(size);
+	for (int i = 0; i < size; i++){
+		int total = 0;
+		for (int j = 0; j < size; j++){
+			total = total + graph[i][j];
+		}
+		result[i] = total;
+	}
+	return result;
+}
+
+int main(){
+	printArray(getDegreeSequence("ICR`uiwY_"));
+}

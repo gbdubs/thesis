@@ -1,0 +1,4 @@
+cd src
+gcc simrecorder.c graph6.c structures.c Trie.c graph.c ordermapping.c cardinality.c -o ../bin/cardinality
+echo "compiled!"
+cd ..

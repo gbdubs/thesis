@@ -174,7 +174,8 @@ The specific running time of calculating and comparing the $Cycles$ functions an
 \subsection{Invertibility}
 Note that if two graphs agree on the paths invariant, their complements (or inverses) may also agree on the paths invariant, but there is no proven reason to believe this is universally true.
 The existence of non-isomorphic, co-cycles graphs raises the question: are their inverses necessarily co-cycles?
-For all co-cycles graphs that were found, invertibility holds, but that is not a guarantee going forward.
+For all co-cycles graphs that were found, invertibility holds, but that is not a guarantee as a general case.
+
 
 \subsection{Time Complexity}
 The running time of the paths invariant is the same whether we treat it as a vertex invariant or as a graph invariant.
@@ -185,6 +186,7 @@ This means that the computation of any paths invariant can be accomplished in $O
 Though this sounds like a lot of time, generally, this is a quick computation.
 This is made asymptotically better by the fact that efficient algorithms for matrix multiplication are well studied and optimized for a variety of contexts.
 In a modern context, matrix multiplication can be done efficiently by GPU arrays, and there are quick ways to do multiplication on sparse matrices.
+
 
 \subsection{Operating over Large Numbers}
 One element of the Cycles invariant that we will consistently need to be cognizant of is the fact that our numbers will grow very quickly, particularly for large values of N.
@@ -221,6 +223,7 @@ If two vertices don't agree on this value, we have distinguished them successful
 If they agree on this value, then we know that each will have some minimum number of paths for any even value of p (as we know enough about their local neighborhood to assume the star graph as a minimum). 
 If they later agree on a value for the cycles function, we know that CITE.
 
+
 \subsection{Space Complexity}
 Though the above simplification can certainly allow us to do our computations in a way that is likely to avoid collisions, if we are discussing properties of the invariant as a whole, our analysis ignores the nature of collisions.
 Thus, if we are attempting to draw conclusions about the algorithm from a theoretical perspective, we need to assume that we are fully calculating the cycles invariant without the use of the modulo trick.
@@ -240,6 +243,7 @@ If we assume that the maximum length cycle we are interested in is of length N-1
 $$ O(Bits(N)) = \log_2 (N-1)^{N-1} = (N - 1) \log_2 (N-1) = O(N \log N)$$
 Thus the total number of bits required to fully represent a Cycles matrix is bounded by $O(N^3logN)$, a large upper bound, but certainly sub-exponential.
 
+
 \section{Reconstructability, Determination, Representation}
 Many of the graph theoretic discussions of the cycles invariant will describe it with respect to other invariants. We have some language to assist these comparisons.
 We will say that a property of a graph is `reconstructable' from Cycles if we can construct a valid value for the property if we are given the Cycles invariant of the graph.
@@ -247,3 +251,4 @@ Similarly, a property is determined by Cycles if a set value of the invariant al
 Reconstructability and determinability differ only in that reconstructability describes a procedure for the conversion, but doesn't guarantee a unique result, while determinability demands that a value for Cycles uniquely determines the property in question, but doesn't require us to show a technique by which to perform the determination.
 
 Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{Reps}(G)$.
+Note that  $M_{Reps}(G)$ is related to the differentiation we made between the set of all graphs ($G_{Alg}$) and the set of all graph instances ($G_{Inst}$).
