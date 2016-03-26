@@ -74,7 +74,7 @@
 \contentsline {chapter}{\numberline {6}Random Graph Generators and Automorphisms}{26}
 \contentsline {section}{\numberline {6.1}Random Graph Models}{26}
 \contentsline {subsection}{\numberline {6.1.1}The Erd\"os-R\'enyi Model(s)}{27}
-\contentsline {subsection}{\numberline {6.1.2}The Gilbert Model}{27}
+\contentsline {subsection}{\numberline {6.1.2}The Gilbert Model}{28}
 \contentsline {subsection}{\numberline {6.1.3}Isomorphism Under the Gilbert Model}{29}
 \contentsline {section}{\numberline {6.2}Disconnect from Graphs as Algebraic Objects}{30}
 \contentsline {section}{\numberline {6.3}Specifically Disadvantaging Highly Automorphic Graphs}{31}
@@ -83,22 +83,24 @@
 \contentsline {subsection}{\numberline {6.3.3}Should We Never Use the Gilbert Model?}{33}
 \contentsline {section}{\numberline {6.4}Measuring and Comparing Random Graph Models}{34}
 \contentsline {subsection}{\numberline {6.4.1}An Ideal Random Graph Model}{34}
-\contentsline {subsection}{\numberline {6.4.2}Establishing a Methodology for Random Graph Generator Evaluation}{34}
-\contentsline {subsection}{\numberline {6.4.3}Graph Set Metrics}{35}
-\contentsline {subsection}{\numberline {6.4.4}Graph Set Metric Reference, Coding and Description}{36}
-\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{39}
-\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{39}
-\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{39}
-\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{39}
-\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{39}
-\contentsline {subsection}{\numberline {6.6.1}Cloning Model}{39}
-\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{40}
-\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{40}
-\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{40}
-\contentsline {section}{\numberline {6.8}On the Number of Graphs of a given Size}{40}
-\contentsline {subsection}{\numberline {6.8.1}Proposed Closed Forms}{40}
-\contentsline {chapter}{\numberline {7}Reflections}{41}
-\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{41}
-\contentsline {section}{\numberline {7.2}Modes of Discovery}{41}
-\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{41}
-\contentsline {section}{\numberline {7.4}Acknowledgments}{41}
+\contentsline {subsection}{\numberline {6.4.2}An Equivalent Ideal Random Graph Model}{34}
+\contentsline {subsection}{\numberline {6.4.3}Establishing a Methodology for Random Graph Generator Evaluation}{35}
+\contentsline {subsection}{\numberline {6.4.4}Graph Set Metrics}{36}
+\contentsline {subsection}{\numberline {6.4.5}Graph Set Metric Reference, Coding and Description}{37}
+\contentsline {subsection}{\numberline {6.4.6}Establishing Baselines for Graph Set Metrics}{40}
+\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{41}
+\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{41}
+\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{41}
+\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{41}
+\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{41}
+\contentsline {subsection}{\numberline {6.6.1}Cloning Model}{41}
+\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{42}
+\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{42}
+\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{42}
+\contentsline {section}{\numberline {6.8}On the Number of Graphs of a given Size}{42}
+\contentsline {subsection}{\numberline {6.8.1}Proposed Closed Forms}{42}
+\contentsline {chapter}{\numberline {7}Reflections}{43}
+\contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{43}
+\contentsline {section}{\numberline {7.2}Modes of Discovery}{43}
+\contentsline {section}{\numberline {7.3}Freedom to Pursue Interest}{43}
+\contentsline {section}{\numberline {7.4}Acknowledgments}{43}

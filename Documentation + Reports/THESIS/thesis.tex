@@ -300,16 +300,16 @@ Reconstructability and determinability differ only in that reconstructability de
 
 Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{Reps}(G)$.
 
-We will also frequently discuss two sets
+% We will also frequently discuss two sets
 
-TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted rows/columns of AI???
+% TODO: What if we have Paths and Cycles (Paths being not closed?) Or like sorted rows/columns of AI???
 
 
 \chapter{Cycles as a Graph Invariant}
 Cycles is a powerful graph invariant.
 In this chapter we will discuss properties of cycles that are reconstructable from cycles.
 We will then show how Cycles is reconstructible from some other graph invariants, which leads us to the conclusion that Cycles is necessarily an incomplete invariant.
-We will then discuss manual calculations that prove the example of Co-Cycles graphs, and the establishment of small datasets of co-cycles graphs as matrix by which to measure graph invariants.
+We will then discuss manual calculations that find examples of Co-Cycles graphs, and the establishment of small datasets of co-cycles graphs as a measure by which to gauge the discriminatory power of graph invariants.
 Finally, we will examine the performance of the cycles invariant on different classes of graphs which typically show resistance to classification and differentiation via graph invariants.
 
 \section{Basic Cycles-Reconstructable Properties}
@@ -322,38 +322,37 @@ We can also deduce the degree sequence, as simply observing the second column of
 Within the context of a graph, a polygon differs from a cycle in that a cycle is allowed to repeat both edges and vertices, while polygons do not allow repetitions of either.
 
 The number of triangles is also easily computed.  Since triangles necessarily contain three distinct vertices (in a graph with no self-loops), we know that any cycle of length three on a graph will be a triangle.
-Thus, the number of triangles which pass through each vertex is simply the third column of the paths invariant matrix, and summing them and dividing by three yields the total number of triangles in the graph.
+Thus, the number of triangles which pass through each vertex is simply the third column of the cycles invariant matrix, and summing them and dividing by three yields the total number of triangles in the graph.
 
-Things are not so simple for larger polygons.  If we think very critically, we can deduce the number of of valid quadrilaterals, by considering the degree sequence of each of the nodes adjacenct to a specific node.
-We can formalize this notion as follows.
-TODO
-Note that this logic requires us to take in an additional piece of information to augment the data that we get from the cycles invariant.
-Similarly, figuring out higher order polygons can be done, but it requires an awareness of the adjacent values of cycles.
-More generally, the larger the 'neighbors-paths' supplemental information we require, the further we stray toward giving away the information that fully determines the graph.
+Things are not so simple for larger polygons.  If we think very critically, we can deduce the number of of valid quadrilaterals, by considering the degree sequence of each of the nodes adjacent to a specific node.
 
-However, this is a powerful observation, and fits into a conception of a 'neighbors aware mechanism'. A formal discussion of such mechanism sis discussed in TODO.
+Note that this logic requires us to take in an additional piece of information to augment the data that we get from the cycles invariant (i.e. the sum of the degrees of the adjacent nodes).
+Similarly, figuring out higher order polygons can be done, but it requires a larger amount of external information.
+Generally, the larger the 'neighbors-paths' supplemental information we require, the further we stray toward giving away the information that fully determines the graph.
+
+However, this is a powerful observation, and fits into our idea of the cycles invariant as a `neighborhood awareness mechanism'. A formal discussion of such mechanism is discussed in CITE.
 
 \subsection{Chromatic Polynomial}
 One of the most discriminatory polynomial time algorithms for ruling out graph isomorphism is the \emph{Chromatic Polynomial} of the graph's adjacency matrix $A$.
 It is a well proven result that shuffling the order of the vertices in the representation of a given graph as an adjacency matrix does not change the eigenvalues of the matrix (thus the eigenvalues, as a multiset, form a powerfully discriminatory graph invariant), and thus the chromatic polynomial (as it encodes all information from this multiset) is also a graph invariant.
-In practice, it is a highly discerning as a graph invariant, as a very small proportion of graphs are "cospectral" (having the same chromatic polynomial) and not isomorphic.
+In practice, it is a highly discerning as a graph invariant, as a very small proportion of graph instances are ``cospectral" (having the same chromatic polynomial) and not isomorphic.
 However, there are not well established procedures to use the results of eigenvalue calculations to attempt to explicitly construct an isomorphism, rather, it is powerful in ruling out hypothetical isomorphisms. 
 
-In seeking out a relationship between the chromatic polynomial and the $Paths$ function, it helps to remember the helpful property of  eigenvalues:
+In seeking out a relationship between the chromatic polynomial and the $Cycles$ function, it helps to remember the helpful property of  eigenvalues:
 $$E(A) = \{\lambda_1,\lambda_2,\lambda_3, \dots, \lambda_V\} \rightarrow E(A^P) = \{\lambda_1^P,\lambda_2^P,\lambda_3^P, \dots, \lambda_V^P\} $$
 Additionally, since we know that our original matrix A is diagonalizable, positive, and symmetric, we know that all of the eigenvalues are real and non-negative. 
 Finally, we know that the sum of the diagonal of any matrix is the sum of its eigenvectors. 
-Thus, using the $Paths$ function to determine the entries of the diagonal, we know that for any adjacency matrix A,
-$$\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_V = \sum_{i = 0}^{V}{Paths(1, i)}$$
+Thus, using the $Cycles$ function to determine the entries of the diagonal, we know that for any adjacency matrix A,
+$$\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_V = \sum_{i = 0}^{V}{Cycles(1, i)}$$
 Or more generally (leveraging our knowledge about the eigenvalues of $A^P$:
-$$ \sum_{i = 0}^V{\lambda_i^P} =  \sum_{i = 0}^{V}{Paths(P, i)}$$
+$$ \sum_{i = 0}^V{\lambda_i^P} =  \sum_{i = 0}^{V}{Cycles(P, i)}$$
 This means that we can create V nonparallel (as not divisible in the ring $R[x]$) equations, each containing $\lambda_1$ to $\lambda_V$ as variables.
 Additionally, since we have the guarantee that our eigenvalues are all non-negative, we know that we can assuredly solve any given equation in terms of one of the $\lambda$'s.
 If we then use these substitutions, and substitute out all but one of the variables, what we will get is a continuous function whose zeros are well defined and positive. 
 
 Given the aggregated substitution, each one of the zeros is an eigenvalue, assign a selected value to any unassigned eigenvalue, and reduce our equations using that assumed value (think of a let statment).
 This kind of procedure is necessary because our system of equations has variables whose relationships are inherently non-distinct.
-In other words, we cannot make any differentiation between $\lambda_1$ and $\lambda_2$ based on the relationships of the equations, but if we make a choice for either, it will lead to a valid conclusion.
+In other words, we cannot make any differentiation between $\lambda_1$ and $\lambda_2$ based on the relationships of the equations, but if we make a choice for either, it will lead to a valid conclusion, or a reduction which does not eliminate a valid conclusion.
 This is by virtue of the fact that our substitutions are without condition, and we don't need to worry about any domains of substitution.
 
 From a physical perspective, these equations can be described as surfaces in V dimensions, whose intersection we are interested in isolating for. 
@@ -594,19 +593,22 @@ NAUTY's algorithm uses simpler heuristics (such as X and X) to eliminate permuta
 
 \chapter{Random Graph Generators and Automorphisms}
 
+%----------------------------------------------------------------------------------
+
 \section{Random Graph Models}
 
 The field of random graph theory was started with two independent papers in 1959, each defining models for generating and analyzing random graphs.
 A \emph{random graph model} is any system of generating graphs with the influence of chance, with various constraints that describe the desired properties of the resulting graphs.
 These two papers began a trend in graph theory that allowed theoreticians and algorithm designers to think about efficiency differently, particularly on NP-Hard and NP-Complete graph algorithms.
-
+Rather than concerning themselves with worst case run time, theoreticians began describing and designing algorithms to satisfy ideas of average case running time over the `class of random graphs'.
 Random graphs served as a new lens through which theory could pivot away from the worst case, instead handling common and general cases of problems that were either proven to be impossible in the worst case, or suspected to be so. 
+
 A few examples from the years following showed that random graph theory lent a new life to the challenging problems of CITE, CITE and CITE.
-In this chapter, we will discuss multiple models of random graph generation, examine the strengths and flaws of each, and propose an alternative mechanisms by which graphs can be generated for more theoretical applications and algorithms.
+In this chapter, we will discuss multiple models of random graph generation, examine the strengths and flaws of each, and propose alternative mechanisms by which graphs can be generated for more theoretical applications and algorithms.
 
 It is important to recognize that there has been an increase in interest in alternative random graph models in the last ten years.
 The majority of these papers focus on exponential random graph models, which are centered around the study of network structure with local and global patterns of connection.
-For example, the internet (if sites are viewed as vertices and links as edges), has an exponential in-degree distribution (many more people link to cnn.com than gradybward.com).
+For example, the internet (if sites are viewed as vertices and links as edges), has an exponential in-degree distribution (many more people link to cnn.com than gradybward.com) \cite{exponentialgraphs}.
 Another set of random graph models tries to model social networks, which are categorized by cliques (groups of friends), with alternative connections that symbolize non-group friendships.
 For either of these models, algorithmic theory is inadequate if it treats all graphs as equally likely, or if it treats all graph instances as equally likely.
 Though this section is not focused on these models, it does adapt some of the characteristics and heuristics of this pursuit to a different goal, of establishing a random graph model for testing algorithms over the set of all graphs.
@@ -690,6 +692,7 @@ Similarly, algorithm designers who use a gilbert model to test against the `aver
 Treating graph instances as graphs allows theoreticians to use easier math, and allows algorithm designers to inflate their claims.
 In the next section, we will show how a simple problem (like graph isomorphism) has dramatically different theoretical and experimental analysis when performed over all graphs than when it is performed over all graph instances.
 
+%----------------------------------------------------------------------------------
 
 \section{Disconnect from Graphs as Algebraic Objects}
 
@@ -717,37 +720,39 @@ This means that the probability of selecting a matrix which represents graph G i
 
 Though this seems like a semantic difference, as I will show over the next several sections, it has critical implications for the algorithms that use it to argue about computational complexity.
 
+%----------------------------------------------------------------------------------
+
 \section{Specifically Disadvantaging Highly Automorphic Graphs}
 
-Dominant models of random graph generation specifically preference graphs without non-trivial automorphisms over graphs that have many automorphisms. 
+Dominant models of random graph generation specifically preference graphs with fewer non-trivial automorphisms over graphs that have many automorphisms. 
 This flaw is most glaring when discussing average or worst case running time over the `random' class of graphs.
-Many algorithms make exciting claims about their performance on `random' graphs.
-We will show how theoretical and practical analysis of performance changes dramatically under different random graph generators.
+Many algorithms make exciting claims about their performance on `random' graphs, but
+we will show how theoretical and practical analysis of performance changes dramatically under different random graph generators.
 
 \subsection{Theoretical Average Case Comparison}
 
 Consider a standard canonical labeling algorithm.
-This algorithm has two abstract components, one which correctly places vertexes into Similar Vertex Sets (SVS), and another which finds a canonical labeling given an accurate SVS partition [CITE].
+This algorithm has two abstract components, one which correctly places vertexes into Similar Vertex Sets (SVS), and another which finds a canonical labeling given an accurate SVS partition.
 If we take the first part of this algorithm as given, and assume that it can be computed in polynomial time (a reasonable assumption, as discussed in the section on SVS), then the running time of the algorithm is contingent upon the number of matrices we need to evaluate against some canonical property.
 One common property for canonization is selecting the adjacency matrix which is the lexicographically smallest (or largest) representation of the graph.
 It is reasonable to assume that the second half of the algorithm dominates the running time of the overall algorithm, as it is the piece that is inherently exponential based on the number of representations of the matrix.
 Thus,  we can express the running time of the overall algorithm in terms of $O(|Aut(G)|)$, as this is the number of possible labelings we will have to examine to find our canonical one.
 
 The selection of this simplified algorithm for analysis is not an accident: we have chosen it because the number of matrix representations ($M_{rep}(G)$) for a given graph $G$ is $\frac{N!}{|Aut(G)|}$.
-Thus, if we are considering the average running time of this canonization algorithm ($\xoverline{T}_{Gilbert}$) over the set of all graph instances ($GInst = G(A)$ for $A \in \{\{0,1\}^{N \times N}\}$) (i.e. using the standard models for random graph generation), we come to different conclusions if we consider the set of possible graphs $GInst$, versus if we consider the set of all graphs as algebraic structural objects ($GAlg$).
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GInst} O(T(g))}{|GInst|}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GAlg} O(T(g)) * M_{Reps}(g)}{|GInst|}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GAlg}  |Aut(g)| * \frac{N!}{|Aut(g)|}}{|GInst|}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in GAlg}  N!}{2^{.5(N^2 - N)}}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ |GAlg| * N!}{2^{.5(N^2 - N)}}$$
+Thus, if we are considering the average running time of this canonization algorithm ($\xoverline{T}_{Gilbert}$) over the set of all graph instances ($G_{Inst} = G(A)$ for $A \in \{\{0,1\}^{N \times N}\}$) (i.e. using the standard models for random graph generation), we come to different conclusions if we consider the set of possible graphs $G_{Inst}$, versus if we consider the set of all graphs as algebraic structural objects ($G_{Alg}$).
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Inst}} O(T(g))}{|G_{Inst}|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Alg}} O(T(g)) * M_{Reps}(g)}{|G_{Inst}|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Alg}}  |Aut(g)| * \frac{N!}{|Aut(g)|}}{|G_{Inst}|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Alg}}  N!}{2^{.5(N^2 - N)}}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ |G_{Alg}| * N!}{2^{.5(N^2 - N)}}$$
 
 This property might not look like it tells us much, but we can actually approximate what it looks like for different values of N, since we have the frist nineteen values of this sequence from OEIS sequence A000088 CITE.
 This data is shown below.
 CITE
 
 However, if we attempted to select a graph from the set of all graphs of that size, we would find that: 
-$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in GAlg}  O(T(g)) }{|GAlg|}$$
-$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in GAlg}  |Aut(g)|}{|GAlg)|}$$
+$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in G_{Alg}}  O(T(g)) }{|G_{Alg}|}$$
+$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in G_{Alg}}  |Aut(g)|}{|G_{Alg}|}$$
 $$\xoverline{T}_{Ideal} = \text{Average Number of Automorphisms over Graphs}$$
 
 Some sample numbers to give you the scale of these disparities is given below \cite{erdosreyni}.
@@ -801,26 +806,56 @@ After selecting M as an observation from this random distribution, we will selec
 To accomplish this task, we will enumerate all graphs of that size, and select from that fully defined set.
 
 The flaw in this scheme is obvious.
-Our `Ideal' generator is only possible so long as you can enumerate all graphs of a given size.
-There are 24637809253125004524383007491432768 non-isomorphic graphs over 19 vertices, so this is not remotley sustainable methodology for a random generator.
+Our `Ideal' generator is only possible by this methodology so long as you can enumerate all graphs of a given size.
+There are 24637809253125004524383007491432768 non-isomorphic graphs over 19 vertices, so this is not remotely sustainable methodology for a random generator.
 If we cannot rely on an ideal graph generator, are we doomed to stick with the Gilbert model?
 Or, could we create a model that is better than the Gilbert model (closer to our ideal), while being computationally reasonable?
 
+\subsection{An Equivalent Ideal Random Graph Model}
+
+Another way to view our equivalent random graph model is as a overlaid construction on top of a standard, Gilbert, random graph model.
+Since we know that the Gilbert random graph model produces a graph with a probability proportional to its number of automorphisms, we can actually create a random graph generator which is equivalent to our idealized model by systematically throwing out graphs with probability inverse to their probability of showing up.
+The algorithm which generates to this model is not guaranteed to halt, but does simulate our idealized random graph generator, even over large values of N.
+
+\begin{lstlisting}[frame=single]
+while true:
+	g = gilbertRandomGraph(N, P)
+	na = |Aut(g)|
+	p = Math.rand(0, 1)
+	if (p < (na / N!))
+		return g
+\end{lstlisting}
+
+Here we find a gilbert random graph, and calculate the number of automorphisms that it has.
+That gives us knowledge of how many times we would expect it to occur in a sample of $2^{E_{max}}$ random graph instances, namely $N! / na$ times.
+Thus, we weight any randomly observed random graph instance by the inverse of this value.
+This equalizes the probability of getting any graph, regardless of its number of automorphisms.
+
+This methodology is, unfortunately, equally unsustainable.
+This is an example of a geometric process, where we will have to go a certain number of trials before finding a success and stopping. 
+The probability of a success on any given trial is $p = \frac{|G_{alg}|}{|G_{inst}|}$, which approximates the $p = fact^{-1}(N) = \frac{1}{N!}$ growth function.
+Thus, for even a small number of vertices, the expected number of trials that need to be generated before a success is found is very large, as it is given by $1/p = N!$. 
+For example, if $N=10$, we would expect to have to examine 3.6 million graphs before finding one which is returned successfully.
+
+This too, is not a sustainable methodology for random graph generation.
+
 \subsection{Establishing a Methodology for Random Graph Generator Evaluation}
 
-Answering these questions required some really deliberate thought.
+So what can we do that is better?
+Answering that question required some really deliberate thought.
 I knew lots about what I didn't want to do:
 \begin{itemize}
-\item{I didn't want to write generators and then use data to support them.}
+\item{I didn't want to use subjective measures to support one random graph generator over another.}
+\item{I didn't want to write generators and then use collected data to support them.}
 \item{I didn't want to focus in on singular ways of looking at the quality of the graphs that I generated.}
 \item{I didn't want to allow my own intellect and lack of creativity be a limiting step on the way to a better generator.}
 The process that I decided on attempted to address all of these concerns, and was designed to avoid the pitfalls of bad computer science: overfitting, statistic selection, and rigidity.
 \end{itemize}
 
-I decided on twenty XXX statistics, each of which is calculated over a sets of graphs.
+I decided on a wide portfolio of statisitcs each of which is calculated over a sets of graphs.
 These statistics are inherently heuristic, but each attempts to capture some property of the graphs that are generated, or some property of how the set looks as a whole.
-Each of the statistics I decided on is meant to describe some property of a set of graphs, but it does not establish an `idealized' value for that statistic.
-Though for several of these metrics we know how to express the ideal/expected probability, that is not always the case.
+Each of the statistics I decided on is meant to describe some property of a set of graphs, but it does not establish an `idealized' or theoretical value for that statistic.
+Though for several of these metrics we know how to express the ideal/expected probability, that is not always the case (or not always known to be the case0.
 These metrics serve as a way for us to identify and name ways that random graph generators fail us, and challenge us to do better, to compare a proposed solution to an ideal or standard solution in quantifiable and concrete terms.
 
 The set metrics is described in the next section, and they vary in computational complexity and broad descriptiveness.
@@ -838,7 +873,7 @@ The reliance on singular metrics as a means of comparison allows us to evaluate 
 
 Described below are each of the metrics that are calculated over every set of random graphs that were generated.
 Each is labeled a statistic (implying a singular value used to judge the generator) or a distribution (connoting that it was not used in the systematized evaluation of generators).
-Each is listed under its acronym, which can be found throughout my code and tests CITE. 
+Each is listed under its acronym, which can be found throughout my code and tests. 
 
 \subsection{Graph Set Metric Reference, Coding and Description}
 
@@ -887,11 +922,32 @@ Each is listed under its acronym, which can be found throughout my code and test
 \item{SQNR - Set Statistic - Sum of Squared Number of Repeats - A measure of how dispersed the distribution is, calculated as $FFC \dot (FFV^2) / nGraphs$}
 \item{UG - Set Property - Unique Graphs - The canonical form of all of the graph set's graphs, with duplicates removed (if they existed)}
 \item{VLNA - Set Statistic - Variance of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then find the variance of the logged results}
-
 \end{itemize}
 
-\subsection{Quantifiably Comparing Graph Set Metric }
+\subsection{Establishing Baselines for Graph Set Metrics}
 
+Once we set up these metrics, we need to find a way to systematically compare them within our desired context: building a random graph generator which models an idealized random graph generator.
+To do this, I established baseline understandings for each one of the metrics, over a problem `domain':
+\begin{itemize}
+\item{Number of Graphs - I decided to operate over sets of 1000 graphs.  It allowed us to get reasonable numbers for standard deviations and not use an excess of CPU time}
+\item{Number of Vertices - I baselined the metrics over graphs of size 4 to size 10.  This allowed us to see what the metrics looked like on an overrepresented graph set, and on a sample set.}
+\item{Probability of Edges - I used p from the set $[.1, .2, .3, .4, .5, .6, .7, .8, .9]$. I figured that focusing on sparse, dense or intermediate graphs might introduce biases that I hadn't accounted for, so I decided for the most generic set possible.}
+\item{Number of Trials - For each one of these baseline scenarios, I performed 30 trials}
+\end{itemize}
+
+Thus, in the end, there were $2 \times 9 \times 7 \times 30 = 2780$ sets of 1000 graphs that were used to create our baselines.
+
+For each one of the statistics we calculated the mean and standard deviation of the sampled metrics over both algorithms.
+That resulted in two sample means and sample standard deviations, for the ideal and gilbert graph models: $\xoverline{x_I}, \xoverline{x_G}, s_I$ and $s_G$. 
+Using these values, I came up with a simple and intuitive way to measure a new random graph generator, given its value for $\xoverline{x_N}$ and $s_N$, by comparing the t values in two tests of significance for two unknown means and unknown standard deviations.
+In a test of unequal unknown means and standard deviations, the slightly modified t-statistic is given by:
+$$T(A, B) = T(\xoverline{x_A}, \xoverline{x_B}, s_A, s_B, n_A, n_B) = \frac{|\xoverline{x_A} - \xoverline{x_B}|}{\sqrt{(s_A^2 / n_A + s_B^2 / n_B}} $$
+And our scoring mechanism for a metric and generator is given by:
+$$ \text{Score for Metric M} = \frac{T_M(I, N)}{T_M(I, G)}$$
+$$ \text{Score for Generator} = \frac{1}{N_{Metrics}} \times \sum_m^{Metrics} Score_m $$
+where higher scores are worse, and a score of 1 corresponds to a generator that is approximately as bad as the Gilbert Generator.
+
+This is a good mechanism because it scores a value on a metric based on how close it is to the ideal mean, but also compares any deviancy to the deviancy observed between the ideal and standard (Gilbert) generators.
 
 \section{Flaws in Proofs of Average Case Random Graphs}
 \subsection{Selection of Certain Classes of Graphs}
@@ -912,7 +968,8 @@ First, it creates K disjoint graphs, each of which is fully automorphic, and wit
 
 \section{On the Number of Graphs of a given Size}
 The number of non-isomorphic graphs of a given size is an open question.
-The first twenty two terms of this sequence have been calculated, and are available in the Online Encyclopedia for Integer Sequences\cite{OEIS}.
+The first fifty terms in this sequence have been calculated, and are available in the Online Encyclopedia for Integer Sequences\cite{OEIS}.
+
 \subsection{Proposed Closed Forms}
 
 
