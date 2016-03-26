@@ -69,8 +69,9 @@
 \contentsline {subsection}{\numberline {4.3.5}Further Lines of Exploration}{23}
 \contentsline {chapter}{\numberline {5}Canonical Labeling Using Cycles}{24}
 \contentsline {section}{\numberline {5.1}Background}{24}
-\contentsline {section}{\numberline {5.2}A Consistent Algorithm}{24}
-\contentsline {section}{\numberline {5.3}Time Growth Comparisons to Faster Algorithms}{25}
+\contentsline {section}{\numberline {5.2}Augmented Paths}{24}
+\contentsline {section}{\numberline {5.3}A Consistent Algorithm}{24}
+\contentsline {section}{\numberline {5.4}Time Growth Comparisons to Faster Algorithms}{25}
 \contentsline {chapter}{\numberline {6}Random Graph Generators and Automorphisms}{26}
 \contentsline {section}{\numberline {6.1}Random Graph Models}{26}
 \contentsline {subsection}{\numberline {6.1.1}The Erd\"os-R\'enyi Model(s)}{27}
@@ -88,17 +89,8 @@
 \contentsline {subsection}{\numberline {6.4.4}Graph Set Metrics}{36}
 \contentsline {subsection}{\numberline {6.4.5}Graph Set Metric Reference, Coding and Description}{37}
 \contentsline {subsection}{\numberline {6.4.6}Establishing Baselines for Graph Set Metrics}{40}
-\contentsline {section}{\numberline {6.5}Flaws in Proofs of Average Case Random Graphs}{41}
-\contentsline {subsection}{\numberline {6.5.1}Selection of Certain Classes of Graphs}{41}
-\contentsline {subsection}{\numberline {6.5.2}Examples Uses in Proofs}{41}
-\contentsline {subsection}{\numberline {6.5.3}Average Case Runtime Under Erdos-Reyni and Worst Case}{41}
-\contentsline {section}{\numberline {6.6}Alternative Ideas for Random Graph Modeling and Creation}{41}
-\contentsline {subsection}{\numberline {6.6.1}Cloning Model}{41}
-\contentsline {section}{\numberline {6.7}Inherent Limitations on Models by Computational Theory}{42}
-\contentsline {subsection}{\numberline {6.7.1}Uncertainty in Set Size}{42}
-\contentsline {subsection}{\numberline {6.7.2}Computational Verification Limits}{42}
-\contentsline {section}{\numberline {6.8}On the Number of Graphs of a given Size}{42}
-\contentsline {subsection}{\numberline {6.8.1}Proposed Closed Forms}{42}
+\contentsline {section}{\numberline {6.5}Alternative Ideas for Random Graph Modeling and Creation}{41}
+\contentsline {subsection}{\numberline {6.5.1}Cloning Model}{41}
 \contentsline {chapter}{\numberline {7}Reflections}{43}
 \contentsline {section}{\numberline {7.1}Broad Project, Unclear Aims}{43}
 \contentsline {section}{\numberline {7.2}Modes of Discovery}{43}

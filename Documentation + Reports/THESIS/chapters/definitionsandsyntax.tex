@@ -1,0 +1,229 @@
+\chapter{Definitions and Syntax}
+
+
+\section{Graphs}
+This report describes undirected, unlabeled graphs with no self-loops or multi-edges.
+Such graphs are represented by an \emph{adjacency matrix}: a square, symmetric, binary matrix with zeros along the diagonal.
+We will use $G$ to refer to a graph, and $A$ to refer to an adjacency matrix of the graph.
+When we use $A$, it will not refer to a specific adjacency matrix, as most graphs can be represented by many matrices.
+
+We will refer to the set of vertices of a graph as $V(G)$, and the set of edges of a graph as $E(V)$.
+Graphs have $N$ vertices and $M$ edges where $N \in [0, \infty)$ and $M \in [0, E_{max}]$ where ${E_{max}} = \frac{1}{2}(N)(N-1)$.
+When discussing specific edges, tuples are symmetric: $(v_1, v_2) = (v_2, v_1)$.
+
+A graph's \emph{complement} is a new graph over the same set of vertices, but where adjacency and non-adjacency are inverted.
+In formal terms, the graph $H$ is $G$'s inverse if $V(H) = V(G)$ and $(v_1, v_2) \in E(H) \leftrightarrow (v_1, v_2) \notin E(G)$.
+
+The complete graph over $N$ vertices is $K_N$. 
+The cycle graph over $N$ vertices is $C_N$.
+The star graph is $N$ vertices is $S_N$.
+
+\section{Labeling and Representing Graphs}
+
+A labeling of a graph is a bijection which maps each vertex of $V(G)$ to an integer in the range $[1, N]$.
+For every possible labeling of a graph, there is a natural adjacency matrix which represents it, namely the matrix where the $i$\ts{th} labeled vertex is represented by the $i$\ts{th} column and row of the matrix.
+The number of distinct labelings of a graph and the number of distinct matrices which represent that graph are equivalent.
+A graph can have as many as $V!$ labelings, or can have as few as $1$ (consider $K_N$).
+
+An important distinction in this report is on the \emph{representation} of graphs.
+Most graphs can be represented by several distinct adjacency matrices, but a change to representation does not change the fundamental structure of the graph that the matrices represent.
+Different representations of graphs are akin to different labelings of the graph: neither mutate structure, and neither should change the results of our algorithms.
+When we discuss a set of graphs, or an algorithm over graphs, we will be treating graphs as objects which denote structure, and will in every way be blind to their representation.
+When we refer to a graph, we are referring to all of its representations.
+When we intend to discuss a graph within some physical reality of its representation (for example, when determining whether two given adjacency matrices refer to the same graph) we will use the term \emph{graph instance} to denote that difference.
+This is an `algebraic' understanding of the structure of graphs, not a semantic choice. 
+It will have important implications throughout this report, particularly around ideas of random graph models.
+
+When we are discussing the set of all graphs as algebraic objects, we will use the notation $G_{Alg}$.
+When we are discussing the set of all graph instances, we will use the notation $G_{Inst}$.
+To start thinking critically about this distinction, always remember that:
+$$|G_{Alg}| <<< |G_{Inst}| = 2^{E_{max}}$$
+but since the number of representations of a given graph is limited by its number of labelings that:
+$$|G_{Alg}| * N! > | G_{Inst} | =  2^{E_{max}}$$
+
+
+\section{Graph Isomorphism and Automorphism}
+Two graph instances $G$ and $H$ are \emph{isomorphic} if there exists a mapping $M$ between $V(G)$ and $V(H)$ such that $$\forall_{a, b \in V(G)} (a, b) \in E(G) \leftrightarrow (M(a), M(b)) \in E(H)$$
+
+If an isomorphism exists between two graph instances, then the two instances represent the same graph; they have the same structure.
+An isomorphism preserves all adjacencies and all non-adjacencies, and the existence of an isomorphism between instances proves that they are the same graph.
+It may be possible for multiple isomorphisms to exist between two graph instances, but we are generally only concerned with the existence of such a mapping.
+We will use the notation $Iso(G, H)$ to be shorthand for a boolean predicate describing the existence of such a mapping.
+
+The question of whether or not graph isomorphism as a decision problem (GI) can be computed in polynomial time is an open question in theoretical computer science.
+The problem is known to be computable in quasi-polynomial time CITE, though no convincing arguments have placed it in NP-complete nor in P.
+
+An \emph{automorphism} is a mapping of the set of vertices of a graph onto itself ($V(G)$ to $V(G)$) which preserves adjacency and non-adjacency.
+If an automorphism $M$ maps every element of $V(G)$ to itself, the automorphism is called the \emph{trivial automorphism}.
+Though it will be taken as granted, the set of all valid automorphisms for a graph G forms a group CITE.
+This group has at least one element (the identity element as the identity isomorphism), but may have as many as $N!$ elements CITE.
+This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the \emph{followed by} operation.
+
+\section{Graph Invariants}
+A \emph{graph invariant} is an ordered property calculated over a graph which remains the same irrespective of the representation or labeling of the graph.
+More specifically, an algorithm or property is a graph invariant only if it produces output which is stable across all instances of the same graph, and comparable in polynomial time.
+A graph invariant $Inv(G)$ can allow us to conclude that two graph instances $(G_1, G_2)$ are \emph{not} isomorphic if $Inv(G_1) \neq Inv(G_2)$.
+However, it is distinctly limited, in that the converse does not nescesarily hold (i.e. it is possible for non-isomorphic graph instances to share a value for a graph invariant).
+
+\subsection{Discriminatory Power}
+A graph invariant is \emph{discriminating} if it can, with a certain probability, distinguish two non-isomorphic graphs as non-isomorphic.
+For example, an example of a graph invariant that is not very discriminatory is the vertex count of a graph.
+Two graphs are certainly not isomorphic if they differ in their vertex count, however, many graphs which are not isomorphic do have the same vertex count.
+In contrast, the chromatic polynomial of a graph is a highly discriminatory graph invariant, as the odds of having two non-isomorphic graph instances agree on their chromatic polynomial is relatively low.
+
+To formalize this notion, we will discuss discriminatory power with a specific probabilistic meaning.
+A graph invariant $Inv$ discriminates at a level $\alpha$ for $N$ vertices and $M$ edges if selecting two graphs $G$ and $H$ at random from some random graph generator:
+$$P(Inv(G) = Inv(H) \wedge \neg Iso(G, H)) \, \leq \, \alpha$$
+What we will find is that we can frequently discuss alpha as a function of $M$ and $N$.
+Later in this report we will discuss how $\alpha$ fits in to a natural definition of a false positive an uncertain test without a false negative rate ($\beta = 0$).
+
+\section{Vertex Invariants}
+
+\subsection{Vertex Similarity}
+Two vertices are \emph{similar} if there exists a mapping in the automorphism group $Aut(G)$ such that the mapping maps one vertex to the other.
+Similarity is a transitive and commutative property.
+The vertex set $V(G)$ can be divided up into between 1 and N similar vertex sets, such that all of the vertices in each set are similar, and no two sets contains similar vertices.
+A discussion of these \emph{similar vertex sets} (or SVSs) will be the primary focus of chapter four.
+
+A graph (or subset of the vertices of a graph) is called \emph{perfectly similar} or \emph{perfectly automorphic} if, for every pair of vertices, there exists an automorphic mapping which maps one of the vertices to the other.
+This is not suggesting that every mapping of the graph is an automorphism (as is only the case in $K_n$ and $\xoverline{K_n}$), but rather that any initial choice of pairing within a mapping is valid, even if it limits all further choices.
+For example, $C_n$ is a perfectly similar graph, as is Peterson's graph CITE.
+
+\subsection{Vertex Invariants}
+\emph{Vertex invariants} are numerical properties that we  calculate over a specific vertex within a graph which identifies potentially similar vertex pairs.
+Similar vertices within a graph agree on all vertex invariants.
+However, like graph invariants, vertex invariants can only eliminate the possibility for vertex similarity, they are not sufficient to prove similarity.
+
+Vertex invariants make the computation of graph isomorphism between two graphs markedly easier. 
+Whereas a graph invariant can tell us about whether or not graph instances as a whole might be alike, it does nothing to suggest a proposed mapping between the vertices of the two graph instances.
+In contrast, a vertex invariant identifies potentially similar vertices not only within a graph, but also between graph instances.
+A \emph{perfect} vertex invariant is one for which agreement on the value of the invariant is equivalent to establishing the existence of an automorphism that maps one vertex to the other.
+
+A question discussed later in this report will be about the theoretical implications of a hypothetical perfectly discriminatory vertex invariant, and a couple of proposed invariants that haven't been found to be imperfect.
+
+\section{Cycles Invariant}
+The focus of this report is an invariant which can function as an invariant over graphs or their vertices.
+It is called the `Cycles' invariant, but is sometimes referred to as the `Paths' Invariant in cases where cycle has other connotations.
+In either case, we will consistently capitalize to distinguish the invariant from its other denotations.
+
+Cycles are allowed to repeat vertices and edges, and can pass back through their place of origin.
+We are counting cycles which are directional, so $ABCA$ and $ACBA$ are distinct cycles.
+
+Note that cycles (as a function and vertex invariant) is a property of a graph instance, only through sorting can we make it into a graph invariant.
+
+\subsection{Cycles as a Function}
+
+The $Cycles(A, p, v)$ invariant counts the number of closed paths of length $p$ that pass through a given vertex, $v$. 
+This information can be easily computed using $A$. 
+Just as the entries of $A^1$ represent the existence of paths of length 1 between two vertices (edges), the entries of $A^p$ represent the number of paths of length $p$ between any two vertices (by examining the row and column corresponding to two vertices).
+Thus, to find the number of closed paths of length $p$ that contain a given vertex $v$, we simply need to calculate: 
+$$Cycles(A, p, v) = A^p[v, v]$$
+Where $v$ is being used interchangeably here with its represented position within the adjacency matrix. 
+Thus, calculating a specific value of $Cycles(A, p, v)$ can occur in the time it takes to exponentiate $A$ to the power $p$.
+
+Though it is a well known result that matrix multiplication can be done in faster than $O(n^3)$ time, we will be using the na\"{i}ve TODO assumption that matrix multiplication runs in $O(n^3)$ in order to make the computational complexity calculations more accessible.  
+Under that simplifying assumption, it is clear that calculating $Cycles(A, p, v)$ will occur in $O(pv^3)$ time, but we can request as many values of $v$ and $p_i < p$ `for free' after a single calculation for $A$ and $p$.
+
+\subsection{Cycles as a Vertex Invariant}
+
+Cycles as a vertex invariant describes a vector of length $P$, where the $p$th entry is the number of closed cycles of length $p$ which pass through the vertex being described.
+
+If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of 
+$$Cycles(A, v_i) = [c_1, c_2, ... c_n] , c_p = Cycles(A, v_i, p) = A^p[i,i]$$
+for each of the values of $p$, forming a vector of length $P$.
+
+The vector generated by this computation is a way of describing the local graph around the vertex $v_i$.
+We can consider many ways in which Cycles reflects a 'reverberation' about the local neighborhood of a vertex, and provides a noisy invariant, which is useful for distinguishing purposes. 
+It will be discussed why later, but we will prove that $P$ will always be strictly less than $N$, and that further values of computation are not useful.
+
+\subsection{Cycles as a Graph Invariant}
+
+Extending this vertex invariant to be a graph invariant requires little imagination. 
+We simply calculate the Cycles vertex invariant for every one of the vertices of the graph, and are given back $N$ vectors of length $P$.
+We then sort the resultant vectors lexicographically, and arrange them in a $NxP$ matrix.
+This matrix is a comparable object which is invariant to changes in labeling or representation of $G$.
+
+Thus, paths as a graph invariant takes fewer inputs: Cycles(A, P).
+
+Since vectors are comparable in linear time, we can sort them in log-quadratic time.
+This does not change the asymptotic nature of our running time.
+
+Cycles(A, P) is invariant to changes in vertex relabeling or adjacency matrix ordering.
+A skeptical reader should convince themselves that this holds true, even when two of the vectors to be sorted are identical, the resulting $Paths$ object is valid and deterministically constructed from the graph.
+The specific running time of calculating and comparing the $Cycles$ functions and object is not the primary aim of this report, but there are clever methodologies that I have used to reduce the running time beyond these na\"{i}ve estimates, primarily for advancements in computational limits, by using delayed evaluation and multi-threaded comparison.
+
+\subsection{Invertibility}
+Note that if two graphs agree on the paths invariant, their complements (or inverses) also agree on the paths function.
+This is because TODO.
+
+\subsection{Time Complexity}
+The running time of the paths invariant is the same whether we treat it as a vertex invariant or as a graph invariant.
+The one difference is whether or not we sort the resulting vectors.
+It is imperative to calculate $A^P$ even if we are only interested in calculating it for a single vertex.
+Matrix multiplication can generally be accomplished in sub-cubic time CITE, but for the sake of simplicity and comprehensibility within this paper we will assume that it is an algorithm that runs in $O(N^3)$  time.
+This means that the computation of any paths invariant can be accomplished in $O(N^4)$ time.
+Though this sounds like a lot of time, generally, this is a quick computation.
+This is made asymptotically better by the fact that efficient algorithms for matrix multiplication are well studied and optimized for a variety of contexts.
+In a modern context, matrix multiplication can be done efficiently by GPU arrays, and there are quick ways to do multiplication on sparse matrices.
+
+\subsection{Operating over Large Numbers}
+One element of the Cycles invariant that we will consistently need to be cognizant of is the fact that our numbers will grow very quickly, particularly for large values of N.
+This complicates the calculation of cycles for values as small as $N=10$ CITE.
+Overflows occur when the summed value of the elements in the dot product add to a number greater than $2^32$.
+We can avoid this overflow if we guarantee that each of the $N$ pieces of the summation are less than or equal to $2^{\floor{32 - \log_2(N)}}$.
+Since we arrive at each element in this dot-product-summation via the product of two elements that were previously somewhere in our running matrix, we can avoid an overflow in a computation step if we have:
+
+$$ \forall_{i, j \in [1, N]} A[i, j] <= \sqrt{2^{\floor{32 - \log_2(N)}}} = 2^{\floor{16 - 0.5\log_2(N)}}$$
+
+We can make sure that this equality holds if we establish $K = \floor{16 - 0.5\log_2(N)}$ and make the incorporation of modulo into our formula for the Cycles function explicit:
+
+$$ Cycles(A, v_i, p) = \begin{cases} 
+      A[i,i] & p = 1 \\
+      (Cycles(A, v_i, p-1) * A) \; \% \; 2^K  & p > 1
+\end{cases}$$
+
+This preserves the properties of addition and composition that we are looking for, and maintains reasonably sized bit arrays.
+If we examine this methodology, we see that this operation is stable (if A and B map to the same value, they still will in this system) and that the odds of `collisions' (where values of A and B differ in the old system, and are the same in the new system) are unlikely.
+
+The first claim is verified through the fact that if we break any integer $z_i$ into the portion of it divisible by $2^K$ ($x_i$), and the piece that is the remainder ($y_i$), then our properties of multiplication and addition hold under the modulo transformation (denoted $T_K(z_i)$) is stable/consistent:
+
+$$z_i =  x_i(2^K) + y_i , \;\;\;T_K(z_i) = y_i$$
+
+$$z_i + z_j = (x_i + x_j)(2^K) + (y_i + y_j)$$
+$$T_K(z_i + z_j) = 0 + T_K(y_i + y_j)$$
+
+$$z_i * z_j = (x_i*x_j)2^{2K} + (x_i*y_j + x_j*y_i)2^K + (y_i * y_j)$$
+$$T_K(z_i * z_j) = 0 + 0 + T_K(y_i * y_j)$$
+
+The second claim is verified through a thought experiment about how cycles varies over multiple values of $p$.
+If we are attempting to distinguish between to cycles vectors, the most obvious comparison would be the degree of the vertices (the second element of a cycles vector).
+If two vertices don't agree on this value, we have distinguished them successfully, and any future point of overlap (or collision) is irrelevant. 
+If they agree on this value, then we know that each will have some minimum number of paths for any even value of p (as we know enough about their local neighborhood to assume the star graph as a minimum). 
+If they later agree on a value for the cycles function, we know that CITE.
+
+\subsection{Space Complexity}
+Though the above simplification can certainly allow us to do our computations in a way that is likely to avoid collisions, if we are discussing properties of the invariant as a whole, our analysis ignores the nature of collisions.
+Thus, if we are attempting to draw conclusions about the algorithm from a theoretical perspective, we need to assume that we are fully calculating the cycles invariant without the use of the modulo trick.
+This means that we need to prove that computation of it can be done in polynomial space.
+Otherwise, the polynomial aspect of this computation could be misleading away from a gross inefficiency in space that masks the the true costs and limitation of the computation.
+For example, there is a cute algorithm [CITE] that I designed, which solves the boolean satisfiability problem (an NPC-problem) in linear time, using only addition, multiplication and bitwise operations, but uses exponential space to do it. 
+The flaw in this kind of algorithm is that it exploits a simplification that we make in algorithmic theory: we don't consider the time complexity on a bit-by-bit basis.
+With large enough numbers, algebraic operations are not constant, they are linear functions of the number of their bits.
+Infinitely sized registers are an abstraction of well designed systems, but cannot exist.
+Thus it is important for us to verify that the calculation of the cycles invariant uses a polynomial amount of space.
+
+In the worst case, the largest value in the Cycles invariant will occur when we have a fully connected graph of size N.
+In a fully connected graph, any sequence of vertices that does not put the same vertex adjacent to itself is a valid cycle.
+Thus, for a length $l$, there are exactly $(N-1)^l$ valid paths, of which exactly $(N-1)^{(l-1)}$ of which start and end at the same location (and thus are cycles).
+
+If we assume that the maximum length cycle we are interested in is of length N-1 (as is discussed in another chapter), then the number bits required to express an individual number within the Cycles matrix is at maximum:
+$$ O(Bits(N)) = \log_2 (N-1)^{N-1} = (N - 1) \log_2 (N-1) = O(N \log N)$$
+Thus the total number of bits required to fully represent a Cycles matrix is bounded by $O(N^3logN)$, a large upper bound, but certainly sub-exponential.
+
+\section{Reconstructability, Determination, Representation}
+Many of the graph theoretic discussions of the cycles invariant will describe it with respect to other invariants. We have some language to assist these comparisons.
+We will say that a property of a graph is `reconstructable' from Cycles if we can construct a valid value for the property if we are given the Cycles invariant of the graph.
+Similarly, a property is determined by Cycles if a set value of the invariant allows only zero or one values for the property in question.
+Reconstructability and determinability differ only in that reconstructability describes a procedure for the conversion, but doesn't guarantee a unique result, while determinability demands that a value for Cycles uniquely determines the property in question, but doesn't require us to show a technique by which to perform the determination.
+
+Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{Reps}(G)$.

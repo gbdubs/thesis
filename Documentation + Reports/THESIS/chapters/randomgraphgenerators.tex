@@ -1,0 +1,369 @@
+\chapter{Random Graph Generators and Automorphisms}
+
+\section{Random Graph Models}
+
+The field of random graph theory was started with two independent papers in 1959, each defining models for generating and analyzing random graphs.
+A \emph{random graph model} is any system of generating graphs with the influence of chance, with various constraints that describe the desired properties of the resulting graphs.
+These two papers began a trend in graph theory that allowed theoreticians and algorithm designers to think about efficiency differently, particularly on NP-Hard and NP-Complete graph algorithms.
+Rather than concerning themselves with worst case run time, theoreticians began describing and designing algorithms to satisfy ideas of average case running time over the `class of random graphs'.
+Random graphs served as a new lens through which theory could pivot away from the worst case, instead handling common and general cases of problems that were either proven to be impossible in the worst case, or suspected to be so. 
+
+A few examples from the years following showed that random graph theory lent a new life to the challenging problems of CITE, CITE and CITE.
+In this chapter, we will discuss multiple models of random graph generation, examine the strengths and flaws of each, and propose alternative mechanisms by which graphs can be generated for more theoretical applications and algorithms.
+
+It is important to recognize that there has been an increase in interest in alternative random graph models in the last ten years.
+The majority of these papers focus on exponential random graph models, which are centered around the study of network structure with local and global patterns of connection.
+For example, the internet (if sites are viewed as vertices and links as edges), has an exponential in-degree distribution (many more people link to cnn.com than gradybward.com) \cite{exponentialgraphs}.
+Another set of random graph models tries to model social networks, which are categorized by cliques (groups of friends), with alternative connections that symbolize non-group friendships.
+For either of these models, algorithmic theory is inadequate if it treats all graphs as equally likely, or if it treats all graph instances as equally likely.
+Though this section is not focused on these models, it does adapt some of the characteristics and heuristics of this pursuit to a different goal, of establishing a random graph model for testing algorithms over the set of all graphs.
+
+In this pursuit, we will question what we mean when we say `random' graphs, and make explicit the assumptions, aims and valid applications of any one of our models. 
+
+\subsection{The Erd\"os-R\'enyi Model(s)}
+
+In their seminal paper on random graph theory, Paul Erd\"os and Alfred R\'enyi proposed two different models for random graph generation.
+The first of these models will be outlined in this section, and will be referred to as the Erd\"os-R\'enyi Model.
+The second was laid out in the same 1959 paper, but was also discovered by an independent contemporaneous mathematician, Edgar Gilbert.
+For the sake of clarity, we will refer to the contemporaneously described model as the Gilbert Model, and the one that is about to be outlined as the Erd\"os-R\'enyi Model.
+
+The model $G(N, M$) is defined as choosing a graph G with uniform probability from the set of all graph instances with $N$ edges and $M$ vertices.
+The size of this set is $\binom{E_{max}}{M}$, where $E_{max} = \frac{1}{2}(N^2 - N)$ represents the maximum number of vertices possible in a graph over $N$ vertices.
+Though the probability of getting any graph \emph{instance} with $N$ and $M$ edges out of this model is uniform, the probability of getting any graph with those constraints is not.
+Since the number of representations of a graph fluctuates along with other properties of the graph, this random generator has the flaw that certain graphs are more heavily weighted than others.
+This is a flaw that we will discuss at length in discussion of the Gilbert Model.
+
+In the study of random graphs, the Erd\"os-R\'enyi model has not been as popular as the Gilbert model because it is more cumbersome to deal with, and has fewer concrete applications CITE.
+Though some papers have utilized this model (namely CITE and CITE), the majority of theory is better suited to the combinatorial and probabilistic methods that are made useful by the Gilbert model.
+Though knowing the number of edges in a graph gives us some information about the graph, it turns out that the probability of a given edge, and the guarantee of its independence, is significantly more malleable to theoretic goals.
+
+\subsection{The Gilbert Model}
+
+The second model, which we will call the Gilbert model, comes from the mathematician Edgar Gilbert (as well as Erd\"os and R\'enyi) and is denoted $G(n, p)$.
+In the Gilbert model, $n$ specifies $N$, the number of vertices in the graph, and every pair of vertices is connected by an edge with a fixed and independent probability $p$.
+The Gilbert model is both intuitively pleasing, justified by real world use, and has convenient properties for proof.
+
+The Gilbert Model is an effective model for real world applications where graphs are thought of as occurring naturally without oversight or intervention.
+If we think about the configuration of the a network generated by actors acting randomly, the Gilbert model is appropriate.
+For example, consider a cocktail party among strangers, where the odds that any two people have a conversation in a given evening are likely independent and uniform.
+Or, consider the reproduction of coral, where fertilization of one coral by another is reasonably random through the fluid dynamics that carry, combine and disseminate their pollen.
+Gilbert's model gives us the language to describe graphs that pop up in wide-ranging uses, and a model to express the assumptions we frequently make about graphs in practical applications.
+
+Additionally, the Gilbert Model allows us to make bold proof-based claims about random graphs through established combinatorial and probabilistic methods.
+For example, if we try to estimate the number of edges within the a Gilbert graph, we simply are asking the binomial question with $n$ and $p$, and we have a readily available probability distribution to answer our questions.
+A more interesting example arises when we ask about the number of triangles expected in a large graph.
+If our graph is sufficiently large enough, the existence of one triangle does not impact the potential existence of another.
+We can express the number of triangles as a simple combinatorial problem: multiply the total number of triangles possible $\binom{N}{3}$ by the probability of all three edges existing $(p^3)$.
+This shows how combinatorics gives us tools to deal with Gilbert random graphs, and to make theoretical statements about expectations of the properties of these graphs.
+
+Finally, the Gilbert model has a revelatory connection to matrix representation.
+Consider the model with a fixed probability of $p=0.5$ and some fixed $N$.
+We will show that this random generator has a uniform probability of selecting any matrix from the set of all valid graph instances of size $N$.
+
+Consider the range of integers $[0, K^2 - 1]$.
+If we assume numbers are left-padded with infinite zeros, the $b$th bit of a randomly selected integer from this range has an equal probability of being a 1 or a 0, as exactly half of these numbers have each bit set.
+This is trivially true through the fact that there are $K^2$ integers in this range, and $K^2$ different bit strings.
+Since each bit string is only achievable with exact probability $(0.5)^K$, each integer is generated with the same, uniform probability.
+We will reshape the bit-string into representing each one of the edge variables, and we let $K = E_{max} = \frac{1}{2}(V^2 - V)$.
+This establishes a connection between the Gilbert model and a randomly selected matrix from the set of matrices which represent our definition of valid graphs. 
+This connection is intuitively pleasing, but further investigation should also show that its implies skewed results for some algorithms which rely on it.
+
+\subsection{Isomorphism Under the Gilbert Model}
+
+One of the first places that theoreticians turned their attention toward after the start of the study of random graphs was the problem of Graph Isomorphism.
+The dominant lens of that study was the discussion of naming a class of graphs, and having the following proof structure:
+\begin{itemize}
+\item{The class of graphs is closed under isomorphism (i.e. all graph instances are in the class of graphs)}
+\item{The class of graphs includes a large proportion of all graph \emph{instances}}
+\item{Any two graph instances in the class of graphs can be determined isomorphic or not in polynomial time}
+\end{itemize}
+This approach was undertaken by a large number of theoreticians in the 1960s and 1970s.
+A secondary component of these papers became the discussion of alternative algorithms which could solve the cases that were not solved for by the large model of the paper.
+It seemed (to paraphrase from Erdos), that graph theoreticians were going to chip away at the problem of graph isomorphism until there was nothing left to chip away.
+Yet, as it went forward, the increasingly restricted set of graphs for which no fast algorithm was known did not vanish.
+Instead, theoreticians (pardon the projection) were surprised to find that Graph Isomorphism was a hydra that they couldn't vanquish through these means.
+No matter the number of large classes of graphs they covered, no matter the diminishing proportion of graphs that were left uncovered, they couldn't find a way to solve all cases.
+
+Hindsight is clear, and we can see that the theoreticians' realization was really a self-reflexive commentary on the work that we are going to be doing in this section.
+What they had discovered is that the easy cases in isomorphism are exponentially (in fact, factorially) more common under a Gilbert model than they are if we treat them as algebraic objects.
+Thus, even as they shrunk the probability of seeing one of these highly automorphic graphs under a gilbert model, they did little to increase the overall number of graphs that their algorithms covered.
+
+The work we are going to do in this report is taking the opposite approach.
+Rather than trying to create algorithms that only cover a set of easy to handle graphs, we are going to ask how we can explicitly look for the harder cases.
+There are a number of justifications for this kind of work, but one simple one is the evaluation and clarification of random graph models.
+Initial attempts at modeling social networks, first through gilbert models, then through exponential models, failed to appropriately assess the true nature of the problem.
+Similarly, algorithm designers who use a gilbert model to test against the `average' graph should have their algorithms checked against a truly `average' graph.
+
+Treating graph instances as graphs allows theoreticians to use easier math, and allows algorithm designers to inflate their claims.
+In the next section, we will show how a simple problem (like graph isomorphism) has dramatically different theoretical and experimental analysis when performed over all graphs than when it is performed over all graph instances.
+
+%----------------------------------------------------------------------------------
+
+\section{Disconnect from Graphs as Algebraic Objects}
+
+Though it is the foundation for most probabilistic random graph theory, the Gilbert model is has a different meaning than we typically think when discussing `random' generators of other kinds.
+When we consider most other discussions of `uniform randomness', we state the assumption that the result element was selected from its set with a uniform probability.
+Moreover, we generally assume that each object within that pool was represented the same number of times.
+When I say `a randomly generated integer from the range', we are all agreeing on assumptions of what integers fall within this range, as well as how many times each is in our pool for selection (namely, once). 
+Whereas, when I say `a randomly selected word from a book', there is the possibility that common words are more likely to occur, or it could mean that I found the unique set of words in the book, and I am selecting from that.
+
+This is where random graph theory and colloquial understandings of randomness miss one another.
+Throughout this work I have gone to great lengths to distinguish between graphs (an entity that has a given structure), and graph instances (a given representation of that structure).
+Most graphs have many distinct graph instances; many different ways of representing themselves, but this number varies as a function of the properties of the graph.
+
+The problem with the two models outlined above is that they select a random \emph{graph instance} with a uniform probability, but this does not translate to our understanding of graphs as algebraic objects, which denote structure irrespective of representation.
+Thus, a model which chooses graph instances with uniform probability does not choose graphs with uniform probability, just as selecting a word at random off of the page of a book is not equivalent to selecting a word from all of the words in the book with uniform probability.
+
+Consider an illustrative example with two graphs, G and H, on N vertices and M edges.
+Graph G has only the trivial automorphism, and Graph H has an automorphism group with 20 elements.
+It was shown by XXX in CITE that the number of distinct matrix representations (and thus distinct labelings) of a graph is equal to $\frac{N!}{|Aut(G)|}$.
+Thus, the number of graph instances that represent graph G is $N!$, while the number of graph instances that represent graph H is $\frac{N!}{20}$.
+Since graph instances are really just a way about talking about the number of matrices which represent the graph, this means that in the set of all valid undirected, non-looped graph matrices, there are 20 times as many which represent G as represent H.
+This is critical because the two models of selecting random graphs select a matrix with a certain number of ones (some number of edges) with equal probability.
+Even when the probability is not $p=0.5$ as it was in the illustrated case, it is clear that this is true.
+This means that the probability of selecting a matrix which represents graph G is twenty times more likely than selecting a matrix which represents graph H under either `random' graph generator.
+
+Though this seems like a semantic difference, as I will show over the next several sections, it has critical implications for the algorithms that use it to argue about computational complexity.
+
+%----------------------------------------------------------------------------------
+
+\section{Specifically Disadvantaging Highly Automorphic Graphs}
+
+Dominant models of random graph generation specifically preference graphs with fewer non-trivial automorphisms over graphs that have many automorphisms. 
+This flaw is most glaring when discussing average or worst case running time over the `random' class of graphs.
+Many algorithms make exciting claims about their performance on `random' graphs, but
+we will show how theoretical and practical analysis of performance changes dramatically under different random graph generators.
+
+\subsection{Theoretical Average Case Comparison}
+
+Consider a standard canonical labeling algorithm.
+This algorithm has two abstract components, one which correctly places vertexes into Similar Vertex Sets (SVS), and another which finds a canonical labeling given an accurate SVS partition.
+If we take the first part of this algorithm as given, and assume that it can be computed in polynomial time (a reasonable assumption, as discussed in the section on SVS), then the running time of the algorithm is contingent upon the number of matrices we need to evaluate against some canonical property.
+One common property for canonization is selecting the adjacency matrix which is the lexicographically smallest (or largest) representation of the graph.
+It is reasonable to assume that the second half of the algorithm dominates the running time of the overall algorithm, as it is the piece that is inherently exponential based on the number of representations of the matrix.
+Thus,  we can express the running time of the overall algorithm in terms of $O(|Aut(G)|)$, as this is the number of possible labelings we will have to examine to find our canonical one.
+
+The selection of this simplified algorithm for analysis is not an accident: we have chosen it because the number of matrix representations ($M_{rep}(G)$) for a given graph $G$ is $\frac{N!}{|Aut(G)|}$.
+Thus, if we are considering the average running time of this canonization algorithm ($\xoverline{T}_{Gilbert}$) over the set of all graph instances ($G_{Inst} = G(A)$ for $A \in \{\{0,1\}^{N \times N}\}$) (i.e. using the standard models for random graph generation), we come to different conclusions if we consider the set of possible graphs $G_{Inst}$, versus if we consider the set of all graphs as algebraic structural objects ($G_{Alg}$).
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Inst}} O(T(g))}{|G_{Inst}|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Alg}} O(T(g)) * M_{Reps}(g)}{|G_{Inst}|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Alg}}  |Aut(g)| * \frac{N!}{|Aut(g)|}}{|G_{Inst}|}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{Alg}}  N!}{2^{.5(N^2 - N)}}$$
+$$O(\xoverline{T}_{Gilbert}) = \frac{ |G_{Alg}| * N!}{2^{.5(N^2 - N)}}$$
+
+This property might not look like it tells us much, but we can actually approximate what it looks like for different values of N, since we have the frist nineteen values of this sequence from OEIS sequence A000088 CITE.
+This data is shown below.
+CITE
+
+However, if we attempted to select a graph from the set of all graphs of that size, we would find that: 
+$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in G_{Alg}}  O(T(g)) }{|G_{Alg}|}$$
+$$\xoverline{T}_{Ideal} = \frac{ \sum_{g \in G_{Alg}}  |Aut(g)|}{|G_{Alg}|}$$
+$$\xoverline{T}_{Ideal} = \text{Average Number of Automorphisms over Graphs}$$
+
+Some sample numbers to give you the scale of these disparities is given below \cite{erdosreyni}.
+
+The takeaway here is that specifically disadvantaging a class of graphs (namely highly automorphic graphs) warps our analysis of running time in a substantive way, not only for fringe algorithms, but for well studied algorithms too.
+We can show this through the theoretical proof as shown above, but we can also show it through data describing actual algorithm performance.
+
+\subsection{Practical Average Case Comparison}
+
+The NAUTY package, written in CITE by CITE, is one of the quickest algorithms for canonical labeling CITE.
+Though its performance is weaker on some graphs (like the Miyazaki, for example), in general, its canonical labeling algorithm is widely regarded and frequently used.
+
+I ran the NAUTY canonization algorithm on batches of graphs with different numbers of vertices.
+To generate the first sets of batches, I randomly selected graphs using the Gilbert model with probability 1/2, and varying values of N.
+To generate the second batch, I first set N, then generated a random variable M to describe the number of edges (also with internal binomial probability 1/2), then selected with uniform probability from the set of all graphs with N vertices and M edges.
+I ran each batch set ten times, to get a scatterplot describing the time complexity growth, and understand its variance.
+The logarithmic graph of my results is shown below.  [CITE].
+
+We can see from these figures that not only does NAUTY have slower performance on `Idealized' random graphs, but its running time increases at a higher constant value.
+If we set these numbers to a log-lin regression, we see that this growth rate is heavily supported by the data.
+
+Both in theory and in practice, distinguishing between 'random graph' and `random graph instance' has significant implications.
+It is very possible that misuse of the Gilbert model has understated the true average and worst case time complexity for a number of algorithms.
+
+\subsection{Should We Never Use the Gilbert Model?}
+
+The short answer to this question is no, the Gilbert model is remains relevant (even dominant) even when we embrace these flaws.
+The primary argument for the Gilbert model is not its application to questions of theory, but questions of practice and natural occurrence.
+Most applications of graph theory to world problems are based around structures that are naturally arising, without centralized planing or design.
+It is much more likely that some graph that is found in the world will be non-automorphic than have some kind of inherent and difficult to describe complexity.
+This is because if we look at graph building as a process [CITE GILBERT], or as a probabilistic construction [CITE EDRODS], then some outcomes are more likely than others.
+This is well in line with the pervasive assumptions of the Gilbert model.  
+
+What we have been criticizing is the application of the Gilbert model to questions about theoretical algorithmic complexity.
+In graph theory, we hold a meaningful distinction between graphs and graph instances, a distinction only made at the theoretical level.
+It is thus inappropriate to use a model which ignores this distinction, and ignores it in such a way as to specifically disadvantage certain classes of graphs.
+This allows theoretical graph algorithms to underweight what we consider `hard' cases, and overweight what we would generally consider `easy' cases.
+
+\section{Measuring and Comparing Random Graph Models}
+
+Our mandate suddenly becomes: `well, what can we do which is better?'
+Establishing an intuition to answer this question requires us first to understand what we would think of as `ideal', and see if we can approach that model.
+
+\subsection{An Ideal Random Graph Model}
+To allow our comparisons to be explicit, we will use the same nomenclature to describe an idealized generator as we do with the Gilbert model, so that they are directly comparable.
+Thus, our ideal random graph model will take two input parameters, N and p, where p describes the probability of getting any given edge existing.
+Note that this explicitly breaks from the idea of edge independence that is assumed in the Gilbert model.
+Rather, we are assuming that the probability of any given edge existing is p if we have no knowledge about the rest of the graph.
+We will define our `Ideal' generator as one which first selects a number of edges M from the binomial distribution with $E_{Max}$ trials and trial success probability $p$.
+After selecting M as an observation from this random distribution, we will select a graph from the set of all graphs of N vertices and M edges with uniform probability.
+To accomplish this task, we will enumerate all graphs of that size, and select from that fully defined set.
+
+The flaw in this scheme is obvious.
+Our `Ideal' generator is only possible by this methodology so long as you can enumerate all graphs of a given size.
+There are 24637809253125004524383007491432768 non-isomorphic graphs over 19 vertices, so this is not remotely sustainable methodology for a random generator.
+If we cannot rely on an ideal graph generator, are we doomed to stick with the Gilbert model?
+Or, could we create a model that is better than the Gilbert model (closer to our ideal), while being computationally reasonable?
+
+\subsection{An Equivalent Ideal Random Graph Model}
+
+Another way to view our equivalent random graph model is as a overlaid construction on top of a standard, Gilbert, random graph model.
+Since we know that the Gilbert random graph model produces a graph with a probability proportional to its number of automorphisms, we can actually create a random graph generator which is equivalent to our idealized model by systematically throwing out graphs with probability inverse to their probability of showing up.
+The algorithm which generates to this model is not guaranteed to halt, but does simulate our idealized random graph generator, even over large values of N.
+
+\begin{lstlisting}[frame=single]
+while true:
+	g = gilbertRandomGraph(N, P)
+	na = |Aut(g)|
+	p = Math.rand(0, 1)
+	if (p < (na / N!))
+		return g
+\end{lstlisting}
+
+Here we find a gilbert random graph, and calculate the number of automorphisms that it has.
+That gives us knowledge of how many times we would expect it to occur in a sample of $2^{E_{max}}$ random graph instances, namely $N! / na$ times.
+Thus, we weight any randomly observed random graph instance by the inverse of this value.
+This equalizes the probability of getting any graph, regardless of its number of automorphisms.
+
+This methodology is, unfortunately, equally unsustainable.
+This is an example of a geometric process, where we will have to go a certain number of trials before finding a success and stopping. 
+The probability of a success on any given trial is $p = \frac{|G_{alg}|}{|G_{inst}|}$, which approximates the $p = fact^{-1}(N) = \frac{1}{N!}$ growth function.
+Thus, for even a small number of vertices, the expected number of trials that need to be generated before a success is found is very large, as it is given by $1/p = N!$. 
+For example, if $N=10$, we would expect to have to examine 3.6 million graphs before finding one which is returned successfully.
+
+This too, is not a sustainable methodology for random graph generation.
+
+\subsection{Establishing a Methodology for Random Graph Generator Evaluation}
+
+So what can we do that is better?
+Answering that question required some really deliberate thought.
+I knew lots about what I didn't want to do:
+\begin{itemize}
+\item{I didn't want to use subjective measures to support one random graph generator over another.}
+\item{I didn't want to write generators and then use collected data to support them.}
+\item{I didn't want to focus in on singular ways of looking at the quality of the graphs that I generated.}
+\item{I didn't want to allow my own intellect and lack of creativity be a limiting step on the way to a better generator.}
+The process that I decided on attempted to address all of these concerns, and was designed to avoid the pitfalls of bad computer science: overfitting, statistic selection, and rigidity.
+\end{itemize}
+
+I decided on a wide portfolio of statisitcs each of which is calculated over a sets of graphs.
+These statistics are inherently heuristic, but each attempts to capture some property of the graphs that are generated, or some property of how the set looks as a whole.
+Each of the statistics I decided on is meant to describe some property of a set of graphs, but it does not establish an `idealized' or theoretical value for that statistic.
+Though for several of these metrics we know how to express the ideal/expected probability, that is not always the case (or not always known to be the case0.
+These metrics serve as a way for us to identify and name ways that random graph generators fail us, and challenge us to do better, to compare a proposed solution to an ideal or standard solution in quantifiable and concrete terms.
+
+The set metrics is described in the next section, and they vary in computational complexity and broad descriptiveness.
+I set up a (pardon the brag) BEAUTIFUL system for calculating these statistics over arbitrary datasets.
+I created an idealized random generator (as described above), and a Gilbert random generator, and verified the accuracy of the results produced through this computational system over the initial results from each.
+
+Most importantly, I set up these metrics, this system, and the baseline Gilbert/Ideal metric values before I wrote a line of code which randomly generated graphs.
+This is really important to me, because it frees the results of this work from the publication and statistic selection bias that plagues research everywhere.
+
+\subsection{Graph Set Metrics}
+Below are the metrics that I compared across graph sets generated by different random graph generation procedures.
+Though I calculated some more statistics for personal use and discovery, the ones included below are the `single result' statistics.
+Others were distributional properties that were not easily captured and compared (except through distributional goodness of fit tests, which only give us an idea of alikeness, not of directed difference).
+The reliance on singular metrics as a means of comparison allows us to evaluate systems of random graph generation automatically, and come up with similarity tests that are divorced from our intuition and hypotheses.
+
+Described below are each of the metrics that are calculated over every set of random graphs that were generated.
+Each is labeled a statistic (implying a singular value used to judge the generator) or a distribution (connoting that it was not used in the systematized evaluation of generators).
+Each is listed under its acronym, which can be found throughout my code and tests. 
+
+\subsection{Graph Set Metric Reference, Coding and Description}
+
+\begin{itemize}
+
+\item{ADIAM - Set Statistic - Average Graph Diameter - Take the diameter of each graph, and average over all graphs in the set}
+\item{ADSM - Set Statistic - Average Degree Sequence Mean - take the mean of degree sequence of each graph, and average that across all graphs}
+\item{ADSMD - Set Statistic - Average Degree Sequence Median - take the median of the degree sequence of each graph, then average that across all graphs}
+\item{ADSMN - Set Statistic - Average Degree Sequence Minimum - take the degree of the least connected node in each graph, then average that across all graphs}
+\item{ADSMX - Set Statistic - Average Degree Sequence Maximum - take the degree of the most connected node in each graph, then average that across all graphs}
+\item{ADSR - Set Statistic - Average Degree Sequence Range  (i.e. Find the difference in degree between the most and least connected node, and average over all graphs in the set}
+\item{ADSV - Set Statistic - Average Degree Sequence Variance - take the variance of the degree sequence of the graph, then average across all graphs}
+\item{ALNA - Set Statistic - Average of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then average across the logged results}
+\item{ANA - Set Statistic - Average Number of Automorphisms - find the number of automorphisms for each graph, then average that across the set}
+\item{ANCC - Set Statistic - Average Number of Connected Components - take the number of connected components of each graph in the set, then average across all of them}
+\item{ANQUAD - Set Statistic - Average Number of Quadrilaterals - The Average number of non-trivial (non-edge repeating) quadrilaterals across all graph instances within the graph set.}
+\item{ANR - Set Statistic - Average Number of Repeats - The average graph, when selected from the set in question, will have this expected number of equivalent instances in the set}
+\item{ANTRI - Set Statistic - Average Number of Triangles - The Average number of triangles across all graph instances within the graph set.}
+\item{CP - Subset - Co-Cycles Graphs - The intersection between the set of all $V=10$ co-cycles graphs and the given set}
+\item{DIAMV - Set Statistic - Variance in the Diameter of Graphs - calculate the diameter of each graph, and calculate the variance of the set as a whole}
+\item{DSMDV - Set Statistic - Degree Sequence Median Variance - Take the median degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSMNV - Set Statistic - Degree Sequence Minimum Variance - Take the minimum degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSMV - Set Statistic - Degree Sequence Mean Variance - Take the mean degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSMXV - Set Statistic - Degree Sequence Maximum Variance - Take the maximum degree of each graph, and calculate the variance over all graphs in the set}
+\item{DSVV - Set Statistic - Degree Sequence Variance Variance - Take the variance of the degree sequence of each graph, and calculate the variance over all graphs in the set}
+\item{FC - Set Property - Frequency Count - The number of isomorphic graph instances associated with each one of the graphs in the set}
+\item{FFC - Set Distribution Counts - Frequency Count Counts - The counts that correspond to FFVs, the frequency with which graphs show up in our random set}
+\item{FFV - Set Distribution Bins - Frequency Count Bins - The discrete values for which there exist graphs in our set that poses that number of instances in the set, this is really just a bin count for FC}
+\item{MLNA - Set Statistic - Median of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then find the median across the logged results}
+\item{MNR - Set Statistic - Maximum Number of Repeats - The graph in the set that was selected the most times was selected this many times}
+\item{NA - Graph Statistic - Number of Automorphisms - Counts the number of automorphisms that a graph has by finding the number of unique matrices that describe a graph}
+\item{NAB - Set Distribution Bins - Number of Automorphisms Bins - The unique values of NA, to provide histogram alongside NAC}
+\item{NAC - Set Distribution Counts - Number of Automorphisms Counts - The counts of the NAB, as in a histogram}
+\item{NCCV - Set Statistic - Variance in the Number of Connected Components - take the number of connected components of each graph in the set, then take the variance of the set}
+\item{NCP - Set Statistic - Number of Co-Paths graphs - Same as Co-cycles graphs, this only applies to graphs of size 10 and larger, counts the number of co-paths graphs (which tend to be highly automorphic) in the overall set of graphs}
+\item{NE - Set Statistic - Number of Edges - the average number of edges in the graph set. This should be the same across generators, as we are specifying $p$, and asking for a large sample size}
+\item{NR - Set Statistic - Number of Regular Graphs - the number of regular graphs in the graphset}
+\item{NUG - Set Statistic - Number of Unique Graphs - The proportion of graphs within the set that are only generated once}
+\item{ODSPL - Set Statistic - Overall Degree Sequence Poisson Distribution Lambda  - Find the set of all of the degrees of all of the graph, then fit a poisson distribution to this distribution. Report the lambda that defines this poisson distribution}
+\item{PCONN - Set Statistic - Probability of Connectivity - take the number of fully connected graphs, and divide by the total number of graphs in the set}
+\item{PDL - Set Statistic - Poisson Distribution Lambda - Take the distribution of the number of times that each graph is represented by an instance within a graph set, and set this distribution fit to a poisson distribution, reporting its lambda}
+\item{PQRA - Set Statistic - Percentage Quazi-Regular A - Percentage of graphs where the degree sequence range is less than or equal to 1}
+\item{PQRB - Set Statistic - Percentage Quazi-Regular B - Percentage of graphs where the degree sequence range is less than or equal to 2}
+\item{PQRC - Set Statistic - Percentage Quazi-Regular C - Percentage of graphs where the degree sequence range is less than or equal to $sqrt(N)$}
+\item{PTRIL - Set Statistic - Probability Triangle-less - the Probability that a graph instance selected randomly from the graph set is triangle-less.}
+\item{SQNR - Set Statistic - Sum of Squared Number of Repeats - A measure of how dispersed the distribution is, calculated as $FFC \dot (FFV^2) / nGraphs$}
+\item{UG - Set Property - Unique Graphs - The canonical form of all of the graph set's graphs, with duplicates removed (if they existed)}
+\item{VLNA - Set Statistic - Variance of the Logarithm of the Number of Automorphisms - Find the number of automorphisms that each graph has within the set, take the logarithm of each, then find the variance of the logged results}
+\end{itemize}
+
+\subsection{Establishing Baselines for Graph Set Metrics}
+
+Once we set up these metrics, we need to find a way to systematically compare them within our desired context: building a random graph generator which models an idealized random graph generator.
+To do this, I established baseline understandings for each one of the metrics, over a problem `domain':
+\begin{itemize}
+\item{Number of Graphs - I decided to operate over sets of 1000 graphs.  It allowed us to get reasonable numbers for standard deviations and not use an excess of CPU time}
+\item{Number of Vertices - I baselined the metrics over graphs of size 4 to size 10.  This allowed us to see what the metrics looked like on an overrepresented graph set, and on a sample set.}
+\item{Probability of Edges - I used p from the set $[.1, .2, .3, .4, .5, .6, .7, .8, .9]$. I figured that focusing on sparse, dense or intermediate graphs might introduce biases that I hadn't accounted for, so I decided for the most generic set possible.}
+\item{Number of Trials - For each one of these baseline scenarios, I performed 30 trials}
+\end{itemize}
+
+Thus, in the end, there were $2 \times 9 \times 7 \times 30 = 2780$ sets of 1000 graphs that were used to create our baselines.
+
+For each one of the statistics we calculated the mean and standard deviation of the sampled metrics over both algorithms.
+That resulted in two sample means and sample standard deviations, for the ideal and gilbert graph models: $\xoverline{x_I}, \xoverline{x_G}, s_I$ and $s_G$. 
+Using these values, I came up with a simple and intuitive way to measure a new random graph generator, given its value for $\xoverline{x_N}$ and $s_N$, by comparing the t values in two tests of significance for two unknown means and unknown standard deviations.
+In a test of unequal unknown means and standard deviations, the slightly modified t-statistic is given by:
+$$T(A, B) = T(\xoverline{x_A}, \xoverline{x_B}, s_A, s_B, n_A, n_B) = \frac{|\xoverline{x_A} - \xoverline{x_B}|}{\sqrt{(s_A^2 / n_A + s_B^2 / n_B}} $$
+And our scoring mechanism for a metric and generator is given by:
+$$ \text{Score for Metric M} = \frac{T_M(I, N)}{T_M(I, G)}$$
+$$ \text{Score for Generator} = \frac{1}{N_{Metrics}} \times \sum_m^{Metrics} Score_m $$
+where higher scores are worse, and a score of 1 corresponds to a generator that is approximately as bad as the Gilbert Generator.
+
+This is a good mechanism because it scores a value on a metric based on how close it is to the ideal mean, but also compares any deviancy to the deviancy observed between the ideal and standard (Gilbert) generators.
+
+\section{Alternative Ideas for Random Graph Modeling and Creation}
+
+Now that we have a mechanism for quantifiably adjudicating the quality of a proposed random graph generator, we are tasked with creating different ideas for random graph generation and evaluating them on this basis.
+
+\subsection{Cloning Model}
+One of the thoughts that I first had was on the way that co-paths graphs tended to be highly automorphic, and the way that internal structure of each set within the SVSes was almost always fully automorphic.
+Remember that a fully automorphic graph (or in this case, subset of vertices) means that within its self contained structure, there exists an automorphism which maps any one vertex to any other (not implying that all proposed mappings are automorphisms, but only that a mapping exists that pairs any pair of vertices within the set.
+To try to create a model that is likely to produce this kind of internally reflective behavior, I broke the task of generating a graph down into two subtasks.
+First, it creates K disjoint graphs, each of which is fully automorphic/similar, and with the total number of vertices over all of these smaller graphs equalling the target number of vertices the generator is looking to produce.
+Then, it constructs a set of connections between each pair of the K subgraphs.
+With fixed probabilities, it constructs these connections to be either fully symmetric (i.e. preserving symmetry for both the right and left hand side of the connection), partially symmetric (just preserving one side's symmetry), or asymmetric (differentiating both sides).
+
+This model was not successful at producing graphs which are broadly in line with the aims of the chapter (i.e. idealized random graphs), but it was very successful at producing co-cyclic graphs, with regularity far exceeding that of either generator. This initial attempt's results are detailed below, alongside some different results given different parameter values (for the fixed probability of edge symmetry creation.
