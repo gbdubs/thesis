@@ -160,3 +160,17 @@ for i = 16 : 29
 end
 
 v10CoPaths = vertcat(v10e16, v10e17, v10e18, v10e19, v10e20, v10e21, v10e22, v10e23, v10e24, v10e25, v10e26, v10e27, v10e28, v10e29);  
+
+inverses = zeros(size(v10CoPaths));
+
+for i = 1 : size(v10CoPaths, 1)
+    inverses(i,:) = graph6Encode(cannonical(invertGraph(graph6(v10CoPaths(i,:)))));
+end
+
+nonReppedInverses = setdiff(inverses, v10CoPaths, 'rows');
+
+v10CoPaths = unique([v10CoPaths; nonReppedInverses], 'rows');
+
+clear inverses;
+clear nonReppedInverses;
+clear i;
