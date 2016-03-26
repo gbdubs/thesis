@@ -3,9 +3,14 @@ clear all;
 
 load('data/cannonicalMemoization.mat');
 global cannonicalMemoization;
+
 disp('Loaded cannonicalMemoziation Data.');
 global allMetricMapping;
 allMetricMapping = containers.Map;
+
+global nAutomorphismMemoization;
+disp('Loading NAutomorphismMemoization');
+load('data/nAutomorphismMemoization');
 
 for file = dir('.')'
     if file.isdir
