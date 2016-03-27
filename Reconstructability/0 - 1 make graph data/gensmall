@@ -3,6 +3,6 @@ do
   maxe=$[$v * ($v - 1) / 2]
   for e in $(seq 0 $maxe)
   do
-    ./geng $v $e > smallgraphs/$v-$e.txt
+    ./geng $v $e > ../1graphdata/$v-$e.txt
   done
 done
