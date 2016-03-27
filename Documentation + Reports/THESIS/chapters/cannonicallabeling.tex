@@ -1,36 +1,51 @@
 \chapter{Canonical Labeling Using Cycles}
 
-
-\section{Background}
 A canonical labeling of a graph is a labeling of edges in a way that is consistent across all isomorphic graph instances of the same graph.
 Given two graphs and their canonical labelings, graph isomorphism is then a simple quadratic-time check to make sure that alike-labeled vertices preserve all adjacencies and non-adjacencies. 
-Thus, any canonical labeling algorithm is in $GI$, the time complexity class of the graph isomorphism problem.
+Thus, any canonical labeling algorithm cannot be in a complexity class smaller than $GI$, the time complexity class of the graph isomorphism problem.
 
 Many parts of my coding projects required the use of a canonical labeler.
 Sometimes this was because I wanted to check for isomorphisms on a broad set of graphs, a problem that is possible to complete quickly given the lexicographical nature of canonical labels.
 Though there exist good algorithms for determining canonical labeling, I wanted to create my own, both as an exercise in implementation, and in algorithm design.
 The result of this process is an algorithm which is relatively slow, but whose time growth is small relative to faster algorithms.
 
-\section{Augmented Paths}
+\section{Start With A Vertex Invariant}
+
+The fundamental unit of computation that drives a canonical labeler with this algorithm is a vertex invariant.
+For the canonical labeler that I created, I used the flagged cycles vertex invariant, which is described in the third chapter.
+Understanding the canonical labeler is not contingent upon an understanding of this vertex invariant, however it is a strategic choice that is rooted in finding a good use for the cycles invariant.
+
+What this does for us is simple, it allows us to directly measure and compare the use of cycles as a vertex invariant to others within a time/power tradeoff.
+The result is a canonical labeling algorithm that has much higher constants than its established counterparts, but has a comparably lower time growth rate. 
+This is a direct reflection of the quality of Cycles with flagging as a vertex invariant.
 
 \section{A Consistent Algorithm}
 The algorithm has a simple interpretation. 
-It divides all of the vertices of the graphs into disjoint (covering) sets based on the value of the cycles vertex invariant.
-For each of these sets with more than one vertex, a second round of `augmented paths' is performed to further divide sets, if possible.
-It sorts each of these classes by its size, then by its paths values.
+It divides all of the vertices of the graphs into disjoint (covering) sets (QSVSes) based on the value of the cycles vertex invariant.
+For each of these sets with more than one vertex, a second round of `flagged cycles' is performed to further divide sets, if possible.
+It sorts each of these classes by its size, then by its cycles values.
 Each of these sorts is performed in a consistent way, which is irrespective of the original labeling of the graph.
 
-Once the order of the sets is sorted, we consider every possible permutation of the values within each of the sets so that every possible ordering of vertexes is possible, with the constraint that each set element remains in the higher level order established by the sets themselves.
-We traverse through these permutations and select the matrix which is lexicographically the `smallest'.
-A clever optimization allows us to not generate any permutations which are automatically `larger' than the thus far `smallest' matrix.
+These sorts optimize the interrelationships between vertex sets, so that we are likely to eliminate lexicographically small matrices before even testing them.
+This is a version of exponential decision tree pruning, and how the order of the decisions can make pruning easier or harder.
+While maintaining our lexicographical target, we are able to significantly reduce the number of checks that are necessary (on the order of N!, in the best case).
 
-I wrote and optimized the algorithm for Matlab (as that is the slowest of my use cases), but then worked on implementing it in C and Javascript.
+Once the order of the sets is sorted, we consider every possible permutation of the values within each of the sets so that every possible ordering of vertexes is possible, with the constraint that each set element remains in the higher level order established by the sets themselves.
+We start by examining a specific QSVS, and its associated permutations.
+We traverse through these permutations and select the matrix which is lexicographically the `smallest', within the context of the already established graph, if some has already been established.
+We then add this piece to the growing graph (selecting all `lexicographically maximal' representations), and move on to the next set within the QSVS.
+This step-wise pruning means we minimize the overall number of permutations that we test, though it is possible that we accept multiple permutations after a given step of this process is done.
+In the final step, we may have multiple permutations remaining (over all the vertices now), but in this context, every permutation will produce the same matrix representation.
+
+I wrote and optimized the algorithm for Matlab (as that is the slowest of my use cases, so having fast code makes a big difference), but then worked on implementing it in C and Javascript (though I didn't go to the same lengths to do the tree pruning).
 All three versions of this code are available in my online repository documenting my thesis work.
 The Matlab code provides detailed explanations of each piece of the code, why I implemented it that way, and the thoughts that went into it.
 
+The result is quite pleasing, and (alongside a memoization mechanism that saves all results that take longer than 1ms to calculate), canonization of graphs does not bottleneck my computations (even when I am doing millions a minute), despite it being the only computation that I use that operates in exponential time.
+
 \section{Time Growth Comparisons to Faster Algorithms}
 Any discussion of a homegrown algorithm would be either incomplete or intentionally salacious without a discussion of how it compares to out of the box algorithms.
-For these benchmarks, I established two datasets, one of 10000 randomly generated graphs of size ten to fifty using an Erdos-Renyi model, and one using a graph model which is more likely to produce highly automorphic graphs (discussed in detail in chapter 6).
+For these benchmarks, I established two datasets, one of 10000 randomly generated graphs of size ten to fifty using an Erdos-Renyi/Gilbert model, and one using a graph model which is more likely to produce highly automorphic graphs (discussed in detail in chapter 6).
 For both of these models we used a probability of $p=0.5$, as these are typically the graphs that are hardest to discriminate against.
 
 To give perspective to my own time results, I used an established and well optimized piece of code, the canonical labeler from the NAUTY package.

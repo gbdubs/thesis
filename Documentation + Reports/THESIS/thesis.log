@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  27 MAR 2016 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  27 MAR 2016 19:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,34 +368,34 @@ Package pdftex.def Info: figures/N9DiamVsDiffPower.png used on input line 104.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25] [26 <./figures/N9DiamVsDiffPower.png>] [27] [28])
-(./chapters/reconstructionconjecture.tex [29]
+[25] [26 <./figures/N9DiamVsDiffPower.png>] [27] [28] [29])
+(./chapters/reconstructionconjecture.tex [30]
 Chapter 4.
-) (./chapters/cannonicallabeling.tex [30
+) (./chapters/cannonicallabeling.tex [31
 
-] [31]
+] [32]
 Chapter 5.
-[32
+[33
 
-]
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 31--31
+] [34]
+Overfull \hbox (13.7763pt too wide) in paragraph at lines 46--46
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
-) (./chapters/randomgraphgenerators.tex [33]
+) (./chapters/randomgraphgenerators.tex [35]
 Chapter 6.
 
-LaTeX Warning: Citation `exponentialgraphs' on page 34 undefined on input line 
+LaTeX Warning: Citation `exponentialgraphs' on page 36 undefined on input line 
 16.
 
-[34
+[36
 
-] [35] [36] [37] [38] [39] [40] [41]
+] [37] [38] [39] [40] [41] [42] [43]
 Overfull \hbox (16.50629pt too wide) in paragraph at lines 199--199
 []\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
  []
 
-[42]
+[44]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 230.
 
  (/opt/local/share/texmf-texlive/tex/latex/base/omlcmr.fd
@@ -403,22 +403,22 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 230.
- [43] [44]
+ [45] [46]
 Overfull \hbox (8.43755pt too wide) in paragraph at lines 297--298
 \OT1/cmr/m/n/10.95 Av-er-age num-ber of non-trivial (non-edge re-peat-ing) quad
 ri-lat-er-als across
  []
 
-[45] [46] [47]
+[47] [48] [49]
 Overfull \hbox (12.43272pt too wide) in paragraph at lines 327--328
 \OT1/cmr/m/n/10.95 of how dis-persed the dis-tri-bu-tion is, cal-cu-lated as $\
 OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$ 
 
  []
 
-[48] [49]) (./chapters/reflections.tex [50]
+[50] [51]) (./chapters/reflections.tex [52]
 Chapter 7.
-) (./thesis.bbl [51
+) (./thesis.bbl [53
 
 ]
 Underfull \hbox (badness 1052) in paragraph at lines 54--59
@@ -436,9 +436,9 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[52
+[54
 
-]) [53] (./thesis.aux)
+]) [55] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -467,10 +467,10 @@ sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
 fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
 cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (54 pages, 474623 bytes).
+Output written on thesis.pdf (56 pages, 479672 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 260 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

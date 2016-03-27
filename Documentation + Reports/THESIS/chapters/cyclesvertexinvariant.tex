@@ -120,8 +120,30 @@ The upper bound proposed by each one of the values for $P*(N)$ follows the patte
 for $N <=9$. This sets up a strong case for this as a target hypothesis, but we still must prove it.
 
 \subsection{Theoretical Justification: $P_N$ versus $C_N$}
-TODO
+Why does the proposed value for $P^*$ make sense?
 
+This proof consists of two parts, the first is why $P_{P_N} = \text{the proposed} P^*$ for the Path graph ($P_N$), the second describes why all other graphs $G$ have $P_G \leq P_{P_N}$.
+
+Part 1: \emph{Distinguishing between vertices in the path graph requires $P_{P_N} = N - 1 - ((N+1)\%2)$.}
+
+Start all vertices in the same assumed similarity set, and assume that $P = 0$.
+When we increase $P$ to 2, all vertices have degree 2 (the second entry in the cycles invariant) except for the two terminuses, thus the two terminuses are split off from the original quazi-similarity set, as they have been distinguished at $P=2$ by their cycles invariant.
+When we increase $P$ to 4, the two nodes adjacent to the two terminuses are now distinguished (as they are now `missing' a path of length four that they would have had if they were further in toward the center of the path graph). 
+There are now $N-4$ vertices remaining in the original quazi-similar vertex set.
+From this, it is clear to see that for an arbitrarily large path graph, for $P=2K$, there will be $N-2K$ elements in the original QSVS.
+We will have \emph{fully distinguished} all of the vertices into distinct QSVSes which are true to the SVSes when the original QSVS contains only the `middle' node(s).
+
+In the even case $N = 2K, K \in Z$, this occurs when we have 
+$$P = 2\ceil{\frac{N-2}{2}} = 2\ceil{\frac{2K}{2} - 1} = 2\ceil{K - 1} = 2(K - 1) = 2K - 2 = N - 2$$
+In the odd case $N = 2K +1, K \in Z$, this occurs when we have 
+$$P = 2\ceil{\frac{N-2}{2}}  = 2\ceil{\frac{2K+1- 2}{2}} = 2\ceil{K - 1/2} = 2K = N - 1 $$
+
+Thus, we know that 
+\[ P_{P_N} = \begin{cases} 
+      N-1 & \text{If N is odd} \\
+      N-2 & \text{If N is even} \\
+   \end{cases}
+\]
 
 \section{Improving upon QSVS with Flagged Cycles}
 
