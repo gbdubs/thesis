@@ -1,19 +1,92 @@
 \chapter{Cycles as a Vertex Invariant}
 
-\section{Quantifying how Discrimination Varies with P}
-\subsection{Limitations of Cycles' Discriminatory Power}
-\subsection{Observational Data}
-\subsection{Theoretical Explanation: Path vs Cycle Graphs}
+A powerful feature of the cycles invariant is that it is not only discriminatory between graphs, it suggests potential isomorphisms between their vertices.
+This section will discuss exactly how isomorphisms can be constructed and evaluated by using cycles as a vertex invariant.
+Central to this chapter is the concept described earlier as Automorphism Equivalence Classes, or Similar Vertex Sets (SVS).
 
-\section{Automorphism 'Quazi-Equivalence Classes'}
-\subsection{Background}
-\subsection{Vertex Similarity is Transitive}
-\subsection{Internal Structure of QEC's}
+\section{Perfect Similar Vertex Sets}
 
-\section{Improving upon QECs}
+A vertex-similar sets is a subset of the vertices of a graph such that for any pair of vertices in the set, there exists an automorphism which maps one to the other.
+Note that vertex similarity is reflexive (as one-to-one mapping (such as an automorphism) is invertible). 
+Also note that membership in vertex-similar sets is transitive (as we can simply use the `followed-by' operator on the component automorphism mappings).
+
+Thus, all vertices in a graph can be partitioned into some number of similarity-sets, where every set has at least one element, and the union of the sets is the vertex set.
+For the sake of simplicity, we will assume that there is some well-ordering over these sets, so that we are able to assign an order to each set within the collection of similar vertex sets.
+In practice, this will be a practical function of how we go about computing the SVSes.
+
+This construction is deeply tied to isomorphism checking and discovery.
+If we have two graphs $G$ and $H$, and their Similar Vertex Sets are $SVS(G)$ and $SVS(H)$, based on the size of each set, we have a maximum number of potential isomorphisms.
+First off, if we examine every $i$th paired set between $SVS(G)[i]$ and  $SVS(H)[i]$, if the sizes of the sets differ, then we can immediately reject the possibility of isomorphism between $G$ and $H$.
+If the size of each component set are the same, we can check for isomorphism by brute force, by calculating every possible permutation between the paired sets, and then every combination of those permutations across all of the SVSes.
+Though we can make many practical arguments which greatly simplify the number of these possibilities we have to test for isomorphism, it should be noted that in the overwhelming majority of cases, this simple algorithm only has to check \emph{one} mapping for an isomorphism.
+This is by virtue of the fact the the overwhelming majority of graphs have only a single automorphism.
+
+\section{Most Graphs Have One Automorphism}
+
+This is by virtue of a simple fact: we can talk broadly about the average number of automorphisms in a set of graphs, and even better, we can calculate precise means for the average number of automorphisms for graphs of a certain size.
+Remember that the number of undirected, non-looped, single-edge graphs (or as we have just been calling them, graphs), over N vertices has a known closed form.
+We also know that the number of graph instances over N nodes is simply the number of undirected matrices over N nodes, $2^{E_{max}}$.
+Finally, we know that the number of matrices 
+
+$$ M_{reps}(g) = \frac{N!}{|Aut(g)|} $$
+$$ \sum_{g \in G_{alg}} M_{reps}(g) = \sum_{g \in G_{alg}} \frac{N!}{|Aut(g)|} $$
+$$ 2^{\frac{N^2 - N}{2}} = N! \sum_{g \in G_{alg}} \frac{1}{|Aut(g)|} $$
+$$\frac{\sum_{g \in G_{alg}} \frac{1}{|Aut(g)|}}{|G_{alg}|} =  \frac{2^{\frac{N^2 - N}{2}}}{N! * |G_{alg}|} $$
+$$ \xoverline{|Aut^{-1}(g)|} = \frac{2^{\frac{N^2 - N}{2}}}{N! * |G_{alg}|}$$
+
+Though we don't have a closed form for this, a quick calculation pretty easy, and gives us a very clear trend.
+In Figure \ref{fig:mostgraphsoneaut}, there are two figures shown.
+The first plot shows the right hand side of the final equation, graphed for different values of N.
+The second plot explores the difference between the first plot and one, and takes the logarithm to see how small the values get.
+
+\begin{figure}[h]
+\label{fig:mostgraphsoneaut}
+\caption{\emph{Most Graphs Have Exactly One Automorphism} - It is clear that as N increases, the right hand side of our above equation approaches 1. Not only that, but it appears to do so exponentially fast.  The plot on the right shows a logarithmic linear approach to one.}
+\centering
+\includegraphics[width=\textwidth]{numGraphsAndMats}
+\end{figure}
+
+This should convince even a skeptical reader that for an average graph $g$ (even when treating it like an algebraic object), as $N$ increases, $\xoverline{|Aut(g)|} \rightarrow 1$.
+
+\subsection{Implications for Perfectly Similar Vertex Sets}
+
+Applying this back to our original purpose, we can reason that if a graph only has a single automorphism, then the only automorphism is the trivial automorphism.
+Thus, the SVSes are a set of N distinct, one element sets, where each vertex is distinguishable from each other, and none share any automorphisms.
+This makes checking for isomorphism between two random graphs trivial (if we have the SVSes), as the overwhelming majority of the time, we will only need to try the isomorphism implied by the direct, one to one mapping between the SVSes of the two graphs.
+
+However, checking for Automorphisms between every single pair of vertices is clearly in a higher computational complexity class than testing for isomorphism.
+Thus, we will use smart heuristics to develop quazi-similar vertex sets, which will enable us to get the benefits of SVSes (i.e. implying the isomorphisms to try) without actually proving that the automorphisms that define the SVSes exist.
+
+\section{Quazi-Similar Vertex Sets}
+
+Quazi-similar vertex sets are constructed with respect to a vertex invariant.
+The vertex invariant is calculated for all vertices within the graph, and those with the same value are placed into the same set.
+Transitivity and reflexivity clearly both hold under this definition.
+Moreover, the ordering/comparability of vertex invariants gives us a natural way to order the sets within the QSVS.
+
+In this section, we will describe how using the cycles invariant to generate QSVSes is highly successful at mirroring the true SVSes, and suggest an augmentation to cycles which correctly differentiates the two for all observed cases.
+
+
+
+\section{Why $P_{max} < N$: Limitations on Cycles Usefulness}
+
+\subsection{What is $P_{max}$, why does it matter?}
+
+\subsection{Observational Data: Diameter vs. Useful P}
+
+\subsection{Theoretical Justification: $P_N$ versus $C_N$}
+
+
+
+\section{Improving upon QSVS with Flagged Cycles}
+
 \subsection{Appending a Flag, Somewhat Predictable}
+
 \subsection{Theoretical Justification for Flagging}
+
 \subsection{Analytical Support for Flagging}
 
-\section{Limitations to Augmentation}
-\subsection{A Second Augmentation Hypothesis}
+\subsection{Open Question: Is Flagging Complete?}
+
+%\section{Limitations to Augmentation}
+%\subsection{A Second Augmentation Hypothesis}
