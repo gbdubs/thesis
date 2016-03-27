@@ -1,0 +1,2 @@
+gcc degreeSequenceSeparator.c structures.c listOfStrings.c graph6.c degreeSequence.c -o step12.out
+echo "Compiled Step 1-2!"
