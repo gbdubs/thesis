@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  27 MAR 2016 19:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  28 MAR 2016 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -191,39 +191,60 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-\myboxA=\box30
-\myboxB=\box31
-\mylenA=\skip50
+(/opt/local/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen127
+)
+(/opt/local/share/texmf-texlive/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip50
+\LTright=\skip51
+\LTpre=\skip52
+\LTpost=\skip53
+\LTchunksize=\count113
+\LTcapwidth=\dimen128
+\LT@head=\box30
+\LT@firsthead=\box31
+\LT@foot=\box32
+\LT@lastfoot=\box33
+\LT@cols=\count114
+\LT@rows=\count115
+\c@LT@tables=\count116
+\c@LT@chunks=\count117
+\LT@p@ftn=\toks21
+)
+\myboxA=\box34
+\myboxB=\box35
+\mylenA=\skip54
  (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-\c@lstlisting=\count113
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+\c@lstlisting=\count118
 
 (/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
-\scratchdimen=\dimen127
-\scratchbox=\box32
-\nofMPsegments=\count115
-\nofMParguments=\count116
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count117
-\MPscratchDim=\dimen128
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count119
+\scratchdimen=\dimen129
+\scratchbox=\box36
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen130
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks23
 ) (/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -275,7 +296,7 @@ e
 <brandeis-seal.png, id=1, 74.25743pt x 74.25743pt>
 File: brandeis-seal.png Graphic file (type png)
  <use brandeis-seal.png>
-Package pdftex.def Info: brandeis-seal.png used on input line 43.
+Package pdftex.def Info: brandeis-seal.png used on input line 44.
 (pdftex.def)             Requested size: 53.9978pt x 54.0001pt.
 
 [1
@@ -418,9 +439,884 @@ OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$
 
 [50] [51]) (./chapters/reflections.tex [52]
 Chapter 7.
-) (./thesis.bbl [53
+) (./appendices/randomgraphbaselines.tex
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1--9
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 9--32
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 32--54
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[53
 
 ]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 54--76
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 76--81
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[54]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 92--100
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 100--123
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 123--145
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 145--167
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[55]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 167--172
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 183--191
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 191--214
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 214--236
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[56]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 236--258
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 258--263
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[57]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 274--282
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 282--305
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 305--327
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[58]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 327--349
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 349--354
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[59]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 365--373
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 373--396
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 396--418
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 418--440
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[60]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 440--445
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 456--464
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 464--487
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 487--509
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[61]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 509--531
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 531--536
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[62]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 547--555
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 555--578
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 578--600
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[63]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 600--622
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 622--627
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[64]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 638--646
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 646--669
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 669--691
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 691--713
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[65]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 713--718
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (142.86205pt too wide) in alignment at lines 729--737
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (142.86205pt too wide) in alignment at lines 737--760
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (142.86205pt too wide) in alignment at lines 760--782
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[66]
+Overfull \hbox (142.86205pt too wide) in alignment at lines 782--804
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (142.86205pt too wide) in alignment at lines 804--809
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[67]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 820--828
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 828--851
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 851--873
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[68]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 873--895
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 895--900
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[69]
+Overfull \hbox (71.68697pt too wide) in alignment at lines 911--919
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (71.68697pt too wide) in alignment at lines 919--942
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (71.68697pt too wide) in alignment at lines 942--964
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (71.68697pt too wide) in alignment at lines 964--986
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[70]
+Overfull \hbox (71.68697pt too wide) in alignment at lines 986--991
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1002--1010
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1010--1033
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[71]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1033--1055
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1055--1077
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1077--1082
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[72]
+Overfull \hbox (44.31194pt too wide) in alignment at lines 1093--1101
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.31194pt too wide) in alignment at lines 1101--1124
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.31194pt too wide) in alignment at lines 1124--1146
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[73]
+Overfull \hbox (44.31194pt too wide) in alignment at lines 1146--1168
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.31194pt too wide) in alignment at lines 1168--1173
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[74]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1184--1192
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1192--1215
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1215--1237
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1237--1259
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[75]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1259--1264
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1275--1283
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1283--1306
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[76]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1306--1328
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1328--1350
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1350--1355
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[77]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1366--1374
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1374--1397
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1397--1419
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[78]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1419--1441
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1441--1446
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[79]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1457--1465
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1465--1488
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1488--1510
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1510--1532
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[80]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1532--1537
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1548--1556
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1556--1579
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[81]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1579--1601
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1601--1623
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1623--1628
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[82]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1639--1647
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1647--1670
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1670--1692
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[83]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1692--1714
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1714--1719
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[84]
+Overfull \hbox (91.7316pt too wide) in alignment at lines 1730--1738
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (91.7316pt too wide) in alignment at lines 1738--1761
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (91.7316pt too wide) in alignment at lines 1761--1783
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (91.7316pt too wide) in alignment at lines 1783--1805
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[85]
+Overfull \hbox (91.7316pt too wide) in alignment at lines 1805--1810
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 1821--1829
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 1829--1852
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[86]
+Overfull \hbox (60.73695pt too wide) in alignment at lines 1852--1874
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 1874--1896
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 1896--1901
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[87]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1912--1920
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1920--1943
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1943--1965
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[88]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1965--1987
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 1987--1992
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[89]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2003--2011
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2011--2034
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2034--2056
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2056--2078
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[90]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2078--2083
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (33.36192pt too wide) in alignment at lines 2094--2102
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (33.36192pt too wide) in alignment at lines 2102--2125
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[91]
+Overfull \hbox (33.36192pt too wide) in alignment at lines 2125--2147
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (33.36192pt too wide) in alignment at lines 2147--2169
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (33.36192pt too wide) in alignment at lines 2169--2174
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[92]
+Overfull \hbox (66.21196pt too wide) in alignment at lines 2185--2193
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (66.21196pt too wide) in alignment at lines 2193--2216
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (66.21196pt too wide) in alignment at lines 2216--2238
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[93]
+Overfull \hbox (66.21196pt too wide) in alignment at lines 2238--2260
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (66.21196pt too wide) in alignment at lines 2260--2265
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[94]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2276--2284
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2284--2307
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2307--2329
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2329--2351
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[95]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2351--2356
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2367--2375
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2375--2398
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[96]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2398--2420
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2420--2442
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2442--2447
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[97]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2458--2466
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2466--2489
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2489--2511
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[98]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2511--2533
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2533--2538
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[99]
+Overfull \hbox (55.26195pt too wide) in alignment at lines 2549--2557
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (55.26195pt too wide) in alignment at lines 2557--2580
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (55.26195pt too wide) in alignment at lines 2580--2602
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (55.26195pt too wide) in alignment at lines 2602--2624
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[100]
+Overfull \hbox (55.26195pt too wide) in alignment at lines 2624--2629
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2640--2648
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2648--2671
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[101]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2671--2693
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2693--2715
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2715--2720
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[102]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2731--2739
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2739--2762
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2762--2784
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[103]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2784--2806
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2806--2811
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[104]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2822--2830
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2830--2853
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2853--2875
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2875--2897
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[105]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2897--2902
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2913--2921
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2921--2944
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[106]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2944--2966
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2966--2988
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 2988--2993
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[107]
+Overfull \hbox (60.73695pt too wide) in alignment at lines 3004--3012
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 3012--3035
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 3035--3057
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[108]
+Overfull \hbox (60.73695pt too wide) in alignment at lines 3057--3079
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (60.73695pt too wide) in alignment at lines 3079--3084
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[109]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 3095--3103
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 3103--3126
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 3126--3148
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.41191pt too wide) in alignment at lines 3148--3170
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[110]
+Overfull \hbox (22.41191pt too wide) in alignment at lines 3170--3175
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+) (./thesis.bbl [111]
 Underfull \hbox (badness 1052) in paragraph at lines 54--59
 []\OT1/cmr/m/n/10.95 D. J. Watts M. E. J. New-man and S. H. Stro-gatz.  Ran-dom
 
@@ -436,18 +1332,18 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[54
+[112
 
-]) [55] (./thesis.aux)
+]) [113] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4374 strings out of 494185
- 62551 string characters out of 6156888
- 131814 words of memory out of 5000000
- 7591 multiletter control sequences out of 15000+600000
+ 4513 strings out of 494185
+ 64170 string characters out of 6156888
+ 183678 words of memory out of 5000000
+ 7719 multiletter control sequences out of 15000+600000
  16162 words of font info for 61 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  38i,9n,32p,552b,1121s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -467,10 +1363,10 @@ sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
 fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
 cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (56 pages, 479672 bytes).
+Output written on thesis.pdf (114 pages, 759813 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
+ 447 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
