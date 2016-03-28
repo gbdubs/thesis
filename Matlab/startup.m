@@ -21,9 +21,10 @@ for file = dir('.')'
     end
 end
 
+addpath('alternative generator');
 for file = dir('alternative generator')';
     if file.isdir
-        if ~strcmp(file.name,'data') && numel(file.name) > 2
+        if ~strcmp(file.name,'smalldata') && numel(file.name) > 2
             disp(['    loading ', file.name]);
             addpath(genpath(['alternative generator','/',file.name]));
         end

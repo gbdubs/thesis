@@ -1,15 +1,7 @@
-function [ ALNA, MLNA, VLNA ] = ALNA_MLNA_VLNA( n, p, alg, nGraphs )
+function [ ALNA, MLNA, VLNA ] = ALNA_MLNA_VLNA( NA )
     % ALNA = Average of Logarithm of Number of Automorphisms.
     % MLNA = Median of Logarithm of Number of Automorphisms.
     % VLNA = Variance of Logarithm of Number of Automorphisms.
-   
-    NA = loadStep(n,p,alg,'NA',nGraphs,0);
-
-    if numel(NA) == 0
-        calculateMetric('NA',n,p,alg,nGraphs);
-    end
-    
-    NA = loadStep(n,p,alg,'NA',nGraphs,0);
     
     LNA = log(NA);
 

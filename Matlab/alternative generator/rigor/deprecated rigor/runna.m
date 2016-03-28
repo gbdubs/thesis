@@ -1,3 +1,0 @@
-cannonizeRandomGraphData();
-updateAllPathsData();
-calculateAllMetrics();

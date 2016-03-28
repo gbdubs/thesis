@@ -7,4 +7,5 @@
 **/.metadata/**
 **.DS_Store
 .*
+Matlab/alternative generator/smalldata/**
 !/.gitignore

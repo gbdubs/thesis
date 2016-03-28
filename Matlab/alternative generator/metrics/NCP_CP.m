@@ -1,4 +1,4 @@
-function [ nCoPathsGraphs, coPathsGraphs ] = findNumberOfCoPathsGraphsInCannonicalSet( graphSet )
+function [ nCoPathsGraphs, coPathsGraphs ] = NCP_CP( graphSet )
 
     % NCP = Number of Copaths Graphs
     % CPG = Copaths Graphs
