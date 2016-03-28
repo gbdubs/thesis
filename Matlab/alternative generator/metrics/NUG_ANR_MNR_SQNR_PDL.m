@@ -9,6 +9,8 @@ function [ NUG, ANR, MNR, SQNR, PDL ] = NUG_ANR_MNR_SQNR_PDL( FC )
     
     [FFC, FFV] = hist(FC, unique(FC));
     
+    nGraphs = sum(FC);
+    
     NUG = FFC(1) / nGraphs;
     ANR = sum((FFV-1) .* FFC) / nGraphs;
     MNR = max(FFV);

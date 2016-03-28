@@ -21,4 +21,6 @@ for j = 1 : numel(fromVariables)
     end
 end
 
+
+
 clear('RAW_Contingent', 'CANNON_Contingent', 'NA_Contingent','FC_Contingent','fromVariables','contingentVariables','j','i','fromVariable','contingentVars','toVariable');
