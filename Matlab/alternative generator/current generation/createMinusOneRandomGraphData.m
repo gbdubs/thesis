@@ -28,10 +28,11 @@ function createMinusOneRandomGraphData( v, p , nGraphs, runNo)
         
         remaining = rand();
         
+        doneHere = 0;
         for i = 1 : v+1
-            if (remaining < score(i))
-                G = deck(i,:,:);
-                return;
+            if remaining < score(i) && ~doneHere
+                G = reshape(deck(i,:,:), v, v);
+                doneHere = 1;
             else
                 remaining = remaining - score(i);    
             end
@@ -44,7 +45,7 @@ function createMinusOneRandomGraphData( v, p , nGraphs, runNo)
     progressbar;
     for j = 1 : nGraphs
         progressbar(j / nGraphs);
-        graphSet(j) = graph6Encode(generateMinusOne(v,p));
+        graphSet(j,:) = graph6Encode(generateMinusOne(v,p));
     end
     
     saveRandomGraphDataResult(graphSet, v, p, 'MinusOne', 'RAW', nGraphs, runNo);
