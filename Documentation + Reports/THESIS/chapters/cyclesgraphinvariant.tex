@@ -177,23 +177,59 @@ An invariant is `worse' the more time it takes to compute.
 
 [COMPUTATIONAL RESULTS HERE] 
 
-\section{Discrimination on Tough Graph Classes}
-\subsection{Background}
-Any algorithm or methodology we create needs to be verified in the same terms that precursors have used to verify themselves.
-One way to do this is to examine the performance of tasks (such as canonical labeling and isomorphism testing) on the same classes of graphs that established renditions of those algorithms have used to push their performance.
-The most established canonical labeler comes from the NAUTY package CITE.
-The three sets of graphs that the authors of that package use to push the performance of their algorithm are the 1-Sparse, 2-Dense, and Miyizaki Graphs, each of which present their own set of challenges.
-In this section, we will briefly outline each of these sets of graphs, then show how a cannonical labeler based in cycles performs on each, comparing against NAUTY benchmarks.
-
-\subsection{1-Sparse Graphs}
-
-\subsection{2-Dense Graphs}
-
-\subsection{Miyizaki Graphs}
+%\section{Discrimination on Tough Graph Classes}
+%\subsection{Background}
+%Any algorithm or methodology we create needs to be verified in the same terms that precursors have used to verify themselves.
+%One way to do this is to examine the performance of tasks (such as canonical labeling and isomorphism testing) on the same classes of graphs that established renditions of those algorithms have used to push their performance.
+%The most established canonical labeler comes from the NAUTY package CITE.
+%The three sets of graphs that the authors of that package use to push the performance of their algorithm are the 1-Sparse, 2-Dense, and Miyizaki Graphs, each of which present their own set of challenges.
+%In this section, we will briefly outline each of these sets of graphs, then show how a cannonical labeler based in cycles performs on each, comparing against NAUTY benchmarks.
+%
+%\subsection{1-Sparse Graphs}
+%
+%\subsection{2-Dense Graphs}
+%
+%\subsection{Miyizaki Graphs}
 
 
 \section{Imperfection, Co-Cycles Graphs}
-\subsection{Discovering Co-Cycles Graphs}
+
+Though it has been alluded to previously, a key discovery of my thesis is that there exist co-cycles graphs, non-isomorphic graphs which have the same value for the cycles invariant for all observed values of P.
+These graphs are incredibly rare.
+None exist with fewer than ten vertices, and only about 100 of the 12 million graphs over 10 vertices satisfy this property.
+
+In this section, we will discuss the initial discovery of co-cycles graphs, detailing the relatively advanced set of methodologies used.
+Then we will discuss how co-cycles graphs can be constructed intentionally, on larger sets of vertices.
+Finally, we will discuss co-cycles graphs as a useful (and relatively small) set of graphs which are useful for invariant analysis and testing.
+
+\subsection{Discovering Co-Cycles Graphs, Cleverly}
+
+Discovering co-cycles graphs was not trivial.
+The way I went about looking for them was theoretically simple, but incredibly challenging to implement and process.
+\begin{itemize}
+\item{First, I enumerated all graphs of size N with M vertices by using the NAUTY geng function}
+\item{I set up a mechanism which delivered the cycles values in sorted order, thus, the cycles invariant (which is an $N \times N$ matrix) could be parsed apart in order of its columns (all of the values of cycles of length 2, then 3, then 4, etc)}
+\item{I used a clever set of minimally memory intensive structures to store only the information needed for a given unit of this computation.  This, in combination with the second step, yielded a delayed stream processing, where we have a structure (with minimal memory), which can be called upon for another, more differentiating value.}
+\item{These structures (one per graph), were placed in an enormous trie, each level of which was the level of the delayed evaluation.  Only values which differentiated between different structures were evaluated (lazy eval on trie-collision, splitting into sub-tries).}
+\item{Co-Cycles graphs were then simply detected by depth. After all graphs of a given size (with a given number of edges) were placed into the trie, only those at depth $N^2$ could possibly be co-cycles.}
+\end{itemize}
+
+The lazy evaluation (in a couple of benchmark tests on eight vertices) worked more efficiently on the order of $10^{-3}$ times the original running time.
+Additionally, a trick I employed with bulk memory allocation reduced running time on the order of $10^-1$ (allocated 100 trie-nodes at once, rather than 1 at a time).
+An additional optimization I made was the singular evaluation of a combination of N and M at a given time.
+We know that the number of vertices and edges in a graph is reconstructible from the cycles invariant, so we only need to check for set values of M and N if we want to discover cocycles graphs.
+This enabled me to reduce the overall amount of memory allocated to approximately a tenth of what it would require to process all graphs of a given size simultaneously.
+
+Additionally, a smart way that I set up my matrices allowed for insanely efficient memory allocation: since I had to maintain every single graph in my trie, for even a small number of vertices that could have been an incredible amount of space.
+The graphs themselves were stored as pointers to arrays of integers (int**), which leads to a costly price in memory for even a small N (consider N=10):
+$$Memory Used = SizeOf(Int) * N * N * NGraphs + SizeOf(Int*) * N * NGraphs = 4 * 10 * (10+2) * 12,005,168 = 5,762,480,640 \approx 6 GB $$
+However, I realized quite quickly that since the matries themselves were not chaning over the course of the computation (the were being used in mutliplcations and what not, and being used to change other values and matrices), we could share their representations.
+I decided not to have my algorithm waste time trying to canonize the graphs or find similarities, or shrinking down the individual memory storage of the graphs to the bit level (which would have been highly inefficient for the frequent scale-up/down necessary for computations as integers).
+Instead, I simply pre-allocated all of the $2^N$ possible vectors that could be sub-vectors of a matrix.
+Thus, the only thing that changed was that each of the individual entries in this great large computation is pre-allocated and shared amoungst all 12 million graph representations as in $N = 10$.  The memory use for this case is shown to be dramatically reduced:
+$$Memory Used = SizeOf(Int) * N * NVectors + Sizeof(Int*) * N * NGraphs = 4 * 10 * 2^{10} + 8 * 10 * 12,005,168 = 960,454,400 \approx 1 GB $$
+
+
 \subsection{Constructing Co-Cycles Graphs}
 \subsection{As a Proposed Dataset for Invariant Analysis}
 
