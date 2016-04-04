@@ -45,7 +45,60 @@ $$|G_{Alg}| <<< |G_{Inst}| = 2^{E_{max}}$$
 but since the number of representations of a given graph is limited by its number of labelings that:
 $$|G_{Alg}| * N! > | G_{Inst} | =  2^{E_{max}}$$
 
+\subsection{Counting Graphs over N Vertices}
 
+The number of undirected, non-looped graphs over N vertices was an open question in computational theory for a while. CITE.
+The first few values of this sequence were well known long before the theoreticians Vladeta Jovovic and Benoit Cloitre came up with a closed form to approximate it (with high specificity) in 2003.
+The values in this sequence grow exponentially, but to give you an idea of how rapidly, the first twelve values are shown:
+
+$$1\,\; \;1\, \;\;2\, \;\;4\, \;\;11\, \;\;34\, \;\;156\, \;\;1044\,\; 12346\,\;\; 274668\, \;\;12005168\, \;\;1018997864$$
+
+Thus, when we describe (as we will throughout this project) the computational difficulty of going, say, from calculating a metric over all graphs on 10 to 11 nodes, remember that is about a 60-fold increase in space size, assuming the algorithm is in constant time.
+The values that I use for this thesis come directly from the Online Encyclopedia of Integer Sequences, which gives values up to graphs with 50 vertices.
+As a side note: OEIS is probably one of my favorite things that exists.
+It astounds me how good it is picking out the exact sequence you are looking for, regardless of whether it is shifted by a few places, might have missing gap, etc.
+A well cooked example of the beautiful hyper-connected and data-driven world we live in.
+
+\subsection{Counting Graphs over N Vertices and M Edges}
+
+The number of graphs with a given number of nodes (N), has an internal distribution: the number of edges in each of the graphs.
+It turns out that this is an approximately normal distribution, which is (as we would anticipate) centered at $\frac{E_{Max}}{2}$. 
+To see how this distribution changes over various values of N, we can normalize our notion of edges to one of connectivity:
+we will divide the number of edges by the number of possible edges (transforming an integer range $[0, E_{max}]$ to a fractional range $[0, 1]$.
+
+This enables us to see how the distribution changes over multiple values of N.
+In figure \ref{fig:ngraphs} we make clear this connection by normalizing the distributions so that they are comparable (i.e. making the areas under each curve exactly one by dividing each by the total number of graphs associated with the value of N), we are able to capture the way that the distribution of graph connectivity changes for varying values of N and M. jgjhg jhgjhg 
+
+\begin{figure}[h]
+\label{fig:ngraphs}
+\caption{\emph{Number of Graphs over N vertices with varying Connectivity}}
+\centering
+\includegraphics[width=\textwidth]{pdfs3thru11}
+\end{figure}
+
+When normalized in this manner, it becomes immediately clear that:
+\begin{itemize}
+\item{Each of these distributions is normaly distributed}
+\item{The distributions share peaks (as we expect them to) at 1/2}
+\item{The standard deviation of each of these distributions is decreasing as N increases}
+\end{itemize}
+
+To formalize these three observations, I first ran normality tests, which passed at the most strict levels possible for $N>=8$, and which were slightly less performant for smaller values of N (which makes sense, as we simply have fewer discrete bins on our x-axis in which to place observations, which are also many fewer in number).
+Secondly, I verified our thinking on the co-modality trivially: we know that if two graphs are non-isomorphic, then their inverses are non-isomorphic.
+Thus, our distribution must be symmetric about the half-connectivity point.
+Thirdly, we can formalize this by fitting a normal distribution to each of the distributions (allowing only sigma to vary) and come up with precise estimates for these distributions for $N>=5$.
+I opted not to use the fitted sigmas for $N < 5$, as the roughness of our data for those values meant that less than 90\% of the variation in those observations was attributable to the normality.
+The results are shown below in figure \ref{fig:decreasingsigma}, and there is a clear downward trend in sigma, which roughly follows a power curve which asymptotes to zero:
+
+\begin{figure}[h]
+\label{fig:decreasingsigma}
+\caption{\emph{Standard Deviation Fit to Distribution of Number of Edges for Graphs over N Vertices}}
+\centering
+\includegraphics[width=\textwidth]{decreasingsigma}
+\end{figure}
+
+This establishes an important fact: most graphs are `somewhat connected', neither sparse nor dense.
+In fact, it appears that as N increases, since sigma decreases, we can conclude that the larger the value of N, the fewer and fewer graphs (as a proportion of the global set) are sparse or dense.
 
 \section{Graph Isomorphism and Automorphism}
 

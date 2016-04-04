@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  28 MAR 2016 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 APR 2016 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,10 +6,10 @@ entering extended mode
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 44 languages loaded.
-(/opt/local/share/texmf-texlive/tex/latex/base/report.cls
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/opt/local/share/texmf-texlive/tex/latex/base/size11.clo
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,14 +25,14 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/opt/local/share/texmf-texlive/tex/latex/mathtools/mathtools.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count88
 \calc@Bcount=\count89
@@ -45,27 +45,27 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count90
 \calc@Cskip=\skip45
 )
-(/opt/local/share/texmf-texlive/tex/latex/mathtools/mhsetup.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count91
@@ -120,7 +120,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
-(/opt/local/share/texmf-texlive/tex/latex/listings/listings.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count104
 \lst@gtempboxa=\box28
 \lst@token=\toks20
@@ -134,38 +134,38 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \lst@lineno=\count109
 \lst@maxwidth=\dimen124
 
-(/opt/local/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 \c@lstnumber=\count110
 \lst@skipnumbers=\count111
 \lst@framebox=\box29
 )
-(/opt/local/share/texmf-texlive/tex/latex/listings/listings.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/opt/local/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count112
@@ -173,28 +173,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/opt/local/share/texmf-texlive/tex/generic/genmisc/nth.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/genmisc/nth.sty
 Package: nth 2002/02/27
 )
-(/opt/local/share/texmf-texlive/tex/latex/cite/cite.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-(/opt/local/share/texmf-texlive/tex/latex/multirow/multirow.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen127
 )
-(/opt/local/share/texmf-texlive/tex/latex/tools/longtable.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip50
 \LTright=\skip51
@@ -215,7 +215,8 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \myboxA=\box34
 \myboxB=\box35
 \mylenA=\skip54
- (./thesis.aux)
+
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -232,7 +233,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 \c@lstlisting=\count118
 
-(/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count119
 \scratchdimen=\dimen129
@@ -245,15 +246,15 @@ LaTeX Font Info:    ... okay on input line 38.
 \MPnumerator=\count123
 \makeMPintoPDFobject=\count124
 \everyMPtoPDFconversion=\toks23
-) (/opt/local/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -262,22 +263,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -289,7 +290,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -301,14 +302,16 @@ Package pdftex.def Info: brandeis-seal.png used on input line 44.
 
 [1
 
-{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map} <./brandeis-seal.p
-ng>] (./thesis.toc
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./brand
+eis-seal.png>] (./thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
- (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 2.
- (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
@@ -323,26 +326,39 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Chapter 1.
 [5
 
-] [6] [7] [8]
-Overfull \hbox (16.78204pt too wide) in paragraph at lines 136--139
+] [6] <figures/pdfs3thru11.png, id=39, 578.16pt x 433.62pt>
+File: figures/pdfs3thru11.png Graphic file (type png)
+
+<use figures/pdfs3thru11.png>
+Package pdftex.def Info: figures/pdfs3thru11.png used on input line 76.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 81.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
+ [7 <./figures/pdfs3thru11.png (PNG copy)>]
+<figures/decreasingsigma.png, id=43, 578.16pt x 433.62pt>
+File: figures/decreasingsigma.png Graphic file (type png)
+
+<use figures/decreasingsigma.png>
+Package pdftex.def Info: figures/decreasingsigma.png used on input line 97.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+ [8 <./figures/decreasingsigma.png>] [9]
+[10]
+Overfull \hbox (16.78204pt too wide) in paragraph at lines 189--192
 \OT1/cmr/m/n/10.95 within the ad-ja-cency ma-trix. Thus, cal-cu-lat-ing a spe-c
 ific value of $\OML/cmm/m/it/10.95 Cycles\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
 5 A; p; v\OT1/cmr/m/n/10.95 )$
  []
 
-[9] [10] [11] [12]) (./chapters/cyclesgraphinvariant.tex [13]
+[11] [12] [13] [14] [15]) (./chapters/cyclesgraphinvariant.tex [16]
 Chapter 2.
-[14
+[17
 
-] [15] [16]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
- (/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
-
-[17]
+] [18] [19] [20]
 Overfull \hbox (68.24347pt too wide) detected at line 112
 [] []
  []
@@ -359,16 +375,49 @@ x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
 \OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 1
  []
 
-[18] [19]
+[21] [22]
 Overfull \hbox (14.4939pt too wide) in paragraph at lines 156--157
 [][][][][][][][][][][][][][][][][] 
  []
 
-[20]) (./chapters/cyclesvertexinvariant.tex [21]
-Chapter 3.
-[22
+[23] [24]
+Overfull \hbox (265.8922pt too wide) detected at line 225
+\OML/cmm/m/it/10.95 MemoryUsed \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 SizeOf\
+OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10
+.95 ^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 N \OM
+S/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 NGraphs \OT1/cmr/m/n/10.95 + \OML/cmm/
+m/it/10.95 SizeOf\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OMS/cmsy/m/n/10.95
+ ^^C\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 N \OMS/cms
+y/m/n/10.95 ^^C \OML/cmm/m/it/10.95 NGraphs \OT1/cmr/m/n/10.95 = 4 \OMS/cmsy/m/
+n/10.95 ^^C \OT1/cmr/m/n/10.95 10 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 (1
+0 + 2) \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 12\OML/cmm/m/it/10.95 ; \OT1/
+cmr/m/n/10.95 005\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 168 = 5\OML/cmm/m/it/
+10.95 ; \OT1/cmr/m/n/10.95 762\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 480\OML/
+cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 640 \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10
+.95 6\OML/cmm/m/it/10.95 GB
+ []
 
-] <figures/numGraphsAndMats.png, id=91, 749.29938pt x 432.61626pt>
+
+Overfull \hbox (249.87267pt too wide) detected at line 230
+\OML/cmm/m/it/10.95 MemoryUsed \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 SizeOf\
+OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10
+.95 ^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 NVect
+ors \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 Sizeof\OT1/cmr/m/n/10.95 (\OML/cmm
+/m/it/10.95 Int\OMS/cmsy/m/n/10.95 ^^C\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 
+^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 NGraphs \
+OT1/cmr/m/n/10.95 = 4 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 10 \OMS/cmsy/m
+/n/10.95 ^^C \OT1/cmr/m/n/10.95 2[] + 8 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10
+.95 10 \OMS/cmsy/m/n/10.95 ^^C \OT1/cmr/m/n/10.95 12\OML/cmm/m/it/10.95 ; \OT1/
+cmr/m/n/10.95 005\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 168 = 960\OML/cmm/m/i
+t/10.95 ; \OT1/cmr/m/n/10.95 454\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 400 \O
+MS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 GB
+ []
+
+) (./chapters/cyclesvertexinvariant.tex [25]
+Chapter 3.
+[26
+
+] <figures/numGraphsAndMats.png, id=108, 749.29938pt x 432.61626pt>
 File: figures/numGraphsAndMats.png Graphic file (type png)
 
 <use figures/numGraphsAndMats.png>
@@ -378,8 +427,8 @@ Package pdftex.def Info: figures/numGraphsAndMats.png used on input line 46.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24 <./figures/numGraphsAndMats.png>]
-<figures/N9DiamVsDiffPower.png, id=102, 578.16pt x 433.62pt>
+[27] [28 <./figures/numGraphsAndMats.png>]
+<figures/N9DiamVsDiffPower.png, id=117, 578.16pt x 433.62pt>
 File: figures/N9DiamVsDiffPower.png Graphic file (type png)
 
 <use figures/N9DiamVsDiffPower.png>
@@ -389,934 +438,60 @@ Package pdftex.def Info: figures/N9DiamVsDiffPower.png used on input line 104.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25] [26 <./figures/N9DiamVsDiffPower.png>] [27] [28] [29])
-(./chapters/reconstructionconjecture.tex [30]
+[29] [30 <./figures/N9DiamVsDiffPower.png>] [31] [32] [33])
+(./chapters/reconstructionconjecture.tex [34]
 Chapter 4.
-) (./chapters/cannonicallabeling.tex [31
+) (./chapters/cannonicallabeling.tex [35
 
-] [32]
+] [36]
 Chapter 5.
-[33
+[37
 
-] [34]
+] [38]
 Overfull \hbox (13.7763pt too wide) in paragraph at lines 46--46
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
-) (./chapters/randomgraphgenerators.tex [35]
+) (./chapters/randomgraphgenerators.tex [39]
 Chapter 6.
 
-LaTeX Warning: Citation `exponentialgraphs' on page 36 undefined on input line 
+LaTeX Warning: Citation `exponentialgraphs' on page 40 undefined on input line 
 16.
 
-[36
+[40
 
-] [37] [38] [39] [40] [41] [42] [43]
+] [41] [42] [43] [44] [45] [46] [47]
 Overfull \hbox (16.50629pt too wide) in paragraph at lines 199--199
 []\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
  []
 
-[44]
+[48]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 230.
 
- (/opt/local/share/texmf-texlive/tex/latex/base/omlcmr.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 230.
- [45] [46]
+ [49]
+[50]
 Overfull \hbox (8.43755pt too wide) in paragraph at lines 297--298
 \OT1/cmr/m/n/10.95 Av-er-age num-ber of non-trivial (non-edge re-peat-ing) quad
 ri-lat-er-als across
  []
 
-[47] [48] [49]
+[51] [52] [53]
 Overfull \hbox (12.43272pt too wide) in paragraph at lines 327--328
 \OT1/cmr/m/n/10.95 of how dis-persed the dis-tri-bu-tion is, cal-cu-lated as $\
 OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$ 
 
  []
 
-[50] [51]) (./chapters/reflections.tex [52]
+[54] [55]) (./chapters/reflections.tex [56]
 Chapter 7.
-) (./appendices/randomgraphbaselines.tex
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1--9
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 9--32
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 32--54
- [] [] [] [] [] [] [] [] [] 
- []
-
-[53
+) (./thesis.bbl [57
 
 ]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 54--76
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 76--81
- [] [] [] [] [] [] [] [] [] 
- []
-
-[54]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 92--100
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 100--123
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 123--145
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 145--167
- [] [] [] [] [] [] [] [] [] 
- []
-
-[55]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 167--172
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 183--191
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 191--214
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 214--236
- [] [] [] [] [] [] [] [] [] 
- []
-
-[56]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 236--258
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 258--263
- [] [] [] [] [] [] [] [] [] 
- []
-
-[57]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 274--282
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 282--305
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 305--327
- [] [] [] [] [] [] [] [] [] 
- []
-
-[58]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 327--349
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 349--354
- [] [] [] [] [] [] [] [] [] 
- []
-
-[59]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 365--373
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 373--396
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 396--418
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 418--440
- [] [] [] [] [] [] [] [] [] 
- []
-
-[60]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 440--445
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 456--464
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 464--487
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 487--509
- [] [] [] [] [] [] [] [] [] 
- []
-
-[61]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 509--531
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 531--536
- [] [] [] [] [] [] [] [] [] 
- []
-
-[62]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 547--555
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 555--578
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 578--600
- [] [] [] [] [] [] [] [] [] 
- []
-
-[63]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 600--622
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 622--627
- [] [] [] [] [] [] [] [] [] 
- []
-
-[64]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 638--646
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 646--669
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 669--691
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 691--713
- [] [] [] [] [] [] [] [] [] 
- []
-
-[65]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 713--718
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (142.86205pt too wide) in alignment at lines 729--737
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (142.86205pt too wide) in alignment at lines 737--760
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (142.86205pt too wide) in alignment at lines 760--782
- [] [] [] [] [] [] [] [] [] 
- []
-
-[66]
-Overfull \hbox (142.86205pt too wide) in alignment at lines 782--804
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (142.86205pt too wide) in alignment at lines 804--809
- [] [] [] [] [] [] [] [] [] 
- []
-
-[67]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 820--828
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 828--851
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 851--873
- [] [] [] [] [] [] [] [] [] 
- []
-
-[68]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 873--895
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 895--900
- [] [] [] [] [] [] [] [] [] 
- []
-
-[69]
-Overfull \hbox (71.68697pt too wide) in alignment at lines 911--919
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (71.68697pt too wide) in alignment at lines 919--942
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (71.68697pt too wide) in alignment at lines 942--964
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (71.68697pt too wide) in alignment at lines 964--986
- [] [] [] [] [] [] [] [] [] 
- []
-
-[70]
-Overfull \hbox (71.68697pt too wide) in alignment at lines 986--991
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1002--1010
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1010--1033
- [] [] [] [] [] [] [] [] [] 
- []
-
-[71]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1033--1055
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1055--1077
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1077--1082
- [] [] [] [] [] [] [] [] [] 
- []
-
-[72]
-Overfull \hbox (44.31194pt too wide) in alignment at lines 1093--1101
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (44.31194pt too wide) in alignment at lines 1101--1124
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (44.31194pt too wide) in alignment at lines 1124--1146
- [] [] [] [] [] [] [] [] [] 
- []
-
-[73]
-Overfull \hbox (44.31194pt too wide) in alignment at lines 1146--1168
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (44.31194pt too wide) in alignment at lines 1168--1173
- [] [] [] [] [] [] [] [] [] 
- []
-
-[74]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1184--1192
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1192--1215
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1215--1237
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1237--1259
- [] [] [] [] [] [] [] [] [] 
- []
-
-[75]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1259--1264
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1275--1283
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1283--1306
- [] [] [] [] [] [] [] [] [] 
- []
-
-[76]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1306--1328
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1328--1350
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1350--1355
- [] [] [] [] [] [] [] [] [] 
- []
-
-[77]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1366--1374
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1374--1397
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1397--1419
- [] [] [] [] [] [] [] [] [] 
- []
-
-[78]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1419--1441
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1441--1446
- [] [] [] [] [] [] [] [] [] 
- []
-
-[79]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1457--1465
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1465--1488
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1488--1510
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1510--1532
- [] [] [] [] [] [] [] [] [] 
- []
-
-[80]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1532--1537
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1548--1556
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1556--1579
- [] [] [] [] [] [] [] [] [] 
- []
-
-[81]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1579--1601
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1601--1623
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1623--1628
- [] [] [] [] [] [] [] [] [] 
- []
-
-[82]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1639--1647
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1647--1670
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1670--1692
- [] [] [] [] [] [] [] [] [] 
- []
-
-[83]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1692--1714
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1714--1719
- [] [] [] [] [] [] [] [] [] 
- []
-
-[84]
-Overfull \hbox (91.7316pt too wide) in alignment at lines 1730--1738
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (91.7316pt too wide) in alignment at lines 1738--1761
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (91.7316pt too wide) in alignment at lines 1761--1783
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (91.7316pt too wide) in alignment at lines 1783--1805
- [] [] [] [] [] [] [] [] [] 
- []
-
-[85]
-Overfull \hbox (91.7316pt too wide) in alignment at lines 1805--1810
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 1821--1829
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 1829--1852
- [] [] [] [] [] [] [] [] [] 
- []
-
-[86]
-Overfull \hbox (60.73695pt too wide) in alignment at lines 1852--1874
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 1874--1896
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 1896--1901
- [] [] [] [] [] [] [] [] [] 
- []
-
-[87]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1912--1920
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1920--1943
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1943--1965
- [] [] [] [] [] [] [] [] [] 
- []
-
-[88]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1965--1987
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 1987--1992
- [] [] [] [] [] [] [] [] [] 
- []
-
-[89]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2003--2011
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2011--2034
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2034--2056
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2056--2078
- [] [] [] [] [] [] [] [] [] 
- []
-
-[90]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2078--2083
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (33.36192pt too wide) in alignment at lines 2094--2102
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (33.36192pt too wide) in alignment at lines 2102--2125
- [] [] [] [] [] [] [] [] [] 
- []
-
-[91]
-Overfull \hbox (33.36192pt too wide) in alignment at lines 2125--2147
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (33.36192pt too wide) in alignment at lines 2147--2169
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (33.36192pt too wide) in alignment at lines 2169--2174
- [] [] [] [] [] [] [] [] [] 
- []
-
-[92]
-Overfull \hbox (66.21196pt too wide) in alignment at lines 2185--2193
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (66.21196pt too wide) in alignment at lines 2193--2216
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (66.21196pt too wide) in alignment at lines 2216--2238
- [] [] [] [] [] [] [] [] [] 
- []
-
-[93]
-Overfull \hbox (66.21196pt too wide) in alignment at lines 2238--2260
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (66.21196pt too wide) in alignment at lines 2260--2265
- [] [] [] [] [] [] [] [] [] 
- []
-
-[94]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2276--2284
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2284--2307
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2307--2329
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2329--2351
- [] [] [] [] [] [] [] [] [] 
- []
-
-[95]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2351--2356
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2367--2375
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2375--2398
- [] [] [] [] [] [] [] [] [] 
- []
-
-[96]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2398--2420
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2420--2442
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2442--2447
- [] [] [] [] [] [] [] [] [] 
- []
-
-[97]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2458--2466
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2466--2489
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2489--2511
- [] [] [] [] [] [] [] [] [] 
- []
-
-[98]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2511--2533
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2533--2538
- [] [] [] [] [] [] [] [] [] 
- []
-
-[99]
-Overfull \hbox (55.26195pt too wide) in alignment at lines 2549--2557
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (55.26195pt too wide) in alignment at lines 2557--2580
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (55.26195pt too wide) in alignment at lines 2580--2602
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (55.26195pt too wide) in alignment at lines 2602--2624
- [] [] [] [] [] [] [] [] [] 
- []
-
-[100]
-Overfull \hbox (55.26195pt too wide) in alignment at lines 2624--2629
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2640--2648
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2648--2671
- [] [] [] [] [] [] [] [] [] 
- []
-
-[101]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2671--2693
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2693--2715
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2715--2720
- [] [] [] [] [] [] [] [] [] 
- []
-
-[102]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2731--2739
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2739--2762
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2762--2784
- [] [] [] [] [] [] [] [] [] 
- []
-
-[103]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2784--2806
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2806--2811
- [] [] [] [] [] [] [] [] [] 
- []
-
-[104]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2822--2830
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2830--2853
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2853--2875
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2875--2897
- [] [] [] [] [] [] [] [] [] 
- []
-
-[105]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2897--2902
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2913--2921
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2921--2944
- [] [] [] [] [] [] [] [] [] 
- []
-
-[106]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2944--2966
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2966--2988
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 2988--2993
- [] [] [] [] [] [] [] [] [] 
- []
-
-[107]
-Overfull \hbox (60.73695pt too wide) in alignment at lines 3004--3012
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 3012--3035
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 3035--3057
- [] [] [] [] [] [] [] [] [] 
- []
-
-[108]
-Overfull \hbox (60.73695pt too wide) in alignment at lines 3057--3079
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (60.73695pt too wide) in alignment at lines 3079--3084
- [] [] [] [] [] [] [] [] [] 
- []
-
-[109]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 3095--3103
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 3103--3126
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 3126--3148
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (22.41191pt too wide) in alignment at lines 3148--3170
- [] [] [] [] [] [] [] [] [] 
- []
-
-[110]
-Overfull \hbox (22.41191pt too wide) in alignment at lines 3170--3175
- [] [] [] [] [] [] [] [] [] 
- []
-
-) (./thesis.bbl [111]
 Underfull \hbox (badness 1052) in paragraph at lines 54--59
 []\OT1/cmr/m/n/10.95 D. J. Watts M. E. J. New-man and S. H. Stro-gatz.  Ran-dom
 
@@ -1332,41 +507,42 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[112
+[58
 
-]) [113] (./thesis.aux)
+]) [59] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4513 strings out of 494185
- 64170 string characters out of 6156888
- 183678 words of memory out of 5000000
- 7719 multiletter control sequences out of 15000+600000
+ 4486 strings out of 493089
+ 64519 string characters out of 6134842
+ 135295 words of memory out of 5000000
+ 7863 multiletter control sequences out of 15000+600000
  16162 words of font info for 61 fonts, out of 8000000 for 9000
- 430 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  38i,9n,32p,552b,1121s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/local/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (114 pages, 759813 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on thesis.pdf (60 pages, 631150 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
