@@ -31,24 +31,38 @@ function [ totalScore ] = scoreAgainstBaseline( alg, n, p )
     for metricCell = metricVariables
         
         metric = cell2mat(metricCell);
+        marginalScore = -inf;
+        calculatedScoreAgainstBaseline = retrieveScoreAgainstBaseline(alg, n, p, metric);
         
-        [sN, sMean, sSd] = retrieveFromBaseline(n, p, 'Standard', metric);
-        [iN, iMean, iSd] = retrieveFromBaseline(n, p, 'Ideal', metric);
-        [~, nN, nMean, nSd ] = findSampleStatistics( n, p, alg, metric, 1000 );
+        if (calculatedScoreAgainstBaseline >= -9998)
+            
+            marginalScore = calculatedScoreAgainstBaseline;
+            
+        elseif (calculatedScoreAgainstBaseline == -9999)
+            
+            % Don't do anything, the Score is undefined for this value.
+            
+        elseif (calculatedScoreAgainstBaseline == -10000)
+            [sN, sMean, sSd] = retrieveFromBaseline(n, p, 'Standard', metric);
+            [iN, iMean, iSd] = retrieveFromBaseline(n, p, 'Ideal', metric);
+            [nN, nMean, nSd] = retrieveFromBaseline(n, p, alg, metric);
+
+            if (iSd > 0 || (sSd > 0 && nSd > 0))
+                tIN = tDist(iMean, nMean, iSd, nSd, iN, nN);
+                tIG = tDist(iMean, sMean, iSd, sSd, iN, sN);
+
+                marginalScore = -1 * min(log(tIN / tIG + .0000454),10);
+                disp(['On Metric [',metric,'], MarginalScore = ', num2str(marginalScore)]);
+                saveScoreAgainstBaseline(alg, n, p, metric, marginalScore);
+            else
+                saveScoreAgainstBaseline(alg, n, p, metric, -9999);
+                disp(['UNDEFINED On Metric [',metric,']']);
+            end
+        end
         
-        if (iSd > 0 || (sSd > 0 && nSd > 0))
-        
-            tIN = tDist(iMean, nMean, iSd, nSd, iN, nN);
-            tIG = tDist(iMean, sMean, iSd, sSd, iN, sN);
-
-            marginalScore = -1 * log(tIN / tIG);
-
-            disp(['On Metric [',metric,'], MarginalScore = ', num2str(marginalScore)]);
-
+        if (marginalScore > -inf)
             totalScore = totalScore + marginalScore;
             definedVars = definedVars + 1;
-        else
-            disp(['UNDEFINED On Metric [',metric,']']);
         end
     end
     
