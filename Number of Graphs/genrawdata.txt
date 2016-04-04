@@ -1,0 +1,11 @@
+rm rawResults.txt
+
+for v in {1..11}
+do
+  maxe=$[$v * ($v - 1) / 2]
+  for e in $(seq 0 $maxe)
+  do
+    echo $v $e >> rawResults.txt
+    ../data/geng $v $e | wc >> rawResults.txt
+  done
+done
