@@ -1,40 +1,22 @@
 # Grady Ward's Senior Thesis
 ### Undergraduate Senior Thesis on the Graph Isomorphism Problem
 
-*Started in August 2015, Defense in May 2016*
+*Started in August 2015, Completed by April 20th, Defeded on May 11th 2016*
 
 *Advised by Jim Storer at Brandeis University*
 
 ### TL;DR
 
-Studying the paths invariant within graph isomorphism, which describes the number 
-of closed paths which pass through agiven vertex.  This invaraiant behaves in ways 
-which are powerful yet non-complete, reflecting how the paths property mirrors 
-the graph structure that they mirror. This problem has a load of intuitve appeal 
-which keep this author simultaneously perplexed and fascinated, as I try to parse
-appart what is accurate theory, and what is specious intuition.
+An interesting procedure is counting the number of closed paths that pass through every vertex in the graph of a given length.
+It turns out that we can do this very quickly, relative to how much information it gives us.
+Counting the number of closed paths gives us a kind of local resonance, a description of the localized area around each vertex within the graph, as a integer vector. 
+It turns out that this idea can be transformed into a numerical property, called an invariant, which is highly information dense--able to describe differences between graphs with high probability, but not sufficient to verify that two graphs are the same.
 
-### Introduction
+There are a lot of graphs, even over a small number of vertices, but the number is much larger if you consider different labelings of the same graph to be distinct.
+This difference matters in many contexts, but is most evident through examining random graph generators, which treat labelings as if they are distinct structures. 
+This is not a problem in and of itself (it makes sense in practical contexts), but it warps theoretic arguments about the runtime of algorithms over `random' graphs.
+It turns out that making up our own random graph generators can actually improve upon this state of affairs in a quantifiable way.
 
-Determining whether or not two graphs are the same is an interesting problem in that
-it is neither proven to be in P nor in NP-Complete. Many polynomial time discrimination
-algorithms exist which differentiate between graphs (called invariants), though each does so with a different
-degree of sophistication and power.  The *Paths Invariant* describes the number of closed paths
-that pass through each of the vertices of a graph, and turns out to be a high-power, low cost invariant.
-
-Some notable results thus far are that all graphs
-of size <= 9 can be fully determined by the paths invariant, and that the paths invariant
-is more discriminating than some high powered invariants.  More interesting though, is the
-study of the places where it fails to differentiate two non-isomorphic graphs in V=10: trying to
-understand these *co-paths* graphs is my current focus.
-
-Additionally, there are some interesting properties of the paths invariant that are
-notable or not-immediately apparent.  For example, I noticed that if two vertices are
-going to have different paths vectors, then they will be differentiated before 
-P = N-1 (if N is odd) or P = N-2 (if N is even).  We can begin to find explanations
-for this phenomenon, and end up with a cool proof that works at a theoretical level.
-
-The goal of the project is to have 
 
 ### On Copyright and Fair Use
 
@@ -52,23 +34,20 @@ For the code that I have written for this project,
 feel free to use it subject to the share alike creative commons liscence. 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This original components of this work are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
+
 ### Why Put This Online?
 
-There are three purposes to this thesis as an open source, version controlled work.
+An interesting aspect of this thesis has been that I have placed every incremental iteration of my work online, through git version control and github.
+Every element, from my reading notes, to my mid-semester reports, to my code, results, and datasets: everything has been kept in a central repository, and every change has been committed and logged.
+This also means that all of the code that I have written is open source, and licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 
-1. Research in academia is far too often done in the dark, and only once the conclusion has
-been drawn and sufficently polished does the general public get to learn about it. This 
-falsely represents scientific inquiry as a lightning bolt, a blinding and stark progression from correct idea to correct idea. In 
-reality we all explore ideas that fail, we all have intutions that turn out to be incorrect, and the reality of
-lightning [infinitsimally branching electrical charges](https://www.youtube.com/watch?v=dukkO7c2eUE)
-is far more indicative of what research feels and looks like.  
+There are four reasons to make this thesis as an open source, version controlled work.
 
-2. If someone else ever has the same intuitions that I do on this subject, maybe they can just
-read about it instead of reconstructing all of my dead ends.
+1. Research in academia is far too often done in the dark, and only once the conclusion has been drawn and sufficiently polished does the general public get to learn about it.  This falsely represents scientific inquiry as a lightning bolt, a blinding and stark progression from correct idea to correct idea.  In reality we all explore ideas that fail, we all have intuitions that turn out to be incorrect. The reality of research is much more one of lightning's infinitesimally branching electrical charges (with eventual connection).
 
-3. I work on a personal laptop, a school desktop, and ocassionally a public workstation.
-Transferring data (of N different forms) between these computers is tiresome and error prone without
-a VCS. 
+2.If someone else ever has the same intuitions that I do on this subject, maybe they can just read about it instead of reconstructing all of my dead ends.
+
+3. I work on a personal laptop, a school desktop, and occasionally a public workstation. Transferring data (of all sorts) between these computers is tiresome and error prone without a VCS.
 
 4. Everyone does better work when they know that their work could be observed.
 
