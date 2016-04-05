@@ -234,6 +234,20 @@ $$Memory Used = SizeOf(Int) * N * NVectors + Sizeof(Int*) * N * NGraphs = 4 * 10
 \subsection{Constructing Co-Cycles Graphs}
 \subsection{As a Proposed Dataset for Invariant Analysis}
 
-\section{Discriminatory Agreement By N and M}
+\section{Trie Depth and the Power of Cycles Across Classes of Graphs}
+
+In chapter three, we will discuss a notion of $P^*(G)$, a value for which (within a graph G), cycles beyond length $P^*(G)$ do not yield additional discriminatory information.
+Related is the idea across sets of graphs.
+For example, if we have some set of graphs $S$, there exists an integer $P^*(S)$, at which values beyond this length cycle are not informative in further discriminating between graphs in the set.
+Intuitively, for a set with one element, $P^*(S) = 0$, and non-intuitively, with a set with only graphs which are co-cycles with one another, $P^*(S) = 0$.
+
+The way that  $P^*(S)$ is calculated takes a natural interpretation within our computations in C. 
+ $P^*(S)$ is simply the maximum depth of the trie created when searching for co-paths graphs, while excepting nodes of full ($N^2$) depth.
+
+A natural cadre of sets to explore is $S = Graphs(N, M)$, where S is the set of all graphs with $N$ vertices and $M$ edges.
+Before we discuss the results of what we observed $P^*(S)$ to be over these sets, lets first discuss what we anticipate, and discuss a detail of its implementation.
+Naturally, we would think that the larger the set $S$, the more difficult it will be to fully discriminate between all of the graphs in it.
+If we fix N, the number of 
+
 \subsection{Expectations Borne out of Graph Counts}
 \subsection{An Unexpected Dip}

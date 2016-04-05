@@ -134,6 +134,33 @@ This flaw is most glaring when discussing average or worst case running time ove
 Many algorithms make exciting claims about their performance on `random' graphs, but
 we will show how theoretical and practical analysis of performance changes dramatically under different random graph generators.
 
+\subsection{Two Quick Justifications}
+
+To get an initial sense of this problem, we will first examine the relative probabilities of selecting a Co-Cycles graph from the set of graphs of size 10.
+Since we know all 116 Co-Cycles graphs over 10 vertices, we can (without much computational effort) calculate the relative probabilities of generating a Co-Cycles graph under the standard (Gilbert) model and under the idealized model.
+The results are not shocking, but a notable difference is apparent:
+$$P(CoCycles(G) | G \in Gilbert) = \frac{\sum_{g \in CoCycles}^{116}M_{Reps}(g)}{N Matrices} = \frac{260820000}{3.5184 \times 10^{13}} = 7.4130 \times 10^{-6}$$
+$$P(CoCycles(G) | G \in Gilbert) = \frac{N CoCycles Graphs}{N Graphs} = \frac{116}{12005168} = 9.6625 \times 10^{-6}$$
+
+Though these are not exorbitent differences, it should be noted that there is a difference of 23\%, meaning that by using a Gilbert random graph generator, you are 23\% less likely to observe a co-cycles graph as a result of generating one random graph than you would be via an idealized generator.
+In this case, the difference between the generators is clearly appreciable, but not severely limiting.
+
+As a second example, we will compare the most and least likely graphs to be observed under either random graph model.
+In an idealized random graph generator, all graphs have equal probability of being selected.
+Thus, the ratio of the most likely to least likely is exactly 1.
+
+In a Gilbert random graph generator (abstracting over p, as discussed earlier), graphs that are fully automorphic (where the automorphism set contains all one-to-one mappings), are the least likely to occur.
+One such graph is the fully connected graph, or the complete graph ($K_N$).
+This is simply because the number of matrices which represent them is given by $M_{Reps}$, and the probability of selecting a the complete graph is thus:
+$$P(G = K_N | G \in Gilbert) =  \frac{M_{Reps}(K_N)}{NMatrices} = \frac{N! / |Aut(K_N)|}{2^{.5N(N-1)}} = \frac{N! / N!}{2^{.5N(N-1)}} = \frac{1}{2^{.5N(N-1)}}$$
+However, if we examine a graph with only the trivial automorphism ($G_{TA}$):
+$$P(G = G_{TA} | G \in Gilbert) =  \frac{M_{Reps}(G_{TA})}{NMatrices} = \frac{N! / |Aut(G_{TA})|}{2^{.5N(N-1)}} = \frac{N! / 1}{2^{.5N(N-1)}} = \frac{N!}{2^{.5N(N-1)}}$$
+Thus, the ratio of these probabilities is always going to be $N!$.
+
+These two examples give us a really important message: the difference between the Gilbert and Ideal models is frequently substantive, but its effects can be mild (as in the case of co-cycles graphs), or extreme (as in the case of selecting a perfectly automorphic graph).
+What largely determines the degree of this distortion is the \emph{average number of automorphisms in the set that is being examined}. 
+The larger this number, the more distortionary the Gilbert Model is when compared to the Idealized model.
+
 \subsection{Theoretical Average Case Comparison}
 
 Consider a standard canonical labeling algorithm.
@@ -185,16 +212,20 @@ It is very possible that misuse of the Gilbert model has understated the true av
 \subsection{Should We Never Use the Gilbert Model?}
 
 The short answer to this question is no, the Gilbert model is remains relevant (even dominant) even when we embrace these flaws.
-The primary argument for the Gilbert model is not its application to questions of theory, but questions of practice and natural occurrence.
+The primary argument for the Gilbert model is not its application to questions of theory, \emph{but questions of practice and natural occurrence}.
 Most applications of graph theory to world problems are based around structures that are naturally arising, without centralized planing or design.
 It is much more likely that some graph that is found in the world will be non-automorphic than have some kind of inherent and difficult to describe complexity.
 This is because if we look at graph building as a process [CITE GILBERT], or as a probabilistic construction [CITE EDRODS], then some outcomes are more likely than others.
-This is well in line with the pervasive assumptions of the Gilbert model.  
+This is well in line with the pervasive assumptions of the Gilbert model.
 
-What we have been criticizing is the application of the Gilbert model to questions about theoretical algorithmic complexity.
+Rather, what we have been criticizing is the \emph{application} of the Gilbert model to questions about theoretical algorithmic complexity.
 In graph theory, we hold a meaningful distinction between graphs and graph instances, a distinction only made at the theoretical level.
 It is thus inappropriate to use a model which ignores this distinction, and ignores it in such a way as to specifically disadvantage certain classes of graphs.
-This allows theoretical graph algorithms to underweight what we consider `hard' cases, and overweight what we would generally consider `easy' cases.
+This allows theoretical arguments about graph algorithms to underweight what we consider `hard' cases, and overweight what we would generally consider `easy' cases.
+
+This distinction is important.
+In practice, graphs that arise in the world are likely to be selected randomly from the set of graph instances.
+However, in graph theory, where we consider isomorphic graph instances to be fundamentally equivalent, the assumptions of the Gilbert model are antithetical to other assumptions of graph theoretic research.
 
 \section{Measuring and Comparing Random Graph Models}
 
@@ -257,7 +288,7 @@ I knew lots about what I didn't want to do:
 The process that I decided on attempted to address all of these concerns, and was designed to avoid the pitfalls of bad computer science: overfitting, statistic selection, and rigidity.
 \end{itemize}
 
-I decided on a wide portfolio of statisitcs each of which is calculated over a sets of graphs.
+I decided on a wide portfolio of statistics each of which is calculated over a sets of graphs.
 These statistics are inherently heuristic, but each attempts to capture some property of the graphs that are generated, or some property of how the set looks as a whole.
 Each of the statistics I decided on is meant to describe some property of a set of graphs, but it does not establish an `idealized' or theoretical value for that statistic.
 Though for several of these metrics we know how to express the ideal/expected probability, that is not always the case (or not always known to be the case0.
@@ -313,7 +344,7 @@ Each is listed under its acronym, which can be found throughout my code and test
 \item{NAB - Set Distribution Bins - Number of Automorphisms Bins - The unique values of NA, to provide histogram alongside NAC}
 \item{NAC - Set Distribution Counts - Number of Automorphisms Counts - The counts of the NAB, as in a histogram}
 \item{NCCV - Set Statistic - Variance in the Number of Connected Components - take the number of connected components of each graph in the set, then take the variance of the set}
-\item{NCP - Set Statistic - Number of Co-Paths graphs - Same as Co-cycles graphs, this only applies to graphs of size 10 and larger, counts the number of co-paths graphs (which tend to be highly automorphic) in the overall set of graphs}
+\item{NCP - Set Statistic - Number of Co-Cycles graphs - Same as Co-cycles graphs, this only applies to graphs of size 10 and larger, counts the number of Co-Cycles graphs (which tend to be highly automorphic) in the overall set of graphs}
 \item{NE - Set Statistic - Number of Edges - the average number of edges in the graph set. This should be the same across generators, as we are specifying $p$, and asking for a large sample size}
 \item{NR - Set Statistic - Number of Regular Graphs - the number of regular graphs in the graphset}
 \item{NUG - Set Statistic - Number of Unique Graphs - The proportion of graphs within the set that are only generated once}
@@ -344,22 +375,41 @@ Thus, in the end, there were $2 \times 9 \times 7 \times 30 = 2780$ sets of 1000
 
 For each one of the statistics we calculated the mean and standard deviation of the sampled metrics over both algorithms.
 That resulted in two sample means and sample standard deviations, for the ideal and gilbert graph models: $\xoverline{x_I}, \xoverline{x_G}, s_I$ and $s_G$. 
-Using these values, I came up with a simple and intuitive way to measure a new random graph generator, given its value for $\xoverline{x_N}$ and $s_N$, by comparing the t values in two tests of significance for two unknown means and unknown standard deviations.
+Using these values, I came up with a simple and intuitive way to measure a new random graph generator, given its value for $\xoverline{x_N}$ and $s_N$ and the number of samples that were used to compute each, $n_N$.
+This methodology compares the t values in two tests of significance for two unknown means and unknown standard deviations.
 In a test of unequal unknown means and standard deviations, the slightly modified t-statistic is given by:
 $$T(A, B) = T(\xoverline{x_A}, \xoverline{x_B}, s_A, s_B, n_A, n_B) = \frac{|\xoverline{x_A} - \xoverline{x_B}|}{\sqrt{(s_A^2 / n_A + s_B^2 / n_B}} $$
 And our scoring mechanism for a metric and generator is given by:
-$$ \text{Score for Metric M} = \frac{T_M(I, N)}{T_M(I, G)}$$
+$$ \text{Score for Metric M} = -1 * \text{min} \bigg[ \ln \Big( \frac{T_M(I, N)}{T_M(I, G)} + e^{-10} \Big), 10 \bigg] $$
+Lets break down this scoring mechanism:
+\begin{itemize}
+\item{First off, $T_M(A, B)$ is strictly greater than or equal to zero (and all of our metrics have non-zero $T_M(I, G)$ values), thus the fraction in the logarithm is defined and in the range $[0, \infty)$. When we add $e^{-10}$, we shift that range up to $[e^{-10}, \infty)$, meaning that the logarithm's value will be bounded between $[-10, \infty)$ }
+\item{Next, we take the minimum of this score and 10, to bound the individual score between $[-10, 10]$.}
+\item{Finally, we invert the values with a -1, so that a score of -10 corresponds to a metric where the new random graph generator performs incredibly poorly, while 10 corresponds to a metric where the new random graph generator is indistinguishable from ideal (with respect to the differences setup by the baselines).}
+\item{The resulting metric has the helpful property that the baseline metric is at (or ever so slightly below) 0, so that a score of 0 marks an equivalence in quality to the Gilbert random generator.}
+\end{itemize}
+Once we calculate individual metrics, we can calculate the score for a generator as the sum over the number of metrics that are calculated for it, which includes multiple values of p and n:
 $$ \text{Score for Generator} = \frac{1}{N_{Metrics}} \times \sum_m^{Metrics} Score_m $$
-where higher scores are worse, and a score of 1 corresponds to a generator that is approximately as bad as the Gilbert Generator.
+in this metric, higher scores are better and a score of 0 corresponds to a generator that is exactly as bad as the Gilbert Generator.
 
 This is a good mechanism because it scores a value on a metric based on how close it is to the ideal mean, but also compares any deviancy to the deviancy observed between the ideal and standard (Gilbert) generators.
+
+\subsection{Establishing Baselines for Graph Set Metrics}
+
+The baselines for the graph set metrics are all stored in one file for convenience (Thesis/Matlab/Alternative Generator/Data/baselineMetrics.mat).
+As mentioned above, they are for the tenth-probabilities, over graphs of size 4 to 10.
+The baselined metrics were constructed using thirty random trials, each containing 1000 random graphs.
+In the baseline file, the mean, standard deviation and number of samples is given.
+
+An appendix to this thesis lists the graph set baselined metrics, along with their associated uncertainties, for all values of N and P.
+Since there were 7 tested values of N, and 9 tested values of P, and 35 metrics, over two different generators for random graphs, there are a total of approximately 4,000 component statistics in this baseline file.
 
 \section{Alternative Ideas for Random Graph Modeling and Creation}
 
 Now that we have a mechanism for quantifiably adjudicating the quality of a proposed random graph generator, we are tasked with creating different ideas for random graph generation and evaluating them on this basis.
 
 \subsection{Cloning Model}
-One of the thoughts that I first had was on the way that co-paths graphs tended to be highly automorphic, and the way that internal structure of each set within the SVSes was almost always fully automorphic.
+One of the thoughts that I first had was on the way that Co-Cycles graphs tended to be highly automorphic, and the way that internal structure of each set within the SVSes was almost always fully automorphic.
 Remember that a fully automorphic graph (or in this case, subset of vertices) means that within its self contained structure, there exists an automorphism which maps any one vertex to any other (not implying that all proposed mappings are automorphisms, but only that a mapping exists that pairs any pair of vertices within the set.
 To try to create a model that is likely to produce this kind of internally reflective behavior, I broke the task of generating a graph down into two subtasks.
 First, it creates K disjoint graphs, each of which is fully automorphic/similar, and with the total number of vertices over all of these smaller graphs equalling the target number of vertices the generator is looking to produce.
