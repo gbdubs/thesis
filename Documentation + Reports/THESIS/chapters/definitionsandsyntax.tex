@@ -1,4 +1,4 @@
-\chapter{Definitions and Syntax}
+\chapter{Definitions, Syntax and the Cycles Invariant}
 
 
 
@@ -44,6 +44,13 @@ To start thinking critically about this distinction, always remember that:
 $$|G_{Alg}| <<< |G_{Inst}| = 2^{E_{max}}$$
 but since the number of representations of a given graph is limited by its number of labelings that:
 $$|G_{Alg}| * N! > | G_{Inst} | =  2^{E_{max}}$$
+
+\subsection{Graph6 Encoding of Graphs}
+
+For this project, we frequently will use graph6 notation to encode a graph as a succinct string.
+This is an encoding of the adjacency matrix as described through the formal specification (http://users.cecs.anu.edu.au/~bdm/data/formats.txt).
+Basically, we take the upper half of the adjacency matrix (not including the zeroed-out diagonal), as a bit-string, then compress that bit-string using UTF-8 character encoding.
+I optimized this code (preallocation, bit shifting, etc) in all of the languages I used, because when non-optimized, it can contribute to runtime in a non-negligible way.
 
 \subsection{Counting Graphs over N Vertices}
 
@@ -223,6 +230,30 @@ Cycles(A, P) is invariant to changes in vertex relabeling or adjacency matrix or
 A skeptical reader should convince themselves that this holds true, even when two of the vectors to be sorted are identical, the resulting $Paths$ object is valid and deterministically constructed from the graph.
 The specific running time of calculating and comparing the $Cycles$ functions and object is not the primary aim of this report, but there are clever methodologies that I have used to reduce the running time beyond these na\"{i}ve estimates, primarily for advancements in computational limits, by using delayed evaluation and multi-threaded comparison.
 
+\subsection{A Brief Example}
+
+The best way to establish intuition and understanding of the cycles invariant is to show its values on a sample graph.
+In figure \ref{fig:cyclesdemograph}, we see an example graph (in graph6 format: I@QKj?]]O), which has multiple automorphisms.
+The graph has been arranged to be aesthetically appealing and to make the automorphisms clear.
+
+In figure \ref{fig:cyclesdemocycles} below, we also see the cycles matrix for the graph.
+The rows represent the individual vertex invariants associated with each value of cycles.
+The columns represent the length of the cycles being considered.
+The reader should trace out the number of cycles for themselves (for small values of P) to see the connection, and understand how this function is translated to a vertex invariant, and then to a graph invariant (the full matrix).
+
+\begin{figure}[h]
+\label{fig:cyclesdemograph}
+\caption{\emph{A Small Graph} - The labeling of vertices is only there to correpsond to the labeled vertices in figure \ref{fig:cyclesdemocycles}, the graph is unlabeled, undirected, and loop-less.}
+\centering
+\includegraphics[width=.5\textwidth]{cyclesdemograph}
+\end{figure}
+
+\begin{figure}[h]
+\label{fig:cyclesdemocycles}
+\caption{\emph{A Cycles Invariant Matrix} - The color coding corresponds to the numbers, and purely serve to give a visual differentiation between different integer values.  We can see that many of the pairs of vertices in this graph share their values of the cycles invariant through them.}
+\centering
+\includegraphics[width=.7\textwidth]{cyclesdemocycles}
+\end{figure}
 
 \subsection{Invertibility}
 Note that if two graphs agree on the paths invariant, their complements (or inverses) may also agree on the paths invariant, but there is no proven reason to believe this is universally true.

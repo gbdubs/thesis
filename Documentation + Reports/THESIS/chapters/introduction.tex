@@ -1,4 +1,4 @@
-\chapter*{Introduction}
+\chapter*{Acknowledgements}
 
 When I asked Professor Storer to supervise me on a thesis on the graph isomorphism problem, he was hesitant.
 He only acquiesced when I persuaded him that my future was secure with a fantastic job, and that my primary objective was the pursuit (and possible re-discovery) of questions that were of nothing but personal interest to me.
@@ -15,4 +15,37 @@ It has kept me on track to focus on my real goal for the semester, which was to 
 I have learned advanced techniques in GPU calculation, proof techniques in abstract algebra, and forced me to think about established problems in new and interesting ways.
 My skill set has been broadened by this project which has deeply challenged me and always kept me on my toes.
 
-I would like to thank my advisors, the department, and my friends and family for all of the different kinds of support and encouragement that have brought me to successful completion of this project.
+I would like to thank my advisors (Prfs. Storer, Di Lillo and Torrey), the Computer Science department, and my friends and family for all of the different kinds of support and encouragement that have brought me to successful completion of this project.
+
+\chapter*{TL;DR.}
+
+An interesting procedure is counting the number of closed paths that pass through every vertex in the graph of a given length.
+It turns out that we can do this very quickly, relative to how much information it gives us.
+Counting the number of closed paths gives us a kind of local resonance, a description of the localized area around each vertex within the graph, as a integer vector. 
+It turns out that this idea can be transformed into a numerical property, called an invariant, which is highly information dense--able to describe differences between graphs with high probability, but not sufficient to verify that two graphs are the same.
+
+There are a lot of graphs, even over a small number of vertices, but the number is much larger if you consider different labelings of the same graph to be distinct.
+This difference matters in many contexts, but is most evident through examining random graph generators, which treat labelings as if they are distinct structures. 
+This is not a problem in and of itself (it makes sense in practical contexts), but it warps theoretic arguments about the runtime of algorithms over `random' graphs.
+It turns out that making up our own random graph generators can actually improve upon this state of affairs in a quantifiable way.
+
+\chapter*{An Open Source Project}
+
+An interesting aspect of this thesis has been that I have placed every incremental iteration of my work online, through git version control and github.
+Every element, from my reading notes, to my mid-semester reports, to my code, results, and datasets: everything has been kept in a central repository, and every change has been committed and logged.
+This also means that all of the code that I have written is open source, and licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+There are four reasons to make this thesis as an open source, version controlled work.
+\begin{enumerate}
+\item{
+Research in academia is far too often done in the dark, and only once the conclusion has been drawn and sufficiently polished does the general public get to learn about it. 
+This falsely represents scientific inquiry as a lightning bolt, a blinding and stark progression from correct idea to correct idea. 
+In reality we all explore ideas that fail, we all have intuitions that turn out to be incorrect.
+The reality of research is much more one of lightning's infinitesimally branching electrical charges (with eventual connection).
+}
+\item{If someone else ever has the same intuitions that I do on this subject, maybe they can just read about it instead of reconstructing all of my dead ends.}
+\item{I work on a personal laptop, a school desktop, and occasionally a public workstation. Transferring data (of all sorts) between these computers is tiresome and error prone without a VCS.}
+\item{Everyone does better work when they know that their work could be observed.}
+\end{enumerate}
+
+The work is available \href{http://www.github.com/gbdubs/thesis}{on my personal github page} (\href{http://www.github.com/gbdubs/thesis}{github.com/gbdubs/thesis}), and should be there for the foreseeable future.

@@ -51,20 +51,28 @@ function visualizeGraphPaths( A , name , recurse )
 
     temp = generateLabeledKs(A, v);
     labels = strcat(num2str(temp(:,v+1)), '-', char(64 + temp(:,v+1)));
-    actual = zeros(v, v-1, 'double');
-    actual(:,1:v-1) = log(cast(temp(:,2:v),'double') + 1);
-    actual = actual - repmat(mean(actual), v, 1);
-
-    imagesc(actual);
+    actual = zeros(v, v, 'double');
+    actual(:,1:v) = cast(temp(:,1:v),'uint32');
+    % actual(:,1:v-1) = log(cast(temp(:,2:v),'double') + 1);
+    % actual = actual - repmat(mean(actual), v, 1);
+    
+    colorActual(:,1:v) = log(cast(temp(:,1:v),'double') + 1);
+    colorActual = colorActual - repmat(mean(colorActual), v, 1);
+    imagesc(colorActual);
     colormap(flipud(gray));
+    
+    % imagesc(actual);
+    % colormap(flipud(gray));
 
-    textStrings = num2str(actual(:),'%0.2f');        
+    textStrings = num2str(actual(:),'%d');        
     textStrings = strtrim(cellstr(textStrings));    
-    [x,y] = meshgrid(1:v-1, 1:v);                   
+    [x,y] = meshgrid(1:v, 1:v);                   
 
     hStrings = text(x(:),y(:),textStrings(:), 'HorizontalAlignment','center');
 
-    textColors = repmat(actual(:) > 0, 1, 3); 
+    %textColors = repmat(actual(:) > 0, 1, 3); 
+
+    textColors = repmat(colorActual(:) > 0, 1, 3); 
 
     set(hStrings,{'Color'},num2cell(textColors,2)); 
 
@@ -82,6 +90,6 @@ function visualizeGraphPaths( A , name , recurse )
         end
     end
     
-    close all;
+    %close all;
 end
 
