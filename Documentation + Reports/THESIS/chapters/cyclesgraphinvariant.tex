@@ -190,6 +190,21 @@ An invariant is `worse' the more time it takes to compute.
 %
 %\subsection{Miyizaki Graphs}
 
+\section{Discrimination on Tough Graph Classes}
+
+\subsection{Miyizaki Graphs}
+The Miyizaki Graphs are as interesting as they are inscrutible.
+They were described in a paper by CITE in CITE, and can be summarized as being comprised of similar constructions that are occasionally twisted.
+It does not come as a surprise to me, and it should not come as a surprise to you, that the cycles invariant is unable to distinguish in between any Mikizaki Isomorphism pairs.
+
+Miyizaki graphs are co-cycles graphs in partnership with their twisted halves.
+In testing this hypothesis, I tested it on the Miyizaki graphs:
+\begin{itemize}
+\item{TODO}
+\end{itemize}
+and each were shown to be co-cycles.
+
+However, differentiation with flagging (as described in the chapter on vertex invariants) was possible, at enormous computational (though still polynomial!) expense.
 
 \section{Imperfection, Co-Cycles Graphs}
 
@@ -216,7 +231,7 @@ The way I went about looking for them was theoretically simple, but incredibly c
 The lazy evaluation (in a couple of benchmark tests on eight vertices) worked more efficiently on the order of $10^{-3}$ times the original running time.
 Additionally, a trick I employed with bulk memory allocation reduced running time on the order of $10^-1$ (allocated 100 trie-nodes at once, rather than 1 at a time).
 An additional optimization I made was the singular evaluation of a combination of N and M at a given time.
-We know that the number of vertices and edges in a graph is reconstructible from the cycles invariant, so we only need to check for set values of M and N if we want to discover cocycles graphs.
+We know that the number of vertices and edges in a graph is reconstructible from the cycles invariant, so we only need to check for set values of M and N if we want to discover co-cycles graphs.
 This enabled me to reduce the overall amount of memory allocated to approximately a tenth of what it would require to process all graphs of a given size simultaneously.
 
 Additionally, a smart way that I set up my matrices allowed for insanely efficient memory allocation: since I had to maintain every single graph in my trie, for even a small number of vertices that could have been an incredible amount of space.
@@ -236,17 +251,60 @@ $$Memory Used = SizeOf(Int) * N * NVectors + Sizeof(Int*) * N * NGraphs = 4 * 10
 \section{Trie Depth and the Power of Cycles Across Classes of Graphs}
 
 In chapter three, we will discuss a notion of $P^*(G)$, a value for which (within a graph G), cycles beyond length $P^*(G)$ do not yield additional discriminatory information.
-Related is the idea across sets of graphs.
+Related is the same idea across sets of graphs.
 For example, if we have some set of graphs $S$, there exists an integer $P^*(S)$, at which values beyond this length cycle are not informative in further discriminating between graphs in the set.
-Intuitively, for a set with one element, $P^*(S) = 0$, and non-intuitively, with a set with only graphs which are co-cycles with one another, $P^*(S) = 0$.
+Intuitively, for a set with one element, $P^*(S) = 0$, and not-so-intuitively, with a set with only graphs which are co-cycles with one another, $P^*(S) = 0$.
 
-The way that  $P^*(S)$ is calculated takes a natural interpretation within our computations in C. 
- $P^*(S)$ is simply the maximum depth of the trie created when searching for co-paths graphs, while excepting nodes of full ($N^2$) depth.
-
-A natural cadre of sets to explore is $S = Graphs(N, M)$, where S is the set of all graphs with $N$ vertices and $M$ edges.
-Before we discuss the results of what we observed $P^*(S)$ to be over these sets, lets first discuss what we anticipate, and discuss a detail of its implementation.
-Naturally, we would think that the larger the set $S$, the more difficult it will be to fully discriminate between all of the graphs in it.
-If we fix N, the number of 
+The way that  $P^*(S)$ is calculated takes a natural interpretation within our co-cycles computations in C. 
+ $P^*(S)$ is simply the maximum depth of the trie created when searching for co-cycles graphs, excepting nodes of full ($N^2$) depth.
 
 \subsection{Expectations Borne out of Graph Counts}
+
+A natural cadre of sets to explore is $S_{N, M} = Graphs(N, M)$, where $S_{N, M}$ is the set of all graphs with $N$ vertices and $M$ edges.
+Before we discuss the results of what we observed $P^*(S)$ to be over these sets, lets first discuss what we anticipate, and discuss a detail of its implementation.
+Naturally, we would think that the larger the set $S$, the more difficult it will be to fully discriminate between all of the graphs in it.
+If we fix N, the distribution of graphs within that N over various values of M is approximately normal, and approximation that increases in accuracy as N increases (see chapter 1).
+Thus, if we intuit that $P^*(S)$ is likely to be a function of the size of S, we would expect $P^*(S)$ to be approximately normally distributed.
+
+What we actually find is markedly different, in the next three diagrams, of this curve for N=8, 9 and 10:
+
+\begin{figure}[h]
+\label{fig:powercurve8}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{powercurve8}
+\end{figure}
+
+\begin{figure}[h]
+\label{fig:powercurve9}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{powercurve9}
+\end{figure}
+
+\begin{figure}[h]
+\label{fig:powercurve10}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{powercurve10}
+\end{figure}
+
+In each diagram, the dots represent the maximum trie depth, while the squares above them round that value up to the nearest `complete' depth.
+By complete depth, we are referring to a depth divisible by the number of vertices within the graph.
+This is relevant because these levels are the length of the cycles that correspond to all of the information gleaned from this length cycle and fewer.
+
 \subsection{An Unexpected Dip}
+
+What we see is counter to our expectations.
+$P^*(S_{N, M})$ certainly is smaller at the fringes, but it actually dips in the middle, where the majority of the graphs are located.
+Remember from chapter one that the number of graphs in each of these sets is maximized in the middle, while the ability to differentiate between them is actually maximized with connectivity around .25 and .75.
+
+In figure \ref{powercurve10}, we see the same trend (slightly lower values for $N > 12$, than for $N \in (10, 12)$), despite the existence of co-cycles graphs, which push the middle up to 100 (maximal trie depth for N=10).
+
+In figure \ref{powercurve9}, we see this trend exaggerated to the point that it distorts not only the granular values (the black dots), but the overall cycles length values (boxes).
+
+It should be noted that the asymmetry in diagram \cite{powercurve9} was highly suspect to me.
+I looked into it, and was able reproduce it using Matlab (in addition to the calculations in C).  
+It turns out that the asymmetry is due to the lack of invertible equivalence in the Cycles invariant, and for some graphs in $S_{N=9, M=25}$ can be differentiated by their cycles values, while their inverses cannot.
+
+This small set of experiments suggests an interesting property of graphs: it may be easier to differentiate between graphs which are half connected than a quarter connected, despite the fact that there are significantly more graphs which are half connected.
