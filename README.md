@@ -45,7 +45,7 @@ There are four reasons to make this thesis as an open source, version controlled
 
 1. Research in academia is far too often done in the dark, and only once the conclusion has been drawn and sufficiently polished does the general public get to learn about it.  This falsely represents scientific inquiry as a lightning bolt, a blinding and stark progression from correct idea to correct idea.  In reality we all explore ideas that fail, we all have intuitions that turn out to be incorrect. The reality of research is much more one of lightning's infinitesimally branching electrical charges (with eventual connection).
 
-2.If someone else ever has the same intuitions that I do on this subject, maybe they can just read about it instead of reconstructing all of my dead ends.
+2. If someone else ever has the same intuitions that I do on this subject, maybe they can just read about it instead of reconstructing all of my dead ends.
 
 3. I work on a personal laptop, a school desktop, and occasionally a public workstation. Transferring data (of all sorts) between these computers is tiresome and error prone without a VCS.
 
