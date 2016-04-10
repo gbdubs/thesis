@@ -8,5 +8,6 @@
 **.DS_Store
 .*
 Matlab/alternative generator/smalldata/**
+Matlab/cannonical/timing/data/**.txt
 Reconstructability/data/**
 !/.gitignore

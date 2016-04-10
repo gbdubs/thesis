@@ -1,9 +1,7 @@
 \documentclass[11pt,a4paper]{report}
 
-\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth, cite}
-\usepackage{multirow}
-\usepackage{longtable}
-\usepackage{hyperref}
+\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth, cite, multirow, longtable, hyperref}
+
 \makeatletter
 
 % ------------------ Convenience Commands --------------------
@@ -28,6 +26,8 @@
         \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
     \fi}
 \makeatother
+
+\hypersetup{colorlinks=true, linkcolor=blue}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
