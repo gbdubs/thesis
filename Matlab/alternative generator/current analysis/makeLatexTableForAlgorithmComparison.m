@@ -1,52 +1,9 @@
 function makeLatexTableForAlgorithmComparison( metric, algorithm )
-
-    cMap = zeros(64, 3);
-    for i = 1 : 32
-        cMap(i,:) = [1, 1 - (32 - i) / 32, 1 - (32 - i) / 32];
-    end
-    for i = 33 : 64
-        cMap(i,:) = [1 - (i-32) / 32, 1 -  (i-32) / 32, 1];
-    end
-%     figure;
-%     surf(peaks);
-%     colormap(cMap);
-    close all;
+    
     scores = zeros(10, 10);
 
-    getColorValue(10);
-    getColorValue(-10);
-    getColorValue(0);
-    getColorValue(4.3245);
-    
-    function [ hex ] = getHex(rgb)
-        assert(nargin==1,'This function requires an RGB input.') 
-        assert(isnumeric(rgb)==1,'Function input must be numeric.') 
-
-        sizergb = size(rgb); 
-        assert(sizergb(2)==3,'rgb value must have three components in the form [r g b].')
-        assert(max(rgb(:))<=255& min(rgb(:))>=0,'rgb values must be on a scale of 0 to 1 or 0 to 255')
-
-        % If no value in RGB exceeds unity, scale from 0 to 255: 
-        if max(rgb(:))<=1
-            rgb = round(rgb*255); 
-        else
-            rgb = round(rgb); 
-        end
-
-        % Convert (Thanks to Stephen Cobeldick for this clever, efficient solution):
-
-        hex(:,1:6) = reshape(sprintf('%02X',rgb.'),6,[]).'; 
-    end
-
-    
-    function [ hexcode ] = getColorValue(val)
-        val = ceil(max((val + 10) * 64 / 20, 1));
-        x = cMap(val,:);
-        hexcode = getHex(x);
-    end
-
     function [ c ] = colorCell(score)
-        c = [' \cellcolor[HTML]{',getColorValue(score),'} ',num2str(score, '%.2f')];
+        c = [' \cellcolor[HTML]{',hexNegTenTen(score),'} ',num2str(score, '%.2f')];
     end
     
     function [ r ] = generateRow1 (metric, n, p, algorithm)
