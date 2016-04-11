@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_9) (preloaded format=pdflatex 2016.3.17)  10 APR 2016 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  11 APR 2016 11:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -327,6 +327,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip54
 )
+(/opt/local/share/texmf-texlive/tex/latex/changepage/chngpage.sty
+Package: chngpage 2009/10/20 v1.2b change page layout
+\c@cp@cnt=\count128
+\c@cp@tempcnt=\count129
+)
 (/opt/local/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks22
@@ -568,7 +573,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \everycr=\toks25
 \minrowclearance=\skip57
 )
-\rownum=\count128
+\rownum=\count130
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -595,19 +600,19 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-\c@lstlisting=\count129
+\c@lstlisting=\count131
 (/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
+\scratchcounter=\count132
 \scratchdimen=\dimen135
 \scratchbox=\box34
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\nofMPsegments=\count133
+\nofMParguments=\count134
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count133
+\MPscratchCnt=\count135
 \MPscratchDim=\dimen136
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
 \everyMPtoPDFconversion=\toks27
 ) (/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -633,7 +638,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/opt/local/share/texmf-texlive/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count136
+\c@section@level=\count138
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
@@ -644,65 +649,70 @@ LaTeX Info: Redefining \nameref on input line 5.
 \openout3 = `"ALNA trial.out"'.
 
 
-Overfull \hbox (8.19171pt too wide) in alignment at lines 6--13
- [] [] [] [] [] [] [] [] 
+Underfull \hbox (badness 10000) in alignment at lines 45--67
+[] [] [] [] [] [] [] [] []
  []
 
 
-Overfull \hbox (8.19171pt too wide) in alignment at lines 13--36
- [] [] [] [] [] [] [] [] 
+Underfull \vbox (badness 10000) detected at line 67
  []
 
 
-Overfull \hbox (8.19171pt too wide) in alignment at lines 36--58
- [] [] [] [] [] [] [] [] 
+Overfull \hbox (98.99802pt too wide) in alignment at lines 70--79
+[] [] [] [] [] [] [] [] [] [] []
  []
 
 
-Overfull \hbox (8.19171pt too wide) in alignment at lines 58--80
- [] [] [] [] [] [] [] [] 
+Overfull \hbox (98.99802pt too wide) in alignment at lines 79--100
+[] [] [] [] [] [] [] [] [] [] []
  []
 
 
-Overfull \hbox (8.19171pt too wide) in alignment at lines 80--85
- [] [] [] [] [] [] [] [] 
+Overfull \hbox (98.99802pt too wide) in alignment at lines 100--119
+[] [] [] [] [] [] [] [] [] [] []
  []
 
 [1
 
 {/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (75.72926pt too wide) in alignment at lines 86--95
- [] [] [] [] [] [] [] [] [] [] [] 
+Overfull \hbox (20.66467pt too wide) in alignment at lines 124--133
+[] [] [] [] [] [] [] [] []
  []
 
 
-Overfull \hbox (75.72926pt too wide) in alignment at lines 95--106
- [] [] [] [] [] [] [] [] [] [] [] 
+Overfull \hbox (20.66467pt too wide) in alignment at lines 133--154
+[] [] [] [] [] [] [] [] []
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
+
+Overfull \hbox (20.66467pt too wide) in alignment at lines 154--173
+[] [] [] [] [] [] [] [] []
+ []
+
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
+ [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./ALNA trial.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
 Package rerunfilecheck Info: File `"ALNA trial".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 8671 strings out of 494185
- 123323 string characters out of 6156888
- 257777 words of memory out of 5000000
- 11893 multiletter control sequences out of 15000+600000
+ 8718 strings out of 494185
+ 123994 string characters out of 6156888
+ 283385 words of memory out of 5000000
+ 11934 multiletter control sequences out of 15000+600000
  3940 words of font info for 15 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 41i,6n,35p,372b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,5n,35p,380b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on "ALNA trial.pdf" (2 pages, 27839 bytes).
+Output written on "ALNA trial.pdf" (3 pages, 37539 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
+ 30 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

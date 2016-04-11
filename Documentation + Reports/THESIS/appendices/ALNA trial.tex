@@ -1,107 +1,173 @@
 \documentclass[11pt,a4paper]{report}
-\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth, cite,multirow,longtable,hyperref}
+\usepackage{mathtools, amsmath, listings, graphicx, amssymb, nth, cite,multirow,longtable,hyperref, chngpage}
 \usepackage[utf8]{inputenc}
 \usepackage[table]{xcolor}
 \begin{document}
-\begin{longtable}{ | c | c || c | c | c | c | c | c | }
+% Metric = ADSM
+% Metric = DSMV
+% Metric = ADSMD
+% Metric = DSMDV
+% Metric = ADSMN
+% Metric = DSMNV
+% Metric = ADSMX
+% Metric = DSMXV
+% Metric = ADSV
+% Metric = DSVV
+% Metric = ADSR
+% Metric = PQRA
+% Metric = PQRB
+% Metric = PQRC
+% Metric = ODSPL
+% Metric = ANA
+% Metric = NCP
+% Metric = NR
+% Metric = NE
+% Metric = PCONN
+% Metric = ANCC
+% Metric = NCCV
+% Metric = ADIAM
+% Metric = DIAMV
+% Metric = PTRIL
+% Metric = ANTRI
+% Metric = ANQUAD
+% Metric = ALNA
+% Metric = MLNA
+% Metric = VLNA
+% Metric = NUG
+% Metric = ANR
+% Metric = MNR
+% Metric = SQNR
+% Metric = PDL
+
+\begin{centering}
+\begin{longtable}{ | c || c | c | c | c | c | c | c || c |}
 \hline
-\multicolumn{8}{|c|}{ Score Report For ADIAM on Algorithm MinusOne} \\
+\multicolumn{9}{|c|}{ MinusOne Score Report: N x P, Averaged Across Metrics } \\
 \hline
-N & P & Pooled SD &  Ideal &  Gilbert & MinusOne  & Score & Norm Diff \\
- \hline
- \hline
- \endhead
-\multirow{9}{*}{4} & 0.1 & 0.0479 & 2.434 & 2.680 & 2.702 & -0.180 & 1.092 \\
- & 0.2 & 0.0182 & 2.369 & 2.606 & 2.554 & 0.253 & 0.781 \\
- & 0.3 & 0.0095 & 2.313 & 2.509 & 2.455 & 0.386 & 0.722 \\
- & 0.4 & 0.0087 & 2.247 & 2.402 & 2.317 & 0.760 & 0.452 \\
- & 0.5 & 0.0054 & 2.162 & 2.283 & 2.189 & 1.563 & 0.229 \\
- & 0.6 & 0.0059 & 2.058 & 2.156 & 2.029 & 1.137 & -0.292 \\
- & 0.7 & 0.0056 & 1.939 & 1.989 & 1.814 & -0.870 & -2.507 \\
- & 0.8 & 0.0060 & 1.753 & 1.777 & 1.552 & -2.220 & -8.528 \\
- & 0.9 & 0.0052 & 1.474 & 1.481 & 1.255 & -3.626 & -33.587 \\
- \hline
-\multirow{9}{*}{5} & 0.1 & 0.1039 & 2.735 & 3.326 & 3.285 & 0.311 & 0.931 \\
- & 0.2 & 0.0273 & 2.814 & 3.150 & 2.971 & 1.056 & 0.468 \\
- & 0.3 & 0.0142 & 2.699 & 2.991 & 2.811 & 1.023 & 0.384 \\
- & 0.4 & 0.0094 & 2.566 & 2.806 & 2.606 & 1.908 & 0.168 \\
- & 0.5 & 0.0076 & 2.394 & 2.567 & 2.408 & 2.734 & 0.078 \\
- & 0.6 & 0.0051 & 2.231 & 2.340 & 2.208 & 1.466 & -0.211 \\
- & 0.7 & 0.0048 & 2.084 & 2.144 & 2.007 & -0.302 & -1.282 \\
- & 0.8 & 0.0045 & 1.920 & 1.941 & 1.744 & -2.049 & -8.326 \\
- & 0.9 & 0.0049 & 1.657 & 1.657 & 1.376 & -6.681 & -715.954 \\
- \hline
-\multirow{9}{*}{6} & 0.1 & 0.1222 & 3.246 & 3.950 & 3.775 & 0.511 & 0.752 \\
- & 0.2 & 0.0286 & 3.300 & 3.652 & 3.538 & 0.542 & 0.675 \\
- & 0.3 & 0.0150 & 3.115 & 3.387 & 3.274 & 0.722 & 0.582 \\
- & 0.4 & 0.0089 & 2.880 & 3.061 & 2.963 & 0.948 & 0.457 \\
- & 0.5 & 0.0077 & 2.612 & 2.727 & 2.654 & 1.123 & 0.364 \\
- & 0.6 & 0.0058 & 2.353 & 2.403 & 2.354 & 4.469 & 0.010 \\
- & 0.7 & 0.0040 & 2.137 & 2.153 & 2.121 & 0.038 & -1.034 \\
- & 0.8 & 0.0030 & 1.997 & 1.996 & 1.909 & -3.957 & 84.037 \\
- & 0.9 & 0.0052 & 1.797 & 1.792 & 1.532 & -4.096 & 63.271 \\
- \hline
-\multirow{9}{*}{7} & 0.1 & NaN & 3.712 & 4.421 & NaN & -10.000 & NaN \\
- & 0.2 & 0.0273 & 3.653 & 4.016 & 3.895 & 0.294 & 0.667 \\
- & 0.3 & 0.0165 & 3.414 & 3.649 & 3.526 & 0.729 & 0.477 \\
- & 0.4 & 0.0102 & 3.078 & 3.231 & 3.127 & 1.168 & 0.317 \\
- & 0.5 & 0.0087 & 2.701 & 2.770 & 2.704 & 2.980 & 0.050 \\
- & 0.6 & 0.0060 & 2.378 & 2.378 & 2.338 & -7.493 & -1574.114 \\
- & 0.7 & 0.0034 & 2.131 & 2.121 & 2.099 & -1.140 & 3.021 \\
- & 0.8 & 0.0017 & 2.015 & 2.010 & 1.972 & -1.885 & 7.910 \\
- & 0.9 & 0.0029 & 1.895 & 1.891 & 1.689 & -3.866 & 62.929 \\
- \hline
-\multirow{9}{*}{8} & 0.1 & NaN & 4.277 & 4.904 & NaN & -10.000 & NaN \\
- & 0.2 & 0.0220 & 4.035 & 4.362 & 4.267 & 0.460 & 0.709 \\
- & 0.3 & 0.0132 & 3.654 & 3.827 & 3.742 & 0.532 & 0.507 \\
- & 0.4 & 0.0082 & 3.204 & 3.269 & 3.240 & 0.527 & 0.557 \\
- & 0.5 & 0.0076 & 2.756 & 2.773 & 2.737 & -0.156 & -1.078 \\
- & 0.6 & 0.0048 & 2.355 & 2.340 & 2.332 & -0.451 & 1.498 \\
- & 0.7 & 0.0029 & 2.115 & 2.094 & 2.090 & -0.275 & 1.206 \\
- & 0.8 & 0.0013 & 2.016 & 2.006 & 2.000 & -0.175 & 1.654 \\
- & 0.9 & 0.0034 & 1.948 & 1.949 & 1.817 & -4.255 & -91.155 \\
- \hline
-\multirow{9}{*}{9} & 0.1 & NaN & 4.611 & 5.119 & NaN & -10.000 & NaN \\
- & 0.2 & 0.0241 & 4.333 & 4.593 & 4.457 & 0.782 & 0.479 \\
- & 0.3 & 0.0134 & 3.772 & 3.899 & 3.842 & 0.444 & 0.552 \\
- & 0.4 & 0.0085 & 3.240 & 3.251 & 3.247 & 0.414 & 0.647 \\
- & 0.5 & 0.0066 & 2.740 & 2.738 & 2.735 & -1.212 & 3.562 \\
- & 0.6 & 0.0058 & 2.318 & 2.313 & 2.295 & -1.804 & 4.797 \\
- & 0.7 & 0.0026 & 2.088 & 2.068 & 2.064 & -0.314 & 1.195 \\
- & 0.8 & 0.0008 & 2.012 & 2.004 & 2.002 & -0.078 & 1.258 \\
- & 0.9 & 0.0017 & 1.979 & 1.978 & 1.906 & -3.589 & 52.690 \\
- \hline
-\multirow{9}{*}{10} & 0.1 & NaN & 4.873 & 5.608 & NaN & -10.000 & NaN \\
- & 0.2 & 0.0231 & 4.516 & 4.756 & 4.684 & 0.488 & 0.703 \\
- & 0.3 & 0.0105 & 3.843 & 3.925 & 3.901 & 0.506 & 0.707 \\
- & 0.4 & 0.0064 & 3.219 & 3.233 & 3.236 & -0.175 & 1.196 \\
- & 0.5 & 0.0061 & 2.707 & 2.699 & 2.701 & 0.344 & 0.782 \\
- & 0.6 & 0.0048 & 2.284 & 2.261 & 2.261 & -0.122 & 0.982 \\
- & 0.7 & 0.0019 & 2.058 & 2.045 & 2.048 & 0.540 & 0.769 \\
- & 0.8 & 0.0006 & 2.006 & 2.002 & 2.002 & 0.093 & 1.019 \\
- & 0.9 & 0.0014 & 1.990 & 1.990 & 1.958 & -4.726 & 160.091 \\
- \hline
+\multicolumn{9}{|c|}{ N } \\
+\hline
+P & 4 & 5 & 6 & 7 & 8 & 9 & 10 & Mean\\
+\hline
+\hline
+0.1 &  \cellcolor[HTML]{FFDFDF} -1.27 &  \cellcolor[HTML]{FFC7C7} -2.07 &  \cellcolor[HTML]{FFD7D7} -1.66 &  \cellcolor[HTML]{FFC7C7} -2.22 &  \cellcolor[HTML]{FFCFCF} -1.85 &  \cellcolor[HTML]{FFD7D7} -1.54 &  \cellcolor[HTML]{FFDFDF} -1.34 &  \cellcolor[HTML]{FFD7D7} -1.71 \\
+0.2 &  \cellcolor[HTML]{FFE7E7} -1.07 &  \cellcolor[HTML]{FFE7E7} -0.94 &  \cellcolor[HTML]{FFD7D7} -1.51 &  \cellcolor[HTML]{FFDFDF} -1.24 &  \cellcolor[HTML]{FFEFEF} -0.72 &  \cellcolor[HTML]{FFF7F7} -0.44 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFE7E7} -0.86 \\
+0.3 &  \cellcolor[HTML]{FFDFDF} -1.14 &  \cellcolor[HTML]{FFE7E7} -1.07 &  \cellcolor[HTML]{FFEFEF} -0.66 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFEFEF} -0.56 &  \cellcolor[HTML]{FFFFFF} -0.16 &  \cellcolor[HTML]{FFEFEF} -0.50 \\
+0.4 &  \cellcolor[HTML]{FFD7D7} -1.48 &  \cellcolor[HTML]{FFF7F7} -0.22 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFF7F7} -0.23 \\
+0.5 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{EFEFFF} 0.59 &  \cellcolor[HTML]{EFEFFF} 0.76 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{F7F7FF} 0.33 &  \cellcolor[HTML]{FFFFFF} -0.13 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{F7F7FF} 0.23 \\
+0.6 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFFFFF} -0.08 &  \cellcolor[HTML]{FFF7F7} -0.30 &  \cellcolor[HTML]{FFFFFF} -0.03 \\
+0.7 &  \cellcolor[HTML]{FFDFDF} -1.34 &  \cellcolor[HTML]{FFE7E7} -0.89 &  \cellcolor[HTML]{FFF7F7} -0.25 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{FFF7F7} -0.20 &  \cellcolor[HTML]{FFEFEF} -0.79 &  \cellcolor[HTML]{FFFFFF} -0.09 &  \cellcolor[HTML]{FFEFEF} -0.51 \\
+0.8 &  \cellcolor[HTML]{FFD7D7} -1.61 &  \cellcolor[HTML]{FFDFDF} -1.28 &  \cellcolor[HTML]{FFD7D7} -1.74 &  \cellcolor[HTML]{FFE7E7} -1.05 &  \cellcolor[HTML]{FFF7F7} -0.40 &  \cellcolor[HTML]{FFEFEF} -0.51 &  \cellcolor[HTML]{FFEFEF} -0.51 &  \cellcolor[HTML]{FFE7E7} -1.01 \\
+0.9 &  \cellcolor[HTML]{FFDFDF} -1.29 &  \cellcolor[HTML]{FFC7C7} -2.32 &  \cellcolor[HTML]{FFCFCF} -1.98 &  \cellcolor[HTML]{FFC7C7} -2.31 &  \cellcolor[HTML]{FFDFDF} -1.39 &  \cellcolor[HTML]{FFD7D7} -1.43 &  \cellcolor[HTML]{FFDFDF} -1.25 &  \cellcolor[HTML]{FFD7D7} -1.71 \\
+\hline
+\hline
+Mean  &  \cellcolor[HTML]{FFE7E7} -1.01 &  \cellcolor[HTML]{FFE7E7} -0.92 &  \cellcolor[HTML]{FFEFEF} -0.79 &  \cellcolor[HTML]{FFEFEF} -0.75 &  \cellcolor[HTML]{FFF7F7} -0.45 &  \cellcolor[HTML]{FFEFEF} -0.60 &  \cellcolor[HTML]{FFF7F7} -0.41 &  \cellcolor[HTML]{FFEFEF} -0.70 \\
 \hline
 \end{longtable}
+
+\begin{adjustwidth}{-2in}{-1in}
 \begin{longtable}{ | c || c | c | c | c | c | c | c | c | c || c |}
 \hline
-\multicolumn{11}{|c|}{ Score Report For ADIAM on Algorithm MinusOne} \\
+\multicolumn{11}{|c|}{ MinusOne Score Report: P x Metric, Averaged Across N } \\
 \hline
 \multicolumn{11}{|c|}{ P } \\
 \hline
-N & .1 & .2 & .3 & .4 & .5 & .6 & .7 & .8 & .9 & Mean\\
- \hline
- \hline
- \endhead
-  4 &  \cellcolor[HTML]{FFFFFF} -0.18 &  \cellcolor[HTML]{F7F7FF} 0.25 &  \cellcolor[HTML]{EFEFFF} 0.39 &  \cellcolor[HTML]{E7E7FF} 0.76 &  \cellcolor[HTML]{CFCFFF} 1.56 &  \cellcolor[HTML]{DFDFFF} 1.14 &  \cellcolor[HTML]{FFEFEF} -0.87 &  \cellcolor[HTML]{FFC7C7} -2.22 &  \cellcolor[HTML]{FFA7A7} -3.63 & -0.311 \\
-  5 &  \cellcolor[HTML]{F7F7FF} 0.31 &  \cellcolor[HTML]{DFDFFF} 1.06 &  \cellcolor[HTML]{DFDFFF} 1.02 &  \cellcolor[HTML]{C7C7FF} 1.91 &  \cellcolor[HTML]{B7B7FF} 2.73 &  \cellcolor[HTML]{D7D7FF} 1.47 &  \cellcolor[HTML]{FFFFFF} -0.30 &  \cellcolor[HTML]{FFCFCF} -2.05 &  \cellcolor[HTML]{FF5858} -6.68 & -0.059 \\
-  6 &  \cellcolor[HTML]{EFEFFF} 0.51 &  \cellcolor[HTML]{EFEFFF} 0.54 &  \cellcolor[HTML]{E7E7FF} 0.72 &  \cellcolor[HTML]{DFDFFF} 0.95 &  \cellcolor[HTML]{DFDFFF} 1.12 &  \cellcolor[HTML]{8787FF} 4.47 &  \cellcolor[HTML]{F7F7FF} 0.04 &  \cellcolor[HTML]{FF9F9F} -3.96 &  \cellcolor[HTML]{FF9797} -4.10 & 0.033 \\
-  7 &  \cellcolor[HTML]{FF0808} -10.00 &  \cellcolor[HTML]{F7F7FF} 0.29 &  \cellcolor[HTML]{E7E7FF} 0.73 &  \cellcolor[HTML]{DFDFFF} 1.17 &  \cellcolor[HTML]{AFAFFF} 2.98 &  \cellcolor[HTML]{FF4848} -7.49 &  \cellcolor[HTML]{FFE7E7} -1.14 &  \cellcolor[HTML]{FFCFCF} -1.88 &  \cellcolor[HTML]{FF9F9F} -3.87 & -2.135 \\
-  8 &  \cellcolor[HTML]{FF0808} -10.00 &  \cellcolor[HTML]{EFEFFF} 0.46 &  \cellcolor[HTML]{EFEFFF} 0.53 &  \cellcolor[HTML]{EFEFFF} 0.53 &  \cellcolor[HTML]{FFFFFF} -0.16 &  \cellcolor[HTML]{FFF7F7} -0.45 &  \cellcolor[HTML]{FFFFFF} -0.28 &  \cellcolor[HTML]{FFFFFF} -0.18 &  \cellcolor[HTML]{FF9797} -4.25 & -1.533 \\
-  9 &  \cellcolor[HTML]{FF0808} -10.00 &  \cellcolor[HTML]{E7E7FF} 0.78 &  \cellcolor[HTML]{EFEFFF} 0.44 &  \cellcolor[HTML]{EFEFFF} 0.41 &  \cellcolor[HTML]{FFE7E7} -1.21 &  \cellcolor[HTML]{FFD7D7} -1.80 &  \cellcolor[HTML]{FFF7F7} -0.31 &  \cellcolor[HTML]{FFFFFF} -0.08 &  \cellcolor[HTML]{FFA7A7} -3.59 & -1.706 \\
-  10 &  \cellcolor[HTML]{FF0808} -10.00 &  \cellcolor[HTML]{EFEFFF} 0.49 &  \cellcolor[HTML]{EFEFFF} 0.51 &  \cellcolor[HTML]{FFFFFF} -0.18 &  \cellcolor[HTML]{EFEFFF} 0.34 &  \cellcolor[HTML]{FFFFFF} -0.12 &  \cellcolor[HTML]{EFEFFF} 0.54 &  \cellcolor[HTML]{F7F7FF} 0.09 &  \cellcolor[HTML]{FF8787} -4.73 & -1.450 \\
- \hline
- \hline
-Mean &  \cellcolor[HTML]{FF7878} -5.62 &  \cellcolor[HTML]{EFEFFF} 0.55 &  \cellcolor[HTML]{EFEFFF} 0.62 &  \cellcolor[HTML]{E7E7FF} 0.79 &  \cellcolor[HTML]{DFDFFF} 1.05 &  \cellcolor[HTML]{FFF7F7} -0.40 &  \cellcolor[HTML]{FFF7F7} -0.33 &  \cellcolor[HTML]{FFDFDF} -1.47 &  \cellcolor[HTML]{FF8F8F} -4.41 &  \cellcolor[HTML]{FFE7E7} -1.02
+Metric & .1 & .2 & .3 & .4 & .5 & .6 & .7 & .8 & .9 & Mean\\
+\hline
+\hline
+\endhead
+ADSM &  \cellcolor[HTML]{FFA7A7} -3.44 &  \cellcolor[HTML]{FFAFAF} -3.19 &  \cellcolor[HTML]{FFB7B7} -2.84 &  \cellcolor[HTML]{FFB7B7} -2.83 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFBFBF} -2.45 &  \cellcolor[HTML]{FFB7B7} -2.72 &  \cellcolor[HTML]{FF9F9F} -3.96 &  \cellcolor[HTML]{FFA7A7} -3.57 &  \cellcolor[HTML]{FFB7B7} -2.78 \\
+DSMV &  \cellcolor[HTML]{EFEFFF} 0.60 &  \cellcolor[HTML]{FFA7A7} -3.34 &  \cellcolor[HTML]{FFC7C7} -2.29 &  \cellcolor[HTML]{FFAFAF} -3.09 &  \cellcolor[HTML]{FFC7C7} -2.33 &  \cellcolor[HTML]{FFBFBF} -2.61 &  \cellcolor[HTML]{FFB7B7} -2.82 &  \cellcolor[HTML]{FF9797} -4.08 &  \cellcolor[HTML]{FFE7E7} -0.97 &  \cellcolor[HTML]{FFC7C7} -2.32 \\
+ADSMD &  \cellcolor[HTML]{FFDFDF} -1.40 &  \cellcolor[HTML]{FFD7D7} -1.69 &  \cellcolor[HTML]{FFD7D7} -1.74 &  \cellcolor[HTML]{FFE7E7} -0.94 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFCFCF} -1.75 &  \cellcolor[HTML]{FFD7D7} -1.47 &  \cellcolor[HTML]{FFCFCF} -1.94 &  \cellcolor[HTML]{FFD7D7} -1.43 &  \cellcolor[HTML]{FFDFDF} -1.37 \\
+DSMDV &  \cellcolor[HTML]{FFF7F7} -0.42 &  \cellcolor[HTML]{EFEFFF} 0.62 &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFF7F7} -0.30 &  \cellcolor[HTML]{F7F7FF} 0.18 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{FFEFEF} -0.55 &  \cellcolor[HTML]{EFEFFF} 0.70 &  \cellcolor[HTML]{FFF7F7} -0.45 &  \cellcolor[HTML]{FFFFFF} -0.05 \\
+ADSMN &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFF7F7} -0.27 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{EFEFFF} 0.55 &  \cellcolor[HTML]{FFE7E7} -0.86 &  \cellcolor[HTML]{FFDFDF} -1.26 &  \cellcolor[HTML]{FFD7D7} -1.44 &  \cellcolor[HTML]{FFD7D7} -1.70 &  \cellcolor[HTML]{FFBFBF} -2.61 &  \cellcolor[HTML]{FFE7E7} -0.83 \\
+DSMNV &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFFFFF} 0.16 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFE7E7} -0.84 &  \cellcolor[HTML]{FFF7F7} -0.27 &  \cellcolor[HTML]{F7F7FF} 0.34 &  \cellcolor[HTML]{EFEFFF} 0.51 &  \cellcolor[HTML]{D7D7FF} 1.54 &  \cellcolor[HTML]{FFEFEF} -0.69 &  \cellcolor[HTML]{FFFFFF} 0.07 \\
+ADSMX &  \cellcolor[HTML]{FFBFBF} -2.47 &  \cellcolor[HTML]{FFCFCF} -2.06 &  \cellcolor[HTML]{FFDFDF} -1.40 &  \cellcolor[HTML]{FFCFCF} -1.78 &  \cellcolor[HTML]{FFEFEF} -0.76 &  \cellcolor[HTML]{EFEFFF} 0.54 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} -0.14 &  \cellcolor[HTML]{FFE7E7} -0.91 \\
+DSMXV &  \cellcolor[HTML]{FFEFEF} -0.77 &  \cellcolor[HTML]{D7D7FF} 1.62 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{FFF7F7} -0.17 &  \cellcolor[HTML]{FFF7F7} -0.41 &  \cellcolor[HTML]{FFF7F7} -0.37 &  \cellcolor[HTML]{FFEFEF} -0.79 &  \cellcolor[HTML]{F7F7FF} 0.26 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFFFFF} -0.05 \\
+ADSV &  \cellcolor[HTML]{FFC7C7} -2.36 &  \cellcolor[HTML]{FFE7E7} -1.07 &  \cellcolor[HTML]{FFEFEF} -0.54 &  \cellcolor[HTML]{FFF7F7} -0.38 &  \cellcolor[HTML]{FFF7F7} -0.19 &  \cellcolor[HTML]{FFF7F7} -0.23 &  \cellcolor[HTML]{FFEFEF} -0.64 &  \cellcolor[HTML]{FFD7D7} -1.47 &  \cellcolor[HTML]{FFC7C7} -2.17 &  \cellcolor[HTML]{FFE7E7} -1.01 \\
+DSVV &  \cellcolor[HTML]{FFEFEF} -0.53 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{E7E7FF} 0.86 &  \cellcolor[HTML]{E7E7FF} 0.90 &  \cellcolor[HTML]{E7E7FF} 0.87 &  \cellcolor[HTML]{E7E7FF} 0.87 &  \cellcolor[HTML]{EFEFFF} 0.78 &  \cellcolor[HTML]{F7F7FF} 0.27 &  \cellcolor[HTML]{FFEFEF} -0.63 &  \cellcolor[HTML]{F7F7FF} 0.40 \\
+ADSR &  \cellcolor[HTML]{FFC7C7} -2.35 &  \cellcolor[HTML]{FFD7D7} -1.64 &  \cellcolor[HTML]{FFE7E7} -1.07 &  \cellcolor[HTML]{FFE7E7} -1.01 &  \cellcolor[HTML]{FFE7E7} -0.84 &  \cellcolor[HTML]{FFE7E7} -0.86 &  \cellcolor[HTML]{FFDFDF} -1.12 &  \cellcolor[HTML]{FFD7D7} -1.58 &  \cellcolor[HTML]{FFBFBF} -2.53 &  \cellcolor[HTML]{FFD7D7} -1.45 \\
+PQRA &  \cellcolor[HTML]{FFBFBF} -2.61 &  \cellcolor[HTML]{FFE7E7} -1.02 &  \cellcolor[HTML]{FFEFEF} -0.61 &  \cellcolor[HTML]{FFF7F7} -0.26 &  \cellcolor[HTML]{FFF7F7} -0.40 &  \cellcolor[HTML]{FFEFEF} -0.49 &  \cellcolor[HTML]{FFF7F7} -0.40 &  \cellcolor[HTML]{FFE7E7} -0.85 &  \cellcolor[HTML]{FFC7C7} -2.37 &  \cellcolor[HTML]{FFE7E7} -1.00 \\
+PQRB &  \cellcolor[HTML]{FFDFDF} -1.15 &  \cellcolor[HTML]{FFB7B7} -2.76 &  \cellcolor[HTML]{FFCFCF} -1.86 &  \cellcolor[HTML]{FFD7D7} -1.46 &  \cellcolor[HTML]{FFDFDF} -1.40 &  \cellcolor[HTML]{FFD7D7} -1.50 &  \cellcolor[HTML]{FFCFCF} -1.89 &  \cellcolor[HTML]{FFCFCF} -1.96 &  \cellcolor[HTML]{FFDFDF} -1.26 &  \cellcolor[HTML]{FFD7D7} -1.69 \\
+PQRC &  \cellcolor[HTML]{FFE7E7} -0.89 &  \cellcolor[HTML]{FFC7C7} -2.34 &  \cellcolor[HTML]{FFD7D7} -1.53 &  \cellcolor[HTML]{FFDFDF} -1.13 &  \cellcolor[HTML]{FFDFDF} -1.12 &  \cellcolor[HTML]{FFDFDF} -1.18 &  \cellcolor[HTML]{FFD7D7} -1.44 &  \cellcolor[HTML]{FFD7D7} -1.59 &  \cellcolor[HTML]{FFE7E7} -1.02 &  \cellcolor[HTML]{FFDFDF} -1.36 \\
+ODSPL &  \cellcolor[HTML]{FFA7A7} -3.44 &  \cellcolor[HTML]{FFAFAF} -3.19 &  \cellcolor[HTML]{FFB7B7} -2.84 &  \cellcolor[HTML]{FFB7B7} -2.83 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFBFBF} -2.45 &  \cellcolor[HTML]{FFB7B7} -2.72 &  \cellcolor[HTML]{FF9F9F} -3.96 &  \cellcolor[HTML]{FFA7A7} -3.57 &  \cellcolor[HTML]{FFB7B7} -2.78 \\
+ANA &  \cellcolor[HTML]{FF9F9F} -3.93 &  \cellcolor[HTML]{FFC7C7} -2.38 &  \cellcolor[HTML]{EFEFFF} 0.59 &  \cellcolor[HTML]{EFEFFF} 0.65 &  \cellcolor[HTML]{D7D7FF} 1.69 &  \cellcolor[HTML]{EFEFFF} 0.56 &  \cellcolor[HTML]{F7F7FF} 0.42 &  \cellcolor[HTML]{FFCFCF} -1.79 &  \cellcolor[HTML]{FF8F8F} -4.30 &  \cellcolor[HTML]{FFE7E7} -0.94 \\
+NCP &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 \\
+NR &  \cellcolor[HTML]{FFAFAF} -3.04 &  \cellcolor[HTML]{FFF7F7} -0.37 &  \cellcolor[HTML]{EFEFFF} 0.78 &  \cellcolor[HTML]{D7D7FF} 1.58 &  \cellcolor[HTML]{DFDFFF} 1.38 &  \cellcolor[HTML]{DFDFFF} 1.26 &  \cellcolor[HTML]{EFEFFF} 0.64 &  \cellcolor[HTML]{FFF7F7} -0.41 &  \cellcolor[HTML]{FFB7B7} -2.99 &  \cellcolor[HTML]{FFFFFF} -0.13 \\
+NE &  \cellcolor[HTML]{FFA7A7} -3.44 &  \cellcolor[HTML]{FFAFAF} -3.19 &  \cellcolor[HTML]{FFB7B7} -2.84 &  \cellcolor[HTML]{FFB7B7} -2.83 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFBFBF} -2.45 &  \cellcolor[HTML]{FFB7B7} -2.72 &  \cellcolor[HTML]{FF9F9F} -3.96 &  \cellcolor[HTML]{FFA7A7} -3.57 &  \cellcolor[HTML]{FFB7B7} -2.78 \\
+PCONN &  \cellcolor[HTML]{FFEFEF} -0.62 &  \cellcolor[HTML]{FFF7F7} -0.22 &  \cellcolor[HTML]{EFEFFF} 0.61 &  \cellcolor[HTML]{CFCFFF} 1.76 &  \cellcolor[HTML]{E7E7FF} 0.93 &  \cellcolor[HTML]{EFEFFF} 0.60 &  \cellcolor[HTML]{F7F7FF} 0.43 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{F7F7FF} 0.40 \\
+ANCC &  \cellcolor[HTML]{FFBFBF} -2.59 &  \cellcolor[HTML]{FFDFDF} -1.23 &  \cellcolor[HTML]{FFF7F7} -0.25 &  \cellcolor[HTML]{E7E7FF} 1.08 &  \cellcolor[HTML]{DFDFFF} 1.41 &  \cellcolor[HTML]{EFEFFF} 0.78 &  \cellcolor[HTML]{EFEFFF} 0.54 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} -0.02 \\
+NCCV &  \cellcolor[HTML]{FFF7F7} -0.43 &  \cellcolor[HTML]{FFDFDF} -1.33 &  \cellcolor[HTML]{FFEFEF} -0.79 &  \cellcolor[HTML]{F7F7FF} 0.31 &  \cellcolor[HTML]{F7F7FF} 0.41 &  \cellcolor[HTML]{EFEFFF} 0.73 &  \cellcolor[HTML]{EFEFFF} 0.59 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFFFFF} -0.04 \\
+ADIAM &  \cellcolor[HTML]{FF7070} -5.62 &  \cellcolor[HTML]{EFEFFF} 0.55 &  \cellcolor[HTML]{EFEFFF} 0.62 &  \cellcolor[HTML]{EFEFFF} 0.79 &  \cellcolor[HTML]{E7E7FF} 1.05 &  \cellcolor[HTML]{FFF7F7} -0.40 &  \cellcolor[HTML]{FFF7F7} -0.33 &  \cellcolor[HTML]{FFD7D7} -1.47 &  \cellcolor[HTML]{FF8F8F} -4.41 &  \cellcolor[HTML]{FFE7E7} -1.02 \\
+DIAMV &  \cellcolor[HTML]{FF8787} -4.87 &  \cellcolor[HTML]{FFF7F7} -0.24 &  \cellcolor[HTML]{FFF7F7} -0.43 &  \cellcolor[HTML]{FFEFEF} -0.66 &  \cellcolor[HTML]{FFE7E7} -1.04 &  \cellcolor[HTML]{FFEFEF} -0.53 &  \cellcolor[HTML]{FFF7F7} -0.37 &  \cellcolor[HTML]{FFEFEF} -0.61 &  \cellcolor[HTML]{FFA7A7} -3.44 &  \cellcolor[HTML]{FFDFDF} -1.36 \\
+PTRIL &  \cellcolor[HTML]{F7F7FF} 0.26 &  \cellcolor[HTML]{FFEFEF} -0.53 &  \cellcolor[HTML]{FFE7E7} -1.11 &  \cellcolor[HTML]{FFC7C7} -2.19 &  \cellcolor[HTML]{FFF7F7} -0.29 &  \cellcolor[HTML]{DFDFFF} 1.21 &  \cellcolor[HTML]{EFEFFF} 0.74 &  \cellcolor[HTML]{F7F7FF} 0.31 &  \cellcolor[HTML]{F7F7FF} 0.35 &  \cellcolor[HTML]{FFFFFF} -0.14 \\
+ANTRI &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFF7F7} -0.39 &  \cellcolor[HTML]{FFF7F7} -0.41 &  \cellcolor[HTML]{FFEFEF} -0.52 &  \cellcolor[HTML]{F7F7FF} 0.37 &  \cellcolor[HTML]{FFEFEF} -0.68 &  \cellcolor[HTML]{FFD7D7} -1.48 &  \cellcolor[HTML]{FFB7B7} -2.73 &  \cellcolor[HTML]{FFB7B7} -3.00 &  \cellcolor[HTML]{FFE7E7} -0.97 \\
+ANQUAD &  \cellcolor[HTML]{FFCFCF} -1.85 &  \cellcolor[HTML]{FFE7E7} -0.96 &  \cellcolor[HTML]{FFEFEF} -0.65 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{EFEFFF} 0.58 &  \cellcolor[HTML]{FFFFFF} -0.09 &  \cellcolor[HTML]{FFDFDF} -1.16 &  \cellcolor[HTML]{FFC7C7} -2.12 &  \cellcolor[HTML]{FFA7A7} -3.33 &  \cellcolor[HTML]{FFE7E7} -1.07 \\
+ALNA &  \cellcolor[HTML]{FFDFDF} -1.33 &  \cellcolor[HTML]{DFDFFF} 1.24 &  \cellcolor[HTML]{D7D7FF} 1.65 &  \cellcolor[HTML]{D7D7FF} 1.50 &  \cellcolor[HTML]{DFDFFF} 1.41 &  \cellcolor[HTML]{D7D7FF} 1.49 &  \cellcolor[HTML]{D7D7FF} 1.62 &  \cellcolor[HTML]{E7E7FF} 1.02 &  \cellcolor[HTML]{FFDFDF} -1.30 &  \cellcolor[HTML]{E7E7FF} 0.81 \\
+MLNA &  \cellcolor[HTML]{FF9F9F} -3.86 &  \cellcolor[HTML]{FFE7E7} -0.86 &  \cellcolor[HTML]{CFCFFF} 1.76 &  \cellcolor[HTML]{4848FF} 7.21 &  \cellcolor[HTML]{7070FF} 5.75 &  \cellcolor[HTML]{2828FF} 8.57 &  \cellcolor[HTML]{CFCFFF} 1.90 &  \cellcolor[HTML]{FFF7F7} -0.39 &  \cellcolor[HTML]{FFC7C7} -2.34 &  \cellcolor[HTML]{CFCFFF} 1.97 \\
+VLNA &  \cellcolor[HTML]{FFE7E7} -0.83 &  \cellcolor[HTML]{FFF7F7} -0.40 &  \cellcolor[HTML]{FFF7F7} -0.26 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{E7E7FF} 0.88 &  \cellcolor[HTML]{FFFFFF} -0.08 &  \cellcolor[HTML]{F7F7FF} 0.24 &  \cellcolor[HTML]{FFF7F7} -0.33 &  \cellcolor[HTML]{FFE7E7} -0.80 &  \cellcolor[HTML]{FFF7F7} -0.16 \\
+NUG &  \cellcolor[HTML]{FFEFEF} -0.48 &  \cellcolor[HTML]{BFBFFF} 2.56 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFEFEF} -0.76 &  \cellcolor[HTML]{D7D7FF} 1.67 &  \cellcolor[HTML]{FFD7D7} -1.45 &  \cellcolor[HTML]{FFD7D7} -1.69 &  \cellcolor[HTML]{FFF7F7} -0.20 &  \cellcolor[HTML]{FFE7E7} -0.90 &  \cellcolor[HTML]{FFFFFF} -0.15 \\
+ANR &  \cellcolor[HTML]{FFEFEF} -0.48 &  \cellcolor[HTML]{FFF7F7} -0.37 &  \cellcolor[HTML]{FFF7F7} -0.20 &  \cellcolor[HTML]{FFE7E7} -0.82 &  \cellcolor[HTML]{FFDFDF} -1.32 &  \cellcolor[HTML]{DFDFFF} 1.38 &  \cellcolor[HTML]{FFFFFF} 0.10 &  \cellcolor[HTML]{FFF7F7} -0.27 &  \cellcolor[HTML]{FFEFEF} -0.78 &  \cellcolor[HTML]{FFF7F7} -0.31 \\
+MNR &  \cellcolor[HTML]{FFB7B7} -2.81 &  \cellcolor[HTML]{FFE7E7} -0.99 &  \cellcolor[HTML]{FFE7E7} -0.85 &  \cellcolor[HTML]{EFEFFF} 0.68 &  \cellcolor[HTML]{CFCFFF} 1.81 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFEFEF} -0.63 &  \cellcolor[HTML]{FFDFDF} -1.31 &  \cellcolor[HTML]{FFB7B7} -2.87 &  \cellcolor[HTML]{FFEFEF} -0.78 \\
+SQNR &  \cellcolor[HTML]{FFC7C7} -2.11 &  \cellcolor[HTML]{FFEFEF} -0.75 &  \cellcolor[HTML]{FFFFFF} 0.12 &  \cellcolor[HTML]{F7F7FF} 0.47 &  \cellcolor[HTML]{F7F7FF} 0.43 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} -0.09 &  \cellcolor[HTML]{FFEFEF} -0.65 &  \cellcolor[HTML]{FFC7C7} -2.09 &  \cellcolor[HTML]{FFEFEF} -0.51 \\
+PDL &  \cellcolor[HTML]{FFF7F7} -0.46 &  \cellcolor[HTML]{FFF7F7} -0.30 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFE7E7} -0.83 &  \cellcolor[HTML]{FFDFDF} -1.32 &  \cellcolor[HTML]{DFDFFF} 1.38 &  \cellcolor[HTML]{FFFFFF} 0.10 &  \cellcolor[HTML]{FFF7F7} -0.38 &  \cellcolor[HTML]{FFEFEF} -0.75 &  \cellcolor[HTML]{FFF7F7} -0.30 \\
+\hline
+\hline
+Mean  &  \cellcolor[HTML]{FFD7D7} -1.71 &  \cellcolor[HTML]{FFE7E7} -0.86 &  \cellcolor[HTML]{FFEFEF} -0.50 &  \cellcolor[HTML]{FFF7F7} -0.23 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{FFEFEF} -0.51 &  \cellcolor[HTML]{FFE7E7} -1.01 &  \cellcolor[HTML]{FFD7D7} -1.71 &  \cellcolor[HTML]{FFEFEF} -0.70 \\
+\hline
 \end{longtable}
+
+\end{adjustwidth}
+
+
+\begin{longtable}{ | c || c | c | c | c | c | c | c || c |}
+\hline
+\multicolumn{9}{|c|}{ MinusOne Score Report: N x Metric, Averaged Across P } \\
+\hline
+\multicolumn{9}{|c|}{ N } \\
+\hline
+Metric & 4 & 5 & 6 & 7 & 8 & 9 & 10 & Mean\\
+\hline
+\hline
+\endhead
+ADSM &  \cellcolor[HTML]{FFAFAF} -3.19 &  \cellcolor[HTML]{FFA7A7} -3.53 &  \cellcolor[HTML]{FFBFBF} -2.67 &  \cellcolor[HTML]{FFB7B7} -2.92 &  \cellcolor[HTML]{FFC7C7} -2.35 &  \cellcolor[HTML]{FFC7C7} -2.24 &  \cellcolor[HTML]{FFBFBF} -2.54 &  \cellcolor[HTML]{FFB7B7} -2.78 \\
+DSMV &  \cellcolor[HTML]{FFA7A7} -3.37 &  \cellcolor[HTML]{FFB7B7} -2.71 &  \cellcolor[HTML]{FFBFBF} -2.41 &  \cellcolor[HTML]{FFD7D7} -1.62 &  \cellcolor[HTML]{FFBFBF} -2.54 &  \cellcolor[HTML]{FFD7D7} -1.65 &  \cellcolor[HTML]{FFCFCF} -1.98 &  \cellcolor[HTML]{FFC7C7} -2.32 \\
+ADSMD &  \cellcolor[HTML]{FFB7B7} -2.85 &  \cellcolor[HTML]{FFDFDF} -1.16 &  \cellcolor[HTML]{FFCFCF} -1.94 &  \cellcolor[HTML]{FFD7D7} -1.70 &  \cellcolor[HTML]{FFEFEF} -0.68 &  \cellcolor[HTML]{FFEFEF} -0.78 &  \cellcolor[HTML]{FFEFEF} -0.49 &  \cellcolor[HTML]{FFDFDF} -1.37 \\
+DSMDV &  \cellcolor[HTML]{FFD7D7} -1.63 &  \cellcolor[HTML]{FFEFEF} -0.68 &  \cellcolor[HTML]{FFE7E7} -0.97 &  \cellcolor[HTML]{F7F7FF} 0.38 &  \cellcolor[HTML]{F7F7FF} 0.16 &  \cellcolor[HTML]{E7E7FF} 0.81 &  \cellcolor[HTML]{D7D7FF} 1.59 &  \cellcolor[HTML]{FFFFFF} -0.05 \\
+ADSMN &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFCFCF} -1.92 &  \cellcolor[HTML]{FFDFDF} -1.18 &  \cellcolor[HTML]{FFE7E7} -0.99 &  \cellcolor[HTML]{FFEFEF} -0.70 &  \cellcolor[HTML]{FFEFEF} -0.65 &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFE7E7} -0.83 \\
+DSMNV &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFEFEF} -0.54 &  \cellcolor[HTML]{EFEFFF} 0.76 &  \cellcolor[HTML]{F7F7FF} 0.41 &  \cellcolor[HTML]{FFFFFF} -0.00 &  \cellcolor[HTML]{FFF7F7} -0.31 &  \cellcolor[HTML]{F7F7FF} 0.17 &  \cellcolor[HTML]{FFFFFF} 0.07 \\
+ADSMX &  \cellcolor[HTML]{FFFFFF} -0.11 &  \cellcolor[HTML]{FFC7C7} -2.15 &  \cellcolor[HTML]{FFDFDF} -1.29 &  \cellcolor[HTML]{FFE7E7} -0.80 &  \cellcolor[HTML]{FFE7E7} -0.94 &  \cellcolor[HTML]{FFEFEF} -0.55 &  \cellcolor[HTML]{FFEFEF} -0.52 &  \cellcolor[HTML]{FFE7E7} -0.91 \\
+DSMXV &  \cellcolor[HTML]{FFF7F7} -0.41 &  \cellcolor[HTML]{FFEFEF} -0.64 &  \cellcolor[HTML]{E7E7FF} 0.99 &  \cellcolor[HTML]{F7F7FF} 0.16 &  \cellcolor[HTML]{FFFFFF} 0.11 &  \cellcolor[HTML]{FFF7F7} -0.38 &  \cellcolor[HTML]{FFF7F7} -0.20 &  \cellcolor[HTML]{FFFFFF} -0.05 \\
+ADSV &  \cellcolor[HTML]{FFE7E7} -0.98 &  \cellcolor[HTML]{FFBFBF} -2.39 &  \cellcolor[HTML]{FFCFCF} -1.88 &  \cellcolor[HTML]{FFEFEF} -0.62 &  \cellcolor[HTML]{FFEFEF} -0.57 &  \cellcolor[HTML]{FFF7F7} -0.37 &  \cellcolor[HTML]{FFF7F7} -0.23 &  \cellcolor[HTML]{FFE7E7} -1.01 \\
+DSVV &  \cellcolor[HTML]{E7E7FF} 0.83 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{F7F7FF} 0.38 &  \cellcolor[HTML]{F7F7FF} 0.38 &  \cellcolor[HTML]{F7F7FF} 0.33 &  \cellcolor[HTML]{F7F7FF} 0.33 &  \cellcolor[HTML]{F7F7FF} 0.33 &  \cellcolor[HTML]{F7F7FF} 0.40 \\
+ADSR &  \cellcolor[HTML]{FFEFEF} -0.57 &  \cellcolor[HTML]{FFBFBF} -2.46 &  \cellcolor[HTML]{FFD7D7} -1.70 &  \cellcolor[HTML]{FFCFCF} -1.94 &  \cellcolor[HTML]{FFCFCF} -1.80 &  \cellcolor[HTML]{FFE7E7} -0.96 &  \cellcolor[HTML]{FFEFEF} -0.68 &  \cellcolor[HTML]{FFD7D7} -1.45 \\
+PQRA &  \cellcolor[HTML]{FFF7F7} -0.44 &  \cellcolor[HTML]{FFE7E7} -0.81 &  \cellcolor[HTML]{FFEFEF} -0.74 &  \cellcolor[HTML]{FFE7E7} -0.94 &  \cellcolor[HTML]{FFE7E7} -1.01 &  \cellcolor[HTML]{FFE7E7} -1.08 &  \cellcolor[HTML]{FFCFCF} -1.98 &  \cellcolor[HTML]{FFE7E7} -1.00 \\
+PQRB &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFEFEF} -0.67 &  \cellcolor[HTML]{FFAFAF} -3.18 &  \cellcolor[HTML]{FFCFCF} -1.78 &  \cellcolor[HTML]{FFBFBF} -2.58 &  \cellcolor[HTML]{FFCFCF} -1.97 &  \cellcolor[HTML]{FFD7D7} -1.67 &  \cellcolor[HTML]{FFD7D7} -1.69 \\
+PQRC &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFEFEF} -0.67 &  \cellcolor[HTML]{FFAFAF} -3.18 &  \cellcolor[HTML]{FFCFCF} -1.78 &  \cellcolor[HTML]{FFBFBF} -2.58 &  \cellcolor[HTML]{FFEFEF} -0.72 &  \cellcolor[HTML]{FFEFEF} -0.58 &  \cellcolor[HTML]{FFDFDF} -1.36 \\
+ODSPL &  \cellcolor[HTML]{FFAFAF} -3.19 &  \cellcolor[HTML]{FFA7A7} -3.53 &  \cellcolor[HTML]{FFBFBF} -2.67 &  \cellcolor[HTML]{FFB7B7} -2.92 &  \cellcolor[HTML]{FFC7C7} -2.35 &  \cellcolor[HTML]{FFC7C7} -2.24 &  \cellcolor[HTML]{FFBFBF} -2.54 &  \cellcolor[HTML]{FFB7B7} -2.78 \\
+ANA &  \cellcolor[HTML]{FFD7D7} -1.59 &  \cellcolor[HTML]{FFEFEF} -0.76 &  \cellcolor[HTML]{FFE7E7} -0.96 &  \cellcolor[HTML]{FFE7E7} -0.95 &  \cellcolor[HTML]{FFF7F7} -0.23 &  \cellcolor[HTML]{FFE7E7} -1.02 &  \cellcolor[HTML]{FFE7E7} -1.10 &  \cellcolor[HTML]{FFE7E7} -0.94 \\
+NCP &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.00 \\
+NR &  \cellcolor[HTML]{FFEFEF} -0.57 &  \cellcolor[HTML]{FFCFCF} -1.96 &  \cellcolor[HTML]{E7E7FF} 1.02 &  \cellcolor[HTML]{FFF7F7} -0.22 &  \cellcolor[HTML]{D7D7FF} 1.51 &  \cellcolor[HTML]{FFEFEF} -0.75 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} -0.13 \\
+NE &  \cellcolor[HTML]{FFAFAF} -3.19 &  \cellcolor[HTML]{FFA7A7} -3.53 &  \cellcolor[HTML]{FFBFBF} -2.67 &  \cellcolor[HTML]{FFB7B7} -2.92 &  \cellcolor[HTML]{FFC7C7} -2.35 &  \cellcolor[HTML]{FFC7C7} -2.24 &  \cellcolor[HTML]{FFBFBF} -2.54 &  \cellcolor[HTML]{FFB7B7} -2.78 \\
+PCONN &  \cellcolor[HTML]{F7F7FF} 0.18 &  \cellcolor[HTML]{EFEFFF} 0.66 &  \cellcolor[HTML]{E7E7FF} 1.03 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{F7F7FF} 0.33 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{F7F7FF} 0.46 &  \cellcolor[HTML]{F7F7FF} 0.40 \\
+ANCC &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFEFEF} -0.51 &  \cellcolor[HTML]{FFF7F7} -0.23 &  \cellcolor[HTML]{FFFFFF} -0.00 &  \cellcolor[HTML]{FFFFFF} 0.13 &  \cellcolor[HTML]{F7F7FF} 0.22 &  \cellcolor[HTML]{EFEFFF} 0.63 &  \cellcolor[HTML]{FFFFFF} -0.02 \\
+NCCV &  \cellcolor[HTML]{FFDFDF} -1.12 &  \cellcolor[HTML]{FFFFFF} -0.08 &  \cellcolor[HTML]{FFFFFF} -0.13 &  \cellcolor[HTML]{FFFFFF} -0.13 &  \cellcolor[HTML]{F7F7FF} 0.28 &  \cellcolor[HTML]{F7F7FF} 0.30 &  \cellcolor[HTML]{EFEFFF} 0.59 &  \cellcolor[HTML]{FFFFFF} -0.04 \\
+ADIAM &  \cellcolor[HTML]{FFF7F7} -0.31 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFC7C7} -2.13 &  \cellcolor[HTML]{FFD7D7} -1.53 &  \cellcolor[HTML]{FFD7D7} -1.71 &  \cellcolor[HTML]{FFD7D7} -1.45 &  \cellcolor[HTML]{FFE7E7} -1.02 \\
+DIAMV &  \cellcolor[HTML]{FFEFEF} -0.67 &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFF7F7} -0.47 &  \cellcolor[HTML]{FFC7C7} -2.32 &  \cellcolor[HTML]{FFD7D7} -1.44 &  \cellcolor[HTML]{FFCFCF} -1.90 &  \cellcolor[HTML]{FFC7C7} -2.33 &  \cellcolor[HTML]{FFDFDF} -1.36 \\
+PTRIL &  \cellcolor[HTML]{F7F7FF} 0.33 &  \cellcolor[HTML]{F7F7FF} 0.16 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFF7F7} -0.30 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFF7F7} -0.38 &  \cellcolor[HTML]{FFEFEF} -0.61 &  \cellcolor[HTML]{FFFFFF} -0.14 \\
+ANTRI &  \cellcolor[HTML]{FFEFEF} -0.69 &  \cellcolor[HTML]{FFD7D7} -1.55 &  \cellcolor[HTML]{FFDFDF} -1.19 &  \cellcolor[HTML]{FFE7E7} -1.11 &  \cellcolor[HTML]{FFEFEF} -0.68 &  \cellcolor[HTML]{FFE7E7} -0.87 &  \cellcolor[HTML]{FFEFEF} -0.73 &  \cellcolor[HTML]{FFE7E7} -0.97 \\
+ANQUAD &  \cellcolor[HTML]{FFDFDF} -1.15 &  \cellcolor[HTML]{FFD7D7} -1.48 &  \cellcolor[HTML]{FFD7D7} -1.43 &  \cellcolor[HTML]{FFDFDF} -1.12 &  \cellcolor[HTML]{FFEFEF} -0.71 &  \cellcolor[HTML]{FFE7E7} -0.91 &  \cellcolor[HTML]{FFEFEF} -0.71 &  \cellcolor[HTML]{FFE7E7} -1.07 \\
+ALNA &  \cellcolor[HTML]{FFEFEF} -0.55 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{E7E7FF} 0.94 &  \cellcolor[HTML]{E7E7FF} 0.88 &  \cellcolor[HTML]{DFDFFF} 1.13 &  \cellcolor[HTML]{D7D7FF} 1.59 &  \cellcolor[HTML]{D7D7FF} 1.46 &  \cellcolor[HTML]{E7E7FF} 0.81 \\
+MLNA &  \cellcolor[HTML]{FFC7C7} -2.17 &  \cellcolor[HTML]{EFEFFF} 0.73 &  \cellcolor[HTML]{FFEFEF} -0.64 &  \cellcolor[HTML]{BFBFFF} 2.43 &  \cellcolor[HTML]{4848FF} 7.34 &  \cellcolor[HTML]{DFDFFF} 1.22 &  \cellcolor[HTML]{8787FF} 4.87 &  \cellcolor[HTML]{CFCFFF} 1.97 \\
+VLNA &  \cellcolor[HTML]{FFD7D7} -1.59 &  \cellcolor[HTML]{FFF7F7} -0.34 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFF7F7} -0.36 &  \cellcolor[HTML]{F7F7FF} 0.20 &  \cellcolor[HTML]{EFEFFF} 0.51 &  \cellcolor[HTML]{EFEFFF} 0.55 &  \cellcolor[HTML]{FFF7F7} -0.16 \\
+NUG &  \cellcolor[HTML]{FFE7E7} -1.05 &  \cellcolor[HTML]{D7D7FF} 1.48 &  \cellcolor[HTML]{FFFFFF} 0.08 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFEFEF} -0.79 &  \cellcolor[HTML]{FFF7F7} -0.44 &  \cellcolor[HTML]{FFFFFF} -0.15 \\
+ANR &  \cellcolor[HTML]{FFDFDF} -1.27 &  \cellcolor[HTML]{FFFFFF} 0.16 &  \cellcolor[HTML]{EFEFFF} 0.62 &  \cellcolor[HTML]{FFFFFF} -0.14 &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFEFEF} -0.76 &  \cellcolor[HTML]{FFF7F7} -0.39 &  \cellcolor[HTML]{FFF7F7} -0.31 \\
+MNR &  \cellcolor[HTML]{FFCFCF} -1.95 &  \cellcolor[HTML]{FFE7E7} -0.84 &  \cellcolor[HTML]{FFCFCF} -1.76 &  \cellcolor[HTML]{FFE7E7} -0.80 &  \cellcolor[HTML]{FFEFEF} -0.67 &  \cellcolor[HTML]{E7E7FF} 0.82 &  \cellcolor[HTML]{FFF7F7} -0.28 &  \cellcolor[HTML]{FFEFEF} -0.78 \\
+SQNR &  \cellcolor[HTML]{FFF7F7} -0.28 &  \cellcolor[HTML]{FFEFEF} -0.63 &  \cellcolor[HTML]{FFEFEF} -0.69 &  \cellcolor[HTML]{FFEFEF} -0.48 &  \cellcolor[HTML]{FFF7F7} -0.47 &  \cellcolor[HTML]{FFEFEF} -0.72 &  \cellcolor[HTML]{FFF7F7} -0.30 &  \cellcolor[HTML]{FFEFEF} -0.51 \\
+PDL &  \cellcolor[HTML]{FFDFDF} -1.35 &  \cellcolor[HTML]{F7F7FF} 0.16 &  \cellcolor[HTML]{EFEFFF} 0.59 &  \cellcolor[HTML]{FFFFFF} -0.12 &  \cellcolor[HTML]{FFF7F7} -0.32 &  \cellcolor[HTML]{FFEFEF} -0.72 &  \cellcolor[HTML]{FFF7F7} -0.37 &  \cellcolor[HTML]{FFF7F7} -0.30 \\
+\hline
+\hline
+Mean  &  \cellcolor[HTML]{FFE7E7} -1.01 &  \cellcolor[HTML]{FFE7E7} -0.92 &  \cellcolor[HTML]{FFEFEF} -0.79 &  \cellcolor[HTML]{FFEFEF} -0.75 &  \cellcolor[HTML]{FFF7F7} -0.45 &  \cellcolor[HTML]{FFEFEF} -0.60 &  \cellcolor[HTML]{FFF7F7} -0.41 &  \cellcolor[HTML]{FFEFEF} -0.70 \\
+\hline
+\end{longtable}
+\end{centering}
 \end{document}

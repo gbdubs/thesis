@@ -1,17 +1,17 @@
 \chapter{Cycles as a Graph Invariant}
 Cycles is a powerful graph invariant.
-In this chapter we will discuss properties of cycles that are reconstructable from cycles.
+In this chapter we will discuss properties of graphs that are reconstructable from Cycles.
 We will then show how Cycles is reconstructible from some other graph invariants, which leads us to the conclusion that Cycles is necessarily an incomplete invariant.
-We will then discuss manual calculations that find examples of Co-Cycles graphs, and the establishment of small datasets of co-cycles graphs as a measure by which to gauge the discriminatory power of graph invariants.
+We will then discuss manual calculations that find examples of Co-Cycles graphs, and the establishment of small datasets of Co-Cycles graphs as a measure by which to gauge the discriminatory power of graph invariants.
 Finally, we will examine the performance of the cycles invariant on different classes of graphs which typically show resistance to classification and differentiation via graph invariants.
 
 \section{Basic Cycles-Reconstructable Properties}
 
-From the cycles graph invariant, we can easily deduce the number of vertices (the size of the resulting matrix's first dimension), and the number of edges (the sum of the second column of this matrix, divided by two).
+From the Cycles graph invariant, we can easily deduce the number of vertices (the size of the resulting matrix's first dimension), and the number of edges (the sum of the second column of this matrix, divided by two).
 We can also deduce the degree sequence, as simply observing the second column of each vertex invariant vector, and sorting the result.
 
 \subsection{Triangles, Higher Order Polygons}
-Within the context of a graph, a polygon differs from a cycle in that a cycle is allowed to repeat both edges and vertices, while polygons do not allow repetitions of either.
+Within the context of a graph, a polygon is similar to a cycle in that both denote closed paths, however, a polygon differs from a cycle in that a cycle is allowed to repeat both edges and vertices, while polygons do not allow repetitions of either (except to close the path to its starting vertex).
 
 The number of triangles is also easily computed.  Since triangles necessarily contain three distinct vertices (in a graph with no self-loops), we know that any cycle of length three on a graph will be a triangle.
 Thus, the number of triangles which pass through each vertex is simply the third column of the cycles invariant matrix, and summing them and dividing by three yields the total number of triangles in the graph.
@@ -20,30 +20,38 @@ Things are not so simple for larger polygons.  If we think very critically, we c
 
 Note that this logic requires us to take in an additional piece of information to augment the data that we get from the cycles invariant (i.e. the sum of the degrees of the adjacent nodes).
 Similarly, figuring out higher order polygons can be done, but it requires a larger amount of external information.
-Generally, the larger the 'neighbors-paths' supplemental information we require, the further we stray toward giving away the information that fully determines the graph.
+Generally, the larger the `neighbors-paths' supplemental information we require, the further we stray toward giving away the information that fully determines the graph.
 
-However, this is a powerful observation, and fits into our idea of the cycles invariant as a `neighborhood awareness mechanism'. A formal discussion of such mechanism is discussed in CITE.
+However, this is a powerful observation, and fits into our idea of the cycles invariant as a `neighborhood awareness mechanism'. A formal discussion of such mechanism is discussed in chapter three.
 
 \subsection{Chromatic Polynomial}
 One of the most discriminatory polynomial time algorithms for ruling out graph isomorphism is the \emph{Chromatic Polynomial} of the graph's adjacency matrix $A$.
 It is a well proven result that shuffling the order of the vertices in the representation of a given graph as an adjacency matrix does not change the eigenvalues of the matrix (thus the eigenvalues, as a multiset, form a powerfully discriminatory graph invariant), and thus the chromatic polynomial (as it encodes all information from this multiset) is also a graph invariant.
-In practice, it is a highly discerning as a graph invariant, as a very small proportion of graph instances are ``cospectral" (having the same chromatic polynomial) and not isomorphic.
-However, there are not well established procedures to use the results of eigenvalue calculations to attempt to explicitly construct an isomorphism, rather, it is powerful in ruling out hypothetical isomorphisms. 
+In practice, it is a highly discerning as a graph invariant, as a very small proportion of graph instances are ``co-spectral" (having the same chromatic polynomial) and not isomorphic.
+However, there are not well established procedures to use the results of eigenvalue calculations to attempt to explicitly construct an isomorphism, rather, it is powerful in ruling out hypothetical isomorphisms.
 
-In seeking out a relationship between the chromatic polynomial and the $Cycles$ function, it helps to remember the helpful property of  eigenvalues:
-$$E(A) = \{\lambda_1,\lambda_2,\lambda_3, \dots, \lambda_V\} \rightarrow E(A^P) = \{\lambda_1^P,\lambda_2^P,\lambda_3^P, \dots, \lambda_V^P\} $$
+The large downside of the chromatic polynomial (as a graph invariant) is that it is not computable in polynomial time (across all sets of graphs).
+Rather, it is in the computational class $#P-Hard$ (Sharp-Polynomial Hard), by reducibility to #3SAT.
+There are algorithms which can deterministically solve it in $O(2^N N^r)$ For a constant $r$.
+This makes is calculation for graph isomorphism testing prohibitively expensive.
+What we will show in this section is objectively quite valuable: we will show that the Cycles invariant encodes the chromatic polynomial, and is actually \emph{more} discriminatory than it.
+Thus, by calculating the Cycles invariant, we can discriminate between graphs with greater accuracy, in less time, than by using the chromatic polynomial. 
+This result is significant, but requires a long proof.
+
+In seeking out a relationship between the chromatic polynomial and the $Cycles$ invariant, it helps to remember the helpful property of  eigenvalues:
+$$E(A) = \{\lambda_1,\lambda_2,\lambda_3, \dots, \lambda_N\} \rightarrow E(A^P) = \{\lambda_1^P,\lambda_2^P,\lambda_3^P, \dots, \lambda_N^P\} $$
 Additionally, since we know that our original matrix A is diagonalizable, positive, and symmetric, we know that all of the eigenvalues are real and non-negative. 
 Finally, we know that the sum of the diagonal of any matrix is the sum of its eigenvectors. 
 Thus, using the $Cycles$ function to determine the entries of the diagonal, we know that for any adjacency matrix A,
-$$\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_V = \sum_{i = 0}^{V}{Cycles(1, i)}$$
+$$\lambda_1 + \lambda_2 + \lambda_3 + \dots + \lambda_N = \sum_{i = 0}^{N}{Cycles(A, 1, i)}$$
 Or more generally (leveraging our knowledge about the eigenvalues of $A^P$:
-$$ \sum_{i = 0}^V{\lambda_i^P} =  \sum_{i = 0}^{V}{Cycles(P, i)}$$
-This means that we can create V nonparallel (as not divisible in the ring $R[x]$) equations, each containing $\lambda_1$ to $\lambda_V$ as variables.
+$$ \forall_{p \in [1, P]} \; \sum_{i = 0}^N{\lambda_i^p} =  \sum_{i = 0}^{N}{Cycles(A, p, i)}$$
+This means that we can create N nonparallel (as not divisible in the ring $R[x]$) equations, each containing $\lambda_1$ to $\lambda_N$ as variables.
 Additionally, since we have the guarantee that our eigenvalues are all non-negative, we know that we can assuredly solve any given equation in terms of one of the $\lambda$'s.
 If we then use these substitutions, and substitute out all but one of the variables, what we will get is a continuous function whose zeros are well defined and positive. 
 
 Given the aggregated substitution, each one of the zeros is an eigenvalue, assign a selected value to any unassigned eigenvalue, and reduce our equations using that assumed value (think of a let statment).
-This kind of procedure is necessary because our system of equations has variables whose relationships are inherently non-distinct.
+This kind of procedure is necessary because our system of equations has variables whose relationships are inherently symmetric.
 In other words, we cannot make any differentiation between $\lambda_1$ and $\lambda_2$ based on the relationships of the equations, but if we make a choice for either, it will lead to a valid conclusion, or a reduction which does not eliminate a valid conclusion.
 This is by virtue of the fact that our substitutions are without condition, and we don't need to worry about any domains of substitution.
 
@@ -51,18 +59,22 @@ From a physical perspective, these equations can be described as surfaces in V d
 Graphing the equation $x^3 + y^3 + z^3 = \kappa_3$ yields an interesting quasi planar sheet which becomes highly regular at large scales.  
 The equation $x^2 + y^2 + z^2 = \kappa_2$ describes a sphere with the radius $\sqrt{\kappa_2}$, and the equation $x + y + z = \kappa_1$ describes a plane. 
 Each of these functions is axis symmetric, so their intersections are also axis symmetric.  
-The intersection of all of the equations yields a set of points (or none), which represent the potential values for our lambda's, which are axis invariant. 
+The intersection of all of the equations yields a set of points (or none), which represent the potential values for our $\lambda$'s, which are axis invariant. 
 We can generalize this to any number of requisite dimensions using the principle of equation and variable symmetry that these equations necessarily produce.
 
-Thus, given the function $Paths(p, v)$, we could calculate the eigenvalues of the matrix A using $Paths(p, v)$ restricted to $1 <= p <= V$. 
-This is superb, as it shows that the $Paths$ function encodes at least as much information as the chromatic polynomial, and that any graphs which produce the same $Paths$ function up to (p = V) are cospectral. 
-A quick verification of the base non-isomorphic cospectral graphs (the butterfly and the box) show that they produce \emph{different} values of the paths function, showing that the $Paths$ function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time. 
-Also helpful: while cospectral tests might rule out isomorphisms instead of providing a mechanism for their potential generation, the Paths function suggests the isomorphism that it believes to exist with a natural sorting and comparison of the vectors within the $Paths$ object.
+Thus, given the function $Cycles(A, p, v)$, we could calculate the eigenvalues of the matrix A using $Cycles(A, p, v)$ restricted to $1 \leq p \leq P = N$. 
+This is superb, as it shows that the $Cycles$ function encodes at least as much information as the chromatic polynomial, and that any graphs which produce the same $Cycles$ function up to (p = V) are co-spectral. 
+A quick verification of the base non-isomorphic co-spectral graphs (the butterfly and the box) show that they produce \emph{different} values of the Cycles function, showing that the $Cycles$ function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time. 
+Also helpful: while co-spectral tests might rule out isomorphisms instead of providing a mechanism for their potential generation, the $Cycles$ function suggests the isomorphism that it believes to exist with a natural sorting and comparison of the vectors within the $Cycles$ object.
 
-\subsection{Reconstructing a Valid Graph from Paths}
-If we are given full access to the $Paths$ function, could we create a graph that would produce that function?
-Note that this question is fundamentally distinct from the one which asks if we could reconstruct the \emph{only} graph that could generate that Graph Function.
-That is a separate question, equivalent to the question of if GI = P, but the question posed is signifigantly more general, and does not decide or influence the question of computational complexity of GI.
+Again, because of the difference in the running time required to calculate Cycles ($O(N^4)$) versus the running time it takes to calculate the chromatic polynomial ($O(2^N N^r)$), this is an incredibly valuable result: rather than using the chromatic polynomial for discerning between non-isomorphic graphs, it is clear that the Cycles invariant is objectively better.
+
+\subsection{Reconstructing a Valid Graph from Cycles}
+If we are given full access to the $Cycles$ function, could we create a graph that is in line with the Cycles invariant?
+Note that this question is fundamentally distinct from the one which asks if we could reconstruct the \emph{only} graph that could generate those Cycles values.
+That is a separate question, one which the existence of co-cycles graphs makes irrelevant, but the question posed is significantly more general, and does not decide or influence the question of computational complexity of GI.
+The reader should note that this section is really a proof of concept and the work done for this was to see how we could go between modes of operation: between reasoning about graphs theoretically, and interacting with them on an algebraic level.
+A reader who is focused only on interesting results will not find them in this section.
 
 The answer to this question, fortunately, is yes.  
 Over the next few paragraphs, I am going to detail a method of constructing such a graph by first constructing constituent integer-valued equations which describe the interrelationships between edges, then transform the integer edge equations into equally information dense boolean sentences, which by their definition will always hold as true.  
@@ -73,18 +85,18 @@ Before we begin, lets examine three important points:
 \begin{itemize}
   \item{
   	Our reconstruction algorithm is going to run in exponential time, and \emph{that is okay}.  
-  	We have already demonstrated that our invariant, the $Paths$ function, is calculable in polynomial time.  
-  	The fact that we can reconstruct a valid graph from the paths function is about exploring or debunking the invertible nature of the $Paths$ object, 
+  	We have already demonstrated that our invariant, the $Cycles$ function, is calculable in polynomial time.  
+  	The fact that we can reconstruct a valid graph from the Cycles function is about exploring or debunking the invertible nature of the $Cycles$ object, 
   	and the time it takes to perform an inverse of our operation tells us nothing about the computational complexity of that operation.
   }
   \item{
   	The equations in this section for all but the most trivial of graphs take up an $enormous$ amount of space, and as such, it is not recommended that this reconstruction technique be used in practice.  
-  	Realistically, a brute force search would likely yield faster running-solutions (if one were trying to find a graph fitting the paths function), but the reader should try to convince themselves that this approach would terminate, 
-  	and would yield a valid solution, given a valid $Paths$ object.
+  	Realistically, a brute force search would likely yield faster running-solutions (if one were trying to find a graph fitting the Cycles function), but the reader should try to convince themselves that this approach would terminate, 
+  	and would yield a valid solution, given a valid $Cycles$ object.
   }
 \end{itemize}
 
-We know that the diagonals of $A^p$ yield the $Paths$ function.
+We know that the diagonals of $A^p$ yield the $Cycles$ function.
 We also know that A is comprised of $(v * (v - 1)) / 2$ boolean variables, and all entries of $A^p$ must be some combination of the variables in the original adjacency matrix. 
 We will refer to these variables as the $x_i$'s. Generally, we will arrange them in the row primary pattern, and will number them starting at 1.
 
@@ -93,8 +105,8 @@ This stems from the fact that each one of the $x_i$'s is either zero or one, the
 This allows us to reduce any polynomial degree in our resulting equations down to one, though multivariate linear terms may remain.
 
 I have been discussing these `equations' quite a bit; lets formally define them.  
-We assume that we are given the $Paths$ function for a graph, and we will call $Paths(p, v) = k_{p, v}$ to simplify our work. 
-In each equation, we will set the paths function for a specific $v$ and $p$ equal to the symbolic representation of the exponentiated adjacency matrix (which will solely be in terms expressed by the $x_i$'s).
+We assume that we are given the $Cycles$ function for a graph, and we will call $Cycles(p, v) = k_{p, v}$ to simplify our work. 
+In each equation, we will set the Cycles function for a specific $v$ and $p$ equal to the symbolic representation of the exponentiated adjacency matrix (which will solely be in terms expressed by the $x_i$'s).
 We will refer to this specific equation as Equation p.v for $v$ in the range $[1, V]$ and $p$ in the range $[1, \infty)$.
 For each $v$ and $p$ in their respective ranges, our equation p.v is:
 
@@ -118,7 +130,7 @@ $$2x_2 + 2x_3 + 2x_4 + x_5 + x_6 + x_7 + 2x_2x_6x_8 + 2x_3x_5x_8 + 2x_2x_7x_9 + 
 This is of particular interest, because we know that each one of the terms in this statement has to be positive, as $\forall i \in v,  x_i \in \{0, 1\}$.  
 Thus, there is no possible valid input of $x_i$'s which results in this denominator being zero, and our substitution is thus universally valid.  
 That is really important because it means that we might be able to do the same thing for other variables, and potentially come up with a system of equations that fully describes the interactions of the vertices within our graph. 
-Thus such a system could uniquely determine each of the $x_i$'s, the graph could be determined by $Paths$, but what what we find instead is that $a$ reconstruction exists, but it is also possible that the reconstruction is not unique.
+Thus such a system could uniquely determine each of the $x_i$'s, the graph could be determined by $Cycles$, but what what we find instead is that $a$ reconstruction exists, but it is also possible that the reconstruction is not unique.
 
 Lets explore this notion further.  
 Lets say that we have an equation that describes the interactions of the binary relations in such a way that we can express the equality for of the variable 
@@ -129,7 +141,7 @@ Thus, we know the denominator of the equation for $x_i$ must be greater than or 
 This is a helpful result, as it means that our substitution is valid, and we know that the equality holds, because our division of both sides by $D + z$ 
 does not risk dividing by zero.  We will call this a \emph{valid substitution} for $x_i$ over the equation for which it is generated (e.g. Equation 2.5). 
 
-It turns out that there is a clever way to use a \emph{valid substitution} to construct a graph which would generate the paths functions that generated the equations which generated the valid substitutions.
+It turns out that there is a clever way to use a \emph{valid substitution} to construct a graph which would generate the Cycles functions that generated the equations which generated the valid substitutions.
 Since we know that the denominator of a valid substitution is non-zero, we know the substitution is valid.  
 We also happen to know that the variable we are solving for is either equal to zero or one.  
 Thus, if the numerator ($N$) of our substitution is equal to zero, then we know that $x_i$ is equal to zero.  
@@ -193,7 +205,7 @@ An invariant is `worse' the more time it takes to compute.
 \section{Discrimination on Tough Graph Classes}
 
 \subsection{Miyizaki Graphs}
-The Miyizaki Graphs are as interesting as they are inscrutible.
+The Miyizaki Graphs are as interesting as they are inscrutable.
 They were described in a paper by CITE in CITE, and can be summarized as being comprised of similar constructions that are occasionally twisted.
 It does not come as a surprise to me, and it should not come as a surprise to you, that the cycles invariant is unable to distinguish in between any Mikizaki Isomorphism pairs.
 
