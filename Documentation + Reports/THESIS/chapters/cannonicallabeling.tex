@@ -43,6 +43,16 @@ The Matlab code provides detailed explanations of each piece of the code, why I 
 
 The result is quite pleasing, and (alongside a memoization mechanism that saves all results that take longer than 1ms to calculate), canonization of graphs does not bottleneck my computations (even when I am doing millions a minute), despite it being the only computation that I use that operates in exponential time.
 
+\section{Computational Complexity}
+
+There are several factors which contribute to the average case running time of this algorithm, but its worst case is simple to compute: a perfectly automorphic graph, where $|Aut(G)| = N!$.
+In such a case, we will perform the original Cycles computation ($O(N^2)$), the secondary flagged cycles calculations ($O(N^3)$) and then a factorial number of checks on the number of remaining isomorphisms ($O(N!)$).
+Thus the worst case running time is clearly in factorial time ($O(N!)$).
+
+However, in the average case this is a much less grim scenario.
+If we assume (as we have reason to believe) that our flagging algorithm correctly determines SVSes, then our algorithm becomes a function of the number of automorphisms of our graph, in addition to the running time of the flagged paths algorithm $(\Theta((|Aut(G)| +1) * N^2))$.
+As we have seen in chapter six, the average number of automorphisms in G approaches 1 as N increases. Thus, for sufficiently large N, the average running time is on the order of $\Theta(N^2)$.
+
 \section{Time Growth Comparisons to Faster Algorithms}
 Any discussion of a homegrown algorithm would be either incomplete or intentionally salacious without a discussion of how it compares to out of the box algorithms.
 For these benchmarks, I established two datasets, one of 10000 randomly generated graphs of size ten to fifty using an Erdos-Renyi/Gilbert model, and one using a graph model which is more likely to produce highly automorphic graphs (discussed in detail in chapter 6).

@@ -1,0 +1,9 @@
+
+for ((v = 2; v < 100; v=2*v))
+do
+	for ((p = 1; p < 10; p=p+1))
+	do
+		#echo $p $v
+		./genrang -P$p/10 $v 10000 data/$v-$p-10K.txt -g
+	done
+done

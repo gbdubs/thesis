@@ -1,0 +1,22 @@
+\chapter{Further Questions}
+
+
+\section{Reconstruction Hypothesis}
+
+The Reconstruction Hypothesis is a claim in theoretical computer science that is very likely true, but has not been proven to be.
+The hypothesis revolves around the notion of a `deck' of a graph $G$ with $N$ vertices.
+The Deck of G ($Deck(G)$) is a (possibly multi-)set of $N$ graphs, each of size $N-1$, all of which are created by deleting one vertex from the graph G.
+
+Two Decks $D_1$ and $D_2$ are said to be isomorphic if there exists a one to one mapping of their elements such that every graph $g_i \in D_1$ is mapped to an isomorphic graph $g_j \in D_2$.
+The reconstruction hypothesis is the claim that two decks are isomorphic if and only if their graphs are isomorphic, or in formal terms:
+
+$$ Deck(G) \cong Deck(H) \iff G \cong H$$
+
+Though this hypothesis seems pretty iron clad, there is one known violation, two non-isomorphic graphs over two vertices have congruent decks. Can you find them? (hint: there are only two graphs over two vertices).
+Thus the actual hypothesis only makes its claim for $N \geq 3$.
+As we get to larger and larger values of $N$, it would seem that the hypothesis becomes harder to refute via a counter example, both because the amount of information that goes into the physical representation of the deck increases cubically, and because the unknown pieces of the graph shrink relative to the consistent amount provided by each card in the deck.
+
+However, the nature of the hypothesis is so hard to verify, (and the number of graphs grows so large so quickly) that its verification has only been done up to graphs of 11 vertices, by McKay in 1999.
+
+One would think, that with today's technology and resources, we ought be able to improve upon that bound, and increase N to 12 (or find a counterexample therein).
+That is hopefully the site of some future work.
