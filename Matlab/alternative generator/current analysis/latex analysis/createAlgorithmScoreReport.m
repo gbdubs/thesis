@@ -1,6 +1,6 @@
 function createAlgorithmScoreReport( algorithm )
     
-    filename = ['alternative generator/score reports/', algorithm, ' score report.txt'];
+    filename = ['alternative generator/analysis/score reports/', algorithm, ' score report.txt'];
     diary on;
 
     diary (filename);
