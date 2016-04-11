@@ -1,0 +1,8 @@
+for v in {1..10}
+do
+  maxe=$[$v * ($v - 1) / 2]
+  for e in $(seq 0 $maxe)
+  do
+    ./bin/cardinality $v $e >> "results/dec12.txt"
+  done
+done
