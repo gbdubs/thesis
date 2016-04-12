@@ -205,11 +205,22 @@ This computational power means that for the overwhelming majority of graphs (par
 However, on the other hand, cycles is heavy handed. There is a quartic amount of work that has to be done to calculate cycles for the number of vertices in a graph.
 This means that even if we had a graph where every node was distinguished only by its degree, we would still require an extensive process of matrix multiplication to even get to results that could have been achieved in less time by any other means.
 
-One way we can discuss this tradeoff is computationally.
-An invariant that is `good' distinguishes between non-similar vertices in a small amount of time.
-An invariant is `worse' the more time it takes to compute.
+\section{Setting up a Computational Description}
 
-[COMPUTATIONAL RESULTS HERE] 
+One way we can discuss this tradeoff is computationally.
+An invariant that is `good' distinguishes between non-isomorphic graphs in a small amount of time, and fails to do so with a relatively low frequency
+Thus, we can evaluate an invariant in the following way.
+
+An invariant, when given two graphs $G$ and $H$, calculates its value of $G$ and $H$, then returns `accept' if the invariant values are the same, and `reject' if the invariant values are not the same.
+We are going to assume that the invariant is an imperfect distinguisher: meaning that the probability of failing to distinguish between two graphs is some constant $\alpha$, corresponding to a false positive rate.
+Note that the nature of an invariant means that $\beta$, a false negative rate, is inherently zero.
+
+The way this tradeoff is going to be executed on is simple: we will generate a large set of paired graphs, some of which are isomorphic pairs, and some of which are not.
+We will calculate how well the invariant does in terms of its alpha rate, and also calculate the amount of time that it takes to complete the task of deciding `accept/reject' on the full set.
+
+This will enable us to show this tradeoff in a direct, graphical, way.
+
+[IF TIME DO THIS]
 
 %\section{Discrimination on Tough Graph Classes}
 %\subsection{Background}
@@ -229,26 +240,47 @@ An invariant is `worse' the more time it takes to compute.
 
 \subsection{Miyizaki Graphs}
 The Miyizaki Graphs are as interesting as they are inscrutable.
-They were described in a paper by CITE in CITE, and can be summarized as being comprised of similar constructions that are occasionally twisted.
-It does not come as a surprise to me, and it should not come as a surprise to you, that the cycles invariant is unable to distinguish in between any Mikizaki Isomorphism pairs.
+They are best described by Gamkrelidze, Hotz and Varamashvili in their paper \emph{New Invariants for the Graph Isomorphism Problem}, and can be summarized as being comprised of similar constructions that are occasionally twisted.
+The diagrams below are borrowed from their paper.
+
+\begin{figure}[h]
+\label{fig:miyizaki2}
+\caption{\emph{Internal Structure of Miyizaki Graphs}}
+\centering
+\includegraphics[width=\textwidth]{miyizaki2}
+\end{figure}
+
+\begin{figure}[h]
+\label{fig:miyizaki1}
+\caption{\emph{A Twisted Miyizaki Graph ($M_4 \text{vs.} MT_{4,2}$)}}
+\centering
+\includegraphics[width=\textwidth]{miyizaki1}
+\end{figure}
+
+It does not come as a surprise to me, and it should not come as a surprise to you, that the cycles invariant is unable to distinguish in between any Miyizaki Isomorphism pairs.
 
 Miyizaki graphs are co-cycles graphs in partnership with their twisted halves.
 In testing this hypothesis, I tested it on the Miyizaki graphs:
 \begin{itemize}
-\item{TODO}
+\item{$M_1$ versus $MT_{1,1}$}
+\item{$M_2$ versus $MT_{2,1}$}
+\item{$M_2$ versus $MT_{2,2}$}
+\item{$M_3$ versus $MT_{3,1}$}
+\item{$M_3$ versus $MT_{3,2}$}
+\item{$M_3$ versus $MT_{3,3}$}
 \end{itemize}
-and each were shown to be co-cycles.
+and each were shown to be co-cycles with their partner.
 
-However, differentiation with flagging (as described in the chapter on vertex invariants) was possible, at enormous computational (though still polynomial!) expense.
+However, differentiation with flagging (as described in the chapter on vertex invariants) was possible and did successfully discriminate between the structures internally (see Cycles as a Vertex Invariant), at enormous computational (though still polynomial) expense.
 
 \section{Imperfection, Co-Cycles Graphs}
 
-Though it has been alluded to previously, a key discovery of my thesis is that there exist co-cycles graphs, non-isomorphic graphs which have the same value for the cycles invariant for all observed values of P.
-These graphs are incredibly rare.
+Though it has been alluded to previously, a key discovery of my thesis is that there exist co-cycles graphs: non-isomorphic graphs which have the same value for the Cycles invariant for all observed values of P.
+These graphs are very rare.
 None exist with fewer than ten vertices, and only about 100 of the 12 million graphs over 10 vertices satisfy this property.
 
 In this section, we will discuss the initial discovery of co-cycles graphs, detailing the relatively advanced set of methodologies used.
-Then we will discuss how co-cycles graphs can be constructed intentionally, on larger sets of vertices.
+Then we will discuss how co-cycles graphs can be constructed intentionally on larger sets of vertices.
 Finally, we will discuss co-cycles graphs as a useful (and relatively small) set of graphs which are useful for invariant analysis and testing.
 
 \subsection{Discovering Co-Cycles Graphs, Cleverly}
@@ -259,29 +291,36 @@ The way I went about looking for them was theoretically simple, but incredibly c
 \item{First, I enumerated all graphs of size N with M vertices by using the NAUTY geng function}
 \item{I set up a mechanism which delivered the cycles values in sorted order, thus, the cycles invariant (which is an $N \times N$ matrix) could be parsed apart in order of its columns (all of the values of cycles of length 2, then 3, then 4, etc)}
 \item{I used a clever set of minimally memory intensive structures to store only the information needed for a given unit of this computation.  This, in combination with the second step, yielded a delayed stream processing, where we have a structure (with minimal memory), which can be called upon for another, more differentiating value.}
-\item{These structures (one per graph), were placed in an enormous trie, each level of which was the level of the delayed evaluation.  Only values which differentiated between different structures were evaluated (lazy eval on trie-collision, splitting into sub-tries).}
+\item{These structures (one per graph), were placed in an enormous trie, each level of which was the level of the delayed evaluation.  Only values which differentiated between different structures were evaluated (lazy evaluation on trie-collision, splitting into sub-tries).}
 \item{Co-Cycles graphs were then simply detected by depth. After all graphs of a given size (with a given number of edges) were placed into the trie, only those at depth $N^2$ could possibly be co-cycles.}
 \end{itemize}
 
 The lazy evaluation (in a couple of benchmark tests on eight vertices) worked more efficiently on the order of $10^{-3}$ times the original running time.
-Additionally, a trick I employed with bulk memory allocation reduced running time on the order of $10^-1$ (allocated 100 trie-nodes at once, rather than 1 at a time).
-An additional optimization I made was the singular evaluation of a combination of N and M at a given time.
-We know that the number of vertices and edges in a graph is reconstructible from the cycles invariant, so we only need to check for set values of M and N if we want to discover co-cycles graphs.
+Additionally, a trick I employed with bulk memory allocation reduced running time on the order of $10^{-1}$ (allocated 100 trie-nodes at once, rather than 1 at a time).
+An additional optimization I made was the singular evaluation of a combination of $N$ and $M$ at a given time.
+We know that the number of vertices and edges in a graph is reconstructible from the cycles invariant, so we only need to check for set values of $N$ and $M$ if we want to discover co-cycles graphs.
 This enabled me to reduce the overall amount of memory allocated to approximately a tenth of what it would require to process all graphs of a given size simultaneously.
 
 Additionally, a smart way that I set up my matrices allowed for insanely efficient memory allocation: since I had to maintain every single graph in my trie, for even a small number of vertices that could have been an incredible amount of space.
-The graphs themselves were stored as pointers to arrays of integers (int**), which leads to a costly price in memory for even a small N (consider N=10):
-$$Memory Used = SizeOf(Int) * N * N * NGraphs + SizeOf(Int*) * N * NGraphs = 4 * 10 * (10+2) * 12,005,168 = 5,762,480,640 \approx 6 GB $$
-However, I realized quite quickly that since the matries themselves were not chaning over the course of the computation (the were being used in mutliplcations and what not, and being used to change other values and matrices), we could share their representations.
+The graphs themselves were stored as pointers to arrays of integers (int**), which leads to a costly price in memory for even a small $N$ (consider $N=10$), where so refers to the C function $sizeof$:
+$$Memory = so(int) * N^2 * NGraphs + so(int*) * N * NGraphs $$
+$$Memory = 4 * 10 * (10+2) * 12,005,168 = 5,762,480,640 \approx 6 GB $$
+However, I realized quite quickly that since the matrices themselves were not changing over the course of the computation (the were being used in multiplications and what not, and being used to change other values and matrices), we could share their vector representations across multiple matrices.
 I decided not to have my algorithm waste time trying to canonize the graphs or find similarities, or shrinking down the individual memory storage of the graphs to the bit level (which would have been highly inefficient for the frequent scale-up/down necessary for computations as integers).
-Instead, I simply pre-allocated all of the $2^N$ possible vectors that could be sub-vectors of a matrix.
-Thus, the only thing that changed was that each of the individual entries in this great large computation is pre-allocated and shared amoungst all 12 million graph representations as in $N = 10$.  The memory use for this case is shown to be dramatically reduced:
-$$Memory Used = SizeOf(Int) * N * NVectors + Sizeof(Int*) * N * NGraphs = 4 * 10 * 2^{10} + 8 * 10 * 12,005,168 = 960,454,400 \approx 1 GB $$
-
+Instead, I simply pre-allocated all of the $2^N$ possible vectors that could be the rows of a binary matrix.
+Thus, the only thing that changed was that each of the individual entries in this great large computation is pre-allocated and shared amongst all 12 million graph representations as in $N = 10$.  The memory use for this case is shown to be dramatically reduced:
+$$Memory = so(int) * N * NVectors + Sizeof(Int*) * N * NGraphs$$
+$$Memory = 4 * 10 * 2^{10} + 8 * 10 * 12,005,168 = 960,454,400 \approx 1 GB $$
+This six fold increase in memory efficency allowed me to calculate this value on my laptop, rather than relying on the public workstation, which had 24GB of RAM.
 
 
 \subsection{Constructing Co-Cycles Graphs}
+
+[DO IF TIME]
+
 \subsection{As a Proposed Dataset for Invariant Analysis}
+
+Co-Cycles graphs are certainly interesting, but they offer us an important 
 
 \section{Trie Depth and the Power of Cycles Across Classes of Graphs}
 

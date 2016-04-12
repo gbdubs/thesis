@@ -62,3 +62,38 @@ I hope to be able to pursue this verification once my thesis is submitted and I 
 One of the first questions I asked when I came across the reconstruction hypothesis was: can Cycles be a part of a solution to this problem? Can we create an algorithm which leverages properties of cycles in order to attempt to reconstruct a graph, or at least place limitations on the possibilities for reconstruction? 
 I puzzled away at this for a while, and came up with an interesting way of incorporating cycles into a reconstruction procedure.
 I will apologize in advance: this section is particularly notation heavy, and I don't think there is anything that can be done to avoid that. 
+
+Lets start with a thought experiment.
+In a graph $G$, with vertices $x$ and $y$, the number of cycles which pass through a given vertex (lets say vertex $x$) is equal to the number of cycles which pass through the vertex $x$ and the vertex $y$, plus the number of paths that pass through the vertex $x$ but not the vertex $y$. 
+This is true for all lengths of cycles we are considering.
+Thus, we can make a claim of this nature using vectors of length P as our operating unit.
+We will refer to these vectors by the notation $[x]_G$, denoting the vector of the number of cycles that pass through vertex $x$ within graph $G$, and we will use $[x \xoverline{y}]_G$ to refer to the number of cycles which pass through vertex $x$ but not through vertex $y$ in graph $G$.
+
+In this notation, the above claim translates to:
+$$ [x]_G = [x y]_G + [x \xoverline{y}]_G $$
+though this is not revolutionary, when we start to mess around with our graph and its subgraphs, this simple claim can be manipulated to produce much more interesting ones. 
+For example, in the vertex deleted subgraph $G - y$:
+$$[x]_{G - y} = [x \xoverline{y}]_G = [x]_{G} - [x y]_G$$
+We can state the same thing about vertices $y$ and $x$:
+$$[y]_{G - x} = [y]_{G} - [x y]_G$$
+If we subtract these two equations together, we get:
+$$[y]_{G - x} - [x]_{G - y} = [y]_{G} - [x]_G$$
+
+This is something we will call the `tuple' identity.
+If we have some proposed mapping between the deck cards ($G - y \text{and} G - x$ in this case) and their proposed associated vertices in their deck cards, we can verify this via the difference between their cycles vector values over the full graph G.
+A careful reader will now interject: but we don't know the full graph G! If we did, we wouldn't be mucking around with all of this!
+
+We can get around this fact by employing three such `tuple' identities, to construct a much stronger (and not too information needy) test for possible deck-vertex mappings:
+$$[y]_{G - x} - [x]_{G - y} = [y]_{G} - [x]_G$$
+$$[z]_{G - x} - [x]_{G - z} = [z]_{G} - [x]_G$$
+$$[z]_{G - y} - [y]_{G - z} = [z]_{G} - [y]_G$$
+Adding the first and third, while subtracting the second yields us:
+$$[z]_{G - y} - [y]_{G - z} + [y]_{G - x} - [x]_{G - y} - [z]_{G - x} - [x]_{G - z} = 0$$
+$$([z] - [x])_{G - y} + ([x] - [y])_{G - z} + ([y] - [z])_{G - x} = 0$$
+
+This is the proposed `triangle equality', which needs to hold for every triplet of vertices within a proposed mapping of vertex to card.
+
+If I had more time (if only, if only), I think I could transform this into a set of boolean predicates which could begin to describe a highly discriminatory set of constraints on the possible reconstructions.
+The key thing here is that the overall number of triplets for which this can hold is very small, but also sortable. 
+In other words, if you have an idea for a mapping between to vertices and cards, the third could be found quickly by using the remaining constraint of the vector equality dictated by the triangle inequality.
+Alas, this is as far as I got with this promising use of the Cycles invariant.

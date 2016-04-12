@@ -1,3 +1,5 @@
+% Appendix B Generator: A List of all Co-Cycles Graphs.
+
 nautyCannon = [
 'IGG}EeZ^_';
 'I?mrbbNro';
