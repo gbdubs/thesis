@@ -1,10 +1,10 @@
-\chapter*{Appendix A: Explanation of Code Structure}
+\section{Appendix A: Explanation of Code Structure}
 
 All of the code used in this project is available and version controlled on my GitHub repository, TODOHREF here.
 
 Here is the basic structure of the project:
 
-\section*{Thesis/Cardinality Analysis}
+\subsection{Thesis/Cardinality Analysis}
 
 Used to generate and analyze the co-cycles graphs, where they exist.
 The C code is largely what I did my computation in, while the Java code was usually there just for corroborating unclear results, and unit testing that my work (particularly around paths calculations and graph encodings) was correct.
@@ -16,13 +16,13 @@ It uses delayed evaluation, tries, and minimal memory (less than a sixth of its 
 When I examined the power curves as described in chapter 3, I modified some of this code to relay depth information appropriately, which did not significantly modify its specs or the way that it runs.
 To see the cardinality calculations as they were when originally completed, simply visit that SHA in GitHub.
 
-\section*{Thesis/data}
+\subsection{Thesis/data}
 
 Shared graph data amongst many different elements of the project.
 Two main components: geng (the NAUTY graph generator), and two bash scripts which generate small and regular graphs.
 These graphs are shared among all different kinds of applications, and are created as read-only files.
 
-\section*{Thesis/Documentation+Reports}
+\subsection{Thesis/Documentation+Reports}
 
 Documentation for all of my work has been accompanied alongside the project itself.
 This includes multiple write ups that I did for my advisor throughout the semester (labeled by date) alongside an original thesis proposal, and the final result.
@@ -30,49 +30,109 @@ All of these files are written in latex, so the source code is provided alongsid
 Some ideas and planning documents are included as well, mainly simply to maintain my thoughts and plans in centralized places.
 These documents are not very reflective of what ended up happening, but mark my vector trajectories at different points in time.
 
-\section*{Thesis/Excel}
+\subsection{Thesis/Excel}
 
-Power curve data from chapter 3.
+Power curve data from chapter two, describing the interrelationship of trie-depth in co-paths calculations and the connectivity of the graph.
 
-\section*{Thesis/Mupad}
+\subsection{Thesis/Mupad}
 
-\section*{Thesis/Matlab}
+Algebraic manipulations, encoded and formalized using Matlab's MuPad symbolic math toolkit.
+Makes explicit the ideas presented in chapter two about the reconstruction of a valid graph (given the valid cycles invariant), and the reconstruction/determination of the chromatic polynomial given the cycles invariant.
+Please note that this code was done last summer, and is thus... messy.
+Some of the terminology is outdated, it is poorly commented, and was really only used to see if I could take my proof ideas about procedures of conversion and formalize them into code that performs that conversion.
+The software works, but is slow (symbolic manipulation of abstract types, amirite?) so don't expect to use it to perform any real computations, only proofs of concept.
+
+\subsection{Thesis/Matlab}
+
+This is where the majority of my second semester work was done.
+Though Matlab is incredibly slow (compared to the other languages I worked in over the course of the year), it provides incredibly simple and quick support for things like visualization of graphs, bulk processing and multi-threading optimization, and code reuse.
+
+I ended up writing a LOT of Matlab code, and they are separated into nested directories which dig deep.
+The first level of these directories is included here.
 
 \subsection*{Thesis/Matlab/alternative generator}
 
+All of the code from chapter 5, discussing the random graph generation procedures and their improvements.
+There are many archeological layers to this code.
+The deprecated folder abounds with earlier versions that did not store data in an efficient enough manner.
+The results of the calculations are stored in small data, which is NOT included in the git repository, but instead is zipped up and processed that way.
+
 \subsection*{Thesis/Matlab/augmentation}
+
+Testing augmentation hypotheses about what happens to the Cycles invariant when we append additional vertices to it.
+This led to the discovery and discussion of flagging as a methodology of distinguishing between vertices.
 
 \subsection*{Thesis/Matlab/automorphism vertex sets}
 
+This is the starting work that informed chapter three, on the way in which automorphism vertex sets (later called similar vertex sets) is a mechanism to describe vertex invariants, particularly Cycles within the context of increasing $p$.
+
 \subsection*{Thesis/Matlab/cannonical}
+
+The canonical labeler as described in chapter four.  
+The labeler is separated into generations, as the first generation I created did not employ the sorting methodology that is discussed at length in chapter four, and each iteration of the labeler has seen some incremental improvements.
+Note that the labelers are NOT stable across versions, so a V1 canonical labeling is not guaranteed to equal a V4 canonical labeling. 
+Starting with V3, the labeler is assisted by a memoization function which is stored as a part of the repository in the data section. 
+The memoization is turned off when we are timing (for obvious reasons).
 
 \subsection*{Thesis/Matlab/comparison and processing}
 
+Deprecated.
+This is a folder that I used to use to create one-off processing pieces.
+I decided to make that singular use explicit through the use of the oneoffs folder.
+
 \subsection*{Thesis/Matlab/constituentpaths}
+
+This section tries to grapple with the idea of the number of cycles that pass through given vertices.
+Like the piece of chapter six that describes an idea of how to incorporate the cycles invariant into solving the reconstruction hypothesis, this folder deals with appending and deleting vertices from a graph and seeing what happens/what we can predict.
 
 \subsection*{Thesis/Matlab/copaths search}
 
+This section was set up to test how likely co-cycles graph generation is within different random graph generators.
+I was not able to calculate it successfully because co-cycles graphs are so rare that generating enough graphs to have np > 30 is in the billions of graphs (for a non-ideal random graph generator.
+This piece was abandoned and replaced by absolute probability calculations via known probabilities.
+
 \subsection*{Thesis/Matlab/data}
+
+Data used by multiple subfolders.
+Memoization and small graph sets abound here.
 
 \subsection*{Thesis/Matlab/nuralnetexplorer}
 
+A failed project to try to teach a neural net to modify a graph to be more automorphic.  The question of representation deeply complicated this approach, and it wasn't clear how to resolve it, so I abandoned it.
+
 \subsection*{Thesis/Matlab/ngraphs}
+
+Calculations about the number of graphs of a given size/connectivity.
+Produces the estimations for the distributional sigmas that are shown in chapter 1.
 
 \subsection*{Thesis/Matlab/oneoffs}
 
+All of the code that actually generated results, called functions, etc.
+Oneoffs are my idea of how to separate out functionality from procedure, while documenting both.
+They are listed in chronological order, and each shows how calls are used and processed.
+
 \subsection*{Thesis/Matlab/paths}
+
+Calculation of the Cycles invariant, used across the project.
+Note that the files in here have been modified so that all of them use the safe exponentiating procedure described in chapter 1.
+Additionally, the sortrows command is frequently useful for those interested in it in this context.
 
 \subsection*{Thesis/Matlab/random graphs}
 Deprecated, before I started work on rigorous examination of random graph generators, this was the way I was looking into Random Graph Properties.
 
 \subsection*{Thesis/Matlab/test graphs}
 
+Generation procedures for Miyizaki Graphs, 1-sparse and 2-dense graph generators.
+
 \subsection*{Thesis/Matlab/utils}
+
+Graph utilities and timing utilities shared across all of the pieces of the project
 
 \subsection*{Thesis/Matlab/visualization}
 
+Visualizations of graphs, their paths, and everything in between. 
+Lots of results are found in this folder, small, large, intermediate and complete.
 
-\section*{Thesis/Number of Graphs}
+\subsection{Thesis/Number of Graphs}
 
-
-\section*{Thesis/Number of Graphs}
+A piece corresponding to Thesis/Matlab/ngraphs
