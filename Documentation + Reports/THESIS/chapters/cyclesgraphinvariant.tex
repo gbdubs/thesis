@@ -318,10 +318,6 @@ This six fold increase in memory efficency allowed me to calculate this value on
 
 [DO IF TIME]
 
-\subsection{As a Proposed Dataset for Invariant Analysis}
-
-Co-Cycles graphs are certainly interesting, but they offer us an important 
-
 \section{Trie Depth and the Power of Cycles Across Classes of Graphs}
 
 In chapter three, we will discuss a notion of $P^*(G)$, a value for which (within a graph G), cycles beyond length $P^*(G)$ do not yield additional discriminatory information.
@@ -369,15 +365,15 @@ This is relevant because these levels are the length of the cycles that correspo
 
 \subsection{An Unexpected Dip}
 
-What we see is counter to our expectations.
-$P^*(S_{N, M})$ certainly is smaller at the fringes, but it actually dips in the middle, where the majority of the graphs are located.
+What we observe is counter to our expectations.
+$P^*(S_{N, M})$ certainly is smaller at the fringes, but it actually dips in the middle, where the overwhelming majority of the graphs are located.
 Remember from chapter one that the number of graphs in each of these sets is maximized in the middle, while the ability to differentiate between them is actually maximized with connectivity around .25 and .75.
 
-In figure \ref{powercurve10}, we see the same trend (slightly lower values for $N > 12$, than for $N \in (10, 12)$), despite the existence of co-cycles graphs, which push the middle up to 100 (maximal trie depth for N=10).
+In figure $N=10$ , we see the same trend (slightly lower values for $M > 12$, than for $M \in (10, 12)$), despite the existence of co-cycles graphs, which push the middle up to 100 (maximal trie depth for N=10).
 
-In figure \ref{powercurve9}, we see this trend exaggerated to the point that it distorts not only the granular values (the black dots), but the overall cycles length values (boxes).
+In figure $N=9$ , we see this trend exaggerated to the point that it distorts not only the granular values (the black dots), but the overall cycles length values (boxes).
 
-It should be noted that the asymmetry in diagram \cite{powercurve9} was highly suspect to me.
+It should be noted that the asymmetry in diagram for $N=9$ was highly suspect to me.
 I looked into it, and was able reproduce it using Matlab (in addition to the calculations in C).  
 It turns out that the asymmetry is due to the lack of invertible equivalence in the Cycles invariant, and for some graphs in $S_{N=9, M=25}$ can be differentiated by their cycles values, while their inverses cannot.
 
