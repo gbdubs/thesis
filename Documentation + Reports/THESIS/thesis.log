@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2016 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  11 APR 2016 14:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,10 +6,10 @@ entering extended mode
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
+Babel <3.9l> and hyphenation patterns for 44 languages loaded.
+(/opt/local/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
+(/opt/local/share/texmf-texlive/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,14 +25,14 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/opt/local/share/texmf-texlive/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+(/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count88
 \calc@Bcount=\count89
@@ -45,27 +45,27 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count90
 \calc@Cskip=\skip45
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mhsetup.sty
+(/opt/local/share/texmf-texlive/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count91
@@ -120,7 +120,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+(/opt/local/share/texmf-texlive/tex/latex/listings/listings.sty
 \lst@mode=\count104
 \lst@gtempboxa=\box28
 \lst@token=\toks20
@@ -134,38 +134,38 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \lst@lineno=\count109
 \lst@maxwidth=\dimen124
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+(/opt/local/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 \c@lstnumber=\count110
 \lst@skipnumbers=\count111
 \lst@framebox=\box29
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+(/opt/local/share/texmf-texlive/tex/latex/listings/listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/opt/local/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count112
@@ -173,28 +173,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/genmisc/nth.sty
+(/opt/local/share/texmf-texlive/tex/generic/genmisc/nth.sty
 Package: nth 2002/02/27
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/cite/cite.sty
+(/opt/local/share/texmf-texlive/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+(/opt/local/share/texmf-texlive/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen127
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
+(/opt/local/share/texmf-texlive/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip50
 \LTright=\skip51
@@ -212,14 +212,14 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count117
 \LT@p@ftn=\toks21
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/opt/local/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -260,25 +260,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/opt/local/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen129
 \Hy@linkcounter=\count118
 \Hy@pagecounter=\count119
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/opt/local/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count120
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -290,7 +290,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count121
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+(/opt/local/share/texmf-texlive/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -315,12 +315,12 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/opt/local/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count126
 \c@bookmark@seq@number=\count127
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -350,8 +350,7 @@ LaTeX Font Info:    ... okay on input line 39.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
 \c@lstlisting=\count128
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count129
 \scratchdimen=\dimen133
@@ -364,10 +363,10 @@ LaTeX Font Info:    ... okay on input line 39.
 \MPnumerator=\count133
 \makeMPintoPDFobject=\count134
 \everyMPtoPDFconversion=\toks23
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
@@ -375,26 +374,26 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box37
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+(/opt/local/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 142.
 )
 Package hyperref Info: Link coloring ON on input line 39.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count135
@@ -416,16 +415,14 @@ Package pdftex.def Info: brandeis-seal.png used on input line 45.
 
 [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./brand
-eis-seal.png>] (./thesis.toc
+{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map} <./brandeis-seal.p
+ng>] (./thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
@@ -461,7 +458,7 @@ Package pdftex.def Info: figures/pdfs3thru11.png used on input line 88.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 93.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+(/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -520,12 +517,12 @@ Chapter 2.
 [21
 
 ] [22] [23] [24]
-Overfull \hbox (68.24347pt too wide) detected at line 111
+Overfull \hbox (68.24347pt too wide) detected at line 123
 [][][] []
  []
 
-
-Overfull \hbox (69.64935pt too wide) detected at line 117
+[25]
+Overfull \hbox (69.64935pt too wide) detected at line 129
 \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it
 /10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \
 OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/
@@ -536,13 +533,13 @@ x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
 \OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 1
  []
 
-[25] [26]
-Overfull \hbox (14.4939pt too wide) in paragraph at lines 155--156
+[26]
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 167--168
 [][][][][][][][][][][][][][][][][][] 
  []
 
-[27] [28]
-Overfull \hbox (265.8922pt too wide) detected at line 239
+[27] [28] [29]
+Overfull \hbox (265.8922pt too wide) detected at line 251
 \OML/cmm/m/it/10.95 MemoryUsed \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 SizeOf\
 OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10
 .95 ^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 N \OM
@@ -558,8 +555,8 @@ cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 640 \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10
 .95 6\OML/cmm/m/it/10.95 GB
  []
 
-[29]
-Overfull \hbox (249.87267pt too wide) detected at line 244
+
+Overfull \hbox (249.87267pt too wide) detected at line 256
 \OML/cmm/m/it/10.95 MemoryUsed \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 SizeOf\
 OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10
 .95 ^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 NVect
@@ -574,49 +571,46 @@ t/10.95 ; \OT1/cmr/m/n/10.95 454\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 400 \O
 MS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 GB
  []
 
-<figures/powercurve8.png, id=592, 1073.00874pt x 726.715pt>
+[30] <figures/powercurve8.png, id=597, 1073.00874pt x 726.715pt>
 File: figures/powercurve8.png Graphic file (type png)
 
 <use figures/powercurve8.png>
-Package pdftex.def Info: figures/powercurve8.png used on input line 275.
+Package pdftex.def Info: figures/powercurve8.png used on input line 287.
 (pdftex.def)             Requested size: 360.0pt x 243.80864pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/powercurve9.png, id=593, 1069.9975pt x 728.7225pt>
+<figures/powercurve9.png, id=598, 1069.9975pt x 728.7225pt>
 File: figures/powercurve9.png Graphic file (type png)
 
 <use figures/powercurve9.png>
-Package pdftex.def Info: figures/powercurve9.png used on input line 282.
+Package pdftex.def Info: figures/powercurve9.png used on input line 294.
 (pdftex.def)             Requested size: 360.0pt x 245.18266pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/powercurve10.png, id=594, 1084.05pt x 736.7525pt>
+<figures/powercurve10.png, id=599, 1084.05pt x 736.7525pt>
 File: figures/powercurve10.png Graphic file (type png)
 
 <use figures/powercurve10.png>
-Package pdftex.def Info: figures/powercurve10.png used on input line 289.
+Package pdftex.def Info: figures/powercurve10.png used on input line 301.
 (pdftex.def)             Requested size: 360.0pt x 244.66922pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30]
+[31 <./figures/powercurve8.png>]
 
-LaTeX Warning: Reference `powercurve10' on page 31 undefined on input line 302.
-
-
-
-LaTeX Warning: Reference `powercurve9' on page 31 undefined on input line 304.
+LaTeX Warning: Reference `powercurve10' on page 32 undefined on input line 314.
 
 
-LaTeX Warning: Citation `powercurve9' on page 31 undefined on input line 306.
 
-) [31 <./figures/powercurve8.png>] (./chapters/cyclesvertexinvariant.tex
-[32 <./figures/powercurve9.png>] [33 <./figures/powercurve10.png>]
+LaTeX Warning: Reference `powercurve9' on page 32 undefined on input line 316.
+
+
+LaTeX Warning: Citation `powercurve9' on page 32 undefined on input line 318.
+
+[32 <./figures/powercurve9.png>]) (./chapters/cyclesvertexinvariant.tex
+[33 <./figures/powercurve10.png>]
 Chapter 3.
 [34
 
@@ -762,13 +756,13 @@ Overfull \hbox (16.50629pt too wide) in paragraph at lines 230--230
 [55]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 261.
 
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
+ (/opt/local/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 261.
- [56]
-[57] [58]
+ [56] [57]
+[58]
 Overfull \hbox (8.43755pt too wide) in paragraph at lines 328--329
 \OT1/cmr/m/n/10.95 Av-er-age num-ber of non-trivial (non-edge re-peat-ing) quad
 ri-lat-er-als across
@@ -812,15 +806,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 8CDF5FDE1BA611D81226C661BDDEE924;6590.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: B1A0AE7DF1EAB7E22B357F0CC1D5258B;6605
-(rerunfilecheck)             After:  4B18F5ABE8EECAF4DE174C100A222F69;6589.
 
 LaTeX Warning: There were undefined references.
 
@@ -830,31 +818,30 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 8402 strings out of 493089
- 123632 string characters out of 6134842
- 217362 words of memory out of 5000000
- 11511 multiletter control sequences out of 15000+600000
+ 8402 strings out of 494185
+ 123184 string characters out of 6156888
+ 214815 words of memory out of 5000000
+ 11342 multiletter control sequences out of 15000+600000
  16162 words of font info for 61 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 33i,9n,32p,552b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (71 pages, 1059188 bytes).
+ 430 hyphenation exceptions out of 8191
+ 33i,9n,32p,554b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
+cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/local/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
+fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
+cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on thesis.pdf (71 pages, 1061057 bytes).
 PDF statistics:
  949 PDF objects out of 1000 (max. 8388607)
  832 compressed objects within 9 object streams
