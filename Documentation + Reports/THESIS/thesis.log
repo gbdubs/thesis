@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2016 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 APR 2016 11:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -408,7 +408,7 @@ LaTeX Info: Redefining \nameref on input line 39.
 \openout3 = `thesis.out'.
 
 
-<brandeis-seal.png, id=329, 74.25743pt x 74.25743pt>
+<brandeis-seal.png, id=381, 74.25743pt x 74.25743pt>
 File: brandeis-seal.png Graphic file (type png)
  <use brandeis-seal.png>
 Package pdftex.def Info: brandeis-seal.png used on input line 45.
@@ -431,7 +431,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 ...ection, Co-Cycles Graphs}{27}{section.2.5}
+l.34 ...ection, Co-Cycles Graphs}{29}{section.2.5}
                                                    [1
 
 ] [2])
@@ -450,7 +450,7 @@ l.34 ...ection, Co-Cycles Graphs}{27}{section.2.5}
 Chapter 1.
 [7
 
-] [8] <figures/pdfs3thru11.png, id=472, 578.16pt x 433.62pt>
+] [8] <figures/pdfs3thru11.png, id=539, 578.16pt x 433.62pt>
 File: figures/pdfs3thru11.png Graphic file (type png)
 
 <use figures/pdfs3thru11.png>
@@ -467,7 +467,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
  [9]
-<figures/decreasingsigma.png, id=478, 578.16pt x 433.62pt>
+<figures/decreasingsigma.png, id=545, 578.16pt x 433.62pt>
 File: figures/decreasingsigma.png Graphic file (type png)
 
 <use figures/decreasingsigma.png>
@@ -485,14 +485,14 @@ ific value of $\OML/cmm/m/it/10.95 Cycles\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
 5 A; p; v\OT1/cmr/m/n/10.95 )$
  []
 
-[14] [15] <figures/cyclesdemograph.png, id=513, 187.70125pt x 178.6675pt>
+[14] [15] <figures/cyclesdemograph.png, id=579, 187.70125pt x 178.6675pt>
 File: figures/cyclesdemograph.png Graphic file (type png)
 
 <use figures/cyclesdemograph.png>
 Package pdftex.def Info: figures/cyclesdemograph.png used on input line 254.
 (pdftex.def)             Requested size: 180.0pt x 171.34708pt.
 
-<figures/cyclesdemocycles.png, id=515, 488.82625pt x 381.425pt>
+<figures/cyclesdemocycles.png, id=581, 488.82625pt x 381.425pt>
 File: figures/cyclesdemocycles.png Graphic file (type png)
 
 <use figures/cyclesdemocycles.png>
@@ -519,13 +519,13 @@ Overfull \hbox (11.39145pt too wide) detected at line 338
 Chapter 2.
 [21
 
-] [22] [23] [24]
-Overfull \hbox (68.24347pt too wide) detected at line 111
+] [22] [23] [24] [25]
+Overfull \hbox (68.24347pt too wide) detected at line 129
 [][][] []
  []
 
 
-Overfull \hbox (69.64935pt too wide) detected at line 117
+Overfull \hbox (69.64935pt too wide) detected at line 135
 \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it
 /10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \
 OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/
@@ -536,13 +536,13 @@ x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
 \OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 1
  []
 
-[25] [26]
-Overfull \hbox (14.4939pt too wide) in paragraph at lines 155--156
+[26]
+Overfull \hbox (14.4939pt too wide) in paragraph at lines 173--174
 [][][][][][][][][][][][][][][][][][] 
  []
 
-[27] [28]
-Overfull \hbox (265.8922pt too wide) detected at line 239
+[27] [28] [29] [30]
+Overfull \hbox (265.8922pt too wide) detected at line 274
 \OML/cmm/m/it/10.95 MemoryUsed \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 SizeOf\
 OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10
 .95 ^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 N \OM
@@ -558,8 +558,8 @@ cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 640 \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10
 .95 6\OML/cmm/m/it/10.95 GB
  []
 
-[29]
-Overfull \hbox (249.87267pt too wide) detected at line 244
+
+Overfull \hbox (249.87267pt too wide) detected at line 279
 \OML/cmm/m/it/10.95 MemoryUsed \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 SizeOf\
 OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Int\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10
 .95 ^^C \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^C \OML/cmm/m/it/10.95 NVect
@@ -574,53 +574,50 @@ t/10.95 ; \OT1/cmr/m/n/10.95 454\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 400 \O
 MS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 GB
  []
 
-<figures/powercurve8.png, id=592, 1073.00874pt x 726.715pt>
+[31] <figures/powercurve8.png, id=667, 1073.00874pt x 726.715pt>
 File: figures/powercurve8.png Graphic file (type png)
 
 <use figures/powercurve8.png>
-Package pdftex.def Info: figures/powercurve8.png used on input line 275.
+Package pdftex.def Info: figures/powercurve8.png used on input line 310.
 (pdftex.def)             Requested size: 360.0pt x 243.80864pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/powercurve9.png, id=593, 1069.9975pt x 728.7225pt>
+<figures/powercurve9.png, id=668, 1069.9975pt x 728.7225pt>
 File: figures/powercurve9.png Graphic file (type png)
 
 <use figures/powercurve9.png>
-Package pdftex.def Info: figures/powercurve9.png used on input line 282.
+Package pdftex.def Info: figures/powercurve9.png used on input line 317.
 (pdftex.def)             Requested size: 360.0pt x 245.18266pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/powercurve10.png, id=594, 1084.05pt x 736.7525pt>
+<figures/powercurve10.png, id=669, 1084.05pt x 736.7525pt>
 File: figures/powercurve10.png Graphic file (type png)
 
 <use figures/powercurve10.png>
-Package pdftex.def Info: figures/powercurve10.png used on input line 289.
+Package pdftex.def Info: figures/powercurve10.png used on input line 324.
 (pdftex.def)             Requested size: 360.0pt x 244.66922pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30]
+[32 <./figures/powercurve8.png>]
 
-LaTeX Warning: Reference `powercurve10' on page 31 undefined on input line 302.
-
-
-
-LaTeX Warning: Reference `powercurve9' on page 31 undefined on input line 304.
+LaTeX Warning: Reference `powercurve10' on page 33 undefined on input line 337.
 
 
-LaTeX Warning: Citation `powercurve9' on page 31 undefined on input line 306.
 
-) [31 <./figures/powercurve8.png>] (./chapters/cyclesvertexinvariant.tex
-[32 <./figures/powercurve9.png>] [33 <./figures/powercurve10.png>]
+LaTeX Warning: Reference `powercurve9' on page 33 undefined on input line 339.
+
+
+LaTeX Warning: Citation `powercurve9' on page 33 undefined on input line 341.
+
+) (./chapters/cyclesvertexinvariant.tex [33 <./figures/powercurve9.png>]
+[34 <./figures/powercurve10.png>]
 Chapter 3.
-[34
+[35
 
-] <figures/numGraphsAndMats.png, id=623, 749.29938pt x 432.61626pt>
+] <figures/numGraphsAndMats.png, id=693, 749.29938pt x 432.61626pt>
 File: figures/numGraphsAndMats.png Graphic file (type png)
 
 <use figures/numGraphsAndMats.png>
@@ -630,7 +627,7 @@ Package pdftex.def Info: figures/numGraphsAndMats.png used on input line 46.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35] [36 <./figures/numGraphsAndMats.png>]
+[36] [37 <./figures/numGraphsAndMats.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 71.
@@ -667,7 +664,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 93.
 
-<figures/N9DiamVsDiffPower.png, id=637, 578.16pt x 433.62pt>
+<figures/N9DiamVsDiffPower.png, id=707, 578.16pt x 433.62pt>
 File: figures/N9DiamVsDiffPower.png Graphic file (type png)
 
 <use figures/N9DiamVsDiffPower.png>
@@ -677,7 +674,7 @@ Package pdftex.def Info: figures/N9DiamVsDiffPower.png used on input line 104.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37]
+[38]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 122.
@@ -702,25 +699,25 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 122.
 
-[38 <./figures/N9DiamVsDiffPower.png>] [39] [40] [41])
-(./chapters/cannonicallabeling.tex [42]
+[39 <./figures/N9DiamVsDiffPower.png>] [40] [41] [42])
+(./chapters/cannonicallabeling.tex [43]
 Chapter 4.
-[43
+[44
 
-] [44]
+] [45]
 Overfull \hbox (13.7763pt too wide) in paragraph at lines 56--56
 []\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
  []
 
-) (./chapters/randomgraphgenerators.tex [45]
+) (./chapters/randomgraphgenerators.tex [46]
 Chapter 5.
 
-LaTeX Warning: Citation `exponentialgraphs' on page 46 undefined on input line 
+LaTeX Warning: Citation `exponentialgraphs' on page 47 undefined on input line 
 16.
 
-[46
+[47
 
-] [47] [48] [49] [50]
+] [48] [49] [50] [51]
 Overfull \hbox (58.1967pt too wide) detected at line 142
 \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 CoCycles\OT1/cmr/m
 /n/10.95 (\OML/cmm/m/it/10.95 G\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j\OML/cm
@@ -738,7 +735,7 @@ m/m/it/10.95 G \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 Gilbert\OT1/cmr/m/n/10
 0.95 ^^B \OT1/cmr/m/n/10.95 10[]
  []
 
-[51]
+[52]
 Overfull \hbox (40.66719pt too wide) detected at line 155
 \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.
 95 = \OML/cmm/m/it/10.95 K[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 G \OMS/cms
@@ -754,12 +751,12 @@ y/m/n/10.95 2 \OML/cmm/m/it/10.95 Gilbert\OT1/cmr/m/n/10.95 ) = [] = [] = [] =
 []
  []
 
-[52] [53] [54]
+[53] [54] [55]
 Overfull \hbox (16.50629pt too wide) in paragraph at lines 230--230
 []\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
  []
 
-[55]
+[56]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 261.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
@@ -767,25 +764,25 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 261.
- [56]
-[57] [58]
+ [57]
+[58] [59]
 Overfull \hbox (8.43755pt too wide) in paragraph at lines 328--329
 \OT1/cmr/m/n/10.95 Av-er-age num-ber of non-trivial (non-edge re-peat-ing) quad
 ri-lat-er-als across
  []
 
-[59] [60]
+[60] [61]
 Overfull \hbox (12.43272pt too wide) in paragraph at lines 358--359
 \OT1/cmr/m/n/10.95 of how dis-persed the dis-tri-bu-tion is, cal-cu-lated as $\
 OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$ 
 
  []
 
-[61] [62] [63]) (./chapters/nextsteps.tex [64]
+[62] [63] [64]) (./chapters/nextsteps.tex [65]
 Chapter 6.
-) (./thesis.bbl [65
+[66
 
-]
+] [67]) (./thesis.bbl [68]
 Underfull \hbox (badness 1052) in paragraph at lines 54--59
 []\OT1/cmr/m/n/10.95 D. J. Watts M. E. J. New-man and S. H. Stro-gatz.  Ran-dom
 
@@ -801,39 +798,72 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[66
+[69
 
-]) (./appendices/codestructure.tex [67] [68
+]) (./appendices/introduction.tex [70]
+Chapter 7.
+) (./appendices/codestructure.tex [71
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
- [69] [70]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+]) (./appendices/co-cyclesgraphs.tex
+[72]
+Overfull \hbox (4.87436pt too wide) in alignment at lines 7--14
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.87436pt too wide) in alignment at lines 14--49
+ [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 49
+ []
+
+
+Overfull \hbox (4.87436pt too wide) in alignment at lines 49--80
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.87436pt too wide) in alignment at lines 80--112
+ [] [] [] [] [] 
+ []
+
+[73]
+Overfull \hbox (4.87436pt too wide) in alignment at lines 112--143
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.87436pt too wide) in alignment at lines 143--174
+ [] [] [] [] [] 
+ []
+
+[74]
+Overfull \hbox (4.87436pt too wide) in alignment at lines 174--203
+ [] [] [] [] [] 
+ []
+
+[75])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+ [76]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 1A05510E5638FC9D4E3C70638C528A54;7617.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: B1A0AE7DF1EAB7E22B357F0CC1D5258B;6605
-(rerunfilecheck)             After:  4B18F5ABE8EECAF4DE174C100A222F69;6589.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 8402 strings out of 493089
- 123632 string characters out of 6134842
- 217362 words of memory out of 5000000
- 11511 multiletter control sequences out of 15000+600000
+ 8451 strings out of 493089
+ 124324 string characters out of 6134842
+ 245445 words of memory out of 5000000
+ 11544 multiletter control sequences out of 15000+600000
  16162 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  33i,9n,32p,552b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -854,10 +884,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (71 pages, 1059188 bytes).
+Output written on thesis.pdf (77 pages, 1083788 bytes).
 PDF statistics:
- 949 PDF objects out of 1000 (max. 8388607)
- 832 compressed objects within 9 object streams
- 234 named destinations out of 1000 (max. 500000)
- 699 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1036 PDF objects out of 1200 (max. 8388607)
+ 912 compressed objects within 10 object streams
+ 245 named destinations out of 1000 (max. 500000)
+ 803 words of extra memory for PDF output out of 10000 (max. 10000000)
 

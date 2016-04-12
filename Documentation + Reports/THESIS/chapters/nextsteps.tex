@@ -20,3 +20,45 @@ However, the nature of the hypothesis is so hard to verify, (and the number of g
 
 One would think, that with today's technology and resources, we ought be able to improve upon that bound, and increase N to 12 (or find a counterexample therein).
 That is hopefully the site of some future work.
+
+\subsection{Parallelizing a Reconstruction Check to 12 vertices}
+
+One thought that I had in pursuing this question was: how can we use the massively available scalability of today's cloud based world to extend this problem past 11 vertices?
+If McKay can do 11 vertices in 1999, one would think that in 2016 we ought be able to do 12 (despite the 160 fold increase in the number of graphs).
+Here is the algorithm as I would design it.
+
+First, lets define a simple algorithm for checking for equivalent decks.
+Given a graph $G$, create all of its vertex deleted subgraphs, canonically label and encode each, then append them in lexicographical order.
+This string is relatively short.
+For an original graph with 12 vertices, there would be 12 graphs of size 11, if we strip off the first character, which is the same across all graphs of the same size, the encoding is only 10 characters long per graph, meaning that a deck could easily be encoded in only 110 characters (or, 440 bytes).
+The running time for this algorithm (using NAUTY as a sub-call from a C function (with hardcoded values of 11 and 12 vertices)) takes approximately XXX milliseconds, on average.
+
+However, we need to be smart about when we compare these decks.
+We cannot use a database to store them (as 440 bytes * 160 billion graphs = 71TB)
+so we need to generate all graphs which could share a deck at the same time and check at a local level.
+This is how we would go about doing that:
+
+If two graphs $G$ and $H$ over 12 vertices are going to have isomorphic decks, then there exist 12 graphs of size 11 such that each is a vertex deleted subgraph of both.
+Given a graph $G$, lets call the seeds of $G$ to be the vertex deleted subgraphs such that the vertex that was deleted is the one with the maximum degree.
+There can be multiple seeds of $G$ if the graph's maximal degree is repeated multiple times in its degree sequence.
+It has been shown that across all graph instances, the number of graphs with a maximal degree incidence greater than one is a negligible proportion of all graphs.
+Thus, our algorithm leverages this fact to do seeded checking for deck isomorphism.
+
+As a side note, it should be obvious that no graphs could violate the reconstruction hypothesis if they have a fully connected node or a fully disconnected node.
+
+Here is the algorithm: a computational node is delivered a graph of size 11, called $S$.
+If the maximum degree of $S$ is $K$, then the range to search is deemed $[K, 10]$ (as remember, no violating graph can have a fully connected node with degree 11).
+For each integer $k \in [K, 10]$, we generate $choose(11, k)$ augmented graphs of $S$, for each of the possible connection patterns.
+Before we move on to the next value of k, we check each of these graphs for deck isomorphism using the technique provided above.
+
+From the small amount of work (unoptimized) that I have done on implementing this checking system so far, it appears that the running time of this algorithm would be about a millisecond per graph of size 11 checked.
+This would imply that computation of this algorithm over all graphs of size 11 (which would check all graphs of size 12) would take about 12 days to complete, running on the single workstation I was using.
+If we distribute this workload across many servers, as we could easily do by generating different sets of graphs to check on each (i.e. using NAUTY geng with different values of e), I imagine that this running time could be significantly decreased.
+
+I hope to be able to pursue this verification once my thesis is submitted and I have nothing to do until graduation.
+
+\subsection{Potential Reconstruction Procedure: The Triangle Inequality}
+
+One of the first questions I asked when I came across the reconstruction hypothesis was: can Cycles be a part of a solution to this problem? Can we create an algorithm which leverages properties of cycles in order to attempt to reconstruct a graph, or at least place limitations on the possibilities for reconstruction? 
+I puzzled away at this for a while, and came up with an interesting way of incorporating cycles into a reconstruction procedure.
+I will apologize in advance: this section is particularly notation heavy, and I don't think there is anything that can be done to avoid that. 

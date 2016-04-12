@@ -31,7 +31,7 @@ In practice, it is a highly discerning as a graph invariant, as a very small pro
 However, there are not well established procedures to use the results of eigenvalue calculations to attempt to explicitly construct an isomorphism, rather, it is powerful in ruling out hypothetical isomorphisms.
 
 The large downside of the chromatic polynomial (as a graph invariant) is that it is not computable in polynomial time (across all sets of graphs).
-Rather, it is in the computational class $#P-Hard$ (Sharp-Polynomial Hard), by reducibility to #3SAT.
+Rather, it is in the computational class $\#P-Hard$ (Sharp-Polynomial Hard), by reducibility to \#3SAT.
 There are algorithms which can deterministically solve it in $O(2^N N^r)$ For a constant $r$.
 This makes is calculation for graph isomorphism testing prohibitively expensive.
 What we will show in this section is objectively quite valuable: we will show that the Cycles invariant encodes the chromatic polynomial, and is actually \emph{more} discriminatory than it.
@@ -76,28 +76,34 @@ That is a separate question, one which the existence of co-cycles graphs makes i
 The reader should note that this section is really a proof of concept and the work done for this was to see how we could go between modes of operation: between reasoning about graphs theoretically, and interacting with them on an algebraic level.
 A reader who is focused only on interesting results will not find them in this section.
 
-The answer to this question, fortunately, is yes.  
-Over the next few paragraphs, I am going to detail a method of constructing such a graph by first constructing constituent integer-valued equations which describe the interrelationships between edges, then transform the integer edge equations into equally information dense boolean sentences, which by their definition will always hold as true.  
+The answer to this question is yes, given a Cycles invariant, we can reconstruct a graph that creates it. 
+Over the next few paragraphs, I am going to detail a method of constructing such a graph by first constructing constituent integer-valued equations which describe the interrelationships between edges, then transform the integer edge equations into equally information dense boolean sentences. 
 The final step is then to transform each of these sentences into CNF (Codd Normal Form), and use a satisfiability solver to find a solution to them.
-[NOTE ON BRUTE FORCE]
+
+It should be noted that a brute force search for a fitting graph would likely run in faster time, and that the final algorithmic step here (3-SAT) is in NP-Complete (thus has a non-polynomial running time).
+The distinction here lies in the fact that our algorithm produces a predicate which describes \emph{all} graphs which fit the given Cycles invariant.
+The transformation to 3-SAT involves the parsing out of all invalid cases, so that any value that we produce is guaranteed to satisfy the given Cycles invariant.
+Contrast this to a guess and check methodology.
+In this section we are not doing any guessing, nor do we need to do checking.
+Though both algorithms run in exponential time, the sophisticated one is employing a fundamentally different unit of computation. 
 
 Before we begin, lets examine three important points:
 \begin{itemize}
   \item{
   	Our reconstruction algorithm is going to run in exponential time, and \emph{that is okay}.  
   	We have already demonstrated that our invariant, the $Cycles$ function, is calculable in polynomial time.  
-  	The fact that we can reconstruct a valid graph from the Cycles function is about exploring or debunking the invertible nature of the $Cycles$ object, 
-  	and the time it takes to perform an inverse of our operation tells us nothing about the computational complexity of that operation.
+  	The fact that we can reconstruct a valid graph from the $Cycles$ function is about exploring or debunking the invertible nature of the $Cycles$ object, 
+  	and the time it takes to perform an inverse of that operation tells us nothing about the computational complexity of that operation.
   }
   \item{
-  	The equations in this section for all but the most trivial of graphs take up an $enormous$ amount of space, and as such, it is not recommended that this reconstruction technique be used in practice.  
+  	The equations in this section for all but the most trivial of graphs take up a large amount of space, and as such, it is not recommended that this reconstruction technique be used in practice.  
   	Realistically, a brute force search would likely yield faster running-solutions (if one were trying to find a graph fitting the Cycles function), but the reader should try to convince themselves that this approach would terminate, 
   	and would yield a valid solution, given a valid $Cycles$ object.
   }
 \end{itemize}
 
 We know that the diagonals of $A^p$ yield the $Cycles$ function.
-We also know that A is comprised of $(v * (v - 1)) / 2$ boolean variables, and all entries of $A^p$ must be some combination of the variables in the original adjacency matrix. 
+We also know that A is comprised of $E_{Max} = \frac{N * (N - 1)}{2}$ boolean variables, and all entries of $A^p$ must be some combination of the variables in the original adjacency matrix. 
 We will refer to these variables as the $x_i$'s. Generally, we will arrange them in the row primary pattern, and will number them starting at 1.
 
 The $x_i$'s also have the helpful property that $\forall k \geq 1,\, x_i^k = x_i $. 
@@ -105,9 +111,9 @@ This stems from the fact that each one of the $x_i$'s is either zero or one, the
 This allows us to reduce any polynomial degree in our resulting equations down to one, though multivariate linear terms may remain.
 
 I have been discussing these `equations' quite a bit; lets formally define them.  
-We assume that we are given the $Cycles$ function for a graph, and we will call $Cycles(p, v) = k_{p, v}$ to simplify our work. 
+We assume that we are given the $Cycles$ function for a graph, and we will call $Cycles(A, p, v) = k_{p, v}$ to simplify our work. 
 In each equation, we will set the Cycles function for a specific $v$ and $p$ equal to the symbolic representation of the exponentiated adjacency matrix (which will solely be in terms expressed by the $x_i$'s).
-We will refer to this specific equation as Equation p.v for $v$ in the range $[1, V]$ and $p$ in the range $[1, \infty)$.
+We will refer to this specific equation as Equation p.v for $v$ in the range $[1, N]$ and $p$ in the range $[1, \infty)$.
 For each $v$ and $p$ in their respective ranges, our equation p.v is:
 
 $$k_{p, v} = A^p[v,v]$$
@@ -127,16 +133,16 @@ Notice that in equation 2.1 and equation 4.1, both have linear terms of four var
 (Those happen to be the four variables in the row that we chose, row 1, but if we chose row 4, we would have gotten the variables in that row). 
 A nice property that arises out of these linear variables is that if we were to solve for the variable $x_1$ from equation 4.1, we would get an expression with the following denominator: 
 $$2x_2 + 2x_3 + 2x_4 + x_5 + x_6 + x_7 + 2x_2x_6x_8 + 2x_3x_5x_8 + 2x_2x_7x_9 + 2x_4x_5x_9 + 2x_3x_7x_{10} + 2x_4x_6x_{10} + 1$$
-This is of particular interest, because we know that each one of the terms in this statement has to be positive, as $\forall i \in v,  x_i \in \{0, 1\}$.  
+This is of particular interest, because we know that each one of the terms in this statement has to be \emph{non-negative}, as $\forall i \in v,  x_i \in \{0, 1\}$.  
 Thus, there is no possible valid input of $x_i$'s which results in this denominator being zero, and our substitution is thus universally valid.  
 That is really important because it means that we might be able to do the same thing for other variables, and potentially come up with a system of equations that fully describes the interactions of the vertices within our graph. 
 Thus such a system could uniquely determine each of the $x_i$'s, the graph could be determined by $Cycles$, but what what we find instead is that $a$ reconstruction exists, but it is also possible that the reconstruction is not unique.
 
 Lets explore this notion further.  
 Lets say that we have an equation that describes the interactions of the binary relations in such a way that we can express the equality for of the variable 
-$x_i$ solely in terms of the other variables such that $$x_i = \frac{N}{D + z}$$ Where $z$ is an integer, $z \geq 1$, and $N$ and $D$ 
+$x_i$ solely in terms of the other variables such that $$x_i = \frac{C}{D + z}$$ Where $z$ is an integer, $z \geq 1$, and $C$ and $D$ 
 can be any number of positive expressions that are comprised of terms of the addition and multiplication of variables in the set 
-$\{x_1, \dots,  x_{i-1},x_{i+1}, \dots, x_{(v(v-1))/2}\}$.  Since we know that $x_i \in {0,1}$, we know that any positive term comprised of the multiplication and addition of these variables must be greater than or equal to zero.  
+$\{x_1, \dots,  x_{i-1},x_{i+1}, \dots, x_{(N(N-1))/2}\}$.  Since we know that $x_i \in {0,1}$, we know that any positive term comprised of the multiplication and addition of these variables must be greater than or equal to zero.  
 Thus, we know the denominator of the equation for $x_i$ must be greater than or equal to one ($D + z \geq 1$). 
 This is a helpful result, as it means that our substitution is valid, and we know that the equality holds, because our division of both sides by $D + z$ 
 does not risk dividing by zero.  We will call this a \emph{valid substitution} for $x_i$ over the equation for which it is generated (e.g. Equation 2.5). 
@@ -144,17 +150,17 @@ does not risk dividing by zero.  We will call this a \emph{valid substitution} f
 It turns out that there is a clever way to use a \emph{valid substitution} to construct a graph which would generate the Cycles functions that generated the equations which generated the valid substitutions.
 Since we know that the denominator of a valid substitution is non-zero, we know the substitution is valid.  
 We also happen to know that the variable we are solving for is either equal to zero or one.  
-Thus, if the numerator ($N$) of our substitution is equal to zero, then we know that $x_i$ is equal to zero.  
+Thus, if the numerator ($C$) of our substitution is equal to zero, then we know that $x_i$ is equal to zero.  
 Otherwise, we know that $x_i$ must be equal to one (for all other values are not in its domain). 
 If we allow ourselves to do an informal conversion to predicate logic, we can transform an equation of the form:
- $$x_i = \frac{N}{D + z}$$ 
- $$(x_i = 0) \; \text{iff} \; (N = 0)$$
- $$\neg(x_i) \; \text{iff} \; (N = 0)$$
- $$x_i  \leftrightarrow  \neg(N = 0)$$
-Expressing that $N$, a summation of terms over the $x_i$'s, is equal to zero, is actually quite a simple construct. 
-We imagine that each of the terms in N has a positive, integer valued weight that corresponds to its coefficient. 
-If $N$ contains any integer valued negatives (which it does in real applications), we will call this the $target$.
-Given this (and the terms and their weights as corresponding lists), we can generate a simple procedure for generating a boolean statement that encodes the information that our equation does when $N$ is set to zero.
+ $$x_i = \frac{C}{D + z}$$ 
+ $$(x_i = 0) \; \text{iff} \; (C = 0)$$
+ $$\neg(x_i) \; \text{iff} \; (C = 0)$$
+ $$x_i  \leftrightarrow  \neg(C = 0)$$
+Expressing that $C$, a summation of terms over the $x_i$'s, is equal to zero, is actually quite a simple construct. 
+We imagine that each of the terms in $C$ has a positive, integer valued weight that corresponds to its coefficient. 
+If $C$ contains any integer valued negatives (which it does in real applications), we will call this the $target$.
+Given this (and the terms and their weights as corresponding lists), we can generate a simple procedure for generating a boolean statement that encodes the information that our equation does when $C$ is set to zero.
 
 \begin{lstlisting}[frame=single]
 exactlyKTrue(clauses, weights, target):
@@ -168,18 +174,35 @@ exactlyKTrue(clauses, weights, target):
 	return (clause & caseT) | (!clause & caseF))
 \end{lstlisting}
 
-Though this code doesn't totally cover all edge cases, it should convince the reader that there is an appropriate transform between $N$ and a boolean expression of the $x_i$'s which maintains domain validity across substitutions.
+Though this code doesn't totally cover all edge cases, it should convince the reader that there is an appropriate transform between $C$ and a boolean expression of the $x_i$'s which maintains domain validity across substitutions.
 
 \section{Other Forms of Reconstructability}
+
 \subsection{EA Reconstructability}
+
+Just as Cycles can be used to reconstruct other properties of a graph, Cycles can be reconstructed from another invariant, the matrix describing the angles between the eignespaces of a graph and the standard basis of $R^n$.
+In their paper \emph{A Study of Eigenspaces of Graphs}, D. Cvetkovi\'c, P. Rowlinson, and S. Simi\'c showed that the cycles invariant (which they described as the number of closed walks) can be reconstructed from the angle matrix of G.
+Just like the Cycles invariant, the angle matrix becomes a graph invariant when we lexicographically order its vectors.
+
+However, the angle matrix of a graph is much more difficult to calculate than the Cycles function.
+As a prerequisite to describing the angles, we first need to know the eigenvalues of the graph, which as we have already discussed, is an exponential algorithm.
+If we think about the time-discrimination tradeoff, the angle matrix sits at a location that is more discriminatory and more costly than the Cycles invariant.
+
 \subsection{Deck Reconstructability}
+
+An open question that I have not been able to resolve is whether or not we can reconstruct the cycles invariant from the deck of a graph.
+A deck of a graph $G$ over $N$ vertices, $Deck(G)$ is a multi-set of $N$ graphs such that each graph in the deck (called a card) is one of the vertex deleted subgraphs of G. 
+The reconstruction hypothesis claims that a deck uniquely determines a graph.
+
+Many graph invariants can be proven to be reconstructible from the deck of a graph.
+I was not able to prove that the Cycles invariant is reconstructible from a deck, but, if you look to some of the unfinished work in chapter six, there is a lengthy discussion about how the cycles invariant might be able to give us tools to solve the reconstruction hypothesis by setting up clever predicates about each of the card graphs and their interrelationships.
 
 \section{Placing Cycles within a Time/Power Tradeoff}
 A subjective task we have to undertake is the critical examination of Cycles within the invariant tradeoff between computational power and time complexity.
-On the one hand, cycles is highly discriminatory, and for the majority of graphs, we can show that cycles distinguishes between vertices in a way which fully distinguishes them.
+On the one hand, cycles is highly discriminatory, and for the majority of graphs, we can show that cycles fully distinguishes between different graphs.
 This computational power means that for the overwhelming majority of graphs (particularly large graphs), cycles can give us canonical labelings with a single pass.
 
-However, on the other hand, cycles is heavy handed. There is a constant amount of work that has to be done to calculate cycles for any number of vertices in the graph. 
+However, on the other hand, cycles is heavy handed. There is a quartic amount of work that has to be done to calculate cycles for the number of vertices in a graph.
 This means that even if we had a graph where every node was distinguished only by its degree, we would still require an extensive process of matrix multiplication to even get to results that could have been achieved in less time by any other means.
 
 One way we can discuss this tradeoff is computationally.

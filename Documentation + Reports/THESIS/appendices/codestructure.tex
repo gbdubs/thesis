@@ -1,10 +1,10 @@
-\chapter*{Appendix A: Explanation of Code Structure}
+\section{Appendix A: Explanation of Code Structure}
 
 All of the code used in this project is available and version controlled on my GitHub repository, TODOHREF here.
 
 Here is the basic structure of the project:
 
-\section*{Thesis/Cardinality Analysis}
+\subsection{Thesis/Cardinality Analysis}
 
 Used to generate and analyze the co-cycles graphs, where they exist.
 The C code is largely what I did my computation in, while the Java code was usually there just for corroborating unclear results, and unit testing that my work (particularly around paths calculations and graph encodings) was correct.
@@ -16,13 +16,13 @@ It uses delayed evaluation, tries, and minimal memory (less than a sixth of its 
 When I examined the power curves as described in chapter 3, I modified some of this code to relay depth information appropriately, which did not significantly modify its specs or the way that it runs.
 To see the cardinality calculations as they were when originally completed, simply visit that SHA in GitHub.
 
-\section*{Thesis/data}
+\subsection{Thesis/data}
 
 Shared graph data amongst many different elements of the project.
 Two main components: geng (the NAUTY graph generator), and two bash scripts which generate small and regular graphs.
 These graphs are shared among all different kinds of applications, and are created as read-only files.
 
-\section*{Thesis/Documentation+Reports}
+\subsection{Thesis/Documentation+Reports}
 
 Documentation for all of my work has been accompanied alongside the project itself.
 This includes multiple write ups that I did for my advisor throughout the semester (labeled by date) alongside an original thesis proposal, and the final result.
@@ -30,13 +30,13 @@ All of these files are written in latex, so the source code is provided alongsid
 Some ideas and planning documents are included as well, mainly simply to maintain my thoughts and plans in centralized places.
 These documents are not very reflective of what ended up happening, but mark my vector trajectories at different points in time.
 
-\section*{Thesis/Excel}
+\subsection{Thesis/Excel}
 
 Power curve data from chapter 3.
 
-\section*{Thesis/Mupad}
+\subsection{Thesis/Mupad}
 
-\section*{Thesis/Matlab}
+\subsection{Thesis/Matlab}
 
 \subsection*{Thesis/Matlab/alternative generator}
 
@@ -72,7 +72,7 @@ Deprecated, before I started work on rigorous examination of random graph genera
 \subsection*{Thesis/Matlab/visualization}
 
 
-\section*{Thesis/Number of Graphs}
+\subsection{Thesis/Number of Graphs}
 
 
-\section*{Thesis/Number of Graphs}
+\subsection{Thesis/Number of Graphs}
