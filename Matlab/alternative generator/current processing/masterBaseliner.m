@@ -12,7 +12,7 @@ for i = 1 : numel(metricVariables)
             for j = 1 : numel(algorithms)
                 alg = algorithms{j};
                 [~, sampleN, sampleMean, sampleSD ] = findSampleStatistics( n, p, alg, metric, 1000 );
-                saveToBaseline(n,p,alg,metric,sampleN, sampleMean, sampleSD);
+                saveToBaseline(n, p, alg, metric, sampleN, sampleMean, sampleSD);
             end
         end
     end
