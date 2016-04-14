@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 APR 2016 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 APR 2016 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -777,14 +777,22 @@ OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$
 Chapter 6.
 [67
 
-] [68] [69]) (./thesis.bbl [70]
-Underfull \hbox (badness 1052) in paragraph at lines 54--59
+] [68] [69]) (./thesis.bbl [70] [71
+
+]
+Underfull \hbox (badness 1596) in paragraph at lines 86--89
+\OT1/cmr/m/n/10.95 in-vari-ants for the graph iso-mor-phism prob-lem.  \OT1/cmr
+/m/it/10.95 arXiv preprint
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 103--108
 []\OT1/cmr/m/n/10.95 D. J. Watts M. E. J. New-man and S. H. Stro-gatz.  Ran-dom
 
  []
 
 
-Underfull \hbox (badness 1755) in paragraph at lines 54--59
+Underfull \hbox (badness 1755) in paragraph at lines 103--108
 \OT1/cmr/m/n/10.95 graph mod-els of so-cial net-works.  \OT1/cmr/m/it/10.95 Pro
 -ceed-ings of the Na-tional
  []
@@ -793,13 +801,11 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[71
-
-]) (./appendices/introduction.tex [72]
+[72]) (./appendices/introduction.tex [73]
 Chapter 7.
-) (./appendices/codestructure.tex [73
+) (./appendices/codestructure.tex [74
 
-] [74] [75] [76])
+] [75] [76] [77])
 (./appendices/co-cyclesgraphs.tex
 Overfull \hbox (4.87436pt too wide) in alignment at lines 7--14
  [] [] [] [] [] 
@@ -819,7 +825,7 @@ Overfull \hbox (4.87436pt too wide) in alignment at lines 49--80
  [] [] [] [] [] 
  []
 
-[77]
+[78]
 Overfull \hbox (4.87436pt too wide) in alignment at lines 80--112
  [] [] [] [] [] 
  []
@@ -829,7 +835,7 @@ Overfull \hbox (4.87436pt too wide) in alignment at lines 112--143
  [] [] [] [] [] 
  []
 
-[78]
+[79]
 Overfull \hbox (4.87436pt too wide) in alignment at lines 143--174
  [] [] [] [] [] 
  []
@@ -839,9 +845,9 @@ Overfull \hbox (4.87436pt too wide) in alignment at lines 174--203
  [] [] [] [] [] 
  []
 
-[79]) (./appendices/specs.tex [80])
+[80]) (./appendices/specs.tex [81])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
- [81]
+ [82]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
@@ -855,10 +861,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 8474 strings out of 493089
- 124668 string characters out of 6134842
- 243550 words of memory out of 5000000
- 11553 multiletter control sequences out of 15000+600000
+ 8496 strings out of 493089
+ 125127 string characters out of 6134842
+ 243961 words of memory out of 5000000
+ 11564 multiletter control sequences out of 15000+600000
  16863 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  33i,9n,32p,552b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -879,10 +885,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (82 pages, 1278022 bytes).
+Output written on thesis.pdf (83 pages, 1281641 bytes).
 PDF statistics:
- 1064 PDF objects out of 1200 (max. 8388607)
- 931 compressed objects within 10 object streams
- 252 named destinations out of 1000 (max. 500000)
+ 1081 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 263 named destinations out of 1000 (max. 500000)
  813 words of extra memory for PDF output out of 10000 (max. 10000000)
 
