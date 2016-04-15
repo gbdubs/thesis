@@ -1,15 +1,16 @@
 
 N = 10;
-P = .6;
-nTrials = 1000;
+P = .5;
+nTrials = 100000;
 
 successes = 0;
 failures = 0;
 
 progressbar;
 for trial = 1 : nTrials
-    progressbar(trial / nTrials);
-    
+    if (mod(trial, 50) == 0)
+        progressbar(trial / nTrials);
+    end
     % Generates a random graph (Gilbert Style)
     k = 1 - sqrt(P);
     r = rand(N, N);
@@ -21,6 +22,8 @@ for trial = 1 : nTrials
 
     if result < 0
         failures = failures + 1;
+        disp('FAILURE');
+        disp(failures / (failures + successes));
     elseif result > 0
         successes = successes + 1;
     end
