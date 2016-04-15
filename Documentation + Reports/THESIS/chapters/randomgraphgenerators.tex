@@ -125,6 +125,28 @@ This means that the probability of selecting a matrix which represents graph G i
 
 Though this seems like a semantic difference, as I will show over the next several sections, it has critical implications for the algorithms that use it to argue about computational complexity.
 
+\subsection{Comparing the Distribution of Graph Connectivity}
+
+In Chapter 1, we described the overall distribution of graphs as algebraic objects with respect to their connectivity.
+We can also model the connectivity if we are considering the set of graph instances.
+Since there is a one to one correspondence between graph instances and the set of all valid zero-diagonaled, binary symmetric matrices, we can discuss the connectivity of graph instances as a function of the binomial distribution.
+That is because we can view the process of random graph instance generation under the gilbert model with probability .5 as a sequence of disjoint (as equally probable) binary variables, one per edge.
+Thus the number of edges in a Gilbert random graph follows a binomial distribution with $E_{max}$ trials and fixed probability of success $\frac{1}{2}$.
+
+The variance of such a model is known to be 
+$$Var(Binom(n, p)) = (1-p) * p * n = E_{max} * .5 * .5 = \frac{E_{max}}{4}$$
+Since we want to normalize our distribution so that the x values represent connectivity, we divide by the number of edges possible (after we convert to the standard deviation by taking the square root:
+$$\sigma_{norm}(|E(G_{inst})|) = \frac{\sqrt{Var(Binom(E_{max}, .5))}}{E_{max}} = \frac{\sqrt{1/4 * E_{max}}}{E_{max}}  = \frac{1}{2\sqrt{E_{max}}}$$
+Using these values, we can plot the relative sigmas for the distribution of graphs relative to their connectivity for both of the sets: the set of all graph instances, and the set of all graphs as algebraic objects.
+Doing this we get the graph shown below.
+
+[GRAPH HERE]
+
+Note that the values appear to shrink in their disparity, a remarkable observation, which gives us an idea of how the two sets/distributions differ with respect to the number of edges they produce as a function of N.
+Note that this doesn't tell us about other properties of the sets of graphs.
+Similarity in the distribution of the number of edges does not equate distributional symmetry.
+However, what we can see is that the Gilbert graph generator models the number of edges successfully for large values of $N$.
+
 %----------------------------------------------------------------------------------
 
 \section{Specifically Disadvantaging Highly Automorphic Graphs}
@@ -407,6 +429,67 @@ Since there were 7 tested values of N, and 9 tested values of P, and 35 metrics,
 \section{Alternative Ideas for Random Graph Modeling and Creation}
 
 Now that we have a mechanism for quantifiably adjudicating the quality of a proposed random graph generator, we are tasked with creating different ideas for random graph generation and evaluating them on this basis.
+Discussed below are each of the algorithms that I built for Random Graph Generation and Processing.
+They are not presented in any particular order.
+Each is prefixed by the string that it is represented as/by throughout the code.
+
+\subsection{MinusOne - A Weighted Automorphic Subgraph Generator}
+
+MinusOne has a simple methodology.
+If you are generating a graph with $N$ vertices and with probability of edge creation $p$, start by creating a graph $H$ of size $N+1$ via the gilbert model.
+Then, generate all $N+1$ of $H$'s single vertex deleted subgraphs, store each in a set we will call $VD(H)$.
+Lets define an automorphic metric $AM$ which is defined by the following formula, finding the QSVSes, and take the product of the factorial of their sizes.
+$$AM(g) = \prod_{i \;\in \;QSVSes(g)} |QSVS_i|$$
+Finally, over each member of the set $g \in VD(H)$ calculate the automorphic metric, and select that graph with the probability:
+$$P(g | H) = \frac{AM(g)}{\sum_{h_i}^{VD(H)} AM(h_i)}$$
+
+\subsection{MinusOneA - Less Automorphic Version of MinusOne}
+
+MinusOneA has a methodology with closely matches that of MinusOne.
+The only difference is the automorphic metric function, which is the logarithm of the one proposed above (plus a constant factor).
+$$AM(g) = 1 + \log_2 \Big[{\prod_{i \;\in \;QSVSes(g)} |QSVS_i|} \Big]$$
+
+\subsection{MinusOneB - Interspersing Some Gilbert Random Graphs}
+
+MinusOneC has an identical methodology with closely matches that of MinusOne, with one caveat.
+With a probability selected based on $p$, the algorithm chooses between picking a graph from a MinusOne distribution and a Gilbert distribution:
+\[ MinusOneB(n, p) = \begin{cases} 
+      Gilbert(n, p) & \text{if $rand < .5 * (p) * (1-p)$} \\
+      MinusOne(n, p) & \text{otherwise} \\
+   \end{cases}
+\]
+
+\subsection{MinusOneC - Less Automorphic Version of MinusOne}
+
+MinusOneC has a methodology with closely matches that of MinusOne.
+The only difference is the automorphic metric function, which is the square root of the one proposed above.
+$$AM(g) = \sqrt{\prod_{i \;\in \;QSVSes(g)} |QSVS_i|}$$
+
+\subsection{BuildingA - An Iterative Graph Generator}
+
+Building Algorithms are processes by which edges are added individually to a matrix (given a `probability matrix'), and then a new probability matrix is generated from the current iteration of the formative graph.
+
+\begin{lstlisting}[frame=single]
+nEdges = binomalRandom(N, P)
+A = zeros(N)
+P = (ones(N) - eye(N))/(N*(N-1))
+while nEdges > 0:
+	A = addEdgeFromProbabilityMatrix(A, P)
+	P = generateProbabilityMatrixFromPartialGraph(A)
+	nEdges = nEdges - 1
+\end{lstlisting}
+
+From this, it is clear that the only place that one can really modify this algorithm is in the generation of the $P$ matrix from the partially generated graph $A$.
+BuildingA used a simple algorithm to do this.
+It created an edge metric $EM(v_i, v_j)$ to describe the odds of creating an edge between vertices $v_i$ and $v_j$ (here, $DS$ refers to the degree sequence of A as it exists at each iteration):
+$$ EM(v_i, v_j, A) = (i - j  \neq 0) * (1 - A[i, j]) * \Big[ 1 + 2 max(DS) - DS[i] - DS[j] \Big] $$
+And with the probability of selecting a given edge for creation being:
+$$P(\,(v_i, v_j) \,| A) = EM(v_i, v_j, A) / \sum_{x = 1}^{N} \sum_{y = 1}^{N} EM(v_x, v_y, A)$$
+
+\subsection{BuildingB - An Inverse Differential Graph Generator}
+
+The BuildingB random graph generator operates identically to BuildingA, with a change in the individual edge metric $EM_A$:
+$$ EM(v_i, v_j, A) = (i - j  \neq 0) * (1 - A[i, j]) * \Big[ 1 + 2 max(DS) + DS[i] + DS[j] \Big] $$
 
 \subsection{Cloning Model}
 One of the thoughts that I first had was on the way that Co-Cycles graphs tended to be highly automorphic, and the way that internal structure of each set within the SVSes was almost always fully automorphic.
