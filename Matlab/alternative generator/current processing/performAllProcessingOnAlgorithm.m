@@ -20,7 +20,5 @@ function performAllProcessingOnAlgorithm( algorithm )
     
     createAlgorithmScoreReport(algorithm);
     
-    zipSmallData;
-    
 end
 
