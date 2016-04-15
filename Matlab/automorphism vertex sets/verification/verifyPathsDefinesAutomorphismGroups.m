@@ -1,4 +1,4 @@
-function [ output_args ] = verifyPathsDefinesAutomorphismGroups( G , shouldDisp )
+function [ output_args ] = verifyPathsDefinesAutomorphismGroups( G , shouldDisp)
     if (nargin == 1)
         shouldDisp = 0;
     end

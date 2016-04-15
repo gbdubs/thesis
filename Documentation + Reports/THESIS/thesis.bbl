@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{1961groups}
+{\em Groups and Their Graphs}.
+\newblock New mathematical library. Yale University, 1961.
+
 \bibitem{isosubgraphs}
 Jin Akiyama.
 \newblock The graphs with all induced subgraphs isomorphic.
@@ -10,10 +14,20 @@ Laslo Babai, Paul Erdos, and Stanley~M Selkow.
 \newblock Random graph isomorphism.
 \newblock {\em SIAM Computing}, 9(3), 1980.
 
+\bibitem{biggs1993algebraic}
+N.~Biggs.
+\newblock {\em Algebraic Graph Theory}.
+\newblock Cambridge Mathematical Library. Cambridge University Press, 1993.
+
 \bibitem{scalefreergs}
 B.~Bollobas.
 \newblock Mathematical results on scale-free random graphs.
 \newblock {\em Handbook of Graphs and Networks}, 2003.
+
+\bibitem{bollobas2013modern}
+B.~Bollobas.
+\newblock {\em Modern Graph Theory}.
+\newblock Graduate Texts in Mathematics. Springer New York, 2013.
 
 \bibitem{oeisbig}
 Keith~M. Briggs.
@@ -28,6 +42,18 @@ Peter~J Cameron.
 Sourav Chatterjee and Persi Diaconis.
 \newblock Estimating and understanding exponential random graph models.
 \newblock {\em The Annals of Statistics}, 41(5):2428?2461, 2013.
+
+\bibitem{christofides1975graph}
+N.~Christofides.
+\newblock {\em Graph Theory: An Algorithmic Approach}.
+\newblock Computer Science and Applied Mathematics. Academic Press,
+  Incorporated, 1975.
+
+\bibitem{cvetković2009introduction}
+D.~Cvetkovi{\'c}, P.~Rowlinson, and S.~Simi{\'c}.
+\newblock {\em An Introduction to the Theory of Graph Spectra}.
+\newblock London Mathematical Society Student Texts. Cambridge University
+  Press, 2009.
 
 \bibitem{eigenspaces}
 Dragos Cvetkovic, Peter Rowlinson, and Slobodan Simic.
@@ -44,11 +70,34 @@ P.~Erdos and A.~Reyni.
 \newblock On random graphs i.
 \newblock {\em Publicationes Mathematicae}, 6, 1959.
 
+\bibitem{erdős1974probabilistic}
+P.~Erd{\H{o}}s and J.H. Spencer.
+\newblock {\em Probabilistic Methods in Combinatorics}.
+\newblock Probability and Mathematical Statistics: a Series of Monographs and
+  Textbooks. Academic Press, 1974.
+
 \bibitem{spectralmatching}
 Marcelo Fiori and Guillermo Sapiro.
 \newblock On spectral properties for graph matching and graph isomorphism
   problems.
 \newblock {\em ARXIV}, 2014.
+
+\bibitem{gamkrelidze2012new}
+Alexander Gamkrelidze, Gunter Hotz, and Levan Varamashvili.
+\newblock New invariants for the graph isomorphism problem.
+\newblock {\em arXiv preprint arXiv:1212.3055}, 2012.
+
+\bibitem{harary1969graph}
+F.~Harary.
+\newblock {\em Graph Theory}.
+\newblock Addison-Wesley series in mathematics. Addison-Wesley Publishing
+  Company, 1969.
+
+\bibitem{kobler1993graph}
+J.~Kobler, U.~Sch{\"o}ning, and J.~Toran.
+\newblock {\em The Graph Isomorphism Problem: Its Structural Complexity}.
+\newblock Progress in Theoretical Computer Science. Birkh{\"a}user Boston,
+  1993.
 
 \bibitem{socialnetworks2002}
 D.~J.~Watts M.~E. J.~Newman and S.~H. Strogatz.
@@ -67,7 +116,7 @@ Václav Nýdl.
 \newblock Graph reconstruction from subgraphs.
 \newblock {\em DISCRETE MATHEMATICS}, may 2001.
 
-\bibitem{OEIS}
+\bibitem{oeis}
 Online~Encyclopedia of~Integer~Sequences.
 \newblock Number of graphs on n unlabeled nodes.
 
@@ -87,6 +136,11 @@ Tom A.~B. Snijders, Philippa~E. Pattison, Garry~L. Robins, and Mark~S.
 Tom~AB Snijders.
 \newblock Markov chain monte carlo estimation of exponential random graph
   models, 2002.
+
+\bibitem{tucker2012applied}
+A.~Tucker.
+\newblock {\em Applied Combinatorics, 6th Edition}.
+\newblock Wiley, 2012.
 
 \bibitem{complexnetworks}
 Remco van~der Hofstad.

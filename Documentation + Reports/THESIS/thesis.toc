@@ -88,14 +88,14 @@
 \contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{69}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{70}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{71}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {7}Appendices}{75}{chapter.7}
-\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{75}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{75}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{75}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{76}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{76}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{76}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{76}{subsection.7.1.6}
-\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{79}{subsection.7.1.7}
-\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{79}{section.7.2}
-\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{82}{section.7.3}
+\contentsline {chapter}{\numberline {7}Appendices}{76}{chapter.7}
+\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{76}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{76}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{76}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{77}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{77}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{77}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{77}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{80}{subsection.7.1.7}
+\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{80}{section.7.2}
+\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{83}{section.7.3}
