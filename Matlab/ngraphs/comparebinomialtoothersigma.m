@@ -41,20 +41,20 @@ X1 = 5 : 11;
 Y1 = distributionSigmas(:,2);
 E1 = distribution95Errors(:,2);
 
-%f = fit(X1',Y1,'power1');
+f = fitToExponentialOfNumberOfEdges(X1, Y1);
 % Create plot
-plot(X1,Y1,'DisplayName','Fit Sigma of Norm. Edge Dist.','MarkerSize',30,...
+plot(X1,Y1,'DisplayName','Fit Sigma of Algebraic Edge Dist.','MarkerSize',30,...
     'Marker','.',...
     'LineStyle','none',...
     'Color',[0.301960796117783 0.745098054409027 0.933333337306976]);
 
-plot(binomialN, normSigmaExpected, 'DisplayName','Normalized Binomial Distribution Sigma','MarkerSize',30,...
+plot(binomialN, normSigmaExpected, 'DisplayName','Normalized Matrix Distribution Sigma','MarkerSize',30,...
     'Marker','.',...
     'LineStyle','none');
 
-%fX = 4 : .05 : 12;
-%fY = f(fX);
-%plot(fX, fY, 'DisplayName','Power Curve Best Fit', 'LineWidth',2);
+fX = 4 : .05 : 12;
+fY = f(fX);
+plot(fX, fY, 'DisplayName','Power Curve Best Fit-Alg', 'LineWidth',2);
 
 % Create errorbar
 errorbar(X1,Y1,E1,'DisplayName','95% Confidence Interval','Marker','+',...
@@ -62,11 +62,19 @@ errorbar(X1,Y1,E1,'DisplayName','95% Confidence Interval','Marker','+',...
     'LineWidth',2,...
     'Color',[0 0.447058826684952 0.74117648601532]);
 
+X1 = binomialN;
+Y1 = normSigmaExpected;
+f = fitToExponentialOfNumberOfEdges(X1, Y1);
+fY = f(fX);
+plot(fX, fY, 'DisplayName','Power Curve Best Fit-Matrix', 'LineWidth',2);
 % Create xlabel
 xlabel('N Vertices');
 
 % Create ylabel
 ylabel('Sigma fit to Edge-Distribution');
+
+
+
 
 %% Uncomment the following line to preserve the X-limits of the axes
 xlim(axes1,[4 12]);

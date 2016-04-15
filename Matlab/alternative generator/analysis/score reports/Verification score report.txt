@@ -944,4 +944,5278 @@ N & P & Pooled SD &  Ideal &  Gilbert & Verification  & Score & Norm Diff \\
 \multirow{9}{*}{6} & 0.1 & 0.0023 & 0.127 & 0.098 & 0.095 & -0.113 & 1.116 \\
  & 0.2 & 0.0032 & 0.268 & 0.172 & 0.168 & 0.088 & 1.038 \\
  & 0.3 & 0.0049 & 0.360 & 0.220 & 0.227 & 0.013 & 0.953 \\
- & 0.4 & 0.0035 & 0.411 
+ & 0.4 & 0.0035 & 0.411 & 0.259 & 0.258 & 0.095 & 1.007 \\
+ & 0.5 & 0.0053 & 0.416 & 0.271 & 0.264 & -0.124 & 1.055 \\
+ & 0.6 & 0.0041 & 0.413 & 0.260 & 0.256 & 0.030 & 1.024 \\
+ & 0.7 & 0.0042 & 0.363 & 0.219 & 0.223 & 0.053 & 0.971 \\
+ & 0.8 & 0.0030 & 0.264 & 0.166 & 0.170 & 0.020 & 0.956 \\
+ & 0.9 & 0.0019 & 0.121 & 0.097 & 0.097 & 0.158 & 0.962 \\
+ \hline
+\multirow{9}{*}{7} & 0.1 & 0.0034 & 0.179 & 0.116 & 0.114 & -0.059 & 1.025 \\
+ & 0.2 & 0.0054 & 0.362 & 0.225 & 0.222 & -0.060 & 1.024 \\
+ & 0.3 & 0.0052 & 0.483 & 0.303 & 0.305 & 0.035 & 0.990 \\
+ & 0.4 & 0.0058 & 0.524 & 0.351 & 0.351 & 0.012 & 1.001 \\
+ & 0.5 & 0.0051 & 0.549 & 0.375 & 0.376 & 0.024 & 0.994 \\
+ & 0.6 & 0.0055 & 0.526 & 0.351 & 0.355 & 0.086 & 0.981 \\
+ & 0.7 & 0.0058 & 0.480 & 0.302 & 0.308 & 0.090 & 0.967 \\
+ & 0.8 & 0.0052 & 0.361 & 0.225 & 0.222 & 0.026 & 1.021 \\
+ & 0.9 & 0.0030 & 0.168 & 0.115 & 0.117 & 0.147 & 0.964 \\
+ \hline
+\multirow{9}{*}{8} & 0.1 & 0.0036 & 0.227 & 0.137 & 0.136 & 0.007 & 1.007 \\
+ & 0.2 & 0.0057 & 0.454 & 0.271 & 0.274 & -0.042 & 0.984 \\
+ & 0.3 & 0.0090 & 0.574 & 0.380 & 0.382 & 0.026 & 0.993 \\
+ & 0.4 & 0.0078 & 0.630 & 0.450 & 0.459 & 0.136 & 0.948 \\
+ & 0.5 & 0.0097 & 0.630 & 0.474 & 0.483 & -0.032 & 0.944 \\
+ & 0.6 & 0.0074 & 0.616 & 0.451 & 0.462 & 0.197 & 0.937 \\
+ & 0.7 & 0.0064 & 0.572 & 0.384 & 0.391 & 0.131 & 0.964 \\
+ & 0.8 & 0.0050 & 0.452 & 0.270 & 0.272 & 0.053 & 0.990 \\
+ & 0.9 & 0.0034 & 0.229 & 0.136 & 0.138 & -0.016 & 0.976 \\
+ \hline
+\multirow{9}{*}{9} & 0.1 & 0.0039 & 0.286 & 0.151 & 0.154 & 0.046 & 0.982 \\
+ & 0.2 & 0.0078 & 0.513 & 0.326 & 0.318 & -0.063 & 1.045 \\
+ & 0.3 & 0.0077 & 0.625 & 0.478 & 0.470 & 0.043 & 1.054 \\
+ & 0.4 & 0.0103 & 0.676 & 0.561 & 0.561 & -0.033 & 1.004 \\
+ & 0.5 & 0.0115 & 0.708 & 0.594 & 0.600 & 0.063 & 0.948 \\
+ & 0.6 & 0.0092 & 0.690 & 0.563 & 0.552 & 0.187 & 1.087 \\
+ & 0.7 & 0.0083 & 0.641 & 0.462 & 0.466 & 0.063 & 0.977 \\
+ & 0.8 & 0.0068 & 0.520 & 0.325 & 0.319 & 0.026 & 1.028 \\
+ & 0.9 & 0.0039 & 0.279 & 0.156 & 0.156 & -0.014 & 1.000 \\
+ \hline
+\multirow{9}{*}{10} & 0.1 & 0.0042 & 0.346 & 0.173 & 0.175 & 0.070 & 0.988 \\
+ & 0.2 & 0.0072 & 0.553 & 0.374 & 0.368 & -0.036 & 1.031 \\
+ & 0.3 & 0.0087 & 0.690 & 0.535 & 0.550 & 0.041 & 0.902 \\
+ & 0.4 & 0.0104 & 0.777 & 0.677 & 0.662 & -0.009 & 1.155 \\
+ & 0.5 & 0.0112 & 0.804 & 0.715 & 0.708 & -0.057 & 1.079 \\
+ & 0.6 & 0.0104 & 0.767 & 0.677 & 0.664 & 0.025 & 1.150 \\
+ & 0.7 & 0.0088 & 0.679 & 0.539 & 0.552 & 0.137 & 0.911 \\
+ & 0.8 & 0.0092 & 0.568 & 0.374 & 0.372 & -0.027 & 1.012 \\
+ & 0.9 & 0.0046 & 0.332 & 0.180 & 0.176 & -0.168 & 1.029 \\
+ \hline
+\hline
+\end{longtable}
+\begin{longtable}{ | c || c | c | c | c | c | c | c | c | c || c |}
+\hline
+\multicolumn{11}{|c|}{ Score Report For DSVV on Algorithm Verification} \\
+\hline
+\multicolumn{11}{|c|}{ P } \\
+\hline
+N & .1 & .2 & .3 & .4 & .5 & .6 & .7 & .8 & .9 & Mean\\
+ \hline
+ \hline
+ \endhead
+  4 &  \cellcolor[HTML]{FFF7F7} -0.17 &  \cellcolor[HTML]{FFF7F7} -0.35 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} -0.13 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} 0.13 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{FFEFEF} -0.50 & -0.077 \\
+  5 &  \cellcolor[HTML]{F7F7FF} 0.47 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} 0.10 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} 0.10 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFFFFF} -0.08 & 0.075 \\
+  6 &  \cellcolor[HTML]{FFFFFF} -0.11 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} -0.12 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} 0.02 &  \cellcolor[HTML]{FFFFFF} 0.16 & 0.024 \\
+  7 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFFFFF} 0.02 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} 0.15 & 0.033 \\
+  8 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} 0.14 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{F7F7FF} 0.20 &  \cellcolor[HTML]{FFFFFF} 0.13 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} -0.02 & 0.051 \\
+  9 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} -0.01 & 0.035 \\
+  10 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} -0.01 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} 0.02 &  \cellcolor[HTML]{FFFFFF} 0.14 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{FFF7F7} -0.17 & -0.003 \\
+ \hline
+ \hline
+Mean &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} 0.10 &  \cellcolor[HTML]{FFFFFF} 0.08 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFFFFF} 0.02
+\end{longtable}
+\begin{longtable}{ | c | c || c | c | c | c | c | c | }
+\hline
+\multicolumn{8}{|c|}{ Score Report For ADSR on Algorithm Verification} \\
+\hline
+N & P & Pooled SD &  Ideal &  Gilbert & Verification  & Score & Norm Diff \\
+ \hline
+ \hline
+ \endhead
+\multirow{9}{*}{4} & 0.1 & 0.0055 & 0.481 & 0.526 & 0.540 & -0.246 & 1.316 \\
+ & 0.2 & 0.0072 & 0.793 & 0.931 & 0.931 & -0.049 & 0.995 \\
+ & 0.3 & 0.0082 & 1.001 & 1.188 & 1.190 & -0.098 & 1.012 \\
+ & 0.4 & 0.0072 & 1.135 & 1.325 & 1.328 & -0.112 & 1.015 \\
+ & 0.5 & 0.0062 & 1.178 & 1.383 & 1.379 & 0.161 & 0.980 \\
+ & 0.6 & 0.0080 & 1.125 & 1.335 & 1.332 & 0.086 & 0.985 \\
+ & 0.7 & 0.0076 & 1.004 & 1.187 & 1.180 & 0.186 & 0.966 \\
+ & 0.8 & 0.0078 & 0.797 & 0.929 & 0.924 & -0.085 & 0.966 \\
+ & 0.9 & 0.0071 & 0.484 & 0.533 & 0.532 & -0.174 & 0.977 \\
+ \hline
+\multirow{9}{*}{5} & 0.1 & 0.0078 & 0.822 & 0.833 & 0.850 & -0.853 & 2.511 \\
+ & 0.2 & 0.0067 & 1.369 & 1.390 & 1.407 & -0.673 & 1.797 \\
+ & 0.3 & 0.0072 & 1.702 & 1.731 & 1.726 & 0.159 & 0.841 \\
+ & 0.4 & 0.0096 & 1.885 & 1.904 & 1.900 & 0.205 & 0.776 \\
+ & 0.5 & 0.0082 & 1.937 & 1.947 & 1.952 & -0.426 & 1.595 \\
+ & 0.6 & 0.0065 & 1.871 & 1.900 & 1.895 & 0.247 & 0.826 \\
+ & 0.7 & 0.0075 & 1.704 & 1.733 & 1.730 & 0.120 & 0.891 \\
+ & 0.8 & 0.0085 & 1.354 & 1.407 & 1.405 & -0.147 & 0.977 \\
+ & 0.9 & 0.0074 & 0.826 & 0.846 & 0.845 & -0.001 & 0.928 \\
+ \hline
+\multirow{9}{*}{6} & 0.1 & 0.0084 & 1.096 & 1.158 & 1.158 & 0.029 & 0.990 \\
+ & 0.2 & 0.0076 & 1.760 & 1.833 & 1.831 & 0.167 & 0.964 \\
+ & 0.3 & 0.0089 & 2.154 & 2.208 & 2.216 & -0.183 & 1.145 \\
+ & 0.4 & 0.0089 & 2.377 & 2.408 & 2.410 & -0.029 & 1.040 \\
+ & 0.5 & 0.0080 & 2.435 & 2.477 & 2.469 & 0.174 & 0.807 \\
+ & 0.6 & 0.0086 & 2.373 & 2.411 & 2.402 & 0.291 & 0.765 \\
+ & 0.7 & 0.0090 & 2.130 & 2.212 & 2.210 & -0.116 & 0.979 \\
+ & 0.8 & 0.0083 & 1.732 & 1.826 & 1.835 & -0.221 & 1.105 \\
+ & 0.9 & 0.0084 & 1.102 & 1.150 & 1.162 & -0.294 & 1.274 \\
+ \hline
+\multirow{9}{*}{7} & 0.1 & 0.0075 & 1.467 & 1.447 & 1.454 & 0.273 & 0.675 \\
+ & 0.2 & 0.0063 & 2.277 & 2.236 & 2.235 & 0.158 & 1.038 \\
+ & 0.3 & 0.0082 & 2.727 & 2.658 & 2.666 & 0.153 & 0.879 \\
+ & 0.4 & 0.0097 & 2.949 & 2.871 & 2.889 & 0.312 & 0.761 \\
+ & 0.5 & 0.0090 & 3.034 & 2.948 & 2.958 & 0.312 & 0.878 \\
+ & 0.6 & 0.0092 & 2.952 & 2.883 & 2.872 & -0.067 & 1.157 \\
+ & 0.7 & 0.0078 & 2.714 & 2.666 & 2.674 & 0.185 & 0.833 \\
+ & 0.8 & 0.0076 & 2.263 & 2.245 & 2.231 & -0.521 & 1.749 \\
+ & 0.9 & 0.0076 & 1.467 & 1.453 & 1.457 & 0.325 & 0.769 \\
+ \hline
+\multirow{9}{*}{8} & 0.1 & 0.0111 & 1.768 & 1.735 & 1.735 & -0.100 & 0.994 \\
+ & 0.2 & 0.0079 & 2.661 & 2.622 & 2.618 & -0.193 & 1.082 \\
+ & 0.3 & 0.0108 & 3.161 & 3.079 & 3.093 & 0.150 & 0.834 \\
+ & 0.4 & 0.0093 & 3.417 & 3.345 & 3.334 & 0.008 & 1.150 \\
+ & 0.5 & 0.0089 & 3.492 & 3.414 & 3.420 & 0.186 & 0.921 \\
+ & 0.6 & 0.0093 & 3.399 & 3.338 & 3.330 & -0.174 & 1.137 \\
+ & 0.7 & 0.0103 & 3.163 & 3.092 & 3.088 & -0.242 & 1.054 \\
+ & 0.8 & 0.0105 & 2.668 & 2.611 & 2.616 & 0.146 & 0.915 \\
+ & 0.9 & 0.0102 & 1.763 & 1.745 & 1.743 & -0.308 & 1.091 \\
+ \hline
+\multirow{9}{*}{9} & 0.1 & 0.0091 & 2.130 & 2.010 & 2.002 & 0.003 & 1.067 \\
+ & 0.2 & 0.0092 & 3.094 & 2.967 & 2.962 & -0.018 & 1.036 \\
+ & 0.3 & 0.0074 & 3.608 & 3.486 & 3.502 & 0.267 & 0.870 \\
+ & 0.4 & 0.0115 & 3.869 & 3.778 & 3.758 & -0.211 & 1.222 \\
+ & 0.5 & 0.0114 & 3.906 & 3.860 & 3.856 & 0.028 & 1.085 \\
+ & 0.6 & 0.0083 & 3.852 & 3.769 & 3.760 & -0.041 & 1.108 \\
+ & 0.7 & 0.0117 & 3.610 & 3.488 & 3.506 & 0.103 & 0.852 \\
+ & 0.8 & 0.0105 & 3.103 & 2.966 & 2.974 & 0.065 & 0.948 \\
+ & 0.9 & 0.0092 & 2.133 & 2.002 & 2.004 & -0.133 & 0.991 \\
+ \hline
+\multirow{9}{*}{10} & 0.1 & 0.0073 & 2.452 & 2.255 & 2.260 & 0.056 & 0.973 \\
+ & 0.2 & 0.0099 & 3.492 & 3.315 & 3.314 & -0.014 & 1.003 \\
+ & 0.3 & 0.0102 & 3.994 & 3.872 & 3.887 & 0.174 & 0.881 \\
+ & 0.4 & 0.0110 & 4.249 & 4.181 & 4.182 & -0.179 & 0.980 \\
+ & 0.5 & 0.0102 & 4.313 & 4.274 & 4.272 & 0.084 & 1.044 \\
+ & 0.6 & 0.0108 & 4.261 & 4.185 & 4.169 & -0.435 & 1.208 \\
+ & 0.7 & 0.0110 & 3.998 & 3.880 & 3.883 & 0.082 & 0.974 \\
+ & 0.8 & 0.0089 & 3.494 & 3.306 & 3.308 & -0.025 & 0.993 \\
+ & 0.9 & 0.0116 & 2.428 & 2.262 & 2.264 & -0.022 & 0.986 \\
+ \hline
+\hline
+\end{longtable}
+\begin{longtable}{ | c || c | c | c | c | c | c | c | c | c || c |}
+\hline
+\multicolumn{11}{|c|}{ Score Report For ADSR on Algorithm Verification} \\
+\hline
+\multicolumn{11}{|c|}{ P } \\
+\hline
+N & .1 & .2 & .3 & .4 & .5 & .6 & .7 & .8 & .9 & Mean\\
+ \hline
+ \hline
+ \endhead
+  4 &  \cellcolor[HTML]{FFF7F7} -0.25 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFFFFF} -0.11 &  \cellcolor[HTML]{F7F7FF} 0.16 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFFFFF} -0.09 &  \cellcolor[HTML]{FFF7F7} -0.17 & -0.037 \\
+  5 &  \cellcolor[HTML]{FFE7E7} -0.85 &  \cellcolor[HTML]{FFEFEF} -0.67 &  \cellcolor[HTML]{F7F7FF} 0.16 &  \cellcolor[HTML]{F7F7FF} 0.21 &  \cellcolor[HTML]{FFF7F7} -0.43 &  \cellcolor[HTML]{F7F7FF} 0.25 &  \cellcolor[HTML]{FFFFFF} 0.12 &  \cellcolor[HTML]{FFFFFF} -0.15 &  \cellcolor[HTML]{FFFFFF} -0.00 & -0.152 \\
+  6 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{F7F7FF} 0.17 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{F7F7FF} 0.17 &  \cellcolor[HTML]{F7F7FF} 0.29 &  \cellcolor[HTML]{FFFFFF} -0.12 &  \cellcolor[HTML]{FFF7F7} -0.22 &  \cellcolor[HTML]{FFF7F7} -0.29 & -0.020 \\
+  7 &  \cellcolor[HTML]{F7F7FF} 0.27 &  \cellcolor[HTML]{FFFFFF} 0.16 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{F7F7FF} 0.31 &  \cellcolor[HTML]{F7F7FF} 0.31 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFEFEF} -0.52 &  \cellcolor[HTML]{F7F7FF} 0.32 & 0.126 \\
+  8 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{FFF7F7} -0.19 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFF7F7} -0.17 &  \cellcolor[HTML]{FFF7F7} -0.24 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{FFF7F7} -0.31 & -0.059 \\
+  9 &  \cellcolor[HTML]{FFFFFF} 0.00 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{F7F7FF} 0.27 &  \cellcolor[HTML]{FFF7F7} -0.21 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} 0.10 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFFFFF} -0.13 & 0.007 \\
+  10 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFFFFF} -0.01 &  \cellcolor[HTML]{F7F7FF} 0.17 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFFFFF} 0.08 &  \cellcolor[HTML]{FFF7F7} -0.44 &  \cellcolor[HTML]{FFFFFF} 0.08 &  \cellcolor[HTML]{FFFFFF} -0.03 &  \cellcolor[HTML]{FFFFFF} -0.02 & -0.031 \\
+ \hline
+ \hline
+Mean &  \cellcolor[HTML]{FFFFFF} -0.12 &  \cellcolor[HTML]{FFFFFF} -0.09 &  \cellcolor[HTML]{FFFFFF} 0.09 &  \cellcolor[HTML]{FFFFFF} -0.00 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFFFFF} -0.01 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} -0.11 &  \cellcolor[HTML]{FFFFFF} -0.09 &  \cellcolor[HTML]{FFFFFF} -0.02
+\end{longtable}
+\begin{longtable}{ | c | c || c | c | c | c | c | c | }
+\hline
+\multicolumn{8}{|c|}{ Score Report For PQRA on Algorithm Verification} \\
+\hline
+N & P & Pooled SD &  Ideal &  Gilbert & Verification  & Score & Norm Diff \\
+ \hline
+ \hline
+ \endhead
+\multirow{9}{*}{4} & 0.1 & 0.0025 & 0.937 & 0.916 & 0.913 & -0.060 & 1.143 \\
+ & 0.2 & 0.0040 & 0.817 & 0.756 & 0.759 & -0.181 & 0.950 \\
+ & 0.3 & 0.0051 & 0.685 & 0.616 & 0.615 & -0.180 & 1.022 \\
+ & 0.4 & 0.0048 & 0.591 & 0.532 & 0.533 & -0.100 & 0.983 \\
+ & 0.5 & 0.0046 & 0.555 & 0.494 & 0.498 & 0.316 & 0.940 \\
+ & 0.6 & 0.0056 & 0.595 & 0.527 & 0.529 & -0.003 & 0.976 \\
+ & 0.7 & 0.0051 & 0.687 & 0.618 & 0.622 & 0.189 & 0.935 \\
+ & 0.8 & 0.0040 & 0.812 & 0.755 & 0.759 & 0.081 & 0.935 \\
+ & 0.9 & 0.0027 & 0.938 & 0.918 & 0.915 & -0.297 & 1.137 \\
+ \hline
+\multirow{9}{*}{5} & 0.1 & 0.0036 & 0.851 & 0.825 & 0.817 & -0.217 & 1.302 \\
+ & 0.2 & 0.0045 & 0.615 & 0.565 & 0.555 & -0.361 & 1.204 \\
+ & 0.3 & 0.0053 & 0.432 & 0.379 & 0.386 & 0.116 & 0.865 \\
+ & 0.4 & 0.0051 & 0.329 & 0.281 & 0.284 & 0.057 & 0.938 \\
+ & 0.5 & 0.0051 & 0.302 & 0.264 & 0.259 & -0.163 & 1.139 \\
+ & 0.6 & 0.0042 & 0.336 & 0.288 & 0.290 & -0.045 & 0.953 \\
+ & 0.7 & 0.0044 & 0.434 & 0.377 & 0.381 & 0.060 & 0.937 \\
+ & 0.8 & 0.0055 & 0.618 & 0.558 & 0.557 & -0.170 & 1.020 \\
+ & 0.9 & 0.0040 & 0.847 & 0.820 & 0.821 & -0.099 & 0.993 \\
+ \hline
+\multirow{9}{*}{6} & 0.1 & 0.0050 & 0.720 & 0.674 & 0.678 & 0.039 & 0.904 \\
+ & 0.2 & 0.0040 & 0.395 & 0.333 & 0.330 & -0.022 & 1.046 \\
+ & 0.3 & 0.0039 & 0.240 & 0.174 & 0.173 & 0.042 & 1.017 \\
+ & 0.4 & 0.0030 & 0.176 & 0.120 & 0.116 & -0.025 & 1.068 \\
+ & 0.5 & 0.0033 & 0.159 & 0.103 & 0.104 & -0.056 & 0.983 \\
+ & 0.6 & 0.0039 & 0.178 & 0.119 & 0.117 & -0.067 & 1.020 \\
+ & 0.7 & 0.0039 & 0.248 & 0.172 & 0.172 & -0.190 & 1.005 \\
+ & 0.8 & 0.0042 & 0.408 & 0.332 & 0.329 & -0.069 & 1.039 \\
+ & 0.9 & 0.0045 & 0.717 & 0.678 & 0.672 & -0.224 & 1.168 \\
+ \hline
+\multirow{9}{*}{7} & 0.1 & 0.0039 & 0.559 & 0.534 & 0.533 & 0.230 & 1.063 \\
+ & 0.2 & 0.0036 & 0.221 & 0.183 & 0.178 & -0.052 & 1.112 \\
+ & 0.3 & 0.0027 & 0.104 & 0.074 & 0.073 & -0.074 & 1.028 \\
+ & 0.4 & 0.0026 & 0.069 & 0.047 & 0.046 & -0.052 & 1.067 \\
+ & 0.5 & 0.0020 & 0.059 & 0.041 & 0.040 & -0.014 & 1.061 \\
+ & 0.6 & 0.0026 & 0.068 & 0.044 & 0.049 & 0.189 & 0.826 \\
+ & 0.7 & 0.0026 & 0.107 & 0.075 & 0.072 & -0.011 & 1.115 \\
+ & 0.8 & 0.0039 & 0.223 & 0.178 & 0.183 & 0.141 & 0.889 \\
+ & 0.9 & 0.0046 & 0.557 & 0.534 & 0.533 & -0.099 & 1.079 \\
+ \hline
+\multirow{9}{*}{8} & 0.1 & 0.0061 & 0.409 & 0.392 & 0.389 & -0.335 & 1.196 \\
+ & 0.2 & 0.0028 & 0.117 & 0.079 & 0.081 & 0.009 & 0.940 \\
+ & 0.3 & 0.0016 & 0.045 & 0.028 & 0.028 & -0.048 & 0.994 \\
+ & 0.4 & 0.0014 & 0.025 & 0.017 & 0.015 & -0.178 & 1.169 \\
+ & 0.5 & 0.0013 & 0.022 & 0.013 & 0.014 & 0.069 & 0.860 \\
+ & 0.6 & 0.0012 & 0.028 & 0.016 & 0.016 & 0.047 & 0.975 \\
+ & 0.7 & 0.0017 & 0.044 & 0.027 & 0.029 & 0.148 & 0.883 \\
+ & 0.8 & 0.0032 & 0.116 & 0.080 & 0.081 & -0.022 & 0.968 \\
+ & 0.9 & 0.0054 & 0.412 & 0.385 & 0.387 & -0.120 & 0.921 \\
+ \hline
+\multirow{9}{*}{9} & 0.1 & 0.0041 & 0.272 & 0.260 & 0.268 & 1.179 & 0.331 \\
+ & 0.2 & 0.0023 & 0.053 & 0.037 & 0.037 & -0.136 & 1.039 \\
+ & 0.3 & 0.0010 & 0.016 & 0.011 & 0.008 & -0.492 & 1.385 \\
+ & 0.4 & 0.0008 & 0.007 & 0.005 & 0.005 & -0.206 & 1.105 \\
+ & 0.5 & 0.0007 & 0.007 & 0.004 & 0.005 & 0.282 & 0.776 \\
+ & 0.6 & 0.0008 & 0.008 & 0.006 & 0.005 & -0.315 & 1.290 \\
+ & 0.7 & 0.0010 & 0.017 & 0.010 & 0.010 & 0.066 & 1.024 \\
+ & 0.8 & 0.0021 & 0.056 & 0.036 & 0.032 & -0.297 & 1.203 \\
+ & 0.9 & 0.0044 & 0.273 & 0.268 & 0.270 & 0.472 & 0.556 \\
+ \hline
+\multirow{9}{*}{10} & 0.1 & 0.0034 & 0.172 & 0.173 & 0.171 & -2.089 & -7.714 \\
+ & 0.2 & 0.0013 & 0.021 & 0.015 & 0.013 & -0.244 & 1.303 \\
+ & 0.3 & 0.0007 & 0.005 & 0.004 & 0.004 & 0.155 & 1.000 \\
+ & 0.4 & 0.0004 & 0.003 & 0.001 & 0.002 & 0.834 & 0.488 \\
+ & 0.5 & 0.0004 & 0.001 & 0.001 & 0.001 & -1.461 & -4.000 \\
+ & 0.6 & 0.0004 & 0.002 & 0.002 & 0.002 & -0.981 & 2.600 \\
+ & 0.7 & 0.0007 & 0.005 & 0.004 & 0.004 & -0.043 & 1.026 \\
+ & 0.8 & 0.0012 & 0.022 & 0.012 & 0.013 & 0.069 & 0.917 \\
+ & 0.9 & 0.0043 & 0.175 & 0.170 & 0.169 & -0.198 & 1.236 \\
+ \hline
+\hline
+\end{longtable}
+\begin{longtable}{ | c || c | c | c | c | c | c | c | c | c || c |}
+\hline
+\multicolumn{11}{|c|}{ Score Report For PQRA on Algorithm Verification} \\
+\hline
+\multicolumn{11}{|c|}{ P } \\
+\hline
+N & .1 & .2 & .3 & .4 & .5 & .6 & .7 & .8 & .9 & Mean\\
+ \hline
+ \hline
+ \endhead
+  4 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFFFFF} -0.10 &  \cellcolor[HTML]{F7F7FF} 0.32 &  \cellcolor[HTML]{FFFFFF} -0.00 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFFFFF} 0.08 &  \cellcolor[HTML]{FFF7F7} -0.30 & -0.026 \\
+  5 &  \cellcolor[HTML]{FFF7F7} -0.22 &  \cellcolor[HTML]{FFF7F7} -0.36 &  \cellcolor[HTML]{FFFFFF} 0.12 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFF7F7} -0.16 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{FFFFFF} 0.06 &  \cellcolor[HTML]{FFF7F7} -0.17 &  \cellcolor[HTML]{FFFFFF} -0.10 & -0.091 \\
+  6 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFFFFF} 0.04 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFFFFF} -0.06 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFF7F7} -0.19 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFF7F7} -0.22 & -0.064 \\
+  7 &  \cellcolor[HTML]{F7F7FF} 0.23 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{FFFFFF} -0.01 &  \cellcolor[HTML]{F7F7FF} 0.19 &  \cellcolor[HTML]{FFFFFF} -0.01 &  \cellcolor[HTML]{FFFFFF} 0.14 &  \cellcolor[HTML]{FFFFFF} -0.10 & 0.029 \\
+  8 &  \cellcolor[HTML]{FFF7F7} -0.33 &  \cellcolor[HTML]{FFFFFF} 0.01 &  \cellcolor[HTML]{FFFFFF} -0.05 &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{FFFFFF} -0.02 &  \cellcolor[HTML]{FFFFFF} -0.12 & -0.048 \\
+  9 &  \cellcolor[HTML]{DFDFFF} 1.18 &  \cellcolor[HTML]{FFFFFF} -0.14 &  \cellcolor[HTML]{FFEFEF} -0.49 &  \cellcolor[HTML]{FFF7F7} -0.21 &  \cellcolor[HTML]{F7F7FF} 0.28 &  \cellcolor[HTML]{FFF7F7} -0.31 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFF7F7} -0.30 &  \cellcolor[HTML]{F7F7FF} 0.47 & 0.061 \\
+  10 &  \cellcolor[HTML]{FFC7C7} -2.09 &  \cellcolor[HTML]{FFF7F7} -0.24 &  \cellcolor[HTML]{FFFFFF} 0.15 &  \cellcolor[HTML]{E7E7FF} 0.83 &  \cellcolor[HTML]{FFD7D7} -1.46 &  \cellcolor[HTML]{FFE7E7} -0.98 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} 0.07 &  \cellcolor[HTML]{FFF7F7} -0.20 & -0.440 \\
+ \hline
+ \hline
+Mean &  \cellcolor[HTML]{FFF7F7} -0.18 &  \cellcolor[HTML]{FFFFFF} -0.14 &  \cellcolor[HTML]{FFFFFF} -0.07 &  \cellcolor[HTML]{FFFFFF} 0.05 &  \cellcolor[HTML]{FFFFFF} -0.15 &  \cellcolor[HTML]{FFF7F7} -0.17 &  \cellcolor[HTML]{FFFFFF} 0.03 &  \cellcolor[HTML]{FFFFFF} -0.04 &  \cellcolor[HTML]{FFFFFF} -0.08 &  \cellcolor[HTML]{FFFFFF} -0.08
+\end{longtable}
+\begin{longtable}{ | c | c || c | c | c | c | c | c | }
+\hline
+\multicolumn{8}{|c|}{ Score Report For PQRB on Algorithm Verification} \\
+\hline
+N & P & Pooled SD &  Ideal &  Gilbert & Verification  & Score & Norm Diff \\
+ \hline
+ \hline
+ \endhead
+\multirow{9}{*}{4} & 0.1 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.2 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.3 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.4 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.5 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.6 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.7 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.8 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ & 0.9 & 0.0000 & 1.000 & 1.000 & 1.000 & 0.000 & NaN \\
+ \hline
+\multirow{9}{*}{5} & 0.1 & 0.0013 & 0.980 & 0.989 & 0.985 & 0.559 & 0.533 \\
+ & 0.2 & 0.0024 & 0.908 & 0.933 & 0.929 & 0.199 & 0.859 \\
+ & 0.3 & 0.0026 & 0.820 & 0.856 & 0.855 & 0.061 & 0.961 \\
+ & 0.4 & 0.0054 & 0.746 & 0.799 & 0.800 & -0.105 & 1.023 \\
+ & 0.5 & 0.0036 & 0.721 & 0.775 & 0.775 & 0.140 & 0.986 \\
+ & 0.6 & 0.0039 & 0.752 & 0.793 & 0.798 & 0.105 & 1.125 \\
+ & 0.7 & 0.0042 & 0.818 & 0.858 & 0.856 & 0.198 & 0.937 \\
+ & 0.8 & 0.0026 & 0.914 & 0.929 & 0.930 & -0.093 & 1.079 \\
+ & 0.9 & 0.0010 & 0.981 & 0.987 & 0.988 & -0.156 & 1.163 \\
+ \hline
+\multirow{9}{*}{6} & 0.1 & 0.0019 & 0.953 & 0.958 & 0.960 & -0.261 & 1.391 \\
+ & 0.2 & 0.0037 & 0.806 & 0.806 & 0.812 & -4.016 & -58.667 \\
+ & 0.3 & 0.0048 & 0.653 & 0.651 & 0.647 & -1.112 & 3.000 \\
+ & 0.4 & 0.0052 & 0.554 & 0.546 & 0.547 & 0.010 & 0.981 \\
+ & 0.5 & 0.0044 & 0.528 & 0.511 & 0.514 & 0.221 & 0.842 \\
+ & 0.6 & 0.0047 & 0.554 & 0.546 & 0.553 & 2.223 & 0.101 \\
+ & 0.7 & 0.0052 & 0.663 & 0.650 & 0.651 & -0.018 & 0.903 \\
+ & 0.8 & 0.0040 & 0.810 & 0.813 & 0.810 & 1.263 & -0.247 \\
+ & 0.9 & 0.0016 & 0.956 & 0.959 & 0.957 & 1.127 & 0.354 \\
+ \hline
+\multirow{9}{*}{7} & 0.1 & 0.0028 & 0.890 & 0.915 & 0.912 & 0.056 & 0.876 \\
+ & 0.2 & 0.0038 & 0.620 & 0.639 & 0.644 & -0.151 & 1.264 \\
+ & 0.3 & 0.0044 & 0.419 & 0.438 & 0.432 & 0.309 & 0.717 \\
+ & 0.4 & 0.0047 & 0.324 & 0.341 & 0.330 & 0.985 & 0.384 \\
+ & 0.5 & 0.0045 & 0.297 & 0.309 & 0.303 & 0.945 & 0.479 \\
+ & 0.6 & 0.0047 & 0.323 & 0.329 & 0.339 & -0.920 & 2.500 \\
+ & 0.7 & 0.0044 & 0.422 & 0.433 & 0.429 & 0.273 & 0.673 \\
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('retrieveFromBaseline', '/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/baseline/retrieveFromBaseline.m', 6)" style="font-weight:bold">retrieveFromBaseline</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/baseline/retrieveFromBaseline.m',6,0)">line 6</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('makeLatexTableForAlgorithmComparison/generateRow1', '/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/latex analysis/makeLatexTableForAlgorithmComparison.m', 12)" style="font-weight:bold">makeLatexTableForAlgorithmComparison/generateRow1</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/latex analysis/makeLatexTableForAlgorithmComparison.m',12,0)">line 12</a>)
+        [iN, iMean, iSd] = retrieveFromBaseline(n, p, 'Ideal', metric);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('makeLatexTableForAlgorithmComparison', '/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/latex analysis/makeLatexTableForAlgorithmComparison.m', 64)" style="font-weight:bold">makeLatexTableForAlgorithmComparison</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/latex analysis/makeLatexTableForAlgorithmComparison.m',64,0)">line 64</a>)
+             disp(generateRow1(metric, n, p, algorithm));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('createAlgorithmScoreReport', '/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/latex analysis/createAlgorithmScoreReport.m', 23)" style="font-weight:bold">createAlgorithmScoreReport</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/alternative generator/current analysis/latex analysis/createAlgorithmScoreReport.m',23,0)">line 23</a>)
+        makeLatexTableForAlgorithmComparison(metric, algorithm);
+} 
+untitled38
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cell2mat', '/Applications/MATLAB_R2015b.app/toolbox/matlab/datatypes/cell2mat.p', 44)" style="font-weight:bold">cell2mat</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015b.app/toolbox/matlab/datatypes/cell2mat.p',44,0)">line 44</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('findAllAutomorphisms/generateAutomorphismGiven/qecSizeError', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m', 38)" style="font-weight:bold">findAllAutomorphisms/generateAutomorphismGiven/qecSizeError</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m',38,0)">line 38</a>)
+            cellszB = cell2mat(cellfun(@size, qecA, 'uni', false));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('findAllAutomorphisms/generateAutomorphismGiven/subdivideEquivalenceClassesBasedOnNewLink', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m', 87)" style="font-weight:bold">findAllAutomorphisms/generateAutomorphismGiven/subdivideEquivalenceClassesBasedOnNewLink</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m',87,0)">line 87</a>)
+                if qecSizeError()
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('findAllAutomorphisms/generateAutomorphismGiven/assignAllKnowns', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m', 104)" style="font-weight:bold">findAllAutomorphisms/generateAutomorphismGiven/assignAllKnowns</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m',104,0)">line 104</a>)
+                        subdivideEquivalenceClassesBasedOnNewLink(a,b);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('findAllAutomorphisms/generateAutomorphismGiven', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m', 145)" style="font-weight:bold">findAllAutomorphisms/generateAutomorphismGiven</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m',145,0)">line 145</a>)
+            assignAllKnowns();
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('findAllAutomorphisms', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m', 160)" style="font-weight:bold">findAllAutomorphisms</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/findAllAutomorphisms.m',160,0)">line 160</a>)
+generateAutomorphismGiven(QECA, QECB, AUTOM);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('verifyPathsDefinesAutomorphismGroups', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/verifyPathsDefinesAutomorphismGroups.m', 6)" style="font-weight:bold">verifyPathsDefinesAutomorphismGroups</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/verification/verifyPathsDefinesAutomorphismGroups.m',6,0)">line 6</a>)
+    automorphs = findAllAutomorphisms(G);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('untitled38', '/home/u/fall12/gward/Desktop/thesis/Matlab/oneoffs/untitled38.m', 20)" style="font-weight:bold">untitled38</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/oneoffs/untitled38.m',20,0)">line 20</a>)
+    result = verifyPathsDefinesAutomorphismGroups(A, 0);
+} 
+performSVSEqualityTests
+{Undefined function or variable 'success'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('performSVSEqualityProportionTest', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/proportionExploration/performSVSEqualityProportionTest.m', 30)" style="font-weight:bold">performSVSEqualityProportionTest</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/proportionExploration/performSVSEqualityProportionTest.m',30,0)">line 30</a>)
+    proportionEqual = success / (failures + successes);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('performSVSEqualityTests', '/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/proportionExploration/performSVSEqualityTests.m', 1)" style="font-weight:bold">performSVSEqualityTests</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/proportionExploration/performSVSEqualityTests.m',1,0)">line 1</a>)
+v10n100000e50 = performSVSEqualityProportionTest(10,.5,10);
+} 
+opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/automorphism vertex sets/proportionExploration/performSVSEqualityProportionTest.m',30,0)
+performSVSEqualityTests
+performSVSEqualityTests
+FAILURE
+    0.0069
+
+FAILURE
+    0.0131
+
+FAILURE
+    0.0162
+
+FAILURE
+    0.0073
+
+FAILURE
+    0.0075
+
+FAILURE
+    0.0079
+
+FAILURE
+    0.0084
+
+FAILURE
+    0.0087
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0106
+
+FAILURE
+    0.0103
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0106
+
+FAILURE
+    0.0106
+
+FAILURE
+    0.0104
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0103
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0103
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0103
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0103
+
+FAILURE
+    0.0104
+
+FAILURE
+    0.0104
+
+FAILURE
+    0.0104
+
+FAILURE
+    0.0103
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0102
+
+FAILURE
+    0.0101
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0098
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0100
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0099
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0089
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0090
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0097
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0091
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0092
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0093
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0094
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0096
+
+FAILURE
+    0.0095
+
+FAILURE
+    0.0024
+
+FAILURE
+    0.0044
+
+FAILURE
+    0.0039
+
+FAILURE
+    0.0041
+
+FAILURE
+    0.0028
+
+FAILURE
+    0.0034
+
+FAILURE
+    0.0035
+
+FAILURE
+    0.0038
+
+FAILURE
+    0.0042
+
+FAILURE
+    0.0045
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0054
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0043
+
+FAILURE
+    0.0044
+
+FAILURE
+    0.0044
+
+FAILURE
+    0.0045
+
+FAILURE
+    0.0042
+
+FAILURE
+    0.0043
+
+FAILURE
+    0.0044
+
+FAILURE
+    0.0040
+
+FAILURE
+    0.0039
+
+FAILURE
+    0.0039
+
+FAILURE
+    0.0038
+
+FAILURE
+    0.0039
+
+FAILURE
+    0.0040
+
+FAILURE
+    0.0041
+
+FAILURE
+    0.0041
+
+FAILURE
+    0.0040
+
+FAILURE
+    0.0041
+
+FAILURE
+    0.0042
+
+FAILURE
+    0.0042
+
+FAILURE
+    0.0043
+
+FAILURE
+    0.0044
+
+FAILURE
+    0.0045
+
+FAILURE
+    0.0045
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0053
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0052
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0051
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0050
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0049
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0048
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0047
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+    0.0046
+
+FAILURE
+   8.2034e-04
+
+FAILURE
+    0.0012
+
+FAILURE
+   9.5299e-04
+
+FAILURE
+    0.0012
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0013
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0014
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0020
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0019
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0018
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0015
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+FAILURE
+    0.0017
+
+performSVSPlusEqualityTests
+FAILURE
+   3.0618e-04
+
+FAILURE
+   8.4922e-05
+
+FAILURE
+   1.2125e-04
+
+FAILURE
+   1.5950e-04
+
+FAILURE
+   1.6529e-04
+
+FAILURE
+   1.9434e-04
+
+FAILURE
+   2.2220e-04
+
+FAILURE
+   2.4691e-04
+
+FAILURE
+   2.7506e-04
+
+FAILURE
+   2.7034e-04
+
+FAILURE
+   2.6448e-04
+
+FAILURE
+   2.7665e-04
+
+FAILURE
+   2.9341e-04
+
+FAILURE
+   3.1541e-04
+
+FAILURE
+   3.2775e-04
+
+FAILURE
+   3.1768e-04
+
+FAILURE
+   3.3693e-04
+
+FAILURE
+   3.5296e-04
+
+FAILURE
+   3.6489e-04
+
+FAILURE
+   3.2678e-04
+
+FAILURE
+   3.2335e-04
+
+FAILURE
+   3.3409e-04
+
+FAILURE
+   3.3880e-04
+
+FAILURE
+   3.3887e-04
+
+FAILURE
+   3.2164e-04
+
+FAILURE
+   3.2805e-04
+
+FAILURE
+   2.9727e-04
+
+FAILURE
+   3.0435e-04
+
+FAILURE
+   3.0818e-04
+
+FAILURE
+   3.0997e-04
+
+FAILURE
+    0.0016
+
+FAILURE
+    0.0013
+
+FAILURE
+   8.6306e-04
+
+FAILURE
+   8.5415e-04
+
+FAILURE
+    0.0010
+
+FAILURE
+   1.2173e-04
+
+FAILURE
+   1.3216e-04
+
+FAILURE
+   1.5072e-04
+
+FAILURE
+   1.2472e-04
+
+FAILURE
+   1.2449e-04
+
+FAILURE
+   2.3460e-05
+
+FAILURE
+   4.1501e-05
+
+FAILURE
+   4.6830e-05
+
+FAILURE
+   4.8026e-05
+
+FAILURE
+   5.9327e-05
+
+v12n100000e50plus
+
+v12n100000e50plus =
+
+    1.0000
+
+n = 10 : 12
+
+n =
+
+    10    11    12
+
+normalQEC = [v10n100000e50, v11n100000e50, v12n100000e50];
+plusQEC = [v10n100000e50plus,v11n100000e50plus,v12n100000e50plus];
+plot(normalQEC,'DisplayName','normalQEC');hold on;plot(plusQEC,'DisplayName','plusQEC');plot(n,'DisplayName','n');hold off;
+temp
+temp
+temp
+[Warning: Data sizes do not match. Converting all data to column vectors.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prepareFittingData>iWarnIfSizeMismatch', '/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m', 48)" style="font-weight:bold">prepareFittingData>iWarnIfSizeMismatch</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m',48,0)">line 48</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prepareFittingData', '/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m', 32)" style="font-weight:bold">prepareFittingData</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m',32,0)">line 32</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prepareCurveData', '/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/prepareCurveData.m', 40)" style="font-weight:bold">prepareCurveData</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/prepareCurveData.m',40,0)">line 40</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fitToExponentialOfNumberOfEdges', '/home/u/fall12/gward/Desktop/thesis/Matlab/ngraphs/fitToExponentialOfNumberOfEdges.m', 3)" style="font-weight:bold">fitToExponentialOfNumberOfEdges</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/ngraphs/fitToExponentialOfNumberOfEdges.m',3,0)">line 3</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('temp', '/home/u/fall12/gward/Desktop/thesis/Matlab/temp.m', 44)" style="font-weight:bold">temp</a> (<a href="matlab: opentoline('/home/u/fall12/gward/Desktop/thesis/Matlab/temp.m',44,0)">line 44</a>)] 
+opentoline('/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m',48,0)
+temp
+[Warning: Data sizes do not match. Converting all data to column vectors.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prepareFittingData>iWarnIfSizeMismatch', '/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m', 48)" style="font-weight:bold">prepareFittingData>iWarnIfSizeMismatch</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m',48,0)">line 48</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prepareFittingData', '/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m', 32)" style="font-weight:bold">prepareFittingData</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2015b.app/toolbox/curvefit/curvefit/private/prepareFittingData.m',32,0)">line 32</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('prepareCurveData', '/Applications/MATLAB_R2015b.app/toolbox/curvefit/curv
