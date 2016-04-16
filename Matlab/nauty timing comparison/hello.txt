@@ -1,0 +1,13 @@
+Script started on Sat Apr 16 10:19:41 2016
+]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesis/Matlab/nauty%20timing%20comparison[?1034hghazal:nauty timing comparison gward$ e[Kgit pushcommitstatusadd Matlab/data/cannonicalMemoization.mat[10PDocumentation\ +\ Reports/*Matlab/data/numberOfGraphsOfSize.mstatus[K[2Ppushcommit[2Ppushstatusadd Matlab/data/numberOfGraphsOfSize.m[7PDocumentation\ +\ Reports/*Matlab/data/cannonicalMemoization.matstatus[Kcommit[2Ppush[Kgit pushcommitstatuscommit[2Ppush[K./labelg Idel[Kal10[K[K[K[K[K[K[K[K[K[K[Kl[Kelg Ideal10[K[K[K[K[K[K[K[K data/a[KIdeal10_14_100000_1.txt -u
+>A labelg data/Ideal10_14_100000_1.txt
+>Z 100000 graphs labelled from data/Ideal10_14_100000_1.txt to stdout in 0.33 sec.
+]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesis/Matlab/nauty%20timing%20comparisonghazal:nauty timing comparison gward$ exit
+exit
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+Deleting expired sessions...4 completed.
+
+Script done on Sat Apr 16 10:20:47 2016

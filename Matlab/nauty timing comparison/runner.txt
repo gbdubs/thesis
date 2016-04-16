@@ -1,0 +1,7 @@
+for trial in {1..100}
+do
+  for p in {1..99}
+  do
+    ./labelg "data/Ideal10_${p}_100000_1.txt" -u
+  done
+done
