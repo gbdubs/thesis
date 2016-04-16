@@ -1,4 +1,4 @@
-function createIdealRandomGraphData(v, p, nGraphs, runNumber)
+function [ graphSet ] = createIdealRandomGraphData(v, p, nGraphs, runNumber)
     
     graphSet = char(zeros(nGraphs, size(graph6Encode(zeros(v, v)),2)));
 
