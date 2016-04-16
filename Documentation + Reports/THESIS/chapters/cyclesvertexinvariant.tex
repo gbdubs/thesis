@@ -70,8 +70,7 @@ The vertex invariant is calculated for all vertices within the graph, and those 
 Transitivity and reflexivity clearly both hold under this definition.
 Moreover, the ordering/comparability of vertex invariants gives us a natural way to order the sets within the QSVSes.
 
-In this section, we will describe how using the cycles invariant to generate QSVSes is highly successful at mirroring the true SVSes, and suggest an augmentation to cycles which correctly differentiates the two for all observed cases.
-
+In this section, we will describe how using the cycles invariant to generate QSVSes is highly successful at mirroring the true SVSes, and suggest an augmentation to cycles which correctly differentiates the two for a high proportion of cases.
 
 \section{Why $P^*(G) <N$: Limitations on Cycles Usefulness}
 
@@ -145,15 +144,33 @@ In the odd case $N = 2K +1, K \in Z$, this occurs when we have
 $$P^*(P_N) = 2\ceil{\frac{N-2}{2}}  = 2\ceil{\frac{2K+1- 2}{2}} = 2\ceil{K - 1/2} = 2K = N - 1 $$
 
 Thus, we know that 
-\[ P_{P_N} = \begin{cases} 
+\[ P^*(P_N) = \begin{cases} 
       N-1 & \text{If N is odd} \\
       N-2 & \text{If N is even} \\
    \end{cases}
 \]
 
-[TODO HERE PART 2]
+Part 2: \emph{Why is $\forall g \,\in\, S_{N} , \;P^*(P_N) \geq P^*(g)$? Why is the path the hardest to internally distinguish?}
 
-[TODO HERE, PROBABILITY OF SVSes mirroring QSVSes created via the cycles invariant!!!]
+Cycles invariant calculation is a form of vertex coloring for isomorphism testing, with the feature that distinguishes vertices being the number of paths that pass through them of given lengths.
+Since $P^*$ is concerned with the largest value of Cycles able to all nodes from one another internally, we know that the graph that is the hardest to internally distinguish will (1) at least have two distinct groups (if not more) of vertices within it, and (2) will have a slow traversal of its colorings (which is a function of its girth, the maximum distance between two nodes in the graph).
+If we can distinguish any pair of vertices from one another at any level (if at the degree sequence, at P=2, or at the number of triangles, P=3, etc.), then we can distinguish the vertices which are only attached to one of the pair members that we distinguished at $P+2$, as that new cycle will be reverberated to the connected vertices with cycles that can traverse to the distinguished node, complete the cycle, and return back.
+Thus, cycles, propagates in such a way that whenever we can make a single distinction of two nodes (say $v_j$ and $v_k$) in the graph (lets say at $P=p_0$), then all nodes in the graph will be as distinguished as they are able to be via Cycles at $P=K+2*max\big[min\big(dist(v_i,v_j), dist(v_i,v_k)\big)\big]$.
+It is clear that the maximum value of the maximum term is half the value of the girth of the graph (as in the worst case, $v_j$ and $v_k$ are the vertices that are furthest apart, defining the girth, and the distance between $v_i$ and one of the two vertices is maximized when $v_i$ is equidistant from each. 
+Thus, we can change this expression into $P=K+girth(G)$.
+Meaning there are two different ways to try to maximize this expression with respect to P (as that is what we are really trying to find), we could either try to maximize it by maximizing the girth or by maximizing K.
+Since K is a function of the first feature that can be distinguished, it is clear that $K$ will be strictly less than $N$ (as if we get to that point, then we will not be able to make any distinctions).
+Thus, the way to maximize $P$ is to maximize the girth.
+This occurs in the path graph ($P_N$).
+Thus no graph can have larger $P^*(G)$ than the path graph.
+
+The combination of these two claims proves that the expression 
+\[ P^*(G) \leq \begin{cases} 
+      N-1 & \text{If N is odd} \\
+      N-2 & \text{If N is even} \\
+   \end{cases}
+\]
+holds for all graphs, a useful piece of knowledge in curtailing the amount of computational work we must do. 
 
 \section{Improving upon QSVS with Flagged Cycles}
 
@@ -206,20 +223,26 @@ We can calculate the relative makeup of each of the added cycles (how many pass 
 
 The intuitive justification for flagging is compelling, and if I had another month to puzzle away at this problem, this is probably the area I would spend the most time focusing on.
 
-\subsection{Analytical Support for Flagging, and an Open Question}
+\subsection{Analytical Support: Strength of Cycles as Vertex Invariant}
 
 The analytical support for flagging is strong:
-for all graphs of size $N \leq 10$, cycles with flagging as a mechanism for QSVS generation correctly generated QSVSes which perfectly estimated (without flaws) the accurate SVSes.
-No counterexamples were found where cycles with flagging fails to be anything short of a perfect vertex invariant.
+for all graphs of size $N < 10$, cycles with flagging as a mechanism for QSVS generation correctly generated QSVSes which perfectly estimated (without flaws) the accurate SVSes.
+Few examples were found for $N \geq 10$, though some were.
 
-This begs an open question: is it possible that cycles with flagging is complete as a vertex invariant?
-Is it possible that this metric fully determines the automorphism sets of vertices? Possibly.
-However, it is more likely (based on the raw number of graphs out there) that we have only kicked the proverbial can further down the road.
-For one, the raw amount of information required in Cycles with flagging is $O(N)$ times the amount of information required for cycles comparison.
-This alone should tell us to expect a higher threshold for failure.
+To give the reader an idea of how useful Cycles (and flagged Cycles) are at discriminating between vertices in graphs, I performed some random trials to attempt to estimate their failure rate.
+By failure here, I mean the probability that the QSVSes generated by the invariant are \emph{not} equal to the SVSes that can be found via brute force/automorphism examinations.
+Note that this kind of failure is only a lack of perfect distinction, it never means a false negatives, in similar vertex testing false negatives are impossible by either methodology.
 
-That being said, there are properties that are reconstructable from excess cycles computations that make me think that flagging might have some higher order justification.
-I would love to spend another few months thinking of equations that I can use to reconstruct $A$ (or better yet, determine $A$) from flagged cycles.
+In the figure below, you can see the results of a trial which generated 1,000,000 random graphs of size 10, 11 and 12, and calculated the proportion of each that are fully distinguished into their correct Similar Vertex Sets by each methodology of generating them.
+What we find is that it appears that as the number of vertices increases, the overall number of graphs which fails this metric decreases, a valuable result.
+Additionally, we see that the overall number which fail is very low, which is heartening, and gives us good reason to believe that these are both high quality vertex invariants.
 
-%\section{Limitations to Augmentation}
-%\subsection{A Second Augmentation Hypothesis}
+\begin{figure}[h]
+\label{fig:proportionQSVSeqSVS}
+\caption{\emph{Proportion of all graphs where SVSes = QSVSes generated by two Methodologies}}
+\centering
+\includegraphics[width=\textwidth]{proportionExploredv10to12}
+\end{figure}
+
+
+

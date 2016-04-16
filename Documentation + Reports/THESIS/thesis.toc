@@ -47,55 +47,55 @@
 \contentsline {subsection}{\numberline {3.4.1}What is $P^*$, why does it matter?}{39}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Observational Data: Diameter vs. $P^*(G), G \in S_N$}{40}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Theoretical Justification: $P_N$ versus $C_N$}{41}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Improving upon QSVS with Flagged Cycles}{42}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Appending a Flag, Somewhat Predictable}{42}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Intuitive Justification for Flagging}{43}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Analytical Support for Flagging, and an Open Question}{44}{subsection.3.5.3}
-\contentsline {chapter}{\numberline {4}Canonical Labeling Using Cycles}{45}{chapter.4}
-\contentsline {section}{\numberline {4.1}Start With A Vertex Invariant}{45}{section.4.1}
-\contentsline {section}{\numberline {4.2}A Consistent Algorithm}{46}{section.4.2}
-\contentsline {section}{\numberline {4.3}Computational Complexity}{47}{section.4.3}
-\contentsline {section}{\numberline {4.4}Time Growth Comparisons to Faster Algorithms}{47}{section.4.4}
-\contentsline {chapter}{\numberline {5}Random Graph Generators and Automorphisms}{48}{chapter.5}
-\contentsline {section}{\numberline {5.1}Random Graph Models}{48}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}The Erd\"os-R\'enyi Model(s)}{49}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}The Gilbert Model}{50}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Isomorphism Under the Gilbert Model}{51}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Disconnect from Graphs as Algebraic Objects}{52}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Comparing the Distribution of Graph Connectivity}{53}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Specifically Disadvantaging Highly Automorphic Graphs}{54}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Two Quick Justifications}{54}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Theoretical Average Case Comparison}{55}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Practical Average Case Comparison}{57}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Should We Never Use the Gilbert Model?}{57}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Measuring and Comparing Random Graph Models}{58}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}An Ideal Random Graph Model}{58}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}An Equivalent Ideal Random Graph Model}{59}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Establishing a Methodology for Random Graph Generator Evaluation}{59}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Graph Set Metrics}{60}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Graph Set Metric Reference, Coding and Description}{61}{subsection.5.4.5}
-\contentsline {subsection}{\numberline {5.4.6}Establishing Baselines for Graph Set Metrics}{64}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}Establishing Baselines for Graph Set Metrics}{66}{subsection.5.4.7}
-\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{66}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{66}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{67}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{67}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{67}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{67}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{68}{subsection.5.5.6}
-\contentsline {subsection}{\numberline {5.5.7}Cloning Model}{68}{subsection.5.5.7}
-\contentsline {chapter}{\numberline {6}Further Questions}{69}{chapter.6}
-\contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{69}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{70}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{71}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {7}Appendices}{76}{chapter.7}
-\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{76}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{76}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{76}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{77}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{77}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{77}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{77}{subsection.7.1.6}
-\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{80}{subsection.7.1.7}
-\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{80}{section.7.2}
-\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{83}{section.7.3}
+\contentsline {section}{\numberline {3.5}Improving upon QSVS with Flagged Cycles}{43}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Appending a Flag, Somewhat Predictable}{43}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Intuitive Justification for Flagging}{44}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Analytical Support: Strength of Cycles as Vertex Invariant}{45}{subsection.3.5.3}
+\contentsline {chapter}{\numberline {4}Canonical Labeling Using Cycles}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Start With A Vertex Invariant}{47}{section.4.1}
+\contentsline {section}{\numberline {4.2}A Consistent Algorithm}{48}{section.4.2}
+\contentsline {section}{\numberline {4.3}Computational Complexity}{49}{section.4.3}
+\contentsline {section}{\numberline {4.4}Time Growth Comparisons to Faster Algorithms}{49}{section.4.4}
+\contentsline {chapter}{\numberline {5}Random Graph Generators and Automorphisms}{50}{chapter.5}
+\contentsline {section}{\numberline {5.1}Random Graph Models}{50}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The Erd\"os-R\'enyi Model(s)}{51}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}The Gilbert Model}{52}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Isomorphism Under the Gilbert Model}{53}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Disconnect from Graphs as Algebraic Objects}{54}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Comparing the Distribution of Graph Connectivity}{55}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Specifically Disadvantaging Highly Automorphic Graphs}{56}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Two Quick Justifications}{57}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Theoretical Average Case Comparison}{58}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Practical Average Case Comparison}{59}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Should We Never Use the Gilbert Model?}{60}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Measuring and Comparing Random Graph Models}{60}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}An Ideal Random Graph Model}{61}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}An Equivalent Ideal Random Graph Model}{61}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Establishing a Methodology for Random Graph Generator Evaluation}{62}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Graph Set Metrics}{63}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Graph Set Metric Reference, Coding and Description}{63}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.6}Establishing Baselines for Graph Set Metrics}{67}{subsection.5.4.6}
+\contentsline {subsection}{\numberline {5.4.7}Establishing Baselines for Graph Set Metrics}{68}{subsection.5.4.7}
+\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{69}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{69}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{69}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{70}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{70}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{70}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{71}{subsection.5.5.6}
+\contentsline {subsection}{\numberline {5.5.7}Cloning Model}{71}{subsection.5.5.7}
+\contentsline {chapter}{\numberline {6}Further Questions}{72}{chapter.6}
+\contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{72}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{73}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{74}{subsection.6.1.2}
+\contentsline {chapter}{\numberline {7}Appendices}{79}{chapter.7}
+\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{79}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{79}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{79}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{80}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{80}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{80}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{80}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{83}{subsection.7.1.7}
+\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{83}{section.7.2}
+\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{86}{section.7.3}

@@ -140,12 +140,18 @@ $$\sigma_{norm}(|E(G_{inst})|) = \frac{\sqrt{Var(Binom(E_{max}, .5))}}{E_{max}} 
 Using these values, we can plot the relative sigmas for the distribution of graphs relative to their connectivity for both of the sets: the set of all graph instances, and the set of all graphs as algebraic objects.
 Doing this we get the graph shown below.
 
-[GRAPH HERE]
+\begin{figure}[h]
+\label{fig:sigmaconvergence}
+\caption{\emph{Sigma of Connectivity Distribution for the Set of Random Graphs and the Set of Random Graph Instances}}
+\centering
+\includegraphics[width=\textwidth]{decreasingsigmawithbinom}
+\end{figure}
 
 Note that the values appear to shrink in their disparity, a remarkable observation, which gives us an idea of how the two sets/distributions differ with respect to the number of edges they produce as a function of N.
-Note that this doesn't tell us about other properties of the sets of graphs.
-Similarity in the distribution of the number of edges does not equate distributional symmetry.
-However, what we can see is that the Gilbert graph generator models the number of edges successfully for large values of $N$.
+However, fitting exponential functions to each muddles the question: are they converging or intersecting and diverging again?
+Note that even a convergence doesn't tell us about other properties of the sets of graphs.
+Similarity in the distribution of the number of edges (or connectivity) does not equate distributional symmetry.
+However, what we can see is that the Gilbert graph generator models the number of edges successfully for values of $N \approx 11$, and for larger values it may or may not  mirror this distribution.
 
 %----------------------------------------------------------------------------------
 
