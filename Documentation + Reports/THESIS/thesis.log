@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  16 APR 2016 09:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  16 APR 2016 12:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -407,7 +407,7 @@ LaTeX Info: Redefining \nameref on input line 39.
 \openout3 = `thesis.out'.
 
 
-<brandeis-seal.png, id=410, 74.25743pt x 74.25743pt>
+<brandeis-seal.png, id=414, 74.25743pt x 74.25743pt>
 File: brandeis-seal.png Graphic file (type png)
  <use brandeis-seal.png>
 Package pdftex.def Info: brandeis-seal.png used on input line 45.
@@ -432,7 +432,7 @@ l.34 ...5.1}Miyizaki Graphs}{29}{subsection.2.5.1}
                                                    [1
 
 ] [2]
-Overfull \hbox (5.45564pt too wide) in paragraph at lines 82--82
+Overfull \hbox (5.45564pt too wide) in paragraph at lines 83--83
  [][] [][][]\OT1/cmr/m/n/10.95 MinusOneB - In-ter-spers-ing Some Gilbert Ran-do
 m Graphs[][] [][]  
  []
@@ -452,7 +452,7 @@ m Graphs[][] [][]
 Chapter 1.
 [7
 
-] [8] <figures/pdfs3thru11.png, id=576, 578.16pt x 433.62pt>
+] [8] <figures/pdfs3thru11.png, id=582, 578.16pt x 433.62pt>
 File: figures/pdfs3thru11.png Graphic file (type png)
 
 <use figures/pdfs3thru11.png>
@@ -469,7 +469,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
  [9]
-<figures/decreasingsigma.png, id=582, 578.16pt x 433.62pt>
+<figures/decreasingsigma.png, id=588, 578.16pt x 433.62pt>
 File: figures/decreasingsigma.png Graphic file (type png)
 
 <use figures/decreasingsigma.png>
@@ -487,14 +487,14 @@ ific value of $\OML/cmm/m/it/10.95 Cycles\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
 5 A; p; v\OT1/cmr/m/n/10.95 )$
  []
 
-[14] [15] <figures/cyclesdemograph.png, id=616, 187.70125pt x 178.6675pt>
+[14] [15] <figures/cyclesdemograph.png, id=622, 187.70125pt x 178.6675pt>
 File: figures/cyclesdemograph.png Graphic file (type png)
 
 <use figures/cyclesdemograph.png>
 Package pdftex.def Info: figures/cyclesdemograph.png used on input line 254.
 (pdftex.def)             Requested size: 180.0pt x 171.34708pt.
 
-<figures/cyclesdemocycles.png, id=618, 488.82625pt x 381.425pt>
+<figures/cyclesdemocycles.png, id=624, 488.82625pt x 381.425pt>
 File: figures/cyclesdemocycles.png Graphic file (type png)
 
 <use figures/cyclesdemocycles.png>
@@ -543,7 +543,7 @@ Overfull \hbox (14.4939pt too wide) in paragraph at lines 173--174
 [][][][][][][][][][][][][][][][][][] 
  []
 
-[27] [28] <figures/miyizaki2.png, id=691, 1340.00626pt x 773.89125pt>
+[27] [28] <figures/miyizaki2.png, id=697, 1340.00626pt x 773.89125pt>
 File: figures/miyizaki2.png Graphic file (type png)
 
 <use figures/miyizaki2.png>
@@ -553,7 +553,7 @@ Package pdftex.def Info: figures/miyizaki2.png used on input line 250.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/miyizaki1.png, id=692, 1281.78876pt x 395.4775pt>
+<figures/miyizaki1.png, id=698, 1281.78876pt x 395.4775pt>
 File: figures/miyizaki1.png Graphic file (type png)
 
 <use figures/miyizaki1.png>
@@ -564,7 +564,7 @@ Package pdftex.def Info: figures/miyizaki1.png used on input line 257.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29] [30 <./figures/miyizaki2.png> <./figures/miyizaki1.png>] [31] [32]
-<figures/powercurve8.png, id=714, 1073.00874pt x 726.715pt>
+<figures/powercurve8.png, id=720, 1073.00874pt x 726.715pt>
 File: figures/powercurve8.png Graphic file (type png)
 
 <use figures/powercurve8.png>
@@ -574,7 +574,7 @@ Package pdftex.def Info: figures/powercurve8.png used on input line 345.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/powercurve9.png, id=715, 1069.9975pt x 728.7225pt>
+<figures/powercurve9.png, id=721, 1069.9975pt x 728.7225pt>
 File: figures/powercurve9.png Graphic file (type png)
 
 <use figures/powercurve9.png>
@@ -584,7 +584,7 @@ Package pdftex.def Info: figures/powercurve9.png used on input line 352.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/powercurve10.png, id=716, 1084.05pt x 736.7525pt>
+<figures/powercurve10.png, id=722, 1084.05pt x 736.7525pt>
 File: figures/powercurve10.png Graphic file (type png)
 
 <use figures/powercurve10.png>
@@ -599,7 +599,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Chapter 3.
 [36
 
-] [37] <figures/numGraphsAndMats.png, id=747, 749.29938pt x 432.61626pt>
+] [37] <figures/numGraphsAndMats.png, id=753, 749.29938pt x 432.61626pt>
 File: figures/numGraphsAndMats.png Graphic file (type png)
 
 <use figures/numGraphsAndMats.png>
@@ -651,7 +651,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 98.
 
-<figures/N9DiamVsDiffPower.png, id=760, 578.16pt x 433.62pt>
+<figures/N9DiamVsDiffPower.png, id=766, 578.16pt x 433.62pt>
 File: figures/N9DiamVsDiffPower.png Graphic file (type png)
 
 <use figures/N9DiamVsDiffPower.png>
@@ -698,7 +698,7 @@ Overfull \hbox (10.11337pt too wide) in paragraph at lines 132--133
  []
 
 [41] [42] [43] [44]
-<figures/proportionExploredv10to12.png, id=784, 1622.06pt x 1023.825pt>
+<figures/proportionExploredv10to12.png, id=790, 1622.06pt x 1023.825pt>
 File: figures/proportionExploredv10to12.png Graphic file (type png)
 
 <use figures/proportionExploredv10to12.png>
@@ -728,7 +728,7 @@ LaTeX Warning: Citation `exponentialgraphs' on page 50 undefined on input line
 [50
 
 ] [51] [52] [53] [54]
-<figures/decreasingsigmawithbinom.png, id=828, 1387.1825pt x 1043.9pt>
+<figures/decreasingsigmawithbinom.png, id=834, 1387.1825pt x 1043.9pt>
 File: figures/decreasingsigmawithbinom.png Graphic file (type png)
 
 <use figures/decreasingsigmawithbinom.png>
@@ -801,20 +801,93 @@ OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$
  []
 
 [66] [67] [68]
-Overfull \hbox (18.13884pt too wide) in paragraph at lines 458--458
+Overfull \hbox (14.36124pt too wide) in paragraph at lines 446--446
+[][]\OT1/cmr/bx/n/12 Identitical - ADSMD, ADSMN, AN-QUAD, DSMV, NE, ODSPL 
+ []
+
+<figures/ANQUAD-10.png, id=904, 578.16pt x 433.62pt>
+File: figures/ANQUAD-10.png Graphic file (type png)
+
+<use figures/ANQUAD-10.png>
+Package pdftex.def Info: figures/ANQUAD-10.png used on input line 455.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (15.79182pt too wide) in paragraph at lines 458--458
+\OT1/cmr/bx/n/12 ANTRI, DI-AMV, MLNA, NCCV, NUG, PCONN, PDL, PQRA,
+ []
+
+<figures/SQNR-7.png, id=905, 578.16pt x 433.62pt>
+File: figures/SQNR-7.png Graphic file (type png)
+ <use figures/SQNR-7.png>
+Package pdftex.def Info: figures/SQNR-7.png used on input line 465.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[69] <figures/DIAMV-5.png, id=913, 578.16pt x 433.62pt>
+File: figures/DIAMV-5.png Graphic file (type png)
+
+<use figures/DIAMV-5.png>
+Package pdftex.def Info: figures/DIAMV-5.png used on input line 479.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/VLNA-6.png, id=914, 578.16pt x 433.62pt>
+File: figures/VLNA-6.png Graphic file (type png)
+ <use figures/VLNA-6.png>
+Package pdftex.def Info: figures/VLNA-6.png used on input line 486.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (12.9168pt too wide) in paragraph at lines 490--490
+[][]\OT1/cmr/bx/n/12 Shape Dif-fer-ent - ALNA, DI-AMV, DSMDV, DSMNV, DSMXV,
+ []
+
+<figures/DSMXV-10.png, id=915, 578.16pt x 433.62pt>
+File: figures/DSMXV-10.png Graphic file (type png)
+ <use figures/DSMXV-10.png>
+Package pdftex.def Info: figures/DSMXV-10.png used on input line 496.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/ADIAM-9.png, id=916, 578.16pt x 433.62pt>
+File: figures/ADIAM-9.png Graphic file (type png)
+ <use figures/ADIAM-9.png>
+Package pdftex.def Info: figures/ADIAM-9.png used on input line 503.
+(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[70 <./figures/ANQUAD-10.png (PNG copy)>] [71 <./figures/SQNR-7.png (PNG copy)>
+]
+Overfull \hbox (18.13884pt too wide) in paragraph at lines 530--530
 []\OT1/cmr/bx/n/12 MinusOneB - In-ter-spers-ing Some Gilbert Ran-dom Graphs 
  []
 
-[69]
-Overfull \hbox (7.92383pt too wide) in paragraph at lines 484--485
+[72 <./figures/DIAMV-5.png (PNG copy)>]
+Overfull \hbox (7.92383pt too wide) in paragraph at lines 556--557
 [][][][][][][][][][][][] 
  []
 
-[70]) (./chapters/nextsteps.tex [71]
+[73 <./figures/VLNA-6.png (PNG copy)>] [74 <./figures/DSMXV-10.png (PNG copy)>]
+) (./chapters/nextsteps.tex [75 <./figures/ADIAM-9.png (PNG copy)>]
 Chapter 6.
-[72
+[76
 
-] [73] [74]) (./thesis.bbl [75] [76
+] [77] [78]) (./thesis.bbl [79] [80
 
 ]
 Underfull \hbox (badness 1596) in paragraph at lines 86--89
@@ -838,11 +911,11 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ½ in font cmr10!
-[77]) (./appendices/introduction.tex [78]
+[81]) (./appendices/introduction.tex [82]
 Chapter 7.
-) (./appendices/codestructure.tex [79
+) (./appendices/codestructure.tex [83
 
-] [80] [81] [82])
+] [84] [85] [86])
 (./appendices/co-cyclesgraphs.tex
 Overfull \hbox (4.87436pt too wide) in alignment at lines 7--14
  [] [] [] [] [] 
@@ -862,7 +935,7 @@ Overfull \hbox (4.87436pt too wide) in alignment at lines 49--80
  [] [] [] [] [] 
  []
 
-[83]
+[87]
 Overfull \hbox (4.87436pt too wide) in alignment at lines 80--112
  [] [] [] [] [] 
  []
@@ -872,7 +945,7 @@ Overfull \hbox (4.87436pt too wide) in alignment at lines 112--143
  [] [] [] [] [] 
  []
 
-[84]
+[88]
 Overfull \hbox (4.87436pt too wide) in alignment at lines 143--174
  [] [] [] [] [] 
  []
@@ -882,15 +955,15 @@ Overfull \hbox (4.87436pt too wide) in alignment at lines 174--203
  [] [] [] [] [] 
  []
 
-[85]) (./appendices/specs.tex [86])
+[89]) (./appendices/specs.tex [90])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
- [87]
+ [91]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 85FEB57EC67A430B88B4C214FAA76E53;8341.
+(rerunfilecheck)             Checksum: 7D68C2943B0AF86711214DE8BE8BAEF4;8456.
 
 
 LaTeX Warning: There were undefined references.
@@ -898,10 +971,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 8544 strings out of 494185
- 125604 string characters out of 6156888
- 241592 words of memory out of 5000000
- 11417 multiletter control sequences out of 15000+600000
+ 8597 strings out of 494185
+ 126495 string characters out of 6156888
+ 242143 words of memory out of 5000000
+ 11448 multiletter control sequences out of 15000+600000
  17508 words of font info for 66 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  33i,12n,32p,552b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -921,10 +994,10 @@ sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
 fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
 cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (88 pages, 1459645 bytes).
+Output written on thesis.pdf (92 pages, 1858599 bytes).
 PDF statistics:
- 1156 PDF objects out of 1200 (max. 8388607)
- 1014 compressed objects within 11 object streams
- 285 named destinations out of 1000 (max. 500000)
- 879 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1200 PDF objects out of 1200 (max. 8388607)
+ 1048 compressed objects within 11 object streams
+ 301 named destinations out of 1000 (max. 500000)
+ 917 words of extra memory for PDF output out of 10000 (max. 10000000)
 

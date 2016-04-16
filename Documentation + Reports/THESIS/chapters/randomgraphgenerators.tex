@@ -422,7 +422,7 @@ in this metric, higher scores are better and a score of 0 corresponds to a gener
 
 This is a good mechanism because it scores a value on a metric based on how close it is to the ideal mean, but also compares any deviancy to the deviancy observed between the ideal and standard (Gilbert) generators.
 
-\subsection{Establishing Baselines for Graph Set Metrics}
+\subsection{Finding Data on Graph Set Metrics and Scores}
 
 The baselines for the graph set metrics are all stored in one file for convenience (Thesis/Matlab/Alternative Generator/Data/baselineMetrics.mat).
 As mentioned above, they are for the tenth-probabilities, over graphs of size 4 to 10.
@@ -431,6 +431,78 @@ In the baseline file, the mean, standard deviation and number of samples is give
 
 An appendix to this thesis lists the graph set baselined metrics, along with their associated uncertainties, for all values of N and P.
 Since there were 7 tested values of N, and 9 tested values of P, and 35 metrics, over two different generators for random graphs, there are a total of approximately 4,000 component statistics in this baseline file.
+
+\subsection{Examining the Difference between Gilbert and Ideal Baselines}
+
+The differences between the Gilbert random graph generator and the Idealized generator are on display in the visual examination of the metrics described above.
+To see the full range of differences, and the full set of charts that were generated to supply some of these examples, please check out my code on github.
+These files in particular are stored at /Thesis/Matlab/alternative generator/analysis.
+
+In this section, we will summarize the broad tendencies (and larger deviations) that we see between the two models.
+There are six different categories that I placed each of the metrics within, describing six different patterns of difference.
+The graphs used for this section should be taken with a grain of salt: in our baselines, we perform 30x the number of trials that generated these graphs, so they certainly are prone to more vertical uncertainty.
+However, we have graphed many more values of $p$, so these graphs can better show how the baselines change across values of $p$, not only see their absolute differences.
+
+\subsection*{Identical - ADSMD, ADSMN, ANQUAD, DSMV, NE, ODSPL} 
+Some of the metrics were indistinguishable between the two random graph generators.
+Approximately six of the thirty-five metrics behaved indistinguishably between the Gilbert and Idealized random graph generators.
+An example is shown in the figure below, which describes the number of quadrilaterals in a graph set for various values of $p$ (the graphs were all of size 10, and there were 1000 of them represented by each dot).
+
+\begin{figure}[h]
+\label{fig:anquad10}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{ANQUAD-10}
+\end{figure}
+
+\subsection*{Height Different - ADIAM, ADSMX, ANA, ANCC, ANR, ANTRI, DIAMV, MLNA, NCCV, NUG, PCONN, PDL, PQRA, PQRB, PQRC, SQNR} 
+Many of the metrics had the same broad patterns between 
+
+\begin{figure}[h]
+\label{fig:sqnr7}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{SQNR-7}
+\end{figure}
+
+\subsection*{Not Enough Data - NCP}
+For one metric, there was consistently not enough data to calculate it or any comparison between two random graph generators.
+It shouldn't come as a surprise that that metric is NCP, the number of Co-Paths (or Co-Cycles) graphs in the graph set. 
+Since there was consistently not enough data to establish a baseline, you will find that most of the time NCP is zeroed out, not by some choice of mine, but becuase of the way I have set up  my scoring mechanism.
+
+\subsection*{Crossover - ADSR, ADSV, NCCV, PTRIL, VLNA}
+
+\begin{figure}[h]
+\label{fig:diamv5}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{DIAMV-5}
+\end{figure}
+
+\begin{figure}[h]
+\label{fig:vlna6}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{VLNA-6}
+\end{figure}
+
+
+\subsection*{Shape Different - ALNA, DIAMV, DSMDV, DSMNV, DSMXV, DSVV, MNR, NR}
+
+\begin{figure}[h]
+\label{fig:dsmxv10}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{DSMXV-10}
+\end{figure}
+
+\begin{figure}[h]
+\label{fig:adiam9}
+\caption{}
+\centering
+\includegraphics[width=\textwidth]{ADIAM-9}
+\end{figure}
+
 
 \section{Alternative Ideas for Random Graph Modeling and Creation}
 
