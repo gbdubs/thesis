@@ -49,7 +49,7 @@ N.~Christofides.
 \newblock Computer Science and Applied Mathematics. Academic Press,
   Incorporated, 1975.
 
-\bibitem{cvetković2009introduction}
+\bibitem{2009introduction}
 D.~Cvetkovi{\'c}, P.~Rowlinson, and S.~Simi{\'c}.
 \newblock {\em An Introduction to the Theory of Graph Spectra}.
 \newblock London Mathematical Society Student Texts. Cambridge University
@@ -70,8 +70,8 @@ P.~Erdos and A.~Reyni.
 \newblock On random graphs i.
 \newblock {\em Publicationes Mathematicae}, 6, 1959.
 
-\bibitem{erdős1974probabilistic}
-P.~Erd{\H{o}}s and J.H. Spencer.
+\bibitem{erdos1974}
+P.~Erdos and J.H. Spencer.
 \newblock {\em Probabilistic Methods in Combinatorics}.
 \newblock Probability and Mathematical Statistics: a Series of Monographs and
   Textbooks. Academic Press, 1974.
@@ -110,6 +110,18 @@ D.~J.~Watts M.~E. J.~Newman and S.~H. Strogatz.
 Brendan~D McKay.
 \newblock Small graphs are reconstructible.
 \newblock {\em Australasian Journal of Combinatorics}, 15, 1997.
+
+\bibitem{mckay2014practical}
+Brendan~D McKay and Adolfo Piperno.
+\newblock Practical graph isomorphism, ii.
+\newblock {\em Journal of Symbolic Computation}, 60:94--112, 2014.
+
+\bibitem{mendivelso2013solving}
+Juan Mendivelso, Sunghwan Kim, Sameh Elnikety, Yuxiong He, Seung-won Hwang, and
+  Yoan Pinz{\'o}n.
+\newblock Solving graph isomorphism using parameterized matching.
+\newblock In {\em String Processing and Information Retrieval}, pages 230--242.
+  Springer, 2013.
 
 \bibitem{nydl2001}
 Václav Nýdl.

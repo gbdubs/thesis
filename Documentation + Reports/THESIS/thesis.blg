@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/MacPorts 2015_8)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: plain.bst
+Database file #1: bibliography.bib
+Warning--entry type for "oeis" isn't style-file defined
+--line 71 of file bibliography.bib
+Warning--entry type for "oeisbig" isn't style-file defined
+--line 76 of file bibliography.bib
+Warning--I didn't find a database entry for "exponentialgraphs"
+Warning--to sort, need author, editor, or key in 1961groups
+Warning--empty author and editor in 1961groups
+You've used 34 entries,
+            2118 wiz_defined-function locations,
+            674 strings with 8322 characters,
+and the built_in function-call counts, 8477 in all, are:
+= -- 818
+> -- 393
+< -- 2
++ -- 163
+- -- 124
+* -- 460
+:= -- 1530
+add.period$ -- 108
+call.type$ -- 34
+change.case$ -- 153
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 358
+empty$ -- 676
+format.name$ -- 124
+if$ -- 1746
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 37
+newline$ -- 170
+num.names$ -- 66
+pop$ -- 181
+preamble$ -- 1
+purify$ -- 130
+quote$ -- 0
+skip$ -- 253
+stack$ -- 0
+substring$ -- 256
+swap$ -- 43
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 116
+warning$ -- 2
+while$ -- 72
+width$ -- 36
+write$ -- 353
+(There were 5 warnings)

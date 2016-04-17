@@ -456,7 +456,10 @@ An example is shown in the figure below, which describes the number of quadrilat
 \end{figure}
 
 \subsection*{Height Different - ADIAM, ADSMX, ANA, ANCC, ANR, ANTRI, DIAMV, MLNA, NCCV, NUG, PCONN, PDL, PQRA, PQRB, PQRC, SQNR} 
-Many of the metrics had the same broad patterns between 
+Many of the metrics had the same broad patterns in the way that they changed with respect to $N$ and $P$, but had slightly different heights/inflectuations.
+The majority of graph metrics were in this category.
+An example shown below shows a metric which rises with duplicates (SQNR) over seven vertices.
+Note that though the patterns are the same over the two methodologies, the results are hight separated.
 
 \begin{figure}[h]
 \label{fig:sqnr7}
@@ -468,9 +471,16 @@ Many of the metrics had the same broad patterns between
 \subsection*{Not Enough Data - NCP}
 For one metric, there was consistently not enough data to calculate it or any comparison between two random graph generators.
 It shouldn't come as a surprise that that metric is NCP, the number of Co-Paths (or Co-Cycles) graphs in the graph set. 
-Since there was consistently not enough data to establish a baseline, you will find that most of the time NCP is zeroed out, not by some choice of mine, but becuase of the way I have set up  my scoring mechanism.
+Since there was consistently not enough data to establish a baseline, you will find that most of the time NCP is zeroed out, not by some choice of mine, but because of the way I have set up my scoring mechanism.
 
 \subsection*{Crossover - ADSR, ADSV, NCCV, PTRIL, VLNA}
+
+For five metrics, there was even more of a difference than height alone.
+In these graphs, the two curves intersect/cross over so that a metric might be better on one range of $P$ and worse on a different range.
+This significantly complicates the way we are able to do optimization to improve upon our graph metric scores. 
+With most of the height different variables, clearly we are going to be able to create RGGs which can better mimic a height shift than fundamentally reexamining the nature of the curve.
+
+Two examples are given below, one describes the variance in the diameter of graphs chosen, and the other shows the variation in the logarithm of the number of automorphisms of each graph in the set.
 
 \begin{figure}[h]
 \label{fig:diamv5}
@@ -486,8 +496,11 @@ Since there was consistently not enough data to establish a baseline, you will f
 \includegraphics[width=\textwidth]{VLNA-6}
 \end{figure}
 
-
 \subsection*{Shape Different - ALNA, DIAMV, DSMDV, DSMNV, DSMXV, DSVV, MNR, NR}
+Finally, many metrics simply displayed different shapes across different ranges of P.
+Many of these metrics are variance metrics, possibly alluding to the way that graph sets as a whole are either varied or homogenous on each metric.
+The two figures displayed show the degree sequence maximum, and the average diameter of graphs in the set.
+We should remember that these are not trivial differences, and I think that the graphs really speak to that.
 
 \begin{figure}[h]
 \label{fig:dsmxv10}

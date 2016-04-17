@@ -77,26 +77,27 @@
 \contentsline {subsection}{\numberline {5.4.6}Establishing Baselines for Graph Set Metrics}{67}{subsection.5.4.6}
 \contentsline {subsection}{\numberline {5.4.7}Finding Data on Graph Set Metrics and Scores}{68}{subsection.5.4.7}
 \contentsline {subsection}{\numberline {5.4.8}Examining the Difference between Gilbert and Ideal Baselines}{69}{subsection.5.4.8}
-\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{70}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{71}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{71}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{72}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{72}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{73}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{74}{subsection.5.5.6}
-\contentsline {subsection}{\numberline {5.5.7}Cloning Model}{74}{subsection.5.5.7}
-\contentsline {chapter}{\numberline {6}Further Questions}{76}{chapter.6}
-\contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{76}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{77}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{78}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {7}Appendices}{83}{chapter.7}
-\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{83}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{83}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{83}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{84}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{84}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{84}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{84}{subsection.7.1.6}
-\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{87}{subsection.7.1.7}
-\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{87}{section.7.2}
-\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{90}{section.7.3}
+\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{71}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{72}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{72}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{73}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{73}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{74}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{75}{subsection.5.5.6}
+\contentsline {subsection}{\numberline {5.5.7}Cloning Model}{75}{subsection.5.5.7}
+\contentsline {chapter}{\numberline {6}Further Questions}{77}{chapter.6}
+\contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{77}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{78}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{79}{subsection.6.1.2}
+\contentsline {chapter}{\numberline {7}Appendices}{84}{chapter.7}
+\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{84}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{84}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{84}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{85}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{85}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{85}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{85}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{88}{subsection.7.1.7}
+\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{88}{section.7.2}
+\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{91}{section.7.3}
+\contentsline {section}{\numberline {7.4}Appendix D: Score Report Summaries}{92}{section.7.4}
