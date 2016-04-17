@@ -4,7 +4,7 @@ All of the code used in this project is available and version controlled on my G
 
 Here is the basic structure of the project:
 
-\subsection{Thesis/Cardinality Analysis}
+\subsection*{Thesis/Cardinality Analysis}
 
 Used to generate and analyze the co-cycles graphs, where they exist.
 The C code is largely what I did my computation in, while the Java code was usually there just for corroborating unclear results, and unit testing that my work (particularly around paths calculations and graph encodings) was correct.
@@ -16,13 +16,13 @@ It uses delayed evaluation, tries, and minimal memory (less than a sixth of its 
 When I examined the power curves as described in chapter 3, I modified some of this code to relay depth information appropriately, which did not significantly modify its specs or the way that it runs.
 To see the cardinality calculations as they were when originally completed, simply visit that SHA in GitHub.
 
-\subsection{Thesis/data}
+\subsection*{Thesis/data}
 
 Shared graph data amongst many different elements of the project.
 Two main components: geng (the NAUTY graph generator), and two bash scripts which generate small and regular graphs.
 These graphs are shared among all different kinds of applications, and are created as read-only files.
 
-\subsection{Thesis/Documentation+Reports}
+\subsection*{Thesis/Documentation+Reports}
 
 Documentation for all of my work has been accompanied alongside the project itself.
 This includes multiple write ups that I did for my advisor throughout the semester (labeled by date) alongside an original thesis proposal, and the final result.
@@ -30,11 +30,11 @@ All of these files are written in latex, so the source code is provided alongsid
 Some ideas and planning documents are included as well, mainly simply to maintain my thoughts and plans in centralized places.
 These documents are not very reflective of what ended up happening, but mark my vector trajectories at different points in time.
 
-\subsection{Thesis/Excel}
+\subsection*{Thesis/Excel}
 
 Power curve data from chapter two, describing the interrelationship of trie-depth in co-paths calculations and the connectivity of the graph.
 
-\subsection{Thesis/Mupad}
+\subsection*{Thesis/Mupad}
 
 Algebraic manipulations, encoded and formalized using Matlab's MuPad symbolic math toolkit.
 Makes explicit the ideas presented in chapter two about the reconstruction of a valid graph (given the valid cycles invariant), and the reconstruction/determination of the chromatic polynomial given the cycles invariant.
@@ -42,7 +42,7 @@ Please note that this code was done last summer, and is thus... messy.
 Some of the terminology is outdated, it is poorly commented, and was really only used to see if I could take my proof ideas about procedures of conversion and formalize them into code that performs that conversion.
 The software works, but is slow (symbolic manipulation of abstract types, amirite?) so don't expect to use it to perform any real computations, only proofs of concept.
 
-\subsection{Thesis/Matlab}
+\subsection*{Thesis/Matlab}
 
 This is where the majority of my second semester work was done.
 Though Matlab is incredibly slow (compared to the other languages I worked in over the course of the year), it provides incredibly simple and quick support for things like visualization of graphs, bulk processing and multi-threading optimization, and code reuse.
@@ -133,6 +133,6 @@ Graph utilities and timing utilities shared across all of the pieces of the proj
 Visualizations of graphs, their paths, and everything in between. 
 Lots of results are found in this folder, small, large, intermediate and complete.
 
-\subsection{Thesis/Number of Graphs}
+\subsection*{Thesis/Number of Graphs}
 
 A piece corresponding to Thesis/Matlab/ngraphs

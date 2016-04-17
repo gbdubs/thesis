@@ -2,8 +2,8 @@
 \contentsline {section}{\numberline {1.1}Graphs}{7}{section.1.1}
 \contentsline {section}{\numberline {1.2}Labeling and Representing Graphs}{7}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Graph6 Encoding of Graphs}{8}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Counting Graphs over N Vertices}{9}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Counting Graphs over N Vertices and M Edges}{9}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.2}Counting Graphs over $N$ Vertices}{9}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Counting Graphs over $N$ Vertices and $M$ Edges}{9}{subsection.1.2.3}
 \contentsline {section}{\numberline {1.3}Graph Isomorphism and Automorphism}{11}{section.1.3}
 \contentsline {section}{\numberline {1.4}Graph Invariants}{12}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Discriminatory Power}{12}{subsection.1.4.1}
@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {1.6.6}Time Complexity}{16}{subsection.1.6.6}
 \contentsline {subsection}{\numberline {1.6.7}Operating over Large Numbers}{17}{subsection.1.6.7}
 \contentsline {subsection}{\numberline {1.6.8}Space Complexity}{19}{subsection.1.6.8}
-\contentsline {section}{\numberline {1.7}Reconstructability, Determination}{19}{section.1.7}
+\contentsline {section}{\numberline {1.7}Reconstructability, Determination}{20}{section.1.7}
 \contentsline {chapter}{\numberline {2}Cycles as a Graph Invariant}{21}{chapter.2}
 \contentsline {section}{\numberline {2.1}Basic Cycles-Reconstructable Properties}{21}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Triangles, Higher Order Polygons}{21}{subsection.2.1.1}
@@ -91,13 +91,5 @@
 \contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{79}{subsection.6.1.2}
 \contentsline {chapter}{\numberline {7}Appendices}{84}{chapter.7}
 \contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{84}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Thesis/Cardinality Analysis}{84}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Thesis/data}{84}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Thesis/Documentation+Reports}{85}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Thesis/Excel}{85}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Thesis/Mupad}{85}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}Thesis/Matlab}{85}{subsection.7.1.6}
-\contentsline {subsection}{\numberline {7.1.7}Thesis/Number of Graphs}{88}{subsection.7.1.7}
 \contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{88}{section.7.2}
 \contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{91}{section.7.3}
-\contentsline {section}{\numberline {7.4}Appendix D: Score Report Summaries}{92}{section.7.4}

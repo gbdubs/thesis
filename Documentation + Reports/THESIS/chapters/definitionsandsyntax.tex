@@ -39,15 +39,15 @@ When we intend to discuss a graph within some physical reality of its representa
 This is an `algebraic' understanding of the structure of graphs, not a semantic choice. 
 It will have important implications throughout this report, particularly around ideas of random graph models.
 
-When we are discussing the set of all graphs as algebraic objects, we will use the notation $G_{Alg}$.
-When we are discussing the set of all graph instances, we will use the notation $G_{Inst}$.
+When we are discussing the set of all graphs as algebraic objects, we will use the notation $G_{alg}$.
+When we are discussing the set of all graph instances, we will use the notation $G_{inst}$.
 To start thinking critically about this distinction, always remember that:
-$$|G_{Alg}| <<< |G_{Inst}| = 2^{E_{max}}$$
+$$|G_{alg}| <<< |G_{inst}| = 2^{E_{max}}$$
 but since the number of representations of a given graph is limited by its number of labelings that:
-$$|G_{Alg}| * N! > | G_{Inst} | =  2^{E_{max}}$$
+$$|G_{alg}| * N! > | G_{inst} | =  2^{E_{max}}$$
 
-Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{Reps}(G) \in [1, N!]$.
-Note that  $M_{Reps}(G)$ is related to the differentiation we made between the set of all graphs ($G_{Alg}$) and the set of all graph instances ($G_{Inst}$).
+Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{reps}(G) \in [1, N!]$.
+Note that  $M_{reps}(G)$ is related to the differentiation we made between the set of all graphs ($G_{alg}$) and the set of all graph instances ($G_{inst}$).
 
 \subsection{Graph6 Encoding of Graphs}
 
@@ -56,9 +56,9 @@ This is an encoding of the adjacency matrix as described through the formal spec
 Basically, we take the upper half of the adjacency matrix (not including the zeroed-out diagonal), as a bit-string, then compress that bit-string using UTF-8 character encoding.
 I optimized this code (preallocation, bit shifting, etc) in all of the languages I used, because when non-optimized, it can contribute to runtime in a non-negligible way.
 
-\subsection{Counting Graphs over N Vertices}
+\subsection{Counting Graphs over $N$ Vertices}
 
-The number of undirected, non-looped graphs over N vertices is an open question in computational theory.
+The number of undirected, non-looped graphs over $N$ vertices is an open question in computational theory.
 The first few values of this sequence were well known, however no closed form has been proven to successfully list the numbers of graphs of a given size.
 A large number of theoreticians have come up with proposed closed forms with associated margins of error, but all small values have been agreed upon.
 The values in this sequence grow exponentially, but to give you an idea of how rapidly, the first twelve values are shown:
@@ -71,46 +71,46 @@ As a side note: OEIS is probably one of my favorite things that exists.
 It astounds me how good it is picking out the exact sequence you are looking for, regardless of whether it is shifted by a few places, might have missing gap, etc.
 A well cooked example of the beautiful hyper-connected and data-driven world we live in.
 
-\subsection{Counting Graphs over N Vertices and M Edges}
+\subsection{Counting Graphs over $N$ Vertices and $M$ Edges}
 
-The number of graphs with a given number of nodes (N), has an internal distribution: the number of edges in each of the graphs.
-It turns out that this is an approximately normal distribution, which is (as we would anticipate) centered at $\frac{E_{Max}}{2}$. 
-To see how this distribution changes over various values of N, we can normalize our notion of edges to one of connectivity:
+The number of graphs with a given number of nodes ($N$), has an internal distribution: the number of edges in each of the graphs.
+It turns out that this is an approximately normal distribution, which is (as we would anticipate) centered at $\frac{E_{max}}{2}$. 
+To see how this distribution changes over various values of $N$, we can normalize our notion of edges to one of connectivity:
 we will divide the number of edges by the number of possible edges (transforming an integer range $[0, E_{max}]$ to a fractional range $[0, 1]$.
 
-This enables us to see how the distribution changes over multiple values of N.
-In figure \ref{fig:ngraphs} we make clear this connection by normalizing the distributions so that they are comparable (i.e. making the areas under each curve exactly one by dividing each by the total number of graphs associated with the value of N), we are able to capture the way that the distribution of graph connectivity changes for varying values of N and M.
+This enables us to see how the distribution changes over multiple values of $N$.
+In figure \ref{fig:ngraphs} we make clear this connection by normalizing the distributions so that they are comparable (i.e. making the areas under each curve exactly one by dividing each by the total number of graphs associated with the value of $N$), we are able to capture the way that the distribution of graph connectivity changes for varying values of $N$ and $M$.
 
 \begin{figure}[h]
-\label{fig:ngraphs}
-\caption{\emph{Number of Graphs over N vertices with varying Connectivity}}
+\caption{\emph{Number of Graphs over $N$ vertices with varying Connectivity}}
 \centering
 \includegraphics[width=\textwidth]{pdfs3thru11}
+\label{fig:ngraphs}
 \end{figure}
 
 When normalized in this manner, it becomes immediately clear that:
 \begin{itemize}
 \item{Each of these distributions is normaly distributed}
 \item{The distributions share peaks (as we expect them to) at 1/2}
-\item{The standard deviation of each of these distributions is decreasing as N increases}
+\item{The standard deviation of each of these distributions is decreasing as $N$ increases}
 \end{itemize}
 
-To formalize these three observations, I first ran normality tests, which passed at the most strict levels possible for $N \geq 8$, and which were slightly less performant for smaller values of N (which makes sense, as we simply have fewer discrete bins on our x-axis in which to place observations, which are also many fewer in number).
+To formalize these three observations, I first ran normality tests, which passed at the most strict levels possible for $N \geq 8$, and which were slightly less performant for smaller values of $N$ (which makes sense, as we simply have fewer discrete bins on our x-axis in which to place observations, which are also many fewer in number).
 Secondly, I verified our thinking on the co-modality trivially: we know that if two graphs are non-isomorphic, then their inverses are non-isomorphic.
 Thus, our distribution must be symmetric about the half-connectivity point.
 Thirdly, we can formalize this by fitting a normal distribution to each of the observed relationships between population proportion and connectivity (allowing only sigma to vary) and come up with precise estimates for the normal fits for these distributions for $N \geq 5$.
 I opted not to use the fitted sigmas for $N < 5$, as the roughness of our data for those values meant that less than 90\% of the variation in those observations was attributable to the normality.
-The results are shown below in figure \ref{fig:decreasingsigma}, and there is a clear downward trend in sigma, which roughly follows a power curve which asymptotes to zero:
+The results are shown below in figure \ref{fig:decreasingsigma}, and there is a clear downward trend in sigma, which roughly follows a power curve which asymptotes toward zero:
 
 \begin{figure}[h]
-\label{fig:decreasingsigma}
-\caption{\emph{Standard Deviation Fit to Distribution of Number of Edges for Graphs over N Vertices}}
+\caption{\emph{Standard Deviation Fit to Distribution of Number of Edges for Graphs over $N$ Vertices}}
 \centering
 \includegraphics[width=\textwidth]{decreasingsigma}
+\label{fig:decreasingsigma}
 \end{figure}
 
-This establishes an important relationship: most graphs are `somewhat connected', neither sparse nor dense, with an increasing probability that they lie in the middle of the connectivity distribution.
-In fact, it appears that as N increases, sigma decreases, and we can conclude that the larger the value of N, the fewer and fewer graphs (as a proportion of the global set) are sparse or dense.
+This establishes an important relationship: most graphs are `somewhat connected', neither sparse nor dense, with an increasing probability that they lie in the middle of the connectivity distribution as $N$ increases.
+In fact, it appears that as $N$ increases, sigma decreases, and we can conclude that the larger the value of $N$, the fewer and fewer graphs (as a proportion of the global set) are sparse or dense.
 
 \section{Graph Isomorphism and Automorphism}
 
@@ -159,7 +159,7 @@ Later in this report we will discuss how $\alpha$ fits in to a natural definitio
 \subsection{Vertex Similarity}
 Two vertices are \emph{similar} if there exists a mapping in the automorphism group $Aut(G)$ such that the mapping maps one vertex to the other.
 Similarity is a transitive and commutative property.
-The vertex set $V(G)$ can be divided up into between 1 and N similar vertex sets, such that all of the vertices in each set are similar, and no two sets contains similar vertices.
+The vertex set $V(G)$ can be divided up into between 1 and $N$ similar vertex sets, such that all of the vertices in each set are similar, and no two sets contains similar vertices.
 A discussion of these \emph{similar vertex sets} (or SVSs) will be the primary focus of chapter three.
 
 A graph (or subset of the vertices of a graph) is called \emph{perfectly similar} or \emph{perfectly automorphic} if, for every pair of vertices, there exists an automorphic mapping which maps one of the vertices to the other.
@@ -194,10 +194,10 @@ Note that cycles (as a function and vertex invariant) is a property of a graph i
 
 \subsection{Cycles as a Function}
 
-The $Cycles(A, p, v)$ invariant counts the number of closed paths of length $p$ that pass through a given vertex, $v$. 
+The $Cycles(A, p, v)$ invariant counts the number of closed walks of length $p$ that pass through a given vertex, $v$. 
 This information can be easily computed using $A$. 
-Just as the entries of $A^1$ represent the existence of paths of length 1 between two vertices (edges), the entries of $A^p$ represent the number of paths of length $p$ between any two vertices (by examining the row and column corresponding to two vertices).
-Thus, to find the number of closed paths of length $p$ that contain a given vertex $v$, we simply need to calculate: 
+Just as the entries of $A^1$ represent the existence of cycles of length 1 between two vertices (self loops), the entries of $A^p$ represent the number of cycles of length $p$ between any two vertices (by examining the row and column corresponding to two vertices).
+Thus, to find the number of closed cycles of length $p$ that contain a given vertex $v$, we simply need to calculate: 
 $$Cycles(A, p, v) = A^p[v, v]$$
 Where $v$ is being used interchangeably here with its represented position within the adjacency matrix. 
 Thus, calculating a specific value of $Cycles(A, p, v)$ can occur in the time it takes to exponentiate $A$ to the power $p$.
@@ -226,17 +226,24 @@ We simply calculate the Cycles vertex invariant for every one of the vertices of
 We then sort the resultant vectors lexicographically, and arrange them in a $N \times P$ matrix.
 This matrix is a comparable object which is invariant to changes in labeling or representation of $G$.
 
-Thus, paths as a graph invariant takes fewer inputs: Cycles(A, P).
+Thus, $Cycles$ as a graph invariant takes fewer inputs: $Cycles(A, P)$.
 
 Since vectors are comparable in linear time, we can sort them in log-quadratic time.
 This does not change the asymptotic nature of our running time.
 
-Cycles(A, P) is invariant to changes in vertex relabeling or adjacency matrix ordering.
-A skeptical reader should convince themselves that this holds true, even when two of the vectors to be sorted are identical, the resulting $Paths$ object is valid and deterministically constructed from the graph.
+$Cycles(A, P)$ is invariant to changes in vertex relabeling or adjacency matrix ordering.
+A skeptical reader should convince themselves that this holds true, even when two of the vectors to be sorted are identical, the resulting $Cycles$ object is valid and deterministically constructed from the graph.
 The specific running time of calculating and comparing the $Cycles$ functions and object is not the primary aim of this report, but there are clever methodologies that I have used to reduce the running time beyond these na\"{i}ve estimates.
 Most notably, we can significantly improve upon the average case time complexity by using delayed evaluation techniques, and can improve overall running time by multi-threading the calculations across multiple cores or GPUs.
 
 \subsection{A Brief Example}
+
+\begin{figure}[h]
+\caption{\emph{A Small Graph} - A labeling of the vertices is provided to correspond to the labeling of figure \ref{fig:cyclesdemocycles}. This graph (like all of the ones we are describing) is unlabeled, undirected, and loop-less.}
+\centering
+\includegraphics[width=.5\textwidth]{cyclesdemograph}
+\label{fig:cyclesdemograph}
+\end{figure}
 
 The best way to establish intuition and understanding of the cycles invariant is to show its values on a sample graph.
 In figure \ref{fig:cyclesdemograph}, we see an example graph (in graph6 format: I@QKj?]]O), which has multiple automorphisms.
@@ -248,17 +255,10 @@ The columns represent the length of the cycles being considered.
 The reader should trace out the number of cycles for themselves (for small values of $p$) to see the connection, and understand how this function is translated to a vertex invariant, and then to a graph invariant (the full matrix).
 
 \begin{figure}[h]
-\label{fig:cyclesdemograph}
-\caption{\emph{A Small Graph} - A labeling of the vertices is provided to correspond to the labeling of figure \ref{fig:cyclesdemocycles}. This graph (like all of the ones we are describing) is unlabeled, undirected, and loop-less.}
-\centering
-\includegraphics[width=.5\textwidth]{cyclesdemograph}
-\end{figure}
-
-\begin{figure}[h]
-\label{fig:cyclesdemocycles}
 \caption{\emph{A Cycles Invariant Matrix} - The color coding corresponds to the numbers, and purely serve to give a visual differentiation between different integer values.  We can see that many of the pairs of vertices in this graph share their values of the cycles invariant through them.}
 \centering
 \includegraphics[width=.7\textwidth]{cyclesdemocycles}
+\label{fig:cyclesdemocycles}
 \end{figure}
 
 \subsection{Invertibility}
@@ -268,18 +268,18 @@ For all co-cycles graphs that were found, invertibility holds, but that is not a
 
 
 \subsection{Time Complexity}
-The running time of the paths invariant is the same whether we treat it as a vertex invariant or as a graph invariant.
+The running time of the $Cycles$ invariant is the same whether we treat it as a vertex invariant or as a graph invariant.
 The one difference is whether or not we sort the resulting vectors.
 It is imperative to calculate $A^P$ even if we are only interested in calculating it for a single vertex.
-Matrix multiplication can generally be accomplished in sub-cubic time CITE, but for the sake of simplicity and comprehensibility within this paper we will assume that it is an algorithm that runs in $O(N^3)$  time.
-This means that the computation of any paths invariant can be accomplished in $O(N^4)$ time.
+It is a well known (and fascinating) fact that Matrix multiplication can be accomplished in sub-cubic time \cite{subcubicrunningmatrixmult}, but for the sake of simplicity and comprehensibility within this paper we will assume that it is an algorithm that runs in $O(N^3)$  time.
+This means that the computation of any $Cycles$ invariant can be accomplished in $O(N^4)$ time if we limit P to be a linear function of $N$ (which we will prove is all that we need).
 Though this sounds like a lot of time, in practice this is a fast computation.
 It is made asymptotically better by the fact that efficient algorithms for matrix multiplication are well studied and optimized for a variety of contexts.
 Matrix multiplication can be done efficiently by GPU arrays, and there are quick algorithms to do multiplication on sparse matrices for larger graphs.
 
 
 \subsection{Operating over Large Numbers}
-One element of the Cycles invariant that we will consistently need to be cognizant of is the fact that our numbers will grow very quickly, particularly for large values of N.
+One element of the Cycles invariant that we will consistently need to be cognizant of is the fact that our numbers will grow very quickly, particularly for large values of $N$.
 This complicates the calculation of cycles for values as small as $N=10$.
 Integer overflow occurs when the summed value of the elements in the dot product add to a number greater than $2^{32}$ (on our system).
 We can avoid this overflow if we guarantee that each of the $N$ pieces of the summation are less than or equal to $2^{\floor{32 - \log_2(N)}}$.
@@ -309,7 +309,7 @@ $$T_K(z_i * z_j) = 0 + 0 + T_K(y_i * y_j)$$
 The second claim is verified through a thought experiment about how cycles varies over multiple values of $p$.
 If we are attempting to distinguish between to cycles vectors, the most obvious comparison would be the degree of the vertices (the second element of a cycles vector).
 If two vertices don't agree on this value, we have distinguished them successfully, and any future point of overlap (or collision) is irrelevant. 
-If they agree on this value, then we know that each will have some minimum number of paths for any even value of p (as we know enough about their local neighborhood to assume the star graph as a minimum). 
+If they agree on this value, then we know that each will have some minimum number of Cycles for any even value of p (as we know enough about their local neighborhood to assume the star graph as a minimum). 
 Similarly, past values within the cycles invariant can be used to determine a large percentage of future values of the cycles invariant, for larger values of p.
 The majority of the cycles described by the invariant are products of smaller cycles, so the `rate' at which they are added is highly correlated to past events.
 To have a large number of newly emergent cycles in one but not the other (a precise enough one to exactly match the threshold for modulo) is incredibly unlikely.
@@ -330,11 +330,11 @@ With large enough numbers, algebraic operations are not constant, they are linea
 Infinitely sized registers are an abstraction of well designed systems, but cannot exist.
 Thus it is important for us to verify that the calculation of the cycles invariant uses a polynomial amount of space.
 
-In the worst case, the largest value in the Cycles invariant will occur when we have a fully connected graph of size N.
+In the worst case, the largest value in the Cycles invariant will occur when we have a fully connected graph of size $N$.
 In a fully connected graph, any sequence of vertices that does not put the same vertex adjacent to itself is a valid cycle.
 Thus, for a length $l$, there are exactly $(N-1)^l$ valid paths, of which exactly $(N-1)^{(l-1)}$ of which start and end at the same location (and thus are cycles).
 
-If we assume that the maximum length cycle we are interested in is of length N-1 (as is discussed in another chapter), then the number bits required to express an individual number within the Cycles matrix is at maximum:
+If we assume that the maximum length cycle we are interested in is of length $N-1$ (as is discussed in another chapter), then the number bits required to express an individual number within the Cycles matrix is at maximum:
 $$ O(Bits(N)) = O\Big( \log_2 \big[(N-1)^{N-1}\big] \Big) = O \big( (N - 1) * \log_2 [N-1] \big) = O(N \log_2 N)$$
 Thus the total number of bits required to fully represent a Cycles matrix is bounded by $O(N^3logN)$, a large upper bound, but certainly sub-exponential.
 

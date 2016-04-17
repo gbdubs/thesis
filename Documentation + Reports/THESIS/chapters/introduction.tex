@@ -19,14 +19,15 @@ I would like to thank my advisors (Prfs. Storer, Di Lillo and Torrey), the Compu
 
 \chapter*{TL;DR}
 
-Given a graph, count the number of closed paths (cycles) of every length that pass through each vertex in the graph.
-It turns out that we can do this very quickly, relative to how much information it gives us.
+Given a graph, count the number of closed walks (called cycles) of every length that pass through each vertex in the graph.
 Counting the number of cycles gives us a vector which describes a kind of local resonance, a description of the localized area around each vertex within the graph.
-This idea can be transformed into a numerical property, called an invariant, which is highly information dense--able to describe differences between graphs (or vertices) with high probability, but not sufficient to verify that two graphs (or vertices) are the same.
+This idea is a numerical property, called an invariant, which is highly information dense--able to detect differences between graphs (or vertices) with high probability, but not sufficient to verify that two graphs (or vertices in a single graph) are the same.
+It turns out that we can calculate the number of Cycles very quickly, relative to how much information it gives us.
 
-There are many graphs, even over a small number of vertices, but the number is much larger if you consider different labelings of the same graph to be distinct.
-This difference matters in many contexts, but is most evident through examining random graph generators, which treat different labelings of the same graph as if they are distinct graphs. 
-This is not a problem in and of itself (it makes sense in many practical contexts), but it warps theoretic arguments about the runtime of algorithms over `random' graphs.
+The number of graphs you can create, even over a small number of vertices, is very large.
+However, the number is \emph{much} larger if you consider different labelings of the same graph to be distinct.
+This difference matters in many contexts, but is made clear through examining standard random graph generators, which treat different labelings of the same graph as if they are different graphs. 
+This is not a problem in and of itself (it makes sense in many practical contexts), but it warps theoretic arguments about the runtime of algorithms over `random' graphs, in ways that we can describe through probability, algebraic proof and experimental results.
 It turns out that making up our own random graph generators can actually improve upon this state of affairs in a quantifiable way.
 
 \chapter*{An Open Source Project}
