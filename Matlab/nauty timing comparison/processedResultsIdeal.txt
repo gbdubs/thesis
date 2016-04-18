@@ -10598,4 +10598,51 @@ Total 18 (delta 15), reused 0 (delta 0)
 To git@github.com:gbdubs/thesis.git
    196dcc5..f25da63  master -> master
 ]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesisghazal:thesis gward$ git add *
-git
+git commit
+i]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesisghazal:thesis gward$ git commit
+[?1049h[?1h=[1;64r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[64;1H"~/Desktop/thesis/.git/COMMIT_EDITMSG" 22L, 1046C[>c[2;1H# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       modified:   Documentation + Reports/THESIS/chapters/cyclesgraphinvariant.tex
+#       modified:   Documentation + Reports/THESIS/chapters/cyclesvertexinvariant.tex
+#       modified:   Documentation + Reports/THESIS/thesis.aux
+#       modified:   Documentation + Reports/THESIS/thesis.log
+#       modified:   Documentation + Reports/THESIS/thesis.pdf
+#       modified:   Documentation + Reports/THESIS/thesis.synctex.gz
+#       modified:   Documentation + Reports/THESIS/thesis.toc
+#       modified:   Matlab/alternative generator/current processing/masterBaseliner.m
+#       modified:   Matlab/alternative generator/data/baselineMetrics.mat
+#       modified:   Matlab/nauty timing comparison/processedResultsIdeal.txt
+#       new file:   Matlab/oneoffs/untitled40.m
+#
+# Changes not staged for commit:
+#       modified:   Matlab/alternative generator/data/baselineMetrics.mat
+#
+[94m~                                                                                                              [24;1H~                                                                                                              [25;1H~                                                                                                              [26;1H~                                                                                                              [27;1H~                                                                                                              [28;1H~                                                                                                              [29;1H~                                                                                                              [30;1H~                                                                                                              [31;1H~                                                                                                              [32;1H~                                                                                                              [33;1H~                                                                                                              [34;1H~                                                                                                              [35;1H~                                                                                                              [36;1H~                                                                                                              [37;1H~                                                                                                              [38;1H~                                                                                                              [39;1H~                                                                                                              [40;1H~                                                                                                              [41;1H~                                                                                                              [42;1H~                                                                                                              [43;1H~                                                                                                              [44;1H~                                                                                                              [45;1H~                                                                                                              [46;1H~                                                                                                              [47;1H~                                                                                                              [48;1H~                                                                                                              [49;1H~                                                                                                              [50;1H~                                                                                                              [51;1H~                                                                                                              [52;1H~                                                                                                              [53;1H~                                                                                                              [54;1H~                                                                                                              [55;1H~                                                                                                              [56;1H~                                                                                                              [57;1H~                                                                                                              [58;1H~                                                                                                              [59;1H~                                                                                                              [60;1H~                                                                                                              [61;1H~                                                                                                              [62;1H~                                                                                                              [63;1H~                                                                                                              [1;1H[?12l[?25h[?25l[m[64;1H[1m-- INSERT --[m[64;13H[K[?12l[?25h[?25l[1;1Hi[?12l[?25h[?25l[1;1H[K[1;1H[?12l[?25h[?25lC[?12l[?25h[?25lCl[?12l[?25h[?25llo[?12l[?25h[?25los[?12l[?25h[?25lse[?12l[?25h[?25l [?12l[?25h[?25l r[?12l[?25h[?25lre[?12l[?25h[?25lea[?12l[?25h[?25lad[?12l[?25h[?25l [?12l[?25h[?25l o[?12l[?25h[?25lof[?12l[?25h[?25l [?12l[?25h[?25l C[?12l[?25h[?25lCy[?12l[?25h[?25lyc[?12l[?25h[?25lcl[?12l[?25h[?25lle[?12l[?25h[?25les[?12l[?25h[?25l [?12l[?25h[?25l C[?12l[?25h[?25lCh[?12l[?25h[?25lha[?12l[?25h[?25lap[?12l[?25h[?25lpt[?12l[?25h[?25lte[?12l[?25h[?25ler[?12l[?25h[?25lrs[?12l[?25h[?25ls.[?12l[?25h[64;1H[K[1;30H[?25l[?12l[?25h[?25l[64;1H:[?12l[?25hx[?25l".git/COMMIT_EDITMSG" 22L, 1076C written
+[?1l>[?12l[?25h[?1049l[master b9b612d] Close read of Cycles Chapters.
+ 11 files changed, 376 insertions(+), 305 deletions(-)
+ rewrite Documentation + Reports/THESIS/thesis.synctex.gz (90%)
+ create mode 100644 Matlab/oneoffs/untitled40.m
+]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesisghazal:thesis gward$ git push
+Counting objects: 22, done.
+Delta compression using up to 8 threads.
+Compressing objects:   4% (1/22)   Compressing objects:   9% (2/22)   Compressing objects:  13% (3/22)   Compressing objects:  18% (4/22)   Compressing objects:  22% (5/22)   Compressing objects:  27% (6/22)   Compressing objects:  31% (7/22)   Compressing objects:  36% (8/22)   Compressing objects:  40% (9/22)   Compressing objects:  45% (10/22)   Compressing objects:  50% (11/22)   Compressing objects:  54% (12/22)   Compressing objects:  59% (13/22)   Compressing objects:  63% (14/22)   Compressing objects:  68% (15/22)   Compressing objects:  72% (16/22)   Compressing objects:  77% (17/22)   Compressing objects:  81% (18/22)   Compressing objects:  86% (19/22)   Compressing objects:  90% (20/22)   Compressing objects:  95% (21/22)   Compressing objects: 100% (22/22)   Compressing objects: 100% (22/22), done.
+Writing objects:   4% (1/22)   Writing objects:   9% (2/22)   Writing objects:  13% (3/22)   Writing objects:  18% (4/22)   Writing objects:  22% (5/22)   Writing objects:  27% (6/22)   Writing objects:  31% (7/22)   Writing objects:  36% (8/22)   Writing objects:  40% (9/22)   Writing objects:  45% (10/22)   Writing objects:  50% (11/22)   Writing objects:  54% (12/22)   Writing objects:  59% (13/22)   Writing objects:  63% (14/22)   Writing objects:  68% (15/22)   Writing objects:  72% (16/22)   Writing objects:  77% (17/22)   Writing objects:  81% (18/22)   Writing objects:  86% (19/22)   Writing objects:  90% (20/22)   Writing objects:  95% (21/22)   Writing objects: 100% (22/22)   Writing objects: 100% (22/22), 852.81 KiB | 0 bytes/s, done.
+Total 22 (delta 18), reused 0 (delta 0)
+To git@github.com:gbdubs/thesis.git
+   f25da63..b9b612d  master -> master
+]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesisghazal:thesis gward$ lsdjfasdf[K[K[K[K[K[K[K[K[Kgit status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   Matlab/alternative generator/data/baselineMetrics.mat[m
+	[31mmodified:   Matlab/nauty timing comparison/processedResultsIdeal.txt[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]7;file://ghazal.cs.brandeis.edu/home/u/fall12/gward/Desktop/thesisghazal:thesis gward$ 

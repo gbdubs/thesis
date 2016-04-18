@@ -31,9 +31,12 @@ First, lets define a simple algorithm for checking for equivalent decks.
 Given a graph $G$, create all of its vertex deleted subgraphs, canonically label and encode each, then append them in lexicographical order.
 This string is relatively short.
 For an original graph with 12 vertices, there would be 12 graphs of size 11, if we strip off the first character, which is the same across all graphs of the same size, the encoding is only 10 characters long per graph, meaning that a deck could easily be encoded in only 110 characters (or, 440 bytes).
-The running time for this algorithm (using NAUTY as a sub-call from a C function (with hardcoded values of 11 and 12 vertices)) takes approximately XXX milliseconds, on average.
+The running time for this algorithm (using NAUTY as a sub-call from a C function (with hardcoded values of 11 and 12 vertices)) takes approximately 2 seconds on average.
+Thus, if we were able to perfectly parallelize this approach (lets say, across 30 servers), we could
 
-However, we need to be smart about when we compare these decks.
+
+
+However, we would also need to be smart about when we compare these decks.
 We cannot use a database to store them (as 440 bytes * 160 billion graphs = 71TB)
 so we need to generate all graphs which could share a deck at the same time and check at a local level.
 This is how we would go about doing that:
@@ -64,7 +67,7 @@ I puzzled away at this for a while, and came up with an interesting way of incor
 I will apologize in advance: this section is particularly notation heavy, and I don't think there is anything that can be done to avoid that. 
 
 Lets start with a thought experiment.
-In a graph $G$, with vertices $x$ and $y$, the number of cycles which pass through a given vertex (lets say vertex $x$) is equal to the number of cycles which pass through the vertex $x$ and the vertex $y$, plus the number of paths that pass through the vertex $x$ but not the vertex $y$. 
+In a graph $G$, with vertices $x$ and $y$, the number of cycles which pass through a given vertex (lets say vertex $x$) is equal to the number of cycles which pass through the vertex $x$ and the vertex $y$, plus the number of Cycles that pass through the vertex $x$ but not the vertex $y$. 
 This is true for all lengths of cycles we are considering.
 Thus, we can make a claim of this nature using vectors of length P as our operating unit.
 We will refer to these vectors by the notation $[x]_G$, denoting the vector of the number of cycles that pass through vertex $x$ within graph $G$, and we will use $[x \xoverline{y}]_G$ to refer to the number of cycles which pass through vertex $x$ but not through vertex $y$ in graph $G$.

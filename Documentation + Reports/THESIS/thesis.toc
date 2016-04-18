@@ -58,7 +58,7 @@
 \contentsline {chapter}{\numberline {5}Random Graph Generators and Automorphisms}{51}{chapter.5}
 \contentsline {section}{\numberline {5.1}Random Graph Models}{51}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}The Erd\"os-R\'enyi Model(s)}{52}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}The Gilbert Model}{53}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}The Gilbert Model}{52}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Isomorphism Under the Gilbert Model}{54}{subsection.5.1.3}
 \contentsline {section}{\numberline {5.2}Disconnect from Graphs as Algebraic Objects}{55}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Comparing the Distribution of Graph Connectivity}{56}{subsection.5.2.1}
@@ -66,24 +66,23 @@
 \contentsline {subsection}{\numberline {5.3.1}Two Quick Justifications}{58}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Theoretical Average Case Comparison}{59}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Practical Average Case Comparison}{60}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Should We Never Use the Gilbert Model?}{61}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Measuring and Comparing Random Graph Models}{61}{section.5.4}
+\contentsline {subsection}{\numberline {5.3.4}Should We Never Use the Gilbert Model?}{60}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Measuring and Comparing Random Graph Models}{62}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}An Ideal Random Graph Model}{62}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}An Equivalent Ideal Random Graph Model}{62}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Establishing a Methodology for Random Graph Generator Evaluation}{63}{subsection.5.4.3}
 \contentsline {subsection}{\numberline {5.4.4}Graph Set Metrics}{64}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Graph Set Metric Reference, Coding and Description}{64}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.5}Graph Set Metric Reference, Coding and Description}{65}{subsection.5.4.5}
 \contentsline {subsection}{\numberline {5.4.6}Establishing Baselines for Graph Set Metrics}{68}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}Finding Data on Graph Set Metrics and Scores}{69}{subsection.5.4.7}
+\contentsline {subsection}{\numberline {5.4.7}Finding Data on Graph Set Metrics and Scores}{70}{subsection.5.4.7}
 \contentsline {subsection}{\numberline {5.4.8}Examining the Difference between Gilbert and Ideal Baselines}{70}{subsection.5.4.8}
-\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{72}{section.5.5}
+\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{73}{section.5.5}
 \contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{73}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{73}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{74}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{74}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{75}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{76}{subsection.5.5.6}
-\contentsline {subsection}{\numberline {5.5.7}Cloning Model}{76}{subsection.5.5.7}
+\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{74}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{75}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{75}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{76}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{77}{subsection.5.5.6}
 \contentsline {chapter}{\numberline {6}Further Questions}{78}{chapter.6}
 \contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{78}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{79}{subsection.6.1.1}

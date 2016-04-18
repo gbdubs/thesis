@@ -28,7 +28,7 @@ Each of these sorts is performed in a consistent way, which is irrespective of t
 
 These sorts optimize the interrelationships between vertex sets, so that we are likely to eliminate lexicographically small matrices before even testing them.
 This is a version of exponential decision tree pruning, and how the order of the decisions can make pruning easier or harder.
-While maintaining our lexicographical target, we are able to significantly reduce the number of checks that are necessary (on the order of N!, in the best case).
+While maintaining our lexicographical target, we are able to significantly reduce the number of checks that are necessary (on the order of $N!$, in the best case).
 
 Once the order of the sets is sorted, we consider every possible permutation of the values within each of the sets so that every possible ordering of vertexes is possible, with the constraint that each set element remains in the higher level order established by the sets themselves.
 We start by examining a specific QSVS, and its associated permutations.
@@ -50,8 +50,8 @@ In such a case, we will perform the original Cycles computation ($O(N^2)$), the 
 Thus the worst case running time is clearly in factorial time ($O(N!)$).
 
 However, in the average case this is a much less grim scenario.
-If we assume (as we have reason to believe) that our flagging algorithm correctly determines SVSes, then our algorithm becomes a function of the number of automorphisms of our graph, in addition to the running time of the flagged paths algorithm $(\Theta((|Aut(G)| +1) * N^2))$.
-As we have seen in chapter six, the average number of automorphisms in G approaches 1 as N increases. Thus, for sufficiently large N, the average running time is on the order of $\Theta(N^2)$.
+If we assume (as we have reason to believe) that our flagging algorithm correctly determines SVSes, then our algorithm becomes a function of the number of automorphisms of our graph, in addition to the running time of the flagged Cycles algorithm $(\Theta((|Aut(G)| +1) * N^2))$.
+As we have seen in chapter six, the average number of automorphisms in G approaches 1 as $N$ increases. Thus, for sufficiently large $N$, the average running time is on the order of $\Theta(N^2)$.
 
 \section{Time Growth Comparisons to Faster Algorithms}
 Any discussion of a homegrown algorithm would be either incomplete or intentionally salacious without a discussion of how it compares to out of the box algorithms.
@@ -62,4 +62,4 @@ To give perspective to my own time results, I used an established and well optim
 A summary of the results is shown below, alongside equations which estimate their overall running time with the above parameters.
 From these figures it is clear that the NAUTY package outperforms my canonical labeler, but that my labeler appears to have a lower growth rate.
 I would imagine that this difference can be attributed to the large lengths my labeler goes to to minimize the number of permutations that are checked.
-NAUTY's algorithm uses simpler heuristics (such as X and X) to eliminate permutations, while mine uses significantly more power to make likely better informed choices.
+NAUTY's algorithm uses simpler heuristics to eliminate permutations, while mine uses significantly more power to make likely better informed choices, at much large computational expense.
