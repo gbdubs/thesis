@@ -30,8 +30,8 @@ This is by virtue of the fact the the overwhelming majority of graphs have only 
 \section{Most Graphs Have One Automorphism}
 
 This is by virtue of a simple fact: we can talk broadly about the average number of automorphisms in a set of graphs, and even better, we can calculate precise means for the average number of automorphisms for graphs of a certain size.
-Remember that the number of undirected, non-looped, single-edge graphs (or as we have just been calling them, graphs), over N vertices has a known closed form.
-We also know that the number of graph instances over N nodes is simply the number of undirected matrices over N nodes, $2^{E_{max}}$.
+Remember that the number of undirected, non-looped, single-edge graphs (or as we have just been calling them, graphs), over $N$ vertices has a known closed form.
+We also know that the number of graph instances over $N$ nodes is simply the number of undirected matrices over $N$ nodes, $2^{E_{max}}$.
 Finally, we know that the number of matrices 
 
 $$ M_{reps}(g) = \frac{N!}{|Aut(g)|} $$
@@ -41,23 +41,23 @@ $$\frac{\sum_{g \in G_{alg}} \frac{1}{|Aut(g)|}}{|G_{alg}|} =  \frac{2^{\frac{N^
 $$ \xoverline{|Aut^{-1}(g)|} = \frac{2^{\frac{N^2 - N}{2}}}{N! * |G_{alg}|}$$
 
 Though we don't have a closed form for this, a quick calculation pretty easy, and gives us a very clear trend.
-In Figure \ref{fig:mostgraphsoneaut}, there are two figures shown.
-The first plot shows the right hand side of the final equation, graphed for different values of N.
+In figure \ref{fig:mostgraphsoneaut}, there are two figures shown.
+The first plot shows the right hand side of the final equation, graphed for different values of $N$.
 The second plot explores the difference between the first plot and one, and takes the logarithm to see how small the values get.
 
 \begin{figure}[h]
-\label{fig:mostgraphsoneaut}
-\caption{\emph{Most Graphs Have Exactly One Automorphism} - It is clear that as N increases, the right hand side of our above equation approaches 1. Not only that, but it appears to do so exponentially fast.  The plot on the right shows a logarithmic linear approach to one.}
+\caption{\emph{Most Graphs Have Exactly One Automorphism} - It is clear that as $N$ increases, the right hand side of our above equation approaches 1. Not only that, but it appears to do so exponentially fast.  The plot on the right shows a logarithmic linear approach to one.}
 \centering
 \includegraphics[width=\textwidth]{numGraphsAndMats}
+\label{fig:mostgraphsoneaut}
 \end{figure}
 
 This should convince even a skeptical reader that for an average graph $g$ (even when treating it like an algebraic object), as $N$ increases, $\xoverline{|Aut(g)|} \rightarrow 1$.
 
 \subsection{Implications for Perfectly Similar Vertex Sets}
 
-Applying this back to our original purpose, we can surmise that the proportion of graphs which have only the trivial automorphism increases to one as N increases.
-In this common case, the SVSes are a set of N distinct, one element sets, where each vertex is distinguishable from each other, and none share any automorphisms.
+Applying this back to our original purpose, we can surmise that the proportion of graphs which have only the trivial automorphism increases to one as $N$ increases.
+In this common case, the SVSes are a set of $N$ distinct, one element sets, where each vertex is distinguishable from each other, and none share any automorphisms.
 This makes checking for isomorphism between two random graphs trivial (if we have the SVSes), as the overwhelming majority of the time, we will only need to try the isomorphism implied by the direct, one to one mapping between the SVSes of the two graphs.
 
 However, checking for automorphisms between every single pair of vertices is clearly in a higher computational complexity class than testing for isomorphism.
@@ -84,10 +84,10 @@ To answer this question, I used a notion of `usefulness', to maximize the amount
 Specifically, within the context of cycles as a vertex invariant, I started out with the assumption that all vertices share a single Similar Vertex Set (i.e. all are similar unless we have proof that they are not).
 We then distinguish vertices by advancing P by one, we are in effect splitting this one class (or smaller classes) into even smaller classes, based on the information gleaned by increasing the length of all invariant vectors by one.
 This kinds of `breaking-down' leads us to a concrete notion of usefulness: for a given graph G, cycles is useful at a power $P^*(G)$, where $P^*(G)$ is the minimum value for P at which all of the vertex sets in the SVSes are as broken down as they can get (for any larger values of P).
-Thus, if we take the maximum of $P^*(G)$ across the set of all graphs over N vertices and M edges, , we will find a value $P^*(S_{N,M})$ at which point computation beyond this point is redundant for graphs over this set of graphs.
-In this section we will be ignoring M, and examining the critical value for P over all values of M while fixing N.
-This would enable us to more concretely talk about running time, and its tradeoffs as a function of N alone.
-What we find (through both computational exploration and theoretical justification) is that $P^*(S_{N})$ can be described in direct terms of N:
+Thus, if we take the maximum of $P^*(G)$ across the set of all graphs over $N$ vertices and $M$ edges, , we will find a value $P^*(S_{N,M})$ at which point computation beyond this point is redundant for graphs over this set of graphs.
+In this section we will be ignoring $M$, and examining the critical value for P over all values of $M$ while fixing $N$.
+This would enable us to more concretely talk about running time, and its tradeoffs as a function of $N$ alone.
+What we find (through both computational exploration and theoretical justification) is that $P^*(S_{N})$ can be described in direct terms of $N$:
 
 \[ P^*(S_{N}) = \begin{cases} 
       N-1 & \text{If N is odd} \\
@@ -103,10 +103,10 @@ Shown in figure \ref{fig:diamvsmaxpower} is a description of this relationship. 
 It is also interesting (personally) just to see the diameter of a set of graphs laid out like this.
 
 \begin{figure}[h]
-\label{fig:diamvsmaxpower}
 \caption{\emph{Diameter Against $P^*(G)$ with $N=9$} - The size and number next to each circle tell us how many graphs (as algebraic objects) fit into different sizes of diameter and $P^*(G)$, labeled $P_G$}
 \centering
 \includegraphics[width=\textwidth]{N9DiamVsDiffPower}
+\label{fig:diamvsmaxpower}
 \end{figure}
 
 Four things are consistent across all of the alike graphs (shown in an appendix):
@@ -152,7 +152,7 @@ Thus, we know that
 
 Part 2: \emph{Why is $\forall g \,\in\, S_{N} , \;P^*(P_N) \geq P^*(g)$? Why is the path the hardest to internally distinguish?}
 
-Cycles invariant calculation is a form of vertex coloring for isomorphism testing, with the feature that distinguishes vertices being the number of paths that pass through them of given lengths.
+Cycles invariant calculation is a form of vertex coloring for isomorphism testing, with the feature that distinguishes vertices being the number of cycles that pass through them of given lengths.
 Since $P^*$ is concerned with the largest value of Cycles able to all nodes from one another internally, we know that the graph that is the hardest to internally distinguish will (1) at least have two distinct groups (if not more) of vertices within it, and (2) will have a slow traversal of its colorings (which is a function of its girth, the maximum distance between two nodes in the graph).
 If we can distinguish any pair of vertices from one another at any level (if at the degree sequence, at P=2, or at the number of triangles, P=3, etc.), then we can distinguish the vertices which are only attached to one of the pair members that we distinguished at $P+2$, as that new cycle will be reverberated to the connected vertices with cycles that can traverse to the distinguished node, complete the cycle, and return back.
 Thus, cycles, propagates in such a way that whenever we can make a single distinction of two nodes (say $v_j$ and $v_k$) in the graph (lets say at $P=p_0$), then all nodes in the graph will be as distinguished as they are able to be via Cycles at $P=K+2*max\big[min\big(dist(v_i,v_j), dist(v_i,v_k)\big)\big]$.
@@ -198,8 +198,8 @@ Specifically, if we are given the previous value of the cycles invariant, and to
 Additionally, we can predict the change in the number of cycles for the flagged vertex, as we knew its cycle profile before, and the addition of a single vertex on to it can be interpreted as a recursive definition, where cycles are broken into components that travel back (and forth) from the flag vertex and those that exist within the graph.
 Though difficult to explain via formulae and words, I would encourage a skeptical reader to check out my code at (/Thesis/Matlab/constituentpaths/predictPathsOfAddingOneVertex.m).
 
-Equally interesting (to the fact that we \emph{can} predict paths for these two nodes when just given the cycles invariant) is that we \emph{cannot} make any further predictions about the flagged cycles values based solely on the plain cycles values.
-We know this to be true because in co-cycles graphs, we frequently get different flagged cycles graph invariants when we flag vertices which are suggested to be isomorphic (but are not).
+Equally interesting (to the fact that we \emph{can} predict Cycles for these two nodes when just given the Cycles invariant) is that we \emph{cannot} make any further predictions about the flagged cycles values based solely on the plain cycles values.
+We know this to be true because in Co-Cycles graphs, we frequently get different flagged cycles graph invariants when we flag vertices which are suggested to be isomorphic (but are not).
 This is a good piece of information to know because it gives us proof that flagging is not some kind of manipulation of information that we already have, it represents a way to get pieces of information that include additional structural information.
 
 \subsection{Intuitive Justification for Flagging}
@@ -216,7 +216,7 @@ We can even think of this in more concrete terms: take the cycles invariant for 
 
 This tells you exactly how many new cycles have been created which pass through the flagged node at least once.
 We call this modified matrix the \emph{excess cycles} matrix.
-Note that this is \emph{not} the same as the row for the flagged cycles matrix, and actually encodes significantly more information (the constituents of those paths, not only that they exist).
+Note that this is \emph{not} the same as the row for the flagged cycles matrix, and actually encodes significantly more information (the constituents of those cycles, not only that they exist).
 In doing so, we actually get tangible information about the connectivity of each of the nodes.
 From the excess cycles matrix, we can calculate the distance between the flagged vertex and each of the other vertices in the graph.
 We can calculate the relative makeup of each of the added cycles (how many pass through each vertex, and how many times does each double back on itself), among a large number of other features.
@@ -233,15 +233,15 @@ To give the reader an idea of how useful Cycles (and flagged Cycles) are at disc
 By failure here, I mean the probability that the QSVSes generated by the invariant are \emph{not} equal to the SVSes that can be found via brute force/automorphism examinations.
 Note that this kind of failure is only a lack of perfect distinction, it never means a false negatives, in similar vertex testing false negatives are impossible by either methodology.
 
-In the figure below, you can see the results of a trial which generated 1,000,000 random graphs of size 10, 11 and 12, and calculated the proportion of each that are fully distinguished into their correct Similar Vertex Sets by each methodology of generating them.
+In figure \ref{fig:proportionQSVSeqSVS}, you can see the results of a trial which generated 1,000,000 random graphs of size 10, 11 and 12, and calculated the proportion of each that are fully distinguished into their correct Similar Vertex Sets by each methodology of generating them.
 What we find is that it appears that as the number of vertices increases, the overall number of graphs which fails this metric decreases, a valuable result.
 Additionally, we see that the overall number which fail is very low, which is heartening, and gives us good reason to believe that these are both high quality vertex invariants.
 
 \begin{figure}[h]
-\label{fig:proportionQSVSeqSVS}
 \caption{\emph{Proportion of all graphs where SVSes = QSVSes generated by two Methodologies}}
 \centering
 \includegraphics[width=\textwidth]{proportionExploredv10to12}
+\label{fig:proportionQSVSeqSVS}
 \end{figure}
 
 
