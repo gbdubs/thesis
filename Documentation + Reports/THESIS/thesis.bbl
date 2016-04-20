@@ -138,6 +138,12 @@ Sonja Petrovic, Alessandro Rinaldo, and Stephen~E. Fienberg.
   reciprocation.
 \newblock {\em Contemporary Mathematics}, 516, 2010.
 
+\bibitem{polya}
+G.~P{\'o}lya.
+\newblock Kombinatorische anzahlbestimmungen f{\"u}r gruppen, graphen und
+  chemische verbindungen.
+\newblock {\em Acta Mathematica}, 68(1):145--254.
+
 \bibitem{newspecsergs}
 Tom A.~B. Snijders, Philippa~E. Pattison, Garry~L. Robins, and Mark~S.
   Handcock.
@@ -165,10 +171,18 @@ Marijte~A.J. van Duijn, Krista~J. Gile, and Mark~S. Handcock.
   maximum likelihood estimation of exponential family random graph models.
 \newblock {\em Social Networks}, 2009.
 
+\bibitem{adjmat}
+Eric~W. Weisstein.
+\newblock Wolfram mathworld - adjacency matrix.
+
 \bibitem{whirlwind}
 A~whirlwind tour of~random graphs.
 \newblock Fan chung.
 \newblock {\em UCSD}, 2008.
+
+\bibitem{subcubicrunningmatrixmult}
+Wikipedia.
+\newblock Bounds on running time for sub-cubic matrix multiplication, jun 2010.
 
 \bibitem{virginiawilliams2015}
 Virginia Williams.

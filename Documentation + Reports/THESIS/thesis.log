@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_8) (preloaded format=pdflatex 2016.2.25)  18 APR 2016 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 APR 2016 20:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,10 +6,10 @@ entering extended mode
 **thesis.tex
 (./thesis.tex
 LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 44 languages loaded.
-(/opt/local/share/texmf-texlive/tex/latex/base/report.cls
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/opt/local/share/texmf-texlive/tex/latex/base/size11.clo
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,14 +25,14 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/opt/local/share/texmf-texlive/tex/latex/mathtools/mathtools.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/opt/local/share/texmf-texlive/tex/latex/tools/calc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count88
 \calc@Bcount=\count89
@@ -45,27 +45,27 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count90
 \calc@Cskip=\skip45
 )
-(/opt/local/share/texmf-texlive/tex/latex/mathtools/mhsetup.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count91
@@ -120,7 +120,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
-(/opt/local/share/texmf-texlive/tex/latex/listings/listings.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count104
 \lst@gtempboxa=\box28
 \lst@token=\toks20
@@ -134,38 +134,38 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \lst@lineno=\count109
 \lst@maxwidth=\dimen124
 
-(/opt/local/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 \c@lstnumber=\count110
 \lst@skipnumbers=\count111
 \lst@framebox=\box29
 )
-(/opt/local/share/texmf-texlive/tex/latex/listings/listings.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
 Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(/opt/local/share/texmf-texlive/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/opt/local/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count112
@@ -173,28 +173,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
 )
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/opt/local/share/texmf-texlive/tex/generic/genmisc/nth.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/genmisc/nth.sty
 Package: nth 2002/02/27
 )
-(/opt/local/share/texmf-texlive/tex/latex/cite/cite.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-(/opt/local/share/texmf-texlive/tex/latex/multirow/multirow.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen127
 )
-(/opt/local/share/texmf-texlive/tex/latex/tools/longtable.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip50
 \LTright=\skip51
@@ -212,14 +212,14 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count117
 \LT@p@ftn=\toks21
 )
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -260,25 +260,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/opt/local/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/auxhook.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen129
 \Hy@linkcounter=\count118
 \Hy@pagecounter=\count119
 
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count120
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -290,7 +290,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count121
 
-(/opt/local/share/texmf-texlive/tex/latex/url/url.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -315,31 +315,31 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count126
 \c@bookmark@seq@number=\count127
 
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip54
 )
-(/opt/local/share/texmf-texlive/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
 
-(/opt/local/share/texmf-texlive/tex/latex/base/utf8.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/opt/local/share/texmf-texlive/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -489,7 +489,7 @@ File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/opt/local/share/texmf-texlive/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -520,7 +520,7 @@ File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/opt/local/share/texmf-texlive/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -546,18 +546,18 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/opt/local/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-(/opt/local/share/texmf-texlive/tex/latex/tools/array.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen133
 \extrarowheight=\dimen134
@@ -579,46 +579,62 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count129
+\Gm@cntv=\count130
+\c@Gm@tempcnt=\count131
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks26
+)
 \myboxA=\box34
 \myboxB=\box35
 \mylenA=\skip58
-Package hyperref Info: Option `colorlinks' set `true' on input line 32.
- (./thesis.aux)
+Package hyperref Info: Option `colorlinks' set `true' on input line 35.
+
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-\c@lstlisting=\count129
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+\c@lstlisting=\count132
 
-(/opt/local/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
-\scratchdimen=\dimen135
+\scratchcounter=\count133
+\scratchdimen=\dimen143
 \scratchbox=\box36
-\nofMPsegments=\count131
-\nofMParguments=\count132
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count133
-\MPscratchDim=\dimen136
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
-\everyMPtoPDFconversion=\toks27
-) (/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen144
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
@@ -626,70 +642,101 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/opt/local/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box37
-Package hyperref Info: Link coloring ON on input line 41.
+Package hyperref Info: Link coloring ON on input line 44.
 
-(/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count136
+\c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
 
-<brandeis-seal.png, id=377, 74.25743pt x 74.25743pt>
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<brandeis-seal.png, id=389, 74.25743pt x 74.25743pt>
 File: brandeis-seal.png Graphic file (type png)
  <use brandeis-seal.png>
-Package pdftex.def Info: brandeis-seal.png used on input line 47.
-(pdftex.def)             Requested size: 53.9978pt x 54.0001pt.
+Package pdftex.def Info: brandeis-seal.png used on input line 50.
+(pdftex.def)             Requested size: 67.94241pt x 67.94826pt.
 
 [1
 
-{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map} <./brandeis-seal.p
-ng>] (./thesis.toc
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./brand
+eis-seal.png>] (./thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
- (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 2.
- (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 ...ection, Co-Cycles Graphs}{30}{section.2.5}
+l.40 ...cles as a Vertex Invariant}{31}{chapter.3}
                                                    [1
 
-] [2]
-Overfull \hbox (5.45564pt too wide) in paragraph at lines 82--82
- [][] [][][]\OT1/cmr/m/n/10.95 MinusOneB - In-ter-spers-ing Some Gilbert Ran-do
-m Graphs[][] [][]  
- []
-
-)
+] [2])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- (./chapters/introduction.tex [3] [4
+
+(./chapters/introduction.tex [3] [4
 
 ] [5
 
-])
-(./chapters/definitionsandsyntax.tex [6
+]) (./chapters/definitionsandsyntax.tex
+[6
 
 ]
 Chapter 1.
@@ -698,184 +745,143 @@ Chapter 1.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 59.
+(hyperref)                removing `math shift' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 59.
-
-[8]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 78.
 
-<figures/pdfs3thru11.png, id=537, 578.16pt x 433.62pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 78.
+
+[8] <figures/pdfs3thru11.png, id=557, 578.16pt x 433.62pt>
 File: figures/pdfs3thru11.png Graphic file (type png)
 
 <use figures/pdfs3thru11.png>
-Package pdftex.def Info: figures/pdfs3thru11.png used on input line 87.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+Package pdftex.def Info: figures/pdfs3thru11.png used on input line 91.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 93.
-(/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
- [9]
-<figures/decreasingsigma.png, id=545, 578.16pt x 433.62pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+ [9 <./figures/pdfs3thru11.png (PNG copy)>]
+<figures/decreasingsigma.png, id=564, 578.16pt x 433.62pt>
 File: figures/decreasingsigma.png Graphic file (type png)
 
 <use figures/decreasingsigma.png>
-Package pdftex.def Info: figures/decreasingsigma.png used on input line 108.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+Package pdftex.def Info: figures/decreasingsigma.png used on input line 112.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
+ [10 <./figures/decreasingsigma.png (PNG copy)>] [11]
 
+LaTeX Warning: Citation `cornell' on page 12 undefined on input line 201.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 <./figures/pdfs3thru11.png (PNG copy)>] [11 <./figures/decreasingsigma.png 
-(PNG copy)>] [12] [13]
-Overfull \hbox (16.78204pt too wide) in paragraph at lines 201--204
-\OT1/cmr/m/n/10.95 within the ad-ja-cency ma-trix. Thus, cal-cu-lat-ing a spe-c
-ific value of $\OML/cmm/m/it/10.95 Cycles\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
-5 A; p; v\OT1/cmr/m/n/10.95 )$
- []
-
-[14] <figures/cyclesdemograph.png, id=571, 187.70125pt x 178.6675pt>
+[12] [13] <figures/cyclesdemograph.png, id=589, 187.70125pt x 178.6675pt>
 File: figures/cyclesdemograph.png Graphic file (type png)
 
 <use figures/cyclesdemograph.png>
-Package pdftex.def Info: figures/cyclesdemograph.png used on input line 244.
-(pdftex.def)             Requested size: 180.0pt x 171.34708pt.
+Package pdftex.def Info: figures/cyclesdemograph.png used on input line 257.
+(pdftex.def)             Requested size: 226.48395pt x 215.59673pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[15] <figures/cyclesdemocycles.png, id=580, 488.82625pt x 381.425pt>
+<figures/cyclesdemocycles.png, id=593, 488.82625pt x 381.425pt>
 File: figures/cyclesdemocycles.png Graphic file (type png)
 
 <use figures/cyclesdemocycles.png>
-Package pdftex.def Info: figures/cyclesdemocycles.png used on input line 260.
-(pdftex.def)             Requested size: 251.9989pt x 196.63103pt.
+Package pdftex.def Info: figures/cyclesdemocycles.png used on input line 273.
+(pdftex.def)             Requested size: 317.07614pt x 247.41113pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `subcubicrunningmatrixmult' on page 16 undefined on inp
-ut line 274.
-
-[16 <./figures/cyclesdemograph.png>] [17 <./figures/cyclesdemocycles.png>]
-[18]
-Overfull \hbox (11.39145pt too wide) detected at line 338
-\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Bits\OT1/cmr/m/n/1
-0.95 (\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 )) = \OML/cmm/m/it/10.95 O[] [][]
- []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m
-/n/10.95 1)[][][] = \OML/cmm/m/it/10.95 O[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10
-.95 N \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1) \OMS/cmsy/m/n/10.95 ^^C [][
-]\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n
-/10.95 1][] = \OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N []
-[] N\OT1/cmr/m/n/10.95 )
- []
-
-) [19] (./chapters/cyclesgraphinvariant.tex [20]
+[14 <./figures/cyclesdemograph.png>] [15 <./figures/cyclesdemocycles.png>]
+[16]) (./chapters/cyclesgraphinvariant.tex [17]
 Chapter 2.
-[21
+[18
 
-] [22] [23] [24] [25]
-Overfull \hbox (68.24347pt too wide) detected at line 129
-[][][] []
+] [19] [20] [21]
+Overfull \hbox (72.77896pt too wide) in paragraph at lines 143--149
+\OT1/cmr/m/n/10.95 com-prised of terms of the ad-di-tion and mul-ti-pli-ca-tion
+ of vari-ables in the set $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]; [] ; x
+[]; x[]; [] ; x[]\OMS/cmsy/m/n/10.95 g$\OT1/cmr/m/n/10.95 .
  []
 
-
-Overfull \hbox (69.64935pt too wide) detected at line 135
-\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it
-/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \
-OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/
-n/10.95 + \OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]
-x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 +
- 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[
-]x[] \OT1/cmr/m/n/10.95 + 2\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 2
-\OML/cmm/m/it/10.95 x[]x[]x[] \OT1/cmr/m/n/10.95 + 1
- []
-
-[26]
-Overfull \hbox (14.4939pt too wide) in paragraph at lines 173--174
-[][][][][][][][][][][][][][][][][][] 
- []
-
-[27] [28] <figures/miyizaki2.png, id=653, 1340.00626pt x 773.89125pt>
+[22] [23] <figures/miyizaki2.png, id=655, 1340.00626pt x 773.89125pt>
 File: figures/miyizaki2.png Graphic file (type png)
 
 <use figures/miyizaki2.png>
 Package pdftex.def Info: figures/miyizaki2.png used on input line 218.
-(pdftex.def)             Requested size: 360.0pt x 207.90247pt.
+(pdftex.def)             Requested size: 452.9679pt x 261.59622pt.
 
-<figures/miyizaki1.png, id=654, 1281.78876pt x 395.4775pt>
+<figures/miyizaki1.png, id=656, 1281.78876pt x 395.4775pt>
 File: figures/miyizaki1.png Graphic file (type png)
 
 <use figures/miyizaki1.png>
 Package pdftex.def Info: figures/miyizaki1.png used on input line 225.
-(pdftex.def)             Requested size: 360.0pt x 111.07088pt.
+(pdftex.def)             Requested size: 452.9679pt x 139.75282pt.
+ [24 <./figures/miyizaki2.png> <./figures/miyizaki1.png>] [25] [26]
+Overfull \hbox (5.57013pt too wide) in paragraph at lines 315--315
+[]\OT1/cmr/bx/n/14.4 Trie Depth and the Power of Cy-cles Across Classes of Grap
+hs 
+ []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[29 <./figures/miyizaki2.png>] [30 <./figures/miyizaki1.png>] [31] [32]
-[33] <figures/powercurve8.png, id=683, 1073.00874pt x 726.715pt>
+[27] <figures/powercurve8.png, id=681, 1073.00874pt x 726.715pt>
 File: figures/powercurve8.png Graphic file (type png)
 
 <use figures/powercurve8.png>
 Package pdftex.def Info: figures/powercurve8.png used on input line 338.
-(pdftex.def)             Requested size: 360.0pt x 243.80864pt.
+(pdftex.def)             Requested size: 452.9679pt x 306.78172pt.
 
-<figures/powercurve9.png, id=684, 1069.9975pt x 728.7225pt>
+<figures/powercurve9.png, id=682, 1069.9975pt x 728.7225pt>
 File: figures/powercurve9.png Graphic file (type png)
 
 <use figures/powercurve9.png>
 Package pdftex.def Info: figures/powercurve9.png used on input line 345.
-(pdftex.def)             Requested size: 360.0pt x 245.18266pt.
+(pdftex.def)             Requested size: 452.9679pt x 308.4965pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/powercurve10.png, id=685, 1084.05pt x 736.7525pt>
+<figures/powercurve10.png, id=683, 1084.05pt x 736.7525pt>
 File: figures/powercurve10.png Graphic file (type png)
 
 <use figures/powercurve10.png>
 Package pdftex.def Info: figures/powercurve10.png used on input line 352.
-(pdftex.def)             Requested size: 360.0pt x 244.66922pt.
+(pdftex.def)             Requested size: 452.9679pt x 307.84883pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[34 <./figures/powercurve8.png>] [35 <./figures/powercurve9.png>])
-(./chapters/cyclesvertexinvariant.tex [36 <./figures/powercurve10.png>]
+[28 <./figures/powercurve8.png>]) (./chapters/cyclesvertexinvariant.tex
+[29 <./figures/powercurve9.png>] [30 <./figures/powercurve10.png>]
 Chapter 3.
-[37
+[31
 
-] [38] <figures/numGraphsAndMats.png, id=719, 749.29938pt x 432.61626pt>
+] <figures/numGraphsAndMats.png, id=711, 749.29938pt x 432.61626pt>
 File: figures/numGraphsAndMats.png Graphic file (type png)
 
 <use figures/numGraphsAndMats.png>
 Package pdftex.def Info: figures/numGraphsAndMats.png used on input line 51.
-(pdftex.def)             Requested size: 360.0pt x 207.85147pt.
- [39 <./figures/numGraphsAndMats.png>]
+(pdftex.def)             Requested size: 452.9679pt x 261.52571pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 75.
@@ -900,7 +906,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 77.
 
-[40]
+[33 <./figures/numGraphsAndMats.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 98.
@@ -921,13 +927,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 98.
 
-<figures/N9DiamVsDiffPower.png, id=730, 578.16pt x 433.62pt>
+<figures/N9DiamVsDiffPower.png, id=724, 578.16pt x 433.62pt>
 File: figures/N9DiamVsDiffPower.png Graphic file (type png)
 
 <use figures/N9DiamVsDiffPower.png>
 Package pdftex.def Info: figures/N9DiamVsDiffPower.png used on input line 108.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
- [41 <./figures/N9DiamVsDiffPower.png>]
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
+ [34 <./figures/N9DiamVsDiffPower.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 127.
@@ -952,330 +958,352 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 127.
 
-
-Overfull \hbox (28.9041pt too wide) in paragraph at lines 130--131
-[]\OT1/cmr/m/n/10.95 This proof con-sists of two parts, the first is why $\OML/
-cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95
- ) = []\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S[]\OT1/c
-mr/m/n/10.95 )$
- []
-
-
-Overfull \hbox (10.11337pt too wide) in paragraph at lines 132--133
-[]\OT1/cmr/m/n/10.95 Part 1: \OT1/cmr/m/it/10.95 Dis-tin-guish-ing be-tween ver
--tices in the path graph re-quires $\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 (
-\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 ) =
- []
-
-[42] [43] [44] [45]
-<figures/proportionExploredv10to12.png, id=756, 1622.06pt x 1023.825pt>
+[35] [36] [37]
+<figures/proportionExploredv10to12.png, id=746, 1622.06pt x 1023.825pt>
 File: figures/proportionExploredv10to12.png Graphic file (type png)
 
 <use figures/proportionExploredv10to12.png>
 Package pdftex.def Info: figures/proportionExploredv10to12.png used on input li
 ne 243.
-(pdftex.def)             Requested size: 360.0pt x 227.22623pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./chapters/cannonicallabeling.tex [46] [47 <./figures/proportionExploredv10t
-o12.png (PNG copy)>]
+(pdftex.def)             Requested size: 452.9679pt x 285.90355pt.
+) (./chapters/cannonicallabeling.tex [38 <./figures/proportionExploredv10to12.p
+ng (PNG copy)>]
 Chapter 4.
-[48
+[39
 
-] [49]
-Overfull \hbox (13.7763pt too wide) in paragraph at lines 56--56
-[]\OT1/cmr/bx/n/14.4 Time Growth Com-par-isons to Faster Al-go-rithms 
- []
-
-) (./chapters/randomgraphgenerators.tex [50]
+]) [40] (./chapters/randomgraphgenerators.tex [41]
 Chapter 5.
-[51
+[42
 
-] [52] [53] [54] [55]
-<figures/decreasingsigmawithbinom.png, id=801, 1387.1825pt x 1043.9pt>
+] [43] [44] [45]
+<figures/decreasingsigmawithbinom.png, id=782, 1387.1825pt x 1043.9pt>
 File: figures/decreasingsigmawithbinom.png Graphic file (type png)
 
 <use figures/decreasingsigmawithbinom.png>
 Package pdftex.def Info: figures/decreasingsigmawithbinom.png used on input lin
 e 145.
-(pdftex.def)             Requested size: 360.0pt x 270.9138pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[56] [57 <./figures/decreasingsigmawithbinom.png (PNG copy)>]
-Overfull \hbox (55.81705pt too wide) detected at line 169
-\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 CoCycles\OT1/cmr/m
-/n/10.95 (\OML/cmm/m/it/10.95 G\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j\OML/cm
-m/m/it/10.95 G \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 Gilbert\OT1/cmr/m/n/10
-.95 ) = [] = [] = 7\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 4130 \OMS/cmsy/m/n/1
-0.95 ^^B \OT1/cmr/m/n/10.95 10[]
- []
-
-
-Overfull \hbox (27.79971pt too wide) detected at line 170
-\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 CoCycles\OT1/cmr/m
-/n/10.95 (\OML/cmm/m/it/10.95 G\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j\OML/cm
-m/m/it/10.95 G \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 Gilbert\OT1/cmr/m/n/10
-.95 ) = [] = [] = 9\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 6625 \OMS/cmsy/m/n/1
-0.95 ^^B \OT1/cmr/m/n/10.95 10[]
- []
-
-
-Overfull \hbox (40.56273pt too wide) detected at line 182
-\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.
-95 = \OML/cmm/m/it/10.95 K[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 G \OMS/cms
-y/m/n/10.95 2 \OML/cmm/m/it/10.95 Gilbert\OT1/cmr/m/n/10.95 ) = [] = [] = [] = 
-[]
- []
-
-
-Overfull \hbox (50.90808pt too wide) detected at line 184
-\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 G \OT1/cmr/m/n/10.
-95 = \OML/cmm/m/it/10.95 G[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 G \OMS/cms
-y/m/n/10.95 2 \OML/cmm/m/it/10.95 Gilbert\OT1/cmr/m/n/10.95 ) = [] = [] = [] = 
-[]
- []
-
-[58] [59] <figures/nautyperformance.png, id=820, 1573.88pt x 1150.2975pt>
+(pdftex.def)             Requested size: 452.9679pt x 340.87227pt.
+ [46 <./figures/decreasingsigmawithbinom.png (PNG copy)>] [47] [48]
+<figures/nautyperformance.png, id=798, 1573.88pt x 1150.2975pt>
 File: figures/nautyperformance.png Graphic file (type png)
 
 <use figures/nautyperformance.png>
 Package pdftex.def Info: figures/nautyperformance.png used on input line 233.
-(pdftex.def)             Requested size: 360.0pt x 263.10603pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[60] [61 <./figures/nautyperformance.png (PNG copy)>]
-Overfull \hbox (16.50629pt too wide) in paragraph at lines 261--261
-[]\OT1/cmr/bx/n/14.4 Measuring and Com-par-ing Ran-dom Graph Mod-
+(pdftex.def)             Requested size: 452.9679pt x 331.05023pt.
+ [49 <./figures/nautyperformance.png (PNG copy)>]
+Overfull \hbox (42.78374pt too wide) in paragraph at lines 275--280
+\OT1/cmr/m/n/10.95 so long as you can enu-mer-ate all graphs of a given size. T
+here are 24637809253125004524383007491432768
  []
 
-[62]
+[50]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 292.
 
- (/opt/local/share/texmf-texlive/tex/latex/base/omlcmr.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 292.
- [63] [64]
-Overfull \hbox (8.43755pt too wide) in paragraph at lines 359--360
-\OT1/cmr/m/n/10.95 Av-er-age num-ber of non-trivial (non-edge re-peat-ing) quad
-ri-lat-er-als across
- []
-
-[65] [66] [67]
-Overfull \hbox (12.43272pt too wide) in paragraph at lines 389--390
-\OT1/cmr/m/n/10.95 of how dis-persed the dis-tri-bu-tion is, cal-cu-lated as $\
-OML/cmm/m/it/10.95 FFC[]FFV[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 =nGraphs$ 
-
- []
-
-[68] [69]
-Overfull \hbox (5.36124pt too wide) in paragraph at lines 449--449
-[][]\OT1/cmr/bx/n/12 Identical - ADSMD, ADSMN, AN-QUAD, DSMV, NE, ODSPL 
- []
-
-<figures/ANQUAD-10.png, id=873, 578.16pt x 433.62pt>
+ [51]
+[52] [53] [54] [55] <figures/ANQUAD-10.png, id=837, 578.16pt x 433.62pt>
 File: figures/ANQUAD-10.png Graphic file (type png)
 
 <use figures/ANQUAD-10.png>
 Package pdftex.def Info: figures/ANQUAD-10.png used on input line 457.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (15.79182pt too wide) in paragraph at lines 461--461
-\OT1/cmr/bx/n/12 ANTRI, DI-AMV, MLNA, NCCV, NUG, PCONN, PDL, PQRA,
- []
-
-[70] <figures/SQNR-7.png, id=881, 578.16pt x 433.62pt>
+<figures/SQNR-7.png, id=839, 578.16pt x 433.62pt>
 File: figures/SQNR-7.png Graphic file (type png)
-
-<use figures/SQNR-7.png>
+ <use figures/SQNR-7.png>
 Package pdftex.def Info: figures/SQNR-7.png used on input line 470.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[71 <./figures/ANQUAD-10.png (PNG copy)>]
-<figures/DIAMV-5.png, id=891, 578.16pt x 433.62pt>
+[56] <figures/DIAMV-5.png, id=851, 578.16pt x 433.62pt>
 File: figures/DIAMV-5.png Graphic file (type png)
- <use figures/DIAMV-5.png>
+
+<use figures/DIAMV-5.png>
 Package pdftex.def Info: figures/DIAMV-5.png used on input line 491.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/VLNA-6.png, id=892, 578.16pt x 433.62pt>
+<figures/VLNA-6.png, id=852, 578.16pt x 433.62pt>
 File: figures/VLNA-6.png Graphic file (type png)
  <use figures/VLNA-6.png>
 Package pdftex.def Info: figures/VLNA-6.png used on input line 498.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (12.9168pt too wide) in paragraph at lines 502--502
-[][]\OT1/cmr/bx/n/12 Shape Dif-fer-ent - ALNA, DI-AMV, DSMDV, DSMNV, DSMXV,
+Overfull \hbox (5.11562pt too wide) in paragraph at lines 502--502
+[][]\OT1/cmr/bx/n/12 Shape Dif-fer-ent - ALNA, DI-AMV, DSMDV, DSMNV, DSMXV, DSV
+V, MNR,
  []
 
-
-Overfull \hbox (4.2096pt too wide) in paragraph at lines 503--507
-\OT1/cmr/m/n/10.95 Finally, many met-rics sim-ply dis-played dif-fer-ent shapes
- across dif-fer-ent ranges
- []
-
-[72 <./figures/SQNR-7.png (PNG copy)>]
-<figures/DSMXV-10.png, id=906, 578.16pt x 433.62pt>
+[57 <./figures/ANQUAD-10.png (PNG copy)>]
+<figures/DSMXV-10.png, id=863, 578.16pt x 433.62pt>
 File: figures/DSMXV-10.png Graphic file (type png)
  <use figures/DSMXV-10.png>
 Package pdftex.def Info: figures/DSMXV-10.png used on input line 511.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/ADIAM-9.png, id=907, 578.16pt x 433.62pt>
+<figures/ADIAM-9.png, id=864, 578.16pt x 433.62pt>
 File: figures/ADIAM-9.png Graphic file (type png)
  <use figures/ADIAM-9.png>
 Package pdftex.def Info: figures/ADIAM-9.png used on input line 518.
-(pdftex.def)             Requested size: 360.0pt x 269.99951pt.
+(pdftex.def)             Requested size: 452.9679pt x 339.72418pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[73 <./figures/DIAMV-5.png (PNG copy)>]
-Overfull \hbox (18.13884pt too wide) in paragraph at lines 545--545
-[]\OT1/cmr/bx/n/12 MinusOneB - In-ter-spers-ing Some Gilbert Ran-dom Graphs 
- []
-
-[74 <./figures/VLNA-6.png (PNG copy)>] [75 <./figures/DSMXV-10.png (PNG copy)>]
-
-Overfull \hbox (7.92383pt too wide) in paragraph at lines 571--572
-[][][][][][][][][][][][] 
- []
-
-[76 <./figures/ADIAM-9.png (PNG copy)>]) (./chapters/nextsteps.tex [77]
+[58 <./figures/SQNR-7.png (PNG copy)>] [59 <./figures/DIAMV-5.png (PNG copy)>]
+[60 <./figures/VLNA-6.png (PNG copy)>] [61 <./figures/DSMXV-10.png (PNG copy)>]
+) [62 <./figures/ADIAM-9.png (PNG copy)>] (./chapters/nextsteps.tex [63]
 Chapter 6.
-[78
+[64
 
-] [79] [80]) (./thesis.bbl [81] [82
+] [65]) (./thesis.bbl [66] [67
 
-]
-Underfull \hbox (badness 1596) in paragraph at lines 86--89
-\OT1/cmr/m/n/10.95 in-vari-ants for the graph iso-mor-phism prob-lem.  \OT1/cmr
-/m/it/10.95 arXiv preprint
- []
-
-
-Underfull \hbox (badness 1052) in paragraph at lines 103--108
-[]\OT1/cmr/m/n/10.95 D. J. Watts M. E. J. New-man and S. H. Stro-gatz.  Ran-dom
-
- []
-
-
-Underfull \hbox (badness 1755) in paragraph at lines 103--108
-\OT1/cmr/m/n/10.95 graph mod-els of so-cial net-works.  \OT1/cmr/m/it/10.95 Pro
--ceed-ings of the Na-tional
- []
-
-[83]) (./appendices/introduction.tex [84]
+]) (./appendices/introduction.tex [68]
 Chapter 7.
-) (./appendices/codestructure.tex [85
+) (./appendices/codestructure.tex [69
 
-] [86] [87] [88])
+] [70] [71])
 (./appendices/co-cyclesgraphs.tex
-Overfull \hbox (7.67432pt too wide) in alignment at lines 7--14
- [] [] [] [] [] 
- []
-
-
-Overfull \hbox (7.67432pt too wide) in alignment at lines 14--49
- [] [] [] [] [] 
- []
-
-
 Underfull \vbox (badness 10000) detected at line 49
  []
 
+[72] [73]) (./appendices/specs.tex [74]) (./appendices/scorereportsummaries.tex
 
-Overfull \hbox (7.67432pt too wide) in alignment at lines 49--80
- [] [] [] [] [] 
- []
-
-[89]
-Overfull \hbox (7.67432pt too wide) in alignment at lines 80--112
- [] [] [] [] [] 
+Overfull \hbox (6.03012pt too wide) in alignment at lines 34--43
+ [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (7.67432pt too wide) in alignment at lines 112--143
- [] [] [] [] [] 
- []
-
-[90]
-Overfull \hbox (7.67432pt too wide) in alignment at lines 143--174
- [] [] [] [] [] 
+Overfull \hbox (6.03012pt too wide) in alignment at lines 43--64
+ [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (7.67432pt too wide) in alignment at lines 174--203
- [] [] [] [] [] 
+Overfull \hbox (6.03012pt too wide) in alignment at lines 64--83
+ [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[91]) (./appendices/specs.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
- [92]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
- (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+[75] [76]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 161--170
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 170--191
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 191--210
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[77] [78]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 288--297
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 297--318
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 318--337
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[79] [80]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 415--424
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 424--445
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 445--464
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[81] [82]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 542--551
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 551--572
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 572--591
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[83] [84]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 669--678
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 678--699
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 699--718
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[85] [86]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 796--805
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 805--826
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 826--845
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[87] [88]
+Overfull \hbox (6.03012pt too wide) in alignment at lines 923--932
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 932--953
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (6.03012pt too wide) in alignment at lines 953--972
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[89] [90]) (./appendices/randomgraphbaselines.tex [91] [92] [93] [94] [95]
+[96] [97] [98] [99] [100] [101]
+Overfull \hbox (54.29408pt too wide) in alignment at lines 731--739
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (54.29408pt too wide) in alignment at lines 739--762
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (54.29408pt too wide) in alignment at lines 762--784
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[102]
+Overfull \hbox (54.29408pt too wide) in alignment at lines 784--806
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (54.29408pt too wide) in alignment at lines 806--811
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113] [114]
+[115] [116]
+Overfull \hbox (3.16364pt too wide) in alignment at lines 1732--1740
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.16364pt too wide) in alignment at lines 1740--1763
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[117]
+Overfull \hbox (3.16364pt too wide) in alignment at lines 1763--1785
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.16364pt too wide) in alignment at lines 1785--1807
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.16364pt too wide) in alignment at lines 1807--1812
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129]
+[130] [131] [132] [133] [134] [135] [136] [137] [138] [139])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
+ [140]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
+
+(./thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0A0FD8D3FBD923BB07022F002FA2D5BD;7797.
+(rerunfilecheck)             Checksum: 7F333837A2D47E27AABC8F48B1951638;8020.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
  ) 
 Here is how much of TeX's memory you used:
- 9697 strings out of 494185
- 137190 string characters out of 6156888
- 257247 words of memory out of 5000000
- 12522 multiletter control sequences out of 15000+600000
+ 10325 strings out of 493089
+ 145784 string characters out of 6134842
+ 340789 words of memory out of 5000000
+ 13189 multiletter control sequences out of 15000+600000
  17508 words of font info for 66 fonts, out of 8000000 for 9000
- 430 hyphenation exceptions out of 8191
- 41i,13n,35p,552b,1265s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/local/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (93 pages, 2026430 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 41i,13n,35p,552b,1787s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on thesis.pdf (141 pages, 2440685 bytes).
 PDF statistics:
- 1184 PDF objects out of 1200 (max. 8388607)
- 1030 compressed objects within 11 object streams
- 303 named destinations out of 1000 (max. 500000)
- 850 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1497 PDF objects out of 1728 (max. 8388607)
+ 1293 compressed objects within 13 object streams
+ 424 named destinations out of 1000 (max. 500000)
+ 874 words of extra memory for PDF output out of 10000 (max. 10000000)
 

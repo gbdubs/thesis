@@ -584,3 +584,15 @@ $$P(\,(v_i, v_j) \,| A) = EM(v_i, v_j, A) / \sum_{x = 1}^{N} \sum_{y = 1}^{N} EM
 The BuildingB random graph generator operates identically to BuildingA, with a change in the individual edge metric $EM_A$:
 $$ EM(v_i, v_j, A) = (i - j  \neq 0) * (1 - A[i, j]) * \Big[ 1 + 2 max(DS) + DS[i] + DS[j] \Big] $$
 
+\section{Results}
+
+What I found was that it was consistently harder to beat the benchmarks set out than I had anticipated, however, it was possible.
+The detailed score reports are included as an appendix, but the large takeaway was simple:
+we are able to construct a random graph generator which mirrors the idealized random graph generator well within the context of these metrics, however, most of our attempts to do so did fail, and were hampered by the strong performance of gilbert random graph generators at larger values of $N$.
+
+In the end, the best algorithm was clearly BuildingF, which was able to score a benchmark of 2.1 (on a scale of -10 to 10, where 0 represents a gilbert random graph generator). 
+This algorithm gives us a good starting place for figuring out how we can better mirror an idealized RGG within a space with limited computational resources (both memory and CPU).
+However, I think more work needs to be done to continue figuring out better ways of constructing random graphs which better mirror graphs selected out of the set of graphs, rather than graphs selected out of the set of matrices.
+
+I am continuing to work on this problem over the course of April break, and will hopefully have some more results to share shortly before my thesis.
+Since the approaches/methodologies and scoring mechanisms have already been described, I feel that continuing work on building and testing graph mechanisms is not reaching too much beyond my due date.

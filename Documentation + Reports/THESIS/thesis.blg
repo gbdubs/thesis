@@ -1,54 +1,59 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/MacPorts 2015_8)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: bibliography.bib
+Warning--entry type for "adjmat" isn't style-file defined
+--line 1 of file bibliography.bib
 Warning--entry type for "oeis" isn't style-file defined
---line 71 of file bibliography.bib
+--line 84 of file bibliography.bib
 Warning--entry type for "oeisbig" isn't style-file defined
---line 76 of file bibliography.bib
-Warning--I didn't find a database entry for "exponentialgraphs"
+--line 89 of file bibliography.bib
+Warning--entry type for "subcubicrunningmatrixmult" isn't style-file defined
+--line 149 of file bibliography.bib
+Warning--I didn't find a database entry for "cornell"
 Warning--to sort, need author, editor, or key in 1961groups
 Warning--empty author and editor in 1961groups
-You've used 34 entries,
+Warning--empty year in polya
+You've used 37 entries,
             2118 wiz_defined-function locations,
-            674 strings with 8322 characters,
-and the built_in function-call counts, 8477 in all, are:
-= -- 818
-> -- 393
+            686 strings with 8594 characters,
+and the built_in function-call counts, 9167 in all, are:
+= -- 882
+> -- 414
 < -- 2
-+ -- 163
-- -- 124
-* -- 460
-:= -- 1530
-add.period$ -- 108
-call.type$ -- 34
-change.case$ -- 153
++ -- 172
+- -- 130
+* -- 497
+:= -- 1641
+add.period$ -- 115
+call.type$ -- 37
+change.case$ -- 165
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 358
-empty$ -- 676
-format.name$ -- 124
-if$ -- 1746
+cite$ -- 40
+duplicate$ -- 383
+empty$ -- 747
+format.name$ -- 130
+if$ -- 1891
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 37
-newline$ -- 170
-num.names$ -- 66
-pop$ -- 181
+int.to.str$ -- 37
+missing$ -- 38
+newline$ -- 183
+num.names$ -- 72
+pop$ -- 202
 preamble$ -- 1
-purify$ -- 130
+purify$ -- 139
 quote$ -- 0
-skip$ -- 253
+skip$ -- 277
 stack$ -- 0
-substring$ -- 256
-swap$ -- 43
+substring$ -- 296
+swap$ -- 46
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
-warning$ -- 2
-while$ -- 72
-width$ -- 36
-write$ -- 353
-(There were 5 warnings)
+type$ -- 128
+warning$ -- 3
+while$ -- 80
+width$ -- 39
+write$ -- 378
+(There were 8 warnings)

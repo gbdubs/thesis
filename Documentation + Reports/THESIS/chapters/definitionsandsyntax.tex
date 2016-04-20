@@ -46,7 +46,11 @@ $$|G_{alg}| <<< |G_{inst}| = 2^{E_{max}}$$
 but since the number of representations of a given graph is limited by its number of labelings that:
 $$|G_{alg}| * N! > | G_{inst} | =  2^{E_{max}}$$
 
+Moreover, P\'olya showed in 1937 \cite{polya} that the number of graphs asymptotes to:
+$$|G_{alg}| \rightarrow |G_{inst}| / N!$$
+
 Finally, we will talk about the number of distinct matrices that describe isomorphic graph instances as being the `number of representations' of the graph, or $M_{reps}(G) \in [1, N!]$.
+It is a well established fact that $M_{reps}(G) = \frac{N!}{ | Aut(G) |}$, and this will be a central point of several arguments of this thesis \cite{adjmat}.
 Note that  $M_{reps}(G)$ is related to the differentiation we made between the set of all graphs ($G_{alg}$) and the set of all graph instances ($G_{inst}$).
 
 \subsection{Graph6 Encoding of Graphs}
@@ -61,12 +65,12 @@ I optimized this code (preallocation, bit shifting, etc) in all of the languages
 The number of undirected, non-looped graphs over $N$ vertices is an open question in computational theory.
 The first few values of this sequence were well known, however no closed form has been proven to successfully list the numbers of graphs of a given size.
 A large number of theoreticians have come up with proposed closed forms with associated margins of error, but all small values have been agreed upon.
-The values in this sequence grow exponentially, but to give you an idea of how rapidly, the first twelve values are shown:
+The values in this sequence grow exponentially, but to give you an idea of how rapidly, the first twelve values are shown \cite{oeis}:
 
 $$1\,\; \;1\, \;\;2\, \;\;4\, \;\;11\, \;\;34\, \;\;156\, \;\;1044\,\; 12346\,\;\; 274668\, \;\;12005168\, \;\;1018997864$$
 
 Thus, when we describe (as we will throughout this project) the computational difficulty of going, say, from calculating a metric over all graphs on 10 to 11 vertices, remember that is about a 60-fold increase in the size of the examined set, not even beginning to grapple with the time complexity increase that an increase in $N$ has on the running time of the algorithm.
-The values that I use for this thesis come directly from the Online Encyclopedia of Integer Sequences, which gives values up to graphs with 50 vertices.
+The values that I use for this thesis come directly from the Online Encyclopedia of Integer Sequences \cite{oeis} , which gives values up to graphs with 50 vertices \cite{oeisbig}.
 As a side note: OEIS is probably one of my favorite things that exists.
 It astounds me how good it is picking out the exact sequence you are looking for, regardless of whether it is shifted by a few places, might have missing gap, etc.
 A well cooked example of the beautiful hyper-connected and data-driven world we live in.
@@ -188,6 +192,15 @@ In either case, we will consistently capitalize to distinguish the invariant fro
 
 Our definition of cycles counts ones which repeat vertices and edges, and ones which can pass back through their place of origin.
 We are counting cycles which are directional, so $ABCA$ and $ACBA$ are distinct cycles.
+
+The cycles invariant is not always termed this way.
+Sometimes, as in the paper on the reconstructability of the angle matrix, it is referred to as the \emph{number of closed walks} \cite{eigenspaces}.
+Other times it is called the \emph{number of closed paths of various lengths}, or as we have chosen to term it, the \emph{number of cycles}.
+
+The Cycles invariant has not been well studied. 
+Some authors have stumbled upon it and claimed that it can reconstruct the graph \cite{cornell}, a claim refuted by the work of \cite{eigenspaces}.
+Other work has occasionally used it within the context of matrix multiplication as a basis for graph property calculation (such as Triangles).
+No work that I was able to find explored its potential use as a graph invariant and a vertex invariant. 
 
 Note that cycles (as a function and vertex invariant) is a property of a graph instance, only through sorting can we make it into a graph invariant.
 
