@@ -199,11 +199,11 @@ Thus,  we can express the running time of the overall algorithm in terms of $O(|
 
 The selection of this simplified algorithm for analysis is not an accident: we have chosen it because the number of matrix representations ($M_{rep}(G)$) for a given graph $G$ is $\frac{N!}{|Aut(G)|}$.
 Thus, if we are considering the average running time of this canonization algorithm ($\xoverline{T}_{Gilbert}$) over the set of all graph instances ($G_{inst} = G(A)$ for $A \in \{\{0,1\}^{N \times N}\}$) (i.e. using the standard models for random graph generation), we come to different conclusions if we consider the set of possible graphs $G_{inst}$, versus if we consider the set of all graphs as algebraic structural objects ($G_{alg}$).
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{inst}} O(T(g))}{|G_{inst}|}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{alg}} O(T(g)) * M_{reps}(g)}{|G_{inst}|}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{alg}}  |Aut(g)| * \frac{N!}{|Aut(g)|}}{|G_{inst}|}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ \sum_{g \in G_{alg}}  N!}{2^{.5(N^2 - N)}}$$
-$$O(\xoverline{T}_{Gilbert}) = \frac{ |G_{alg}| * N!}{2^{.5(N^2 - N)}}$$
+$$\xoverline{T}_{Gilbert} = \frac{ \sum_{g \in G_{inst}} O(T(g))}{|G_{inst}|}$$
+$$\xoverline{T}_{Gilbert} = \frac{ \sum_{g \in G_{alg}} O(T(g)) * M_{reps}(g)}{|G_{inst}|}$$
+$$\xoverline{T}_{Gilbert} = \frac{ \sum_{g \in G_{alg}}  |Aut(g)| * \frac{N!}{|Aut(g)|}}{|G_{inst}|}$$
+$$\xoverline{T}_{Gilbert} = \frac{ \sum_{g \in G_{alg}}  N!}{2^{.5(N^2 - N)}}$$
+$$\xoverline{T}_{Gilbert} = \frac{ |G_{alg}| * N!}{2^{.5(N^2 - N)}}$$
 
 This property might not look like it tells us much, but we can actually approximate what it looks like for different values of $N$, since we have the frist nineteen values of this sequence from OEIS sequence A000088.
 This data is shown below.

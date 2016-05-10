@@ -12,8 +12,9 @@ We can also deduce the degree sequence, as simply observing the second column of
 
 \subsection{Triangles, Higher Order Polygons}
 Within the context of a graph, a polygon is similar to a cycle in that both denote closed paths, however, a polygon differs from a cycle in that a cycle is allowed to repeat both edges and vertices, while polygons do not allow repetitions of either (except to close the path to its starting vertex).
+Polygons are sometimes called ``simple'' cycles.
 
-The number of triangles is also easily computed.  Since triangles necessarily contain three distinct vertices (in a graph with no self-loops), we know that any cycle of length three on a graph will be a triangle.
+The number of triangles is also easily computed, as we showed in our description of $Cycles$ in figure \ref{fig:cyclesdemocycles}.  Since triangles necessarily contain three distinct vertices (in a graph with no self-loops), we know that any cycle of length three on a graph will be a triangle.
 Thus, the number of triangles which pass through each vertex is simply the third column of the cycles invariant matrix, and summing them and dividing by three yields the total number of triangles in the graph.
 
 Things are not so simple for larger polygons.  If we think very critically, we can deduce the number of of valid quadrilaterals, by considering the degree sequence of each of the nodes adjacent to a specific node.
@@ -26,12 +27,22 @@ However, this is a powerful observation, and fits into our idea of the cycles in
 
 \subsection{Chromatic Polynomial}
 One of the most discriminatory polynomial time algorithms for ruling out graph isomorphism is the \emph{Chromatic Polynomial} of the graph's adjacency matrix $A$.
+The chromatic polynomial of a matrix is the polynomial whose zeroes are the eigenvalues (real and imaginary) of the matrix.
+Eigenvalues are values $\lambda$ such that a vector $v$ exists (called an eigenvector) such that $v \dot A = \lambda v$.
+
 It is a well proven result that shuffling the order of the vertices in the representation of a given graph as an adjacency matrix does not change the eigenvalues of the matrix (thus the eigenvalues, as a multiset, form a powerfully discriminatory graph invariant), and thus the chromatic polynomial (as it encodes all information from this multiset) is also a graph invariant.
 In practice, it is a highly discerning as a graph invariant, as a very small proportion of graph instances are ``co-spectral" (having the same chromatic polynomial) and not isomorphic.
 However, there are not well established procedures to use the results of eigenvalue calculations to attempt to explicitly construct an isomorphism, rather, it is powerful in ruling out hypothetical isomorphisms.
 
 The large downside of the chromatic polynomial (as a graph invariant) is that it is not computable in polynomial time (across all sets of graphs).
 Rather, it is in the computational class $\#P-Hard$ (Sharp-Polynomial Hard), by reducibility to \#3SAT.
+
+$\#P-Hard$ is a class of questions which are largely counting questions over NP problems.
+For example, rather than asking "are there any subsets of a list of integers that add to zero'' (a classic NP problem),
+the $\#P-Hard$ corresponding problem would be asking ``how many subsets of a list of integers add to zero''.
+Clearly $\#P-Hard$ is a more challenging class of decision problems than NP, as testing for existence (the classic NP decision framing) is simply a test of greater than zero if you have access to $\#P-Hard$ algorithms.
+\#3SAT is the class of decision problems that reduce to the question: "how many ways can this predicate be satisfied", corresponding to the famous NPC problem of 3SAT, which forms the reduction for many NP-Complete Problems.
+
 There are algorithms which can deterministically solve it in $O(2^N N^r)$ For a constant $r$.
 This makes is calculation for graph isomorphism testing prohibitively expensive.
 What we will show in this section is objectively quite valuable: we will show that the Cycles invariant encodes the chromatic polynomial, and is actually \emph{more} discriminatory than it.
@@ -50,7 +61,7 @@ This means that we can create $N$ nonparallel (as not divisible in the ring $R[x
 Additionally, since we have the guarantee that our eigenvalues are all non-negative, we know that we can assuredly solve any given equation in terms of one of the $\lambda$'s.
 If we then use these substitutions, and substitute out all but one of the variables, what we will get is a continuous function whose zeros are well defined and positive. 
 
-Given the aggregated substitution, each one of the zeros is an eigenvalue, assign a selected value to any unassigned eigenvalue, and reduce our equations using that assumed value (think of a let statment).
+Given the aggregated substitution, each one of the zeros is an eigenvalue, assign a selected value to any unassigned eigenvalue, and reduce our equations using that assumed value (think of a let statement).
 This kind of procedure is necessary because our system of equations has variables whose relationships are inherently symmetric.
 In other words, we cannot make any differentiation between $\lambda_1$ and $\lambda_2$ based on the relationships of the equations, but if we make a choice for either, it will lead to a valid conclusion, or a reduction which does not eliminate a valid conclusion.
 This is by virtue of the fact that our substitutions are without condition, and we don't need to worry about any domains of substitution.
@@ -64,13 +75,27 @@ We can generalize this to any number of requisite dimensions using the principle
 
 Thus, given the function $Cycles(A, p, v)$, we could calculate the eigenvalues of the matrix A using $Cycles(A, p, v)$ restricted to $1 \leq p \leq P = N$. 
 This is superb, as it shows that the $Cycles$ function encodes at least as much information as the chromatic polynomial, and that any graphs which produce the same $Cycles$ function up to (p = V) are co-spectral. 
-A quick verification of the base non-isomorphic co-spectral graphs (the butterfly and the box) show that they produce \emph{different} values of the Cycles function, showing that the $Cycles$ function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time. 
+
+\begin{figure}[h]
+\caption{\emph{Cycles of the Butterfly ($S_4$) Graph}}
+\centering
+\includegraphics[width=.5\textwidth]{butterfly}
+\label{fig:butterfly}
+\caption{\emph{Cycles of the Box Graph (Union of $C_4$ and $E_1$)}}
+\centering
+\includegraphics[width=.5\textwidth]{box}
+\label{fig:box}
+\end{figure}
+
+A quick verification of the base non-isomorphic co-spectral graphs (the butterfly (figure \ref{fig:butterfly} and the box \ref{fig:box}) show that they produce \emph{different} values of the Cycles function, showing that the $Cycles$ function carries \emph{more} information than graph spectrum does, even though both are computed in polynomial time. 
+
 Also helpful: while co-spectral tests might rule out isomorphisms instead of providing a mechanism for their potential generation, the $Cycles$ function suggests the isomorphism that it believes to exist with a natural sorting and comparison of the vectors within the $Cycles$ object.
 
 Again, because of the difference in the running time required to calculate Cycles ($O(N^4)$) versus the running time it takes to calculate the chromatic polynomial ($O(2^N N^r)$), this is an incredibly valuable result: rather than using the chromatic polynomial for discerning between non-isomorphic graphs, it is clear that the Cycles invariant is objectively better.
 
 \subsection{Reconstructing a Valid Graph from Cycles}
 If we are given full access to the $Cycles$ function, could we create a graph that is in line with the Cycles invariant?
+Can we encode the information in the $Cycles$ invariant to bear us a logical description of all graphs which could produce it?
 Note that this question is fundamentally distinct from the one which asks if we could reconstruct the \emph{only} graph that could generate those Cycles values.
 That is a separate question, one which the existence of co-cycles graphs makes irrelevant, but the question posed is significantly more general, and does not decide or influence the question of computational complexity of GI.
 The reader should note that this section is really a proof of concept and the work done for this was to see how we could go between modes of operation: between reasoning about graphs theoretically, and interacting with them on an algebraic level.

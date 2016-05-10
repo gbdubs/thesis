@@ -2,94 +2,94 @@
 \contentsline {section}{\numberline {1.1}Graphs}{7}{section.1.1}
 \contentsline {section}{\numberline {1.2}Labeling and Representing Graphs}{7}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Graph6 Encoding of Graphs}{8}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Counting Graphs over $N$ Vertices}{8}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.2}Counting Graphs over $N$ Vertices}{9}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Counting Graphs over $N$ Vertices and $M$ Edges}{9}{subsection.1.2.3}
 \contentsline {section}{\numberline {1.3}Graph Isomorphism and Automorphism}{10}{section.1.3}
 \contentsline {section}{\numberline {1.4}Graph Invariants}{11}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Discriminatory Power}{11}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.1}Discriminatory Power}{12}{subsection.1.4.1}
 \contentsline {section}{\numberline {1.5}Vertex Invariants}{12}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Vertex Similarity}{12}{subsection.1.5.1}
 \contentsline {subsection}{\numberline {1.5.2}Vertex Invariants}{12}{subsection.1.5.2}
-\contentsline {section}{\numberline {1.6}Cycles Invariant}{12}{section.1.6}
+\contentsline {section}{\numberline {1.6}Cycles Invariant}{13}{section.1.6}
 \contentsline {subsection}{\numberline {1.6.1}Cycles as a Function}{13}{subsection.1.6.1}
-\contentsline {subsection}{\numberline {1.6.2}Cycles as a Vertex Invariant}{13}{subsection.1.6.2}
-\contentsline {subsection}{\numberline {1.6.3}Cycles as a Graph Invariant}{13}{subsection.1.6.3}
-\contentsline {subsection}{\numberline {1.6.4}A Brief Example}{14}{subsection.1.6.4}
-\contentsline {subsection}{\numberline {1.6.5}Invertibility}{14}{subsection.1.6.5}
-\contentsline {subsection}{\numberline {1.6.6}Time Complexity}{14}{subsection.1.6.6}
-\contentsline {subsection}{\numberline {1.6.7}Operating over Large Numbers}{15}{subsection.1.6.7}
-\contentsline {subsection}{\numberline {1.6.8}Space Complexity}{16}{subsection.1.6.8}
-\contentsline {section}{\numberline {1.7}Reconstructability, Determination}{17}{section.1.7}
-\contentsline {chapter}{\numberline {2}Cycles as a Graph Invariant}{18}{chapter.2}
-\contentsline {section}{\numberline {2.1}Basic Cycles-Reconstructable Properties}{18}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Triangles, Higher Order Polygons}{18}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Chromatic Polynomial}{19}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Reconstructing a Valid Graph from Cycles}{20}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Other Forms of Reconstructability}{23}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}EA Reconstructability}{23}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Deck Reconstructability}{23}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Placing Cycles within a Time/Power Tradeoff}{23}{section.2.3}
-\contentsline {section}{\numberline {2.4}Discrimination on Tough Graph Classes}{24}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Miyizaki Graphs}{24}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Imperfection, Co-Cycles Graphs}{25}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Discovering Co-Cycles Graphs, Cleverly}{25}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Constructing Co-Cycles Graphs}{26}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Trie Depth and the Power of Cycles Across Classes of Graphs}{27}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Expectations Borne out of Graph Counts}{27}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}An Unexpected Dip}{28}{subsection.2.6.2}
-\contentsline {chapter}{\numberline {3}Cycles as a Vertex Invariant}{31}{chapter.3}
-\contentsline {section}{\numberline {3.1}Similar Vertex Sets}{31}{section.3.1}
-\contentsline {section}{\numberline {3.2}Most Graphs Have One Automorphism}{32}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Implications for Perfectly Similar Vertex Sets}{32}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Quazi-Similar Vertex Sets}{32}{section.3.3}
-\contentsline {section}{\numberline {3.4}Why $P^*(G) <N$: Limitations on Cycles Usefulness}{33}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}What is $P^*$, why does it matter?}{33}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Observational Data: Diameter vs. $P^*(G), G \in S_N$}{34}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Theoretical Justification: $P_N$ versus $C_N$}{35}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Improving upon QSVS with Flagged Cycles}{36}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Appending a Flag, Somewhat Predictable}{37}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Intuitive Justification for Flagging}{37}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Analytical Support: Strength of Cycles as Vertex Invariant}{38}{subsection.3.5.3}
-\contentsline {chapter}{\numberline {4}Canonical Labeling Using Cycles}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Start With A Vertex Invariant}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}A Consistent Algorithm}{39}{section.4.2}
-\contentsline {section}{\numberline {4.3}Computational Complexity}{40}{section.4.3}
-\contentsline {section}{\numberline {4.4}Time Growth Comparisons to Faster Algorithms}{40}{section.4.4}
-\contentsline {chapter}{\numberline {5}Random Graph Generators and Automorphisms}{42}{chapter.5}
-\contentsline {section}{\numberline {5.1}Random Graph Models}{42}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}The Erd\"os-R\'enyi Model(s)}{42}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}The Gilbert Model}{43}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Isomorphism Under the Gilbert Model}{44}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Disconnect from Graphs as Algebraic Objects}{45}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Comparing the Distribution of Graph Connectivity}{45}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Specifically Disadvantaging Highly Automorphic Graphs}{47}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Two Quick Justifications}{47}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Theoretical Average Case Comparison}{48}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Practical Average Case Comparison}{49}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Should We Never Use the Gilbert Model?}{49}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Measuring and Comparing Random Graph Models}{50}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}An Ideal Random Graph Model}{50}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}An Equivalent Ideal Random Graph Model}{50}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Establishing a Methodology for Random Graph Generator Evaluation}{51}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Graph Set Metrics}{52}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Graph Set Metric Reference, Coding and Description}{52}{subsection.5.4.5}
-\contentsline {subsection}{\numberline {5.4.6}Establishing Baselines for Graph Set Metrics}{54}{subsection.5.4.6}
-\contentsline {subsection}{\numberline {5.4.7}Finding Data on Graph Set Metrics and Scores}{56}{subsection.5.4.7}
-\contentsline {subsection}{\numberline {5.4.8}Examining the Difference between Gilbert and Ideal Baselines}{56}{subsection.5.4.8}
-\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{58}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{59}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{59}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{60}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{60}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{60}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{62}{subsection.5.5.6}
-\contentsline {section}{\numberline {5.6}Results}{62}{section.5.6}
-\contentsline {chapter}{\numberline {6}Further Questions}{64}{chapter.6}
-\contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{64}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{64}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{65}{subsection.6.1.2}
-\contentsline {chapter}{\numberline {7}Appendices}{69}{chapter.7}
-\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{69}{section.7.1}
-\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{72}{section.7.2}
-\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{75}{section.7.3}
-\contentsline {section}{\numberline {7.4}Appendix D: Score Report Summaries}{75}{section.7.4}
+\contentsline {subsection}{\numberline {1.6.2}Cycles as a Vertex Invariant}{14}{subsection.1.6.2}
+\contentsline {subsection}{\numberline {1.6.3}Cycles as a Graph Invariant}{14}{subsection.1.6.3}
+\contentsline {subsection}{\numberline {1.6.4}A Brief Example}{15}{subsection.1.6.4}
+\contentsline {subsection}{\numberline {1.6.5}Invertibility}{16}{subsection.1.6.5}
+\contentsline {subsection}{\numberline {1.6.6}Time Complexity}{16}{subsection.1.6.6}
+\contentsline {subsection}{\numberline {1.6.7}Operating over Large Numbers}{16}{subsection.1.6.7}
+\contentsline {subsection}{\numberline {1.6.8}Space Complexity}{17}{subsection.1.6.8}
+\contentsline {section}{\numberline {1.7}Reconstructability, Determination}{18}{section.1.7}
+\contentsline {chapter}{\numberline {2}Cycles as a Graph Invariant}{19}{chapter.2}
+\contentsline {section}{\numberline {2.1}Basic Cycles-Reconstructable Properties}{19}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Triangles, Higher Order Polygons}{19}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Chromatic Polynomial}{20}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Reconstructing a Valid Graph from Cycles}{22}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Other Forms of Reconstructability}{24}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}EA Reconstructability}{24}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Deck Reconstructability}{25}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Placing Cycles within a Time/Power Tradeoff}{25}{section.2.3}
+\contentsline {section}{\numberline {2.4}Discrimination on Tough Graph Classes}{25}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Miyizaki Graphs}{25}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Imperfection, Co-Cycles Graphs}{26}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Discovering Co-Cycles Graphs, Cleverly}{27}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Constructing Co-Cycles Graphs}{28}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Trie Depth and the Power of Cycles Across Classes of Graphs}{29}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Expectations Borne out of Graph Counts}{29}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}An Unexpected Dip}{29}{subsection.2.6.2}
+\contentsline {chapter}{\numberline {3}Cycles as a Vertex Invariant}{32}{chapter.3}
+\contentsline {section}{\numberline {3.1}Similar Vertex Sets}{32}{section.3.1}
+\contentsline {section}{\numberline {3.2}Most Graphs Have One Automorphism}{33}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Implications for Perfectly Similar Vertex Sets}{33}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Quazi-Similar Vertex Sets}{33}{section.3.3}
+\contentsline {section}{\numberline {3.4}Why $P^*(G) <N$: Limitations on Cycles Usefulness}{34}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}What is $P^*$, why does it matter?}{34}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Observational Data: Diameter vs. $P^*(G), G \in S_N$}{35}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Theoretical Justification: $P_N$ versus $C_N$}{36}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Improving upon QSVS with Flagged Cycles}{37}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Appending a Flag, Somewhat Predictable}{38}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Intuitive Justification for Flagging}{38}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Analytical Support: Strength of Cycles as Vertex Invariant}{39}{subsection.3.5.3}
+\contentsline {chapter}{\numberline {4}Canonical Labeling Using Cycles}{40}{chapter.4}
+\contentsline {section}{\numberline {4.1}Start With A Vertex Invariant}{40}{section.4.1}
+\contentsline {section}{\numberline {4.2}A Consistent Algorithm}{40}{section.4.2}
+\contentsline {section}{\numberline {4.3}Computational Complexity}{41}{section.4.3}
+\contentsline {section}{\numberline {4.4}Time Growth Comparisons to Faster Algorithms}{41}{section.4.4}
+\contentsline {chapter}{\numberline {5}Random Graph Generators and Automorphisms}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Random Graph Models}{43}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The Erd\"os-R\'enyi Model(s)}{43}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}The Gilbert Model}{44}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Isomorphism Under the Gilbert Model}{45}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Disconnect from Graphs as Algebraic Objects}{46}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Comparing the Distribution of Graph Connectivity}{46}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Specifically Disadvantaging Highly Automorphic Graphs}{48}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Two Quick Justifications}{48}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Theoretical Average Case Comparison}{49}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Practical Average Case Comparison}{50}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Should We Never Use the Gilbert Model?}{50}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Measuring and Comparing Random Graph Models}{51}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}An Ideal Random Graph Model}{51}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}An Equivalent Ideal Random Graph Model}{51}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Establishing a Methodology for Random Graph Generator Evaluation}{52}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Graph Set Metrics}{53}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Graph Set Metric Reference, Coding and Description}{53}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.6}Establishing Baselines for Graph Set Metrics}{55}{subsection.5.4.6}
+\contentsline {subsection}{\numberline {5.4.7}Finding Data on Graph Set Metrics and Scores}{57}{subsection.5.4.7}
+\contentsline {subsection}{\numberline {5.4.8}Examining the Difference between Gilbert and Ideal Baselines}{57}{subsection.5.4.8}
+\contentsline {section}{\numberline {5.5}Alternative Ideas for Random Graph Modeling and Creation}{59}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}MinusOne - A Weighted Automorphic Subgraph Generator}{60}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}MinusOneA - Less Automorphic Version of MinusOne}{60}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}MinusOneB - Interspersing Some Gilbert Random Graphs}{61}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}MinusOneC - Less Automorphic Version of MinusOne}{61}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}BuildingA - An Iterative Graph Generator}{61}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}BuildingB - An Inverse Differential Graph Generator}{63}{subsection.5.5.6}
+\contentsline {section}{\numberline {5.6}Results}{63}{section.5.6}
+\contentsline {chapter}{\numberline {6}Further Questions}{65}{chapter.6}
+\contentsline {section}{\numberline {6.1}Reconstruction Hypothesis}{65}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parallelizing a Reconstruction Check to 12 vertices}{65}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Potential Reconstruction Procedure: The Triangle Inequality}{66}{subsection.6.1.2}
+\contentsline {chapter}{\numberline {7}Appendices}{70}{chapter.7}
+\contentsline {section}{\numberline {7.1}Appendix A: Explanation of Code Structure}{70}{section.7.1}
+\contentsline {section}{\numberline {7.2}Appendix B: Co-Cycles Data Set Over 10 Vertices}{73}{section.7.2}
+\contentsline {section}{\numberline {7.3}Appendix C: Machine Specifications}{76}{section.7.3}
+\contentsline {section}{\numberline {7.4}Appendix D: Score Report Summaries}{76}{section.7.4}

@@ -54,18 +54,27 @@ It is a well established fact that $M_{reps}(G) = \frac{N!}{ | Aut(G) |}$, and t
 Note that  $M_{reps}(G)$ is related to the differentiation we made between the set of all graphs ($G_{alg}$) and the set of all graph instances ($G_{inst}$).
 
 \subsection{Graph6 Encoding of Graphs}
+\label{section:graph6}
 
 For this project, we frequently will use graph6 notation to encode a graph as a succinct string.
 This is an encoding of the adjacency matrix as described through the formal specification (http://users.cecs.anu.edu.au/~bdm/data/formats.txt).
 Basically, we take the upper half of the adjacency matrix (not including the zeroed-out diagonal), as a bit-string, then compress that bit-string using UTF-8 character encoding.
+This process is clearly illustrated in figure \ref{fig:encoding}.
 I optimized this code (preallocation, bit shifting, etc) in all of the languages I used, because when non-optimized, it can contribute to runtime in a non-negligible way.
+
+\begin{figure}[h]
+\caption{\emph{Example Encodings of the Same Graph}}
+\centering
+\includegraphics[width=\textwidth]{encoding}
+\label{fig:encoding}
+\end{figure}
 
 \subsection{Counting Graphs over $N$ Vertices}
 
-The number of undirected, non-looped graphs over $N$ vertices is an open question in computational theory.
+The number of graphs over $N$ vertices is an open question in computational theory (graphs here as we consider them, i.e. representation indifferent, with single and undirected connections).
 The first few values of this sequence were well known, however no closed form has been proven to successfully list the numbers of graphs of a given size.
 A large number of theoreticians have come up with proposed closed forms with associated margins of error, but all small values have been agreed upon.
-The values in this sequence grow exponentially, but to give you an idea of how rapidly, the first twelve values are shown \cite{oeis}:
+The values in this sequence grow exponentially, but to give you an idea of how rapidly, the first twelve values are shown, from 0 to 11 \cite{oeis}:
 
 $$1\,\; \;1\, \;\;2\, \;\;4\, \;\;11\, \;\;34\, \;\;156\, \;\;1044\,\; 12346\,\;\; 274668\, \;\;12005168\, \;\;1018997864$$
 
@@ -134,7 +143,7 @@ Though it will be taken as granted, the set of all valid automorphisms for a gra
 This group has at least one element (the identity element as the identity automorphism), but may have as many as $N!$ elements.
 This group will be referred to as $Aut(G)$, and the operation over the group is understood to be the \emph{followed by} operation.
 
-
+The size of the Automorphism group is at least one (the identity mapping), and can be as large as $N!$ for the complete graph $K_N$ and the empty graph $E_N$.
 
 \section{Graph Invariants}
 A \emph{graph invariant} is an ordered property calculated over a graph which remains the same irrespective of the representation or labeling of the graph.
@@ -151,9 +160,9 @@ In contrast, the chromatic polynomial of a graph is a highly discriminatory grap
 
 To formalize this notion, we will discuss discriminatory power with a specific probabilistic meaning.
 A graph invariant $Inv$ discriminates at a level $\alpha$ for $N$ vertices and $M$ edges if selecting two graphs $G$ and $H$ at random from some random graph generator:
-$$P \big[ Inv(G) = Inv(H) \wedge \neg Iso(G, H) \big] \, \leq \, \alpha$$
+$$P \big[ Inv(G) = Inv(H) \wedge \neg Iso(G, H) \big] \, \leq \, \alpha(N)$$
 What we will find is that we can frequently discuss alpha as a function of $M$ and $N$.
-Later in this report we will discuss how $\alpha$ fits in to a natural definition of a false positive an uncertain test without a false negative rate ($\beta = 0$).
+Later in this report we will discuss how $\alpha(N)$ fits in to a natural definition of a false positive an uncertain test without a false negative rate ($\beta = 0$).
 
 
 
@@ -168,7 +177,14 @@ A discussion of these \emph{similar vertex sets} (or SVSs) will be the primary f
 
 A graph (or subset of the vertices of a graph) is called \emph{perfectly similar} or \emph{perfectly automorphic} if, for every pair of vertices, there exists an automorphic mapping which maps one of the vertices to the other.
 This is not suggesting that every mapping of the graph is an automorphism (as is only the case in $K_n$ and $\xoverline{K_n}$), but rather that any initial choice of pairing within a mapping is valid, even if it limits further choices.
-For example, $C_n$ is a perfectly similar graph, as is Peterson's graph.
+For example, $C_n$ (a graph made out of a single and complete cycle, where every vertex is connected to two neighbors) is a perfectly similar graph, as is Peterson's graph (a common counterexample to graph hypotheses over ten vertices, a coloring of which is shown in figure \ref{fig:peterson}).
+
+\begin{figure}[h]
+\caption{\emph{Peterson's graph with a Three Coloring}}
+\centering
+\includegraphics[width=.5\textwidth]{peterson}
+\label{fig:peterson}
+\end{figure}
 
 
 \subsection{Vertex Invariants}
@@ -181,7 +197,7 @@ Whereas a graph invariant can tell us about whether or not graph instances as a 
 In contrast, a vertex invariant identifies potentially similar vertices not only within a graph, but also between graph instances.
 A \emph{perfect} vertex invariant is one for which agreement on the value of the invariant is equivalent to establishing the existence of an automorphism that maps one vertex to the other.
 
-A question discussed later in this report will be about the theoretical implications of a hypothetical perfectly discriminatory vertex invariant, and a proposed invariant that haven't been found to be imperfect.
+A question discussed later in this thesis will be about the theoretical implications of a hypothetical perfectly discriminatory vertex invariant, and a proposed invariant that haven't been found to be imperfect.
 
 
 
@@ -209,7 +225,7 @@ Note that cycles (as a function and vertex invariant) is a property of a graph i
 
 The $Cycles(A, p, v)$ invariant counts the number of closed walks of length $p$ that pass through a given vertex, $v$. 
 This information can be easily computed using $A$. 
-Just as the entries of $A^1$ represent the existence of cycles of length 1 between two vertices (self loops), the entries of $A^p$ represent the number of cycles of length $p$ between any two vertices (by examining the row and column corresponding to two vertices).
+Just as the entries of $A^1$ represent the existence of cycles of length 1 (as $p = 1$) between two vertices (self loops), the entries of $A^p$ represent the number of cycles of length $p$ between any two vertices (by examining the row and column corresponding to two vertices).
 Thus, to find the number of closed cycles of length $p$ that contain a given vertex $v$, we simply need to calculate: 
 $$Cycles(A, p, v) = A^p[v, v]$$
 Where $v$ is being used interchangeably here with its represented position within the adjacency matrix. 
@@ -222,6 +238,8 @@ Under that simplifying assumption, it is clear that calculating $Cycles(A, p, v)
 \subsection{Cycles as a Vertex Invariant}
 
 Cycles as a vertex invariant describes a vector of length $P$, where the $p$th entry is the number of closed cycles of length $p$ which pass through the vertex being described.
+We will describe our choice of $P$ in section \ref{section:pstar}, but for now we can think of it as simply the maximum length of the cycles we are considering.
+By measuring every length cycle $p$ from 1 to $P$, we are given back a vector with $P$ entries.
 
 If a vertex is the $i$th row/column of an adjacency matrix $A$, then the cycles invariant for the vertex is the successive values of 
 $$Cycles(A, v_i) = [c_1, c_2, ... c_N] \text{such that} c_p = Cycles(A, v_i, p) = A^p[i,i]$$
@@ -252,27 +270,42 @@ Most notably, we can significantly improve upon the average case time complexity
 \subsection{A Brief Example}
 
 \begin{figure}[h]
-\caption{\emph{A Small Graph} - A labeling of the vertices is provided to correspond to the labeling of figure \ref{fig:cyclesdemocycles}. This graph (like all of the ones we are describing) is unlabeled, undirected, and loop-less.}
+\caption{\emph{A Small Graph} - Labeled vertices are provided to correspond to figure \ref{fig:cyclesdemocycles}. This graph (like all of the ones we are describing) is unlabeled, undirected, and without self-loops.}
 \centering
-\includegraphics[width=.5\textwidth]{cyclesdemograph}
+\includegraphics[width=.35\textwidth]{cyclesdemograph}
 \label{fig:cyclesdemograph}
 \end{figure}
 
+\begin{figure}[h]
+\caption{\emph{A Cycles Invariant Matrix} - The color coding corresponds to the numbers, and purely serve to give a visual differentiation between different/similar integer values.}
+\centering
+\includegraphics[width=.6\textwidth]{cyclesdemocycles}
+\label{fig:cyclesdemocycles}
+\end{figure}
+
 The best way to establish intuition and understanding of the cycles invariant is to show its values on a sample graph.
-In figure \ref{fig:cyclesdemograph}, we see an example graph (in graph6 format: I@QKj?]]O), which has multiple automorphisms.
-The graph has been arranged to be aesthetically appealing and to make the automorphisms clear.
+In figure \ref{fig:cyclesdemograph}, we see an example graph (in graph6 format: I@QKj?]]O for an explanation of graph6 format, check out section \label{section:graph6}), which has multiple automorphisms.
+The graph has been arranged to be aesthetically appealing and to make the automorphisms clear. 
+If you look along the diagonal, it is clear that the graph has flip symmetry, so that an automorphism which maps 6 to 7, 5 to 4, 2 to 3 and the inverses (while keeping the middle diagonal the same) would clearly preserve the structure of the graph (thus would be an automorphism).
 
 In figure \ref{fig:cyclesdemocycles} below, we also see the cycles matrix for the graph.
 The rows represent the individual vertex invariants associated with each value of cycles.
 The columns represent the length of the cycles being considered.
-The reader should trace out the number of cycles for themselves (for small values of $p$) to see the connection, and understand how this function is translated to a vertex invariant, and then to a graph invariant (the full matrix).
 
-\begin{figure}[h]
-\caption{\emph{A Cycles Invariant Matrix} - The color coding corresponds to the numbers, and purely serve to give a visual differentiation between different integer values.  We can see that many of the pairs of vertices in this graph share their values of the cycles invariant through them.}
-\centering
-\includegraphics[width=.7\textwidth]{cyclesdemocycles}
-\label{fig:cyclesdemocycles}
-\end{figure}
+Tracing out the number of cycles is trivial for small values. 
+For example, counting the number of cycles of size two is the degree of the node, something easy to quickly surmise from a diagram.
+If we look at the number of triangles (closed walks of size three), we can also make this conclusion easily for graphs of this size (remember both directions).
+Using these two pieces of information alone gives us ten vectors, each of size two.
+Using each as a vertex invariant gives us five different equivalence classes (10) (6, 7, 9) (4, 5) (2, 3, 8) (1).
+We can then imagine a skinny matrix (sorted) which provides us with the intuition of what a cycles graph invariant is comprised of.
+Iterating for values of $P$ up to $N$ expands this matrix horizontally to become the full matrix showed in figure \ref{fig:cyclesdemocycles}.
+
+The diagram is easier to read than it appears.
+The columns correspond to values of $p$.
+The rows correspond to the vertices of the graph (ignore the letters, just pay attention to the numbers). 
+The entry tells you the exact number of cycles of that length that pass through that vertex.
+For example, the diagram tells us that there are 24812 cycles of length 9 that pass through vertex 10.
+They are color coded simply to portray differences between them (they are colored so that it is clear to see that the vertices 6 and 7 are automorphic, but vertices 7 and 9 are not).
 
 \subsection{Invertibility}
 Note that if two graphs agree on the Cycles invariant, their complements (or inverses) likely agree on the Cycles invariant, but there is no proven reason to believe this is universally true.
@@ -300,7 +333,7 @@ Since we arrive at each element in this dot-product-summation via the product of
 
 $$ \forall_{i, j \in [1, N]} A[i, j] \leq \sqrt{2^{\floor{32 - \log_2(N)}}} = 2^{\floor{16 - 0.5\log_2(N)}}$$
 
-We can make sure that this equality holds if we establish $K = \floor{16 - 0.5\log_2(N)}$ and make the incorporation of modulo into our formula for the Cycles function explicit:
+We can make sure that this equality holds if we establish $K = \floor{16 - 0.5\log_2(N)}$ and describe our Cycles function to exist within this constraint:
 
 $$ Cycles(A, v_i, p) = \begin{cases} 
       A[i,i] & p = 1 \\
@@ -328,8 +361,11 @@ The majority of the cycles described by the invariant are products of smaller cy
 To have a large number of newly emergent cycles in one but not the other (a precise enough one to exactly match the threshold for modulo) is incredibly unlikely.
 
 Consider this argument by an analogy, one used to catch cheaters (people who cut courses) in looped Marathons and long track races.
-If two people are in a race, and their first many splits are at the same times, it is very unlikely (even impossible) that one will lap the other over the course of a single split.
+If two people are in a race, and their first many splits (a split is a time in between verified checkpoints) are at the same times, it is very unlikely (even impossible) that one will lap the other over the course of a single split.
 The same logic can be applied to think about the way that the number of closed cycles grows as $p$ grows.
+It is impossible (as we have shown) that two vertices could share exactly the same values for small values of cycles, and then in one iteration, that one vertex would "lap" the other, that it would increase by exactly the factor ($2^17$, in this case) that we are modulating our results by to maintain a small size.
+This is particularly true since (like in running) much of how quickly paths grows (how fast a runner runs) is heavily contingent upon/correlated with past performance (previous values of the paths function for smaller values of $p$).
+This intuition grounds the proof in an accessible manner.
 
 
 \subsection{Space Complexity}

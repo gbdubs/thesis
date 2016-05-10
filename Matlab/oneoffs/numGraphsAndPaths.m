@@ -7,7 +7,9 @@ maxRepresentationsPerGraph = factorial(temp);
 
 proportionOfPotential = matrixRepresentationsPerGraph ./ maxRepresentationsPerGraph;
 
-logOffFromOne = log(1 - proportionOfPotential);
+proportionOfPotential = proportionOfPotential .^ -1;
+
+logOffFromOne = log(abs(1 - proportionOfPotential));
 
 % CREATEFIGURE(TEMP1, PROPORTIONOFPOTENTIAL1, DIFF1)
 %  TEMP1:  vector of x data
@@ -57,7 +59,7 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 
 % Create plot
-plot(temp,diff,'Parent',axes1,'DisplayName','Log(1 - Rep. Prop.)',...
+plot(temp,logOffFromOne,'Parent',axes1,'DisplayName','Log(1 - Rep. Prop.)',...
     'MarkerFaceColor',[1 0 0],...
     'Marker','o',...
     'LineStyle','--',...
@@ -81,5 +83,5 @@ set(legend2,...
 fig = gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 12 6];
-print('visualization/numGraphsAndPaths','-dpng','-r0');
-close;
+%print('visualization/numGraphsAndPaths','-dpng','-r0');
+%close;
