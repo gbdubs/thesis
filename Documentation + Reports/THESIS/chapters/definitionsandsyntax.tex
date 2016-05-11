@@ -215,8 +215,7 @@ Other times it is called the \emph{number of closed paths of various lengths}, o
 
 The Cycles invariant has not been well studied. 
 Some authors have stumbled upon it and claimed that it can reconstruct the graph \cite{cornell}, a claim refuted by the work of \cite{eigenspaces}.
-Other work has occasionally used it within the context of matrix multiplication as a basis for graph property calculation (such as Triangles).
-No work that I was able to find explored its potential use as a graph invariant and a vertex invariant. 
+It has commonly been used to compute the number of triangles, though no work that I was able to find explored its potential use as a graph invariant and a vertex invariant (beyond an informal (and incorrect) hypothesis of canonization). 
 
 Note that cycles (as a function and vertex invariant) is a property of a graph instance, only through sorting can we make it into a graph invariant.
 
@@ -236,7 +235,7 @@ Under that simplifying assumption, it is clear that calculating $Cycles(A, p, v)
 
 
 \subsection{Cycles as a Vertex Invariant}
-
+\label{section:qsvsesdef2}
 Cycles as a vertex invariant describes a vector of length $P$, where the $p$th entry is the number of closed cycles of length $p$ which pass through the vertex being described.
 We will describe our choice of $P$ in section \ref{section:pstar}, but for now we can think of it as simply the maximum length of the cycles we are considering.
 By measuring every length cycle $p$ from 1 to $P$, we are given back a vector with $P$ entries.
@@ -385,7 +384,7 @@ Thus, for a length $l$, there are exactly $(N-1)^l$ valid paths, of which exactl
 
 If we assume that the maximum length cycle we are interested in is of length $N-1$ (as is discussed in another chapter), then the number bits required to express an individual number within the Cycles matrix is at maximum:
 $$ O(Bits(N)) = O\Big( \log_2 \big[(N-1)^{N-1}\big] \Big) = O \big( (N - 1) * \log_2 [N-1] \big) = O(N \log_2 N)$$
-Thus the total number of bits required to fully represent a Cycles matrix is bounded by $O(N^3logN)$, a large upper bound, but certainly sub-exponential.
+Thus the total number of bits required to fully represent a Cycles matrix is bounded by $O(N^3logN)$, a large upper bound, but certainly sub-exponential, particularly reasonable when we consider the fact that the constant associated with this bound is on the order of ten, a relatively small constant.
 
 
 \section{Reconstructability, Determination}

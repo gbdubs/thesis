@@ -5,6 +5,7 @@ This section will discuss exactly how isomorphisms can be constructed and evalua
 Central to this chapter is the concept described earlier as Automorphism Equivalence Classes, or Similar Vertex Sets (SVS).
 
 \section{Similar Vertex Sets}
+\label{section:qsvsesdef1}
 
 A vertex-similar set is a subset of the vertices of a graph such that for any pair of vertices in the set, there exists an automorphism which maps one to the other.
 Note that vertex similarity is reflexive (as one-to-one mapping (such as an automorphism) is invertible). 
@@ -171,10 +172,11 @@ The combination of these two claims proves that the expression
       N-2 & \text{If N is even} \\
    \end{cases}
 \]
-holds for all graphs, a useful piece of knowledge in curtailing the amount of computational work we must do. 
+holds for all graphs, a useful piece of knowledge in curtailing the amount of computational work we must do, and is a novel result within the literature around the $Cycles$ Invariant. 
 
 \section{Improving upon QSVS with Flagged Cycles}
 
+This section deals heavily with definitions of QSVSes defined in sections \ref{section:qsvsesdef1} and \label{section:qsvsesdef2}.
 The quality of the QSVS is generally described as how close they are to the true SVSes.
 In other words, quality is a measure of how frequently does a QSVS contain two or more subsets that should be independent SVSes.
 Though Cycles as a vertex invariant produces QSVSes which mirror SVSes with high probability, we should examine the failures cases to see if we can do better.

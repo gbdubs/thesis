@@ -287,7 +287,7 @@ Finally, we will discuss co-cycles graphs as a useful (and relatively small) set
 Discovering co-cycles graphs was not trivial.
 The way I went about looking for them was theoretically simple, but incredibly challenging to implement and process.
 \begin{itemize}
-\item{First, I enumerated all graphs of size $N$ with $M$ vertices by using the NAUTY geng function}
+\item{First, I enumerated all graphs of size $N$ with $M$ vertices by using the NAUTY geng function (The NAUTY package is the practical result of McKay's iterative improvements on theory and algorithm design. The Most recent version (used for this project) was described in the paper \emph{Practical Graph Isomorphism II}\cite{mckay2014practical}.}
 \item{I set up a mechanism which delivered the cycles values in sorted order, thus, the cycles invariant (which is an $N \times N$ matrix) could be parsed apart in order of its columns (all of the values of cycles of length 2, then 3, then 4, etc)}
 \item{I used a clever set of minimally memory intensive structures to store only the information needed for a given unit of this computation.  This, in combination with the second step, yielded a delayed stream processing, where we have a structure (with minimal memory), which can be called upon for another, more differentiating value.}
 \item{These structures (one per graph), were placed in an enormous trie, each level of which was the level of the delayed evaluation.  Only values which differentiated between different structures were evaluated (lazy evaluation on trie-collision, splitting into sub-tries).}
